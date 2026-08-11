@@ -1,0 +1,328 @@
+{
+ "_nota": "Todas las instancias de VOTO POSITIVO de la temporada (el publico vota a quien quiere SALVAR / que vuelva). Es la escala que decide la final. Telefe casi nunca publica porcentajes en estas fases, pero SI anuncia los salvados EN ORDEN de mas a menos votado (confirmado por Revista Pronto para la gala del 28/05), lo que convierte cada fase en un ranking parcial utilizable con un modelo Plackett-Luce.",
+ "_advertencia": "En la gala del 02/07 del Moro llamo a los salvados en ORDEN ALEATORIO (aclarado por Infobae): ahi el top-12 es un CONJUNTO, no un orden, y se trata con comparaciones pareadas.",
+ "fases": [
+  {
+   "id": "gala1",
+   "fecha": "2026-03-02",
+   "tipo": "orden",
+   "candidatos": [
+    "Carmiña",
+    "Pincoya",
+    "Manu",
+    "Emanuel",
+    "Sol",
+    "Brian",
+    "Zilli",
+    "Lucero"
+   ],
+   "orden": [
+    "Carmiña",
+    "Pincoya",
+    "Manu"
+   ]
+  },
+  {
+   "id": "gala9",
+   "fecha": "2026-04-19",
+   "tipo": "orden",
+   "candidatos": [
+    "Yipio",
+    "Brian",
+    "Danelik",
+    "Eduardo",
+    "Tamara",
+    "Zunino",
+    "La Maciel",
+    "Nazareno",
+    "Martín"
+   ],
+   "orden": [
+    "Yipio",
+    "Brian",
+    "Danelik"
+   ]
+  },
+  {
+   "id": "gala11",
+   "fecha": "2026-05-03",
+   "tipo": "orden",
+   "candidatos": [
+    "Zilli",
+    "Manu",
+    "Pincoya",
+    "Yipio",
+    "Lolo",
+    "Cinzia",
+    "Emanuel",
+    "La Bomba",
+    "Titi",
+    "Dani",
+    "Juanicar",
+    "Zunino",
+    "Grecia",
+    "Luana",
+    "Eduardo",
+    "Danelik",
+    "Nazareno"
+   ],
+   "orden": [
+    "Zilli",
+    "Manu",
+    "Pincoya",
+    "Yipio",
+    "Lolo",
+    "Cinzia",
+    "Emanuel"
+   ]
+  },
+  {
+   "id": "gala15",
+   "fecha": "2026-05-17",
+   "tipo": "orden",
+   "candidatos": [
+    "Juanicar",
+    "Luana",
+    "Tamara",
+    "Cinzia",
+    "Zunino",
+    "Eduardo",
+    "Danelik"
+   ],
+   "orden": [
+    "Juanicar"
+   ]
+  },
+  {
+   "id": "repechaje",
+   "fecha": "2026-05-20",
+   "tipo": "porcentaje",
+   "candidatos": [
+    "Yipio",
+    "Lola Tomaszeuski",
+    "Carmiña",
+    "Kennys"
+   ],
+   "porcentajes": {
+    "Yipio": 35.6,
+    "Lola Tomaszeuski": 30.6,
+    "Carmiña": 19.8,
+    "Kennys": 14.1
+   }
+  },
+  {
+   "id": "gala17",
+   "fecha": "2026-05-28",
+   "tipo": "orden",
+   "candidatos": [
+    "Cinzia",
+    "Andrea",
+    "Manu",
+    "Yipio",
+    "Tamara",
+    "Brian",
+    "Nigro",
+    "Titi",
+    "Tatiluna"
+   ],
+   "orden": [
+    "Cinzia",
+    "Andrea",
+    "Manu",
+    "Yipio"
+   ]
+  },
+  {
+   "id": "gala18",
+   "fecha": "2026-06-04",
+   "tipo": "orden",
+   "candidatos": [
+    "Andrea",
+    "Sol",
+    "Emanuel",
+    "Hanssen",
+    "Juanicar",
+    "Yipio",
+    "Zunino",
+    "Brian"
+   ],
+   "orden": [
+    "Andrea",
+    "Sol",
+    "Emanuel"
+   ]
+  },
+  {
+   "id": "gala19",
+   "fecha": "2026-06-11",
+   "tipo": "orden",
+   "candidatos": [
+    "Sol",
+    "Andrea",
+    "Cinzia",
+    "Majluf",
+    "Luana",
+    "Yipio",
+    "Nigro",
+    "Campanita",
+    "Zunino"
+   ],
+   "orden": [
+    "Sol",
+    "Andrea",
+    "Cinzia"
+   ]
+  },
+  {
+   "id": "gala21",
+   "fecha": "2026-06-26",
+   "tipo": "orden",
+   "candidatos": [
+    "Cinzia",
+    "Andrea",
+    "Charlotte",
+    "Manu",
+    "Emanuel",
+    "Hanssen",
+    "Yipio",
+    "Campanita",
+    "Nenu"
+   ],
+   "orden": [
+    "Cinzia",
+    "Andrea",
+    "Charlotte",
+    "Manu"
+   ]
+  },
+  {
+   "id": "gala22_placa_planta",
+   "fecha": "2026-07-02",
+   "tipo": "conjunto",
+   "candidatos": [
+    "Campanita",
+    "Andrea",
+    "Cinzia",
+    "Yipio",
+    "Juanicar",
+    "Tamara",
+    "Emanuel",
+    "Pincoya",
+    "Sol",
+    "Charlotte",
+    "Zilli",
+    "Manu",
+    "Cola",
+    "Hanssen",
+    "JC",
+    "Luana",
+    "Majluf",
+    "Mariela",
+    "Nigro"
+   ],
+   "top": [
+    "Campanita",
+    "Andrea",
+    "Cinzia",
+    "Yipio",
+    "Juanicar",
+    "Tamara",
+    "Emanuel",
+    "Pincoya",
+    "Sol",
+    "Charlotte",
+    "Zilli",
+    "Manu"
+   ]
+  },
+  {
+   "id": "gala24_16jul",
+   "fecha": "2026-07-16",
+   "tipo": "orden",
+   "_nota": "PLACA POSITIVA PURA CON LOS 16 DE LA CASA. Ranking completo de mas a menos votado. Es la mejor foto de voto positivo de la temporada y la mas reciente.",
+   "candidatos": [
+    "Luana",
+    "Juanicar",
+    "Tamara",
+    "Cinzia",
+    "Charlotte",
+    "Emanuel",
+    "Pincoya",
+    "Sol",
+    "Yipio",
+    "Zilli",
+    "Campanita",
+    "Cola",
+    "Hanssen",
+    "Mariela",
+    "Majluf",
+    "JC"
+   ],
+   "orden": [
+    "Luana",
+    "Juanicar",
+    "Tamara",
+    "Cinzia",
+    "Charlotte",
+    "Emanuel",
+    "Pincoya",
+    "Sol",
+    "Yipio",
+    "Zilli",
+    "Campanita",
+    "Cola",
+    "Hanssen",
+    "Mariela",
+    "Majluf"
+   ]
+  },
+  {
+   "id": "gala26",
+   "fecha": "2026-07-22",
+   "tipo": "conjunto",
+   "candidatos": [
+    "Pincoya",
+    "Juanicar",
+    "Tamara",
+    "Hanssen",
+    "Mariela",
+    "Majluf",
+    "Cola"
+   ],
+   "top": [
+    "Pincoya",
+    "Juanicar"
+   ]
+  }
+ ],
+ "_calibracion_historica": {
+  "regla": "De GH 2024 y 2025: bajo rechazo en voto negativo es NECESARIO pero NO SUFICIENTE. El discriminante es la evidencia de voto POSITIVO. Perfil de riesgo: salvarse siempre primero con 0,1-0,5% negativo y no aparecer nunca arriba en las fases positivas -> 2% a 15% en la final (Nicolas Grosman 2%, Dario 0,5% positivo, Selva 2,9%, Eugenia 15,7%). En cambio los muy rechazados pueden rendir bien en positivo (Furia 30,5%, Luz Tito 25,5%): el voto positivo premia PROTAGONISMO.",
+  "tato_2025": "1º en las fases positivas (32,4% entre 8; 29,8% entre 11) y bajo rechazo -> gano con 62,8%.",
+  "mascia_2024": "bajo rechazo pero SIN buena senal positiva temprana (9º de 10 en su unica fase positiva) y aun asi gano con 56,2%: la senal positiva temprana informa pero no cierra.",
+  "finales": [
+   {
+    "edicion": "GH 2024",
+    "reparto": {
+     "Bautista Mascia": 56.2,
+     "Emmanuel Vich": 43.8,
+     "Nicolás Grosman": 2.0
+    }
+   },
+   {
+    "edicion": "GH 2025",
+    "reparto_3": {
+     "Tato Algorta": 48.2,
+     "Ulises Apóstolo": 26.4,
+     "Luz Tito": 25.3
+    },
+    "mano_a_mano": {
+     "Tato Algorta": 62.8,
+     "Ulises Apóstolo": 37.2
+    },
+    "entre_4": {
+     "Eugenia Ruiz": 15.7
+    }
+   }
+  ]
+ }
+}

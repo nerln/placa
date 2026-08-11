@@ -1,0 +1,2412 @@
+<title>Gran Hermano: Generación Dorada. Ganadores y estadisticas.</title>
+<!--__META__-->
+<!--__DATOS_SRC__-->
+<style>
+/*__FUENTES__*/
+/* ==========================================================================
+   Mesa de pronóstico · Gran Hermano: Generación Dorada
+   Escrita para el teléfono primero: las @media sólo agregan, nunca corrigen.
+
+   Tema claro, a propósito. La versión anterior era negro con dorado, que es
+   exactamente el aspecto por defecto de cualquier interfaz generada; el fondo
+   casi negro con un acento brillante encima no era una decisión, era el molde.
+   Acá el papel es frío y los dos únicos colores fuertes significan algo:
+
+       rojo  = rechazo   (el voto para eliminar, μ)
+       azul  = apoyo     (el voto para salvar, ψ)
+
+   Son las dos escalas del modelo. Aparecen siempre con el mismo sentido, en el
+   texto y en los gráficos, así el color se puede leer sin leyenda.
+   Par validado para daltonismo: ΔE 18,6 en deuteranopía, 29,0 en visión normal.
+   ========================================================================== */
+/* ==========================================================================
+   Dos temas, no uno. La página sigue al sistema y respeta el interruptor del
+   visor: prefers-color-scheme cubre la preferencia del aparato y el atributo
+   data-theme, que el visor estampa en la raíz, gana en los dos sentidos.
+
+   El oscuro no es el claro invertido. Los dos colores con significado se
+   volvieron a elegir contra su propia superficie:
+
+       claro    rechazo #B3122F   apoyo #0070A3   sobre papel #EEF0F3
+       oscuro   rechazo #E1526B   apoyo #3D96CC   sobre carbón #12141A
+
+   Los dos pares pasan las mismas puertas: banda de luminosidad, piso de croma,
+   separación para daltonismo (ΔE 18,6 y 16,0 en deuteranopía) y contraste
+   contra su fondo. Para texto chico hay una variante más clara de cada uno,
+   porque un color que sirve para una barra no siempre sirve para una palabra.
+   ========================================================================== */
+:root{
+  color-scheme: light dark;
+  --papel:#EEF0F3;
+  --sup:#FFFFFF;
+  --sup2:#F7F8FA;
+  --sup3:#E7EAEE;
+  --tinta:#14161A;
+  --tinta2:#494F58;
+  --tinta3:#606874;
+  --linea:rgba(20,22,26,.16);
+  --linea2:rgba(20,22,26,.08);
+  --rechazo:#B3122F;
+  --rechazo-txt:#B3122F;
+  --rechazo-suave:#FBE9EC;
+  --apoyo:#0070A3;
+  --apoyo-txt:#0070A3;
+  --apoyo-suave:#E4F1F8;
+  --sombra-tt:#14161A;
+  --tt-txt:#FFFFFF;
+  --sobre-fuerte:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])){
+    --papel:#12141A;
+    --sup:#1C202A;
+    --sup2:#232833;
+    --sup3:#2C3341;
+    --tinta:#F0F2F5;
+    --tinta2:#B6BDC9;
+    --tinta3:#9BA4B3;
+    --linea:rgba(240,242,245,.18);
+    --linea2:rgba(240,242,245,.10);
+    --rechazo:#E1526B;
+    --rechazo-txt:#F58BA0;
+    --rechazo-suave:#331C24;
+    --apoyo:#3D96CC;
+    --apoyo-txt:#8FCAED;
+    --apoyo-suave:#183241;
+    --sombra-tt:#2C3341;
+    --tt-txt:#F0F2F5;
+    --sobre-fuerte:#0B0D11;
+  }
+}
+:root[data-theme="dark"]{
+  --papel:#12141A;
+  --sup:#1C202A;
+  --sup2:#232833;
+  --sup3:#2C3341;
+  --tinta:#F0F2F5;
+  --tinta2:#B6BDC9;
+  --tinta3:#9BA4B3;
+  --linea:rgba(240,242,245,.18);
+  --linea2:rgba(240,242,245,.10);
+  --rechazo:#E1526B;
+  --rechazo-txt:#F58BA0;
+  --rechazo-suave:#331C24;
+  --apoyo:#3D96CC;
+  --apoyo-txt:#8FCAED;
+  --apoyo-suave:#183241;
+  --sombra-tt:#2C3341;
+  --tt-txt:#F0F2F5;
+  --sobre-fuerte:#0B0D11;
+}
+:root[data-theme="light"]{
+  --papel:#EEF0F3;
+  --sup:#FFFFFF;
+  --sup2:#F7F8FA;
+  --sup3:#E7EAEE;
+  --tinta:#14161A;
+  --tinta2:#494F58;
+  --tinta3:#606874;
+  --linea:rgba(20,22,26,.16);
+  --linea2:rgba(20,22,26,.08);
+  --rechazo:#B3122F;
+  --rechazo-txt:#B3122F;
+  --rechazo-suave:#FBE9EC;
+  --apoyo:#0070A3;
+  --apoyo-txt:#0070A3;
+  --apoyo-suave:#E4F1F8;
+  --sombra-tt:#14161A;
+  --tt-txt:#FFFFFF;
+  --sobre-fuerte:#FFFFFF;
+}
+:root{
+  --marca:#14161A;
+  --sal:cubic-bezier(0.16, 1, 0.3, 1);
+  --ui:cubic-bezier(0.25, 1, 0.5, 1);
+  --t-xs:13.5px; --t-sm:15px; --t-base:17px; --t-md:18px;
+  --t-lg:clamp(19px, 4.6vw, 21px);
+  --t-h2:clamp(25px, 6.8vw, 34px);
+  --t-h1:clamp(34px, 9.6vw, 62px);
+  --t-etq:12px; --tr-etq:.09em;
+  --r-sm:3px; --r-md:4px;
+  --ancho:1180px;
+}
+
+*{box-sizing:border-box}
+figure{margin:0}
+html{background:var(--papel); -webkit-text-size-adjust:100%}
+body{
+  margin:0; color:var(--tinta); background:var(--papel);
+  font-family:"Atkinson",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:var(--t-base); line-height:1.6; -webkit-font-smoothing:antialiased;
+  position:relative; overflow-x:hidden;
+}
+.wrap{width:100%; max-width:var(--ancho); margin:0 auto; padding:0 16px 72px; position:relative}
+.tit{font-family:"Archivo",-apple-system,"Segoe UI",sans-serif; font-weight:700;
+  letter-spacing:-.018em; font-feature-settings:"tnum" 1}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"Roboto Mono",monospace; font-variant-numeric:tabular-nums}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--apoyo); outline-offset:3px; border-radius:2px}
+
+[data-anim]{opacity:1; transform:none}
+@media (prefers-reduced-motion: no-preference){
+  [data-anim]{opacity:0; transform:translateY(20px);
+    transition:opacity .55s var(--sal), transform .55s var(--sal)}
+  [data-anim].visible{opacity:1; transform:none}
+  [data-cascada] > *{opacity:0; transform:translateY(14px);
+    transition:opacity .45s var(--sal), transform .45s var(--sal)}
+  [data-cascada].visible > *{opacity:1; transform:none; transition-delay:calc(var(--i,0) * 60ms)}
+}
+
+/* ---------- cabecera ---------- */
+header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
+.marca{display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap}
+.marca .txt{font-size:var(--t-xs); color:var(--tinta3); line-height:1.45}
+.marca .txt b{display:block; color:var(--tinta); font-family:"Archivo",sans-serif; font-weight:700;
+  font-size:var(--t-etq); letter-spacing:.1em; text-transform:uppercase}
+.cinta{
+  font-size:var(--t-xs); color:var(--sobre-fuerte); background:var(--rechazo);
+  padding:5px 11px; border-radius:2px; font-weight:700; letter-spacing:.01em;
+}
+h1{font-family:"Archivo",sans-serif; font-size:var(--t-h1); line-height:1.02; margin:0 0 14px;
+  font-weight:700; letter-spacing:-.028em; text-wrap:balance}
+h1 em{font-style:normal; color:var(--rechazo-txt)}
+.bajada{max-width:60ch; color:var(--tinta2); font-size:var(--t-lg); margin:0; line-height:1.5}
+
+/* ---------- veredicto ---------- */
+.veredicto{margin-top:24px; background:var(--sup); border:2px solid var(--tinta); border-radius:var(--r-md); overflow:hidden}
+.vtop{padding:22px 18px 18px}
+.vlabel{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.1em;
+  text-transform:uppercase; color:var(--tinta3); font-weight:700; margin-bottom:8px}
+.vnom{font-family:"Archivo",sans-serif; font-size:clamp(26px,7.6vw,46px); line-height:1.04;
+  font-weight:700; letter-spacing:-.026em; margin:0}
+.vmeta{color:var(--tinta2); font-size:var(--t-sm); margin:12px 0 0; max-width:54ch; line-height:1.55}
+.vprob{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-top:16px;
+  padding-top:16px; border-top:1px solid var(--linea2)}
+.vprob .big{font-family:"Archivo",sans-serif; font-size:clamp(48px,15vw,78px); line-height:.86;
+  font-weight:700; letter-spacing:-.04em; font-variant-numeric:tabular-nums}
+.vprob .sub{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5}
+.vbar{display:flex; height:8px; background:var(--sup3)}
+.vbar i{display:block; height:100%}
+.aviso{display:flex; gap:10px; padding:14px 18px; background:var(--sup2);
+  border-top:1px solid var(--linea2); font-size:var(--t-sm); color:var(--tinta2); line-height:1.55}
+.aviso b{color:var(--tinta)}
+
+/* ---------- secciones ---------- */
+section{margin-top:52px}
+h2{font-family:"Archivo",sans-serif; font-size:var(--t-h2); font-weight:700; margin:0;
+  letter-spacing:-.022em; line-height:1.1; text-wrap:balance}
+.eyebrow{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.1em;
+  text-transform:uppercase; color:var(--rechazo-txt); font-weight:700; margin-bottom:8px}
+.sub{color:var(--tinta2); margin:12px 0 20px; max-width:68ch; font-size:var(--t-base); line-height:1.55}
+h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; margin:24px 0 10px; letter-spacing:-.01em}
+.tarjeta{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); padding:18px 16px}
+
+/* ---------- placa ---------- */
+.placa{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md);
+  padding:18px 14px; position:relative}
+.placa-cab{font-size:var(--t-xs); color:var(--tinta3); margin-bottom:16px; line-height:1.5}
+.placa-cab b{color:var(--rechazo-txt)}
+.nominados{display:flex; flex-direction:column; gap:0}
+.nom-card{display:grid; grid-template-columns:28px minmax(0,1fr) 56px; gap:10px; align-items:center;
+  padding:11px 2px; border-top:1px solid var(--linea2);
+  transition:opacity .45s var(--ui), background .3s var(--ui)}
+.nom-card:first-child{border-top:0}
+.nom-card .nm{font-weight:700; font-size:var(--t-sm)}
+.nom-card .pais{font-size:var(--t-xs); color:var(--tinta3)}
+.nom-card .pct{font-family:"Archivo",sans-serif; font-weight:700; font-size:19px;
+  text-align:right; font-variant-numeric:tabular-nums; color:var(--tinta2)}
+.nom-card.alto .pct{color:var(--rechazo-txt)}
+.nom-card .medidor{grid-column:2 / -1; height:6px; background:var(--sup3); border-radius:3px; overflow:hidden; margin-top:6px}
+.nom-card .medidor i{display:block; height:100%; background:var(--tinta3); border-radius:3px;
+  width:0; transition:width .8s var(--sal)}
+.nom-card.alto .medidor i{background:var(--rechazo)}
+.nom-card .veredicto-txt{grid-column:2 / -1; font-size:var(--t-xs); color:var(--tinta3);
+  letter-spacing:.06em; text-transform:uppercase; font-weight:700; height:0; opacity:0;
+  transition:opacity .3s var(--ui)}
+.nom-card.dicho .veredicto-txt, .nom-card.turno .veredicto-txt, .nom-card.duelo .veredicto-txt{height:auto; opacity:1}
+.nom-card.duelo .veredicto-txt{color:var(--rechazo-txt)}
+.placa.revelando .nom-card{opacity:.3}
+.placa.revelando .nom-card.dicho{opacity:.45}
+.placa.revelando .nom-card.turno{opacity:1; background:var(--apoyo-suave)}
+.placa.revelando .nom-card.duelo{opacity:1; background:var(--rechazo-suave)}
+
+/* ---------- controles ---------- */
+.btn{font:inherit; font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-xs);
+  letter-spacing:.02em; cursor:pointer; background:var(--sup); color:var(--tinta);
+  border:1.5px solid var(--tinta); padding:12px 18px; min-height:46px; border-radius:var(--r-sm);
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  transition:background .16s var(--ui), color .16s var(--ui)}
+.btn:hover{background:var(--tinta); color:var(--papel)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.4; cursor:default}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px}
+.chip{font:inherit; font-size:var(--t-xs); padding:10px 13px; min-height:44px; border-radius:var(--r-sm);
+  cursor:pointer; background:var(--sup); color:var(--tinta2); border:1px solid var(--linea);
+  display:inline-flex; align-items:center; transition:.14s var(--ui)}
+.chip:hover{border-color:var(--tinta); color:var(--tinta)}
+.chip[aria-pressed="true"]{background:var(--tinta); border-color:var(--tinta); color:var(--papel); font-weight:700}
+.nota-escenario{font-size:var(--t-sm); color:var(--tinta2); margin:0 0 16px; min-height:3em; line-height:1.55}
+
+/* ---------- ranking ---------- */
+.board{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); overflow:hidden}
+.fila{display:grid; grid-template-columns:22px 26px minmax(0,1fr) 56px;
+  grid-template-areas:"pos foto nom pct" ". . barra barra";
+  gap:5px 9px; align-items:center; padding:10px 12px; border-top:1px solid var(--linea2)}
+.fila:first-child{border-top:0}
+.fila:hover{background:var(--sup2)}
+.fila.top{background:var(--sup2); box-shadow:inset 3px 0 0 var(--tinta)}
+.fila > .pos{grid-area:pos} .fila > .marco{grid-area:foto}
+.fila > .nom{grid-area:nom} .fila > .barra{grid-area:barra}
+.fila > .cel-gana{grid-area:pct} .fila > .cel-final{display:none}
+.pos{color:var(--tinta3); font-size:var(--t-xs); text-align:right; font-variant-numeric:tabular-nums}
+.nom .a{font-weight:700; font-size:var(--t-sm)}
+.nom .b{font-size:var(--t-xs); color:var(--tinta3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.barra{height:10px; background:var(--sup3); border-radius:2px; position:relative; overflow:hidden}
+.barra i{position:absolute; left:0; top:0; bottom:0; background:var(--tinta); border-radius:0 2px 2px 0}
+.fila.top .barra i{background:var(--rechazo)}
+.cel{font-size:var(--t-sm); text-align:right; color:var(--tinta2); font-variant-numeric:tabular-nums}
+.cel.fuerte{color:var(--tinta); font-weight:700; font-family:"Archivo",sans-serif}
+.cabecera-fila{display:none}
+
+/* ---------- figuras ---------- */
+.figura{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); padding:14px 12px 10px}
+.figura figcaption{font-size:var(--t-xs); color:var(--tinta3); margin-top:12px; line-height:1.6}
+.scroll-x{overflow-x:auto; -webkit-overflow-scrolling:touch; min-width:0; max-width:100%}
+svg{display:block; max-width:100%; height:auto}
+.lienzo{position:relative; width:100%; aspect-ratio:1/1; max-height:76vh; touch-action:pan-y}
+.lienzo canvas{width:100%; height:100%; display:block}
+.mandos{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:12px}
+.pista{font-size:var(--t-xs); color:var(--tinta3); line-height:1.45}
+.clave{display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:10px; font-size:var(--t-xs); color:var(--tinta3)}
+.clave span{display:inline-flex; align-items:center; gap:7px}
+.clave i{width:11px; height:11px; border-radius:2px; flex:none}
+.clave i.r{background:var(--rechazo)} .clave i.a{background:var(--apoyo)}
+
+.g2, .g3, .porque{display:grid; grid-template-columns:minmax(0,1fr); gap:12px}
+.g2 > *, .g3 > *, .porque > *, .figura, .tarjeta, .dato, .pq{min-width:0}
+.dato{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); padding:16px}
+.dato .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.09em;
+  text-transform:uppercase; color:var(--tinta3); font-weight:700}
+.dato .v{font-family:"Archivo",sans-serif; font-size:36px; line-height:1.05; margin:8px 0 6px;
+  letter-spacing:-.03em; font-weight:700; font-variant-numeric:tabular-nums}
+.dato .d{font-size:var(--t-sm); color:var(--tinta2); line-height:1.55}
+
+/* ---------- pasos ---------- */
+.paso{display:grid; grid-template-columns:30px minmax(0,1fr); gap:12px; padding:18px 0; border-top:1px solid var(--linea2)}
+.paso:first-of-type{border-top:0}
+.paso .n{font-family:"Archivo",sans-serif; font-size:var(--t-sm); color:var(--papel);
+  background:var(--tinta); width:26px; height:26px; display:grid; place-items:center;
+  font-weight:700; border-radius:2px}
+.paso .paso-t{margin:0 0 8px; font-size:var(--t-md); font-weight:700}
+.paso p{margin:0 0 10px; color:var(--tinta2); font-size:var(--t-sm); line-height:1.6}
+.paso p:last-child{margin-bottom:0}
+.formula{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:var(--t-xs);
+  background:var(--sup2); border-left:3px solid var(--tinta);
+  padding:12px 14px; margin:12px 0; color:var(--tinta2); overflow-x:auto; white-space:pre; line-height:1.65}
+
+table{border-collapse:collapse; width:100%; font-size:var(--t-xs)}
+th,td{padding:9px 10px; text-align:right; border-bottom:1px solid var(--linea2); white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.06em;
+  text-transform:uppercase; color:var(--tinta3); border-bottom:1.5px solid var(--tinta); font-weight:700}
+tbody tr:hover{background:var(--sup2)}
+td.destacado{color:var(--rechazo-txt); font-weight:700}
+#t-sens th:first-child, #t-sens td:first-child{position:sticky; left:0; background:var(--sup); z-index:1;
+  box-shadow:1px 0 0 var(--linea)}
+#t-sens tbody tr:hover td:first-child{background:var(--sup2)}
+
+.pill{display:inline-block; font-size:var(--t-xs); padding:2px 8px; border-radius:2px;
+  background:var(--sup3); color:var(--tinta2)}
+.pill.riesgo{background:var(--rechazo-suave); color:var(--rechazo-txt); font-weight:700}
+.pill.oro{background:var(--apoyo-suave); color:var(--apoyo-txt); font-weight:700}
+
+ul.limpia{margin:0; padding-left:18px; color:var(--tinta2); font-size:var(--t-sm); line-height:1.6}
+ul.limpia li{margin:9px 0}
+ul.limpia b{color:var(--tinta)}
+
+/* ---------- por qué ---------- */
+.pq{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); padding:16px}
+.pq .cab{display:flex; align-items:baseline; gap:9px; flex-wrap:wrap; margin-bottom:8px}
+.pq .cab .n{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700}
+.pq .cab .p{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700;
+  color:var(--rechazo-txt); font-variant-numeric:tabular-nums}
+.pq .ejes{display:flex; gap:6px; margin-bottom:9px; flex-wrap:wrap}
+.pq .razon{font-size:var(--t-sm); color:var(--tinta2); margin:0 0 9px; line-height:1.55}
+.pq .espejo{font-size:var(--t-xs); color:var(--tinta3); border-left:2px solid var(--linea);
+  padding-left:11px; line-height:1.6}
+.pq .espejo b{color:var(--tinta2)}
+
+/* ---------- salidas ---------- */
+.salida{padding:10px 0; border-top:1px solid var(--linea2)}
+.salida-cab{display:flex; gap:9px; align-items:center; flex-wrap:wrap}
+.salida .fecha{font-size:var(--t-xs); color:var(--tinta3); font-variant-numeric:tabular-nums}
+.salida .quien{font-weight:700; font-size:var(--t-sm)}
+.salida-det{margin:4px 0 0; font-size:var(--t-xs); color:var(--tinta3); line-height:1.5}
+
+/* ---------- animaciones ---------- */
+.anim{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); padding:12px}
+.anim-tabs{display:flex; gap:5px; overflow-x:auto; padding-bottom:2px; margin-bottom:10px; scrollbar-width:none}
+.anim-tabs::-webkit-scrollbar{display:none}
+.anim-tab{font:inherit; font-size:var(--t-xs); padding:10px 13px; min-height:44px; white-space:nowrap;
+  background:var(--sup); color:var(--tinta3); border:1px solid var(--linea); border-radius:var(--r-sm);
+  cursor:pointer; flex:none; transition:.14s var(--ui)}
+.anim-tab:hover{color:var(--tinta); border-color:var(--tinta)}
+.anim-tab[aria-selected="true"]{background:var(--tinta); color:var(--sup); border-color:var(--tinta); font-weight:700}
+.anim-lienzo{position:relative; width:100%; aspect-ratio:1/1; max-height:76vh}
+.anim-lienzo canvas{width:100%; height:100%; display:block}
+.anim-mandos{display:flex; align-items:center; gap:10px; margin-top:10px}
+.anim-play{padding:0; width:50px; min-width:50px; height:46px; min-height:46px; font-size:14px}
+.anim-barra{flex:1; min-width:0; appearance:none; -webkit-appearance:none; height:34px; background:transparent; cursor:pointer}
+.anim-barra::-webkit-slider-runnable-track{height:4px; border-radius:2px; background:var(--sup3)}
+.anim-barra::-moz-range-track{height:4px; border-radius:2px; background:var(--sup3)}
+.anim-barra::-webkit-slider-thumb{-webkit-appearance:none; width:18px; height:18px; border-radius:50%;
+  background:var(--tinta); margin-top:-7px}
+.anim-barra::-moz-range-thumb{width:18px; height:18px; border-radius:50%; background:var(--tinta); border:0}
+.anim-t{font-size:var(--t-xs); color:var(--tinta3); min-width:42px; text-align:right; font-variant-numeric:tabular-nums}
+.anim-pie{font-size:var(--t-xs); color:var(--tinta3); margin:10px 0 0; line-height:1.55}
+
+
+/* ---------- simulador ---------- */
+.sim{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); padding:16px}
+.sim-mandos{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px}
+.sim-cuerpo{display:grid; grid-template-columns:minmax(0,1fr); gap:18px}
+.sim-traza{margin:0; padding:0; list-style:none; font-size:var(--t-xs); min-height:120px}
+.sim-traza li{display:grid; grid-template-columns:56px minmax(0,1fr); gap:9px; padding:6px 0;
+  border-bottom:1px solid var(--linea2); animation:entra .3s var(--sal)}
+.sim-traza li .g{color:var(--tinta3); font-variant-numeric:tabular-nums}
+.sim-traza li b{color:var(--rechazo-txt)}
+.sim-traza li.final{grid-template-columns:1fr; background:var(--apoyo-suave);
+  padding:9px 10px; border-radius:var(--r-sm); border:0; margin-top:6px}
+.sim-traza li.final b{color:var(--apoyo-txt)}
+@keyframes entra{from{opacity:0; transform:translateY(-4px)}to{opacity:1; transform:none}}
+.sim-cuenta{font-size:var(--t-xs); color:var(--tinta3); margin:0 0 8px}
+.sim-fila{display:grid; grid-template-columns:70px minmax(0,1fr) 52px; gap:9px; align-items:center; padding:3px 0}
+.sim-fila .n{font-size:var(--t-xs); font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.sim-fila .b{height:10px; background:var(--sup3); border-radius:2px; overflow:hidden}
+.sim-fila .b i{display:block; height:100%; background:var(--tinta2); transition:width .25s linear}
+.sim-fila.lider .b i{background:var(--rechazo)}
+.sim-fila .v{font-size:var(--t-xs); text-align:right; font-variant-numeric:tabular-nums; color:var(--tinta2)}
+.sim-fila.lider .v{color:var(--rechazo-txt); font-weight:700}
+.ficha{background:var(--sup2); border-radius:var(--r-sm); padding:14px; margin-top:16px}
+.ficha h4{margin:0 0 10px; font-family:"Archivo",sans-serif; font-size:var(--t-sm); font-weight:700}
+/* La regla general de las tablas alinea a la derecha y prohíbe el corte de
+   línea, que es lo que quieren las tablas de cifras. Esta no es una de esas:
+   sus valores son frases, y con nowrap la fila más larga («14 puntos de
+   nominación en las últimas 4 galas») estiraba la tabla más allá del ancho del
+   teléfono y se salía de la tarjeta. Aquí las filas se apilan: el rótulo
+   arriba, el valor debajo, y solo vuelven a ser dos columnas cuando hay sitio. */
+.ficha table{font-size:var(--t-xs); width:100%; display:block}
+.ficha tbody{display:block}
+.ficha tr{display:block; padding:9px 0; border-bottom:1px solid var(--linea2)}
+.ficha tr:last-child{border-bottom:0}
+.ficha td{display:block; padding:0; text-align:left; white-space:normal;
+  border:0; overflow-wrap:anywhere; line-height:1.5}
+/* Sin versalitas: en mayúsculas la μ del rechazo se convierte en una M latina
+   y la ψ del apoyo pierde el sentido, que es justo lo que estos rótulos nombran. */
+.ficha td:first-child{font-family:"Archivo",sans-serif; font-size:var(--t-xs);
+  font-weight:700; color:var(--tinta3); margin-bottom:4px; width:auto}
+.ficha td:last-child{color:var(--tinta2)}
+.ficha td b{color:var(--tinta); font-variant-numeric:tabular-nums}
+@media (min-width:560px){
+  .ficha tr{display:grid; grid-template-columns:minmax(0,15em) minmax(0,1fr);
+    gap:14px; align-items:baseline}
+  .ficha td:first-child{margin-bottom:0}
+}
+@media (min-width:800px){ .sim-cuerpo{grid-template-columns:1.15fr 1fr; gap:24px} }
+
+/* ---------- galas ---------- */
+.gala-fila{padding:10px 0; border-top:1px solid var(--linea2)}
+.gala-cab{display:flex; justify-content:space-between; font-size:var(--t-xs); color:var(--tinta3);
+  margin-bottom:6px; gap:10px; flex-wrap:wrap}
+.gala-cab b{color:var(--tinta2)}
+.gala-barra{display:flex; height:20px; border-radius:2px; overflow:hidden; gap:1px}
+
+/* ---------- bootstrap ---------- */
+.boot-fila{display:grid; grid-template-columns:74px minmax(0,1fr); gap:9px; align-items:center;
+  padding:8px 0; border-top:1px solid var(--linea2)}
+.boot-fila:first-child{border-top:0}
+.boot-nom{font-size:var(--t-sm); font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.boot-pista{position:relative; height:24px}
+.boot-rango{position:absolute; top:50%; height:7px; margin-top:-3.5px; border-radius:4px; background:var(--sup3)}
+.boot-media{position:absolute; top:50%; width:10px; height:10px; margin:-5px 0 0 -5px;
+  border-radius:50%; background:var(--tinta)}
+.boot-fav{font-size:var(--t-xs); color:var(--tinta3); white-space:nowrap}
+.boot-fav.destaca{color:var(--rechazo-txt); font-weight:700}
+.boot-eje{display:flex; justify-content:space-between; font-size:var(--t-xs); color:var(--tinta3);
+  margin-left:83px; padding-bottom:5px; border-bottom:1px solid var(--linea2)}
+
+footer{margin-top:52px; padding-top:20px; border-top:2px solid var(--tinta); color:var(--tinta3);
+  font-size:var(--t-xs); line-height:1.65}
+footer p{max-width:84ch}
+.tt{position:fixed; pointer-events:none; opacity:0; transition:opacity .1s; z-index:50;
+  background:var(--sombra-tt); color:var(--tt-txt); border:1px solid var(--linea);
+  border-radius:var(--r-sm); padding:10px 12px;
+  font-size:var(--t-xs); max-width:min(280px,84vw); line-height:1.5}
+.tt b{display:block; font-size:var(--t-sm); margin-bottom:3px; color:var(--tt-txt)}
+.tt .mono{color:var(--tt-txt)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+
+/* ---------- firma ---------- */
+.firma{display:flex; flex-wrap:wrap; gap:14px 24px; justify-content:space-between;
+  align-items:flex-start; padding:0 0 18px; margin-bottom:18px;
+  border-bottom:1px solid var(--linea)}
+.firma-quien{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-md);
+  color:var(--tinta); letter-spacing:-.01em}
+.firma-que{font-size:var(--t-xs); color:var(--tinta3); max-width:44ch; margin-top:3px;
+  line-height:1.5}
+.firma-enlaces{display:flex; gap:8px; flex-wrap:wrap}
+.firma-enlaces a{font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
+  padding:8px 12px; min-height:38px; display:inline-flex; align-items:center;
+  border:1px solid var(--linea); border-radius:var(--r-sm); color:var(--tinta);
+  text-decoration:none; background:var(--sup)}
+.firma-enlaces a:hover{border-color:var(--tinta)}
+
+/* ---------- las publicaciones incrustadas de verdad ----------
+   El widget de X reemplaza el blockquote por un iframe propio. Hasta que eso
+   pasa -y para siempre, si alguien bloquea platform.twitter.com, que es medio
+   internet- lo que se ve es este blockquote, y tiene que sostenerse solo: cita
+   con su autor, su fecha y su enlace. Por eso se estiliza el estado de reposo
+   y no solo el hidratado. */
+.pruebas{display:grid; gap:18px; grid-template-columns:1fr}
+@media (min-width:820px){.pruebas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.prueba{margin:0; display:flex; flex-direction:column; gap:10px; min-width:0}
+.prueba-que{font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
+  letter-spacing:.06em; text-transform:uppercase; color:var(--tinta3)}
+.tw-real{min-width:0}
+.tw-real .twitter-tweet{margin:0 !important; border:1px solid var(--linea);
+  border-radius:var(--r-sm); background:var(--sup); padding:16px 18px;
+  font-family:"Archivo",sans-serif; font-size:var(--t-sm); line-height:1.55;
+  color:var(--tinta)}
+.tw-real .twitter-tweet p{margin:0 0 10px}
+.tw-real .twitter-tweet a{color:var(--tinta3); text-decoration:none;
+  border-bottom:1px solid var(--linea)}
+.tw-real .twitter-tweet a:hover{color:var(--tinta); border-color:var(--tinta)}
+.tw-real iframe{max-width:100% !important}
+.tw-nota{font-size:var(--t-xs); color:var(--tinta3); margin:0; line-height:1.55}
+.tw-nota b{color:var(--tinta2)}
+
+/* ---------- termómetro de X y zodíaco ---------- */
+.trend{display:flex; flex-direction:column; border-top:1px solid var(--linea);
+  border-bottom:1px solid var(--linea)}
+.trend-fila{display:grid; grid-template-columns:34px minmax(0,1fr) auto; gap:10px;
+  padding:10px 0; border-top:1px solid var(--linea2); align-items:baseline}
+.trend-fila:first-child{border-top:0}
+.trend-fila .pos{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm);
+  color:var(--tinta3); font-variant-numeric:tabular-nums}
+.trend-fila.top .pos{color:var(--rechazo-txt)}
+.trend-fila .txt{font-size:var(--t-sm); font-weight:700; word-break:break-word}
+.trend-fila .txt small{display:block; font-weight:400; font-size:var(--t-xs);
+  color:var(--tinta3); line-height:1.45; margin-top:2px}
+.trend-fila .dur{font-size:var(--t-xs); color:var(--tinta3); white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.signos{display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:1px;
+  background:var(--linea2); border:1px solid var(--linea2)}
+.signo{background:var(--sup); padding:11px 12px}
+.signo .s{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.06em;
+  text-transform:uppercase; color:var(--tinta3); font-weight:700}
+.signo .q{font-weight:700; font-size:var(--t-sm); margin-top:2px}
+.signo .p{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-md);
+  font-variant-numeric:tabular-nums; margin-top:4px}
+.signo.falta{background:var(--sup2)}
+.signo.falta .q{color:var(--tinta3); font-weight:400; font-size:var(--t-xs); line-height:1.4}
+
+/* ---------- qué movió la gala ---------- */
+.evo{border:1px solid var(--linea); border-radius:var(--r-sm); background:var(--sup); overflow:hidden}
+.evo-cab{display:grid; grid-template-columns:minmax(0,1fr) 62px 62px 52px; gap:8px;
+  padding:10px 13px; background:var(--sup2); border-bottom:1.5px solid var(--tinta);
+  font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.05em;
+  text-transform:uppercase; color:var(--tinta3); font-weight:700}
+.evo-cab div:nth-child(n+2){text-align:right}
+.evo-fila{display:grid; grid-template-columns:minmax(0,1fr) 62px 62px 52px; gap:8px;
+  padding:10px 13px; border-top:1px solid var(--linea2); align-items:baseline}
+.evo-fila:first-of-type{border-top:0}
+.evo-fila .q{font-weight:700; font-size:var(--t-sm); white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis}
+.evo-fila .q i{font-style:normal; font-weight:400; color:var(--tinta3); font-size:var(--t-xs)}
+.evo-fila .v{font-family:"Archivo",sans-serif; font-variant-numeric:tabular-nums;
+  text-align:right; font-size:var(--t-sm)}
+.evo-fila .v.ahora{font-weight:700}
+.evo-fila .d{font-family:"Archivo",sans-serif; font-variant-numeric:tabular-nums;
+  text-align:right; font-size:var(--t-xs); color:var(--tinta3)}
+.evo-fila .d.sube{color:var(--apoyo-txt); font-weight:700}
+.evo-fila .d.baja{color:var(--rechazo-txt); font-weight:700}
+.evo-fila.giro{background:var(--sup2)}
+.evo-pie{font-size:var(--t-xs); color:var(--tinta3); padding:11px 13px;
+  border-top:1px solid var(--linea); line-height:1.55}
+
+/* ---------- las mediciones, con forma de publicación ---------- */
+.posts{display:grid; grid-template-columns:minmax(0,1fr); gap:12px; margin:14px 0 0;
+  align-items:start}
+.post{border:1px solid var(--linea); border-radius:var(--r-sm); background:var(--sup);
+  padding:13px 14px; text-decoration:none; color:inherit; display:block}
+.post:hover{border-color:var(--tinta3)}
+.post-cab{display:flex; align-items:center; gap:9px; margin-bottom:10px}
+.post-av{width:32px; height:32px; border-radius:50%; flex:none; display:grid; place-items:center;
+  background:var(--sup3); font-family:"Archivo",sans-serif; font-weight:700; font-size:13px;
+  color:var(--tinta2)}
+.post-quien{min-width:0; flex:1}
+.post-quien .a{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.post-quien .b{font-size:var(--t-xs); color:var(--tinta3); white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis}
+.post-marca{flex:none; width:17px; height:17px; color:var(--tinta3)}
+.post-q{font-size:var(--t-sm); margin:0 0 10px; color:var(--tinta2)}
+.post-op{display:grid; grid-template-columns:minmax(0,1fr); gap:6px; margin-bottom:10px}
+.post-op > div{position:relative; padding:6px 9px; border-radius:3px; overflow:hidden;
+  background:var(--sup2); font-size:var(--t-xs); display:flex; justify-content:space-between;
+  gap:10px; align-items:baseline}
+.post-op i{position:absolute; inset:0 auto 0 0; background:var(--sup3); border-radius:3px}
+.post-op.lider > div:first-child i{background:color-mix(in srgb, var(--rechazo) 24%, var(--sup3))}
+.post-op span{position:relative; z-index:1}
+.post-op .v{font-family:"Archivo",sans-serif; font-weight:700; font-variant-numeric:tabular-nums}
+.post-nota{font-size:11.6px; color:var(--tinta3); line-height:1.45; margin:0 0 10px;
+  padding-left:9px; border-left:2px solid var(--linea)}
+.post-nota.abierta{border-left-color:var(--rechazo); color:var(--tinta2)}
+.post-pie{font-size:12px; color:var(--tinta3); display:flex; justify-content:space-between;
+  gap:10px; align-items:baseline; border-top:1px solid var(--linea2); padding-top:9px}
+.post-pie .ir{color:var(--tinta2); white-space:nowrap}
+/* la del modelo cierra el muro y ocupa el ancho entero: es la respuesta,
+   no una medición más de la fila */
+.post.propio{background:var(--sup2); border-color:var(--tinta); border-width:1.5px;
+  grid-column:1 / -1}
+.post.propio .post-op{grid-template-columns:minmax(0,1fr)}
+@media (min-width:700px){ .post.propio .post-op{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.post.propio .post-av{background:var(--tinta); color:var(--sup)}
+
+/* ---------- ramas: el pronóstico condicionado a la salida de esta noche --- */
+.ramas-chips{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px}
+.rama-chip{font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
+  padding:9px 12px; min-height:42px; cursor:pointer; display:inline-flex; align-items:center;
+  gap:8px; border:1px solid var(--linea); border-radius:var(--r-sm); background:var(--sup);
+  color:var(--tinta)}
+.rama-chip .p{font-variant-numeric:tabular-nums; color:var(--tinta3); font-weight:400}
+.rama-chip[aria-pressed="true"]{background:var(--tinta); border-color:var(--tinta); color:var(--sup)}
+.rama-chip[aria-pressed="true"] .p{color:var(--sup3)}
+.rama-lista{display:flex; flex-direction:column; background:var(--sup);
+  border:1px solid var(--linea); border-radius:var(--r-sm); overflow:hidden}
+/* En el teléfono el nombre se comía la mitad de la fila y salía «Charl…».
+   La barra baja a una segunda línea, igual que en el ranking de arriba, y el
+   nombre recupera el ancho entero. */
+.rama-fila{display:grid; grid-template-columns:18px minmax(0,1fr) 58px 46px;
+  grid-template-areas:"pos nom pct dl" ". barra barra barra";
+  gap:5px 9px; align-items:center; padding:10px 12px; border-top:1px solid var(--linea2);
+  will-change:transform}
+.rama-fila > .pos{grid-area:pos} .rama-fila > .n{grid-area:nom}
+.rama-fila > .rama-barra{grid-area:barra}
+.rama-fila > .pct{grid-area:pct} .rama-fila > .dl{grid-area:dl}
+@media (min-width:560px){
+  .rama-fila{grid-template-columns:20px minmax(120px,1fr) minmax(90px,2fr) 58px 50px;
+    grid-template-areas:"pos nom barra pct dl"; gap:11px}
+}
+.rama-fila:first-child{border-top:0}
+.rama-fila.fuera{opacity:.42}
+.rama-fila .n{font-weight:700; font-size:var(--t-sm); white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis}
+.rama-fila .pos{color:var(--tinta3); font-size:var(--t-xs); text-align:right;
+  font-variant-numeric:tabular-nums}
+.rama-fila .pct{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm);
+  font-variant-numeric:tabular-nums; text-align:right}
+.rama-fila .dl{font-size:var(--t-xs); font-variant-numeric:tabular-nums; text-align:right;
+  color:var(--tinta3)}
+.rama-fila .dl.sube{color:var(--apoyo-txt)} .rama-fila .dl.baja{color:var(--rechazo-txt)}
+.rama-barra{height:9px; background:var(--sup3); border-radius:2px; overflow:hidden}
+.rama-barra i{display:block; height:100%; background:var(--tinta); border-radius:2px;
+  transition:width .55s cubic-bezier(.16,1,.3,1)}
+.rama-fila.fuera .rama-barra i{background:var(--tinta3)}
+.rama-pie{font-size:var(--t-xs); color:var(--tinta2); margin:14px 0 0; line-height:1.55}
+.rama-pie b{color:var(--tinta)}
+@media (prefers-reduced-motion:reduce){ .rama-barra i{transition:none} }
+
+/* ========================== sólo se agrega ============================== */
+@media (min-width:560px){
+  /* sin estirar: si una tarjeta es mucho más alta que su vecina, la corta no
+     tiene por qué crecer hasta igualarla y dejar medio metro de vacío. */
+  .g2, .g3, .porque{grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; align-items:start}
+  .posts{grid-template-columns:repeat(2, minmax(0,1fr))}
+  .fila{grid-template-columns:22px 26px minmax(110px,1.2fr) minmax(80px,2fr) 56px;
+    grid-template-areas:"pos foto nom barra pct"}
+  .nom-card{grid-template-columns:30px minmax(0,1fr) minmax(90px,2fr) 60px;
+    grid-template-areas:"foto nom barra pct" ". ver ver ver"}
+  .nom-card > .marco{grid-area:foto} .nom-card > .datos{grid-area:nom}
+  .nom-card > .medidor{grid-area:barra; margin-top:0} .nom-card > .pct{grid-area:pct}
+  .nom-card > .veredicto-txt{grid-area:ver}
+}
+@media (min-width:800px){
+  .posts{grid-template-columns:repeat(3, minmax(0,1fr))}
+  .wrap{padding:0 24px 90px}
+  header{padding:40px 0 30px}
+  section{margin-top:70px}
+  .cinta{margin-left:auto}
+  .vtop{padding:28px 26px 22px}
+  .vprob{margin-top:20px; padding-top:20px}
+  .aviso{padding:16px 26px}
+  .placa{padding:22px 20px}
+  .tarjeta{padding:22px}
+  .figura{padding:20px 20px 12px}
+  .g3{grid-template-columns:repeat(3, minmax(0,1fr))}
+  .fila, .cabecera-fila{grid-template-columns:24px 28px minmax(130px,1.3fr) minmax(100px,2.2fr) 58px 56px;
+    grid-template-areas:"pos foto nom barra pct fin"; gap:12px; padding:10px 16px}
+  .fila > .cel-final{display:block; grid-area:fin}
+  .cabecera-fila{display:grid; font-family:"Archivo",sans-serif; font-size:var(--t-etq);
+    letter-spacing:.06em; text-transform:uppercase; color:var(--tinta3);
+    background:var(--sup2); border-bottom:1.5px solid var(--tinta); font-weight:700}
+  .cabecera-fila div:nth-child(n+5){text-align:right}
+  .paso{grid-template-columns:34px minmax(0,1fr); gap:16px}
+  .boot-fila{grid-template-columns:100px minmax(0,1fr) 88px}
+  .boot-eje{margin-left:109px; margin-right:88px}
+  .lienzo, .anim-lienzo{aspect-ratio:16/10}
+}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="marca">
+    <span class="txt"><b>Gran Hermano Argentina</b><span id="sub-marca"></span></span>
+    <span class="cinta"><i></i><span id="prox-gala"></span></span>
+  </div>
+  <h1 class="tit">¿Quién se lleva <em>los 70 millones</em>?</h1>
+  <p class="bajada">Acá no hay corazonadas de panelistas ni cuotas de casas de apuestas, entre otras cosas porque para esta edición no existe ningún mercado real. Lo único que se usó son los resultados de votación que publica Telefe cada gala, y una foto que casi nadie miró: el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio.</p>
+</header>
+
+<div class="veredicto">
+  <div class="vtop">
+    <div id="vretrato"></div>
+    <div>
+      <div class="vlabel">El pronóstico</div>
+      <h2 class="vnom serif" id="vnom"></h2>
+      <p class="vmeta" id="vmeta"></p>
+    </div>
+    <div class="vprob">
+      <div class="big num serif" id="vpct"></div>
+      <div class="sub">probabilidad de ganar<br><span id="vboot"></span></div>
+    </div>
+  </div>
+  <div class="vbar" id="vbar"></div>
+  <div class="aviso"><span style="color:var(--apoyo-txt); font-weight:700">▲</span><span id="vaviso"></span></div>
+</div>
+
+<section id="evolucion">
+  <div class="eyebrow">Qué movió la gala</div>
+  <div class="titulo"><h2 class="tit" id="tit-evo"></h2></div>
+  <p class="sub" id="sub-evo"></p>
+  <div class="evo" id="evo"></div>
+  <div class="g2" style="margin-top:16px">
+    <div class="tarjeta">
+      <div class="eyebrow">Lo que se cantó</div>
+      <div id="evo-cuotas"></div>
+      <p style="font-size:12.8px; color:var(--tinta3); margin:12px 0 0">Cuotas sobre el total
+      de la placa, no sobre el mano a mano. Son el porcentaje de gente que votó para sacar a
+      cada una.</p>
+    </div>
+    <div class="tarjeta">
+      <div class="eyebrow">Por qué se dio vuelta</div>
+      <p id="evo-explica" style="font-size:14.2px; color:var(--tinta2); margin:0"></p>
+    </div>
+  </div>
+</section>
+
+<section id="placa">
+  <div class="eyebrow">Primero</div>
+  <div class="titulo"><h2 class="tit" id="tit-placa"></h2></div>
+  <p class="sub" id="sub-placa"></p>
+  <div class="placa" id="placa">
+    <div class="foco" id="foco"></div>
+    <div class="placa-cab">Placa de nominados, con el <b>riesgo de eliminación</b> que le da el modelo</div>
+    <div class="nominados" id="nominados"></div>
+    <div style="text-align:center; margin-top:26px; position:relative">
+      <button class="btn" id="btn-revelar" type="button">
+        <span id="btn-txt">Reproducir la revelación</span>
+      </button>
+      <p style="font-size:12.4px; color:var(--tinta3); margin:12px 0 0">
+        Se salvan de menor a mayor riesgo, como en el aire. Los porcentajes son del modelo, no de Telefe: la gala todavía no se jugó.
+      </p>
+    </div>
+  </div>
+  <div class="g2" style="margin-top:20px">
+    <div class="tarjeta">
+      <div class="eyebrow">La encuesta que entra al modelo</div>
+      <p style="font-size:14.6px; color:var(--tinta2); margin-top:0">Se la calibró contra los resultados oficiales de las galas anteriores, midiendo el error en escala logit centrada dentro de cada gala.</p>
+      <div class="scroll-x"><table id="t-encuesta"></table></div>
+      <p style="font-size:13.4px; color:var(--tinta2); margin-bottom:0">Su <b>puesto 1 acierta 4 de 4</b> y se mide con un desvío de apenas 0,53 logits. Sus puestos 2 y 3 tienen un desvío tres veces mayor y un sesgo al alza: la encuesta no reproduce la concentración extrema del voto real. Por eso el modelo le hace caso en <em>a quién pone primero</em> y la ignora casi por completo en el resto del reparto.</p>
+    </div>
+    <div class="tarjeta">
+      <div class="eyebrow">Salidas</div>
+      <div id="eliminados"></div>
+      <p style="font-size:13.2px; color:var(--tinta3); margin:16px 0 0">Ya hubo 13 salidas que no pasaron por el voto: abandonos, expulsiones y evacuaciones médicas. El modelo no simula ese canal, y es por lejos la forma más probable de que este pronóstico termine equivocado.</p>
+    </div>
+  </div>
+
+  <div class="tarjeta" style="margin-top:16px">
+    <div class="eyebrow">Lo que dice cada medición</div>
+    <p style="font-size:14.6px; color:var(--tinta2); margin-top:0"><b>Y no dicen lo mismo.</b>
+    La única con historial contrastable pone a Hanssen primero; las otras dos ponen a Sol. El modelo,
+    que solo escucha a la primera, queda casi en el medio. Había una cuarta, de una cuenta de Instagram,
+    que se cayó al mirarla: no tiene post que enlazar, no publica muestra, la citó un solo medio y su
+    placa era la de antes de que Zilli entrara.</p>
+    <div class="desac" id="desacuerdo"></div>
+    <p style="font-size:12.6px; color:var(--tinta3); margin:14px 0 0">Solo la de Bongiorno entra al
+    ajuste: las otras no tienen historial que permita medirles el sesgo, y una encuesta sin calibrar no
+    es un dato, es una opinión con porcentaje. En la cena de nominados del domingo la casa se partió
+    contra los dos mismos nombres, Hanssen y Sol, que es justo donde el modelo deja el riesgo. Las
+    tarjetas están dibujadas con las cifras verificadas y llevan a la fuente: los posts de X y de
+    Instagram no se pueden incrustar acá, porque esta página no hace ni una sola petición a un
+    servidor externo.</p>
+  </div>
+</section>
+
+<section id="ramas">
+  <div class="eyebrow">Y después</div>
+  <div class="titulo"><h2 class="tit" id="tit-ramas"></h2></div>
+  <p class="sub" id="sub-ramas"></p>
+  <div class="ramas-chips" id="ramas-chips" role="group" aria-label="Quién sale esta noche"></div>
+  <div class="rama-lista" id="rama-lista"></div>
+  <p class="rama-pie" id="rama-pie"></p>
+</section>
+
+<section id="tabla">
+  <div class="eyebrow">El plantel</div>
+  <div class="titulo"><h2 class="tit">Probabilidad de ganar la edición</h2></div>
+  <p class="sub">La simulación juega lo que falta semana por semana: alguien gana el liderazgo y queda inmune, se arma la placa, sale el más votado en contra, y al final se vota al revés para elegir campeón. Los botones cambian los supuestos discutibles del modelo. Si el orden aguanta todos, el pronóstico es sólido; si se da vuelta con uno, ya sabés dónde está el punto flojo.</p>
+  <div class="chips" id="chips" role="group" aria-label="Escenario del modelo"></div>
+  <p class="nota-escenario" id="nota-escenario"></p>
+  <div class="board">
+    <div class="cabecera-fila"><div></div><div></div><div>Participante</div><div>Probabilidad de ganar</div><div>Gana</div><div>Final</div></div>
+    <div id="board"></div>
+  </div>
+</section>
+
+<section id="motor">
+  <div class="eyebrow">El hallazgo</div>
+  <div class="titulo"><h2 class="tit">Dos votaciones distintas, dos escalas distintas</h2></div>
+  <p class="sub">Toda la temporada el público paga para sacar gente. En la final paga para coronar a alguien. Suena parecido y no lo es: mirando 2024 y 2025, las dos cosas casi no correlacionan. Que nadie te quiera echar no significa que alguien te quiera adentro, y esa diferencia decide la edición.</p>
+  <figure class="figura">
+    <div class="scroll-x" id="g-plano"></div>
+    <figcaption>Hacia la derecha, quien más votos recibe para ser eliminado (μ). Hacia arriba, quien más recibe cuando se vota para salvar (ψ). El tamaño del punto es la probabilidad de ganar. Se gana en el rincón celeste de arriba a la izquierda: querido y sin que nadie te apunte. El contorno punteado marca a quienes no tienen ninguna gala con reparto completo, así que su posición horizontal es casi sólo el prior.</figcaption>
+  </figure>
+  <div class="g3" style="margin-top:20px">
+    <div class="dato"><div class="k">La trampa</div><div class="v serif">2%</div>
+      <div class="d">Lo que sacó Nicolás Grosman en la final de 2024 con un rechazo tan bajo como el del campeón. Bajo rechazo es invisibilidad, no cariño.</div></div>
+    <div class="dato"><div class="k">El contraejemplo</div><div class="v serif">30,5%</div>
+      <div class="d">Lo que sacó Juliana «Furia» en voto positivo siendo la más rechazada de su temporada. El voto positivo premia protagonismo.</div></div>
+    <div class="dato"><div class="k">Correlación medida</div><div class="v serif num" id="d-corr"></div>
+      <div class="d">Entre rechazo y apoyo positivo en esta edición. Positiva: quien molesta también moviliza. Por eso el rechazo no se resta del voto de la final.</div></div>
+  </div>
+</section>
+
+<section id="porque">
+  <div class="eyebrow">Uno por uno</div>
+  <div class="titulo"><h2 class="tit">Por qué cada uno está donde está</h2></div>
+  <p class="sub">Un porcentaje sin explicación no sirve de nada. Para cada uno va lo que lo pone ahí y a quién se parece de las dos ediciones anteriores, con lo que le pasó a esa persona. La comparación es una tipología en dos ejes, no una métrica ajustada: de 2024 y 2025 nadie publicó el reparto completo de las galas, así que lo único que se puede comparar es el perfil.</p>
+  <div class="porque" id="porque-fichas" data-anim data-cascada></div>
+  <p style="font-size:13.6px; color:var(--tinta3); margin-top:20px; max-width:78ch" id="regla-hist"></p>
+</section>
+
+<section id="animaciones">
+  <div class="eyebrow">En movimiento</div>
+  <div class="titulo"><h2 class="tit">Lo que cuesta explicar quieto</h2></div>
+  <p class="sub">Tres gráficos que se dibujan solos para mostrar de dónde sale cada número, y que después quedan quietos para poder leerlos. Se calculan acá mismo a la resolución de tu pantalla: no son video.</p>
+  <div class="anim" id="anim"></div>
+</section>
+
+
+<section id="simulador">
+  <div class="eyebrow">Probalo vos</div>
+  <h2>Corré la temporada y mirá qué pasa</h2>
+  <p class="sub">Este simulador es el modelo, corriendo acá adentro. Cada temporada sortea los parámetros dentro de su incertidumbre, arma las placas, elimina semana a semana y resuelve la final. No hay resultados guardados: lo que ves se calcula en el momento.</p>
+  <div class="sim" id="sim">
+    <div class="sim-mandos">
+      <button class="btn" id="sim-una" type="button">Correr una temporada</button>
+      <button class="btn" id="sim-mil" type="button">Correr 1.000 de golpe</button>
+      <button class="btn" id="sim-reset" type="button">Reiniciar</button>
+    </div>
+    <div class="sim-cuerpo">
+      <div>
+        <p class="sim-cuenta">Última temporada, semana por semana</p>
+        <ol class="sim-traza" id="sim-traza"></ol>
+      </div>
+      <div>
+        <p class="sim-cuenta" id="sim-cuenta">Todavía no corriste ninguna.</p>
+        <div id="sim-tally"></div>
+      </div>
+    </div>
+    <div class="ficha" id="ficha"></div>
+  </div>
+</section>
+
+<section id="tendencias">
+  <div class="eyebrow">El termómetro</div>
+  <div class="titulo"><h2 class="tit" id="tit-trend"></h2></div>
+  <p class="sub" id="sub-trend"></p>
+  <div class="trend" id="trend"></div>
+  <p style="font-size:12.6px; color:var(--tinta3); margin:12px 0 0" id="pie-trend"></p>
+  <div class="g2" style="margin-top:18px">
+    <div class="tarjeta">
+      <div class="eyebrow">Los bandos de anoche</div>
+      <p style="font-size:14.2px; color:var(--tinta2); margin:0" id="bandos"></p>
+    </div>
+    <div class="tarjeta">
+      <div class="eyebrow">El hashtag oficial</div>
+      <p style="font-size:14.2px; color:var(--tinta2); margin:0" id="oficial-trend"></p>
+    </div>
+  </div>
+</section>
+
+<section id="pruebas">
+  <div class="eyebrow">Las pruebas</div>
+  <div class="titulo"><h2 class="tit" id="tit-pruebas"></h2></div>
+  <p class="sub" id="sub-pruebas"></p>
+  <div class="pruebas" id="muro-pruebas"></div>
+  <p class="tw-nota" id="pie-pruebas" style="margin-top:16px; max-width:78ch"></p>
+</section>
+
+<section id="zodiaco">
+  <div class="eyebrow">Y ya que estamos</div>
+  <div class="titulo"><h2 class="tit">El horóscopo, hecho con la misma vara</h2></div>
+  <p class="sub" id="sub-zod"></p>
+  <div class="signos" id="signos"></div>
+  <div class="g2" style="margin-top:18px">
+    <div class="tarjeta">
+      <div class="eyebrow">Los campeones, por signo</div>
+      <div class="scroll-x"><table id="t-zod"></table></div>
+    </div>
+    <div class="tarjeta">
+      <div class="eyebrow">¿Tres acuarios es mucho?</div>
+      <p style="font-size:14.2px; color:var(--tinta2); margin:0" id="zod-coincidencia"></p>
+    </div>
+  </div>
+</section>
+
+<section id="metodo">
+  <div class="eyebrow">El método</div>
+  <div class="titulo"><h2 class="tit">El método, paso por paso</h2></div>
+  <p class="sub">Cinco etapas. Ningún número de acá abajo sale de una intuición: o es un resultado oficial de votación, o es una calibración medida contra resultados oficiales.</p>
+
+  <div class="paso"><div class="n mono">1</div><div>
+    <h3 class='paso-t'>Se descubrió que ocho galas son observaciones completas</h3>
+    <p>Telefe canta cada salvación con su porcentaje sobre el total de la placa, y recién renormaliza al 100% cuando quedan dos. Eso deja una huella que se puede comprobar con una resta: la suma de todo lo publicado, menos 100, tiene que dar exactamente lo que sumaron los salvados.</p>
+    <div class="formula" id="f-identidad"></div>
+    <p>Da exacto en 8 de las 11 galas recientes. Cuando da, sabemos que en esa placa no faltaba nadie, y entonces la gala deja de ser un dato suelto y pasa a ser el reparto completo de los votos de esa noche. Es la misma resta que corre el actualizador automático cada vez que entra una gala nueva, antes de tocar nada.</p>
+  </div></div>
+
+  <div class="paso"><div class="n mono">2</div><div>
+    <h3 class='paso-t'>El rechazo no es un rasgo fijo: la mitad es ruido semanal</h3>
+    <p>El primer intento le daba a cada persona un rechazo fijo. Se cayó a pedazos enseguida. Luana pasó del 38,45% al 0,10% en tres semanas. Emanuel saltó del 0,4% al 53,8%. Cola, del 0,5% al 68,2%. Si mirás la cuota de alguien en dos galas seguidas, la correlación es −0,13: básicamente cero.</p>
+    <div class="formula">θ(i, gala) = μ(i) + ε(i, gala)      ε ~ Normal(0, ω²)
+μ = rasgo estable · 52%          ω = 1,75 logits · 48%</div>
+    <p>Separando las dos partes y corrigiendo por ruido de muestreo, queda mitad y mitad. Un shock semanal de una desviación multiplica por 5,8 las chances de ser el elegido de la noche, que es otra forma de decir que el relato de la semana pesa tanto como quién sos. Ese mismo ω es el que define cuánta incertidumbre arrastra el pronóstico hacia adelante.</p>
+  </div></div>
+
+  <div class="paso"><div class="n mono">3</div><div>
+    <h3 class='paso-t'>La encuesta entra calibrada, no a ojo</h3>
+    <p>Cada encuesta suya se comparó contra el resultado oficial de la gala siguiente. De ahí salen un sesgo y un desvío distintos para cada posición del ranking, y con eso se pondera. Un agregador que va 4 de 4 no se puede ignorar, pero tampoco creerle el reparto entero: le acierta al blanco de la noche y le erra feo al resto. Si alguna semana no hay encuesta, el modelo corre igual con la preferencia revelada sola.</p>
+  </div></div>
+
+  <div class="paso"><div class="n mono">4</div><div>
+    <h3 class='paso-t'>El apoyo positivo sale de un ranking real, no de un prior</h3>
+    <p>En las fases de voto positivo Telefe casi nunca da porcentajes. Pero canta los salvados en orden, del más votado al menos votado, y eso es un ranking. Un ranking parcial es justo lo que come un modelo Plackett-Luce, el mismo que se usa para estimar fuerza de jugadores a partir de posiciones de llegada.</p>
+    <div class="formula">P(orden i₁ ≻ i₂ ≻ … ≻ i_k) = ∏ⱼ  e^ψ(iⱼ) ⁄ Σ_{m aún en juego} e^ψ(m)</div>
+    <p>Hay doce de esas instancias. El ancla es la gala del 16 de julio, una placa positiva con los 16 de la casa ordenados de punta a punta. El modelo la reconstruye con una correlación de rangos de 0,87, y en el fondo de la tabla no falla ni un puesto.</p>
+    <div class="scroll-x" id="t-1607" style="margin-top:14px"></div>
+  </div></div>
+
+  <div class="paso"><div class="n mono">5</div><div>
+    <h3 class='paso-t'>Se simula el tramo que falta, no se extrapola</h3>
+    <p>Cada corrida empieza sorteando los parámetros dentro de su incertidumbre, y después juega las semanas que faltan como si fuera el programa: alguien gana el liderazgo, se arma la placa según lo seguido que cae nominado cada uno, y sale el más votado en contra esa noche. Cuando quedan tres, o cuatro, se cambia el signo del voto y se define el campeón.</p>
+    <p>Y como las dos primeras quedaron pegadas, mirar el número de arriba no alcanzaba para elegir. Por eso se remuestreó toda la cadena de punta a punta: sacar y reponer evidencia, volver a estimar las dos escalas, volver a simular. La pregunta «¿a quién pongo?» se contesta con la frecuencia con la que cada una queda primera, no con la diferencia de 1,3 puntos.</p>
+  </div></div>
+</section>
+
+<section id="bootstrap">
+  <div class="eyebrow">Confianza</div>
+  <div class="titulo"><h2 class="tit" id="tit-boot"></h2></div>
+  <p class="sub">Se saca y se repone evidencia al azar, se vuelve a estimar todo y se simula de nuevo, sesenta veces. La barra es el rango del 90% central. El número de la derecha es lo que de verdad contesta la pregunta: cuántas de esas sesenta veces esa persona quedó primera.</p>
+  <figure class="figura">
+    <div class="scroll-x" id="g-boot"></div>
+    <figcaption>Ojo con los intervalos anchos. No quieren decir que esa persona sea impredecible, sino que su rechazo se estima con muy pocas galas, así que al remuestrear se queda sin datos la mitad de las veces. Es ignorancia declarada, no volatilidad.</figcaption>
+  </figure>
+</section>
+
+<section id="sensibilidad">
+  <div class="eyebrow">Sensibilidad</div>
+  <div class="titulo"><h2 class="tit">Sensibilidad a cada supuesto</h2></div>
+  <p class="sub">Cada columna cambia una decisión que se podría haber tomado distinto. Cuanto más dorada la celda, más alta la probabilidad.</p>
+  <div class="figura scroll-x"><table id="t-sens"></table></div>
+</section>
+
+<section id="datos">
+  <div class="eyebrow">Los datos</div>
+  <div class="titulo"><h2 class="tit" id="tit-galas"></h2></div>
+  <p class="sub">Cada barra es una noche entera de votación, con el reparto llevado a cuota sobre el total de la placa. Los pedacitos de la izquierda son los que se salvaron temprano. El bloque grande de la derecha es el mano a mano final.</p>
+  <div class="figura"><div id="g-galas"></div></div>
+</section>
+
+<section id="limites">
+  <div class="eyebrow">Límites</div>
+  <div class="titulo"><h2 class="tit">Límites, huecos y advertencias</h2></div>
+  <div class="g2">
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Huecos reales en los datos</h3>
+      <ul class="limpia">
+        <li><b>Nadie confirmó cuándo es la final.</b> Telefe no sacó comunicado. Circulan el 6 de septiembre, que es la versión más repetida aunque viene de una sola fuente original, y el 31 de agosto, que es hasta cuándo tienen vigencia las bases de votación. Como el modelo cuenta eliminaciones y no días de calendario, el impacto queda acotado.</li>
+        <li><b>Ni el número de finalistas ni la mecánica de la final están confirmados</b> para esta edición. Se asume lo de 2024 y 2025: tres finalistas y voto positivo. El escenario de cuatro finalistas está en la tabla de sensibilidad.</li>
+        <li><b>Hay participantes sin ninguna gala con reparto completo.</b> Su rechazo se estima casi solo con el prior y con la encuesta más reciente. Son las estimaciones más frágiles del cuadro, y el gráfico las marca con contorno punteado.</li>
+        <li><b>No existe ningún mercado de apuestas utilizable.</b> El único mercado hallado, en Manifold, tiene una sola operación y cotiza a un participante eliminado en marzo.</li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Sesgos estructurales del formato</h3>
+      <ul class="limpia">
+        <li><b>Votar cuesta plata y no hay tope.</b> Las bases de TELINFOR dicen textual que se puede participar «sin límite alguno». Un SMS son 8 votos por $429,55 y los paquetes web llegan a 140. O sea que el resultado mide cuánto gasta un fandom, no cuánta gente hay. Ninguna encuesta de intención puede captar eso, y el rating tampoco sirve de proxy.</li>
+        <li><b>Votan cinco países.</b> Argentina, Uruguay, Chile, Brasil y Paraguay. Chile, Brasil y Paraguay entraron recién esta edición; Uruguay ya votaba desde 2022.</li>
+        <li><b>Los dos últimos campeones fueron uruguayos.</b> Bautista Mascia con 56,2% y Tato Algorta con 62,8%, los dos de Montevideo, después de once campeones argentinos seguidos. Son dos casos y comparten el mismo arquetipo de outsider simpático, así que la nacionalidad bien podría ser un proxy y no la causa. Por eso va como escenario aparte y no dentro del caso base.</li>
+        <li><b>Las salidas por afuera del voto pesan más que las eliminaciones.</b> Esta edición lleva 7 abandonos, 3 expulsiones y 3 evacuaciones médicas. El modelo no simula ese canal.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="firma">
+    <div>
+      <div class="firma-quien">Eugenio Nerelli</div>
+      <div class="firma-que">Modelo, datos y página. El código está abierto: se puede
+      correr, discutir y contradecir con los mismos números.</div>
+    </div>
+    <div class="firma-enlaces">
+      <a href="https://github.com/nerln/placa">Código</a>
+      <a href="https://nerln.pages.dev">nerln</a>
+      <a href="https://x.com/nerellone">@nerellone</a>
+    </div>
+  </div>
+  <p><b>Fuentes primarias:</b> resultados oficiales de gala de Telefe / Mi Telefe; bases y condiciones de TELINFOR S.A. (ghglobal.ar); anexo de Wikipedia de la 13.ª temporada; Infobae Teleshow, LA NACION, El Destape, Ciudad Magazine, Revista Pronto, Crónica; encuestas de Fefe Bongiorno vía LA NACION y Minuto Uno; datos históricos de las temporadas 11 y 12 de GH Argentina.</p>
+  <p id="pie"></p>
+</footer>
+</div>
+<div class="tt" id="tt"></div>
+
+<script>
+/* Sin meta viewport el teléfono compone la página a 980px de ancho y después la
+   encoge, con lo cual ninguna consulta @media de móvil se activa y las letras
+   quedan diminutas. Como esta página se publica dentro de un <head> que no
+   controlamos, se inyecta acá si no vino puesta. */
+(function(){
+  if(document.querySelector('meta[name="viewport"]')) return;
+  const m = document.createElement("meta");
+  m.name = "viewport";
+  m.content = "width=device-width, initial-scale=1, viewport-fit=cover";
+  document.head.appendChild(m);
+})();
+
+const D = /*__DATOS__*/null;
+
+/* ---------- el ojo: marca original de la página ---------- */
+function ojo(size, dim){
+  const s = size, h = s*0.62;
+  return `<svg viewBox="0 0 100 62" width="${s}" height="${h}" aria-hidden="true">
+    <defs>
+      <radialGradient id="ir${s}${dim?'d':''}" cx="50%" cy="50%">
+        <stop offset="0%" stop-color="#F0D274"/><stop offset="55%" stop-color="#C9A227"/>
+        <stop offset="100%" stop-color="#6B5310"/>
+      </radialGradient>
+    </defs>
+    <g opacity="${dim?0.62:1}">
+      <path d="M4 31C22 8 78 8 96 31 78 54 22 54 4 31Z" fill="none" stroke="#C9A227" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="50" cy="31" r="16" fill="url(#ir${s}${dim?'d':''})"/>
+      <circle cx="50" cy="31" r="7" fill="#07080C"/>
+      <circle cx="45.5" cy="26.5" r="2.6" fill="#F4F2EC" opacity=".85"/>
+      ${[...Array(9)].map((_,i)=>{const a=(-70+i*17.5)*Math.PI/180;
+        return `<line x1="${50+21*Math.cos(a)}" y1="${31+21*Math.sin(a)}" x2="${50+26*Math.cos(a)}" y2="${31+26*Math.sin(a)}" stroke="#C9A227" stroke-width="1.5" opacity=".5"/>`}).join("")}
+    </g></svg>`;
+}
+
+/* ---------- banderas ---------- */
+const FLAGS = {
+  AR:`<svg viewBox="0 0 30 20" width="W" height="H" role="img" aria-label="Argentina"><rect width="30" height="20" fill="#74ACDF"/><rect y="6.667" width="30" height="6.667" fill="#fff"/><circle cx="15" cy="10" r="2.1" fill="#F6B40E"/></svg>`,
+  CL:`<svg viewBox="0 0 30 20" width="W" height="H" role="img" aria-label="Chile"><rect width="30" height="20" fill="#fff"/><rect y="10" width="30" height="10" fill="#D52B1E"/><rect width="10" height="10" fill="#0039A6"/><path d="M5 2.6l.86 2.65h2.79l-2.26 1.64.87 2.65L5 7.9 2.74 9.54l.87-2.65L1.35 5.25h2.79z" fill="#fff"/></svg>`,
+  UY:`<svg viewBox="0 0 30 20" width="W" height="H" role="img" aria-label="Uruguay"><rect width="30" height="20" fill="#fff"/><g fill="#0038A8"><rect y="2.22" width="30" height="2.22"/><rect y="6.67" width="30" height="2.22"/><rect x="11.5" y="11.11" width="18.5" height="2.22"/><rect x="11.5" y="15.56" width="18.5" height="2.22"/></g><rect width="11.5" height="11.11" fill="#fff"/><circle cx="5.75" cy="5.55" r="2.2" fill="#F6B40E"/></svg>`
+};
+const PAIS = {AR:"Argentina", CL:"Chile", UY:"Uruguay"};
+const bandera = (p,w=27) => (FLAGS[p]||FLAGS.AR).replace("W",w).replace("H",Math.round(w/1.5));
+
+/* ---------- retrato ---------- */
+
+/* Sin avatares. De los diez en juego sólo uno tiene retrato reutilizable, y
+   dibujar caricaturas de personas reales sigue siendo un problema de derecho de
+   imagen, no sólo de copyright. Queda la bandera, que además dice algo: dos de
+   las diez son extranjeras y su país vota. */
+function retrato(apodo, px){
+  const p = D.perfil[apodo] || {};
+  const w = Math.max(18, Math.round(px*0.9));
+  return `<span class="marco" title="${p.pais_nombre||""}">${bandera(p.pais||"AR", w)}</span>`;
+}
+
+/* ---------- utilidades ---------- */
+const $ = s => document.querySelector(s);
+const pc = (x,d=1) => (100*x).toFixed(d).replace(".",",")+"%";
+const nf = (x,d=2) => x.toFixed(d).replace(".",",");
+const el = (t,c,h) => { const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e; };
+const clamp01 = p => p < 0 ? 0 : p > 1 ? 1 : p;
+/* El tema puede cambiar en cualquier momento: porque el sistema pasa a oscuro
+   o porque el visor estampa data-theme en la raíz. Los lienzos no heredan CSS,
+   así que hay que avisarles para que se vuelvan a dibujar. */
+const oyentesTema = [];
+function alCambiarTema(fn){ oyentesTema.push(fn); }
+(function(){
+  const avisar = () => oyentesTema.forEach(f => { try{ f(); }catch(_){} });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", avisar);
+  new MutationObserver(avisar).observe(document.documentElement, {attributeFilter:["data-theme"]});
+})();
+const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const SVGNS="http://www.w3.org/2000/svg";
+const svg = (tag,a) => { const e=document.createElementNS(SVGNS,tag); for(const k in a) e.setAttribute(k,a[k]); return e; };
+const FECHA_LARGA = f => { if(!f) return "";
+  const [y,m,d]=f.split("-").map(Number);
+  const M=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  return `${d} de ${M[m-1]}`; };
+
+const tt = $("#tt");
+function bindTT(node, html){
+  node.addEventListener("pointerenter", e => { tt.innerHTML=html; tt.style.opacity=1; mover(e); });
+  node.addEventListener("pointermove", mover);
+  node.addEventListener("pointerleave", () => tt.style.opacity=0);
+}
+function mover(e){
+  const r = tt.getBoundingClientRect();
+  let x=e.clientX+16, y=e.clientY+16;
+  if(x+r.width > innerWidth-10) x = e.clientX-r.width-16;
+  if(y+r.height > innerHeight-10) y = e.clientY-r.height-16;
+  tt.style.left=x+"px"; tt.style.top=y+"px";
+}
+
+/* ---------- cabecera ---------- */
+$("#sub-marca").textContent = `${D.edicion.edicion.split(":")[1].trim()} · ${D.edicion.temporada}.ª edición · corrida del ${FECHA_LARGA(D.generado)} de 2026`;
+/* La cinta es lo primero que se lee y tiene que decir a qué distancia está el
+   próximo capítulo, no solo su fecha: hoy, mañana o el día que sea. */
+(function(){
+  const g = D.placa_vigente;
+  const hoy = new Date(); hoy.setHours(0,0,0,0);
+  const dia = new Date(g.fecha + "T00:00:00"); dia.setHours(0,0,0,0);
+  const n = (g.integrantes || []).length;
+  // Sin número de gala: la numeración interna cuenta todas las galas y Telefe
+  // cuenta solo las de eliminación, así que cualquier número que se ponga acá
+  // discute con el que se ve en pantalla. La fecha no discute con nadie.
+  // Y entre la gala y la nominación no hay ni fecha ni placa: decirlo es más
+  // útil que dejar la cinta a medias con un "Eliminación · " y nada detrás.
+  if(!n){
+    $("#prox-gala").textContent = "Placa sin definir · nominación esta semana";
+  } else {
+    const dias = g.fecha ? Math.round((dia - hoy) / 86400000) : null;
+    const cuando = dias === 0 ? "hoy" : dias === 1 ? "mañana"
+      : dias > 1 ? "en " + dias + " días" : (g.fecha ? FECHA_LARGA(g.fecha) : "sin fecha");
+    $("#prox-gala").textContent = "Eliminación · " + cuando + " · sale uno de " + n;
+  }
+})();
+$("#pie").innerHTML = "Modelo y visualización generados el " + FECHA_LARGA(D.generado) + " de 2026. " +
+  "El pronóstico refleja el estado del juego a esa fecha e ignora, por construcción, cualquier hecho posterior. " +
+  "Se recalcula solo después de cada gala.";
+
+/* ---------- veredicto ---------- */
+const base = D.escenarios.base;
+const orden = [...D.jugadores].sort((a,b) => base.p_gana[b]-base.p_gana[a]);
+const g1 = orden[0], g2 = orden[1];
+const p1 = D.perfil[g1];
+
+$("#vretrato").innerHTML = retrato(g1, 112);
+$("#vnom").textContent = p1.nombre;
+$("#vpct").textContent = pc(base.p_gana[g1]);
+$("#vboot").innerHTML = "favorita del modelo en <b style='color:var(--tinta)'>" +
+  Math.round(100*D.bootstrap.p_favorito[g1]) + "%</b> de los remuestreos";
+$("#vmeta").innerHTML = p1.papel + " " + p1.previa + ". Llega a la final en <b>" +
+  pc(base.p_final[g1],0) + "</b> de las simulaciones y la convierte en <b>" +
+  pc(base.p_gana[g1]/base.p_final[g1],0) + "</b> de esos casos.";
+
+const vbar = $("#vbar");
+orden.forEach((n,i) => {
+  const s = el("i");
+  s.style.width = (100*base.p_gana[n]) + "%";
+  s.style.background = i===0 ? "linear-gradient(90deg,var(--apoyo),var(--apoyo-txt))"
+    : (i<4 ? "color-mix(in srgb, var(--apoyo) "+(64-i*15)+"%, var(--sup3))" : "var(--sup3)");
+  vbar.appendChild(s);
+});
+$("#vaviso").innerHTML = "<b>La ventaja es menor que la incertidumbre.</b> " + g2 + " queda a " +
+  nf(100*(base.p_gana[g1]-base.p_gana[g2]),1) + " puntos (" + pc(base.p_gana[g2]) +
+  ") y encabeza el modelo en el " + Math.round(100*D.bootstrap.p_favorito[g2]) +
+  "% de los remuestreos. Con " + D.jugadores.length + " personas todavía en juego, cualquier pronóstico honesto reparte: ni la favorita llega a una de cada cuatro.";
+$("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,2);
+
+/* ---------- placa de nominados ---------- */
+(function(){
+  const placa = [...D.placa28].sort((a,b) => base.p_sale28[b]-base.p_sale28[a]);
+  const max = Math.max(...D.jugadores.map(n => base.p_sale28[n] || 0), 1e-9);
+  const conPlaca = placa.length > 0;
+  $("#tit-placa").textContent = !conPlaca
+    ? "Todavía no hay placa"
+    : (base.p_sale28[placa[0]] - base.p_sale28[placa[1]] < 0.06
+       ? "La gala del " + FECHA_LARGA(D.placa_vigente.fecha) + " es una moneda al aire"
+       : "Quién se va el " + FECHA_LARGA(D.placa_vigente.fecha));
+  // Cuando el plantel se queda de un solo género conviene decirlo: es el hecho
+  // más visible de la semana y explica por qué la final va a ser distinta.
+  const generos = new Set(D.jugadores.map(n => (D.perfil[n]||{}).genero).filter(Boolean));
+  const soloMujeres = generos.size === 1 && generos.has("f");
+  const ultimo = (D.eliminados || [])[0];
+  $("#sub-placa").innerHTML = !conPlaca
+    ? (ultimo ? "Anoche salió <b>" + ultimo.apodo + "</b>" +
+        (soloMujeres ? ", el último varón: la casa queda con " + D.jugadores.length +
+                       " mujeres y la final será la primera de esta edición sin ningún hombre. " : ". ")
+       : "")
+      + "La gala de nominación es a mitad de semana, así que hoy nadie está nominada. El modelo "
+      + "no se queda sin decir nada: sortea la placa por propensión, como hace con todas las "
+      + "semanas futuras, y de ahí sale el riesgo de ser la próxima en irse."
+    : D.encuesta && D.encuesta.cuota && Object.keys(D.encuesta.cuota).length
+    ? "Las dos fuentes de evidencia se contradicen y se cancelan casi exactamente. Por un lado están las votaciones reales, donde el que la encuesta da eliminado se venía salvando con porcentajes ínfimos gala tras gala. Por el otro está Fefe Bongiorno, el único agregador de la temporada que acierta, y dice lo contrario."
+    : "No hay encuesta publicada para esta gala: el riesgo sale solo de la preferencia revelada en las votaciones oficiales anteriores.";
+
+  const cont = $("#nominados");
+  const lista = conPlaca ? placa
+    : [...D.jugadores].sort((a,b) => base.p_sale28[b]-base.p_sale28[a]);
+  $(".placa-cab").innerHTML = conPlaca
+    ? "Placa de nominados, con el <b>riesgo de eliminación</b> que le da el modelo"
+    : "Sin nominadas todavía: <b>riesgo de ser la próxima en salir</b>, sorteando la placa por propensión";
+  const botonera = $("#btn-revelar").parentElement;
+  if(!conPlaca) botonera.style.display = "none";
+  lista.forEach((n, i) => {
+    const p = base.p_sale28[n], alto = p > 0.2;
+    const c = el("div", "nom-card" + (alto ? " alto" : ""));
+    c.dataset.nombre = n; c.dataset.pct = p; c.dataset.ancho = 100*p/max;
+    c.innerHTML = retrato(n, 84, alto) +
+      "<div><div class='nm'>"+n+"</div><div class='pais'>"+(D.perfil[n].provincia||"")+"</div></div>" +
+      "<div class='veredicto-txt'></div>" +
+      "<div class='medidor'><i></i></div>" +
+      "<div class='pct serif num'>"+pc(p,1)+"</div>";
+    // estado28 solo existe cuando hay placa observada: sin ella, el riesgo sale
+    // del rasgo de largo plazo y no hay estado semanal que enseñar.
+    const st = D.estado28[n];
+    bindTT(c, "<b>"+D.perfil[n].nombre+"</b>" +
+      (conPlaca ? "Riesgo de eliminación: <b>" : "Riesgo de ser la próxima en salir: <b>") + pc(p)+"</b><br>"+
+      (st ? "Estado estimado para esta gala: <span class='mono'>"+(st[0]>0?"+":"")+nf(st[0])+
+            "</span> ± "+nf(st[1])+" logits<br>" : "") +
+      "Rechazo de largo plazo μ: <span class='mono'>"+(D.mu[n]>0?"+":"")+nf(D.mu[n])+"</span> · galas con dato: "+D.n_galas[n]);
+    cont.appendChild(c);
+  });
+})();
+
+/* ---------- eliminados recientes ---------- */
+(function(){
+  const c = $("#eliminados");
+  D.eliminados.slice(0,4).forEach(e => {
+    const row = el("div");
+    row.className = "salida";
+    row.innerHTML = "<div class='salida-cab'>" +
+      "<span class='mono fecha'>"+e.fecha.slice(8)+"/"+e.fecha.slice(5,7)+"</span>" +
+      "<span class='quien'>"+e.apodo+"</span>" +
+      "<span class='pill "+(e.modo==="eliminado"||e.modo==="eliminada"?"riesgo":"")+"'>"+e.modo+"</span>" +
+      "</div><p class='salida-det'>"+e.detalle+"</p>";
+    c.appendChild(row);
+  });
+})();
+
+/* ---------- tabla de la encuesta ---------- */
+(function(){
+  const t = $("#t-encuesta");
+  const b = D.meta.encuesta_sesgo, s = D.meta.encuesta_desvio;
+  const w1 = 1/(s[1]*s[1]);
+  t.innerHTML = "<thead><tr><th>Posición en la encuesta</th><th>Sesgo</th><th>Desvío</th><th>Peso relativo</th></tr></thead><tbody>" +
+    [["1.ª, a quién pone primero",1],["2.ª",2],["3.ª y siguientes",3]].map(([lab,k]) =>
+      "<tr><td>"+lab+"</td><td class='mono'>"+(b[k]>0?"+":"")+nf(b[k])+"</td><td class='mono'>"+nf(s[k])+
+      "</td><td class='mono "+(k===1?"destacado":"")+"'>"+nf((1/(s[k]*s[k]))/w1,2)+"×</td></tr>").join("") + "</tbody>";
+})();
+
+/* ---------- ranking ---------- */
+let escenarioActual = "base";
+function pintarBoard(){
+  const e = D.escenarios[escenarioActual];
+  const ord = [...D.jugadores].sort((a,b) => e.p_gana[b]-e.p_gana[a]);
+  const max = Math.max(...ord.map(n => e.p_gana[n]));
+  const cont = $("#board"); cont.innerHTML = "";
+  ord.forEach((n,i) => {
+    const p = D.perfil[n];
+    const f = el("div", "fila" + (i===0 ? " top" : ""));
+    f.innerHTML =
+      "<div class='pos mono'>"+(i+1)+"</div>" + retrato(n, 34) +
+      "<div class='nom'><div class='a'>"+n+"</div><div class='b'>"+(p.ciudad||"")+" · "+(p.edad||"")+"</div></div>" +
+      "<div class='barra'><i style='width:"+(100*e.p_gana[n]/max)+"%"+(i===0?"":";opacity:"+(0.92-i*0.055))+"'></i></div>" +
+      "<div class='cel fuerte mono cel-gana'>"+pc(e.p_gana[n])+"</div>" +
+      "<div class='cel mono cel-final'>"+pc(e.p_final[n],0)+"</div>";
+    bindTT(f, "<b>"+p.nombre+"</b>"+PAIS[p.pais]+" · "+(p.edad||"?")+" años · "+(p.ciudad||"")+"<br>"+p.previa+"<br><br>"+
+      "Rechazo μ <span class='mono'>"+(D.mu[n]>0?"+":"")+nf(D.mu[n])+"</span> · "+D.n_galas[n]+" galas con dato<br>"+
+      "Apoyo ψ <span class='mono'>"+(D.psi[n]>0?"+":"")+nf(D.psi[n])+"</span> · "+D.fases_psi[n]+" fases positivas<br><br>"+
+      "Llega a la final "+pc(e.p_final[n],0)+" · convierte "+pc(e.p_gana[n]/Math.max(e.p_final[n],1e-9),0));
+    cont.appendChild(f);
+  });
+}
+(function(){
+  const chips = $("#chips");
+  const sinEncuesta = !(D.encuesta && D.encuesta.cuota && Object.keys(D.encuesta.cuota).length);
+  D.orden_escenarios.forEach(([k,lab,desc]) => {
+    if(!D.escenarios[k]) return;
+    // sin encuesta, el escenario "sin la encuesta" es idéntico al caso base:
+    // mostrarlo como alternativa sería ofrecer un botón que no hace nada
+    if(k === "sin_encuesta" && sinEncuesta) return;
+    const b = el("button","chip",lab);
+    b.type="button"; b.setAttribute("aria-pressed", k===escenarioActual);
+    b.onclick = () => {
+      escenarioActual = k;
+      [...chips.children].forEach(c => c.setAttribute("aria-pressed","false"));
+      b.setAttribute("aria-pressed","true");
+      $("#nota-escenario").textContent = desc;
+      pintarBoard();
+    };
+    chips.appendChild(b);
+  });
+  $("#nota-escenario").textContent = D.orden_escenarios[0][2];
+  pintarBoard();
+})();
+
+/* ==========================================================================
+   El plano de las dos escalas, en dos dimensiones.
+
+   Hubo una versión en relieve con columnas. Se veía llamativa y se leía peor:
+   en tres dimensiones las alturas se comparan mal, las columnas se tapan entre
+   sí y hay que girar la escena para entenderla. Acá los dos ejes son las dos
+   escalas del modelo y el tamaño del punto es la probabilidad de ganar.
+
+   Se dibuja sola la primera vez que entra en pantalla: primero los ejes, después
+   cada punto sube desde su posición de rechazo hasta su apoyo. Después queda
+   quieta y se puede leer.
+   ========================================================================== */
+(function(){
+  const cont = $("#g-plano");
+  cont.className = "";
+  const caja = el("div","lienzo");
+  const cv = document.createElement("canvas");
+  cv.setAttribute("role","img");
+  caja.appendChild(cv); cont.appendChild(caja);
+
+  const clave = el("div","clave");
+  clave.innerHTML =
+    '<span><i class="r"></i>eje horizontal: rechazo (μ), el voto para eliminar</span>' +
+    '<span><i class="a"></i>eje vertical: apoyo (ψ), el voto para salvar</span>' +
+    '<span>tamaño: probabilidad de ganar</span>';
+  cont.appendChild(clave);
+
+  const mandos = el("div","mandos");
+  mandos.innerHTML = '<button class="btn" id="btn-replay" type="button">Ver cómo se arma</button>' +
+                     '<span class="pista">Tocá un punto para ver sus números.</span>';
+  cont.appendChild(mandos);
+
+  const ctx = cv.getContext("2d");
+  const N = D.jugadores;
+  const xs = N.map(n=>D.mu[n]), ys = N.map(n=>D.psi[n]);
+  const x0 = Math.min(...xs)-0.55, x1 = Math.max(...xs)+0.55;
+  const y0 = Math.min(...ys)-0.45, y1 = Math.max(...ys)+0.45;
+  const pmax = Math.max(...N.map(n=>base.p_gana[n]));
+  const top3 = [...N].sort((a,b)=>base.p_gana[b]-base.p_gana[a]).slice(0,3);
+
+  // Los colores salen de las variables del tema y se releen en cada pintada,
+   // así el gráfico cambia junto con la página cuando el sistema pasa a oscuro.
+  const V = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  let C = {};
+  function leerTema(){
+    C = {rechazo:V("--rechazo"), apoyo:V("--apoyo"), apoyoS:V("--apoyo-suave"),
+         tinta:V("--tinta"), tinta2:V("--tinta2"), tinta3:V("--tinta3"),
+         rechazoTxt:V("--rechazo-txt"), apoyoTxt:V("--apoyo-txt"), sup:V("--sup")};
+  }
+  leerTema();
+  let W=0, H=0, dpr=1, M={t:34,r:18,b:44,l:44};
+  let t = 1, corriendo = false, ultimo = 0, raf = null, resaltado = null;
+  const puntos = [];
+
+  function medir(){
+    const r = caja.getBoundingClientRect();
+    dpr = Math.min(devicePixelRatio||1, 2);
+    W = Math.max(r.width,1); H = Math.max(r.height,1);
+    cv.width = W*dpr; cv.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    M = {t: 34, r: 18, b: 44, l: W < 420 ? 26 : 34};
+    return r.width > 40;
+  }
+  const X = v => M.l + (v-x0)/(x1-x0)*(W-M.l-M.r);
+  const Y = v => H-M.b - (v-y0)/(y1-y0)*(H-M.t-M.b);
+  const suave = p => p*p*(3-2*p);
+  const clam = p => p<0?0:p>1?1:p;
+
+  function pintar(){
+    leerTema();
+    ctx.clearRect(0,0,W,H);
+    const pEjes = clam(t/0.28), pPuntos = clam((t-0.22)/0.62), pEtq = clam((t-0.72)/0.28);
+
+    // cuadrante donde se gana
+    if(pEjes > 0.6){
+      ctx.globalAlpha = clam((pEjes-0.6)/0.4) * 0.55;
+      ctx.fillStyle = C.apoyoS;
+      ctx.fillRect(M.l, M.t, Math.max(X(0)-M.l,0), Math.max(Y(0)-M.t,0));
+      ctx.globalAlpha = 1;
+    }
+
+    // rejilla y ejes
+    ctx.strokeStyle = C.linea || "rgba(128,128,128,.22)"; ctx.lineWidth = 1;
+    for(let i=0;i<=4;i++){
+      const gy = M.t + i*(H-M.t-M.b)/4, gx = M.l + i*(W-M.l-M.r)/4;
+      const w = (W-M.l-M.r)*pEjes;
+      ctx.beginPath(); ctx.moveTo(M.l, gy); ctx.lineTo(M.l+w, gy); ctx.stroke();
+      const h = (H-M.t-M.b)*pEjes;
+      ctx.beginPath(); ctx.moveTo(gx, H-M.b); ctx.lineTo(gx, H-M.b-h); ctx.stroke();
+    }
+    ctx.strokeStyle = C.tinta3; ctx.setLineDash([4,4]);
+    ctx.beginPath(); ctx.moveTo(X(0), M.t); ctx.lineTo(X(0), H-M.b); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(M.l, Y(0)); ctx.lineTo(W-M.r, Y(0)); ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.font = '700 12px "Archivo",system-ui,sans-serif';
+    ctx.globalAlpha = pEjes;
+    ctx.fillStyle = C.rechazoTxt; ctx.textAlign = "right";
+    ctx.fillText("más rechazo →", W-M.r, H-M.b+26);
+    ctx.fillStyle = C.apoyoTxt; ctx.textAlign = "left";
+    ctx.fillText("↑ más apoyo", 6, M.t - 6);
+    if(pEjes > 0.9){
+      ctx.fillStyle = C.apoyoTxt; ctx.textAlign = "left"; ctx.globalAlpha = clam((pEjes-0.9)*10);
+      ctx.font = '700 11.5px "Archivo",system-ui,sans-serif';
+      ctx.fillText("zona ganadora", M.l+8, M.t+14);
+    }
+    ctx.globalAlpha = 1;
+
+    // puntos: suben desde el eje de rechazo hasta su apoyo
+    puntos.length = 0;
+    N.forEach((n, i) => {
+      const retraso = i * 0.045;
+      const q = clam((pPuntos - retraso) / Math.max(1 - retraso, .3));
+      if(q <= 0) return;
+      const px = X(D.mu[n]);
+      const py = Y(y0) + (Y(D.psi[n]) - Y(y0)) * suave(q);
+      const r = (5 + 17*Math.sqrt(base.p_gana[n]/pmax)) * suave(q);
+      const esTop = top3.includes(n), act = n === resaltado;
+      puntos.push({n, x:px, y:py, r, p:base.p_gana[n]});
+
+      ctx.beginPath(); ctx.arc(px, py, r, 0, 7);
+      ctx.fillStyle = esTop ? C.rechazo + "2b" : C.tinta3 + "24";
+      ctx.fill();
+      ctx.lineWidth = act ? 2.5 : 1.6;
+      ctx.strokeStyle = esTop ? C.rechazo : C.tinta2;
+      ctx.stroke();
+      if(D.n_galas[n] === 0){
+        ctx.setLineDash([3,3]); ctx.strokeStyle = C.tinta3; ctx.lineWidth = 1.2;
+        ctx.beginPath(); ctx.arc(px, py, r+3.5, 0, 7); ctx.stroke(); ctx.setLineDash([]);
+      }
+    });
+
+    // rótulos, sin encimarse
+    if(pEtq > 0){
+      ctx.globalAlpha = pEtq;
+      const puestas = [];
+      [...puntos].sort((a,b)=>b.p-a.p).forEach(q => {
+        ctx.font = '700 12.5px "Archivo",system-ui,sans-serif';
+        const w = ctx.measureText(q.n).width, ly = q.y - q.r - 7;
+        if(puestas.some(o => Math.abs(o.x-q.x) < (o.w+w)/2+10 && Math.abs(o.y-ly) < 19) && q.n !== resaltado) return;
+        puestas.push({x:q.x, y:ly, w});
+        ctx.textAlign = "center";
+        ctx.fillStyle = top3.includes(q.n) ? C.rechazoTxt : C.tinta;
+        ctx.fillText(q.n, q.x, ly);
+      });
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function lazo(ahora){
+    raf = null;
+    const dt = Math.min((ahora-ultimo)/1000, .05); ultimo = ahora;
+    if(corriendo){ t += dt/2.6; if(t >= 1){ t = 1; corriendo = false; } }
+    pintar();
+    if(corriendo) raf = requestAnimationFrame(lazo);
+  }
+  function arrancar(){
+    // El gráfico existe primero y se anima después. Si la página no está
+    // realmente visible, requestAnimationFrame se estrangula y la animación
+    // quedaría congelada a media construcción: en ese caso se muestra directo
+    // el estado final, que es el que sirve para leer.
+    if(quieto || document.visibilityState !== "visible"){ t = 1; pintar(); return; }
+    t = 0; corriendo = true; ultimo = performance.now();
+    if(!raf) raf = requestAnimationFrame(lazo);
+    // Garantía: si la pestaña está en segundo plano el navegador estrangula
+    // requestAnimationFrame y la animación se quedaría a medio dibujar. Un
+    // gráfico que no llega a su estado final es un gráfico roto, así que pasado
+    // el tiempo previsto se fuerza el final.
+    clearTimeout(arrancar._g);
+    arrancar._g = setTimeout(() => { if(corriendo){ t = 1; corriendo = false; pintar(); } }, 3200);
+  }
+
+  cv.addEventListener("pointermove", e => {
+    const r = cv.getBoundingClientRect(), mx = e.clientX-r.left, my = e.clientY-r.top;
+    let mejor = null, dmin = 1e9;
+    puntos.forEach(q => { const d = Math.hypot(q.x-mx, q.y-my);
+      if(d < Math.max(q.r+10, 26) && d < dmin){ dmin = d; mejor = q; } });
+    const n = mejor ? mejor.n : null;
+    if(n !== resaltado){ resaltado = n; pintar(); }
+    if(mejor){
+      tt.innerHTML = "<b>"+D.perfil[mejor.n].nombre+"</b>Probabilidad de ganar: <b>"+pc(mejor.p)+"</b>" +
+        "<br>Rechazo μ <span class='mono'>"+(D.mu[mejor.n]>0?"+":"")+nf(D.mu[mejor.n])+"</span>" +
+        " · Apoyo ψ <span class='mono'>"+(D.psi[mejor.n]>0?"+":"")+nf(D.psi[mejor.n])+"</span>";
+      tt.style.opacity = 1; mover(e);
+    } else tt.style.opacity = 0;
+  });
+  cv.addEventListener("pointerleave", () => { tt.style.opacity = 0; resaltado = null; pintar(); });
+  $("#btn-replay").addEventListener("click", arrancar);
+
+  const ordTxt = [...N].sort((a,b)=>base.p_gana[b]-base.p_gana[a])
+    .map(n=>`${n} ${pc(base.p_gana[n])}`).join(", ");
+  cv.setAttribute("aria-label", "Dispersión: eje horizontal el rechazo, eje vertical el apoyo positivo, " +
+    "tamaño del punto la probabilidad de ganar. De mayor a menor: " + ordTxt + ".");
+
+  let intentos = 0;
+  (function reintentar(){ if(medir()){ pintar(); return; } if(intentos++ < 30) setTimeout(reintentar, 120); })();
+  new ResizeObserver(() => { if(medir()) pintar(); }).observe(caja);
+
+  if(!quieto && "IntersectionObserver" in window){
+    let ya = false;
+    new IntersectionObserver(es => es.forEach(e => {
+      if(e.isIntersecting && !ya){ ya = true; arrancar(); }
+    }), {threshold:.35}).observe(caja);
+  } else { t = 1; }
+
+  alCambiarTema(() => { leerTema(); pintar(); });
+})();
+
+/* ---------- fórmula de la identidad, con la última gala real ---------- */
+(function(){
+  const g = D.galas[D.galas.length-1];
+  if(!g) return;
+  const sal = Object.values(g.publicado.salvados), vs = Object.values(g.publicado.versus);
+  if(!vs.length) return;
+  const suma = [...sal, ...vs].reduce((a,b)=>a+b,0);
+  const noVersus = sal.reduce((a,b)=>a+b,0);
+  const cab = `Gala ${g.gala} · ${g.fecha.slice(8)}/${g.fecha.slice(5,7)}   `;
+  const ok = Math.abs((suma-100) - noVersus) < 0.35;
+  $("#f-identidad").textContent =
+    cab + [...sal, ...vs].map(v=>nf(v,1)).join(" + ") + " = " + nf(suma,1) + "\n" +
+    " ".repeat(cab.length) + nf(suma,1) + " − 100 = " + nf(suma-100,1) +
+    "   y   " + sal.map(v=>nf(v,1)).join("+") + " = " + nf(noVersus,1) +
+    (ok ? "   ✓ cuadra" : "   ✗ no cuadra");
+})();
+
+/* ---------- ranking 16/07 ---------- */
+(function(){
+  const vivos = new Set(D.jugadores);
+  const t = el("table");
+  t.innerHTML = "<thead><tr><th>#</th><th>Gala del 16/07</th><th style='text-align:left'>Lectura</th><th>ψ estimado</th></tr></thead><tbody>" +
+    D.ranking1607.map((n,i) => {
+      const d = vivos.has(n);
+      return "<tr"+(d?"":" style='opacity:.4'")+"><td class='mono'>"+(i+1)+"</td><td>"+(d?"<b>"+n+"</b>":n)+"</td>"+
+        "<td style='text-align:left'>"+(d ? (D.psi[n]>=0.4 ? "<span class='pill oro'>apoyo alto</span>"
+          : D.psi[n]<=-1 ? "<span class='pill riesgo'>perfil invisible</span>" : "<span class='pill'>intermedio</span>")
+          : "<span class='pill'>ya eliminado</span>")+"</td>"+
+        "<td class='mono'>"+(d?(D.psi[n]>0?"+":"")+nf(D.psi[n]):"—")+"</td></tr>";
+    }).join("") + "</tbody>";
+  $("#t-1607").appendChild(t);
+})();
+
+/* ---------- bootstrap: filas de HTML, no un SVG de ancho fijo ----------
+   La versión anterior era un SVG de 820px: en un teléfono había que arrastrar
+   de costado para leer un gráfico de diez filas. En HTML se reacomoda solo. */
+(function(){
+  const B = D.bootstrap;
+  $("#tit-boot").textContent = "El pronóstico, remuestreado " + B.B + " veces";
+  const ord = [...D.jugadores].sort((a,b)=>B.media[b]-B.media[a]);
+  const max = Math.max(...ord.map(n=>B.ic90[n][1]));
+  const cont = $("#g-boot");
+  cont.className = "";
+
+  const eje = el("div","boot-eje");
+  const marcas = [0,.2,.4,.6].filter(v=>v<=max);
+  eje.innerHTML = marcas.map(v=>"<span>"+Math.round(100*v)+"%</span>").join("");
+  cont.appendChild(eje);
+
+  ord.forEach(n => {
+    const f = el("div","boot-fila");
+    const destaca = B.p_favorito[n] > 0.15;
+    f.innerHTML =
+      "<div class='boot-nom'>"+n+"</div>" +
+      "<div class='boot-pista'>" +
+        "<i class='boot-rango' style='left:"+(100*B.ic90[n][0]/max)+"%;width:"+
+          (100*(B.ic90[n][1]-B.ic90[n][0])/max)+"%'></i>" +
+        "<i class='boot-media' style='left:"+(100*B.media[n]/max)+"%'></i>" +
+      "</div>" +
+      "<div class='boot-fav"+(destaca?" destaca":"")+"'>"+Math.round(100*B.p_favorito[n])+"% favorita</div>";
+    bindTT(f, "<b>"+D.perfil[n].nombre+"</b>Media del bootstrap: "+pc(B.media[n])+
+      "<br>Rango 90%: "+pc(B.ic90[n][0],1)+" a "+pc(B.ic90[n][1],1)+
+      "<br>Quedó primera en "+Math.round(100*B.p_favorito[n])+"% de los remuestreos");
+    cont.appendChild(f);
+  });
+})();
+
+/* ---------- sensibilidad ---------- */
+(function(){
+  const t = $("#t-sens");
+  const ord = [...D.jugadores].sort((a,b)=>base.p_gana[b]-base.p_gana[a]);
+  const cols = D.orden_escenarios.filter(([k]) => D.escenarios[k]);
+  let max = 0;
+  cols.forEach(([k]) => ord.forEach(n => max = Math.max(max, D.escenarios[k].p_gana[n])));
+  t.innerHTML = "<thead><tr><th>Participante</th>" + cols.map(([,lab]) => "<th>"+lab+"</th>").join("") +
+    "</tr></thead><tbody>" + ord.map(n => "<tr><td><b>"+n+"</b></td>" + cols.map(([k]) => {
+      const v = D.escenarios[k].p_gana[n];
+      return "<td class='mono' style='background:color-mix(in srgb, var(--apoyo) "+((v/max)*40).toFixed(0)+"%, transparent)'>"+pc(v,1)+"</td>";
+    }).join("") + "</tr>").join("") + "</tbody>";
+})();
+
+
+/* ---------- galas ---------- */
+(function(){
+  const cont = $("#g-galas"), vivos = new Set(D.jugadores);
+  $("#tit-galas").textContent = "Las " + D.galas.length + " galas que sostienen el modelo";
+  D.galas.forEach(g => {
+    const row = el("div");
+    row.style.cssText = "padding:11px 0;border-top:1px solid var(--linea2)";
+    row.innerHTML = "<div style='display:flex;justify-content:space-between;font-size:12.2px;color:var(--tinta3);margin-bottom:7px;gap:12px;flex-wrap:wrap'>"+
+      "<span><b class='mono' style='color:var(--tinta2)'>Gala "+g.gala+"</b> · "+g.fecha.slice(8)+"/"+g.fecha.slice(5,7)+"</span>"+
+      "<span>salió <b style='color:var(--rechazo-txt)'>"+g.eliminado+"</b></span></div>";
+    const bar = el("div");
+    bar.style.cssText = "display:flex;height:22px;border-radius:2px;overflow:hidden;gap:2px";
+    g.reparto.forEach(([n,v]) => {
+      const seg = el("div"), esVivo = vivos.has(n);
+      const relleno = n===g.eliminado ? "var(--rechazo)" : esVivo ? "var(--tinta2)" : "var(--sup3)";
+      const tintaSeg = (n===g.eliminado || esVivo) ? "var(--sobre-fuerte)" : "var(--tinta2)";
+      seg.style.cssText = "width:"+v+"%;background:"+relleno+
+        ";min-width:2px;display:grid;place-items:center;overflow:hidden";
+      if(v>11) seg.innerHTML = "<span style='font-size:11.5px;color:"+tintaSeg+
+        ";font-weight:700;white-space:nowrap'>"+n+" "+nf(v,1)+"%</span>";
+      bindTT(seg, "<b>"+n+"</b>"+nf(v,2)+"% del voto total de la placa"+(n===g.eliminado?"<br><span style='color:var(--rechazo-txt)'>eliminado</span>":""));
+      bar.appendChild(seg);
+    });
+    row.appendChild(bar); cont.appendChild(row);
+  });
+  const l = el("div");
+  l.style.cssText="margin-top:16px;font-size:12.4px;color:var(--tinta3);display:flex;gap:18px;flex-wrap:wrap";
+  const p = (c,t) => "<span><i style='display:inline-block;width:11px;height:11px;background:"+c+";border-radius:2px;margin-right:6px'></i>"+t+"</span>";
+  l.innerHTML = p("var(--rechazo)","eliminado esa noche") + p("var(--tinta2)","sigue en juego hoy") + p("var(--sup3)","ya no está en la casa");
+  cont.appendChild(l);
+})();
+
+/* ---------- por qué cada uno está donde está ---------- */
+(function(){
+  const cont = $("#porque-fichas");
+  $("#regla-hist").textContent = D.regla_historica;
+  const ord = [...D.jugadores].sort((a,b) => base.p_gana[b]-base.p_gana[a]);
+
+  const nivelTxt = {bajo:"bajo", medio:"medio", alto:"alto"};
+  const razon = n => {
+    const a = D.analogos[n], mu = D.mu[n], psi = D.psi[n], g = D.n_galas[n];
+    const partes = [];
+    if(a.sin_dato_rechazo)
+      partes.push("Nunca cayó en una gala con el reparto publicado, así que del rechazo casi no sabemos nada: solo hay prior y la encuesta de esta semana");
+    else if(a.rechazo === "bajo")
+      partes.push("Cuando cae en placa casi no recibe votos para eliminar: μ = " + nf(mu) + " sobre " + g + (g===1?" gala":" galas") + " con dato");
+    else if(a.rechazo === "alto")
+      partes.push("Es el blanco preferido del voto negativo: μ = " + nf(mu) + ", el más alto de la casa");
+    else
+      partes.push("Rechazo intermedio: μ = " + nf(mu) + ", ni entre los blancos ni entre los intocables");
+
+    if(a.apoyo === "alto")
+      partes.push("y bien arriba cuando se vota para salvar (ψ = " + nf(psi) + ", sobre " + D.fases_psi[n] + " fases positivas)");
+    else if(a.apoyo === "bajo")
+      partes.push("pero abajo de todo cuando se vota para salvar (ψ = " + nf(psi) + "), que es el perfil que en la final saca 2%");
+    else
+      partes.push("y a mitad de tabla cuando se vota para salvar (ψ = " + nf(psi) + ")");
+    return partes.join(", ") + ".";
+  };
+
+  ord.forEach(n => {
+    const a = D.analogos[n], c = a.casos;
+    const card = el("div","pq");
+    const pills = (a.sin_dato_rechazo
+        ? "<span class='pill'>rechazo sin medir</span>"
+        : "<span class='pill"+(a.rechazo==="alto"?" riesgo":"")+"'>rechazo "+nivelTxt[a.rechazo]+"</span>") +
+      "<span class='pill"+(a.apoyo==="alto"?" oro":"")+"'>apoyo "+nivelTxt[a.apoyo]+"</span>";
+    const espejo = c.length > 1
+      ? "<b>Se parece a "+c[0].nombre+" y a "+c[1].nombre+".</b> "+c[0].desenlace+" "+c[1].desenlace+" "+c[0].leccion
+      : "<b>Se parece a "+c[0].nombre+".</b> "+c[0].evidencia+" "+c[0].desenlace+" "+c[0].leccion;
+    card.innerHTML = retrato(n, 52) +
+      "<div><div class='cab'><span class='n'>"+n+"</span><span class='p mono'>"+pc(base.p_gana[n])+"</span></div>" +
+      "<div class='ejes'>"+pills+"</div>" +
+      "<p class='razon'>"+razon(n)+"</p>" +
+      "<div class='espejo'>"+espejo+"</div></div>";
+    cont.appendChild(card);
+  });
+})();
+
+/* ==========================================================================
+   MOVIMIENTO
+   ========================================================================== */
+
+/* --- el ojo mira y parpadea --- */
+(function(){
+  if(quieto) return;
+  const ojos = [...document.querySelectorAll("#ojo-marca svg, .ojo-sec svg, #ojo-btn svg")];
+  if(!ojos.length) return;
+  const partes = ojos.map(s => ({
+    svg: s,
+    iris: s.querySelector("circle:nth-of-type(1)"),
+    pupila: s.querySelector("circle:nth-of-type(2)"),
+    brillo: s.querySelector("circle:nth-of-type(3)"),
+    tapa: s.querySelector("path"),
+  })).filter(p => p.iris && p.pupila);
+
+  let mx = .5, my = .5, raf = null;
+  addEventListener("pointermove", e => { mx = e.clientX/innerWidth; my = e.clientY/innerHeight;
+    if(!raf) raf = requestAnimationFrame(seguir); }, {passive:true});
+
+  function seguir(){
+    raf = null;
+    partes.forEach(p => {
+      const r = p.svg.getBoundingClientRect();
+      if(r.bottom < -80 || r.top > innerHeight+80) return;
+      const cx = (r.left+r.width/2)/innerWidth, cy = (r.top+r.height/2)/innerHeight;
+      const dx = Math.max(-1, Math.min(1, (mx-cx)*2.4)) * 7;
+      const dy = Math.max(-1, Math.min(1, (my-cy)*2.4)) * 4;
+      [p.iris, p.pupila, p.brillo].forEach(c => { if(c) c.setAttribute("transform", `translate(${dx} ${dy})`); });
+    });
+  }
+  // parpadeo irregular: un ojo que parpadea a intervalos fijos parece un metrónomo
+  (function parpadear(){
+    const espera = 2600 + Math.random()*5200;
+    setTimeout(() => {
+      partes.forEach(p => {
+        if(!p.tapa) return;
+        p.tapa.animate(
+          [{transform:"scaleY(1)"},{transform:"scaleY(.06)"},{transform:"scaleY(1)"}],
+          {duration:190, easing:"ease-in-out", transformOrigin:"50% 50%"});
+        [p.iris,p.pupila,p.brillo].forEach(c => c && c.animate(
+          [{opacity:1},{opacity:0},{opacity:1}], {duration:190, easing:"ease-in-out"}));
+      });
+      parpadear();
+    }, espera);
+  })();
+})();
+
+/* --- entradas al hacer scroll --- */
+(function(){
+  document.querySelectorAll("section > .eyebrow, section > .titulo, section > .sub, section > .figura, " +
+    "section > .board, section > .placa, section > .g2, section > .g3, section > .chips, section > .paso")
+    .forEach(n => n.setAttribute("data-anim",""));
+  document.querySelectorAll("[data-cascada]").forEach(c =>
+    [...c.children].forEach((h,i) => h.style.setProperty("--i", i)));
+
+  if(quieto || !("IntersectionObserver" in window)){
+    document.querySelectorAll("[data-anim],[data-cascada]").forEach(n => n.classList.add("visible"));
+    document.querySelectorAll(".medidor i").forEach(i =>
+      i.style.width = i.closest(".nom-card").dataset.ancho + "%");
+    return;
+  }
+  const obs = new IntersectionObserver(es => es.forEach(e => {
+    if(!e.isIntersecting) return;
+    e.target.classList.add("visible");
+    obs.unobserve(e.target);
+    if(e.target.id === "placa" || e.target.classList.contains("placa"))
+      document.querySelectorAll(".medidor i").forEach(i =>
+        i.style.width = i.closest(".nom-card").dataset.ancho + "%");
+    e.target.querySelectorAll?.("[data-contar]").forEach(contar);
+  }), {rootMargin:"0px 0px -80px 0px", threshold:.12});
+  const nodos = [...document.querySelectorAll("[data-anim],[data-cascada]")];
+  nodos.forEach(n => obs.observe(n));
+
+  setTimeout(() => {
+    if(document.querySelector("[data-anim].visible")) return;   // el observador anda
+    nodos.forEach(n => n.classList.add("visible"));
+    document.querySelectorAll(".medidor i").forEach(i =>
+      i.style.width = i.closest(".nom-card").dataset.ancho + "%");
+    document.querySelectorAll("[data-contar]").forEach(contar);
+  }, 1500);
+})();
+
+/* --- los números suben, como en la revelación al aire --- */
+function contar(nodo){
+  if(quieto || nodo.dataset.contado) return;
+  nodo.dataset.contado = "1";
+  const fin = parseFloat(nodo.dataset.contar), dec = parseInt(nodo.dataset.dec || "1");
+  const t0 = performance.now(), dur = 1100;
+  (function paso(t){
+    const k = Math.min((t-t0)/dur, 1);
+    const e = 1 - Math.pow(1-k, 3);
+    nodo.textContent = (fin*e).toFixed(dec).replace(".",",") + "%";
+    if(k < 1) requestAnimationFrame(paso);
+  })(t0);
+}
+(function(){
+  const big = $("#vpct");
+  big.dataset.contar = (100*base.p_gana[g1]).toFixed(1);
+  if(!quieto){ big.textContent = "0,0%"; setTimeout(() => contar(big), 260); }
+})();
+
+/* --- la revelación de la placa, en el orden en que la cuentan al aire --- */
+(function(){
+  const placa = $("#placa"), btn = $("#btn-revelar"), txt = $("#btn-txt"), foco = $("#foco");
+    const cards = () => [...document.querySelectorAll("#nominados .nom-card")];
+  let corriendo = false;
+
+  const esperar = ms => new Promise(r => setTimeout(r, ms));
+  const alFoco = c => {
+    const p = placa.getBoundingClientRect(), r = c.getBoundingClientRect();
+    foco.style.transform = `translate(${r.left + r.width/2 - p.width/2 - p.left}px, ${r.top - p.top + 40}px)`;
+  };
+
+  async function revelar(){
+    if(corriendo) return;
+    corriendo = true; btn.disabled = true; txt.textContent = "Revelando…";
+    const cs = cards();
+    // de menor a mayor riesgo: los últimos dos quedan cara a cara
+    const orden = [...cs].sort((a,b) => a.dataset.pct - b.dataset.pct);
+    const salvados = orden.slice(0, orden.length-2), duelo = orden.slice(-2);
+
+    placa.classList.add("revelando");
+    cs.forEach(c => { c.classList.remove("dicho","turno","duelo");
+      c.querySelector(".veredicto-txt").textContent = ""; });
+    await esperar(500);
+
+    for(const c of salvados){
+      alFoco(c);
+      c.classList.add("turno");
+      c.querySelector(".veredicto-txt").textContent = "a salvo";
+      await esperar(880);
+      c.classList.remove("turno"); c.classList.add("dicho");
+      await esperar(210);
+    }
+
+    foco.style.transform = "translate(0px, 40px)";
+    duelo.forEach(c => { c.classList.add("duelo");
+      c.querySelector(".veredicto-txt").textContent = "en riesgo"; });
+    await esperar(1500);
+
+    placa.classList.remove("revelando");
+    cs.forEach(c => c.classList.remove("dicho","turno","duelo"));
+    txt.textContent = "Ver de nuevo"; btn.disabled = false; corriendo = false;
+  }
+
+  btn.addEventListener("click", revelar);
+  if(quieto){ btn.style.display = "none"; }
+})();
+
+/* --- las barras del ranking crecen al cambiar de escenario --- */
+(function(){
+  if(quieto) return;
+  const board = $("#board");
+  const animar = () => board.querySelectorAll(".barra i").forEach((b,i) => {
+    const w = b.style.width; b.style.width = "0";
+    b.style.transition = "width .75s var(--sal)";
+    requestAnimationFrame(() => setTimeout(() => b.style.width = w, i*45));
+  });
+  new MutationObserver(animar).observe(board, {childList:true});
+  animar();
+})();
+
+
+/* ==========================================================================
+   El simulador, corriendo en la página.
+
+   Es el mismo modelo que produce el pronóstico, reimplementado acá para que se
+   pueda mirar por dentro: de dónde sale que alguien gane el 22% de las veces no
+   se entiende leyendo un número, se entiende viendo cien temporadas seguidas.
+
+   Cada corrida sortea el rasgo de rechazo dentro de su error, usa el estado
+   observado para la gala que viene, arma las placas con la propensión medida a
+   caer nominado, elimina por softmax del rechazo con su ruido semanal, y
+   resuelve la final con el apoyo positivo.
+   ========================================================================== */
+(function(){
+  const J = D.jugadores, OM = D.meta.omega;
+  let guardado = null;
+
+  function gauss(){
+    let u = 0, v = 0;
+    while(!u) u = Math.random();
+    while(!v) v = Math.random();
+    return Math.sqrt(-2*Math.log(u)) * Math.cos(2*Math.PI*v);
+  }
+  function elegir(lista, pesos){
+    let suma = 0; pesos.forEach(p => suma += p);
+    let u = Math.random()*suma;
+    for(let i=0;i<lista.length;i++){ u -= pesos[i]; if(u <= 0) return lista[i]; }
+    return lista[lista.length-1];
+  }
+  const softmax = v => { const m = Math.max(...v); const e = v.map(x=>Math.exp(x-m));
+    const s = e.reduce((a,b)=>a+b,0); return e.map(x=>x/s); };
+  function topGumbel(cand, k, peso){
+    return cand.map(n => ({n, g: peso[n] - Math.log(-Math.log(Math.random()))}))
+               .sort((a,b)=>b.g-a.g).slice(0,k).map(o=>o.n);
+  }
+
+  function unaTemporada(){
+    const m = {}, ps = {};
+    const deriva = 0.20*Math.sqrt(4);
+    J.forEach(n => {
+      m[n]  = D.mu[n]  + D.se_mu[n]*gauss();
+      ps[n] = D.psi[n] + Math.sqrt(D.se_psi[n]**2 + deriva**2)*gauss();
+    });
+
+    let vivos = [...J];
+    const traza = [];
+
+    // la gala que viene usa la placa real y el estado ya estimado
+    const placa0 = D.placa28.slice();
+    const s0 = {};
+    placa0.forEach(n => { const [mu0, sd] = D.estado28[n]; s0[n] = mu0 + sd*gauss(); });
+    placa0.forEach(n => {                       // lo observado también corrige el rasgo
+      const pv = D.se_mu[n]**2, ov = OM*OM;
+      m[n] = (D.mu[n]/pv + s0[n]/ov) / (1/pv + 1/ov);
+    });
+    let fuera = elegir(placa0, softmax(placa0.map(n=>s0[n])));
+    vivos = vivos.filter(x=>x!==fuera);
+    traza.push({gala:28, placa:placa0, fuera, lider:D.placa_vigente.inmune_lider});
+
+    const nFin = Math.random() < 0.70 ? 3 : 4;
+    let g = 29;
+    while(vivos.length > nFin){
+      const lider = vivos[Math.floor(Math.random()*vivos.length)];
+      const cand = vivos.filter(x=>x!==lider);
+      const tam = Math.max(3, Math.min(cand.length, Math.round(0.62*cand.length)));
+      const placa = topGumbel(cand, tam, D.propension);
+      const st = placa.map(n => m[n] + OM*gauss());
+      fuera = elegir(placa, softmax(st));
+      vivos = vivos.filter(x=>x!==fuera);
+      traza.push({gala:g++, placa, fuera, lider});
+    }
+
+    const beta = Math.max(0.85 + 0.30*gauss(), 0.15);
+    let f = vivos.slice();
+    const finalistas = f.slice();
+    const salenFinal = [];
+    while(f.length > 1){
+      const pv = softmax(f.map(n => beta*ps[n]));
+      const inv = pv.map(v => 1/Math.max(v, 1e-12));
+      const menos = elegir(f, inv);
+      salenFinal.push(menos);
+      f = f.filter(x=>x!==menos);
+    }
+    return {traza, finalistas, salenFinal, ganador:f[0]};
+  }
+
+  // ---- acumulado -------------------------------------------------------
+  const cuenta = {}; J.forEach(n => cuenta[n] = 0);
+  let total = 0;
+  const elTraza = $("#sim-traza"), elTally = $("#sim-tally"), elCuenta = $("#sim-cuenta");
+
+  function pintarTally(){
+    const ord = [...J].sort((a,b) => cuenta[b]-cuenta[a]);
+    const max = Math.max(1, cuenta[ord[0]]);
+    elTally.innerHTML = ord.map((n,i) => {
+      const pct = total ? cuenta[n]/total : 0;
+      return "<div class='sim-fila"+(i===0&&total?" lider":"")+"'>" +
+        "<span class='n'>"+n+"</span>" +
+        "<span class='b'><i style='width:"+(100*cuenta[n]/max)+"%'></i></span>" +
+        "<span class='v'>"+(total ? (100*pct).toFixed(1).replace(".",",")+"%" : "—")+"</span></div>";
+    }).join("");
+    elCuenta.innerHTML = total
+      ? "<b>"+total.toLocaleString("es-AR")+"</b> temporada"+(total===1?"":"s")+" corrida"+(total===1?"":"s")+
+        " · gana más veces <b>"+ord[0]+"</b>"
+      : "Todavía no corriste ninguna.";
+  }
+
+  function pintarTraza(r){
+    const filas = r.traza.map(t =>
+      "<li><span class='g'>Gala "+t.gala+"</span><span>placa de "+t.placa.length+
+      " · sale <b>"+t.fuera+"</b></span></li>").join("");
+    const podio = "<li class='final'><span>Final entre <b style='color:var(--tinta)'>" +
+      r.finalistas.join(", ") + "</b> · gana <b>" + r.ganador + "</b></span></li>";
+    elTraza.innerHTML = filas + podio;
+  }
+
+  function correrUna(animado){
+    const r = unaTemporada();
+    cuenta[r.ganador]++; total++;
+    guardado = r;
+    if(animado && !quieto && document.visibilityState === "visible"){
+      elTraza.innerHTML = "";
+      r.traza.forEach((t, i) => setTimeout(() => {
+        elTraza.insertAdjacentHTML("beforeend",
+          "<li><span class='g'>Gala "+t.gala+"</span><span>placa de "+t.placa.length+
+          " · sale <b>"+t.fuera+"</b></span></li>");
+      }, i*380));
+      setTimeout(() => { pintarTraza(r); pintarTally(); }, r.traza.length*380 + 200);
+    } else { pintarTraza(r); }
+    pintarTally();
+    fichaDe(r.ganador);
+  }
+
+  $("#sim-una").addEventListener("click", () => correrUna(true));
+  $("#sim-mil").addEventListener("click", e => {
+    const b = e.currentTarget; b.disabled = true; b.textContent = "Corriendo…";
+    setTimeout(() => {
+      for(let i=0;i<1000;i++){ const r = unaTemporada(); cuenta[r.ganador]++; total++; guardado = r; }
+      pintarTraza(guardado); pintarTally();
+      const lider = [...J].sort((a,b)=>cuenta[b]-cuenta[a])[0];
+      fichaDe(lider);
+      b.disabled = false; b.textContent = "Correr 1.000 de golpe";
+    }, 30);
+  });
+  $("#sim-reset").addEventListener("click", () => {
+    J.forEach(n => cuenta[n] = 0); total = 0; elTraza.innerHTML = ""; pintarTally();
+    fichaDe([...J].sort((a,b)=>base.p_gana[b]-base.p_gana[a])[0]);
+  });
+
+  // ---- de dónde salen los números de esa persona ------------------------
+  function fichaDe(n){
+    const p = D.perfil[n] || {};
+    const galas = D.galas.filter(g => g.reparto.some(([q]) => q === n))
+      .map(g => { const v = g.reparto.find(([q]) => q === n)[1];
+                  return {gala:g.gala, fecha:g.fecha, v}; });
+    const pos1607 = D.ranking1607.indexOf(n);
+    const filas = [];
+    filas.push(["Galas con reparto completo", galas.length ? galas.map(g =>
+      "G"+g.gala+" ("+g.fecha.slice(8)+"/"+g.fecha.slice(5,7)+"): <b>"+nf(g.v,1)+"%</b>").join(" · ")
+      : "<i>ninguna: su rechazo es casi sólo el prior</i>"]);
+    filas.push(["Rechazo estimado μ", "<b>"+(D.mu[n]>0?"+":"")+nf(D.mu[n])+"</b> ± "+nf(D.se_mu[n])]);
+    filas.push(["Voto positivo del 16/07", pos1607 >= 0 ? "puesto <b>"+(pos1607+1)+"</b> de 16" : "no estaba"]);
+    filas.push(["Apoyo estimado ψ", "<b>"+(D.psi[n]>0?"+":"")+nf(D.psi[n])+"</b> ± "+nf(D.se_psi[n])+
+      " · sobre "+D.fases_psi[n]+" fases positivas"]);
+    filas.push(["Cae en placa", (p.placas_recientes ?? "?")+" veces desde junio · "+
+      (p.votos_recientes ?? "?")+" puntos de nominación en las últimas 4 galas"]);
+    filas.push(["Pronóstico del modelo", "<b>"+pc(base.p_gana[n])+"</b> de ganar · llega a la final "+
+      pc(base.p_final[n],0)]);
+    $("#ficha").innerHTML = "<h4>De dónde salen los números de "+n+"</h4><table><tbody>" +
+      filas.map(([k,v]) => "<tr><td>"+k+"</td><td>"+v+"</td></tr>").join("") +
+      "</tbody></table>";
+  }
+
+  pintarTally();
+  fichaDe([...J].sort((a,b)=>base.p_gana[b]-base.p_gana[a])[0]);
+})();
+
+
+/* ---------- el termómetro de X ----------
+   Posiciones medidas en el top-50 de tendencias de Argentina, no impresiones.
+   El dato que vale: la tendencia más longeva de la jornada era una campaña para
+   echar a alguien, y esa persona salió. */
+(function(){
+  const A = D.actualidad;
+  if(!A || !A.tendencias){ $("#tendencias").remove(); return; }
+  const T = A.tendencias, campanas = T.terminos.filter(t => t.tipo === "campaña de voto");
+  const larga = T.terminos.reduce((a,b) => (b.horas||0) > (a.horas||0) ? b : a);
+
+  $("#tit-trend").textContent = "Lo que más se pidió en X fue exactamente lo que pasó";
+  $("#sub-trend").innerHTML =
+    "<b>" + larga.txt + "</b> estuvo entre las cuatro primeras tendencias de Argentina durante <b>" +
+    larga.horas + " horas</b>, y era una campaña para que lo echaran. Salió con el 58%. " +
+    "Abajo, la mejor posición que alcanzó cada término en la ventana de " + T.ventana + ".";
+
+  $("#trend").innerHTML = T.terminos.map(t =>
+    "<div class='trend-fila" + (t.mejor <= 3 ? " top" : "") + "'>" +
+    "<span class='pos'>#" + t.mejor + "</span>" +
+    "<span class='txt'>" + t.txt + (t.nota ? "<small>" + t.nota + "</small>" : "") + "</span>" +
+    "<span class='dur'>" + (t.horas ? t.horas + " h" : t.tipo) + "</span></div>").join("");
+
+  $("#pie-trend").textContent =
+    "Posición, no volumen: trends24 archiva el top-50 por país pero no publica cuántos tuits " +
+    "hay detrás de cada término, así que se puede decir cuánto duró y qué tan arriba llegó, " +
+    "no cuánta gente lo escribió.";
+
+  const luana = T.terminos.find(t => /LUANA/.test(t.txt));
+  const B = A.bandos;
+  $("#bandos").innerHTML = B
+    ? "Del Moro les pidió que se pararan del lado de quien querían que siguiera. Con <b>Hanssen</b> se " +
+      "pusieron " + B.con_hanssen.join(", ") + ". Con <b>Sol</b>, " + B.con_sol.join(", ") + ". " +
+      "Es el mapa de alianzas más medible que hay hoy y es lo que va a armar la placa del miércoles." +
+      (luana ? " Mientras tanto ya sube <b>" + luana.txt + "</b>: la próxima campaña." : "")
+    : "";
+
+  $("#oficial-trend").innerHTML =
+    "<b>" + T.oficial.txt + "</b> aparece en todos los posts de Telefe y en <b>ninguno</b> de los 21 " +
+    "cortes del top-50 de la ventana. Lo que trendea no es lo que pone la producción: son las " +
+    "campañas que arma el fandom, con el número de teléfono adentro.";
+})();
+
+/* ---------- las publicaciones, servidas por X ----------
+   Esta es la unica parte de la pagina que no se sostiene sola: pide el guion de
+   incrustacion a platform.twitter.com. Sirve de excusa para explicar por que la
+   pagina esta acá y no en un artefacto — un artefacto no puede hacer ni una
+   peticion a un servidor ajeno, asi que lo mas cerca del original que podia
+   llegar era dibujar una tarjeta parecida. Esto no se parece a la publicacion:
+   es la publicacion.
+
+   Tres cuidados, porque incrustar cosas de terceros sale mal por defecto:
+     * El marcado viene de la API de oEmbed de X, no de una transcripcion. Si el
+       autor borra el post, la incrustacion se cae y no queda una copia mia
+       diciendo lo que dijo.
+     * El guion se pide solo cuando la seccion entra en pantalla. Quien no baje
+       hasta acá no le manda ni una peticion a X, y quien la bloquee sigue
+       viendo la cita completa con su enlace.
+     * Los enlaces salen con rel="noopener nofollow ugc": contenido de terceros. */
+(function(){
+  const A = D.actualidad, cont = $("#muro-pruebas");
+  if(!cont) return;
+  const P = A && A.posts;
+  if(!P || !P.items || !P.items.length){ $("#pruebas").remove(); return; }
+
+  $("#tit-pruebas").textContent = "Los sondeos que se leen acá, tal como se publicaron";
+  $("#sub-pruebas").innerHTML =
+    "Todo lo que el modelo consume de las redes entra por estas dos publicaciones. " +
+    "No están transcriptas ni fotografiadas: están <b>incrustadas desde X</b>, con el " +
+    "código que da la propia plataforma. Se puede abrir cada una y contar los votos.";
+
+  cont.innerHTML = P.items.map(o =>
+    "<figure class='prueba'>" +
+      "<div class='prueba-que'>" + o.autor + " · " + o.que + "</div>" +
+      "<div class='tw-real'>" + o.html + "</div>" +
+      "<figcaption class='tw-nota'>" + o.lectura + "</figcaption>" +
+    "</figure>").join("");
+  cont.querySelectorAll("a[href]").forEach(a => {
+    a.target = "_blank"; a.rel = "noopener nofollow ugc";
+  });
+
+  $("#pie-pruebas").innerHTML =
+    "Las dos midieron la misma noche y se equivocaron en direcciones opuestas. Por eso " +
+    "acá una entra al modelo con un sesgo y un desvío estimados contra sus propias galas " +
+    "anteriores, y la otra no entra: <b>una encuesta sin historial no se puede corregir</b>, " +
+    "y sin corregir no es un dato, es una opinión con porcentajes.";
+
+  /* El guion se pide solo si alguien llega hasta acá. Se mira la distancia a
+     mano en vez de con IntersectionObserver: el observador no dispara en
+     pestañas que el navegador nunca llega a pintar, y ahí la sección se
+     quedaba con las citas sin hidratar para siempre. Un rect y un scroll
+     pasivo funcionan en todos lados. */
+  let pedido = false;
+  function pedir(){
+    if(pedido) return;
+    pedido = true;
+    removeEventListener("scroll", alScroll);
+    const g = document.createElement("script");
+    g.src = "https://platform.twitter.com/widgets.js";
+    g.async = true; g.charset = "utf-8";
+    document.head.appendChild(g);
+  }
+  function alScroll(){
+    const alto = innerHeight || document.documentElement.clientHeight || 800;
+    const r = cont.getBoundingClientRect();
+    if(r.top < alto + 600 && r.bottom > -600) pedir();
+  }
+  // Dos disparadores para lo mismo, a propósito: el observador es la forma
+  // correcta y el scroll a mano es el que sigue andando donde el observador no
+  // se despierta. El primero que llegue pide el guion; el otro se encuentra
+  // con pedido = true y no hace nada.
+  if(window.IntersectionObserver){
+    const io = new IntersectionObserver(es => {
+      if(es.some(e => e.isIntersecting)){ io.disconnect(); pedir(); }
+    }, {rootMargin: "600px"});
+    io.observe(cont);
+  }
+  addEventListener("scroll", alScroll, {passive:true});
+  alScroll();
+})();
+
+/* ---------- el zodíaco, con la misma vara que el resto ----------
+   Pedido explícitamente, y hecho como todo lo demás: la fecha de nacimiento se
+   busca, el signo se calcula de la fecha, la probabilidad por signo se suma del
+   modelo, y lo que no se encontró se declara. El remate es la cuenta de si la
+   coincidencia que salta a la vista significa algo. */
+(function(){
+  const A = D.actualidad;
+  if(!A || !A.zodiaco){ $("#zodiaco").remove(); return; }
+  const Z = A.zodiaco, base = D.escenarios.base;
+
+  const porSigno = {};
+  Object.entries(Z.signos).forEach(([q,v]) => {
+    (porSigno[v.signo] = porSigno[v.signo] || []).push(q);
+  });
+  const conocidas = Object.keys(Z.signos).length;
+  const faltan = Object.keys(Z.sin_fecha || {}).length;
+
+  $("#sub-zod").innerHTML =
+    "Pediste horóscopo y acá está, hecho igual que el resto: la fecha de nacimiento se busca con " +
+    "fuente, el signo se calcula de la fecha y la probabilidad de cada signo es la suma de las " +
+    "probabilidades del modelo. De las " + (conocidas + faltan) + " que quedan hay fecha publicada " +
+    "de " + conocidas + "; de las otras " + faltan + " no la hay, y eso se dice en vez de rellenarlo.";
+
+  const orden = Object.entries(porSigno)
+    .map(([sig, qs]) => [sig, qs, qs.reduce((a,q) => a + base.p_gana[q], 0)])
+    .sort((a,b) => b[2]-a[2]);
+  $("#signos").innerHTML =
+    orden.map(([sig, qs, p]) =>
+      "<div class='signo'><div class='s'>" + sig + "</div>" +
+      "<div class='q'>" + qs.join(", ") + "</div>" +
+      "<div class='p'>" + pc(p,1) + "</div></div>").join("") +
+    Object.entries(Z.sin_fecha || {}).map(([q, por]) =>
+      "<div class='signo falta'><div class='s'>sin fecha</div>" +
+      "<div class='q'><b style='color:var(--tinta)'>" + q + "</b><br>" + por + "</div></div>").join("");
+
+  const gs = Z.ganadores.filter(g => g.signo);
+  const cuenta = {};
+  gs.forEach(g => (cuenta[g.signo] = cuenta[g.signo] || []).push(g.quien + " (" + g.anio + ")"));
+  const filas = Object.entries(cuenta).sort((a,b) => b[1].length - a[1].length);
+  $("#t-zod").innerHTML =
+    "<thead><tr><th>Signo</th><th>Campeones</th><th>Quiénes</th></tr></thead><tbody>" +
+    filas.map(([sig, qs]) =>
+      "<tr><td><b>" + sig + "</b></td><td class='mono'>" + qs.length + "</td>" +
+      "<td style='white-space:normal; text-align:left; color:var(--tinta2)'>" + qs.join(" · ") +
+      "</td></tr>").join("") +
+    "<tr><td colspan='3' style='white-space:normal; text-align:left; color:var(--tinta3)'>" +
+    "De " + Z.ganadores.length + " ediciones hay fecha de " + gs.length + ". Las otras " +
+    (Z.ganadores.length - gs.length) + " no la tienen publicada, así que esta tabla no es el " +
+    "historial completo y ningún signo puede reclamar nada.</td></tr></tbody>";
+
+  $("#zod-coincidencia").innerHTML = (Z.coincidencia && Z.coincidencia.texto) || "";
+})();
+
+/* ---------- qué movió la gala: separar "quién salió" de "por cuánto" -------
+   La rama que esta página publicaba antes de la gala contestaba una sola
+   pregunta, quién se va. La gala contestó dos: además dijo por cuánto, y eso es
+   información nueva sobre el rechazo de las que estaban en placa. Para que no
+   parezca magia, el modelo se corre dos veces con la misma semilla, el mismo
+   plantel y el mismo código, cambiando solo si los porcentajes de esa noche
+   entran al ajuste. Lo que separa a las dos columnas es exactamente eso. */
+(function(){
+  const E = D.evolucion;
+  if(!E || !E.filas || !E.filas.length){ $("#evolucion").remove(); return; }
+
+  const antes = [...E.filas].sort((a,b) => b.sin_pct - a.sin_pct);
+  const ahora = [...E.filas].sort((a,b) => b.con_pct - a.con_pct);
+  const giro = antes[0].quien !== ahora[0].quien;
+
+  $("#tit-evo").textContent = giro
+    ? "Salió " + E.eliminado + ", pero lo que cambió el pronóstico fueron los porcentajes"
+    : "Lo que aportó la gala, más allá de quién salió";
+  $("#sub-evo").innerHTML =
+    "Antes de la gala esta página decía que si salía <b>" + E.eliminado + "</b> quedaba primera " +
+    "<b>" + antes[0].quien + "</b>. Salió " + E.eliminado + " y hoy la primera es <b>" + ahora[0].quien +
+    "</b>. No es que el modelo se haya contradicho: la rama sabía <em>quién</em> se iba, no " +
+    "<em>por cuánto</em>. Abajo, el mismo modelo corrido dos veces con la misma semilla, " +
+    "cambiando solo si los porcentajes de esa noche informan el rechazo.";
+
+  const cont = $("#evo");
+  cont.innerHTML =
+    "<div class='evo-cab'><div>Quién</div><div>Solo salió</div><div>Con las cifras</div><div>Δ</div></div>" +
+    ahora.map((f,i) => {
+      const pos = antes.findIndex(x => x.quien === f.quien) + 1;
+      const salto = pos - (i+1);
+      const cls = f.delta_pp > 0.3 ? " sube" : (f.delta_pp < -0.3 ? " baja" : "");
+      return "<div class='evo-fila" + (i===0 && giro ? " giro" : "") + "'>" +
+        "<span class='q'>" + f.quien +
+          (salto ? " <i>" + (salto>0 ? "sube " + salto : "baja " + (-salto)) + "</i>" : "") + "</span>" +
+        "<span class='v'>" + pc(f.sin_pct,1) + "</span>" +
+        "<span class='v ahora'>" + pc(f.con_pct,1) + "</span>" +
+        "<span class='d" + cls + "'>" + (Math.abs(f.delta_pp) < 0.05 ? "=" :
+          (f.delta_pp>0?"+":"−") + nf(Math.abs(f.delta_pp),1)) + "</span></div>";
+    }).join("") +
+    "<div class='evo-pie'>Las dos columnas salen de " + (E.n_sims/1000).toFixed(0) +
+    " mil simulaciones cada una, con la misma semilla y el mismo plantel: " + E.eliminado +
+    " ya está fuera en las dos. Lo único que cambia es si las cifras de esa noche entran al " +
+    "ajuste del rechazo.</div>";
+
+  // lo que se cantó, ordenado de menos a más votada
+  const cuotas = Object.entries(E.cuotas).sort((a,b) => a[1]-b[1]);
+  const maxc = cuotas[cuotas.length-1][1];
+  $("#evo-cuotas").innerHTML = "<div class='post-op lider' style='margin:8px 0 0'>" +
+    cuotas.slice().reverse().map(([k,v]) =>
+      "<div><i style='width:" + (100*v/maxc) + "%'></i><span>" + k +
+      (k === E.eliminado ? " · eliminado" : "") + "</span>" +
+      "<span class='v'>" + nf(v,1) + "%</span></div>").join("") + "</div>";
+
+  // el mecanismo, con los dos casos que más se movieron
+  const porMu = [...E.filas].filter(f => f.cuota_g28 != null).sort((a,b) => a.d_mu - b.d_mu);
+  const baja = porMu[0], sube = [...E.filas].sort((a,b) => b.d_mu - a.d_mu)[0];
+  $("#evo-explica").innerHTML =
+    "El rechazo μ se estima <b>dentro de cada gala</b>, comparando a quienes estuvieron en la " +
+    "misma placa. <b>" + baja.quien + "</b> se salvó con " + nf(baja.cuota_g28,1) + "% cuando el " +
+    "modelo la esperaba peor: su μ baja " + nf(Math.abs(baja.d_mu),2) + " y con eso mejora su " +
+    "chance de sobrevivir cada semana que falta. Como la escala es relativa, las que no " +
+    "estuvieron en placa suben sin haber hecho nada: <b>" + sube.quien + "</b> gana " +
+    nf(sube.d_mu,2) + " de μ por comparación. Ahí está el vuelco, y no en la salida de " +
+    E.eliminado + ".";
+})();
+
+/* ---------- las mediciones públicas, con forma de publicación ----------
+   No son capturas: incrustar X o Instagram es imposible acá, porque esta página
+   no hace ni una petición a un servidor externo, y una captura sería republicar
+   contenido ajeno. Cada tarjeta está dibujada con las cifras verificadas contra
+   la fuente y enlaza a donde se puede comprobar. El enlace no siempre es el
+   mismo tipo de cosa, y la etiqueta lo dice: hay encuestas nativas de X que
+   tienen post, y encuestas que salieron por un canal de difusión de Instagram,
+   que vive dentro de los mensajes y no genera enlace. Ahí lo honesto es llevar
+   a la cuenta y decir que el post no existe, no fabricar un permalink. */
+(function(){
+  const E = D.encuesta;
+  const cont = $("#desacuerdo");
+  // Sin encuesta publicada para la próxima gala no hay muro que mostrar: se
+  // quita el bloque entero en vez de dejar una tarjeta sola con el modelo.
+  const hayEncuesta = E && E.cuota && Object.keys(E.cuota).length;
+  if(!cont || !hayEncuesta){
+    if(cont) cont.closest(".tarjeta").remove();
+    return;
+  }
+  cont.className = "posts";
+
+  const MARCA = {
+    X: '<svg class="post-marca" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+       '<path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.11z"/></svg>',
+    Instagram: '<svg class="post-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+       'stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/>' +
+       '<circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>',
+  };
+  const ETIQUETA = {post:"ver el post ↗", cuenta:"ver la cuenta ↗", nota:"ver la nota ↗"};
+  const iniciales = n => n.split(/\s+/).slice(0,2).map(x => x[0]).join("").toUpperCase();
+  const DIA = f => { if(!f) return ""; const [,,d] = f.split("-"); return (+d) + " ago"; };
+
+  function barras(o){
+    // Poggi publicó votos brutos y parciales, no porcentajes. Convertirlos sería
+    // inventar un denominador que la fuente nunca dio.
+    const bruto = !!o.votos;
+    const c = o.votos || o.cuota;
+    const filas = Object.entries(c).sort((a,b) => b[1]-a[1]);
+    if(o.resto_agregado) filas.push(["otros", o.resto_agregado]);
+    const max = filas[0][1];
+    return "<div class='post-op lider'>" + filas.map(([k,v]) =>
+      "<div><i style='width:" + (100*v/max) + "%'></i><span>" + k + "</span>" +
+      "<span class='v'>" + (bruto ? v.toLocaleString("es-AR") : nf(v,1)+"%") + "</span></div>").join("") +
+      "</div>";
+  }
+
+  function tarjeta(o){
+    const pie = o.votos
+      ? "votos brutos · faltan tres nominados"
+      : (o.n_nominal ? o.n_nominal.toLocaleString("es-AR") + " votos" : "sin muestra publicada");
+    return "<a class='post' href='" + o.url + "' target='_blank' rel='noopener'>" +
+      "<div class='post-cab'><div class='post-av'>" + iniciales(o.fuente) + "</div>" +
+      "<div class='post-quien'><div class='a'>" + o.fuente + "</div>" +
+      "<div class='b'>" + (o.handle ? o.handle + " · " : "") + o.canal +
+        (o.fecha ? " · " + DIA(o.fecha) : "") + "</div></div>" +
+      (MARCA[o.canal] || "") + "</div>" +
+      "<p class='post-q'>" + (o.pregunta || "") + "</p>" +
+      barras(o) +
+      (o.abierta ? "<p class='post-nota abierta'>Seguía abierta al leerla. Cierra a las " +
+        o.cierra + ".</p>" : "") +
+      (o.nota ? "<p class='post-nota'>" + o.nota + "</p>" : "") +
+      "<div class='post-pie'><span>" + pie + "</span>" +
+      "<span class='ir'>" + (ETIQUETA[o.tipo_enlace] || "ver la fuente ↗") + "</span></div></a>";
+  }
+
+  const base = D.escenarios.base;
+  const ord = [...D.placa_vigente.integrantes].sort((a,b) => base.p_sale28[b]-base.p_sale28[a]);
+  const propio = "<div class='post propio'>" +
+    "<div class='post-cab'><div class='post-av'>M</div>" +
+    "<div class='post-quien'><div class='a'>Este modelo</div>" +
+    "<div class='b'>" + (D.ramas ? (D.ramas.n_sims/1000).toFixed(0) + " mil simulaciones" : "simulación") +
+    "</div></div></div>" +
+    "<p class='post-q'>Riesgo de eliminación de cada uno de la placa</p>" +
+    "<div class='post-op lider'>" +
+      ord.map(k => "<div><i style='width:" + (100*base.p_sale28[k]/base.p_sale28[ord[0]]) + "%'></i>" +
+        "<span>" + k + "</span><span class='v'>" + pc(base.p_sale28[k],1) + "</span></div>").join("") +
+    "</div>" +
+    "<div class='post-pie'><span>preferencia revelada de 8 galas + la encuesta calibrada</span></div></div>";
+
+  cont.innerHTML = tarjeta(E) + (E.otras||[]).map(tarjeta).join("") + propio;
+})();
+
+/* ---------- ramas: cómo queda la carrera según quién salga hoy ---------- */
+(function(){
+  const R = D.ramas;
+  if(!R || !R.ramas || !Object.keys(R.ramas).length){ $("#ramas").remove(); return; }
+
+  // Con placa, las ramas son las nominadas. Sin placa, las que el modelo ve con
+  // posibilidad real de irse: ramas.json ya trae esa lista en candidatas.
+  const placa = (R.candidatas || R.placa || []).filter(n => R.ramas[n]);
+  placa.sort((a,b) => R.ramas[b].p_sale - R.ramas[a].p_sale);
+  if(!placa.length){ $("#ramas").remove(); return; }
+  let sel = placa[0];
+
+  $("#tit-ramas").textContent = "Si la próxima es " + sel + ", ¿quién gana?";
+  $("#sub-ramas").textContent = (R.hay_placa === false
+      ? "Todavía no hay nominadas, así que la próxima en irse puede ser cualquiera. Tocá un nombre "
+        + "y mirá cómo queda la carrera por el premio si esa es la que se va. "
+      : "En la próxima gala se va una de las " + placa.length + ". Tocá un nombre y mirá cómo queda "
+        + "la carrera por el premio en ese caso. ")
+    + "No son " + placa.length + " modelos distintos: es la misma tanda de "
+    + (R.n_sims/1000).toFixed(0) + " mil temporadas simuladas, mirada solo por las que terminan "
+    + "con esa salida.";
+
+  const filas = new Map();
+  const lista = $("#rama-lista");
+  D.jugadores.forEach(n => {
+    const f = el("div","rama-fila");
+    f.innerHTML = "<div class='pos mono'></div><div class='n'></div>" +
+      "<div class='rama-barra'><i style='width:0'></i></div>" +
+      "<div class='pct'></div><div class='dl mono'></div>";
+    filas.set(n, f); lista.appendChild(f);
+  });
+
+  const chips = $("#ramas-chips");
+  placa.forEach(n => {
+    const b = el("button","rama-chip",
+      "<span>"+n+"</span><span class='p'>"+pc(R.ramas[n].p_sale,0)+"</span>");
+    b.type = "button";
+    b.setAttribute("aria-pressed", String(n === sel));
+    b.onclick = () => {
+      sel = n;
+      [...chips.children].forEach(c => c.setAttribute("aria-pressed","false"));
+      b.setAttribute("aria-pressed","true");
+      pintar();
+    };
+    chips.appendChild(b);
+  });
+
+  function pintar(){
+    const r = R.ramas[sel];
+    const orden = [...D.jugadores].sort((a,b) => r.p_gana[b] - r.p_gana[a]);
+    const max = Math.max(...orden.map(n => r.p_gana[n]));
+    // Animar solo con la pestaña a la vista. Con el documento oculto el
+    // navegador no hace avanzar las animaciones, y la fila se quedaría dibujada
+    // en su posición vieja hasta que alguien mire.
+    const mueve = !matchMedia("(prefers-reduced-motion: reduce)").matches
+                  && document.visibilityState === "visible";
+
+    // FLIP en pasadas separadas. Medir mientras se reordena y se transforma no
+    // funciona: cada lectura ve el desplazamiento que se acaba de aplicar a la
+    // fila anterior, y las filas terminan una encima de otra.
+    // 1) dónde estaba cada una
+    const antes = new Map();
+    if(mueve) filas.forEach((f,n) => antes.set(n, f.getBoundingClientRect().top));
+
+    // 2) contenido y orden nuevos, sin tocar transform todavía
+    orden.forEach(n => lista.appendChild(filas.get(n)));
+    const vivos = orden.filter(n => n !== sel);
+    orden.forEach(n => {
+      const f = filas.get(n), fuera = (n === sel);
+      f.classList.toggle("fuera", fuera);
+      f.querySelector(".pos").textContent = fuera ? "" : (vivos.indexOf(n) + 1);
+      f.querySelector(".n").innerHTML = n +
+        (fuera ? " <span style='color:var(--tinta3); font-weight:400'>· se va</span>" : "");
+      f.querySelector(".rama-barra i").style.width = (100 * r.p_gana[n] / max) + "%";
+      f.querySelector(".pct").textContent = fuera ? "—" : pc(r.p_gana[n]);
+      const d = 100 * (r.p_gana[n] - R.base.p_gana[n]);
+      const dl = f.querySelector(".dl");
+      dl.className = "dl mono" + (fuera ? "" : (d > 0.15 ? " sube" : (d < -0.15 ? " baja" : "")));
+      dl.textContent = fuera ? "" : (Math.abs(d) < 0.05 ? "=" : (d > 0 ? "+" : "−") + nf(Math.abs(d), 1));
+    });
+
+    // 3) el desplazamiento se anima con la API de animaciones y no tocando el
+    //    style. La diferencia importa: dentro de un panel oculto el navegador no
+    //    ejecuta requestAnimationFrame, y la versión que limpiaba el transform
+    //    desde un rAF dejaba las filas encimadas para siempre. Así, si la
+    //    animación no llega a correr, la fila ya está en su sitio definitivo.
+    if(mueve){
+      orden.forEach(n => {
+        const f = filas.get(n);
+        const dy = antes.get(n) - f.getBoundingClientRect().top;
+        if(!dy || !f.animate) return;
+        f.animate([{transform:"translateY("+dy+"px)"}, {transform:"none"}],
+                  {duration:500, easing:"cubic-bezier(.16,1,.3,1)"});
+      });
+    }
+
+    $("#tit-ramas").textContent = "Si la próxima es " + sel + ", ¿quién gana?";
+    const g = r.mas_gana[0], g2 = r.mas_gana[1];
+    $("#rama-pie").innerHTML =
+      "El modelo le da a <b>" + sel + "</b> un " + pc(r.p_sale,0) + " de ser la próxima en irse, sobre " +
+      r.n_efectivo.toLocaleString("es-AR") + " temporadas simuladas que acaban así. " +
+      "Quien más gana con esa salida es <b>" + g.quien + "</b>, que suma " +
+      nf(g.delta_pp,1) + " puntos" + (g2 ? ", seguida de " + g2.quien + " con " + nf(g2.delta_pp,1) : "") + ". " +
+      "Las ramas, pesadas por su probabilidad, devuelven exactamente el pronóstico general: " +
+      "es una identidad, no una coincidencia.";
+  }
+  pintar();
+})();
+
+/*__ANIMACIONES__*/
+
+montarAnimaciones(document.getElementById("anim"), quieto, {
+  jugadores: D.jugadores, mu: D.mu, psi: D.psi, pgana: base.p_gana
+});
+</script>

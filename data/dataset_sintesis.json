@@ -1,0 +1,2170 @@
+{
+ "jugadores": [
+  {
+   "apodo": "Charlotte",
+   "nombre_completo": "Charlotte Chantal Solange Caniggia Nannis",
+   "edad": 33,
+   "ciudad": "Buenos Aires (CABA)",
+   "provincia": "Ciudad Autónoma de Buenos Aires",
+   "pais_iso": "AR",
+   "pais_nombre": "Argentina",
+   "edicion_previa": "Gran Hermano VIP España 4 (2016): 9.º puesto / 8.ª eliminada. No participó de GH Argentina antes. Otros realities: Bailando 2012 (15.º), Showmatch La Academia 2021 (30.º), MasterChef Celebrity AR (15.º), Acapulco Shore.",
+   "fecha_ingreso": "2026-05-20",
+   "arquetipo": "Diva mediática / 'reina de los realities'. Personaje cómico-conflictivo y frontal.",
+   "fandom": "Fandom mediático heredado (hija de Claudio Paul Caniggia y Mariana Nannis, melliza de Alex Caniggia). NO MEDIDO: no hay ninguna cuantificación de su fandom en el dataset.",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": null,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "PRIMERA NOMINACIÓN REGISTRADA en todo el dataset: entró a la placa del 10/08 por FULMINANTE de la líder Yipio (05/08), no por votos de la casa. No figura en ninguna de las 11 placas publicadas entre las galas 17 y 27. Encuesta Bongiorno 07/08: 3.ª con 10,9% de voto negativo.",
+   "sentimiento": "Polarizante pero sin rechazo activo medido: nunca lideró una encuesta de voto negativo en el dataset.",
+   "notas": "CONFLICTO DE EDAD: anexo Wikipedia ES y Wikipedia EN dan 33; el texto del artículo biográfico ES dice 31 (desactualizado frente a su fecha de nacimiento, 15/02/1993, que da 33 en agosto de 2026). Ingresó el 20/05 como incorporación NUEVA y directa, no por repechaje ni Golden Ticket. Llamó 'hipócritas' a Yipio y Pincoya. El 27/07 fue la única que se puso detrás de Cola para conservarlo."
+  },
+  {
+   "apodo": "Hanssen",
+   "nombre_completo": "Matías Hanssen",
+   "edad": 29,
+   "ciudad": "San Miguel de Tucumán (nacimiento); reside en Buenos Aires",
+   "provincia": "Tucumán",
+   "pais_iso": "AR",
+   "pais_nombre": "Argentina",
+   "edicion_previa": "Ninguna",
+   "fecha_ingreso": "2026-05-20",
+   "arquetipo": "Estratega frontal y competitivo; el 'tapado' desconocido convertido en jugador fuerte. ÚNICO HOMBRE en competencia desde el 06/08.",
+   "fandom": "Sin fandom previo: desconocido antes del programa. Emprendedor (marca propia de cepillos de dientes).",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": null,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "INVERSIÓN BRUSCA Y RECIENTE. Entre el 08/06 y el 03/08 salió de placa SIEMPRE con porcentajes ínfimos de voto negativo: 0,5% (08/06), 2,5% (29/06), 1,6% (06/07), 0,2% (20/07), 2,3% (27/07), 0,5% (03/08). Pero la encuesta de Bongiorno del 07/08 (N=25.866, la mayor de la temporada) lo pone 1.º con 52,6% de voto negativo. Diego Poggi (07/08) lo pone 2.º con 2.600 votos, detrás de Sol.",
+   "sentimiento": "De 'invisible salvado' a blanco principal declarado en una sola semana. Es la señal más discordante del dataset: 6 mediciones oficiales consecutivas de rechazo casi nulo contra 1 encuesta que lo da eliminado.",
+   "notas": "CONFLICTO DE EDAD: Wikipedia ES (anexo) 28; Wikipedia EN 36; prensa de su ingreso (viapais, minutouno) 29. Se cargó 29 (dato de prensa) con confianza BAJA. CONFLICTO DE PROCEDENCIA: Wikipedia ES dice Tucumán, Wikipedia EN dice Buenos Aires; medios tucumanos lo presentan como nacido en Tucumán y residente en Buenos Aires. Fue líder en la semana 18. Nominado de forma casi ininterrumpida desde la semana 20. Hizo la nominación espontánea de la semana 24. En la semana 23 le anularon los votos por revelar sus nominaciones en clave."
+  },
+  {
+   "apodo": "Luana",
+   "nombre_completo": "Luana Fernández",
+   "edad": 28,
+   "ciudad": "José C. Paz (Wikipedia ES/EN); viapais.com.ar indica nacida en Escobar",
+   "provincia": "Buenos Aires",
+   "pais_iso": "AR",
+   "pais_nombre": "Argentina",
+   "edicion_previa": "Combate (Argentina) — participó, PUESTO DESCONOCIDO (ninguna fuente lo publica)",
+   "fecha_ingreso": "2026-02-24",
+   "arquetipo": "'La topadora': impulsiva, conflictiva, protagonista de peleas y de historias amorosas (vínculo con Franco Zunino).",
+   "fandom": "Mediática menor (ex Combate + influencer). NO MEDIDO.",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": null,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "SALVADA esta semana (no está en la placa del 10/08). Sobrevivió DOS versus: 39,9% vs Nigro (06/07) y 48,8% vs Manu (13/07, el 2.º versus más ajustado de la edición). En su última aparición en placa (03/08) fue la MÁS salvada: 0,1% de voto negativo, el porcentaje más bajo registrado en toda la edición.",
+   "sentimiento": "Alta exposición conflictiva pero base de votantes sólida: cuando queda expuesta, el público no la vota para eliminar.",
+   "notas": "Participante original (día 2), nunca salió de la casa: una de las que más días acumula. Arrastra una denuncia mediática por presunto vínculo con la red de Yao Cabrera y Nathan 'Mini Boy' Castro. Su madre generó el endurecimiento de las reglas de 'congelados' el 22/07 al hacerle señas sobre el juego. Juliana 'Tini' Díaz pidió ser expulsada por 'agredirla' durante la visita de exjugadores."
+  },
+  {
+   "apodo": "Majluf",
+   "nombre_completo": "Alejandra Majluf",
+   "edad": 63,
+   "ciudad": "Buenos Aires (sin precisar CABA vs provincia)",
+   "provincia": "No precisada por las fuentes (solo dicen 'Buenos Aires')",
+   "pais_iso": "AR",
+   "pais_nombre": "Argentina",
+   "edicion_previa": "Ninguna (ni GH ni otro reality). Fama de la TV de los 90.",
+   "fecha_ingreso": "2026-06-02",
+   "arquetipo": "Figura nostálgica / actriz veterana. Ícono de los 90 como 'La Colada', primera notera desfachatada del programa Fax (Canal 13, 1991-92).",
+   "fandom": "Famosa de los 80-90 (Clave de sol, Verano del 98, Esperanza mía). Fandom NO MEDIDO.",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": null,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "NOMINADA con 8 votos internos (la más votada junto a Sol). Sobrevivió el versus del 27/07 con 22,8% contra el 77,2% de Cola. Trayectoria de rechazo baja y estable: 1,6% (15/06), 8,8% (06/07), 22,8% (27/07), 0,9% (03/08). Fue una de las 2 finalistas de la placa positiva del 16/07 (quedó, se fue JC).",
+   "sentimiento": "Sin rechazo masivo, pero es la jugadora que más veces llegó al tramo final de placa sin ser eliminada en el último mes.",
+   "notas": "CONFLICTO DE EDAD: Wikipedia ES (anexo) 63; Wikipedia EN 59; Infobae 03/06/2026 dice 61. Su fecha de nacimiento documentada (02/02/1963) da 63 en agosto de 2026, valor cargado. Ingresó como REEMPLAZO de Gladys 'La Bomba Tucumana' (que abandonó el 31/05). GAP: no se precisa si nació en CABA o en la provincia de Buenos Aires."
+  },
+  {
+   "apodo": "Mariela",
+   "nombre_completo": "Mariela Prieto",
+   "edad": 48,
+   "ciudad": "No precisada por las fuentes",
+   "provincia": "Buenos Aires",
+   "pais_iso": "AR",
+   "pais_nombre": "Argentina",
+   "edicion_previa": "Ninguna",
+   "fecha_ingreso": "2026-05-20",
+   "arquetipo": "'La botinera': conflictiva y peleadora (escándalos con Nenu López y Cinzia). Trama externa dominante: la ruptura con el Turco García.",
+   "fandom": "Mediática por vínculo familiar ((ex)pareja del exfutbolista Claudio 'el Turco' García), no por carrera propia. NO MEDIDO.",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": null,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "SALVADA esta semana. Porcentajes de rechazo bajos y estables: 3,4% (06/07), 7,3% (27/07), 4,6% en la encuesta de Mundo Famosos del 02/08. Fue salvada en la placa positiva del 16/07.",
+   "sentimiento": "Perfil bajo en el voto: nunca fue candidata seria a eliminación en ninguna medición.",
+   "notas": "EDAD DE BAJA CONFIANZA: los 48 años provienen SOLO de Wikipedia ES y EN (que no son fuentes independientes entre sí). Ninguna nota de prensa consultada publica su edad ni su fecha de nacimiento; solo mencionan '28 años de relación' con el Turco García, quien confirmó públicamente que estaban separados 'desde diciembre'. Tampoco se encontró su ciudad exacta dentro de la provincia de Buenos Aires."
+  },
+  {
+   "apodo": "Pincoya",
+   "nombre_completo": "Jennifer Galvarini (Mi Telefe y La Nación la nombran Jennifer Torres)",
+   "edad": 50,
+   "ciudad": "Ancud, Isla Grande de Chiloé",
+   "provincia": "Región de Los Lagos (Chile)",
+   "pais_iso": "CL",
+   "pais_nombre": "Chile",
+   "edicion_previa": "Gran Hermano Chile, temporada 1 (2023). Llegó a la final; PUESTO EN DISPUTA (finalista / 2.º / 3.º según la fuente).",
+   "fecha_ingreso": "2026-02-23",
+   "arquetipo": "'Querida del público' con doble filo: pasó de jugadora polémica en GH Chile a una de las más queridas. En esta edición también es conflictiva.",
+   "fandom": "MUY FAMOSA EN CHILE y ampliamente conocida en Argentina antes de entrar. Entró el día 1 portando la bandera chilena. Chile está habilitado para votar según las Bases oficiales, lo que le da una base de votantes internacional real. Tamaño NO MEDIDO.",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": 66,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "NOMINADA con solo 2 votos internos (la menos votada de la placa). Es su PRIMERA aparición en una placa publicada desde la gala 13 (13/05): casi tres meses sin quedar expuesta. No aparece en el top de ninguna encuesta de voto negativo de julio ni agosto.",
+   "sentimiento": "Perfil de 'querida' con la única imagen positiva alta medida entre las jugadoras vigentes (66% el 21/03/2026).",
+   "notas": "CONFLICTO DE APELLIDO: Wikipedia ES/EN y las fuentes chilenas la nombran Jennifer GALVARINI; la ficha oficial de Mi Telefe y La Nación (07/08/2026) la nombran Jennifer TORRES. Ambas grafías conviven. CONFLICTO DE EDAD: Wikipedia ES/EN dicen 50; notas de febrero 2026 (ADNSUR, La Opinión Austral, Chilevisión) decían 48; cumplió años dentro de la casa, lo que explica parte pero no toda la diferencia. Participante original (día 1), nunca salió: récord de permanencia de la edición. Recibió una sanción por fingir una lesión en una discusión con Tamara y quedó nominada automáticamente por eso (semana 7). imagen_positiva = 66% corresponde a la encuesta autoseleccionada de Fefe Bongiorno del 21/03/2026 (NO representativa, 4 meses y medio de antigüedad)."
+  },
+  {
+   "apodo": "Sol",
+   "nombre_completo": "Solange Gómez Abraham",
+   "edad": 37,
+   "ciudad": "San Miguel de Tucumán (Wikipedia EN consigna residencia en Recoleta, CABA)",
+   "provincia": "Tucumán",
+   "pais_iso": "AR",
+   "pais_nombre": "Argentina",
+   "edicion_previa": "Gran Hermano Argentina 6 (2010-2011): 5.º puesto según su ficha biográfica de Wikipedia ES, SIN corroboración independiente. Además hizo el intercambio internacional con La Casa de los Famosos 6 (México), 15-19/04/2026.",
+   "fecha_ingreso": "2026-05-31",
+   "arquetipo": "Villana / desestabilizadora declarada ('mi juego era desestabilizarlos'). El personaje polémico por excelencia de la temporada.",
+   "fandom": "Mediática con 15 años de carrera televisiva posterior a GH 6. NO MEDIDO, pero es la jugadora con la base de salvación más comprobada del dataset.",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": 68,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "EL DATO MÁS FUERTE DEL DATASET: sobrevivió TRES versus consecutivos con votación real de Telefe — 48,2% vs Titi (22/06, el versus más ajustado de la edición), 44,7% vs Emanuel (20/07) y 46,7% vs Campanita (03/08). Además había salido de placa con 19,9% (13/07) y 25,1% (27/04). Las encuestas la dieron eliminada al menos 4 veces (Mundo Famosos 12/07 37,5%, 19/07 52,9%, 02/08 55%; GH Encuestas 13/07 27% y 03/08 62,9%; Poggi 02/08 y 07/08) y ERRARON TODAS. Nominada de nuevo con 8 votos internos para el 10/08. Bongiorno 07/08 la baja al 2.º puesto con 32,8%.",
+   "sentimiento": "Máxima polarización de la edición: rechazo declarado altísimo en encuestas online, pero un piso de votos de salvación que ninguna medición captura. Es el caso testigo del sesgo de las encuestas de esta temporada.",
+   "notas": "CONFLICTO DE EDAD: Wikipedia ES (anexo) 35; Wikipedia EN 37; fecha de nacimiento 30/12/1988 → 37 en agosto de 2026 (valor cargado). CONFLICTO DE PROCEDENCIA: Wikipedia ES San Miguel de Tucumán vs Wikipedia EN Recoleta. CONFLICTO SOBRE SU PUESTO EN GH 6: 5.º según su ficha biográfica, el anexo de esta temporada solo dice 'Participante de GH 6'. HISTORIAL: ingresó el 24/02/2026, fue 2.ª EXPULSADA el 29/04/2026 (por manifestar reiteradamente su intención de abandonar; hubo versiones cruzadas de que 'exigió más plata'), NO se presentó al repechaje por voto del público y REINGRESÓ por GOLDEN TICKET 3 el 31/05/2026. imagen_positiva = 68% (Bongiorno, 21/03/2026, autoseleccionada, desactualizada)."
+  },
+  {
+   "apodo": "Tamara",
+   "nombre_completo": "Tamara Paganini",
+   "edad": 52,
+   "ciudad": "Buenos Aires (sin precisar CABA vs provincia)",
+   "provincia": "No precisada por las fuentes",
+   "pais_iso": "AR",
+   "pais_nombre": "Argentina",
+   "edicion_previa": "Gran Hermano Argentina 1 (2001): SUBCAMPEONA / finalista (2.º puesto), 112 días en la casa.",
+   "fecha_ingreso": "2026-03-30",
+   "arquetipo": "Leyenda / nostalgia pura: es el emblema de la 'Generación Dorada' (la edición celebra los 25 años del formato).",
+   "fandom": "Icónica: una de las caras más recordadas del GH argentino. Conduce ZAC! en el streaming La Choza Contenidos. NO MEDIDO.",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": null,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "SALVADA esta semana. Rechazo consistentemente bajo cuando queda expuesta: 3,7% (17/05) y 2% (27/07). Fue LÍDER en la semana 10 y fue SALVADA POR EL LÍDER en la semana 15 (primera salvación de líder de la edición).",
+   "sentimiento": "Capital de nostalgia, sin rechazo medido. Su único conflicto fuerte documentado fue con Pincoya.",
+   "notas": "Ingresó como REEMPLAZO de Jenny Mavinga (que abandonó el 25/03/2026), 25 años después de GH 1. Arrastra un juicio contra Telefe por su exposición en GH 1. GAP: no se precisa si es de CABA o de la provincia."
+  },
+  {
+   "apodo": "Yipio",
+   "nombre_completo": "Yisela Pintos",
+   "edad": 40,
+   "ciudad": "Montevideo",
+   "provincia": "Montevideo (departamento, Uruguay)",
+   "pais_iso": "UY",
+   "pais_nombre": "Uruguay",
+   "edicion_previa": "Ninguna. Viene del stand up: casi una década de trayectoria.",
+   "fecha_ingreso": "2026-05-20",
+   "arquetipo": "Comediante querida del público que mutó a jugadora con poder.",
+   "fandom": "Se presenta explícitamente como uruguaya ('Me encantaría ser la primer gorda uruguaya que gane Gran Hermano'). Uruguay está habilitado para votar según las Bases oficiales (SMS Antel = 6 votos; paquetes web propios), lo que le da base de votantes internacional. Conocida en Uruguay por el stand up; prácticamente desconocida en Argentina antes de entrar.",
+   "instagram": null,
+   "encuesta_favoritismo": 35.6,
+   "imagen_positiva": null,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "LÍDER de la semana 24: INMUNE, NO está en la placa del 10/08. El 04/08 ganó la casa/vivienda (llave 84 al primer intento) más el liderazgo y el poder de ver tres votaciones del confesionario. Usó la fulminante contra Charlotte. Su rechazo venía bajando: 17% (29/06), 0,8% (13/07), 1,3% (20/07).",
+   "sentimiento": "Querida del público CON poder de juego. Es la única jugadora en competencia con un dato de VOTO POSITIVO real y verificado.",
+   "notas": "encuesta_favoritismo = 35,6% NO es una encuesta: es el RESULTADO OFICIAL de la votación POSITIVA del repechaje del 20/05/2026, donde fue la más votada entre 4 candidatos (Yipio 35,6%, Lola Tomaszeuski 30,6%, Carmiña 19,8%, Kennys 14,1%). Es el único porcentaje de voto POSITIVO real disponible para un jugador vigente. HISTORIAL: ingresó el día 1 (23/02/2026), ABANDONÓ el 06/05/2026 (4.º abandono) por la salud y depresión de su madre y a pedido de su hija, y reingresó por repechaje. Cumplió años dentro de la casa. Fuente para Instagram: viapais (feb-2026) habla de 'más de 200 mil seguidores' en @yipio — cifra aproximada y desactualizada, por eso el campo va en null."
+  },
+  {
+   "apodo": "Zilli",
+   "nombre_completo": "Yanina Zilli",
+   "edad": 60,
+   "ciudad": "Arequito",
+   "provincia": "Santa Fe",
+   "pais_iso": "AR",
+   "pais_nombre": "Argentina",
+   "edicion_previa": "Ninguna edición de Gran Hermano. Fama del teatro de revistas y la TV de los 90.",
+   "fecha_ingreso": "2026-02-24",
+   "arquetipo": "Veterana explosiva y frontal ('vengo a ganar'). Una de las caras más populares de la revista de los 90 (Rompeportones, Petardos, con Emilio Disi y Miguel del Sel).",
+   "fandom": "Famosa como vedette y actriz de los 90. NO MEDIDO.",
+   "instagram": null,
+   "encuesta_favoritismo": null,
+   "imagen_positiva": 52,
+   "veces_lider": null,
+   "veces_nominado": null,
+   "momentum": "NOMINADA, pero NO por votos de la casa: la mandó a placa la VISITANTE Selva Pérez con su fulminante de despedida el 06/08. Rechazo reciente bajísimo: 0,7% (20/07) y 2,5% en la encuesta de Mundo Famosos del 02/08. Ganó el auto 0km el 27-28/05 (llave 119).",
+   "sentimiento": "Sin rechazo activo medido; su nominación es un accidente de mecánica, no una señal de impopularidad.",
+   "notas": "CONFLICTO DE EDAD: Wikipedia ES 60, Wikipedia EN 57. Fecha de nacimiento 04/03/1966 → 60 en agosto de 2026 (valor cargado). Participante original (día 2), nunca salió. Cumplió años dentro de la casa. En la semana 23 quedó sin poder votar por consecuencia del teléfono dorado y eligió a Selva Pérez para que tampoco pudiera votar — Selva la fulminó dos semanas después. imagen_positiva = 52% (Bongiorno, 21/03/2026, autoseleccionada, desactualizada)."
+  }
+ ],
+ "galas": [
+  {
+   "gala": 1,
+   "fecha": "2026-03-02",
+   "tipo_voto": "mixto (Placa Generación Dorada: primeras 24h voto POSITIVO para salvar; luego NEGATIVO para eliminar)",
+   "eliminado": "Lucero",
+   "nominados": [
+    {
+     "nombre": "Carmiña",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Pincoya",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": 8.4
+    },
+    {
+     "nombre": "Sol",
+     "porcentaje": 19.4
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": 29.8
+    },
+    {
+     "nombre": "Zilli",
+     "porcentaje": 45.2
+    },
+    {
+     "nombre": "Lucero",
+     "porcentaje": 54.8
+    }
+   ],
+   "porcentajes": "parciales (5 de 8)",
+   "fuente_url": "https://www.infobae.com/teleshow/2026/03/03/gala-de-eliminacion-en-gran-hermano-generacion-dorada-quien-abandona-la-casa/",
+   "notas": "Semana 1. Carmiña, Pincoya y Manu salieron en la fase POSITIVA (24h) sin porcentaje publicado. Los porcentajes son NEGATIVOS y están renormalizados por instancia: Emanuel 8,4% (entre 5), Sol 19,4% (entre 4), Brian 29,8% (entre 3), versus final Zilli 45,2% vs Lucero 54,8% (entre 2). CONFLICTO: Ciudad Magazine describe esas salvaciones como 'votos positivos'; Infobae y Wikipedia como negativas. Se cargó Infobae+Wikipedia, coherente con que el versus sume 100.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 2,
+   "fecha": "2026-03-09",
+   "tipo_voto": "negativo (Placa Planta: se vota a quien se considera más 'planta')",
+   "eliminado": "Tomy",
+   "nominados": [
+    {
+     "nombre": "Juanicar",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": 2.9
+    },
+    {
+     "nombre": "Nazareno",
+     "porcentaje": 4.7
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 4.9
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": 6.7
+    },
+    {
+     "nombre": "Martín",
+     "porcentaje": 10.2
+    },
+    {
+     "nombre": "Titi",
+     "porcentaje": 40.8
+    },
+    {
+     "nombre": "Tomy",
+     "porcentaje": 59.2
+    }
+   ],
+   "porcentajes": "parciales (7 de 9)",
+   "fuente_url": "https://www.infobae.com/teleshow/2026/03/10/quien-fue-el-eliminado-en-la-placa-planta-de-gran-hermano-generacion-dorada/",
+   "notas": "Primera 'placa planta' de la historia mundial del formato. CONFLICTO: Zunino 4,9% (Infobae + Ciudad Magazine) vs 4,3% (Wikipedia). Se cargó 4,9% por dos fuentes periodísticas independientes. Tomy salió por la puerta roja.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 3,
+   "fecha": "2026-03-12",
+   "tipo_voto": "positivo (se vota para SALVAR; se elimina el menos votado)",
+   "eliminado": "Carlota",
+   "nominados": [
+    {
+     "nombre": "Titi",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Carmiña",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Andrea",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Sol",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Dani",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Lolo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Pincoya",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zilli",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Franco Poggio",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Mavinga",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Nazareno",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Kennys",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Martín",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Nick",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Carlota",
+     "porcentaje": 1.3
+    }
+   ],
+   "porcentajes": "solo el del eliminado (1 de 25)",
+   "fuente_url": "https://www.infobae.com/teleshow/2026/03/13/una-participante-fue-eliminada-de-gran-hermano-tras-permanecer-solo-11-dias-dentro-de-la-casa-estoy-emocionada/",
+   "notas": "Semana 3, emitida un JUEVES. Todos nominados salvo la líder Lola Tomaszeuski. Placa POSITIVA de 25 con doble eliminación en la semana. El 1,3% de Carlota figura ÚNICAMENTE en Wikipedia: ni Mi Telefe ni Infobae ni El Destape publicaron cifras. Además Infobae/Mi Telefe dicen que el trío final fue Carlota, Brian y Nick, por lo que ese 1,3% podría corresponder al reparto entre 3 y no al total de la placa. Carmiña fue expulsada el 11/03 por comentarios racistas y su salvación quedó anulada.",
+   "confianza": "media-baja para el porcentaje; alta para el hecho"
+  },
+  {
+   "gala": 4,
+   "fecha": "2026-03-16",
+   "tipo_voto": "positivo (se vota para SALVAR; se elimina el menos votado)",
+   "eliminado": "Nick",
+   "nominados": [
+    {
+     "nombre": "Nazareno",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Franco Poggio",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Mavinga",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": 23.3
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": 28.3
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 36.1
+    },
+    {
+     "nombre": "Kennys",
+     "porcentaje": 52.3
+    },
+    {
+     "nombre": "Martín",
+     "porcentaje": 56.1
+    },
+    {
+     "nombre": "Nick",
+     "porcentaje": 43.9
+    }
+   ],
+   "porcentajes": "parciales (6 de 11)",
+   "fuente_url": "https://mitelefe.com/gran-hermano/noticias/nicolas-sicaro-fue-eliminado-en-medio-de-un-escandalo-con-solange-abraham-pid2545665",
+   "notas": "Segunda eliminación de la semana 3, continuación de la misma placa POSITIVA. ATENCIÓN: los porcentajes son de votos POSITIVOS (para salvar), no negativos: Martín 56,1 + Nick 43,9 = 100. Los tramos intermedios (Eduardo, Brian, Zunino, Kennys) provienen de Wikipedia; el versus final está confirmado por Infobae (video).",
+   "confianza": "media-alta"
+  },
+  {
+   "gala": 5,
+   "fecha": "2026-03-23",
+   "tipo_voto": "positivo (se vota para SALVAR; se elimina el menos votado)",
+   "eliminado": "Kennys",
+   "nominados": [
+    {
+     "nombre": "Zilli",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Andrea",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Sol",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Dani",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Pincoya",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Titi",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Mavinga",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Franco Poggio",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": null
+    },
+    {
+     "nombre": "La Maciel",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Lolo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Nazareno",
+     "porcentaje": 33.3
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": 35.5
+    },
+    {
+     "nombre": "Martín",
+     "porcentaje": 43.1
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": 50.6
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 51.7
+    },
+    {
+     "nombre": "Lola Tomaszeuski",
+     "porcentaje": 66.7
+    },
+    {
+     "nombre": "Kennys",
+     "porcentaje": 33.3
+    }
+   ],
+   "porcentajes": "parciales (7 de 24)",
+   "fuente_url": "https://www.eldestapeweb.com/espectaculos/television/gran-hermano-generacion-dorada-quien-fue-el-quinto-eliminado-202632323308",
+   "notas": "Semana 4. GH anuló TODAS las nominaciones y mandó a todos a placa como castigo por un complot masivo, incluido el líder Manu (que perdió liderazgo e inmunidad). ATENCIÓN A LA COINCIDENCIA NUMÉRICA: el 33,3% de Nazareno (entre 7) y el 33,3% de Kennys (entre 2) NO son el mismo dato: son instancias distintas con base renormalizada. Voto POSITIVO: Lola 66,7 + Kennys 33,3 = 100.",
+   "confianza": "media-alta"
+  },
+  {
+   "gala": 6,
+   "fecha": "2026-03-30",
+   "tipo_voto": "negativo (placa negativa clásica)",
+   "eliminado": "Franco Poggio",
+   "nominados": [
+    {
+     "nombre": "Pincoya",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Lolo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Titi",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Lola Tomaszeuski",
+     "porcentaje": 11.9
+    },
+    {
+     "nombre": "Zilli",
+     "porcentaje": 20.1
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": 42.8
+    },
+    {
+     "nombre": "Franco Poggio",
+     "porcentaje": 57.2
+    }
+   ],
+   "porcentajes": "parciales (4 de 11)",
+   "fuente_url": "https://www.eldestapeweb.com/espectaculos/television/gran-hermano-generacion-dorada-quien-fue-el-sexto-eliminado-2026330232328",
+   "notas": "Semana 5. El Destape confirma Lola 11,9% (entre 4) y Zilli 20,1% (entre 3). ADVERTENCIA: el 57,2% / 42,8% del versus final figura ÚNICAMENTE en Wikipedia; Mi Telefe, Exitoina, Ciudad, El Destape, Cadena 3 y Diario de Cuyo confirman el resultado pero NINGUNO publicó el porcentaje.",
+   "confianza": "media para el versus; alta para el resto"
+  },
+  {
+   "gala": 7,
+   "fecha": "2026-04-06",
+   "tipo_voto": "negativo (placa negativa clásica)",
+   "eliminado": "Cinzia",
+   "nominados": [
+    {
+     "nombre": "Eduardo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Andrea",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "La Maciel",
+     "porcentaje": 6.8
+    },
+    {
+     "nombre": "Zilli",
+     "porcentaje": 17.6
+    },
+    {
+     "nombre": "Lola Tomaszeuski",
+     "porcentaje": 26.5
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": 46.1
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": 53.9
+    }
+   ],
+   "porcentajes": "parciales (5 de 8)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/cinzia-cayo-ante-yipio-y-fue-eliminada-en-el-primer-versus-notable-de-gran-hermano-generacion-dorada-pid2548051",
+   "notas": "Semana 6. Primer versus grande de la edición. Andrea del Boca fue evacuada esa semana por un accidente. Cinzia reingresaría luego por Golden Ticket.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 8,
+   "fecha": "2026-04-13",
+   "tipo_voto": "negativo (placa negativa clásica)",
+   "eliminado": "Lola Tomaszeuski",
+   "nominados": [
+    {
+     "nombre": "Titi",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Dani",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Pincoya",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Nazareno",
+     "porcentaje": null
+    },
+    {
+     "nombre": "La Maciel",
+     "porcentaje": 26.9
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": 47.8
+    },
+    {
+     "nombre": "Lola Tomaszeuski",
+     "porcentaje": 52.2
+    }
+   ],
+   "porcentajes": "parciales (3 de 8)",
+   "fuente_url": "https://mitelefe.com/gran-hermano/noticias/lola-tomaszeuski-fue-eliminada-de-gran-hermano-2026-y-manuel-ibero-rompio-en-llanto-pid2548920",
+   "notas": "Semana 7. Sol Abraham había quedado nominada pero sus votos fueron anulados al ser elegida para el Intercambio con La Casa de los Famosos; entró Manu en su lugar. Pincoya fue enviada a placa automáticamente como sanción tras el conflicto con Tamara.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 9,
+   "fecha": "2026-04-20",
+   "tipo_voto": "mixto (Placa Generación Dorada: 24h POSITIVO, luego NEGATIVO)",
+   "eliminado": "Martín",
+   "nominados": [
+    {
+     "nombre": "Yipio",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Tamara",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": null
+    },
+    {
+     "nombre": "La Maciel",
+     "porcentaje": 16
+    },
+    {
+     "nombre": "Nazareno",
+     "porcentaje": 45.6
+    },
+    {
+     "nombre": "Martín",
+     "porcentaje": 54.4
+    }
+   ],
+   "porcentajes": "parciales (3 de 9)",
+   "fuente_url": "https://exitoina.perfil.com/noticias/television/martin-rodriguez-eliminado-gran-hermano-reaccion-yanina-zilli-viral.phtml",
+   "notas": "Semana 8. Yipio, Brian y Danelik salieron en la fase POSITIVA (más votados, sin porcentaje). Tras salvarse, La Maciel sufrió un ataque de pánico y abandonó la competencia el mismo 20/04.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 10,
+   "fecha": "2026-04-27",
+   "tipo_voto": "negativo (placa negativa clásica)",
+   "eliminado": "Brian",
+   "nominados": [
+    {
+     "nombre": "Zilli",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Dani",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Tamara",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 2.3
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": 5.2
+    },
+    {
+     "nombre": "Sol",
+     "porcentaje": 25.1
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": 45.8
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": 54.2
+    }
+   ],
+   "porcentajes": "parciales (5 de 9)",
+   "fuente_url": "https://mitelefe.com/gran-hermano/noticias/brian-sarmiento-fue-eliminado-de-gran-hermano-2026-al-caer-contra-yipio-en-el-versus-pid2550619",
+   "notas": "Semana 9. Sol volvió automáticamente a placa al regresar del Intercambio. Brian volvería por Golden Ticket en el repechaje y sería eliminado otra vez el 08/06.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 11,
+   "fecha": "2026-05-04",
+   "tipo_voto": "mixto (Placa Generación Dorada: 24h POSITIVO, luego NEGATIVO)",
+   "eliminado": "Nazareno",
+   "nominados": [
+    {
+     "nombre": "Zilli",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Pincoya",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Lolo",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": null
+    },
+    {
+     "nombre": "La Bomba",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Titi",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Dani",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Grecia",
+     "porcentaje": 7.7
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": 14.5
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": 22.1
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": 46.4
+    },
+    {
+     "nombre": "Nazareno",
+     "porcentaje": 53.6
+    }
+   ],
+   "porcentajes": "parciales (5 de 17)",
+   "fuente_url": "https://www.infobae.com/teleshow/2026/05/05/danelik-versus-nazareno-en-gran-hermano-generacion-dorada-quien-fue-el-ultimo-eliminado/",
+   "notas": "Semana 10. La placa no llegó al mínimo de nominados, así que quedaron todos automáticamente. Esa semana Sol fue expulsada y reingresó Cinzia por Golden Ticket 1.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 12,
+   "fecha": "2026-05-11",
+   "tipo_voto": "negativo (Placa Oculta: los participantes se salvaban sin saber quiénes componían la placa)",
+   "eliminado": "Dani",
+   "nominados": [
+    {
+     "nombre": "Luana",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": 4.8
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": 11.9
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 18.7
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": 47.3
+    },
+    {
+     "nombre": "Dani",
+     "porcentaje": 52.7
+    }
+   ],
+   "porcentajes": "parciales (5 de 6)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/daniela-de-lucia-cayo-en-el-versus-con-danelik-galazan-y-fue-eliminada-de-gran-hermano-2026-pid2552213",
+   "notas": "Semana 11. CONFLICTO menor: telebajocero.com publicó 52,9% para Dani; Mi Telefe (oficial) y Wikipedia dan 52,7% (valor cargado). Esa semana Yipio abandonó la casa.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 13,
+   "fecha": "2026-05-13",
+   "tipo_voto": "negativo (Placa Planta con TODOS nominados; salían los dos más votados)",
+   "eliminado": "Lolo",
+   "nominados": [
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": null
+    },
+    {
+     "nombre": "La Bomba",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zilli",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Tamara",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Pincoya",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": 9.6
+    },
+    {
+     "nombre": "Titi",
+     "porcentaje": 13.2
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": 16.1
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 22.3
+    },
+    {
+     "nombre": "Grecia",
+     "porcentaje": 35.5
+    },
+    {
+     "nombre": "Lolo",
+     "porcentaje": 42.2
+    }
+   ],
+   "porcentajes": "parciales (6 de 15)",
+   "fuente_url": "https://mitelefe.com/gran-hermano/noticias/la-placa-planta-podo-a-grecia-colmenares-y-lolo-poggio-de-la-casa-de-gran-hermano-2026-pid2552490",
+   "notas": "DOBLE ELIMINACIÓN emitida un MIÉRCOLES. Tramo final entre 3: Zunino 22,3% (salvado) + Grecia 35,5% + Lolo 42,2% = 100%. ATENCIÓN PARA EL MODELO: esta gala y la 14 son LA MISMA EMISIÓN y LA MISMA PLACA; no sumar dos veces.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 14,
+   "fecha": "2026-05-13",
+   "tipo_voto": "negativo (Placa Planta con TODOS nominados; salían los dos más votados)",
+   "eliminado": "Grecia",
+   "nominados": [
+    {
+     "nombre": "Manu",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": null
+    },
+    {
+     "nombre": "La Bomba",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zilli",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Tamara",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Pincoya",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": 9.6
+    },
+    {
+     "nombre": "Titi",
+     "porcentaje": 13.2
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": 16.1
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 22.3
+    },
+    {
+     "nombre": "Grecia",
+     "porcentaje": 35.5
+    },
+    {
+     "nombre": "Lolo",
+     "porcentaje": 42.2
+    }
+   ],
+   "porcentajes": "parciales (6 de 15) — DUPLICADO de la gala 13",
+   "duplicado_de_gala": 13,
+   "misma_emision": true,
+   "fuente_url": "https://www.infobae.com/teleshow/2026/05/14/quienes-fueron-los-dos-participantes-eliminados-en-la-placa-planta-de-gran-hermano-generacion-dorada/",
+   "notas": "REGISTRO DUPLICADO A PROPÓSITO, solo para respetar la numeración de eliminados (Telefe la catalogó como '13.ª y 14.ª eliminación' en una sola emisión). NO usar como observación independiente en un modelo. CONFLICTO DE ORDEN: Wikipedia asigna Lolo = 13.ª y Grecia = 14.ª (criterio: mayor porcentaje primero); Mi Telefe y El Observador narran que GRECIA salió PRIMERO y Lolo cayó después en el versus contra Zunino. Los porcentajes no están en disputa; sí el ordinal.",
+   "confianza": "alta para los porcentajes; conflicto abierto en el orden"
+  },
+  {
+   "gala": 15,
+   "fecha": "2026-05-17",
+   "tipo_voto": "mixto (Placa Generación Dorada: 24h POSITIVO, luego NEGATIVO)",
+   "eliminado": "Danelik",
+   "nominados": [
+    {
+     "nombre": "Juanicar",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": 2.7
+    },
+    {
+     "nombre": "Tamara",
+     "porcentaje": 3.7
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": 4.3
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 13.9
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": 45.6
+    },
+    {
+     "nombre": "Danelik",
+     "porcentaje": 54.4
+    }
+   ],
+   "porcentajes": "parciales (6 de 7)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/danelik-se-convirtio-en-la-eliminada-de-la-semana-12-de-gran-hermano-2026-pid2552870",
+   "notas": "Emitida un DOMINGO (el lunes 18/05 no hubo programa por los Premios Martín Fierro). CONFLICTO ENTRE INVESTIGADORES: un relevamiento encontró estos porcentajes en Mi Telefe (oficial); el otro reportó que NO encontró ningún porcentaje publicado para esta gala y describió el voto solo como 'negativo, no confirmado'. Se cargó la versión con fuente oficial citada y se deja constancia. Juanicar salió en la fase POSITIVA sin porcentaje.",
+   "confianza": "media"
+  },
+  {
+   "gala": 16,
+   "fecha": "2026-05-25",
+   "tipo_voto": "negativo (placa negativa clásica)",
+   "eliminado": "Eduardo",
+   "nominados": [
+    {
+     "nombre": "Hanssen",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Mariela",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Campanita",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": 3.8
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": 42.3
+    },
+    {
+     "nombre": "Eduardo",
+     "porcentaje": 57.7
+    }
+   ],
+   "porcentajes": "parciales (3 de 6)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/eduardo-carrera-fue-eliminado-de-gran-hermano-y-se-despidio-con-un-emotivo-mensaje-pid2553843",
+   "notas": "Semana 13. Primera eliminación tras el repechaje del 20/05. Los dos investigadores coinciden en los tres porcentajes (3,8 / 42,3 / 57,7); uno de ellos advierte que los tomó de resultados de búsqueda sin fetchear la página. Esa misma noche Lola Tomaszeuski fue expulsada por dar información del exterior.",
+   "confianza": "media-alta"
+  },
+  {
+   "gala": 17,
+   "fecha": "2026-06-01",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Tatiluna",
+   "nominados": [
+    {
+     "nombre": "Tamara",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Nigro",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Titi",
+     "porcentaje": 28.6
+    },
+    {
+     "nombre": "Tatiluna",
+     "porcentaje": 71.4
+    }
+   ],
+   "porcentajes": "solo el versus final (2 de 5)",
+   "fuente_url": "https://www.ciudad.com.ar/espectaculos/2026/06/02/gala-de-eliminacion-en-gran-hermano-generacion-dorada-quien-se-fue-de-la-casa-este-lunes/",
+   "notas": "Orden de salvación publicado: Tamara, Brian, Nigro (sin porcentajes). Quedaron 22 jugadores.",
+   "confianza": "media-alta"
+  },
+  {
+   "gala": 18,
+   "fecha": "2026-06-08",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Brian",
+   "nominados": [
+    {
+     "nombre": "Hanssen",
+     "porcentaje": 0.5
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": 2.4
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": 3.7
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": 10.7
+    },
+    {
+     "nombre": "Brian",
+     "porcentaje": 89.3
+    }
+   ],
+   "porcentajes": "completos (5 de 5)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/brian-sarmiento-fue-eliminado-por-segunda-vez-de-gran-hermano-2026-y-se-despidio-pidiendo-disculpas-pid2555464",
+   "notas": "RÉCORD NEGATIVO de la edición: 89,3% en el versus final. Más de 2 millones de votos. Segunda eliminación de Brian en la misma edición.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 19,
+   "fecha": "2026-06-15",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Zunino",
+   "nominados": [
+    {
+     "nombre": "Majluf",
+     "porcentaje": 1.6
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": 2.8
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": 6.4
+    },
+    {
+     "nombre": "Nigro",
+     "porcentaje": 14.2
+    },
+    {
+     "nombre": "Campanita",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Zunino",
+     "porcentaje": null
+    }
+   ],
+   "porcentajes": "parciales (4 de 6) — ES LA ÚNICA GALA DONDE FALTA EL PORCENTAJE DEL ELIMINADO",
+   "fuente_url": "https://www.infobae.com/teleshow/2026/06/16/quien-fue-el-ultimo-eliminado-de-gran-hermano-que-hizo-explotar-a-yanina-zilli-que-ve-la-gente/",
+   "notas": "GAP VERIFICADO: el reparto del versus Zunino vs Campanita NUNCA se publicó (comprobado en Infobae, Mi Telefe, La Nación, Ciudad, El Destape, Pronto y Cadena3). NO estimado. Quedaron 21 participantes.",
+   "confianza": "alta para la primera ronda; nula para el versus"
+  },
+  {
+   "gala": 20,
+   "fecha": "2026-06-22",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Titi",
+   "nominados": [
+    {
+     "nombre": "Manu",
+     "porcentaje": 0.3
+    },
+    {
+     "nombre": "Campanita",
+     "porcentaje": 0.4
+    },
+    {
+     "nombre": "Cinzia",
+     "porcentaje": 1.2
+    },
+    {
+     "nombre": "Sol",
+     "porcentaje": 48.2
+    },
+    {
+     "nombre": "Titi",
+     "porcentaje": 51.8
+    }
+   ],
+   "porcentajes": "completos (5 de 5)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/titi-tcherkaski-fue-eliminada-de-gran-hermano-2026-en-un-versus-historico-contra-solange-abraham-pid2557086",
+   "notas": "Gala oficial de eliminación N.º 18 según Telefe. VERSUS MÁS AJUSTADO de la edición (3,6 puntos). RÉCORD DE PARTICIPACIÓN: más de 6 millones de votos. CONFLICTO: todaladata.com.ar titula 51,4% en lugar de 51,8%; Mi Telefe, Infobae, Exitoina y Cadena3 coinciden en 51,8/48,2.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 21,
+   "fecha": "2026-06-29",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Nenu",
+   "nominados": [
+    {
+     "nombre": "Emanuel",
+     "porcentaje": 0.9
+    },
+    {
+     "nombre": "Hanssen",
+     "porcentaje": 2.5
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": 17
+    },
+    {
+     "nombre": "Campanita",
+     "porcentaje": 44.2
+    },
+    {
+     "nombre": "Nenu",
+     "porcentaje": 55.8
+    }
+   ],
+   "porcentajes": "completos (5 de 5)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/a-reencontrarse-con-zunino-nenu-lopez-fue-eliminada-de-gran-hermano-generacion-dorada-pid2557924",
+   "notas": "Gala oficial N.º 19. CONFLICTO EN EL VERSUS: Mi Telefe (oficial) da Nenu 55,8% / Campanita 44,2% (valor cargado); late931.com.ar da Nenu 58,3% / Campanita 41,7%.",
+   "confianza": "alta en la primera ronda; media en el versus"
+  },
+  {
+   "gala": 22,
+   "fecha": "2026-07-06",
+   "tipo_voto": "mixto (fase POSITIVA previa: el público eligió 12 favoritos entre 19 nominados; los 7 restantes fueron al voto NEGATIVO de la gala)",
+   "eliminado": "Nigro",
+   "nominados": [
+    {
+     "nombre": "Hanssen",
+     "porcentaje": 1.6
+    },
+    {
+     "nombre": "Cola",
+     "porcentaje": 2.4
+    },
+    {
+     "nombre": "Mariela",
+     "porcentaje": 3.4
+    },
+    {
+     "nombre": "JC",
+     "porcentaje": 5.3
+    },
+    {
+     "nombre": "Majluf",
+     "porcentaje": 8.8
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": 39.9
+    },
+    {
+     "nombre": "Nigro",
+     "porcentaje": 60.1
+    }
+   ],
+   "porcentajes": "completos para la fase negativa (7 de 7); NINGUNO para la fase positiva previa (19 participantes)",
+   "fuente_url": "https://www.ciudad.com.ar/espectaculos/2026/07/06/gala-de-eliminacion-en-gran-hermano-generacion-dorada-quien-se-fue-de-la-casa-este-lunes/",
+   "notas": "Gala oficial N.º 20. 'Placa planta' con mecánica mixta. Los 12 salvados por voto positivo no tienen porcentajes publicados. CONFLICTO menor: no todas las fuentes mencionan la fase positiva; algunas describen la gala solo como voto negativo.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 23,
+   "fecha": "2026-07-13",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Manu",
+   "nominados": [
+    {
+     "nombre": "JC",
+     "porcentaje": 0.1
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": 0.4
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": 0.8
+    },
+    {
+     "nombre": "Sol",
+     "porcentaje": 19.9
+    },
+    {
+     "nombre": "Luana",
+     "porcentaje": 48.8
+    },
+    {
+     "nombre": "Manu",
+     "porcentaje": 51.2
+    }
+   ],
+   "porcentajes": "completos (6 de 6)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/manu-quedo-eliminado-de-gran-hermano-asi-fue-su-despedida-pid2559339",
+   "notas": "Gala oficial N.º 21. Segundo versus más ajustado de la edición. Manu estuvo 141 días. DATO CLAVE DE VOLATILIDAD: JC salió PRIMERO de placa con apenas 0,1% de voto negativo y fue ELIMINADO 3 días después en la placa positiva del 16/07. Salir primero de una placa negativa NO es evidencia de favoritismo positivo.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 24,
+   "fecha": "2026-07-16",
+   "tipo_voto": "POSITIVO (el público votó para SALVAR; los menos apoyados quedaron expuestos)",
+   "eliminado": "JC",
+   "nominados": [
+    {
+     "nombre": "Cola",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Hanssen",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Mariela",
+     "porcentaje": null
+    },
+    {
+     "nombre": "Majluf",
+     "porcentaje": null
+    },
+    {
+     "nombre": "JC",
+     "porcentaje": null
+    }
+   ],
+   "porcentajes": "NINGUNO (0 de 5)",
+   "fuente_url": "https://www.infobae.com/teleshow/2026/07/17/quien-fue-el-ultimo-eliminado-de-gran-hermano-generacion-dorada-despues-de-la-placa-positiva/",
+   "notas": "GALA EXTRA DE JUEVES, fuera de la numeración oficial de galas de eliminación de Telefe. 'Placa positiva exprés' abierta tras la eliminación de Manu, con TODOS los participantes involucrados. Orden de salvación revelado: Cola, Hanssen, Mariela; mano a mano final JC vs Majluf. GAP CRÍTICO: ningún medio publicó porcentajes (verificado en Mi Telefe x2, Infobae, Diario Popular, Pronto x2, Notife, Aire de Santa Fe, Exitoina, El Intransigente). NO estimados.",
+   "confianza": "alta en el hecho y la mecánica; nula en porcentajes"
+  },
+  {
+   "gala": 25,
+   "fecha": "2026-07-20",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Emanuel",
+   "nominados": [
+    {
+     "nombre": "Hanssen",
+     "porcentaje": 0.2
+    },
+    {
+     "nombre": "Cola",
+     "porcentaje": 0.5
+    },
+    {
+     "nombre": "Zilli",
+     "porcentaje": 0.7
+    },
+    {
+     "nombre": "Yipio",
+     "porcentaje": 1.3
+    },
+    {
+     "nombre": "Sol",
+     "porcentaje": 44.7
+    },
+    {
+     "nombre": "Emanuel",
+     "porcentaje": 55.3
+    }
+   ],
+   "porcentajes": "completos (6 de 6)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/emanuel-di-gioia-fue-eliminado-de-gran-hermano-2026-al-caer-contra-solange-abraham-en-el-versus-pid2560100",
+   "notas": "Gala oficial N.º 22. Segundo versus consecutivo que sobrevive Sol Abraham.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 26,
+   "fecha": "2026-07-27",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Cola",
+   "nominados": [
+    {
+     "nombre": "Tamara",
+     "porcentaje": 2
+    },
+    {
+     "nombre": "Hanssen",
+     "porcentaje": 2.3
+    },
+    {
+     "nombre": "Mariela",
+     "porcentaje": 7.3
+    },
+    {
+     "nombre": "Majluf",
+     "porcentaje": 22.8
+    },
+    {
+     "nombre": "Cola",
+     "porcentaje": 77.2
+    }
+   ],
+   "porcentajes": "completos (5 de 5) respecto de la lista publicada",
+   "fuente_url": "https://www.infobae.com/teleshow/2026/07/28/quien-fue-el-ultimo-eliminado-de-gran-hermano-generacion-dorada/",
+   "notas": "Gala oficial N.º 23 (inferida, ninguna fuente la numera). La placa de esa semana se armó CON EL VOTO DE LOS EXJUGADORES visitantes. Antes de revelar el resultado, Del Moro pidió a la casa ubicarse detrás del nominado que querían conservar: Charlotte fue la única que se puso detrás de Cola. Cola estuvo 69 días.",
+   "confianza": "alta"
+  },
+  {
+   "gala": 27,
+   "fecha": "2026-08-03",
+   "tipo_voto": "negativo (eliminar)",
+   "eliminado": "Campanita",
+   "nominados": [
+    {
+     "nombre": "Luana",
+     "porcentaje": 0.1
+    },
+    {
+     "nombre": "Juanicar",
+     "porcentaje": 0.3
+    },
+    {
+     "nombre": "Hanssen",
+     "porcentaje": 0.5
+    },
+    {
+     "nombre": "Majluf",
+     "porcentaje": 0.9
+    },
+    {
+     "nombre": "Sol",
+     "porcentaje": 46.7
+    },
+    {
+     "nombre": "Campanita",
+     "porcentaje": 53.3
+    }
+   ],
+   "porcentajes": "completos (6 de 6)",
+   "fuente_url": "https://www.mitelefe.com/gran-hermano/noticias/campanita-fue-eliminada-de-gran-hermano-2026-en-un-versus-historico-contra-sol-abraham-pid2561600",
+   "notas": "GALA OFICIAL DE ELIMINACIÓN N.º 24 según Telefe (equivale a la 27.ª persona eliminada en la numeración de este dataset). Reparto completo confirmado por 2+ fuentes independientes. La primera ronda suma 1,8% y el versus 100%: son rondas SEPARADAS, no un único reparto. ESCÁNDALO INÉDITO: Campanita se negó a abandonar la casa ('No me quiero ir') y la producción la doblegó amenazando con sanción colectiva; llevaba 76 días. Sol Abraham explotó tras el resultado.",
+   "confianza": "alta"
+  }
+ ],
+ "placa_actual": [
+  "Charlotte",
+  "Majluf",
+  "Sol",
+  "Hanssen",
+  "Pincoya",
+  "Zilli"
+ ],
+ "formato": {
+  "fecha_final": "NO CONFIRMADA POR TELEFE al 08/08/2026. Tres versiones vivas, todas periodísticas: (A) MÁS PROBABLE — domingo 06/09/2026, origen primario ÚNICO: Paula Varela en Intrusos (América TV) el 17/07/2026, replicada por Ciudad Magazine, Exitoína, El Litoral, minutouno, sitioandino y elintransigente (OJO: 6 notas NO son 6 fuentes independientes, es una sola fuente amplificada); motivo declarado: rating por debajo de lo esperado, Telefe habría ADELANTADO la final. (B) lunes 31/08/2026, origen: el ciclo La Pavada, vía El Destape (25/06), C5N/RatingCero (30/06) y Canal26 (18/07, 'fecha tentativa'). (C) fines de septiembre de 2026, origen: Alejandro Castelo en 'Ya fue Todo' (26/06), basado en que los contratos de panelistas exigen disponibilidad hasta fines de septiembre. ÚNICO DATO DURO OFICIAL RELACIONADO: las Bases y Condiciones de la votación (TELINFOR S.A., ghglobal.ar/docs/basesGH.pdf) fijan vigencia 'desde 23/02/2026 hasta 31/08/2026 o hasta finalizar el Programa, lo que suceda primero' — el sistema de votación está contractualmente habilitado solo hasta el 31/08/2026 (prorrogable). INDICIO DE GRILLA: Popstars debutaría el 31/08 (sitioandino, Exitoína) o el 17/08 (Crónica/La Pavada).",
+  "finalistas": null,
+  "galas_restantes": null,
+  "limite_votos": "NO HAY LÍMITE DE VOTOS POR USUARIO. Texto literal de la cláusula 4 de las Bases y Condiciones oficiales (TELINFOR S.A.): 'Los participantes podrán intervenir en el Entretenimiento sin límite alguno'. Única restricción cuantitativa (Anexo I): la participación mediante Pagos 360 se limita a $10.000 por participante por semana (lunes a domingo). NO EXISTE VOTO GRATUITO, pese a que varios medios titulan 'cómo votar gratis': SMS con prefijo GH al 9009 cuesta $429,55 final (Movistar/Tuenti/Personal, = 8 votos) o $265,15 (Claro, = 5 votos); Antel Uruguay $7,32 (= 6 votos). Web ghglobal.ar (QR en pantalla) con billetera virtual: AR$500 = 10 votos; $1.000 = 25; $3.500 = 70; $6.000 = 140. La modalidad sin obligación de compra (email) SOLO da chances para el sorteo y las bases aclaran que 'no estará disponible para votar por los participantes postulados'. Prohibido el voto automatizado. IMPLICANCIA PARA EL MODELO: al ser voto pago y sin tope, el resultado mide GASTO de fandom, no cantidad de personas — el rating no es proxy del volumen de votos.",
+  "premio": "AR$ 70.000.000 (monto base pactado y confirmado por Telefe al lanzamiento) invertidos en Mercado Pago durante toda la competencia (TNA reportada 26,2%, ~$50.944/día según iProUP), MÁS una vivienda, MÁS un año de cerveza Amstel, MÁS una moto Motomel, MÁS el trofeo. CIFRAS EN CONFLICTO por la capitalización: El Destape (25/06/2026) habla de 84 millones; otra fuente menciona 100 millones; no hay cifra oficial actualizada al 08/08/2026. Referencia: el ganador de GH 2025 cobró $85.004.705 más casa, moto y cerveza. PREMIOS SECUNDARIOS YA ENTREGADOS: auto 0km a Yanina Zilli (27-28/05, llave 119) y casa prefabricada a Yipio (04/08, llave 84, junto con el liderazgo de la semana 24). AMBIGÜEDAD NO RESUELTA: no se pudo confirmar si la vivienda del premio mayor y la casa que ganó Yipio son dos viviendas distintas.",
+  "votacion_internacional": "HABILITADA para residentes de Argentina, Uruguay, Chile, Brasil y Paraguay (Bases y Condiciones oficiales, con tarifas específicas por país). RELEVANCIA DIRECTA PARA EL MODELO: dos de las 10 jugadoras vigentes son extranjeras con base de votantes habilitada en su país de origen — Pincoya (Chile, muy famosa allí, finalista de GH Chile 1) y Yipio (Uruguay, se presenta explícitamente como uruguaya). Excluidos menores de edad.",
+  "voto_final": "SIN FUENTE PARA ESTA EDICIÓN. No existe ninguna nota ni comunicado que explique la mecánica de la final de Generación Dorada (ni cuántos finalistas, ni el signo del voto, ni cómo se eliminan los finalistas). PRECEDENTE (GH Argentina 2024 y 2025, útil solo como prior): en la final el voto es POSITIVO (se vota a quien se quiere que GANE), a diferencia del resto de la temporada; 3 finalistas en ambas ediciones; se revelan de menor a mayor porcentaje eliminando al menos votado hasta quedar el ganador, con renormalización en el mano a mano final. Aplicarlo a esta edición es INFERENCIA, no dato.",
+  "voto_semanal": "NEGATIVO como regla dominante (el público vota A QUIEN QUIERE ELIMINAR), confirmado para la semana en curso por Infobae y Mi Telefe (06/08). PERO EL SIGNO CAMBIÓ VARIAS VECES EN LA TEMPORADA — es el riesgo de modelado #1. Tres modalidades documentadas: (1) PLACA NEGATIVA pura (galas 2, 6, 7, 8, 10, 12, 13/14, 16-23, 25, 26, 27); (2) PLACA POSITIVA pura, se vota para SALVAR y se va el menos votado (galas 3, 4, 5 y la gala extra del 16/07); (3) PLACA MIXTA 'Generación Dorada': primeras 24h voto POSITIVO (los más votados salen de placa), luego NEGATIVO entre los que quedan (galas 1, 9, 11, 15 y la del 22-23/07). Variantes de armado de placa: PLACA PLANTA (se nomina a los que 'no juegan'; semanas 2, 12 y 19, más el retorno del 02/07), PLACA OCULTA (gala 12) y una placa armada con el voto de los EXJUGADORES visitantes (semana del 27/07). DINÁMICA DE REVELACIÓN: se salvan progresivamente los de MENOR porcentaje hasta quedar un mano a mano ('versus'), y LOS PORCENTAJES SE RENORMALIZAN EN CADA INSTANCIA — no son un reparto único sobre el 100% inicial. Solo el versus final suma 100 entre dos personas."
+ },
+ "encuestas_recientes": [
+  {
+   "fecha": "2026-08-07",
+   "fuente": "Fefe Bongiorno (X/Twitter), vía La Nación",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO (a quién eliminar)",
+   "muestra": 25866,
+   "unidad": "% de voto negativo",
+   "metodologia": "Encuesta online autoseleccionada en X. N publicado: 25.866 votos, el mayor de la temporada. NO probabilística: sin cuotas, sin ponderación, sin control de multi-voto ni bots.",
+   "resultados": [
+    {
+     "nombre": "Hanssen",
+     "valor": 52.6
+    },
+    {
+     "nombre": "Sol",
+     "valor": 32.8
+    },
+    {
+     "nombre": "Charlotte",
+     "valor": 10.9
+    },
+    {
+     "nombre": "Resto (Majluf, Pincoya, Zilli) — agregado",
+     "valor": 3.7
+    }
+   ],
+   "url": "https://www.lanacion.com.ar/espectaculos/quien-se-va-de-gran-hermano-este-lunes-segun-las-encuestas-nid07082026/",
+   "relevancia": "ES LA MEDICIÓN CLAVE para la gala del 10/08 y la primera post-escándalo Campanita. Bongiorno acertó el eliminado en 5 de 5 casos documentados en este dataset."
+  },
+  {
+   "fecha": "2026-08-07",
+   "fuente": "Diego Poggi (Instagram), vía La Nación",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "votos absolutos (no porcentajes)",
+   "metodologia": "Encuesta de stickers en historias de Instagram, autoseleccionada. N total no informado; suma parcial ≈10.100.",
+   "resultados": [
+    {
+     "nombre": "Sol",
+     "valor": 6500
+    },
+    {
+     "nombre": "Hanssen",
+     "valor": 2600
+    },
+    {
+     "nombre": "Majluf",
+     "valor": 1000
+    }
+   ],
+   "url": "https://www.lanacion.com.ar/espectaculos/quien-se-va-de-gran-hermano-este-lunes-segun-las-encuestas-nid07082026/",
+   "relevancia": "CONTRADICE FRONTALMENTE a Bongiorno para la misma gala: acá Sol sigue primera. Las dos encuestas del 07/08 dan ganadores distintos. Audiencias con sesgos distintos (X vs Instagram)."
+  },
+  {
+   "fecha": "2026-08-03",
+   "fuente": "Telefe / Mi Telefe — RESULTADO OFICIAL, no es encuesta",
+   "tipo": "resultado real — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "Votación oficial paga de Telefe. Benchmark para medir el error de las encuestas.",
+   "resultados": [
+    {
+     "nombre": "Campanita",
+     "valor": 53.3
+    },
+    {
+     "nombre": "Sol",
+     "valor": 46.7
+    },
+    {
+     "nombre": "Majluf",
+     "valor": 0.9
+    },
+    {
+     "nombre": "Hanssen",
+     "valor": 0.5
+    },
+    {
+     "nombre": "Juanicar",
+     "valor": 0.3
+    },
+    {
+     "nombre": "Luana",
+     "valor": 0.1
+    }
+   ],
+   "url": "https://www.mitelefe.com/gran-hermano/noticias/campanita-fue-eliminada-de-gran-hermano-2026-en-un-versus-historico-contra-sol-abraham-pid2561600",
+   "relevancia": "Los 0,9/0,5/0,3/0,1 son de la PRIMERA RONDA (suman 1,8%) y el 53,3/46,7 del VERSUS (suma 100). Rondas separadas."
+  },
+  {
+   "fecha": "2026-08-01",
+   "fuente": "Fefe Bongiorno (X/Twitter), vía La Nación y Minuto Uno",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": 21202,
+   "unidad": "% de voto negativo",
+   "metodologia": "Encuesta online autoseleccionada en X con N publicado (21.202).",
+   "resultados": [
+    {
+     "nombre": "Campanita",
+     "valor": 50.3
+    },
+    {
+     "nombre": "Sol",
+     "valor": 36.4
+    },
+    {
+     "nombre": "Hanssen",
+     "valor": 10.3
+    },
+    {
+     "nombre": "Resto (Juanicar, Luana, Majluf) — agregado",
+     "valor": 3
+    }
+   ],
+   "url": "https://www.lanacion.com.ar/espectaculos/quien-se-va-de-gran-hermano-este-lunes-segun-las-encuestas-nid01082026/",
+   "relevancia": "ACERTÓ (salió Campanita, 53,3% real vs 50,3% previsto: error de 3 puntos). CONFLICTO: Crónica publicó una versión previa/paralela con Campanita 48% y Sol 40%."
+  },
+  {
+   "fecha": "2026-08-02",
+   "fuente": "Mundo Famosos (Instagram), vía Crónica",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "Encuesta de Instagram autoseleccionada; los 8 porcentajes suman 99,6%. Incluye 8 nombres pese a que la placa era de 6 (posible sondeo abierto a toda la casa).",
+   "resultados": [
+    {
+     "nombre": "Sol",
+     "valor": 55
+    },
+    {
+     "nombre": "Campanita",
+     "valor": 15.5
+    },
+    {
+     "nombre": "Majluf",
+     "valor": 8.7
+    },
+    {
+     "nombre": "Hanssen",
+     "valor": 7.4
+    },
+    {
+     "nombre": "Mariela",
+     "valor": 4.6
+    },
+    {
+     "nombre": "Luana",
+     "valor": 3.9
+    },
+    {
+     "nombre": "Zilli",
+     "valor": 2.5
+    },
+    {
+     "nombre": "Juanicar",
+     "valor": 2
+    }
+   ],
+   "url": "https://www.cronica.com.ar/diarioshow/farandula/quien-se-va-de-gran-hermano-generacion-dorada-este-lunes-3-de-agosto-segun-las-encuestas/",
+   "relevancia": "ERRÓ por 39,5 puntos: dio a Sol con 55% y Sol sobrevivió; Campanita, la eliminada, aparecía con 15,5%."
+  },
+  {
+   "fecha": "2026-08-03",
+   "fuente": "GH Encuestas (X/Twitter), vía El Destape",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "Encuesta online autoseleccionada en X, cuenta especializada. Sin ficha técnica.",
+   "resultados": [
+    {
+     "nombre": "Sol",
+     "valor": 62.9
+    },
+    {
+     "nombre": "Campanita",
+     "valor": 33.3
+    },
+    {
+     "nombre": "Majluf",
+     "valor": 2.1
+    }
+   ],
+   "url": "https://www.eldestapeweb.com/espectaculos/filtro-quien-va-gran-hermano-hoy-lunes-3-agosto-2026-nuevo-participante-eliminado-202683113340",
+   "relevancia": "ERRÓ. Es el error más grande del dataset: dio a Sol con 62,9% y Sol sobrevivió."
+  },
+  {
+   "fecha": "2026-08-02",
+   "fuente": "Diego Poggi (Instagram), vía La Nación",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "votos absolutos",
+   "metodologia": "Historias de Instagram, autoseleccionada. Suma parcial ≈11.000.",
+   "resultados": [
+    {
+     "nombre": "Sol",
+     "valor": 7500
+    },
+    {
+     "nombre": "Campanita",
+     "valor": 2000
+    },
+    {
+     "nombre": "Hanssen",
+     "valor": 1500
+    }
+   ],
+   "url": "https://www.lanacion.com.ar/espectaculos/quien-se-va-de-gran-hermano-este-lunes-segun-las-encuestas-nid01082026/",
+   "relevancia": "ERRÓ."
+  },
+  {
+   "fecha": "2026-07-26",
+   "fuente": "Sondeo citado por Exitoína, AUTORÍA NO IDENTIFICADA",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "CONFIANZA BAJA: números tomados de snippet de buscador, sin poder fetchear el artículo original ni identificar la cuenta autora. Tratar como no verificado.",
+   "resultados": [
+    {
+     "nombre": "Majluf",
+     "valor": 43.4
+    },
+    {
+     "nombre": "Cola",
+     "valor": 40.4
+    }
+   ],
+   "url": "https://exitoina.perfil.com/noticias/television/proximo-eliminado-gran-hermano-lunes-27-de-julio-segun-las-encuestas.phtml",
+   "relevancia": "ERRÓ el orden: salió Cola con 77,2% real, Majluf sobrevivió con 22,8%."
+  },
+  {
+   "fecha": "2026-07-19",
+   "fuente": "Mundo Famosos (Instagram), vía Crónica",
+   "tipo": "imagen negativa entre nominados / intención de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "Instagram autoseleccionada; los 6 porcentajes suman 99,7%.",
+   "resultados": [
+    {
+     "nombre": "Sol",
+     "valor": 52.9
+    },
+    {
+     "nombre": "Emanuel",
+     "valor": 20.9
+    },
+    {
+     "nombre": "Yipio",
+     "valor": 10.9
+    },
+    {
+     "nombre": "Zilli",
+     "valor": 5.9
+    },
+    {
+     "nombre": "Hanssen",
+     "valor": 5.3
+    },
+    {
+     "nombre": "Cola",
+     "valor": 3.8
+    }
+   ],
+   "url": "https://www.cronica.com.ar/diarioshow/farandula/quien-se-va-de-gran-hermano-generacion-dorada-este-lunes-20-de-julio-segun-las-encuestas/",
+   "relevancia": "ERRÓ: salió Emanuel (55,3% real), Sol sobrevivió con 44,7%."
+  },
+  {
+   "fecha": "2026-07-19",
+   "fuente": "Fefe Bongiorno (X/Twitter), vía Crónica",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "Encuesta en X; formato de duelos, los porcentajes NO suman 100 y no deben compararse linealmente con Mundo Famosos.",
+   "resultados": [
+    {
+     "nombre": "Emanuel",
+     "valor": 45
+    },
+    {
+     "nombre": "Sol",
+     "valor": 28
+    }
+   ],
+   "url": "https://www.cronica.com.ar/diarioshow/farandula/quien-se-va-de-gran-hermano-generacion-dorada-este-lunes-20-de-julio-segun-las-encuestas/",
+   "relevancia": "ACERTÓ. CONFLICTO: otra cobertura (RatingCero/C5N) reporta 47% en lugar de 45% para Emanuel."
+  },
+  {
+   "fecha": "2026-07-12",
+   "fuente": "Mundo Famosos (Instagram), vía Crónica",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "Instagram autoseleccionada. Los 3 primeros verificados por fetch; el resto proviene de snippet del mismo artículo.",
+   "resultados": [
+    {
+     "nombre": "Sol",
+     "valor": 37.5
+    },
+    {
+     "nombre": "Luana",
+     "valor": 20.4
+    },
+    {
+     "nombre": "Manu",
+     "valor": 11.2
+    },
+    {
+     "nombre": "Yipio",
+     "valor": 9.5
+    },
+    {
+     "nombre": "Majluf",
+     "valor": 6.3
+    },
+    {
+     "nombre": "Hanssen",
+     "valor": 4.2
+    },
+    {
+     "nombre": "Mariela",
+     "valor": 4
+    },
+    {
+     "nombre": "JC",
+     "valor": 3.7
+    },
+    {
+     "nombre": "Emanuel",
+     "valor": 2.7
+    }
+   ],
+   "url": "https://www.cronica.com.ar/diarioshow/farandula/quien-se-va-de-gran-hermano-generacion-dorada-este-lunes-13-de-julio-segun-las-encuestas-6778/",
+   "relevancia": "ERRÓ: salió Manu (3.º con 11,2%), Sol sobrevivió."
+  },
+  {
+   "fecha": "2026-07-12",
+   "fuente": "Fefe Bongiorno (X/Twitter), vía Crónica",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "Formato de duelos en X, suma >100%.",
+   "resultados": [
+    {
+     "nombre": "Manu",
+     "valor": 60
+    },
+    {
+     "nombre": "Yipio",
+     "valor": 28
+    },
+    {
+     "nombre": "Sol",
+     "valor": 17
+    },
+    {
+     "nombre": "Luana",
+     "valor": 17
+    }
+   ],
+   "url": "https://www.cronica.com.ar/diarioshow/farandula/quien-se-va-de-gran-hermano-generacion-dorada-este-lunes-13-de-julio-segun-las-encuestas-6778/",
+   "relevancia": "ACERTÓ."
+  },
+  {
+   "fecha": "2026-07-05",
+   "fuente": "Mundo Famosos (Instagram) y Fefe Bongiorno (X), vía Crónica",
+   "tipo": "predicción de eliminación — VOTO NEGATIVO",
+   "muestra": null,
+   "unidad": "% de voto negativo",
+   "metodologia": "Dos encuestas autoseleccionadas. Mundo Famosos suma ~99,6% (opción única); Bongiorno usa duelos y suma >100%.",
+   "resultados": [
+    {
+     "nombre": "Nigro (Mundo Famosos)",
+     "valor": 26.3
+    },
+    {
+     "nombre": "Majluf (Mundo Famosos)",
+     "valor": 25.8
+    },
+    {
+     "nombre": "Luana (Mundo Famosos)",
+     "valor": 22.4
+    },
+    {
+     "nombre": "JC (Mundo Famosos)",
+     "valor": 9
+    },
+    {
+     "nombre": "Mariela (Mundo Famosos)",
+     "valor": 7.6
+    },
+    {
+     "nombre": "Hanssen (Mundo Famosos)",
+     "valor": 5.2
+    },
+    {
+     "nombre": "Cola (Mundo Famosos)",
+     "valor": 3.3
+    },
+    {
+     "nombre": "Nigro (Bongiorno)",
+     "valor": 68
+    },
+    {
+     "nombre": "Luana (Bongiorno)",
+     "valor": 33
+    },
+    {
+     "nombre": "JC (Bongiorno)",
+     "valor": 6
+    }
+   ],
+   "url": "https://www.cronica.com.ar/diarioshow/farandula/quien-se-va-de-gran-hermano-generacion-dorada-este-lunes-6-de-julio-segun-las-encuestas/",
+   "relevancia": "AMBAS ACERTARON (salió Nigro con 60,1% real). Es el único caso del dataset en que Mundo Famosos acierta."
+  },
+  {
+   "fecha": "2026-05-20",
+   "fuente": "Telefe — RESULTADO OFICIAL del repechaje, no es encuesta",
+   "tipo": "resultado real — VOTO POSITIVO (a quién se quiere que vuelva)",
+   "muestra": null,
+   "unidad": "% de voto positivo",
+   "metodologia": "Votación oficial de Telefe. ES EL ÚNICO DATO DE VOTO POSITIVO REAL DE LA TEMPORADA para alguien que sigue en competencia.",
+   "resultados": [
+    {
+     "nombre": "Yipio",
+     "valor": 35.6
+    },
+    {
+     "nombre": "Lola Tomaszeuski",
+     "valor": 30.6
+    },
+    {
+     "nombre": "Carmiña",
+     "valor": 19.8
+    },
+    {
+     "nombre": "Kennys",
+     "valor": 14.1
+    }
+   ],
+   "url": "https://es.wikipedia.org/wiki/Anexo:Gran_Hermano_Argentina:_Generaci%C3%B3n_Dorada",
+   "relevancia": "CALIBRACIÓN: la encuesta previa de Bongiorno (mayo, Instagram) daba a Yipio primera con 21%; el resultado real fue 35,6%. Acertó el ganador pero SUBESTIMÓ el margen en 14,6 puntos. Los porcentajes de Carmiña y Kennys solo figuran en Wikipedia."
+  },
+  {
+   "fecha": "2026-03-21",
+   "fuente": "Fefe Bongiorno (X/Twitter), vía Revista Pronto y Exitoína",
+   "tipo": "IMAGEN POSITIVA (única medición de signo positivo de la temporada)",
+   "muestra": null,
+   "unidad": "% de imagen positiva",
+   "metodologia": "Encuesta online autoseleccionada en X, acumulada hasta la 4.ª semana. Sesgo alto (fandom militante), sin ficha técnica. MUY DESACTUALIZADA (4 meses y medio) y previa al ingreso de 5 de las 10 jugadoras vigentes.",
+   "resultados": [
+    {
+     "nombre": "Cinzia",
+     "valor": 77
+    },
+    {
+     "nombre": "Sol",
+     "valor": 68
+    },
+    {
+     "nombre": "Pincoya",
+     "valor": 66
+    },
+    {
+     "nombre": "Emanuel",
+     "valor": 57
+    },
+    {
+     "nombre": "Juanicar",
+     "valor": 53
+    },
+    {
+     "nombre": "Zilli",
+     "valor": 52
+    },
+    {
+     "nombre": "Danelik",
+     "valor": 44
+    },
+    {
+     "nombre": "Eduardo",
+     "valor": 42
+    },
+    {
+     "nombre": "Andrea",
+     "valor": 39
+    },
+    {
+     "nombre": "Manu",
+     "valor": 34
+    },
+    {
+     "nombre": "Martín",
+     "valor": 8
+    },
+    {
+     "nombre": "Lola Tomaszeuski",
+     "valor": 7
+    },
+    {
+     "nombre": "Franco Poggio",
+     "valor": 5
+    }
+   ],
+   "url": "https://www.pronto.com.ar/espectaculos/2026/3/21/la-encuesta-que-refleja-quien-es-el-favorito-de-gran-hermano-por-imagen-positiva-sorpresa-en-el-primer-puesto-275456.html",
+   "relevancia": "De las jugadoras vigentes solo cubre a Sol (68), Pincoya (66) y Zilli (52). Charlotte, Hanssen, Majluf, Mariela, Tamara, Luana y Yipio NO fueron medidas. Un ítem de la lista ('Carlota', 3%) tiene grafía ambigua (podría ser Carmiña o Charlotte) y por eso se excluyó."
+  }
+ ],
+ "base_rates": {
+  "acierto_encuestas": "CALCULADO SOBRE LOS CASOS DOCUMENTADOS EN ESTE DATASET (n pequeño, no es una serie completa de la temporada). Resultado por agregador, comparando la persona que la encuesta ponía primera en voto negativo contra el eliminado real: (1) FEFE BONGIORNO (X/Twitter): 5 de 5 aciertos — 08/06 Brian ✓, 06/07 Nigro ✓, 13/07 Manu ✓, 20/07 Emanuel ✓, 03/08 Campanita ✓; además acertó el ganador del repechaje del 20/05 (Yipio) aunque subestimó su margen en 14,6 puntos. Es el único agregador con historial de aciertos y el único que publica N (21.202 el 01/08; 25.866 el 07/08). (2) MUNDO FAMOSOS (Instagram): 1 de 4 — acertó 06/07 (Nigro) y erró 13/07, 20/07 y 03/08, las tres veces poniendo a Sol Abraham primera. (3) GH ENCUESTAS (X): 0 de 2 — erró 13/07 y 03/08, las dos con Sol primera. (4) DIEGO POGGI (Instagram): 0 de 1 — erró el 03/08 con Sol primera. (5) SONDEO NO IDENTIFICADO del 26/07: 0 de 1. SESGO SISTEMÁTICO DETECTADO: las encuestas de INSTAGRAM sobreestiman crónicamente el rechazo a Sol Abraham (55%, 52,9%, 37,5%, 62,9% en distintas fechas) y ella sobrevivió TODAS las veces. Las encuestas de X de Bongiorno están mejor calibradas. ADVERTENCIA DE INDEPENDENCIA: La Nación, Crónica, Pronto, Minuto Uno, Exitoína y C5N replican a Bongiorno — contar 6 notas NO son 6 fuentes. ADVERTENCIA PARA LA GALA DEL 10/08: las dos únicas mediciones disponibles se contradicen (Bongiorno da Hanssen 52,6%; Poggi da Sol primera). Ninguna encuesta de la temporada tiene ficha técnica, muestreo probabilístico, ponderación ni control de bots, y todas miden intención declarada mientras que el voto real es PAGO y sin tope — mide gasto, no personas.",
+  "finales_pasadas": [
+   "GH Argentina 2025: 3 finalistas (Santiago 'Tato' Algorta, Ulises Apostolo, Luz Tito). Ganó Tato con 62,8% de VOTO POSITIVO. Final 23-24/06/2025. Cobró $85.004.705 más casa prefabricada, moto Motomel Skua 150 y un año de cerveza.",
+   "GH Argentina 2024: ganó Bautista Mascia con 56,2% de VOTO POSITIVO; los otros finalistas fueron Nicolás Grosman y Emmanuel Vich (3 finalistas). Uno de los finalistas entró por prueba (Grosman ganó un desafío) y los otros dos por votación del público.",
+   "GH Argentina 2022-2023: ganó Marcos Ginocchio. Promedio de rating de esa edición: 20,2 puntos (contra ~11,3 de Generación Dorada).",
+   "GH Argentina 1 (2001): ganó Marcelo Corazza con 357.492 votos. Tamara Paganini, hoy en competencia, fue SUBCAMPEONA de esa edición con 112 días en la casa.",
+   "REGLA COMÚN DE LAS FINALES 2024 y 2025: el voto en la final es POSITIVO (se vota a quien se quiere que GANE), invirtiendo el signo del resto de la temporada; se abre una votación única y se revela de menor a mayor porcentaje, eliminando al de menos votos hasta quedar el ganador, con renormalización en el mano a mano final.",
+   "NO CONFIRMADO PARA ESTA EDICIÓN: no existe ninguna fuente sobre la mecánica ni el número de finalistas de Generación Dorada. Todo lo anterior es prior, no dato."
+  ],
+  "regularidades": [
+   "EL ELIMINADO SIEMPRE SUPERA EL 50% EN EL VERSUS FINAL, en un rango observado de 51,2% a 89,3%. Versus más ajustados: Manu 51,2% (13/07) y Titi 51,8% (22/06). Más contundente: Brian 89,3% (08/06). Mediana aproximada del ganador del versus: ~55%.",
+   "LOS PORCENTAJES SE RENORMALIZAN EN CADA INSTANCIA DE SALVACIÓN. Nunca son un reparto único sobre el 100% inicial de la placa. Solo el versus final suma 100 entre dos personas. NO sumar los porcentajes de una misma gala ni interpretarlos como cuota del total de votos.",
+   "SALIR PRIMERO DE PLACA CON UN PORCENTAJE ÍNFIMO NO PROTEGE. Caso testigo: JC salió primero el 13/07 con 0,1% de voto negativo (el más salvado de la placa) y fue ELIMINADO 3 días después, el 16/07, en una placa POSITIVA. En voto negativo se mide rechazo; en voto positivo se mide apoyo activo, y son cosas distintas. Es el hallazgo más importante del dataset para modelar la final.",
+   "SOL ABRAHAM GANÓ 3 DE 3 VERSUS (48,2% vs Titi, 44,7% vs Emanuel, 46,7% vs Campanita). Nadie más en la edición ganó tres. Quien la enfrenta en un mano a mano perdió siempre.",
+   "MATÍAS HANSSEN SALIÓ DE PLACA SEIS VECES SEGUIDAS CON ≤2,5% DE VOTO NEGATIVO (0,5 / 2,5 / 1,6 / 0,2 / 2,3 / 0,5 entre el 08/06 y el 03/08). Es el jugador con menor rechazo acumulado medido de la edición, lo que hace muy discordante la encuesta del 07/08 que lo da eliminado con 52,6%.",
+   "EL SIGNO DEL VOTO CAMBIA SIN AVISO. De 26 emisiones de eliminación registradas: 18 fueron de voto negativo puro, 4 de voto positivo puro (galas 3, 4, 5 y 24) y 4-5 mixtas 'Generación Dorada'. Un modelo que asuma signo constante fallará.",
+   "LOS ABANDONOS Y EXPULSIONES PESAN MÁS QUE LAS ELIMINACIONES EN ESTA EDICIÓN. Al menos 7 abandonos, 3 expulsiones (Carmiña, Sol, Lola Tomaszeuski) y 3 evacuaciones médicas (Andrea, Cinzia, más otra), incluida la salida de Juanicar el 06/08 estando EN PLACA, que obligó a rearmar la placa vigente.",
+   "LOS REINGRESOS SON HABITUALES PERO YA ESTÁN CERRADOS. Hubo 3 Golden Tickets, 1 repechaje por voto positivo, 9 ingresos nuevos, 6 reemplazos y 8 visitantes. Del Moro descartó explícitamente cualquier reingreso más: 'El repechaje ya fue'.",
+   "VOTO 100% PAGO Y SIN TOPE POR USUARIO: el resultado refleja gasto concentrado de fandom, no cantidad de personas. El rating (~11 puntos de promedio, en caída respecto de 20,2 en 2022-23 y 12,7 en 2024-25) NO es proxy del volumen de votos. No hay ninguna cifra publicada de votos absolutos en esta edición salvo menciones cualitativas ('más de 2 millones' el 08/06 y 'más de 6 millones' el 22/06)."
+  ],
+  "sesgo_edad": "NO CUANTIFICABLE CON ESTE DATASET. No se relevó la edad de los ganadores de ediciones anteriores, así que no se puede establecer una tasa base etaria. Lo único observable, y es un hecho llamativo: los 10 jugadores vigentes tienen una edad mediana muy alta para el formato (63, 60, 52, 50, 48, 40, 37, 33, 29, 28; mediana ≈ 44). La edición es all-stars y celebra los 25 años del formato, lo que explica el sesgo del casting, no necesariamente el del voto. NO INFERIR una preferencia del público por edad a partir de estos datos.",
+  "sesgo_genero": "DATO DURO: en las tres ediciones previas documentadas en este dataset ganó un HOMBRE — Marcos Ginocchio (2022-23), Bautista Mascia (2024) y Tato Algorta (2025); también Marcelo Corazza en GH 1 (2001). No se relevó la serie histórica completa de ganadores de GH Argentina, así que no se puede afirmar que sea una regularidad estructural. SITUACIÓN ACTUAL: tras el abandono de Juanicar (06/08) quedan 9 MUJERES Y 1 HOMBRE (Hanssen), y ese único hombre está nominado para el 10/08 y encabeza la encuesta de Bongiorno con 52,6% de voto negativo. Si Hanssen sale el 10/08, la edición tendrá GANADORA MUJER con probabilidad 1 y el prior de género de las ediciones previas queda inutilizable. Este es el punto de bifurcación central del modelo.",
+  "sesgo_geografico": "HABILITACIÓN DE VOTO: pueden votar residentes de Argentina, Uruguay, Chile, Brasil y Paraguay (Bases oficiales de TELINFOR S.A.). Dos jugadoras vigentes son extranjeras con base habilitada en su país: Pincoya (CL, muy famosa en Chile, finalista de GH Chile 1, entró portando la bandera chilena) y Yipio (UY, se presenta explícitamente como uruguaya y aspira a 'ser la primer gorda uruguaya que gane Gran Hermano'). DATO REAL A FAVOR DE UNA VENTAJA EXTRANJERA: Yipio ganó el repechaje del 20/05 por VOTO POSITIVO con 35,6%, el porcentaje positivo más alto medido de la edición. HIPÓTESIS NO VERIFICADA Y POTENCIALMENTE DECISIVA: no está en este dataset la nacionalidad de los ganadores de 2024 y 2025 (Bautista Mascia y Tato Algorta), que podrían haber sido uruguayos; si se confirmara, habría una tasa base de ganadores uruguayos consecutivos muy relevante para Yipio. NO SE PUDO VERIFICAR (presupuesto de búsquedas agotado) — NO USAR hasta confirmarlo con fuente. Entre las argentinas hay concentración en Buenos Aires/CABA (Charlotte, Luana, Majluf, Mariela, Tamara) más Tucumán (Hanssen, Sol) y Santa Fe (Zilli); no hay evidencia en el dataset de un sesgo de voto por provincia."
+ },
+ "mercados_apuestas": "NO HAY MERCADOS DE APUESTAS UTILIZABLES. La única evidencia relevada es un mercado en Manifold Markets ('Quién va a ganar Gran hermano 2026', https://manifold.markets/GH/quien-va-a-ganar-gran-hermano-2026, consultado 30/06/2026) que está MUERTO E INUTILIZABLE: dinero ficticio, volumen de Ṁ590, UNA sola operación registrada, y el precio marca 33% para Franco Poggio, que fue eliminado el 30/03/2026, con 3% uniforme para los otros 17. No refleja ninguna información. Ninguno de los investigadores encontró cuotas de casas de apuestas reguladas (Betsson, bet365, Codere, etc.) para esta edición; uno declara explícitamente que no buscó mercados de apuestas. CONCLUSIÓN: para este modelo no existe una señal de mercado. Las únicas señales cuantitativas disponibles son (a) los resultados oficiales de votación de Telefe y (b) las encuestas online autoseleccionadas, en ese orden de confiabilidad.",
+ "calidad_datos": "COBERTURA DE PORCENTAJES POR GALA (lo pedido explícitamente). El dataset tiene 27 eliminaciones en 26 emisiones distintas (las galas 13 y 14 son la MISMA emisión del 13/05/2026, doble eliminación: la fila 14 está duplicada a propósito para respetar la numeración de eliminados y NO debe contarse como observación independiente). Sobre esas 26 emisiones:\n\n- CON REPARTO COMPLETO (todos los nominados de la lista publicada tienen porcentaje): 8 de 26 = 30,8%. Son las galas 18, 20, 21, 22 (solo su fase negativa), 23, 25, 26 y 27. Todas de junio-agosto de 2026.\n- CON REPARTO PARCIAL (algunos nominados con porcentaje y otros en null): 16 de 26 = 61,5%. Son las galas 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17 y 19. En estas, la primera tanda de salvaciones se anuncia en bloque sin cifras.\n- CON SOLO EL PORCENTAJE DEL ELIMINADO: 1 de 26 = 3,8%. Gala 3 (Carlota, 12/03/2026, 1,3% sobre una placa de 25) — y ese único número figura SOLO en Wikipedia.\n- SIN NINGÚN PORCENTAJE: 1 de 26 = 3,8%. Gala 24 (JC, 16/07/2026, placa POSITIVA exprés). Verificado en 10 medios: nadie publicó cifras.\n- CASO ÚNICO INVERSO: la gala 19 (Zunino, 15/06/2026) tiene los 4 salvados con porcentaje pero LE FALTA EL DEL ELIMINADO: el reparto del versus Zunino vs Campanita nunca se publicó. Es la única gala del dataset donde falta justamente el número del eliminado.\n\nSobre 27 filas de eliminados, hay porcentaje del versus/eliminado en 25 (92,6%); faltan en la gala 19 (nunca publicado) y en la 24 (nunca publicado).\n\nADVERTENCIA MÁS IMPORTANTE PARA EL MODELO: las listas de nominados NO son homogéneas entre la primera y la segunda mitad. Para las galas 1 a 16 el relevamiento incluyó también a los salvados SIN porcentaje (por eso hay placas de 24 y 25 nombres); para las galas 17 a 27 las listas contienen, en general, solo a los participantes efectivamente revelados en la gala. Evidencia de que esto genera subregistro: Infobae (29-30/07/2026) describe la placa de la semana 23 como 'placa de 9 sobre 13 jugadores activos', mientras que la gala del 03/08 publica solo 6 nombres. Por lo tanto NO se puede derivar un conteo confiable de 'veces nominado' por jugador a partir de este dataset, y por eso ese campo va en null para los 10 jugadores.\n\nOTRAS ADVERTENCIAS DE INTERPRETACIÓN: (1) los porcentajes están RENORMALIZADOS por instancia — cada cifra corresponde a un reparto entre los N que seguían en placa en ese momento, y solo el versus final suma 100 entre dos; nunca sumarlos dentro de una gala. (2) El SIGNO del voto cambia entre galas: 18 emisiones negativas, 4 positivas (3, 4, 5, 24) y 4-5 mixtas (1, 9, 11, 15 y la del 22-23/07); en las positivas un porcentaje ALTO es bueno para el jugador y en las negativas es letal. (3) Ningún dato de encuesta de esta temporada proviene de un muestreo probabilístico; solo 2 mediciones de toda la temporada publican N (Bongiorno, 21.202 el 01/08 y 25.866 el 07/08). (4) La única medición de IMAGEN POSITIVA es del 21/03/2026 y cubre solo a 3 de los 10 jugadores vigentes. (5) Hay 4 números que dependen de UNA sola fuente y que conviene tratar con confianza media-baja: el 1,3% de Carlota (solo Wikipedia), el 57,2%/42,8% del versus de la gala 6 (solo Wikipedia), los tramos intermedios de la gala 4 (solo Wikipedia) y los porcentajes de la gala 15 (un investigador los encontró en Mi Telefe, el otro reportó que no existían).\n\nCONFIANZA GLOBAL DEL DATASET: ALTA para la nómina de 10 jugadores, la placa vigente, la mecánica de votación (respaldada por el PDF oficial de Bases y Condiciones), las galas 18 a 27 y los hechos recientes (salida de Juanicar, salida de Cinzia, eliminación de Campanita). MEDIA para edades, procedencias y puestos en ediciones previas (contradicciones sistemáticas entre Wikipedia ES, Wikipedia EN y prensa) y para las galas 15 a 17. BAJA para la fecha de la final, el número de finalistas y la mecánica de la final, que son null o inferencia declarada.",
+ "conflicts": [
+  "PLACA VIGENTE DEL 10/08 — RESUELTO A FAVOR DE ZILLI. Infobae, Ciudad Magazine y Mi Telefe (05-06/08) listaban Charlotte, Majluf, Sol, JUANICAR, Hanssen y Pincoya; el sitio oficial de votación ghglobal.ar lista Charlotte, Hanssen, Majluf, Pincoya, Sol y ZILLI. La contradicción se resuelve con dos hechos documentados posteriores a esas notas: (a) Juanicar ABANDONÓ la casa la noche del jueves 06/08 y su nominación quedó anulada; (b) la visitante Selva Pérez fulminó a Yanina Zilli el 06/08 con su fulminante de despedida (Mi Telefe, 06/08). La placa cargada es la de 6 con Zilli. Un investigador advirtió que no encontró una nota que confirme explícitamente el 'reemplazo'; la reconstrucción se apoya en los dos eventos por separado, no en una fuente que los una.",
+  "NUMERACIÓN DE GALAS — CONFLICTO ESTRUCTURAL, NO FÁCTICO. Este dataset numera 'gala' = ORDINAL DEL ELIMINADO (1 a 27). Telefe usa una numeración oficial de GALAS DE ELIMINACIÓN que va +2/+3 por debajo: la eliminación de Campanita del 03/08 es la GALA 24 oficial, no la 27. Equivalencias confirmadas por fuente: 22/06 = Gala 18, 29/06 = Gala 19, 06/07 = Gala 20, 13/07 = Gala 21, 20/07 = Gala 22, 27/07 = Gala 23 (inferida), 03/08 = Gala 24. La diferencia se explica porque la doble eliminación del 13/05 fue una sola emisión y porque la gala extra del jueves 16/07 (JC) no entra en la numeración oficial. Existe ADEMÁS una tercera numeración (galas del programa: la 1.ª fue la presentación del 23/02 y la 5.ª fue la 1.ª eliminación) y una CUARTA (Wikipedia numera 'Semana N' = gala de eliminación oficial N+1). Cuatro sistemas de numeración conviven.",
+  "ORDEN DE LA DOBLE ELIMINACIÓN DEL 13/05: Wikipedia asigna Lolo Poggio = 13.ª eliminada y Grecia Colmenares = 14.ª (criterio: mayor porcentaje primero, Lolo 42,2% > Grecia 35,5%); Mi Telefe (13/05) y El Observador (14/05) narran lo contrario en la emisión: Grecia salió PRIMERO y Lolo cayó después en el versus final contra Zunino. Los porcentajes no están en disputa, solo el ordinal. Se cargó la asignación de Wikipedia y se deja constancia.",
+  "GALA 15 (Danelik, 17/05) — CONTRADICCIÓN ENTRE INVESTIGADORES: uno reporta porcentajes completos citando Mi Telefe (Luana 2,7%, Tamara 3,7%, Cinzia 4,3%, Zunino 13,9%, Eduardo 45,6%, Danelik 54,4%) y describe la mecánica como Placa Generación Dorada mixta; el otro reporta que NO encontró ningún porcentaje publicado para esa gala y describe el voto como 'negativo, no confirmado'. Se cargó la versión con URL oficial citada, con confianza MEDIA.",
+  "GALA 2 (Tomy, 09/03) — porcentaje de Franco Zunino: Infobae y Ciudad Magazine publican 4,9%; Wikipedia consigna 4,3%. Se cargó 4,9% (dos fuentes periodísticas independientes).",
+  "GALA 12 (Dani, 11/05) — porcentaje de la eliminada: Mi Telefe (oficial) y Wikipedia dan 52,7%; telebajocero.com da 52,9%. Se cargó 52,7%. telebajocero además tiene errores de numeración en su listado, lo que baja su confiabilidad.",
+  "GALA 20 (Titi, 22/06) — todaladata.com.ar titula '51,4%' mientras Mi Telefe, Infobae, Exitoína y Cadena3 dan 51,8%. Se cargó 51,8%.",
+  "GALA 21 (Nenu, 29/06) — versus: Mi Telefe (oficial de Telefe) da Nenu 55,8% / Campanita 44,2%; late931.com.ar da Nenu 58,3% / Campanita 41,7%. Se cargó la versión oficial; ambas quedan registradas.",
+  "GALA 1 (Lucero, 02/03) — naturaleza del voto en la fase de salvaciones: Ciudad Magazine describe las salvaciones de Emanuel, Sol y Brian como 'votos positivos'; Infobae y Wikipedia indican que esa fase ya era NEGATIVA. Se cargó Infobae+Wikipedia, coherente con que el versus final sume 100.",
+  "GALA 3 (Carlota, 12/03) — estructura de la placa final: Wikipedia describe la última tanda como '11 salvados entre 12', mientras Infobae y Mi Telefe dicen que el trío final fue Carlota, Brian y Nick. Implica que el 1,3% de Carlota podría ser el reparto entre 3 y no sobre la placa completa de 25.",
+  "TAMAÑO DE LA PLACA DE LA SEMANA 23: Infobae (29-30/07) describe 'placa de 9 sobre 13 jugadores activos'; la gala del 03/08 publica solo 6 nominados y un investigador afirma que el reparto de 6 es COMPLETO. O hubo bajadas de placa no documentadas, o las listas de nominados posteriores a la gala 16 están sistemáticamente incompletas. Es el conflicto con mayor impacto metodológico del dataset.",
+  "FECHA DE LA GRAN FINAL — tres versiones vivas, ninguna oficial: domingo 06/09/2026 (Paula Varela/Intrusos, 17/07, amplificada por 6 medios que citan la MISMA fuente primaria); lunes 31/08/2026 (La Pavada, vía El Destape 25/06, C5N/RatingCero 30/06 y Canal26 18/07); fines de septiembre (Alejandro Castelo, 26/06, por contratos de panelistas). Telefe no confirmó nada.",
+  "SE ADELANTA vs SE ALARGA: minutouno, Ciudad y El Litoral (17-18/07) dicen que Telefe ADELANTÓ la final por rating bajo; Pronto y Minuto Neuquén (26/06) decían que se ALARGARÍA más de lo previsto. Reportes contradictorios de fechas distintas.",
+  "ESTRENO DE POPSTARS (proxy de la fecha de la final): sitioandino y Exitoína (20/07) dicen lunes 31/08; Crónica/La Pavada (20/07) dice lunes 17/08.",
+  "MONTO DEL PREMIO: Wikipedia ES, La Nación e iProUP dan AR$ 70.000.000 (base); El Destape (25/06) da 84 millones; otra fuente menciona 100 millones. Explicación probable: el capital está invertido en Mercado Pago (TNA 26,2%) y crece, pero no se pudo verificar 84M ni 100M.",
+  "VOTO GRATIS SÍ vs NO: Cadena3, Aire de Santa Fe, minutouno y La Popu titulan 'cómo votar GRATIS' presentando el SMS al 9009 y el QR como métodos gratuitos; las Bases y Condiciones oficiales de TELINFOR S.A. lo contradicen explícitamente (SMS $429,55 o $265,15; web con billetera virtual). GANA EL DOCUMENTO OFICIAL: no hay voto gratuito.",
+  "TOTAL DE PARTICIPANTES DE LA EDICIÓN: Wikipedia ES dice 43; Wikipedia EN 42; El Destape y C5N 41. La diferencia probablemente esté en si se cuentan visitantes e intercambios.",
+  "EDADES: Hanssen 28 (Wiki ES) / 29 (prensa, cargado) / 36 (Wiki EN); Sol 35 (Wiki ES anexo) / 37 (Wiki EN y fecha de nacimiento, cargado); Majluf 59 (Wiki EN) / 61 (Infobae 03/06) / 63 (fecha de nacimiento, cargado); Zilli 57 (Wiki EN) / 60 (fecha de nacimiento, cargado); Pincoya 48 (prensa feb-2026) / 50 (Wikipedia, cargado); Charlotte 31 (texto biográfico Wiki ES) / 33 (anexo y fecha de nacimiento, cargado). Criterio aplicado: cuando existe fecha de nacimiento documentada, se calculó la edad al 08/08/2026.",
+  "PROCEDENCIAS: Hanssen Tucumán (Wiki ES) vs Buenos Aires (Wiki EN) — probablemente nacimiento vs residencia; Sol San Miguel de Tucumán (Wiki ES) vs Recoleta (Wiki EN); Luana José C. Paz (Wikipedia) vs Escobar (viapais).",
+  "APELLIDO DE PINCOYA: Jennifer GALVARINI (Wikipedia ES/EN y fuentes chilenas) vs Jennifer TORRES (ficha oficial de Mi Telefe y La Nación 07/08). Es la misma persona; ambas grafías conviven en la cobertura argentina.",
+  "PUESTO DE PINCOYA EN GH CHILE 1: 'Finalista' (Wikipedia ES), 'tercer puesto' (Wikipedia EN), 'segundo lugar' (una fuente chilena). Lo no disputado: llegó a la final.",
+  "PUESTO DE SOL EN GH 6: 5.º según su ficha biográfica de Wikipedia ES; el anexo de esta temporada solo dice 'Participante de GH 6'. Una fuente menciona GH 2011 y otra GH 2010 para la misma edición.",
+  "SEGUNDA PARTE DEL RATING DE ESTRENO: Wikipedia EN dice 14,8 puntos; Cadena3 y Pregón (05/08) dicen 11,8. Sin resolver.",
+  "FECHA DE ELIMINACIÓN DE CAMPANITA: una tabla de Wikipedia EN la fecha el 27/07 con 53,30%; Mi Telefe (oficial), Infobae, Ciudad y Aire de Santa Fe la fechan el 03/08/2026 con el mismo porcentaje. La fecha correcta es 03/08/2026.",
+  "DÍAS DE DEBATE Y ESTRUCTURA SEMANAL: Wikipedia ES ubica El Debate el jueves más un bloque el domingo; Wikipedia EN dice debates domingos, martes y jueves. Coinciden en lo esencial: nominación miércoles, eliminación lunes.",
+  "ENCUESTA DE BONGIORNO DEL 01-02/08: La Nación y Minuto Uno publican Campanita 50,3% / Sol 36,4% con N=21.202; Crónica publica 48% / 40%. Puede ser el mismo sondeo en cortes temporales distintos."
+ ],
+ "gaps": [
+  "FECHA OFICIAL DE LA FINAL: no existe confirmación de Telefe al 08/08/2026. Campo cargado como texto con las tres versiones; ninguna es dato duro.",
+  "NÚMERO DE FINALISTAS: null. Ninguna fuente lo publica para esta edición. Precedente 2024 y 2025: 3 finalistas.",
+  "MECÁNICA DE LA FINAL DE ESTA EDICIÓN: no hay ninguna nota ni comunicado que explique si el voto será positivo, cuántos finalistas habrá o cómo se irán eliminando. Todo lo reportado viene de 2024 y 2025.",
+  "GALAS DE ELIMINACIÓN RESTANTES: null. Solo está confirmada la gala del lunes 10/08/2026. Con 10 jugadores y final el 06/09, los lunes 10, 17, 24 y 31 de agosto darían 4 galas y dejarían 6 jugadores para la última semana: no cierra sin galas extra o dobles eliminaciones. Esa aritmética NO es un dato publicado.",
+  "VECES NOMINADO Y VECES LÍDER POR JUGADOR: null para los 10. No existe conteo publicado y no se puede derivar del dataset porque las listas de nominados de las galas 17 a 27 son probablemente incompletas (ver 'calidad_datos'). Liderazgos puntuales sí documentados: Yipio semana 24, Hanssen semana 18, Tamara semana 10.",
+  "PORCENTAJE DEL VERSUS DE LA GALA 19 (Zunino vs Campanita, 15/06): nunca publicado por ningún medio (verificado en 7 medios). NO estimado.",
+  "TODOS LOS PORCENTAJES DE LA GALA 24 (JC, 16/07, placa positiva): nunca publicados (verificado en 10 medios). NO estimados.",
+  "FASES POSITIVAS DE LAS PLACAS 'GENERACIÓN DORADA' (galas 1, 9, 11, 15) Y DE LA PLACA PLANTA DEL 06/07: los porcentajes de las primeras 24 horas de voto positivo NUNCA se publicaron. Solo se conocen los nombres de quienes salieron de placa.",
+  "PRIMERAS TANDAS DE SALVACIÓN: en casi todas las galas el primer grupo de salvados (a veces 3, a veces 9 personas) se anuncia en bloque sin cifras. Afecta sobre todo a las galas 3, 4, 5 y 11 (placas de 25, 11, 24 y 17 personas).",
+  "FAVORITISMO POSITIVO DE LOS 10 JUGADORES VIGENTES: NO EXISTE NINGUNA MEDICIÓN. Todas las encuestas recientes son de voto NEGATIVO. El único dato de voto positivo real de un jugador vigente es el 35,6% de Yipio en el repechaje del 20/05. Es el gap más grave para modelar un ganador, porque ganar la final requiere voto POSITIVO y el dataset casi no lo mide.",
+  "IMAGEN POSITIVA: la única medición es del 21/03/2026 y cubre solo a Sol (68%), Pincoya (66%) y Zilli (52%). Charlotte, Hanssen, Luana, Majluf, Mariela, Tamara y Yipio nunca fueron medidos en imagen positiva.",
+  "SEGUIDORES DE INSTAGRAM Y TAMAÑO DE FANDOM: no hay ninguna cifra confiable para los 10 jugadores. El único dato es 'más de 200 mil seguidores' de @yipio (viapais, feb-2026), aproximado y desactualizado, por lo que el campo va en null para todos.",
+  "MERCADOS DE APUESTAS: no existe ninguno utilizable (ver campo 'mercados_apuestas'). Un investigador declara explícitamente que no buscó casas de apuestas.",
+  "NACIONALIDAD DE LOS GANADORES DE GH ARGENTINA 2024 Y 2025: no relevada. Si fueran uruguayos sería una tasa base muy relevante para Yipio. NO VERIFICADO — el presupuesto de búsquedas web de esta sesión (200/200) se agotó antes de poder comprobarlo. No usar hasta confirmar.",
+  "DÍAS EXACTOS EN LA CASA POR JUGADOR AL 08/08/2026: no calculados. Wikipedia usa una plantilla dinámica y el wikitexto no contiene los números renderizados. Solo se conocen datos sueltos: Juanicar 164-165 días, Cinzia 133, Manu 141, Cola 69, Campanita 76.",
+  "EDAD Y CIUDAD DE MARIELA PRIETO: los 48 años provienen solo de Wikipedia ES/EN (no independientes entre sí); no hay fecha de nacimiento ni ciudad dentro de la provincia de Buenos Aires.",
+  "PUESTO DE LUANA FERNÁNDEZ EN COMBATE: ninguna fuente lo indica.",
+  "PROVINCIA EXACTA DE MAJLUF Y TAMARA: las fuentes solo dicen 'Buenos Aires' sin precisar CABA o provincia.",
+  "VOLUMEN ABSOLUTO DE VOTOS: no hay ninguna cifra publicada por gala ni total, salvo menciones cualitativas ('más de 2 millones' el 08/06, 'más de 6 millones' el 22/06, récord de la edición).",
+  "MONTO ACTUALIZADO DEL PREMIO AL 08/08/2026: no hay cifra oficial. El único número firme es la base de AR$ 70.000.000.",
+  "COSTO Y REGLAS DE LA VOTACIÓN FINAL: las Bases oficiales cubren hasta el 31/08/2026. Si la final es el 06/09 hará falta una adenda que todavía no está publicada.",
+  "RATING DE LA GALA DEL 03/08 (eliminación de Campanita): no encontrado. Sí se tienen 04/08 = 12,1; 05/08 = 11,1; 06/08 = 11,1 y 9,1.",
+  "MECÁNICA DE LA 'PUERTA ROJA': anunciada por Del Moro antes del estreno, pero no hay documentación de cómo se activó durante la temporada.",
+  "VERIFICACIÓN CRUZADA PENDIENTE de dos números de fuente única: el 1,3% de Carlota (gala 3) y el 57,2%/42,8% del versus de la gala 6. Un investigador agotó su presupuesto de búsquedas antes de cerrarlas.",
+  "EL BLOQUE DE ENCUESTAS LLEGÓ TRUNCADO en la entrega de datos crudos (se corta a mitad de la descripción de la cuenta 'GH Encuestas'), por lo que puede haber agregadores o sondeos adicionales no incorporados a este dataset."
+ ],
+ "fuentes_clave": [
+  "Anexo:Gran Hermano Argentina: Generación Dorada — Wikipedia ES (participantes, reingresos, visitantes, reglas, audiencia; NO contiene tabla de porcentajes por gala): https://es.wikipedia.org/wiki/Anexo:Gran_Hermano_Argentina:_Generaci%C3%B3n_Dorada",
+  "Gran Hermano (Argentine TV series) season 13 — Wikipedia EN: https://en.wikipedia.org/wiki/Gran_Hermano_(Argentine_TV_series)_season_13",
+  "BASES Y CONDICIONES OFICIALES del entretenimiento de votación, TELINFOR S.A. (PDF; vigencia 23/02-31/08/2026, costos de SMS, votos por método, ausencia de límite): https://ghglobal.ar/docs/basesGH.pdf",
+  "Sitio oficial de votación (placa vigente y paquetes de votos): https://ghglobal.ar/",
+  "Campanita fue eliminada en un versus histórico contra Sol Abraham — Mi Telefe, 03/08/2026 (reparto completo de la gala 27): https://www.mitelefe.com/gran-hermano/noticias/campanita-fue-eliminada-de-gran-hermano-2026-en-un-versus-historico-contra-sol-abraham-pid2561600",
+  "Escándalo inédito: una jugadora quedó eliminada y se negó a abandonar la casa — Infobae Teleshow, 04/08/2026: https://www.infobae.com/teleshow/2026/08/04/escandalo-inedito-en-gran-hermano-cuando-una-jugadora-quedo-eliminada-y-se-nego-a-abandonar-la-casa-no-me-quiero-ir/",
+  "Qué participantes quedaron en la placa de nominados (placa semana 24, voto negativo, gala del 10/08, poderes de Yipio) — Infobae Teleshow, 06/08/2026: https://www.infobae.com/teleshow/2026/08/06/que-participantes-quedaron-en-la-placa-de-nominados-en-gran-hermano-generacion-dorada-la-jugada-que-lo-cambio-todo/",
+  "Una fulminante más le dio forma final a la placa negativa de la semana 24 (Selva Pérez fulmina a Zilli) — Mi Telefe, 06/08/2026: https://www.mitelefe.com/gran-hermano/noticias/una-fulminante-mas-le-dio-forma-final-a-la-placa-negativa-de-la-semana-24-de-gran-hermano-2026-pid2561996",
+  "El difícil momento familiar que obligó a Juanicar a abandonar Gran Hermano — La Nación, 07/08/2026: https://www.lanacion.com.ar/espectaculos/el-dificil-momento-familiar-que-obligo-a-juanicar-a-abandonar-gran-hermano-nid07082026/",
+  "Quién se va de Gran Hermano este lunes, según las encuestas — La Nación, 07/08/2026 (Bongiorno N=25.866 y Diego Poggi, contradictorias): https://www.lanacion.com.ar/espectaculos/quien-se-va-de-gran-hermano-este-lunes-segun-las-encuestas-nid07082026/",
+  "Quién se va de Gran Hermano este lunes, según las encuestas — La Nación, 01/08/2026 (Bongiorno N=21.202, acertó): https://www.lanacion.com.ar/espectaculos/quien-se-va-de-gran-hermano-este-lunes-segun-las-encuestas-nid01082026/",
+  "El comunicado de Gran Hermano tras el accidente de Cinzia Francischiello: 'Queda fuera de competencia' — Infobae, 31/07/2026: https://www.infobae.com/teleshow/2026/07/31/el-comunicado-de-gran-hermano-tras-el-accidente-de-cinzia-francischiello-queda-fuera-de-competencia/",
+  "Una gala con complot, sanciones y votos anulados (semana 23, placa de 9 sobre 13 activos) — Infobae, 29-30/07/2026: https://www.infobae.com/teleshow/2026/07/30/una-gala-con-complot-sanciones-y-votos-anulados-en-gran-hermano-asi-quedo-la-placa-de-nominados/",
+  "Yipio ganó la casa y un premio extra (llave 84 + liderazgo semana 24) — Mi Telefe, 04/08/2026: https://www.mitelefe.com/gran-hermano/noticias/yipio-gano-la-casa-y-un-premio-extra-en-gran-hermano-generacion-dorada-pid2561745",
+  "Brian Sarmiento fue eliminado por segunda vez (récord negativo 89,3%) — Mi Telefe, 08/06/2026: https://www.mitelefe.com/gran-hermano/noticias/brian-sarmiento-fue-eliminado-por-segunda-vez-de-gran-hermano-2026-y-se-despidio-pidiendo-disculpas-pid2555464",
+  "Titi Tcherkaski fue eliminada en un versus histórico contra Solange Abraham (versus más ajustado, récord de 6 millones de votos) — Mi Telefe, 22/06/2026: https://www.mitelefe.com/gran-hermano/noticias/titi-tcherkaski-fue-eliminada-de-gran-hermano-2026-en-un-versus-historico-contra-solange-abraham-pid2557086",
+  "Quién fue el último eliminado después de la placa positiva (gala extra del 16/07, JC, sin porcentajes) — Infobae, 17/07/2026: https://www.infobae.com/teleshow/2026/07/17/quien-fue-el-ultimo-eliminado-de-gran-hermano-generacion-dorada-despues-de-la-placa-positiva/",
+  "'El repechaje ya fue': Del Moro desmiente reingresos en la recta final — El Intransigente, julio 2026: https://elintransigente.com/2026/07/del-moro-repechaje-gran-hermano/",
+  "Gran Hermano ya tendría fecha de final: 6 de septiembre según Intrusos, no confirmado por Telefe — Ciudad Magazine, 17/07/2026: https://www.ciudad.com.ar/espectaculos/2026/07/17/gran-hermano-ya-tendria-fecha-de-final-cuando-termina-el-reality/",
+  "Se filtró cuándo termina Gran Hermano 2026: 31 de agosto según La Pavada — El Destape, 25/06/2026: https://www.eldestapeweb.com/espectaculos/filtro-cuando-termina-gran-hermano-2026-fecha-final-2026625163047",
+  "Rating: Gran Hermano busca sobrevivir en medio de una televisión en crisis (promedio 11,3) — La Nación, 23/07/2026: https://www.lanacion.com.ar/espectaculos/television/rating-gran-hermano-busca-sobrevivir-en-medio-de-una-television-en-crisis-nid23072026/",
+  "La encuesta de imagen positiva de la 4.ª semana (única medición positiva de la temporada) — Revista Pronto, 21/03/2026: https://www.pronto.com.ar/espectaculos/2026/3/21/la-encuesta-que-refleja-quien-es-el-favorito-de-gran-hermano-por-imagen-positiva-sorpresa-en-el-primer-puesto-275456.html",
+  "Participantes 2026 — fichas oficiales de Mi Telefe (usa 'Jennifer Pincoya Torres'): https://www.mitelefe.com/gran-hermano/participantes-2026",
+  "Final de Gran Hermano 2025 (precedente: 3 finalistas, voto positivo, Tato 62,8%) — La Nación, 24/06/2025: https://www.lanacion.com.ar/espectaculos/television/final-de-gran-hermano-2025-en-vivo-la-definicion-del-reality-minuto-a-minuto-nid24062025/"
+ ]
+}

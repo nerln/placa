@@ -1,0 +1,68 @@
+{
+ "_nota": "Encuestas de Fefe Bongiorno (X). Es el unico agregador con historial verificable de esta temporada. 'historial' se compara contra el resultado oficial de la gala correspondiente para estimar su sesgo y su desvio por posicion; 'proxima' es la medicion previa a la gala que todavia no se jugo. model/actualizar.py mueve 'proxima' al historial cuando la gala se resuelve.",
+ "historial": [
+  {
+   "fecha": "2026-08-07",
+   "gala": 28,
+   "encuesta": {
+    "Hanssen": 50.93,
+    "Sol": 35.13,
+    "Charlotte": 10.18
+   }
+  },
+  {
+   "fecha": "2026-08-01",
+   "gala": 27,
+   "encuesta": {
+    "Campanita": 50.3,
+    "Sol": 36.4,
+    "Hanssen": 10.3
+   }
+  },
+  {
+   "fecha": "2026-07-19",
+   "gala": 25,
+   "encuesta": {
+    "Emanuel": 45.0,
+    "Sol": 28.0
+   }
+  },
+  {
+   "fecha": "2026-07-12",
+   "gala": 23,
+   "encuesta": {
+    "Manu": 60.0,
+    "Yipio": 28.0,
+    "Sol": 17.0,
+    "Luana": 17.0
+   }
+  },
+  {
+   "fecha": "2026-07-05",
+   "gala": 22,
+   "encuesta": {
+    "Nigro": 68.0,
+    "Luana": 33.0,
+    "JC": 6.0
+   }
+  }
+ ],
+ "proxima": {
+  "_nota": "Sin encuesta disponible: el estado de la proxima gala se estima solo con preferencia revelada. cuota vacia = sin observacion.",
+  "fuente": "",
+  "fecha": "",
+  "n_nominal": 0,
+  "gala": 28,
+  "placa": [
+   "Charlotte",
+   "Majluf",
+   "Sol",
+   "Hanssen",
+   "Pincoya",
+   "Zilli"
+  ],
+  "cuota": {},
+  "resto_agregado": 0.0,
+  "resto_miembros": []
+ }
+}

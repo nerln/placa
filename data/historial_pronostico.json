@@ -1,0 +1,58 @@
+{
+ "_nota": "Append-only. Cada entrada es el pronostico que la pagina publicaba en esa fecha. final_model.py agrega una al final de cada corrida. Las dos primeras se recuperaron a mano porque el registro no existia todavia.",
+ "corridas": [
+  {
+   "fecha": "2026-08-08",
+   "galas_hasta": 27,
+   "en_juego": 10,
+   "p_gana": {
+    "Tamara": 0.224,
+    "Pincoya": 0.211,
+    "Charlotte": 0.144,
+    "Zilli": 0.129,
+    "Luana": 0.107,
+    "Yipio": 0.08,
+    "Mariela": 0.049,
+    "Hanssen": 0.031,
+    "Majluf": 0.021,
+    "Sol": 0.003
+   },
+   "_fuente": "version del artefacto del 08/08/2026, recuperada"
+  },
+  {
+   "fecha": "2026-08-10",
+   "galas_hasta": 27,
+   "en_juego": 10,
+   "_nota": "Rama publicada esa manana: el pronostico CONDICIONADO a que saliera Hanssen esa noche. No es el caso base, es la rama, y por eso se guarda aparte: es exactamente la promesa que hay que contrastar.",
+   "rama_de": "Hanssen",
+   "p_gana": {
+    "Tamara": 0.222,
+    "Pincoya": 0.216,
+    "Charlotte": 0.173,
+    "Zilli": 0.131,
+    "Luana": 0.107,
+    "Yipio": 0.079,
+    "Mariela": 0.047,
+    "Majluf": 0.022,
+    "Sol": 0.004
+   },
+   "_fuente": "captura de la pagina publicada el 10/08/2026, antes de la gala"
+  },
+  {
+   "fecha": "2026-08-10",
+   "galas_hasta": 28,
+   "en_juego": 9,
+   "p_gana": {
+    "Tamara": 0.1917,
+    "Pincoya": 0.1855,
+    "Charlotte": 0.222,
+    "Zilli": 0.1316,
+    "Luana": 0.1159,
+    "Yipio": 0.0752,
+    "Mariela": 0.0439,
+    "Majluf": 0.0268,
+    "Sol": 0.0076
+   }
+  }
+ ]
+}

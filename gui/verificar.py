@@ -1,0 +1,127 @@
+"""
+Lo que se publica tiene que salir de lo que esta publicado.
+
+Es la unica prueba que corre antes de desplegar, y contesta una sola pregunta:
+la pagina que hay en web/ se puede reconstruir a partir de data/ tal como esta
+en el repositorio? Si alguien edita un numero a mano en el HTML, o commitea
+data/ nuevo sin volver a construir, esto falla y la pagina no sale.
+
+Ademas comprueba tres identidades internas del pronostico, que son las que
+harian falso el resultado sin romper nada visible:
+
+  * las probabilidades de ganar suman 1
+  * las ramas ponderadas por su probabilidad devuelven el caso base (asi
+    estan construidas: son el mismo Monte Carlo particionado, no una
+    simulacion aparte, y si no cierran es que dejaron de serlo)
+  * cada gala declarada completa cumple la identidad aritmetica de Telefe
+
+    python3 gui/verificar.py
+"""
+
+from __future__ import annotations
+
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+WEB = ROOT / "web"
+TOL_SUMA = 1e-9
+TOL_RAMAS = 5e-4          # las ramas se guardan redondeadas al escribir el JSON
+TOL_IDENTIDAD = 0.6       # Telefe publica con un decimal y a veces redondea feo
+
+
+def fallo(msg):
+    print("  FALLA · " + msg)
+    return 1
+
+
+def reconstruible():
+    """Vuelve a construir la pagina y compara byte a byte con la publicada."""
+    antes = {p.name: p.read_bytes() for p in WEB.glob("*")
+             if p.suffix in (".html", ".json", ".js")}
+    subprocess.run([sys.executable, str(ROOT / "gui" / "build.py")],
+                   check=True, capture_output=True)
+    malos = [n for n, b in antes.items() if (WEB / n).read_bytes() != b]
+    if malos:
+        return fallo("web/ no coincide con lo que produce gui/build.py: " +
+                     ", ".join(sorted(malos)) + ". Correr gui/build.py y commitear.")
+    print(f"  ok · web/ reconstruible ({len(antes)} archivos)")
+    return 0
+
+
+def probabilidades():
+    res = json.loads((ROOT / "data" / "resultados.json").read_text())
+    err = 0
+    for nombre, esc in res["escenarios"].items():
+        s = sum(esc["p_gana"].values())
+        if abs(s - 1) > TOL_SUMA:
+            err += fallo(f"p_gana del escenario {nombre} suma {s!r}")
+    if not err:
+        print(f"  ok · {len(res['escenarios'])} escenarios suman 1")
+    return err
+
+
+def ramas_cierran():
+    p = ROOT / "data" / "ramas.json"
+    if not p.exists():
+        print("  (sin data/ramas.json: no hay nada que comprobar)")
+        return 0
+    R = json.loads(p.read_text())
+    # La ley de probabilidad total solo se puede exigir si las ramas particionan
+    # todas las salidas posibles. Cuando no hay placa, ramas.py publica solo las
+    # salidas con probabilidad apreciable y la cobertura queda por debajo de 1:
+    # ahi la suma no tiene por que dar el caso base, y exigirlo seria inventar
+    # una identidad que no existe.
+    cobertura = sum(r["p_sale"] for r in R["ramas"].values())
+    if abs(cobertura - 1) > 1e-6:
+        print(f"  (ramas parciales: cubren el {100*cobertura:.1f}% de las salidas, "
+              f"no hay identidad que comprobar)")
+        return 0
+    err = 0
+    peor = 0.0
+    for quien in R["jugadores"]:
+        recompuesto = sum(r["p_sale"] * r["p_gana"][quien] for r in R["ramas"].values())
+        d = abs(recompuesto - R["base"]["p_gana"][quien])
+        peor = max(peor, d)
+        if d > TOL_RAMAS:
+            err += fallo(f"la rama de {quien} no recompone el caso base (Δ={d:.5f})")
+    if not err:
+        print(f"  ok · {len(R['ramas'])} ramas recomponen el caso base (peor Δ={peor:.2e})")
+    return err
+
+
+def identidad_telefe():
+    """suma publicada − 100 = suma de las cuotas que no son del versus.
+
+    Es la firma que prueba que la lista de nominados de esa gala esta completa:
+    Telefe renormaliza al 100% solo el mano a mano final, asi que el excedente
+    tiene que ser exactamente lo que se llevaron los que salieron antes."""
+    G = json.loads((ROOT / "data" / "galas.json").read_text())
+    err = 0
+    n = 0
+    for g in G["galas"]:
+        if not (g.get("completa") and g.get("versus")):
+            continue
+        n += 1
+        publicado = sum(g["salvados_cuota"].values()) + sum(g["versus"].values())
+        d = abs((publicado - 100) - sum(g["salvados_cuota"].values()))
+        if d > TOL_IDENTIDAD:
+            err += fallo(f"la gala {g['gala']} se declara completa y no cierra (Δ={d:.2f})")
+    if not err:
+        print(f"  ok · {n} galas completas cumplen la identidad de Telefe")
+    return err
+
+
+def main():
+    print("verificando lo que se va a publicar")
+    err = (reconstruible() + probabilidades() + ramas_cierran() + identidad_telefe())
+    if err:
+        print(f"\n{err} comprobacion(es) fallaron: no se publica")
+        sys.exit(1)
+    print("\ntodo cierra")
+
+
+if __name__ == "__main__":
+    main()

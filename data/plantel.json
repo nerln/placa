@@ -1,0 +1,193 @@
+{
+ "_nota": "Plantel vigente y atributos que consume el modelo. Este archivo es el que edita model/actualizar.py despues de cada gala: saca a quien fue eliminado, recalcula las propensiones de nominacion y deja el resto intacto. Nada de esto vive ya dentro del codigo.",
+ "actualizado": "2026-08-10",
+ "edicion": "Gran Hermano Argentina: Generación Dorada",
+ "temporada": 13,
+ "estreno": "2026-02-23",
+ "premio": "AR$ 70.000.000 en Mercado Pago + vivienda + moto Motomel + un año de cerveza Amstel",
+ "jugadores": [
+  {
+   "apodo": "Tamara",
+   "nombre": "Tamara Paganini",
+   "edad": 52,
+   "ciudad": "Buenos Aires",
+   "provincia": "Buenos Aires",
+   "pais": "AR",
+   "ingreso": "2026-03-30",
+   "previa": "GH Argentina 1 (2001) · subcampeona, 112 días",
+   "papel": "La leyenda. Emblema de la edición que celebra los 25 años del formato.",
+   "placas_recientes": 3,
+   "votos_recientes": 14,
+   "bono_fulminante": 0.0,
+   "genero": "f"
+  },
+  {
+   "apodo": "Pincoya",
+   "nombre": "Jennifer «Pincoya» Galvarini",
+   "edad": 50,
+   "ciudad": "Ancud, Chiloé",
+   "provincia": "Los Lagos",
+   "pais": "CL",
+   "ingreso": "2026-02-23",
+   "previa": "GH Chile 1 (2023) · finalista, 25,4%",
+   "papel": "Primera chilena en el formato argentino. Récord de permanencia de la edición.",
+   "placas_recientes": 3,
+   "votos_recientes": 5,
+   "bono_fulminante": 0.0,
+   "genero": "f"
+  },
+  {
+   "apodo": "Charlotte",
+   "nombre": "Charlotte Caniggia",
+   "edad": 33,
+   "ciudad": "CABA",
+   "provincia": "Ciudad de Buenos Aires",
+   "pais": "AR",
+   "ingreso": "2026-05-20",
+   "previa": "GH VIP España 4 (2016) · 9.ª",
+   "papel": "La mediática. Fandom propio heredado, socialmente aislada dentro de la casa.",
+   "placas_recientes": 3,
+   "votos_recientes": 1,
+   "bono_fulminante": 0.45,
+   "genero": "f"
+  },
+  {
+   "apodo": "Zilli",
+   "nombre": "Yanina Zilli",
+   "edad": 60,
+   "ciudad": "Arequito",
+   "provincia": "Santa Fe",
+   "pais": "AR",
+   "ingreso": "2026-02-24",
+   "previa": "Sin ediciones previas · vedette y actriz de los 90",
+   "papel": "Casi nadie la vota adentro; entró a placa por fulminante de una visitante.",
+   "placas_recientes": 4,
+   "votos_recientes": 7,
+   "bono_fulminante": 0.3,
+   "genero": "f"
+  },
+  {
+   "apodo": "Luana",
+   "nombre": "Luana Fernández",
+   "edad": 28,
+   "ciudad": "José C. Paz",
+   "provincia": "Buenos Aires",
+   "pais": "AR",
+   "ingreso": "2026-02-24",
+   "previa": "Combate (Argentina)",
+   "papel": "Conflictiva y protagonista. La más votada del voto positivo del 16/07.",
+   "placas_recientes": 4,
+   "votos_recientes": 5,
+   "bono_fulminante": 0.0,
+   "genero": "f"
+  },
+  {
+   "apodo": "Yipio",
+   "nombre": "Yisela «Yipio» Pintos",
+   "edad": 40,
+   "ciudad": "Montevideo",
+   "provincia": "Montevideo",
+   "pais": "UY",
+   "ingreso": "2026-05-20",
+   "previa": "Sin ediciones previas · volvió por repechaje con 35,6%",
+   "papel": "Comediante uruguaya. Líder e inmune de la semana 24.",
+   "placas_recientes": 6,
+   "votos_recientes": 11,
+   "bono_fulminante": 0.0,
+   "genero": "f"
+  },
+  {
+   "apodo": "Mariela",
+   "nombre": "Mariela Prieto",
+   "edad": 48,
+   "ciudad": "Buenos Aires",
+   "provincia": "Buenos Aires",
+   "pais": "AR",
+   "ingreso": "2026-05-20",
+   "previa": "Sin ediciones previas",
+   "papel": "Perfil bajo en el voto. Nunca fue candidata seria a eliminación.",
+   "placas_recientes": 4,
+   "votos_recientes": 12,
+   "bono_fulminante": 0.0,
+   "genero": "f"
+  },
+  {
+   "apodo": "Majluf",
+   "nombre": "Alejandra Majluf",
+   "edad": 63,
+   "ciudad": "Buenos Aires",
+   "provincia": "Buenos Aires",
+   "pais": "AR",
+   "ingreso": "2026-06-02",
+   "previa": "Sin ediciones previas · ícono de la TV de los 90",
+   "papel": "Carne de placa máxima: 24 puntos de nominación en las últimas 4 galas.",
+   "placas_recientes": 7,
+   "votos_recientes": 24,
+   "bono_fulminante": 0.0,
+   "genero": "f"
+  },
+  {
+   "apodo": "Sol",
+   "nombre": "Solange «Sol» Abraham",
+   "edad": 37,
+   "ciudad": "San Miguel de Tucumán",
+   "provincia": "Tucumán",
+   "pais": "AR",
+   "ingreso": "2026-05-31",
+   "previa": "GH Argentina 6 (2010-11) · volvió por Golden Ticket",
+   "papel": "La villana. Ganó tres versus seguidos con 48,2%, 44,7% y 46,7%.",
+   "placas_recientes": 8,
+   "votos_recientes": 17,
+   "bono_fulminante": 0.0,
+   "genero": "f"
+  }
+ ],
+ "eliminados_recientes": [
+  {
+   "apodo": "Hanssen",
+   "fecha": "2026-08-10",
+   "modo": "eliminado",
+   "detalle": "eliminado en la gala 28",
+   "ficha": {
+    "apodo": "Hanssen",
+    "nombre": "Matías Hanssen",
+    "edad": 29,
+    "ciudad": "San Miguel de Tucumán",
+    "provincia": "Tucumán",
+    "pais": "AR",
+    "ingreso": "2026-05-20",
+    "previa": "Sin ediciones previas",
+    "papel": "Único hombre en juego. Seis galas seguidas salvándose con ≤2,5%.",
+    "placas_recientes": 8,
+    "votos_recientes": 21,
+    "bono_fulminante": 0.0
+   },
+   "_fuente_ficha": "recuperada de la version del artefacto del 08/08/2026; sacar_jugador la descartaba antes de arreglarlo"
+  },
+  {
+   "apodo": "Campanita",
+   "fecha": "2026-08-03",
+   "modo": "eliminada",
+   "detalle": "perdió el versus contra Sol con 53,3% y se negó a salir de la casa"
+  },
+  {
+   "apodo": "Juanicar",
+   "fecha": "2026-08-06",
+   "modo": "abandono",
+   "detalle": "se fue estando en placa por un problema de salud de su madre"
+  },
+  {
+   "apodo": "Cola",
+   "fecha": "2026-07-27",
+   "modo": "eliminado",
+   "detalle": "77,2% en el versus contra Majluf"
+  },
+  {
+   "apodo": "Emanuel",
+   "fecha": "2026-07-20",
+   "modo": "eliminado",
+   "detalle": "55,3% en el versus contra Sol"
+  }
+ ],
+ "_nota_genero": "genero: 'f'/'m'. Al 10/08/2026 no queda ningun varon en juego, confirmado por Mi Telefe en la nota de la eliminacion de Hanssen."
+}

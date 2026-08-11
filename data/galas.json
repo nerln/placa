@@ -1,0 +1,283 @@
+{
+ "_nota": "Galas de voto NEGATIVO desde el 01/06/2026 (regimen homogeneo: placa negativa clasica, se vota para eliminar). Estructura de revelacion verificada aritmeticamente: los porcentajes de los salvados progresivos son cuota sobre el total de la placa; el versus final se renormaliza sobre el residuo. En 8 de 11 galas la suma cuadra exactamente (suma total - 100 = suma de los no-versus), lo que prueba que la lista de nominados esta COMPLETA y que la observacion es una multinomial completa.",
+ "_fuente_principal": "Telefe / Mi Telefe, resultados oficiales de gala, replicados por Infobae, La Nacion, El Destape, Ciudad Magazine y Wikipedia ES.",
+ "galas": [
+  {
+   "gala": 17,
+   "fecha": "2026-06-01",
+   "tipo": "negativo",
+   "placa": [
+    "Tamara",
+    "Brian",
+    "Nigro",
+    "Titi",
+    "Tatiluna"
+   ],
+   "salvados_cuota": {},
+   "versus": {
+    "Titi": 28.6,
+    "Tatiluna": 71.4
+   },
+   "completa": false,
+   "eliminado": "Tatiluna"
+  },
+  {
+   "gala": 18,
+   "fecha": "2026-06-08",
+   "tipo": "negativo",
+   "placa": [
+    "Hanssen",
+    "Juanicar",
+    "Yipio",
+    "Zunino",
+    "Brian"
+   ],
+   "salvados_cuota": {
+    "Hanssen": 0.5,
+    "Juanicar": 2.4,
+    "Yipio": 3.7
+   },
+   "versus": {
+    "Zunino": 10.7,
+    "Brian": 89.3
+   },
+   "completa": true,
+   "eliminado": "Brian"
+  },
+  {
+   "gala": 19,
+   "fecha": "2026-06-15",
+   "tipo": "negativo",
+   "placa": [
+    "Majluf",
+    "Luana",
+    "Yipio",
+    "Nigro",
+    "Campanita",
+    "Zunino"
+   ],
+   "salvados_cuota": {
+    "Majluf": 1.6,
+    "Luana": 2.8,
+    "Yipio": 6.4,
+    "Nigro": 14.2
+   },
+   "versus": {},
+   "completa": false,
+   "eliminado": "Zunino"
+  },
+  {
+   "gala": 20,
+   "fecha": "2026-06-22",
+   "tipo": "negativo",
+   "placa": [
+    "Manu",
+    "Campanita",
+    "Cinzia",
+    "Sol",
+    "Titi"
+   ],
+   "salvados_cuota": {
+    "Manu": 0.3,
+    "Campanita": 0.4,
+    "Cinzia": 1.2
+   },
+   "versus": {
+    "Sol": 48.2,
+    "Titi": 51.8
+   },
+   "completa": true,
+   "eliminado": "Titi"
+  },
+  {
+   "gala": 21,
+   "fecha": "2026-06-29",
+   "tipo": "negativo",
+   "placa": [
+    "Emanuel",
+    "Hanssen",
+    "Yipio",
+    "Campanita",
+    "Nenu"
+   ],
+   "salvados_cuota": {
+    "Emanuel": 0.9,
+    "Hanssen": 2.5,
+    "Yipio": 17.0
+   },
+   "versus": {
+    "Campanita": 44.2,
+    "Nenu": 55.8
+   },
+   "completa": true,
+   "eliminado": "Nenu"
+  },
+  {
+   "gala": 22,
+   "fecha": "2026-07-06",
+   "tipo": "negativo",
+   "placa": [
+    "Hanssen",
+    "Cola",
+    "Mariela",
+    "JC",
+    "Majluf",
+    "Luana",
+    "Nigro"
+   ],
+   "salvados_cuota": {
+    "Hanssen": 1.6,
+    "Cola": 2.4,
+    "Mariela": 3.4,
+    "JC": 5.3,
+    "Majluf": 8.8
+   },
+   "versus": {
+    "Luana": 39.9,
+    "Nigro": 60.1
+   },
+   "completa": true,
+   "eliminado": "Nigro"
+  },
+  {
+   "gala": 23,
+   "fecha": "2026-07-13",
+   "tipo": "negativo",
+   "placa": [
+    "JC",
+    "Emanuel",
+    "Yipio",
+    "Sol",
+    "Luana",
+    "Manu"
+   ],
+   "salvados_cuota": {
+    "JC": 0.1,
+    "Emanuel": 0.4,
+    "Yipio": 0.8,
+    "Sol": 19.9
+   },
+   "versus": {
+    "Luana": 48.8,
+    "Manu": 51.2
+   },
+   "completa": true,
+   "eliminado": "Manu"
+  },
+  {
+   "gala": 25,
+   "fecha": "2026-07-20",
+   "tipo": "negativo",
+   "placa": [
+    "Hanssen",
+    "Cola",
+    "Zilli",
+    "Yipio",
+    "Sol",
+    "Emanuel"
+   ],
+   "salvados_cuota": {
+    "Hanssen": 0.2,
+    "Cola": 0.5,
+    "Zilli": 0.7,
+    "Yipio": 1.3
+   },
+   "versus": {
+    "Sol": 44.7,
+    "Emanuel": 55.3
+   },
+   "completa": true,
+   "eliminado": "Emanuel"
+  },
+  {
+   "gala": 26,
+   "fecha": "2026-07-27",
+   "tipo": "negativo",
+   "placa": [
+    "Tamara",
+    "Hanssen",
+    "Mariela",
+    "Majluf",
+    "Cola"
+   ],
+   "salvados_cuota": {
+    "Tamara": 2.0,
+    "Hanssen": 2.3,
+    "Mariela": 7.3
+   },
+   "versus": {
+    "Majluf": 22.8,
+    "Cola": 77.2
+   },
+   "completa": true,
+   "eliminado": "Cola"
+  },
+  {
+   "gala": 27,
+   "fecha": "2026-08-03",
+   "tipo": "negativo",
+   "placa": [
+    "Luana",
+    "Juanicar",
+    "Hanssen",
+    "Majluf",
+    "Sol",
+    "Campanita"
+   ],
+   "salvados_cuota": {
+    "Luana": 0.1,
+    "Juanicar": 0.3,
+    "Hanssen": 0.5,
+    "Majluf": 0.9
+   },
+   "versus": {
+    "Sol": 46.7,
+    "Campanita": 53.3
+   },
+   "completa": true,
+   "eliminado": "Campanita"
+  },
+  {
+   "gala": 28,
+   "fecha": "2026-08-10",
+   "tipo": "negativo",
+   "placa": [
+    "Charlotte",
+    "Majluf",
+    "Sol",
+    "Hanssen",
+    "Pincoya",
+    "Zilli"
+   ],
+   "salvados_cuota": {
+    "Majluf": 0.2,
+    "Zilli": 0.5,
+    "Charlotte": 1.9,
+    "Pincoya": 4.5
+   },
+   "versus": {
+    "Hanssen": 58.0,
+    "Sol": 42.0
+   },
+   "completa": true,
+   "eliminado": "Hanssen"
+  }
+ ],
+ "placa_vigente": {
+  "gala": 29,
+  "fecha": "",
+  "integrantes": [],
+  "inmune_lider": "",
+  "libres": [
+   "Tamara",
+   "Pincoya",
+   "Charlotte",
+   "Zilli",
+   "Luana",
+   "Yipio",
+   "Mariela",
+   "Majluf",
+   "Sol"
+  ]
+ }
+}

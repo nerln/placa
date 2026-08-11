@@ -1,0 +1,80 @@
+{
+  "_nota": "Tipología de perfiles construida con los datos documentados de las finales de GH Argentina 2024 (11.ª) y 2025 (12.ª). Sirve para responder 'por qué' cada participante está donde está: en vez de citar un coeficiente, se muestra a quién se parece y qué le pasó a esa persona. NO es una métrica ajustada, es una clasificación en dos ejes a partir de hechos publicados; se declara como tal en la página.",
+  "_ejes": {
+    "rechazo": "mediana de los porcentajes con los que se salvó en las galas de voto NEGATIVO. bajo = <5%, medio = 5-25%, alto = >25%",
+    "apoyo": "posición en las galas de voto POSITIVO con orden publicado. alto = top 3 habitual, medio = mitad de tabla, bajo = último tercio"
+  },
+  "casos": [
+    {
+      "nombre": "Santiago «Tato» Algorta",
+      "edicion": "GH 2025", "rechazo": "bajo", "apoyo": "alto",
+      "evidencia": "Se salvó con 1,1%, 1,43%, 2,6%, 5,8%, 7,7% y 12,2%. Y fue PRIMERO en salvarse en las galas positivas con 32,4% (entre 8) y 29,8% (entre 11).",
+      "desenlace": "Campeón con 62,8%.",
+      "leccion": "El perfil limpio: nadie lo quería afuera y mucha gente lo quería adentro. Es el único caso en el que las dos señales apuntan igual."
+    },
+    {
+      "nombre": "Bautista Mascia",
+      "edicion": "GH 2024", "rechazo": "bajo", "apoyo": "medio",
+      "evidencia": "En sus últimas cinco placas se salvó siempre 1.º o 2.º con ≤2,8%. Pero en la única gala positiva en la que estuvo quedó 9.º de 10 salvados.",
+      "desenlace": "Campeón con 56,2%.",
+      "leccion": "El apoyo positivo se le construyó en el tramo final. La señal positiva temprana informa, pero no cierra la puerta."
+    },
+    {
+      "nombre": "Ulises Apóstolo",
+      "edicion": "GH 2025", "rechazo": "medio", "apoyo": "alto",
+      "evidencia": "Rechazo intermedio (41,1% al arranque, después entre 1,68% y 21,8%) y segundo en las fases positivas.",
+      "desenlace": "Subcampeón con 37,2%.",
+      "leccion": "Tener protagonismo y algo de rechazo no impide llegar arriba: en el voto positivo lo que se castiga es la indiferencia."
+    },
+    {
+      "nombre": "Emmanuel Vich",
+      "edicion": "GH 2024", "rechazo": "alto", "apoyo": "alto",
+      "evidencia": "Porcentajes de rechazo muy superiores a los del campeón: 46,2%, 41,2%, 25,8%, 22,1%, 16,7%.",
+      "desenlace": "Subcampeón con 43,8%, veinte veces más que el tercero.",
+      "leccion": "Ser el más votado en contra durante meses no te saca de la pelea por ganar."
+    },
+    {
+      "nombre": "Juliana «Furia»",
+      "edicion": "GH 2024", "rechazo": "alto", "apoyo": "alto",
+      "evidencia": "La más rechazada de la temporada (37-47% casi todas las semanas) y a la vez la MÁS votada en las dos placas positivas: 30,5% y 34,2%.",
+      "desenlace": "Eliminada con 62,4%, pero con el fandom más movilizado de la edición.",
+      "leccion": "Rechazo y apoyo conviven. El voto negativo la sacó; el positivo la habría llevado lejos."
+    },
+    {
+      "nombre": "Luz Tito",
+      "edicion": "GH 2025", "rechazo": "alto", "apoyo": "medio",
+      "evidencia": "Salvada última una y otra vez: 47,6%, 48,2%, 49,6%, 42,7%, 34,3%, 31,4%.",
+      "desenlace": "Tercera, con 25,5% de voto positivo entre tres finalistas.",
+      "leccion": "Sobrevivir raspando semana tras semana no impide un podio decoroso."
+    },
+    {
+      "nombre": "Nicolás Grosman",
+      "edicion": "GH 2024", "rechazo": "bajo", "apoyo": "bajo",
+      "evidencia": "Rechazo tan bajo como el del campeón (0,2%, 0,2%, 3,4%, 3,6%) pero en la placa positiva entre 12 sacó apenas 5,8%.",
+      "desenlace": "Tercero con 2% entre tres finalistas.",
+      "leccion": "La trampa del formato. Bajo rechazo no es cariño: es que nadie se acuerda de vos cuando hay que pagar un voto."
+    },
+    {
+      "nombre": "Darío Martínez Corti",
+      "edicion": "GH 2024", "rechazo": "bajo", "apoyo": "bajo",
+      "evidencia": "Rechazo bajísimo toda la temporada (0,4%, 0,5%, 0,7%, 1,53%, 3,4%) y último de los sobrevivientes en la placa positiva, con 0,5%.",
+      "desenlace": "Fulminado 77,3% en cuanto quedó mano a mano.",
+      "leccion": "El mismo perfil que Grosman, un escalón peor. La invisibilidad protege hasta que se acaban los blancos más grandes."
+    },
+    {
+      "nombre": "Selva Pérez",
+      "edicion": "GH 2025", "rechazo": "bajo", "apoyo": "bajo",
+      "evidencia": "La menos rechazada del juego (0,3%, 1,1%, 1,46%, 1,54%).",
+      "desenlace": "Eliminada en una gala de voto POSITIVO con solo 2,9%.",
+      "leccion": "En cuanto cambió el signo del voto, la persona a la que nadie quería echar fue la primera en irse."
+    },
+    {
+      "nombre": "Eugenia Ruiz",
+      "edicion": "GH 2025", "rechazo": "bajo", "apoyo": "medio",
+      "evidencia": "Rechazo aún más bajo que el del campeón (0,4%, 0,5%, 1,3%, 1,7%, 2,3%).",
+      "desenlace": "Cuarta, con 15,7% entre cuatro finalistas.",
+      "leccion": "Llegó al final sin que nadie la votara en contra y sin que nadie la votara a favor."
+    }
+  ],
+  "_regla": "Bajo rechazo es condición NECESARIA pero NO SUFICIENTE para ganar una final de voto positivo. De los seis casos con rechazo bajo documentados, dos ganaron (los que además tenían señal positiva o la construyeron) y cuatro terminaron entre 0,5% y 15,7%. El discriminante es el apoyo positivo, no la ausencia de conflicto."
+}
