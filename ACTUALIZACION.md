@@ -21,7 +21,7 @@ y hace esto:
 5. Ese script comprueba la identidad aritmética, incorpora la gala, saca al
    eliminado del plantel, pasa la encuesta vieja al historial de calibración, y
    vuelve a correr `final_model.py`, `ramas.py`, `evolucion.py`, `bootstrap.py`,
-   `gui/build.py` y `gui/tarjeta.py`.
+   `camino.py`, `gui/build.py` y `gui/tarjeta.py`.
 6. Commitea y empuja a `main`. GitHub Actions vuelve a construir la página desde
    los datos recién subidos, comprueba que coincida con la commiteada
    (`gui/verificar.py`) y recién entonces la publica.

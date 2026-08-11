@@ -94,39 +94,50 @@ salvar. Por eso hacen falta dos parámetros por persona y no uno.
 ## Estructura
 
 ```
-data/   plantel.json          quiénes están en juego y sus atributos
+data/   plantel.json          quiénes están en juego, sus atributos y sus perfiles verificados
         galas.json            galas de voto negativo con las cuotas reconstruidas
         encuestas.json        historial calibrable + la encuesta de la próxima gala
         voto_positivo.json    12 instancias de voto positivo (rankings parciales)
         resultados.json       salida del modelo, 10 escenarios
         bootstrap.json        60 remuestreos de la cadena completa
-        ramas.json            el pronostico condicionado a cada salida de la proxima gala
-        dataset_sintesis.json · crudo.json · verificacion2.json   recolección cruda
+        ramas.json            el pronóstico condicionado a cada salida de la próxima gala
+        evolucion.json        el mismo modelo con y sin las cifras de la última gala
+        camino.json           qué tendría que pasar para que gane la última del cuadro
+        actualidad.json       tendencias de X, publicaciones incrustadas, zodíaco
+        historial_pronostico.json   append-only: cada corrida publicada, con su fecha
+        dataset_sintesis.json · crudo.json · verificacion*.json   recolección cruda
 
 model/  variance_components.py   μ y ω, descomposición de varianza
         calibrar_encuesta.py     sesgo y desvío de la encuesta por posición
         fit_psi.py               Plackett-Luce sobre el voto positivo
         final_model.py           estado de la próxima gala + Monte Carlo + escenarios
-        ramas.py                 la conjunta (quien sale hoy, quien gana la edicion)
+        ramas.py                 la conjunta (quién sale hoy, quién gana la edición)
+        evolucion.py             qué aportó la última gala más allá de quién salió
+        camino.py                abre las simulaciones que gana la última y las describe
         bootstrap.py             remuestreo de toda la cadena
         actualizar.py            incorpora una gala nueva y recalcula todo
         fit_theta.py             primer modelo estático (descartado, queda como rastro)
         dynamic_fit.py           modelo state-space (descartado: la CV es plana en σ)
 
-gui/    plantilla.html            la página, con huecos para los datos y el motor
-        animaciones.js            el motor de las animaciones
-        build.py                  -> web/ (el sitio) y gui/pronostico.html (autocontenido)
-        tarjeta.py                -> web/og.png, la previsualización del enlace
-        verificar.py              lo que corre antes de publicar
+gui/    plantilla.html           la página, con huecos para los datos y el motor
+        animaciones.js           el motor de las animaciones de la página
+        build.py                 -> web/ (el sitio) y gui/pronostico.html (autocontenido)
+        marca.py                 el ojo cuyo iris es el pronóstico -> la marca y el favicon
+        tarjeta.py               -> web/og.png, la previsualización del enlace
+        firma.py                 el hash de la corrida, que viaja por cuatro canales
+        verificar.py             lo que corre antes de publicar
+        escenas_manim.py         las mismas animaciones en Manim (descartadas: la página
+                                 las dibuja sola y a la resolución de cada pantalla)
 
-web/    index.html · datos.json · datos.js · og.png    lo que sirve GitHub Pages
+web/    index.html · datos.json · datos.js · og.png · ojo.svg · llms.txt
 ```
 
 ## Correr
 
 ```bash
 python3 model/final_model.py && python3 model/ramas.py && \
-  python3 model/bootstrap.py && python3 gui/build.py && python3 gui/tarjeta.py
+  python3 model/evolucion.py && python3 model/bootstrap.py && \
+  python3 model/camino.py && python3 gui/build.py && python3 gui/tarjeta.py
 ```
 
 Y antes de subir, lo mismo que corre en CI:

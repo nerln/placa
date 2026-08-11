@@ -30,7 +30,7 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"f6deeb0714b53bf0","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"7716ac4530de62d9","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
 <script src="datos.js"></script>
 <style>
 /* ==========================================================================
@@ -419,6 +419,32 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .redes svg{width:13px; height:13px; flex:none}
 .redes .nota, .redes.vacio{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5}
 .redes.vacio{margin-top:12px}
+
+
+/* ---------- el registro de pronósticos ----------
+   Cada columna es una corrida publicada, en orden. Se lee de izquierda a
+   derecha como una línea de tiempo, y la fila de cada persona muestra si el
+   modelo la venía viendo así o cambió de idea. Es lo único de la página que no
+   se puede rehacer: si una corrida no se guardó cuando se publicó, ya no
+   existe. Por eso el registro es append-only y las dos primeras entradas
+   dicen que se recuperaron a mano. */
+.thist{border-collapse:collapse; width:100%; font-size:var(--t-sm); min-width:520px}
+.thist th, .thist td{padding:9px 10px; border-bottom:1px solid var(--linea2); text-align:right;
+  white-space:nowrap; font-variant-numeric:tabular-nums}
+.thist th{font-family:"Archivo",sans-serif; font-size:var(--t-etq); font-weight:700;
+  letter-spacing:.06em; text-transform:uppercase; color:var(--tinta3); vertical-align:bottom;
+  border-bottom:1.5px solid var(--tinta); line-height:1.35; white-space:normal}
+.thist th small{display:block; font-weight:400; letter-spacing:.02em; text-transform:none;
+  color:var(--tinta3); font-size:11.5px; margin-top:2px}
+.thist th.rama{color:var(--apoyo-txt)}
+.thist td:first-child, .thist th:first-child{text-align:left; font-weight:700; color:var(--tinta)}
+.thist tr.lider td{background:var(--sup2)}
+.thist td.hoy{font-weight:700; color:var(--tinta)}
+.thist td.fuera{color:var(--tinta3); font-style:italic}
+.thist .d{font-size:11.5px; display:block; color:var(--tinta3); font-weight:400}
+.thist .d.sube{color:var(--apoyo-txt)} .thist .d.baja{color:var(--rechazo-txt)}
+.thist-pie{font-size:var(--t-xs); color:var(--tinta3); margin:14px 0 0; max-width:78ch;
+  line-height:1.6}
 
 /* ---------- controles ---------- */
 .btn{font:inherit; font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-xs);
@@ -1183,6 +1209,14 @@ footer p{max-width:84ch}
   <div class="titulo"><h2 class="tit" id="tit-galas"></h2></div>
   <p class="sub">Cada barra es una noche entera de votación, con el reparto llevado a cuota sobre el total de la placa. Los pedacitos de la izquierda son los que se salvaron temprano. El bloque grande de la derecha es el mano a mano final.</p>
   <div class="figura"><div id="g-galas"></div></div>
+</section>
+
+<section id="historial">
+  <div class="eyebrow">El registro</div>
+  <div class="titulo"><h2 class="tit" id="tit-hist"></h2></div>
+  <p class="sub" id="sub-hist"></p>
+  <div class="scroll-x"><table class="thist" id="t-hist"></table></div>
+  <p class="thist-pie" id="pie-hist"></p>
 </section>
 
 <section id="limites">
@@ -2483,6 +2517,77 @@ function contar(nodo){
   }
   addEventListener("scroll", alScroll, {passive:true});
   alScroll();
+})();
+
+/* ---------- el registro de pronósticos ----------
+   Un pronóstico que solo muestra el número de hoy no se puede juzgar. Acá está
+   cada corrida que la página publicó, en orden, incluida la rama condicionada
+   que se publicó la mañana de la gala 28 — que es exactamente la promesa que
+   había que contrastar contra lo que pasó.
+
+   Es lo único de la página que no se puede rehacer: si una corrida no se
+   guardó cuando se publicó, ya no existe. Por eso el archivo es append-only y
+   las entradas recuperadas a mano lo declaran. */
+(function(){
+  const H = D.historial_pronostico || [];
+  const tabla = $("#t-hist");
+  if(!tabla) return;
+  // Con una sola corrida no hay historia que contar, y una tabla de una
+  // columna es peor que ninguna tabla.
+  if(H.length < 2){ $("#historial").remove(); return; }
+
+  const base = D.escenarios.base.p_gana;
+  const DIA = f => { const [,m,d] = f.split("-"); return (+d) + "/" + m; };
+
+  // El orden de las filas es el del pronóstico de hoy; quien ya salió va al
+  // final, porque su fila cuenta otra cosa: qué decía el modelo antes.
+  const vivos = [...D.jugadores].sort((a,b) => base[b]-base[a]);
+  const idos = [...new Set(H.flatMap(c => Object.keys(c.p_gana)))]
+    .filter(n => !D.jugadores.includes(n));
+  const filas = vivos.concat(idos);
+
+  const cab = H.map(c =>
+    "<th" + (c.rama_de ? " class='rama'" : "") + ">" + DIA(c.fecha) +
+    "<small>" + (c.rama_de ? "rama: si sale " + c.rama_de : "tras la gala " + c.galas_hasta) +
+    "</small></th>").join("");
+  tabla.innerHTML = "<thead><tr><th>Quién</th>" + cab + "</tr></thead><tbody>" +
+    filas.map(n => {
+      const ult = H.length - 1;
+      const celdas = H.map((c, i) => {
+        const v = c.p_gana[n];
+        if(v == null) return "<td class='fuera'>—</td>";
+        const prev = i ? H[i-1].p_gana[n] : null;
+        const d = prev != null ? 100*(v - prev) : null;
+        const cls = d == null || Math.abs(d) < 0.35 ? "" : (d > 0 ? " sube" : " baja");
+        return "<td" + (i === ult ? " class='hoy'" : "") + ">" + pc(v,1) +
+          (d != null && Math.abs(d) >= 0.35
+            ? "<span class='d" + cls + "'>" + (d>0?"+":"−") + nf(Math.abs(d),1) + "</span>"
+            : "") + "</td>";
+      }).join("");
+      const lider = n === vivos[0] ? " class='lider'" : "";
+      return "<tr" + lider + "><td>" + n + "</td>" + celdas + "</tr>";
+    }).join("") + "</tbody>";
+
+  const prim = H[0], ult = H[H.length-1];
+  const ordP = Object.keys(prim.p_gana).sort((a,b) => prim.p_gana[b]-prim.p_gana[a])[0];
+  const ordU = vivos[0];
+  const rama = H.find(c => c.rama_de);
+  $("#tit-hist").textContent = ordP === ordU
+    ? "Cómo se movió el pronóstico, corrida por corrida"
+    : "De " + ordP + " a " + ordU + ": cómo se movió el pronóstico";
+  $("#sub-hist").innerHTML =
+    "Un pronóstico que solo enseña el número de hoy no se puede juzgar. Cada corrida queda " +
+    "registrada con su fecha" +
+    (rama ? ", incluida <b>la rama condicionada</b> del " + DIA(rama.fecha) + ": lo que iba a " +
+            "pasar <em>si</em> salía " + rama.rama_de + ". Salió, y esa columna es la promesa " +
+            "contra la que se mide la siguiente."
+          : ".");
+  $("#pie-hist").innerHTML =
+    "El archivo es <b>append-only</b>: cada corrida se agrega al terminar y ninguna se reescribe. " +
+    "Es lo único de la página que no se puede rehacer — si una corrida no se guardó cuando se " +
+    "publicó, ya no existe —, y por eso las entradas anteriores al registro declaran que se " +
+    "recuperaron a mano. Está en <a href='datos.json'>datos.json</a>, en " +
+    "<code>historial_pronostico</code>.";
 })();
 
 /* ---------- el camino de la última ----------

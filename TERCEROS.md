@@ -34,7 +34,17 @@ el enlace al original.
 
 ## Imágenes
 
-No se publica ninguna fotografía. A cada participante lo identifica la bandera de
-su país, dibujada en la página. El único archivo de imagen del repositorio es
-`web/og.png`, la previsualización del enlace, generada por `gui/tarjeta.py` con
-los números de la corrida.
+No se publica ninguna fotografía.
+
+Hubo un intento de usar retratos de Wikimedia Commons con licencia libre, del
+que salió una sola imagen aprovechable de diez. La página nunca llegó a
+mostrarla —la función de retrato dibuja la bandera y nada más—, pero el archivo
+seguía en el repositorio: `data/fotos.json` guardaba un retrato de Charlotte
+Caniggia con licencia **CC BY-SA 3.0** (autor «Char fan», Wikimedia Commons)
+incrustado en base64, y la atribución que esa licencia exige no aparecía en
+ningún sitio, porque la imagen no se veía. Redistribuir una obra CC BY-SA sin su
+aviso de atribución incumple la licencia aunque nadie la mire. Se quitaron el
+archivo y su recolector. A cada participante lo identifica la bandera de
+su país, dibujada en la página. Los únicos archivos de imagen del repositorio son propios: `web/og.png`, la
+previsualización del enlace, y `web/ojo.svg`, la marca, generados por
+`gui/tarjeta.py` y `gui/marca.py` con los números de la corrida.

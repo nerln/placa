@@ -8,14 +8,20 @@ la pagina que hay en web/ se puede reconstruir a partir de data/ tal como esta
 en el repositorio? Si alguien edita un numero a mano en el HTML, o commitea
 data/ nuevo sin volver a construir, esto falla y la pagina no sale.
 
-Ademas comprueba tres identidades internas del pronostico, que son las que
-harian falso el resultado sin romper nada visible:
+Ademas comprueba lo que haria falso el resultado sin romper nada visible:
 
   * las probabilidades de ganar suman 1
   * las ramas ponderadas por su probabilidad devuelven el caso base (asi
     estan construidas: son el mismo Monte Carlo particionado, no una
     simulacion aparte, y si no cierran es que dejaron de serlo)
   * cada gala declarada completa cumple la identidad aritmetica de Telefe
+  * la tarjeta de previsualizacion es de esta corrida y no de la anterior
+  * la firma de la corrida coincide en todos los canales donde viaja
+  * el guion de la pagina parsea
+  * el <style> no tiene JavaScript dentro
+
+Las dos ultimas no comprueban ningun dato: comprueban que la pagina no este
+rota de una forma que no cambia ningun dato y por eso no la ve nadie mas.
 
     python3 gui/verificar.py
 """
@@ -172,6 +178,31 @@ def javascript_valido():
     return 0
 
 
+def css_sin_javascript():
+    """La hoja de estilos no puede tener JavaScript dentro.
+
+    Pasó tres veces en la misma tanda y siempre igual: los bloques del archivo
+    se separan con comentarios del tipo /* ---------- nombre ---------- */, y
+    varios de esos nombres existen dos veces, una en el CSS y otra en el JS.
+    Insertar código buscando el marcador acierta el equivocado, el navegador se
+    traga cincuenta líneas de JavaScript como CSS inválido sin decir una
+    palabra, y la funcionalidad simplemente no aparece. Ninguna otra
+    comprobación lo ve: el HTML es válido, los datos están, la firma coincide.
+
+    Se buscan formas que no existen en CSS y sí en este guion.
+    """
+    html = (WEB / "index.html").read_text()
+    css = html[html.index("<style>"):html.index("</style>")]
+    sospechas = ['$("#', "function ", "=> {", "addEventListener", "innerHTML"]
+    hallados = [x for x in sospechas if x in css]
+    if hallados:
+        i = css.index(hallados[0])
+        return fallo("hay JavaScript dentro del <style>: " + ", ".join(hallados) +
+                     "\n    …" + css[max(0, i-90):i+90].replace("\n", " ") + "…")
+    print(f"  ok · el <style> es solo CSS ({len(css)/1024:.0f} KB)")
+    return 0
+
+
 def firma_coherente():
     """La firma de la corrida tiene que ser la misma en los cuatro canales.
 
@@ -203,7 +234,7 @@ def main():
     print("verificando lo que se va a publicar")
     err = (reconstruible() + probabilidades() + ramas_cierran() +
            identidad_telefe() + tarjeta_al_dia() + firma_coherente() +
-           javascript_valido())
+           javascript_valido() + css_sin_javascript())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")
         sys.exit(1)
