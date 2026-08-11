@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-License-Identifier: Apache-2.0
 """
 LAS RAMAS - que pasa con el pronostico segun quien salga esta noche.
 

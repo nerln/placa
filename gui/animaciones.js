@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2026 Eugenio Nerelli
+// SPDX-License-Identifier: Apache-2.0
 const montarAnimaciones = (function(){
 let DATOS_PAGINA = {jugadores:[], mu:{}, psi:{}, pgana:{}};
 /* ==========================================================================

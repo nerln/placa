@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-License-Identifier: Apache-2.0
 """
 MODELO FINAL - Gran Hermano Argentina: Generacion Dorada 2026.
 Probabilidad de ganar por participante. Corrida del 08/08/2026.

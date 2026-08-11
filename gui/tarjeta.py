@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-License-Identifier: Apache-2.0
 """
 La tarjeta de previsualizacion: lo que se ve cuando alguien comparte el enlace.
 
@@ -14,9 +16,13 @@ cambia sola. 1200x630, que es lo que piden Open Graph y las tarjetas de X.
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, PngImagePlugin
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from firma import firma_corrida                                    # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TIPO = ROOT / "gui" / "tipos" / "Archivo.ttf"
@@ -31,9 +37,16 @@ SUP2 = (247, 248, 250)
 
 
 def firma(p_gana, generado):
-    """Lo que identifica una corrida: la fecha y las cinco primeras al 0,01%."""
+    """Lo que identifica una corrida: su fecha, su hash y las cinco primeras.
+
+    El hash viene de gui/firma.py y es el mismo que va en web/datos.json y en
+    la etiqueta de git. Las cinco primeras van ademas en claro porque asi la
+    tarjeta se puede leer sin herramientas: quien abra el PNG con cualquier
+    lector de metadatos ve de que corrida es.
+    """
     orden = sorted(p_gana, key=lambda n: -p_gana[n])[:5]
-    return generado + "|" + "|".join(f"{n}:{p_gana[n]:.4f}" for n in orden)
+    return (generado + "|" + firma_corrida() + "|" +
+            "|".join(f"{n}:{p_gana[n]:.4f}" for n in orden))
 
 
 def fuente(px, peso=400):

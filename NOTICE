@@ -1,0 +1,18 @@
+placa — Pronóstico estadístico de Gran Hermano Argentina
+Copyright 2026 Eugenio Nerelli
+
+Este producto incluye software y datos desarrollados por Eugenio Nerelli
+(https://github.com/nerln/placa · https://nerln.github.io/placa/).
+
+El modelo estadístico, la metodología descrita en METODOLOGIA.md y el conjunto
+de datos de data/ son obra de Eugenio Nerelli.
+
+  Software (model/, gui/, .github/): Apache License 2.0
+  Datos y textos (data/, web/datos.json, *.md): CC BY 4.0
+    https://creativecommons.org/licenses/by/4.0/
+
+Cita sugerida:
+  Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026),
+  https://github.com/nerln/placa
+
+Obras de terceros incluidas y sus licencias: ver TERCEROS.md.

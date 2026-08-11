@@ -1,0 +1,30 @@
+version = 1
+SPDX-PackageName = "placa"
+SPDX-PackageSupplier = "Eugenio Nerelli <kira_and_light@hotmail.it>"
+SPDX-PackageDownloadLocation = "https://github.com/nerln/placa"
+
+# JSON no admite comentarios, asi que las cabeceras SPDX de los datos viven aca.
+[[annotations]]
+path = ["data/**.json", "web/datos.json", "web/datos.js"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Eugenio Nerelli"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["**.md", "CITATION.cff", "web/llms.txt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Eugenio Nerelli"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["web/index.html", "gui/plantilla.html", "web/og.png"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Eugenio Nerelli"
+SPDX-License-Identifier = "Apache-2.0 OR CC-BY-4.0"
+
+# Lo unico que no es mio y viaja dentro del repositorio.
+[[annotations]]
+path = ["gui/tipos/Archivo.ttf", "gui/tipos/OFL-Archivo.txt"]
+precedence = "override"
+SPDX-FileCopyrightText = "2020 The Archivo Project Authors"
+SPDX-License-Identifier = "OFL-1.1"

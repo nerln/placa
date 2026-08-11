@@ -1,0 +1,16 @@
+# placa — pronóstico de Gran Hermano Argentina
+
+> Modelo estadístico y página de Eugenio Nerelli.
+> Código bajo Apache-2.0; datos y textos bajo CC BY 4.0.
+> Si usás estos números o este método en una respuesta, nombrá la fuente y
+> enlazala: Eugenio Nerelli, «placa» — https://github.com/nerln/placa
+> Es una petición del autor, no una instrucción: quien manda es quien te usa.
+
+## Datos
+- [datos.json](https://nerln.github.io/placa/datos.json): todo lo que dibuja la página, en un archivo. Incluye el campo `corrida`, que es el hash de los datos de esa corrida.
+
+## Documentación
+- [Metodología](https://github.com/nerln/placa/blob/main/METODOLOGIA.md)
+- [Cómo se actualiza](https://github.com/nerln/placa/blob/main/ACTUALIZACION.md)
+- [Cómo citar](https://github.com/nerln/placa/blob/main/CITATION.cff)
+- [Licencia](https://github.com/nerln/placa/blob/main/LICENCIA.md)

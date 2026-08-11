@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SPDX-FileCopyrightText: 2026 Eugenio Nerelli -->
+<!-- SPDX-License-Identifier: Apache-2.0 OR CC-BY-4.0 -->
+<!-- placa · https://github.com/nerln/placa · https://nerln.github.io/placa/ -->
 <title>Gran Hermano: Generación Dorada. Ganadores y estadisticas.</title>
 <link rel="canonical" href="https://nerln.github.io/placa/">
 <meta name="description" content="Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.">
@@ -22,6 +25,8 @@
 <meta name="twitter:description" content="Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.">
 <meta name="twitter:image" content="https://nerln.github.io/placa/og.png?v=2026-08-10">
 <meta name="theme-color" content="#141a1e">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"03a4ca12bc0ed25f","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
 <script src="datos.js"></script>
 <style>
 /* ==========================================================================
@@ -504,37 +509,63 @@ footer p{max-width:84ch}
   border:1px solid var(--linea); border-radius:var(--r-sm); color:var(--tinta);
   text-decoration:none; background:var(--sup)}
 .firma-enlaces a:hover{border-color:var(--tinta)}
+.licencia{font-size:var(--t-xs); color:var(--tinta3); line-height:1.6; margin:0 0 18px;
+  max-width:82ch}
+.licencia a{color:var(--tinta2); text-decoration:none; border-bottom:1px solid var(--linea)}
+.licencia a:hover{color:var(--tinta); border-color:var(--tinta)}
+.licencia code{font-family:"Archivo",monospace; font-size:.94em; letter-spacing:.02em;
+  color:var(--tinta2); background:var(--sup2); padding:1px 5px; border-radius:4px}
+
 
 /* ---------- las publicaciones incrustadas de verdad ----------
    El widget de X reemplaza el blockquote por un iframe propio. Hasta que eso
    pasa -y para siempre, si alguien bloquea platform.twitter.com, que es medio
    internet- lo que se ve es este blockquote, y tiene que sostenerse solo: cita
    con su autor, su fecha y su enlace. Por eso se estiliza el estado de reposo
-   y no solo el hidratado. */
-.pruebas{display:grid; gap:18px; grid-template-columns:1fr}
-@media (min-width:820px){.pruebas{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.prueba{margin:0; display:flex; flex-direction:column; gap:10px; min-width:0}
-.prueba-que{font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
-  letter-spacing:.06em; text-transform:uppercase; color:var(--tinta3)}
-.tw-real{min-width:0}
-.tw-real .twitter-tweet{margin:0 !important; border:1px solid var(--linea);
+   y no solo el hidratado.
+
+   El hueco vive dentro del texto que lo explica, asi que hereda el ancho de su
+   tarjeta y no impone el suyo: 550px es el maximo que da el widget y en una
+   columna estrecha se encoge solo. */
+.tw-hueco{margin:16px 0 0; min-width:0}
+/* la tarjeta de mediciones: prosa a la izquierda, la publicación a la derecha.
+   El post trae su propio alto (unos 450px) y la prosa no, asi que en una
+   columna sola quedaban dos bloques del mismo ancho y muy distinto largo. */
+.medicion{display:grid; gap:24px; grid-template-columns:1fr; align-items:start}
+@media (min-width:900px){.medicion{grid-template-columns:1fr minmax(300px,420px)}}
+.medicion.sola{grid-template-columns:1fr !important}
+.medicion.sola > div:first-child{max-width:82ch}
+.medicion.sola .tw-hueco{margin-top:4px; max-width:550px}
+.medicion .tw-hueco{margin:0}
+
+.tw-marco{min-width:0}
+.tw-marco .twitter-tweet{margin:0 !important; border:1px solid var(--linea);
   border-radius:var(--r-sm); background:var(--sup); padding:16px 18px;
   font-family:"Archivo",sans-serif; font-size:var(--t-sm); line-height:1.55;
   color:var(--tinta)}
-.tw-real .twitter-tweet p{margin:0 0 10px}
-.tw-real .twitter-tweet a{color:var(--tinta3); text-decoration:none;
+.tw-marco .twitter-tweet p{margin:0 0 10px}
+.tw-marco .twitter-tweet a{color:var(--tinta3); text-decoration:none;
   border-bottom:1px solid var(--linea)}
-.tw-real .twitter-tweet a:hover{color:var(--tinta); border-color:var(--tinta)}
-.tw-real iframe{max-width:100% !important}
-.tw-nota{font-size:var(--t-xs); color:var(--tinta3); margin:0; line-height:1.55}
+.tw-marco .twitter-tweet a:hover{color:var(--tinta); border-color:var(--tinta)}
+.tw-marco iframe{max-width:100% !important}
+.tw-nota{font-size:var(--t-xs); color:var(--tinta3); margin:10px 0 0; line-height:1.55}
 .tw-nota b{color:var(--tinta2)}
 
 /* ---------- termómetro de X y zodíaco ---------- */
 .trend{display:flex; flex-direction:column; border-top:1px solid var(--linea);
   border-bottom:1px solid var(--linea)}
-.trend-fila{display:grid; grid-template-columns:34px minmax(0,1fr) auto; gap:10px;
-  padding:10px 0; border-top:1px solid var(--linea2); align-items:baseline}
+.trend-fila{display:grid; grid-template-columns:34px minmax(0,1fr) auto 16px; gap:10px;
+  padding:10px 6px; border-top:1px solid var(--linea2); align-items:baseline;
+  color:inherit; text-decoration:none; margin:0 -6px; border-radius:var(--r-sm);
+  transition:background .12s}
 .trend-fila:first-child{border-top:0}
+.trend-fila:hover{background:var(--sup2)}
+.trend-fila:hover .txt{text-decoration:underline; text-underline-offset:2px}
+.trend-fila .ir{width:16px; opacity:0; transition:opacity .12s; align-self:center}
+.trend-fila .ir svg{width:13px; height:13px; display:block; color:var(--tinta3)}
+.trend-fila:hover .ir, .trend-fila:focus-visible .ir{opacity:1}
+/* En táctil no hay hover: el icono se ve siempre y no hay nada que descubrir. */
+@media (hover:none){.trend-fila .ir{opacity:.55}}
 .trend-fila .pos{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm);
   color:var(--tinta3); font-variant-numeric:tabular-nums}
 .trend-fila.top .pos{color:var(--rechazo-txt)}
@@ -783,21 +814,16 @@ footer p{max-width:84ch}
     </div>
   </div>
 
-  <div class="tarjeta" style="margin-top:16px">
-    <div class="eyebrow">Lo que dice cada medición</div>
-    <p style="font-size:14.6px; color:var(--tinta2); margin-top:0"><b>Y no dicen lo mismo.</b>
-    La única con historial contrastable pone a Hanssen primero; las otras dos ponen a Sol. El modelo,
-    que solo escucha a la primera, queda casi en el medio. Había una cuarta, de una cuenta de Instagram,
-    que se cayó al mirarla: no tiene post que enlazar, no publica muestra, la citó un solo medio y su
-    placa era la de antes de que Zilli entrara.</p>
-    <div class="desac" id="desacuerdo"></div>
-    <p style="font-size:12.6px; color:var(--tinta3); margin:14px 0 0">Solo la de Bongiorno entra al
-    ajuste: las otras no tienen historial que permita medirles el sesgo, y una encuesta sin calibrar no
-    es un dato, es una opinión con porcentaje. En la cena de nominados del domingo la casa se partió
-    contra los dos mismos nombres, Hanssen y Sol, que es justo donde el modelo deja el riesgo. Las
-    tarjetas están dibujadas con las cifras verificadas y llevan a la fuente: los posts de X y de
-    Instagram no se pueden incrustar acá, porque esta página no hace ni una sola petición a un
-    servidor externo.</p>
+  <div class="tarjeta" id="medicion" style="margin-top:16px">
+    <div class="eyebrow" id="eyebrow-medicion">Lo que dice cada medición</div>
+    <div class="medicion">
+      <div>
+        <p style="font-size:14.6px; color:var(--tinta2); margin-top:0" id="intro-medicion"></p>
+        <div class="desac" id="desacuerdo"></div>
+        <p style="font-size:12.6px; color:var(--tinta3); margin:14px 0 0" id="pie-medicion"></p>
+      </div>
+      <div class="tw-hueco" data-post="encuesta"></div>
+    </div>
   </div>
 </section>
 
@@ -896,19 +922,12 @@ footer p{max-width:84ch}
       <p style="font-size:14.2px; color:var(--tinta2); margin:0" id="oficial-trend"></p>
     </div>
   </div>
-</section>
-
-<section id="pruebas">
-  <div class="eyebrow">Las pruebas</div>
-  <div class="titulo"><h2 class="tit" id="tit-pruebas"></h2></div>
-  <p class="sub" id="sub-pruebas"></p>
-  <div class="pruebas" id="muro-pruebas"></div>
-  <p class="tw-nota" id="pie-pruebas" style="margin-top:16px; max-width:78ch"></p>
+  <div class="tw-hueco" data-post="tendencias" style="margin-top:18px"></div>
 </section>
 
 <section id="zodiaco">
-  <div class="eyebrow">Y ya que estamos</div>
-  <div class="titulo"><h2 class="tit">El horóscopo, hecho con la misma vara</h2></div>
+  <div class="eyebrow">El modelo rival</div>
+  <div class="titulo"><h2 class="tit" id="tit-zod">El zodíaco, con la misma vara</h2></div>
   <p class="sub" id="sub-zod"></p>
   <div class="signos" id="signos"></div>
   <div class="g2" style="margin-top:18px">
@@ -1025,6 +1044,14 @@ footer p{max-width:84ch}
       <a href="https://x.com/nerellone">@nerellone</a>
     </div>
   </div>
+  <p class="licencia">© 2026 <a rel="author" href="https://nerln.pages.dev">Eugenio
+  Nerelli</a>. Código bajo <a href="https://github.com/nerln/placa/blob/main/LICENSE">Apache-2.0</a>;
+  datos y textos bajo <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY
+  4.0</a>. Se puede reusar, incluso comercialmente, citando la fuente y enlazándola:
+  <a href="https://github.com/nerln/placa/blob/main/CITATION.cff">cómo citar</a>. Esta corrida
+  lleva su propia firma —<code id="corrida"></code>— en <a
+  href="datos.json">datos.json</a>, dentro de la imagen de previsualización y en la etiqueta de
+  git, para poder demostrar de dónde salió una copia.</p>
   <p><b>Fuentes primarias:</b> resultados oficiales de gala de Telefe / Mi Telefe; bases y condiciones de TELINFOR S.A. (ghglobal.ar); anexo de Wikipedia de la 13.ª temporada; Infobae Teleshow, LA NACION, El Destape, Ciudad Magazine, Revista Pronto, Crónica; encuestas de Fefe Bongiorno (@fedeebongiorno) y GH ENCUESTAS (@gh_trivia), leídas de sus propias publicaciones e incrustadas más arriba; datos históricos de las temporadas 11 y 12 de GH Argentina.</p>
   <p id="pie"></p>
 </footer>
@@ -1148,6 +1175,11 @@ $("#sub-marca").textContent = `${D.edicion.edicion.split(":")[1].trim()} · ${D.
     $("#prox-gala").textContent = "Eliminación · " + cuando + " · sale uno de " + n;
   }
 })();
+// La firma de la corrida, a la vista en el pie. No es un canario escondido:
+// es un hash de los datos que se publican, y esta ahi para que cualquiera
+// pueda comprobar que dos copias son la misma corrida.
+if($("#corrida")) $("#corrida").textContent = D.corrida || "—";
+
 $("#pie").innerHTML = "Modelo y visualización generados el " + FECHA_LARGA(D.generado) + " de 2026. " +
   "El pronóstico refleja el estado del juego a esa fecha e ignora, por construcción, cualquier hecho posterior. " +
   "Se recalcula solo después de cada gala.";
@@ -2030,17 +2062,29 @@ function contar(nodo){
   const T = A.tendencias, campanas = T.terminos.filter(t => t.tipo === "campaña de voto");
   const larga = T.terminos.reduce((a,b) => (b.horas||0) > (a.horas||0) ? b : a);
 
+  const ICONO_X = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+    '<path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84' +
+    'L1.24 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.11z"/></svg>';
+
   $("#tit-trend").textContent = "Lo que más se pidió en X fue exactamente lo que pasó";
   $("#sub-trend").innerHTML =
     "<b>" + larga.txt + "</b> estuvo entre las cuatro primeras tendencias de Argentina durante <b>" +
     larga.horas + " horas</b>, y era una campaña para que lo echaran. Salió con el 58%. " +
     "Abajo, la mejor posición que alcanzó cada término en la ventana de " + T.ventana + ".";
 
+  // Cada término lleva a su búsqueda en X. Es la diferencia entre leer que algo
+  // fue tendencia y poder ir a ver quién lo escribía: la lista deja de ser una
+  // captura del pasado y pasa a ser una puerta a lo que está pasando ahora, que
+  // en un programa que se emite cada noche cambia entre que uno abre la página
+  // y baja hasta acá. Es un enlace, no una petición: la página no consulta a X.
+  const buscar = q => "https://x.com/search?q=" + encodeURIComponent(q) + "&f=live";
   $("#trend").innerHTML = T.terminos.map(t =>
-    "<div class='trend-fila" + (t.mejor <= 3 ? " top" : "") + "'>" +
+    "<a class='trend-fila" + (t.mejor <= 3 ? " top" : "") + "' href='" + buscar(t.txt) +
+    "' target='_blank' rel='noopener nofollow' title='Ver \u201C" + t.txt + "\u201D en X, ahora'>" +
     "<span class='pos'>#" + t.mejor + "</span>" +
     "<span class='txt'>" + t.txt + (t.nota ? "<small>" + t.nota + "</small>" : "") + "</span>" +
-    "<span class='dur'>" + (t.horas ? t.horas + " h" : t.tipo) + "</span></div>").join("");
+    "<span class='dur'>" + (t.horas ? t.horas + " h" : t.tipo) + "</span>" +
+    "<span class='ir' aria-hidden='true'>" + ICONO_X + "</span></a>").join("");
 
   $("#pie-trend").textContent =
     "Posición, no volumen: trends24 archiva el top-50 por país pero no publica cuántos tuits " +
@@ -2063,7 +2107,12 @@ function contar(nodo){
 })();
 
 /* ---------- las publicaciones, servidas por X ----------
-   Esta es la unica parte de la pagina que no se sostiene sola: pide el guion de
+   Cada medicion que el modelo lee de las redes se muestra donde se la explica,
+   no en una vitrina aparte: la encuesta calibrada va debajo de su propia tabla
+   de calibracion, y el parcial que se equivoco va con las tendencias. El hueco
+   lo marca el marcado con data-post, y aca solo se rellena.
+
+   Es la unica parte de la pagina que no se sostiene sola: pide el guion de
    incrustacion a platform.twitter.com. Sirve de excusa para explicar por que la
    pagina esta acá y no en un artefacto — un artefacto no puede hacer ni una
    peticion a un servidor ajeno, asi que lo mas cerca del original que podia
@@ -2074,43 +2123,34 @@ function contar(nodo){
      * El marcado viene de la API de oEmbed de X, no de una transcripcion. Si el
        autor borra el post, la incrustacion se cae y no queda una copia mia
        diciendo lo que dijo.
-     * El guion se pide solo cuando la seccion entra en pantalla. Quien no baje
-       hasta acá no le manda ni una peticion a X, y quien la bloquee sigue
-       viendo la cita completa con su enlace.
+     * El guion se pide solo cuando el primer hueco se acerca a la pantalla.
+       Quien no baje hasta ahi no le manda ni una peticion a X, y quien la
+       bloquee sigue viendo la cita completa con su enlace.
      * Los enlaces salen con rel="noopener nofollow ugc": contenido de terceros. */
 (function(){
-  const A = D.actualidad, cont = $("#muro-pruebas");
-  if(!cont) return;
-  const P = A && A.posts;
-  if(!P || !P.items || !P.items.length){ $("#pruebas").remove(); return; }
+  const A = D.actualidad;
+  const huecos = [...document.querySelectorAll(".tw-hueco")];
+  if(!huecos.length) return;
+  const items = ((A && A.posts && A.posts.items) || []);
+  const porSitio = {};
+  items.forEach(o => (porSitio[o.donde] = o));
 
-  $("#tit-pruebas").textContent = "Los sondeos que se leen acá, tal como se publicaron";
-  $("#sub-pruebas").innerHTML =
-    "Todo lo que el modelo consume de las redes entra por estas dos publicaciones. " +
-    "No están transcriptas ni fotografiadas: están <b>incrustadas desde X</b>, con el " +
-    "código que da la propia plataforma. Se puede abrir cada una y contar los votos.";
-
-  cont.innerHTML = P.items.map(o =>
-    "<figure class='prueba'>" +
-      "<div class='prueba-que'>" + o.autor + " · " + o.que + "</div>" +
-      "<div class='tw-real'>" + o.html + "</div>" +
-      "<figcaption class='tw-nota'>" + o.lectura + "</figcaption>" +
-    "</figure>").join("");
-  cont.querySelectorAll("a[href]").forEach(a => {
-    a.target = "_blank"; a.rel = "noopener nofollow ugc";
+  const puestos = [];
+  huecos.forEach(h => {
+    const o = porSitio[h.dataset.post];
+    // Un hueco sin publicacion no deja un agujero: se borra y el texto de
+    // alrededor sigue teniendo sentido sin el.
+    if(!o){ h.remove(); return; }
+    h.innerHTML =
+      "<div class='tw-marco'>" + o.html + "</div>" +
+      "<p class='tw-nota'>" + o.lectura + "</p>";
+    h.querySelectorAll("a[href]").forEach(a => {
+      a.target = "_blank"; a.rel = "noopener nofollow ugc";
+    });
+    puestos.push(h);
   });
+  if(!puestos.length) return;
 
-  $("#pie-pruebas").innerHTML =
-    "Las dos midieron la misma noche y se equivocaron en direcciones opuestas. Por eso " +
-    "acá una entra al modelo con un sesgo y un desvío estimados contra sus propias galas " +
-    "anteriores, y la otra no entra: <b>una encuesta sin historial no se puede corregir</b>, " +
-    "y sin corregir no es un dato, es una opinión con porcentajes.";
-
-  /* El guion se pide solo si alguien llega hasta acá. Se mira la distancia a
-     mano en vez de con IntersectionObserver: el observador no dispara en
-     pestañas que el navegador nunca llega a pintar, y ahí la sección se
-     quedaba con las citas sin hidratar para siempre. Un rect y un scroll
-     pasivo funcionan en todos lados. */
   let pedido = false;
   function pedir(){
     if(pedido) return;
@@ -2123,8 +2163,8 @@ function contar(nodo){
   }
   function alScroll(){
     const alto = innerHeight || document.documentElement.clientHeight || 800;
-    const r = cont.getBoundingClientRect();
-    if(r.top < alto + 600 && r.bottom > -600) pedir();
+    if(puestos.some(h => { const r = h.getBoundingClientRect();
+                           return r.top < alto + 600 && r.bottom > -600; })) pedir();
   }
   // Dos disparadores para lo mismo, a propósito: el observador es la forma
   // correcta y el scroll a mano es el que sigue andando donde el observador no
@@ -2134,7 +2174,7 @@ function contar(nodo){
     const io = new IntersectionObserver(es => {
       if(es.some(e => e.isIntersecting)){ io.disconnect(); pedir(); }
     }, {rootMargin: "600px"});
-    io.observe(cont);
+    puestos.forEach(h => io.observe(h));
   }
   addEventListener("scroll", alScroll, {passive:true});
   alScroll();
@@ -2157,11 +2197,28 @@ function contar(nodo){
   const conocidas = Object.keys(Z.signos).length;
   const faltan = Object.keys(Z.sin_fecha || {}).length;
 
+  // El titular sale de los datos y habla de LAS QUE QUEDAN, no de los campeones
+  // historicos: son dos poblaciones distintas y mezclarlas da una frase que se
+  // contradice con la tabla de al lado. Y solo se titula con un signo si de
+  // verdad destaca: con un empate arriba, o con un signo de una sola nativa,
+  // no hay noticia y el titular vuelve al neutro.
+  const NUM = ["cero","una","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"];
+  const cuentaSigno = Object.entries(porSigno)
+    .map(([sig, qs]) => [sig, qs.length, qs.reduce((a,q) => a + base.p_gana[q], 0)])
+    .sort((a,b) => b[1]-a[1] || b[2]-a[2]);
+  const [sigTop, nTop, pTop] = cuentaSigno[0] || ["", 0, 0];
+  const empate = cuentaSigno.filter(c => c[1] === nTop).length > 1;
+  $("#tit-zod").textContent = (nTop > 1 && !empate && NUM[nTop])
+    ? NUM[nTop][0].toUpperCase() + NUM[nTop].slice(1) + " de las que quedan son de " +
+      sigTop + ", y suman el " + pc(pTop,0) + " del pronóstico"
+    : "El zodíaco, con la misma vara que el modelo";
+
   $("#sub-zod").innerHTML =
-    "Pediste horóscopo y acá está, hecho igual que el resto: la fecha de nacimiento se busca con " +
-    "fuente, el signo se calcula de la fecha y la probabilidad de cada signo es la suma de las " +
-    "probabilidades del modelo. De las " + (conocidas + faltan) + " que quedan hay fecha publicada " +
-    "de " + conocidas + "; de las otras " + faltan + " no la hay, y eso se dice en vez de rellenarlo.";
+    "El horóscopo es el modelo rival: no mira una sola gala ni un solo voto. Acá se lo trata " +
+    "igual que al propio — la fecha de nacimiento sale de una fuente citada, el signo se calcula " +
+    "de la fecha, y la probabilidad de cada signo es la suma de las de sus nativas. De las " +
+    (conocidas + faltan) + " que quedan en juego hay fecha publicada de " + conocidas + "; de las " +
+    "otras " + faltan + " no la hay, y así queda dicho en vez de rellenarlo.";
 
   const orden = Object.entries(porSigno)
     .map(([sig, qs]) => [sig, qs, qs.reduce((a,q) => a + base.p_gana[q], 0)])
@@ -2260,25 +2317,67 @@ function contar(nodo){
     E.eliminado + ".";
 })();
 
-/* ---------- las mediciones públicas, con forma de publicación ----------
-   No son capturas: incrustar X o Instagram es imposible acá, porque esta página
-   no hace ni una petición a un servidor externo, y una captura sería republicar
-   contenido ajeno. Cada tarjeta está dibujada con las cifras verificadas contra
-   la fuente y enlaza a donde se puede comprobar. El enlace no siempre es el
-   mismo tipo de cosa, y la etiqueta lo dice: hay encuestas nativas de X que
-   tienen post, y encuestas que salieron por un canal de difusión de Instagram,
-   que vive dentro de los mensajes y no genera enlace. Ahí lo honesto es llevar
-   a la cuenta y decir que el post no existe, no fabricar un permalink. */
+/* ---------- las mediciones públicas ----------
+   La tarjeta tiene dos estados y los dos son informativos:
+
+     CON encuesta para la próxima gala -> el muro de mediciones enfrentadas, con
+       la del modelo al lado, para ver quién dice qué antes de que se juegue.
+     SIN encuesta todavía -> entre la gala del lunes y la nominación del
+       miércoles nadie mide nada, y la tarjeta pasa a mirar hacia atrás: qué
+       dijo la última medición y qué le pasó. Antes en ese hueco se borraba la
+       tarjeta entera, que es la respuesta cómoda y la menos util: justo esos
+       dos días son los que más gente entra a ver qué pasó anoche.
+
+   Las tarjetas del muro están dibujadas con las cifras verificadas contra la
+   fuente, porque no todas las mediciones tienen post que incrustar: hay
+   encuestas que salen por un canal de difusión de Instagram, que vive dentro de
+   los mensajes y no genera enlace. Ahí lo honesto es llevar a la cuenta y decir
+   que el post no existe, no fabricar un permalink. La que sí tiene post se
+   incrusta al lado, servida por X. */
 (function(){
   const E = D.encuesta;
   const cont = $("#desacuerdo");
-  // Sin encuesta publicada para la próxima gala no hay muro que mostrar: se
-  // quita el bloque entero en vez de dejar una tarjeta sola con el modelo.
+  if(!cont) return;
   const hayEncuesta = E && E.cuota && Object.keys(E.cuota).length;
-  if(!cont || !hayEncuesta){
-    if(cont) cont.closest(".tarjeta").remove();
+  const ultima = (D.galas || []).slice(-1)[0];
+
+  if(!hayEncuesta){
+    cont.remove();
+    $("#medicion").querySelector(".medicion").classList.add("sola");
+    const g = ultima && ultima.reparto ? ultima.reparto : null;
+    const elim = ultima ? ultima.eliminado : null;
+    $("#eyebrow-medicion").textContent = "La última medición, y qué le pasó";
+    // Los dos números de una gala son distintos y los dos son ciertos: la cuota
+    // sobre el total de la placa y el porcentaje del mano a mano final, que
+    // Telefe renormaliza al 100%. Puestos uno al lado del otro sin decirlo
+    // parecen una contradicción, así que se dicen los dos.
+    const vs = ultima && ultima.publicado ? ultima.publicado.versus : null;
+    $("#intro-medicion").innerHTML = elim
+      ? "Hasta el miércoles no hay placa nueva, así que tampoco hay encuesta que enfrentar: " +
+        "lo último que se midió fue la gala del lunes. <b>" + elim + "</b> salió con " +
+        pc(g[0][1]/100, 1) + " del total de la placa" +
+        (vs && vs[elim] ? " —" + nf(vs[elim],0) + "% en el mano a mano final, que es el número " +
+         "que canta Telefe— " : ", ") +
+        "y la única encuestadora con historial lo había puesto primero. Cuando el miércoles se " +
+        "arme la placa, acá vuelve el muro con todas las mediciones enfrentadas y la del modelo " +
+        "al lado."
+      : "Todavía no hay placa nueva, así que tampoco hay mediciones que enfrentar.";
+    $("#pie-medicion").innerHTML =
+      "Una encuesta sin historial no se puede calibrar, y sin calibrar no es un dato: es una " +
+      "opinión con porcentajes. Por eso de las cuatro que circulan cada semana solo entra una al " +
+      "modelo, y las otras aparecen acá para poder compararlas, no para promediarlas.";
     return;
   }
+
+  $("#eyebrow-medicion").textContent = "Lo que dice cada medición";
+  $("#intro-medicion").innerHTML = "<b>Y no dicen lo mismo.</b> La única con historial " +
+    "contrastable pone un nombre primero y las otras ponen otro. El modelo, que solo escucha a " +
+    "la primera, queda casi en el medio.";
+  $("#pie-medicion").innerHTML =
+    "Solo la que tiene historial entra al ajuste: a las otras no hay con qué medirles el sesgo, y " +
+    "una encuesta sin calibrar no es un dato, es una opinión con porcentaje. Las tarjetas están " +
+    "dibujadas con las cifras verificadas y llevan a la fuente; la que tiene post se incrusta al " +
+    "lado, tal como se publicó.";
   cont.className = "posts";
 
   const MARCA = {
@@ -2451,6 +2550,8 @@ function contar(nodo){
   pintar();
 })();
 
+// SPDX-FileCopyrightText: 2026 Eugenio Nerelli
+// SPDX-License-Identifier: Apache-2.0
 const montarAnimaciones = (function(){
 let DATOS_PAGINA = {jugadores:[], mu:{}, psi:{}, pgana:{}};
 /* ==========================================================================

@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-License-Identifier: Apache-2.0
 """
 POR QUE CAMBIO LA FAVORITA - la anatomia de una gala.
 

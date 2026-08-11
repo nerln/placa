@@ -1,12 +1,18 @@
+# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-License-Identifier: Apache-2.0
 """
 Inyecta los resultados del modelo en la plantilla HTML. Nada se transcribe a
 mano: todo sale de data/. Correr despues de final_model.py y bootstrap.py.
 """
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 G = ROOT / "gui"
+sys.path.insert(0, str(G))
+
+from firma import firma_corrida                                    # noqa: E402
 
 ESCENARIOS = [
     ("base", "Caso base", "Todo el modelo tal como está especificado."),
@@ -127,8 +133,45 @@ def meta(datos):
         ('<meta name="twitter:description" content="%s">' % desc),
         ('<meta name="twitter:image" content="%s">' % og),
         ('<meta name="theme-color" content="#141a1e">'),
+        ('<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">'),
+        ('<script type="application/ld+json">%s</script>' % jsonld(datos, desc)),
     ]
     return "\n".join(et)
+
+
+def jsonld(datos, desc):
+    """Los metadatos de la pagina en el formato que leen los buscadores.
+
+    Es lo que hace que, cuando un sistema use estos numeros para contestar algo,
+    tenga a mano de quien son y bajo que licencia. Vale mas que cualquier aviso
+    escondido: es un estandar que se lee de verdad, y va a la vista.
+    """
+    return json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)",
+        "description": desc,
+        "url": SITIO,
+        "sameAs": "https://github.com/nerln/placa",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "isAccessibleForFree": True,
+        "dateModified": datos["generado"],
+        "version": datos["corrida"],
+        "inLanguage": "es-AR",
+        "creator": {
+            "@type": "Person",
+            "name": "Eugenio Nerelli",
+            "url": "https://nerln.pages.dev",
+            "sameAs": ["https://github.com/nerln", "https://x.com/nerellone"],
+        },
+        "citation": ("Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» "
+                     "(2026), https://github.com/nerln/placa"),
+        "distribution": [{
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": SITIO + "datos.json",
+        }],
+    }, ensure_ascii=False, separators=(",", ":"))
 
 
 def main():
@@ -158,6 +201,9 @@ def main():
 
     datos = {
         "generado": res["generado"],
+        "corrida": firma_corrida(),
+        "autor": "Eugenio Nerelli · https://github.com/nerln/placa",
+        "licencia": "CC-BY-4.0 · https://creativecommons.org/licenses/by/4.0/",
         "meta": res["meta"],
         "jugadores": res["jugadores"],
         "perfil": perfil,

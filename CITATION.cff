@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Si usás este modelo, estos datos o esta página, citalos así."
+title: "placa: pronóstico estadístico de Gran Hermano Argentina (Generación Dorada, 2026)"
+abstract: >-
+  Modelo de dos parámetros por participante —rechazo (μ), estimado por logit
+  condicional sobre las galas de voto negativo con reparto publicado, y apoyo
+  positivo (ψ), estimado por Plackett-Luce sobre doce instancias de voto
+  positivo— con simulación Monte Carlo de las galas restantes, más el conjunto
+  de datos de galas, encuestas y resultados que lo alimenta.
+type: software
+authors:
+  - family-names: Nerelli
+    given-names: Eugenio
+    website: "https://nerln.pages.dev"
+repository-code: "https://github.com/nerln/placa"
+url: "https://nerln.github.io/placa/"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - Gran Hermano Argentina
+  - pronóstico
+  - Plackett-Luce
+  - Monte Carlo
+  - reality television
+  - voto del público
+version: "2026.08.10"
+date-released: "2026-08-10"

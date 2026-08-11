@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-License-Identifier: Apache-2.0
 """
 Lo que se publica tiene que salir de lo que esta publicado.
 
@@ -142,10 +144,37 @@ def tarjeta_al_dia():
     return 0
 
 
+def firma_coherente():
+    """La firma de la corrida tiene que ser la misma en los cuatro canales.
+
+    Es lo que permite demostrar que una copia salio de aca sin recurrir a
+    canarios escondidos, que no sobreviven a un reformateo. Se recalcula desde
+    data/ y se compara con lo que quedo publicado: si no coincide, alguien
+    edito los datos sin reconstruir, o al reves.
+    """
+    sys.path.insert(0, str(ROOT / "gui"))
+    from firma import firma_corrida                              # noqa: PLC0415
+
+    esperada = firma_corrida()
+    err = 0
+    en_datos = json.loads((WEB / "datos.json").read_text()).get("corrida")
+    if en_datos != esperada:
+        err += fallo(f"web/datos.json dice corrida={en_datos!r} y los datos dan {esperada!r}")
+
+    png = WEB / "og.png"
+    if png.exists():
+        from PIL import Image                                    # noqa: PLC0415
+        if esperada not in Image.open(png).text.get("corrida", ""):
+            err += fallo(f"web/og.png no lleva la firma {esperada!r}")
+    if not err:
+        print(f"  ok · firma de la corrida {esperada} en datos.json y og.png")
+    return err
+
+
 def main():
     print("verificando lo que se va a publicar")
     err = (reconstruible() + probabilidades() + ramas_cierran() +
-           identidad_telefe() + tarjeta_al_dia())
+           identidad_telefe() + tarjeta_al_dia() + firma_coherente())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")
         sys.exit(1)
