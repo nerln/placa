@@ -22,7 +22,8 @@
    "genero": "f",
    "redes": {
     "ig": "tamarapaganini",
-    "conf": "alta"
+    "conf": "alta",
+    "verificado": "2026-08-11"
    }
   },
   {
@@ -41,7 +42,8 @@
    "genero": "f",
    "redes": {
     "ig": "pincoyasinglamourrr",
-    "conf": "media"
+    "conf": "media",
+    "verificado": "2026-08-11"
    }
   },
   {
@@ -81,7 +83,8 @@
    "genero": "f",
    "redes": {
     "ig": "yzilli",
-    "conf": "alta"
+    "conf": "alta",
+    "verificado": "2026-08-11"
    }
   },
   {
@@ -101,7 +104,8 @@
    "redes": {
     "ig": "luanafernandezok_",
     "x": "lulafernandezok",
-    "conf": "alta"
+    "conf": "alta",
+    "verificado": "2026-08-11"
    }
   },
   {
@@ -121,7 +125,8 @@
    "redes": {
     "ig": "yipio",
     "x": "yiselapintos",
-    "conf": "alta"
+    "conf": "alta",
+    "verificado": "2026-08-11"
    }
   },
   {
@@ -140,7 +145,8 @@
    "genero": "f",
    "redes": {
     "ig": "marielaaliciaprieto",
-    "conf": "media"
+    "conf": "media",
+    "verificado": "2026-08-11"
    }
   },
   {
@@ -179,7 +185,8 @@
    "redes": {
     "ig": "solcitoabraham",
     "x": "SolcitoAbraham",
-    "conf": "alta"
+    "conf": "alta",
+    "verificado": "2026-08-11"
    }
   }
  ],
@@ -231,5 +238,5 @@
   }
  ],
  "_nota_genero": "genero: 'f'/'m'. Al 10/08/2026 no queda ningun varon en juego, confirmado por Mi Telefe en la nota de la eliminacion de Hanssen.",
- "_redes_nota": "Perfiles verificados el 11 de agosto de 2026: tilde azul leido de la API publica de perfiles de Instagram, o cruce con Wikidata y prensa. Los que no llegaron a ese liston quedan sin enlace: una cuenta de fans con nombre casi identico es lo normal en este programa. NO se publican seguidores: a Charlotte le falta el dato justo por estar en juego, y los de las demas miden exposicion reciente, no apoyo."
+ "_redes_nota": "Instagram comprobado el 11/08/2026 con un control negativo: un usuario inventado no devuelve og:description y los publicados si. X no se puede comprobar automaticamente -bloquea a los rastreadores-, asi que sus enlaces se apoyan en el cruce documentado de cada caso. NO se publican seguidores: a Charlotte le falta el dato por estar en juego, y los de las demas miden exposicion reciente, no apoyo."
 }

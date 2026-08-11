@@ -64,6 +64,7 @@
   --oro-1:#6E5411;
   --oro-2:#A8842A;
   --oro-3:#B08F3E;
+  --ojo-mask:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 78'><path d='M1.60 39.00A64.30 64.30 0 0 1 118.40 39.00A64.30 64.30 0 0 1 1.60 39.00Z' fill='none' stroke='black' stroke-width='7'/><circle cx='60' cy='39' r='20' fill='black'/></svg>");
 }
 /* ---------- el modo oscuro es la gala ----------
    La página tiene dos horarios y los sigue del sistema, sin botón: de día es
@@ -171,6 +172,20 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
    a menor: primero la favorita. El orden no es decorativo, es el mismo de la
    tabla. Con prefers-reduced-motion no pasa nada de esto y el ojo está
    directamente dibujado. */
+
+/* El ojo dentro del titular, en la línea de base del último renglón: forma
+   parte de la pregunta en vez de estar al lado de la marca como una pegatina.
+   A partir de 700px se mete en el mismo renglón; abajo va debajo, porque
+   apretarlo contra un titular de tres líneas lo hace ilegible. */
+.ojo-h1{display:inline-block; vertical-align:-.12em; margin-left:.3em; width:1.55em}
+.ojo-h1 svg{display:block; width:100%; height:auto; overflow:visible}
+/* La viñeta de sección: el mismo ojo, chico y de una sola tinta, delante del
+   rótulo. Repite la marca sin repetir el dibujo entero. */
+.eyebrow{display:flex; align-items:center; gap:7px}
+.eyebrow::before{content:""; width:17px; height:11px; flex:none;
+  background:currentColor; opacity:.85;
+  -webkit-mask:var(--ojo-mask) center/contain no-repeat;
+          mask:var(--ojo-mask) center/contain no-repeat}
 .ojo-marca{width:54px; flex:none; display:block}
 .ojo-marca svg{display:block; width:100%; height:auto; overflow:visible}
 @media (min-width:700px){.ojo-marca{width:66px}}
@@ -366,6 +381,10 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
   padding:6px 10px; min-height:34px; transition:border-color .14s var(--ui), color .14s var(--ui)}
 .redes a:hover{border-color:var(--tinta); color:var(--tinta)}
 .redes svg{width:13px; height:13px; flex:none}
+.redes .muerto{display:inline-flex; align-items:center; gap:6px; font-size:var(--t-xs);
+  font-family:"Archivo",sans-serif; font-weight:700; color:var(--tinta3);
+  border:1px dashed var(--linea); border-radius:var(--r-sm); padding:6px 10px; min-height:34px}
+.redes .muerto svg{width:13px; height:13px; flex:none; opacity:.6}
 .redes .nota, .redes.vacio{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5}
 .redes.vacio{margin-top:12px}
 
@@ -800,7 +819,40 @@ footer p{max-width:84ch}
 .post.propio .post-av{background:var(--tinta); color:var(--sup)}
 
 /* ---------- ramas: el pronóstico condicionado a la salida de esta noche --- */
-.ramas-chips{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px}
+.ramas-chips{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 4px}
+/* ---------- el simulador guiado ----------
+   Tres capas de la misma corrida de Monte Carlo: el cuadro de hoy, el cuadro
+   si sale una, y el cuadro si además sale otra. No se recalcula nada al pulsar
+   — las tres están en data/sendas.json — así que responde al instante y los
+   números cierran entre capas por construcción.
+
+   Las migas de arriba no son decoración: son el camino elegido y se puede
+   volver a cualquier punto pulsándolas. Sin eso, un explorador de dos pasos se
+   convierte en un sitio donde uno se pierde. */
+.senda{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md);
+  padding:16px 14px}
+.senda-migas{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:0 0 14px;
+  padding:0; list-style:none; font-size:var(--t-xs)}
+.senda-migas li{display:flex; align-items:center; gap:6px}
+.senda-migas li::after{content:"›"; color:var(--tinta3); margin-left:2px}
+.senda-migas li:last-child::after{content:""}
+.senda-migas button{font:inherit; font-family:"Archivo",sans-serif; font-weight:700;
+  background:none; border:0; padding:4px 2px; color:var(--apoyo-txt); cursor:pointer;
+  border-bottom:1px solid transparent}
+.senda-migas button:hover{border-bottom-color:currentColor}
+.senda-migas .aqui{font-family:"Archivo",sans-serif; font-weight:700; color:var(--tinta)}
+.senda-preg{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm);
+  margin:0 0 9px; color:var(--tinta)}
+.senda-preg small{display:block; font-weight:400; font-size:var(--t-xs); color:var(--tinta3);
+  margin-top:3px; line-height:1.5}
+.senda-paso{margin-bottom:16px}
+.senda-paso[hidden]{display:none}
+/* La probabilidad de cada opción va dentro del propio botón: elegir «y si sale
+   la que casi nunca sale» es legítimo, pero hay que saber que es eso. */
+.ramas-chips .chip .p{font-family:"Archivo",sans-serif; font-weight:700; color:var(--tinta3);
+  margin-left:7px; font-variant-numeric:tabular-nums}
+.ramas-chips .chip[aria-pressed="true"] .p{color:var(--papel)}
+
 .rama-chip{font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
   padding:9px 12px; min-height:42px; cursor:pointer; display:inline-flex; align-items:center;
   gap:8px; border:1px solid var(--linea); border-radius:var(--r-sm); background:var(--sup);
@@ -891,7 +943,7 @@ footer p{max-width:84ch}
     <span class="txt"><b>Gran Hermano Argentina</b><span id="sub-marca"></span></span>
     <span class="cinta"><i></i><span id="prox-gala"></span></span>
   </div>
-  <h1 class="tit">¿Quién se lleva <em>los 70 millones</em>?</h1>
+  <h1 class="tit">¿Quién se lleva <em>los 70 millones</em>?<span class="ojo-h1"><!--__MARCA__--></span></h1>
   <p class="bajada">Todo sale de dos cosas que publica Telefe: el reparto de votos que canta en cada gala de eliminación, y el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio. Nada de encuestas de intención ni de cuotas de apuestas: para esta edición no existe ningún mercado real.</p>
 </header>
 
@@ -982,9 +1034,23 @@ footer p{max-width:84ch}
   <div class="eyebrow">Y después</div>
   <div class="titulo"><h2 class="tit" id="tit-ramas"></h2></div>
   <p class="sub" id="sub-ramas"></p>
-  <div class="ramas-chips" id="ramas-chips" role="group" aria-label="Quién sale esta noche"></div>
-  <div class="rama-lista" id="rama-lista"></div>
-  <p class="rama-pie" id="rama-pie"></p>
+
+  <div class="senda">
+    <ol class="senda-migas" id="senda-migas" aria-label="Camino elegido"></ol>
+
+    <div class="senda-paso" id="paso-1">
+      <div class="senda-preg" id="preg-1"></div>
+      <div class="ramas-chips" id="chips-1" role="group"></div>
+    </div>
+
+    <div class="senda-paso" id="paso-2" hidden>
+      <div class="senda-preg" id="preg-2"></div>
+      <div class="ramas-chips" id="chips-2" role="group"></div>
+    </div>
+
+    <div class="rama-lista" id="rama-lista"></div>
+    <p class="rama-pie" id="rama-pie"></p>
+  </div>
 </section>
 
 <section id="camino">
@@ -1203,7 +1269,7 @@ footer p{max-width:84ch}
 <footer>
   <div class="firma">
     <div>
-      <div class="firma-quien">Eugenio Nerelli</div>
+      <div class="firma-quien">nerln</div>
       <div class="firma-que">Modelo, datos y página. El código está abierto: se puede
       correr, discutir y contradecir con los mismos números.</div>
     </div>
@@ -1221,8 +1287,7 @@ footer p{max-width:84ch}
   es un gráfico de este pronóstico con forma de ojo, y se redibuja después de cada gala.
   Los datos de gala son hechos publicados por Telefe y no se reclama ningún derecho sobre
   ellos; las publicaciones incrustadas son de sus autores y las sirve la propia plataforma.</p>
-  <p class="licencia">© 2026 <a rel="author" href="https://nerln.pages.dev">Eugenio
-  Nerelli</a>. Código bajo <a href="https://github.com/nerln/placa/blob/main/LICENSE">Apache-2.0</a>;
+  <p class="licencia">© 2026 <a rel="author" href="https://nerln.pages.dev">nerln</a>. Código bajo <a href="https://github.com/nerln/placa/blob/main/LICENSE">Apache-2.0</a>;
   datos y textos bajo <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY
   4.0</a>. Se puede reusar, incluso comercialmente, citando la fuente y enlazándola:
   <a href="https://github.com/nerln/placa/blob/main/CITATION.cff">cómo citar</a>. Esta corrida
@@ -1964,10 +2029,17 @@ function redes(n){
     '2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 ' +
     '6.23zm-1.16 17.52h1.83L7.08 4.13H5.11z"/></svg>';
   const en = [];
-  if(r.ig) en.push("<a href='https://www.instagram.com/" + r.ig + "/' target='_blank' " +
-    "rel='noopener nofollow'>" + IG + "@" + r.ig + "</a>");
+  // Sin arroba: el logotipo de la izquierda ya dice de qué red es, y «@» al
+  // lado del icono es decir dos veces lo mismo.
+  //
+  // Y solo se enlaza lo que se comprobó que responde. El Instagram de Charlotte
+  // está desactivado mientras ella está en la casa: publicarlo sería mandar a
+  // la gente a una página que no existe. Se queda el dato, se va el enlace.
+  if(r.ig && r.verificado) en.push("<a href='https://www.instagram.com/" + r.ig + "/' " +
+    "target='_blank' rel='noopener nofollow'>" + IG + r.ig + "</a>");
+  else if(r.ig) en.push("<span class='muerto'>" + IG + r.ig + "</span>");
   if(r.x) en.push("<a href='https://x.com/" + r.x + "' target='_blank' rel='noopener nofollow'>" +
-    X + "@" + r.x + "</a>");
+    X + r.x + "</a>");
   if(!en.length) return "<div class='redes vacio'>" + (r.nota || "sin perfil verificado") + "</div>";
   return "<div class='redes'>" + en.join("") +
     (r.nota ? "<span class='nota'>" + r.nota + "</span>" : "") + "</div>";
@@ -2039,7 +2111,7 @@ function redes(n){
    metrónomo, y solo mientras la pestaña está a la vista. */
 (function(){
   if(quieto) return;
-  const ojos = [...document.querySelectorAll(".ojo-marca svg")]
+  const ojos = [...document.querySelectorAll(".ojo-marca svg, .ojo-h1 svg")]
     .map(svg => ({svg, iris: svg.querySelector(".ojo-iris")}))
     .filter(o => o.iris);
   if(!ojos.length) return;
@@ -3026,31 +3098,50 @@ function contar(nodo){
   cont.innerHTML = tarjeta(E) + (E.otras||[]).map(tarjeta).join("") + propio;
 })();
 
-/* ---------- ramas: cómo queda la carrera según quién salga hoy ---------- */
+/* ---------- el simulador guiado: dos eliminaciones, no una ----------
+   La pregunta que la gente hace no tiene un paso sino dos: «si se va Sol, y
+   después se va otra, ¿quién gana?». El segundo paso no se deduce del primero,
+   porque quién queda cambia las placas siguientes.
+
+   Las tres capas —el cuadro de hoy, el cuadro tras una salida y el cuadro tras
+   dos— son subconjuntos de la MISMA corrida de Monte Carlo (data/sendas.json,
+   600 mil temporadas). Por eso responder es leer un objeto, no simular: es
+   instantáneo, y los números cierran entre capas por construcción. Nada de lo
+   que se toca acá recalcula el modelo. */
 (function(){
-  const R = D.ramas;
-  if(!R || !R.ramas || !Object.keys(R.ramas).length){ $("#ramas").remove(); return; }
+  const S = D.sendas;
+  const sec = $("#ramas");
+  if(!S || !S.ramas || !Object.keys(S.ramas).length){ if(sec) sec.remove(); return; }
 
-  // Con placa, las ramas son las nominadas. Sin placa, las que el modelo ve con
-  // posibilidad real de irse: ramas.json ya trae esa lista en candidatas.
-  const placa = (R.candidatas || R.placa || []).filter(n => R.ramas[n]);
-  placa.sort((a,b) => R.ramas[b].p_sale - R.ramas[a].p_sale);
-  if(!placa.length){ $("#ramas").remove(); return; }
-  let sel = placa[0];
+  const VIG = S.jugadores;
+  const paso = [null, null];                    // quién se va primero y segundo
 
-  $("#tit-ramas").textContent = "Si la próxima es " + sel + ", ¿quién gana?";
-  $("#sub-ramas").textContent = (R.hay_placa === false
-      ? "Todavía no hay nominadas, así que la próxima en irse puede ser cualquiera. Tocá un nombre "
-        + "y mirá cómo queda la carrera por el premio si esa es la que se va. "
-      : "En la próxima gala se va una de las " + placa.length + ". Tocá un nombre y mirá cómo queda "
-        + "la carrera por el premio en ese caso. ")
-    + "No son " + placa.length + " modelos distintos: es la misma tanda de "
-    + (R.n_sims/1000).toFixed(0) + " mil temporadas simuladas, mirada solo por las que terminan "
-    + "con esa salida.";
+  const nom = (o) => Object.entries(o).sort((a,b) => b[1]-a[1]);
+  const cuadro = () => {
+    if(paso[0] && paso[1]) return S.ramas[paso[0]].sendas[paso[1]].p_gana;
+    if(paso[0]) return S.ramas[paso[0]].p_gana;
+    return S.base;
+  };
+  const nDe = () => {
+    if(paso[0] && paso[1]) return S.ramas[paso[0]].sendas[paso[1]].n;
+    if(paso[0]) return S.ramas[paso[0]].n;
+    return S.n_sims;
+  };
 
+  $("#tit-ramas").textContent = "Elegí quién se va y mirá cómo queda la carrera";
+  $("#sub-ramas").innerHTML =
+    (S.hay_placa === false
+      ? "Todavía no hay nominadas, así que la próxima en irse puede ser cualquiera. "
+      : "En la próxima gala se va una de las nominadas. ") +
+    "Elegí una y después, si querés, elegí la siguiente: el cuadro se rehace en cada paso. " +
+    "No son " + (Object.keys(S.ramas).length) + " modelos distintos ni " +
+    "un cálculo nuevo — son las mismas <b>" + (S.n_sims/1000).toFixed(0) + " mil temporadas " +
+    "simuladas</b>, filtradas por las que terminan como vos decís.";
+
+  /* --- las filas del cuadro, creadas una vez y luego solo actualizadas --- */
   const filas = new Map();
   const lista = $("#rama-lista");
-  D.jugadores.forEach(n => {
+  VIG.forEach(n => {
     const f = el("div","rama-fila");
     f.innerHTML = "<div class='pos mono'></div><div class='n'></div>" +
       "<div class='rama-barra'><i style='width:0'></i></div>" +
@@ -3058,85 +3149,96 @@ function contar(nodo){
     filas.set(n, f); lista.appendChild(f);
   });
 
-  const chips = $("#ramas-chips");
-  placa.forEach(n => {
-    const b = el("button","rama-chip",
-      "<span>"+n+"</span><span class='p'>"+pc(R.ramas[n].p_sale,0)+"</span>");
+  function chip(n, p, activo, alPulsar){
+    const b = el("button","chip");
     b.type = "button";
-    b.setAttribute("aria-pressed", String(n === sel));
-    b.onclick = () => {
-      sel = n;
-      [...chips.children].forEach(c => c.setAttribute("aria-pressed","false"));
-      b.setAttribute("aria-pressed","true");
-      pintar();
-    };
-    chips.appendChild(b);
-  });
+    b.innerHTML = "<span>" + n + "</span><span class='p'>" + pc(p,0) + "</span>";
+    b.setAttribute("aria-pressed", activo ? "true" : "false");
+    b.addEventListener("click", alPulsar);
+    return b;
+  }
+
+  function pintarPasos(){
+    // Paso 1: quién se va en la próxima. Siempre visible.
+    const c1 = $("#chips-1");
+    c1.innerHTML = "";
+    $("#preg-1").innerHTML = "¿Quién se va en la próxima eliminación?" +
+      "<small>El porcentaje de cada botón es la probabilidad que le da el modelo a esa salida.</small>";
+    nom(Object.fromEntries(Object.entries(S.ramas).map(([k,v]) => [k, v.p])))
+      .forEach(([n, p]) => c1.appendChild(chip(n, p, paso[0] === n, () => {
+        paso[0] = (paso[0] === n) ? null : n;
+        paso[1] = null;
+        pintarPasos(); pintar();
+      })));
+
+    // Paso 2: solo tiene sentido después de elegir el primero.
+    const p2 = $("#paso-2"), c2 = $("#chips-2");
+    if(!paso[0]){ p2.hidden = true; c2.innerHTML = ""; return; }
+    p2.hidden = false;
+    const r = S.ramas[paso[0]];
+    const disponibles = Object.keys(r.sendas);
+    $("#preg-2").innerHTML = "Y en la siguiente, con " + paso[0] + " ya afuera, ¿quién?" +
+      "<small>Estas probabilidades no son las de arriba: sin " + paso[0] +
+      " las placas cambian, y quien más riesgo tenía puede dejar de tenerlo.</small>";
+    c2.innerHTML = "";
+    nom(Object.fromEntries(disponibles.map(k => [k, r.sendas[k].p])))
+      .forEach(([n, p]) => c2.appendChild(chip(n, p, paso[1] === n, () => {
+        paso[1] = (paso[1] === n) ? null : n;
+        pintarPasos(); pintar();
+      })));
+  }
+
+  function pintarMigas(){
+    const m = $("#senda-migas");
+    const pasos = [{txt:"Hoy", i:-1}];
+    if(paso[0]) pasos.push({txt:"sale " + paso[0], i:0});
+    if(paso[1]) pasos.push({txt:"y sale " + paso[1], i:1});
+    m.innerHTML = pasos.map((x, k) => "<li>" +
+      (k === pasos.length-1
+        ? "<span class='aqui'>" + x.txt + "</span>"
+        : "<button type='button' data-i='" + x.i + "'>" + x.txt + "</button>") +
+      "</li>").join("");
+    m.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+      const i = +b.dataset.i;
+      if(i < 0){ paso[0] = null; paso[1] = null; } else if(i === 0){ paso[1] = null; }
+      pintarPasos(); pintar();
+    }));
+  }
 
   function pintar(){
-    const r = R.ramas[sel];
-    const orden = [...D.jugadores].sort((a,b) => r.p_gana[b] - r.p_gana[a]);
-    const max = Math.max(...orden.map(n => r.p_gana[n]));
-    // Animar solo con la pestaña a la vista. Con el documento oculto el
-    // navegador no hace avanzar las animaciones, y la fila se quedaría dibujada
-    // en su posición vieja hasta que alguien mire.
-    const mueve = !matchMedia("(prefers-reduced-motion: reduce)").matches
-                  && document.visibilityState === "visible";
-
-    // FLIP en pasadas separadas. Medir mientras se reordena y se transforma no
-    // funciona: cada lectura ve el desplazamiento que se acaba de aplicar a la
-    // fila anterior, y las filas terminan una encima de otra.
-    // 1) dónde estaba cada una
-    const antes = new Map();
-    if(mueve) filas.forEach((f,n) => antes.set(n, f.getBoundingClientRect().top));
-
-    // 2) contenido y orden nuevos, sin tocar transform todavía
-    orden.forEach(n => lista.appendChild(filas.get(n)));
-    const vivos = orden.filter(n => n !== sel);
-    orden.forEach(n => {
-      const f = filas.get(n), fuera = (n === sel);
-      f.classList.toggle("fuera", fuera);
-      f.querySelector(".pos").textContent = fuera ? "" : (vivos.indexOf(n) + 1);
-      f.querySelector(".n").innerHTML = n +
-        (fuera ? " <span style='color:var(--tinta3); font-weight:400'>· se va</span>" : "");
-      f.querySelector(".rama-barra i").style.width = (100 * r.p_gana[n] / max) + "%";
-      f.querySelector(".pct").textContent = fuera ? "—" : pc(r.p_gana[n]);
-      const d = 100 * (r.p_gana[n] - R.base.p_gana[n]);
-      const dl = f.querySelector(".dl");
-      dl.className = "dl mono" + (fuera ? "" : (d > 0.15 ? " sube" : (d < -0.15 ? " baja" : "")));
-      dl.textContent = fuera ? "" : (Math.abs(d) < 0.05 ? "=" : (d > 0 ? "+" : "−") + nf(Math.abs(d), 1));
+    pintarMigas();
+    const p = cuadro();
+    const fuera = new Set([paso[0], paso[1]].filter(Boolean));
+    const ord = VIG.slice().sort((a,b) => p[b]-p[a]);
+    const top = p[ord[0]] || 1;
+    ord.forEach((n, i) => {
+      const f = filas.get(n);
+      lista.appendChild(f);
+      const salio = fuera.has(n);
+      f.classList.toggle("fuera", salio);
+      f.querySelector(".pos").textContent = salio ? "—" : (i+1);
+      f.querySelector(".n").textContent = n;
+      f.querySelector(".rama-barra i").style.width = salio ? "0%" : (100*p[n]/top) + "%";
+      f.querySelector(".pct").textContent = salio ? "afuera" : pc(p[n],1);
+      const d = p[n] - S.base[n];
+      f.querySelector(".dl").textContent = (salio || Math.abs(d) < 0.002) ? ""
+        : (d>0 ? "+" : "−") + nf(Math.abs(100*d),1);
+      f.querySelector(".dl").className = "dl mono" + (salio ? "" : (d > 0.002 ? " sube" : d < -0.002 ? " baja" : ""));
     });
 
-    // 3) el desplazamiento se anima con la API de animaciones y no tocando el
-    //    style. La diferencia importa: dentro de un panel oculto el navegador no
-    //    ejecuta requestAnimationFrame, y la versión que limpiaba el transform
-    //    desde un rAF dejaba las filas encimadas para siempre. Así, si la
-    //    animación no llega a correr, la fila ya está en su sitio definitivo.
-    if(mueve){
-      orden.forEach(n => {
-        const f = filas.get(n);
-        const dy = antes.get(n) - f.getBoundingClientRect().top;
-        if(!dy || !f.animate) return;
-        f.animate([{transform:"translateY("+dy+"px)"}, {transform:"none"}],
-                  {duration:500, easing:"cubic-bezier(.16,1,.3,1)"});
-      });
-    }
-
-    $("#tit-ramas").textContent = "Si la próxima es " + sel + ", ¿quién gana?";
-    const g = r.mas_gana[0], g2 = r.mas_gana[1];
-    $("#rama-pie").innerHTML =
-      "El modelo le da a <b>" + sel + "</b> un " + pc(r.p_sale,0) + " de ser la próxima en irse, sobre " +
-      r.n_efectivo.toLocaleString("es-AR") + " temporadas simuladas que acaban así. " +
-      "Quien más gana con esa salida es <b>" + g.quien + "</b>, que suma " +
-      nf(g.delta_pp,2) + " puntos" + (g2
-        ? (Math.abs(g.delta_pp - g2.delta_pp) < 0.005
-            ? ", empatada con " + g2.quien
-            : ", seguida de " + g2.quien + " con " + nf(g2.delta_pp,2))
-        : "") + ". " +
-      "Las ramas, pesadas por su probabilidad, devuelven el caso base de esta misma " +
-      "corrida: es una identidad, no una coincidencia. Contra el cuadro general puede haber " +
-      "una décima de diferencia, porque el cuadro sale de una corrida con menos simulaciones.";
+    const q = ord.find(n => !fuera.has(n));
+    const antes = VIG.slice().sort((a,b) => S.base[b]-S.base[a]).find(n => !fuera.has(n));
+    $("#rama-pie").innerHTML = !paso[0]
+      ? "Éste es el cuadro de hoy, sin condicionar nada. Elegí arriba quién se va y mirá qué cambia."
+      : "Con " + [...fuera].join(" y ") + " afuera, la favorita " +
+        (q === antes ? "sigue siendo <b>" + q + "</b>" : "pasa a ser <b>" + q + "</b>") +
+        " con " + pc(p[q],1) + ". Sale de <b>" + nDe().toLocaleString("es-AR") + "</b> temporadas " +
+        "de las " + S.n_sims.toLocaleString("es-AR") + " simuladas: las que terminan así. " +
+        "Las sendas pesadas por su probabilidad devuelven su rama, y las ramas el cuadro de hoy: " +
+        "es una identidad, no una coincidencia.";
   }
+
+  pintarPasos();
   pintar();
 })();
 
