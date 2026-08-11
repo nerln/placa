@@ -13,6 +13,7 @@ G = ROOT / "gui"
 sys.path.insert(0, str(G))
 
 from firma import firma_corrida                                    # noqa: E402
+from marca import svg as marca_svg                                 # noqa: E402
 
 ESCENARIOS = [
     ("base", "Caso base", "Todo el modelo tal como está especificado."),
@@ -132,7 +133,12 @@ def meta(datos):
         ('<meta name="twitter:title" content="%s">' % titulo),
         ('<meta name="twitter:description" content="%s">' % desc),
         ('<meta name="twitter:image" content="%s">' % og),
-        ('<meta name="theme-color" content="#0B0C0C">'),
+        ('<meta name="theme-color" content="#EEF0F3" media="(prefers-color-scheme: light)">'),
+        ('<meta name="theme-color" content="#05182F" media="(prefers-color-scheme: dark)">'),
+        # No es un descargo legal, es un hecho que conviene que viaje con la
+        # pagina: quien la indexe o la cite tiene que saber que no es oficial.
+        ('<meta name="disclaimer" content="Analisis independiente. Sin relacion con Telefe, '
+         'Kuarzo ni Banijay. Las marcas nombradas son de sus titulares.">'),
         ('<link rel="icon" href="ojo.svg" type="image/svg+xml">'),
         ('<link rel="apple-touch-icon" href="og.png">'),
         ('<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">'),
@@ -234,6 +240,9 @@ def main():
     motor = (G / "animaciones.js").read_text()
     fuentes = (G / "fuentes.css").read_text()
     crudo = json.dumps(datos, ensure_ascii=False)
+    # La marca se dibuja con los numeros de esta corrida, asi que despues de
+    # cada gala el ojo de la cabecera tiene otro iris. Ver gui/marca.py.
+    marca = marca_svg(res["escenarios"]["base"]["p_gana"], fondo=False)
 
     # --- el sitio, para GitHub Pages -------------------------------------
     # Los datos salen a un archivo aparte en vez de ir incrustados. Sirve para
@@ -249,6 +258,7 @@ def main():
                  .replace("/*__ANIMACIONES__*/", motor)
                  .replace("/*__FUENTES__*/", fuentes)
                  .replace("<!--__META__-->", meta(datos))
+                 .replace("<!--__MARCA__-->", marca)
                  .replace("<!--__DATOS_SRC__-->", '<script src="datos.js"></script>'))
     # La plantilla nacio para un artefacto, donde el <head> lo pone el que
     # publica. Sirviendola nosotros hay que armar el documento entero: se corta
@@ -268,6 +278,7 @@ def main():
               .replace("/*__ANIMACIONES__*/", motor)
               .replace("/*__FUENTES__*/", fuentes)
               .replace("<!--__META__-->", "")
+              .replace("<!--__MARCA__-->", marca)
               .replace("<!--__DATOS_SRC__-->", ""))
     (G / "pronostico.html").write_text(out)
 

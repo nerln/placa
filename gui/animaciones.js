@@ -209,14 +209,27 @@ function leerPaleta(){
   CARRIL = v("--sup3")      || "#E7EAEE";
 }
 
+let DATOS_ANIM = {};
+
+// El numero de simulaciones lo publica el modelo (resultados.json -> meta), no
+// se escribe a mano en cada sitio donde aparece.
+const nSims = () => ((DATOS_ANIM.n_sims || 0).toLocaleString("es-AR")) || "120.000";
+
 /* --- 1. El reparto real de una gala, como barra apilada ------------------- */
 function escenaIdentidad(){
   leerPaleta();
   const s = new Escena();
-  const DATOS = [["Luana",0.1],["Juanicar",0.3],["Hanssen",0.5],["Majluf",0.9],["Sol",46.7],["Campanita",53.3]];
-  const total = DATOS.reduce((a,[,v])=>a+v,0);                 // 101,8
+  // La gala que se explica es la ULTIMA que se jugó, no una elegida a mano: si
+  // alguien entra el martes quiere ver la del lunes, no la de hace tres
+  // semanas. Todo lo que sigue se deriva de sus cifras publicadas.
+  const G = DATOS_ANIM.gala;
+  const DATOS = G.filas;
+  const total = DATOS.reduce((a,[,v])=>a+v,0);
+  const EXCEDENTE = +(total - 100).toFixed(1);
+  const SALV = DATOS.filter(([,v]) => v < 40);
+  const nf1 = v => String(v).replace(".", ",");
 
-  s.add(new Texto({txt:"Gala 27 · 3 de agosto", x:6, y:8, tam:4.4, color:TIN, peso:700,
+  s.add(new Texto({txt:"Gala " + G.gala + " · " + G.fecha, x:6, y:8, tam:4.4, color:TIN, peso:700,
                    alinear:"left", display:true, visible:true, _op0:1}));
   const sub = s.add(new Texto({txt:"reparto del voto para eliminar, como lo publicó Telefe",
                                x:6, y:14, tam:3, color:TIN3, alinear:"left"}));
@@ -241,23 +254,27 @@ function escenaIdentidad(){
   s.esperar(.6);
 
   // la suma no da 100
-  const suma = s.add(new Texto({txt:"suman 101,8 %", x:50, y:47, tam:4.6, color:TIN, peso:700, display:true}));
+  const suma = s.add(new Texto({txt:"suman " + nf1(+total.toFixed(1)) + " %", x:50, y:47, tam:4.6,
+                                color:TIN, peso:700, display:true}));
   s.play(aparecer(suma, -1.5), .5).esperar(.9);
 
   // el mano a mano se reparte sobre el residuo
-  const marco = s.add(new Marco({x:X0 + ANCHO*(1 - (46.7+53.3)/total/2), y:Y+ALTO/2,
-                                 w:ANCHO*(46.7+53.3)/total, h:ALTO+3, color:ROJO, ancho:.4, r:.8}));
+  const VS = DATOS.filter(([,v]) => v >= 40).reduce((a,[,v]) => a+v, 0);
+  const marco = s.add(new Marco({x:X0 + ANCHO*(1 - VS/total/2), y:Y+ALTO/2,
+                                 w:ANCHO*VS/total, h:ALTO+3, color:ROJO, ancho:.4, r:.8}));
   const nota = s.add(new Texto({txt:"el mano a mano se renormaliza al 100 %\nsobre lo que quedaba sin repartir",
                                 x:50, y:58, tam:3.1, color:ROJO}));
   s.play([trazar(marco), aparecer(nota)], .55).esperar(1.6);
   s.play([desaparecer(marco), desaparecer(nota), desaparecer(suma)], .4);
 
   // la identidad, escrita
-  const eq1 = s.add(new Texto({txt:"101,8 − 100 = 1,8", x:50, y:50, tam:5, color:TIN, peso:700, display:true}));
+  const eq1 = s.add(new Texto({txt:nf1(+total.toFixed(1)) + " − 100 = " + nf1(EXCEDENTE),
+                               x:50, y:50, tam:5, color:TIN, peso:700, display:true}));
   s.play(escribir(eq1), .7).esperar(.4);
-  const marco2 = s.add(new Marco({x:X0 + ANCHO*(1.8/total)/2, y:Y+ALTO/2,
-                                  w:Math.max(ANCHO*1.8/total, 2.4), h:ALTO+3, color:AZUL, ancho:.4, r:.6}));
-  const eq2 = s.add(new Texto({txt:"0,1 + 0,3 + 0,5 + 0,9 = 1,8", x:50, y:59, tam:4, color:AZUL, peso:700, mono:true}));
+  const marco2 = s.add(new Marco({x:X0 + ANCHO*(EXCEDENTE/total)/2, y:Y+ALTO/2,
+                                  w:Math.max(ANCHO*EXCEDENTE/total, 2.4), h:ALTO+3, color:AZUL, ancho:.4, r:.6}));
+  const eq2 = s.add(new Texto({txt:SALV.map(([,v]) => nf1(v)).join(" + ") + " = " + nf1(EXCEDENTE),
+                               x:50, y:59, tam:4, color:AZUL, peso:700, mono:true}));
   s.play(trazar(marco2), .5);
   s.play(escribir(eq2), .7).esperar(.5);
 
@@ -316,7 +333,7 @@ function escenaMonteCarlo(){
   const J = [...DATOS_PAGINA.jugadores].sort((a,b) => DATOS_PAGINA.pgana[b] - DATOS_PAGINA.pgana[a]);
   const pmax = Math.max(...J.map(n => DATOS_PAGINA.pgana[n]));
 
-  s.add(new Texto({txt:"120.000 temporadas simuladas", x:50, y:7, tam:4.4, color:TIN,
+  s.add(new Texto({txt:nSims() + " temporadas simuladas", x:50, y:7, tam:4.4, color:TIN,
                    peso:700, display:true, visible:true, _op0:1}));
   const sub = s.add(new Texto({txt:"cada corrida juega las eliminaciones que faltan y anota quién gana",
                                x:50, y:13, tam:2.8, color:TIN3}));
@@ -352,13 +369,14 @@ function escenaMonteCarlo(){
    Reproductor
    ========================================================================== */
 function montarAnimaciones(raiz, quieto, datos){
+  DATOS_ANIM = datos;
   DATOS_PAGINA = datos;
   const CAPS = [
     {id:"identidad", nom:"El reparto de una gala", crear:escenaIdentidad,
      pie:"Cómo se lee una gala entera y por qué una resta prueba que la placa estaba completa."},
     {id:"escalas", nom:"Las dos escalas", crear:escenaDosEscalas,
      pie:"Cada línea es una jugadora. Cuanto más inclinada, más distinto la trata cada votación."},
-    {id:"montecarlo", nom:"Las 120.000 corridas", crear:escenaMonteCarlo,
+    {id:"montecarlo", nom:"Las " + nSims() + " corridas", crear:escenaMonteCarlo,
      pie:"De dónde sale cada porcentaje del pronóstico."},
   ];
 

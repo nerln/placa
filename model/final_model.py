@@ -143,8 +143,11 @@ def _topk(logw, k, rng):
     return np.argpartition(-g, k - 1)[:k]
 
 
+N_SIMS_BASE = 120_000
+
+
 def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
-            n_sims=120_000, kappa=0.0, sigma_psi_sem=0.20, beta_mu=0.85,
+            n_sims=N_SIMS_BASE, kappa=0.0, sigma_psi_sem=0.20, beta_mu=0.85,
             beta_sd=0.30, p3=0.70, semanas_a_final=4.0, seed=20260808,
             usar_estado28=True):
     rng = np.random.default_rng(seed)
@@ -268,7 +271,10 @@ def main():
 
     out = {
         "generado": _fecha_corrida(),
-        "meta": {"omega": omega, "var_rasgo": var_true,
+        # n_sims se publica en vez de quedar solo en la firma de simular():
+        # la pagina lo dice en dos sitios y la animacion en otro, y escrito tres
+        # veces a mano es cuestion de tiempo que uno de los tres mienta.
+        "meta": {"n_sims": N_SIMS_BASE, "omega": omega, "var_rasgo": var_true,
                  "icc_estable": var_true / (var_true + omega ** 2),
                  "encuesta_sesgo": bias, "encuesta_desvio": sdv,
                  "encuesta_aciertos_puesto1": list(aciertos),

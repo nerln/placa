@@ -16,6 +16,15 @@ Se recalcula **solo** después de cada gala, y el despliegue no sale si la pági
 no se puede reconstruir desde los datos del repositorio. Ver
 [ACTUALIZACION.md](ACTUALIZACION.md) y [`gui/verificar.py`](gui/verificar.py).
 
+> **Esta página no es de Gran Hermano.** Es un análisis independiente, sin
+> relación con Telefe, Kuarzo, Banijay ni con la producción del programa, y
+> nadie de ahí lo revisó ni lo respalda. «Gran Hermano» y «Big Brother» son
+> marcas de sus titulares y se nombran acá para identificar el programa del que
+> trata este análisis. Los porcentajes de gala son hechos publicados por Telefe
+> y no se reclama ningún derecho sobre ellos. La marca de la página no es el
+> logotipo del programa: es un gráfico de este pronóstico con forma de ojo
+> ([`gui/marca.py`](gui/marca.py)), y se redibuja después de cada gala.
+
 ## Por qué acá y no en un artefacto
 
 Vivió un tiempo como artefacto de Claude, que corre bajo una política de

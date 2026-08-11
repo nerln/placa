@@ -24,11 +24,13 @@
 <meta name="twitter:title" content="¿Quién gana Gran Hermano: Generación Dorada?">
 <meta name="twitter:description" content="Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.">
 <meta name="twitter:image" content="https://nerln.github.io/placa/og.png?v=2026-08-10">
-<meta name="theme-color" content="#0B0C0C">
+<meta name="theme-color" content="#EEF0F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#05182F" media="(prefers-color-scheme: dark)">
+<meta name="disclaimer" content="Analisis independiente. Sin relacion con Telefe, Kuarzo ni Banijay. Las marcas nombradas son de sus titulares.">
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"362ba63ede20c5ea","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"9556608951c4520e","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
 <script src="datos.js"></script>
 <style>
 /* ==========================================================================
@@ -107,27 +109,56 @@
   --tt-txt:#FFFFFF;
   --sobre-fuerte:#FFFFFF;
 }
+/* ---------- el modo oscuro es la gala ----------
+   La página tiene dos horarios y los sigue del sistema, sin botón: de día es
+   una página de datos sobre papel, y de noche es la hora en que el programa
+   sale al aire. El azul noche y el oro no son decoración: son los colores que
+   se ven en pantalla durante la gala, medidos sobre un frame de emisión.
+
+   El oro sustituye al negro como color del acento fuerte porque sobre azul
+   noche el negro no existe. El rechazo se queda en rojo, más claro para que
+   cumpla contraste, y el apoyo pasa a un celeste frío que no compita con el
+   oro. Contrastes contra --papel (#05182F): texto 13,4:1, secundario 8,1:1,
+   terciario 5,6:1 — todos por encima de 4,5. */
 @media (prefers-color-scheme: dark){
   :root:where(:not([data-theme="light"])){
-    --papel:#12141A;
-    --sup:#1C202A;
-    --sup2:#232833;
-    --sup3:#2C3341;
-    --tinta:#F0F2F5;
-    --tinta2:#B6BDC9;
-    --tinta3:#9BA4B3;
-    --linea:rgba(240,242,245,.18);
-    --linea2:rgba(240,242,245,.10);
-    --rechazo:#E1526B;
-    --rechazo-txt:#F58BA0;
-    --rechazo-suave:#331C24;
-    --apoyo:#3D96CC;
-    --apoyo-txt:#8FCAED;
-    --apoyo-suave:#183241;
-    --sombra-tt:#2C3341;
-    --tt-txt:#F0F2F5;
-    --sobre-fuerte:#0B0D11;
+    --papel:#05182F;
+    --sup:#0A2140;
+    --sup2:#0D2749;
+    --sup3:#123255;
+    --tinta:#F2F6FB;
+    --tinta2:#B9CBE0;
+    --tinta3:#8FA8C4;
+    --linea:rgba(200,220,240,.20);
+    --linea2:rgba(200,220,240,.11);
+    --rechazo:#E4566E;
+    --rechazo-txt:#F79AAC;
+    --rechazo-suave:#3A1522;
+    --apoyo:#4FA3D8;
+    --apoyo-txt:#93CDEE;
+    --apoyo-suave:#0C2A44;
+    --sombra-tt:#123255;
+    --tt-txt:#F2F6FB;
+    --sobre-fuerte:#04162B;
+    --oro:#E8C463;
+    --oro-txt:#F0CE6E;
   }
+  /* De noche el ojo ya está sobre fondo oscuro: no necesita su propia caja. */
+  :root:where(:not([data-theme="light"])) .ojo-marca{background:transparent; padding:5px 0 5px 0}
+  /* La placa deja de ser una isla oscura dentro de una página clara y pasa a
+     ser el sitio más iluminado de la página, como al aire. */
+  :root:where(:not([data-theme="light"])) .placa{
+    background:radial-gradient(ellipse 120% 90% at 50% 34%, #17406B 0%, #0A2A4A 52%, #04162B 100%),
+      #072138;
+    border-color:#1C4A78}
+  /* Los títulos y el pronóstico, en oro. */
+  :root:where(:not([data-theme="light"])) h1 em{color:var(--oro-txt)}
+  :root:where(:not([data-theme="light"])) .eyebrow{color:var(--oro-txt)}
+  :root:where(:not([data-theme="light"])) .cinta{background:var(--oro); color:#04162B}
+  :root:where(:not([data-theme="light"])) .veredicto{border-color:var(--oro)}
+  :root:where(:not([data-theme="light"])) .big.num{color:var(--oro-txt)}
+  /* Las publicaciones incrustadas de X sí saben ponerse oscuras: se les pide. */
+  :root:where(:not([data-theme="light"])) .tw-marco .twitter-tweet{background:var(--sup2)}
 }
 :root[data-theme="dark"]{
   --papel:#12141A;
@@ -214,9 +245,10 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
 /* El ojo de la marca. Va sobre su propio recuadro carbon porque el logo es de
    oro sobre negro y sobre papel claro el degradado se apaga: el oro necesita
    fondo oscuro para leerse como oro y no como mostaza. */
-.ojo-marca{width:46px; height:30px; flex:none; border-radius:3px; background:#0B0C0C;
-  padding:3px 4px; box-sizing:content-box}
-@media (min-width:700px){.ojo-marca{width:58px; height:38px}}
+.ojo-marca{width:52px; flex:none; border-radius:4px; background:#0B0C0C;
+  padding:5px 6px; display:block; box-sizing:content-box}
+.ojo-marca svg{display:block; width:100%; height:auto}
+@media (min-width:700px){.ojo-marca{width:64px}}
 
 .marca .txt{font-size:var(--t-xs); color:var(--tinta3); line-height:1.45}
 .marca .txt b{display:block; color:var(--tinta); font-family:"Archivo",sans-serif; font-weight:700;
@@ -592,6 +624,7 @@ footer p{max-width:84ch}
   max-width:82ch}
 .licencia a{color:var(--tinta2); text-decoration:none; border-bottom:1px solid var(--linea)}
 .licencia a:hover{color:var(--tinta); border-color:var(--tinta)}
+.aviso-marcas{border-left:2px solid var(--linea); padding-left:14px}
 .licencia code{font-family:"Archivo",monospace; font-size:.94em; letter-spacing:.02em;
   color:var(--tinta2); background:var(--sup2); padding:1px 5px; border-radius:4px}
 
@@ -826,44 +859,23 @@ footer p{max-width:84ch}
 <body>
 
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="gh-oro" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#F3D440"/><stop offset=".45" stop-color="#DE9C2E"/>
-      <stop offset="1" stop-color="#945F10"/>
-    </linearGradient>
-    <radialGradient id="gh-iris" cx=".42" cy=".34" r=".78">
-      <stop offset="0" stop-color="#F3D440"/><stop offset=".38" stop-color="#C98A1B"/>
-      <stop offset="1" stop-color="#6B4108"/>
-    </radialGradient>
-    <!-- El ojo de Gran Hermano, redibujado desde el logo oficial: la almendra
-         son dos arcos de circunferencia, el iris ocupa el 36,8% del ancho y la
-         pupila el 35% del iris. Los parpados no son un contorno cerrado, son
-         dos medialunas en simetria rotacional de 180 grados con la punta
-         enroscada hacia adentro; los dos huecos sobre el eje vertical son los
-         que dan la lectura de remolino. -->
-    <symbol id="gh-ojo" viewBox="0 0 120 78">
-      <path fill="url(#gh-oro)" d="M55.2 0.2C54.8 0.2 53.5 0.3 52.7 0.4C51.8 0.5 50.9 0.6 50.1 0.8C49.2 0.9 48.4 1.0 47.5 1.2C46.6 1.4 45.8 1.6 44.9 1.8C44.0 2.0 43.1 2.2 42.3 2.4C41.4 2.7 40.5 2.9 39.7 3.2C38.8 3.5 37.9 3.8 37.0 4.2C36.1 4.5 35.3 4.8 34.4 5.2C33.5 5.6 32.6 6.0 31.7 6.4C30.8 6.8 29.9 7.3 29.0 7.8C28.2 8.2 27.3 8.7 26.4 9.3C25.5 9.8 24.6 10.3 23.7 10.9C22.8 11.5 22.0 12.1 21.1 12.8C20.2 13.4 19.3 14.1 18.4 14.8C17.6 15.5 16.7 16.3 15.8 17.1C15.0 17.9 14.1 18.7 13.3 19.5C12.4 20.4 11.6 21.3 10.8 22.2C10.0 23.1 9.2 24.1 8.4 25.1C7.6 26.1 6.8 27.1 6.1 28.2C5.3 29.3 4.6 30.4 3.9 31.6C3.2 32.7 2.5 33.9 1.9 35.2C1.2 36.4 -0.0 37.7 -0.0 39.0C-0.0 40.3 1.2 41.6 1.9 42.8C2.5 44.1 3.2 45.3 3.9 46.4C4.6 47.6 5.3 48.7 6.1 49.8C6.8 50.9 7.6 51.9 8.4 52.9C9.2 53.9 10.0 54.9 10.8 55.8C11.6 56.7 12.4 57.6 13.3 58.5C14.1 59.3 15.0 60.1 15.8 60.9C16.7 61.7 17.6 62.5 18.4 63.2C19.3 63.9 20.2 64.6 21.1 65.2C22.0 65.9 22.8 66.5 23.7 67.1C24.6 67.7 25.5 68.2 26.4 68.7C27.3 69.3 28.2 69.8 29.0 70.2C29.9 70.7 30.8 71.2 31.7 71.6C32.6 72.0 33.5 72.4 34.4 72.8C35.3 73.2 36.1 73.5 37.0 73.8C37.9 74.2 38.8 74.5 39.7 74.8C40.5 75.1 41.4 75.3 42.3 75.6C43.1 75.8 44.0 76.0 44.9 76.2C45.8 76.4 46.6 76.6 47.5 76.8C48.4 77.0 49.2 77.1 50.1 77.2C50.9 77.4 51.8 77.5 52.7 77.6C53.5 77.7 54.8 77.8 55.2 77.8C55.7 77.9 55.6 78.2 55.2 77.8C54.9 77.5 53.8 76.3 53.0 75.8C52.3 75.3 51.5 75.1 50.7 74.8C50.0 74.5 49.2 74.2 48.5 73.9C47.7 73.5 47.0 73.2 46.3 72.8C45.6 72.5 44.8 72.1 44.1 71.7C43.5 71.3 42.8 70.9 42.1 70.5C41.4 70.0 40.8 69.6 40.1 69.1C39.5 68.6 38.9 68.1 38.3 67.6C37.7 67.1 37.1 66.6 36.5 66.0C36.0 65.5 35.4 64.9 34.9 64.3C34.4 63.8 33.9 63.2 33.4 62.5C32.9 61.9 32.4 61.3 32.0 60.7C31.6 60.0 31.1 59.4 30.8 58.7C30.4 58.0 30.0 57.3 29.7 56.6C29.3 56.0 29.0 55.3 28.7 54.5C28.4 53.8 28.1 53.1 27.9 52.4C27.6 51.7 27.4 50.9 27.2 50.2C27.0 49.5 26.8 48.7 26.7 48.0C26.5 47.2 26.4 46.5 26.3 45.8C26.2 45.0 26.1 44.3 26.0 43.5C25.9 42.8 25.9 42.0 25.8 41.3C25.8 40.5 25.8 39.8 25.8 39.0C25.8 38.2 25.8 37.5 25.8 36.7C25.9 36.0 25.9 35.2 26.0 34.5C26.1 33.7 26.2 33.0 26.3 32.2C26.4 31.5 26.5 30.8 26.7 30.0C26.8 29.3 27.0 28.5 27.2 27.8C27.4 27.1 27.6 26.3 27.9 25.6C28.1 24.9 28.4 24.2 28.7 23.5C29.0 22.7 29.3 22.0 29.7 21.4C30.0 20.7 30.4 20.0 30.8 19.3C31.1 18.6 31.6 18.0 32.0 17.3C32.4 16.7 32.9 16.1 33.4 15.5C33.9 14.8 34.4 14.2 34.9 13.7C35.4 13.1 36.0 12.5 36.5 12.0C37.1 11.4 37.7 10.9 38.3 10.4C38.9 9.9 39.5 9.4 40.1 8.9C40.8 8.4 41.4 8.0 42.1 7.5C42.8 7.1 43.5 6.7 44.1 6.3C44.8 5.9 45.6 5.5 46.3 5.2C47.0 4.8 47.7 4.5 48.5 4.1C49.2 3.8 50.0 3.5 50.7 3.2C51.5 2.9 52.3 2.7 53.0 2.2C53.8 1.7 54.9 0.5 55.2 0.2C55.6 -0.2 55.7 0.1 55.2 0.2Z"/>
-      <path fill="url(#gh-oro)" d="M64.8 77.8C65.2 77.8 66.5 77.7 67.3 77.6C68.2 77.5 69.1 77.4 69.9 77.2C70.8 77.1 71.6 77.0 72.5 76.8C73.4 76.6 74.2 76.4 75.1 76.2C76.0 76.0 76.9 75.8 77.7 75.6C78.6 75.3 79.5 75.1 80.3 74.8C81.2 74.5 82.1 74.2 83.0 73.8C83.9 73.5 84.7 73.2 85.6 72.8C86.5 72.4 87.4 72.0 88.3 71.6C89.2 71.2 90.1 70.7 91.0 70.2C91.8 69.8 92.7 69.3 93.6 68.7C94.5 68.2 95.4 67.7 96.3 67.1C97.2 66.5 98.0 65.9 98.9 65.2C99.8 64.6 100.7 63.9 101.6 63.2C102.4 62.5 103.3 61.7 104.2 60.9C105.0 60.1 105.9 59.3 106.7 58.5C107.6 57.6 108.4 56.7 109.2 55.8C110.0 54.9 110.8 53.9 111.6 52.9C112.4 51.9 113.2 50.9 113.9 49.8C114.7 48.7 115.4 47.6 116.1 46.4C116.8 45.3 117.5 44.1 118.1 42.8C118.8 41.6 120.0 40.3 120.0 39.0C120.0 37.7 118.8 36.4 118.1 35.2C117.5 33.9 116.8 32.7 116.1 31.6C115.4 30.4 114.7 29.3 113.9 28.2C113.2 27.1 112.4 26.1 111.6 25.1C110.8 24.1 110.0 23.1 109.2 22.2C108.4 21.3 107.6 20.4 106.7 19.5C105.9 18.7 105.0 17.9 104.2 17.1C103.3 16.3 102.4 15.5 101.6 14.8C100.7 14.1 99.8 13.4 98.9 12.8C98.0 12.1 97.2 11.5 96.3 10.9C95.4 10.3 94.5 9.8 93.6 9.3C92.7 8.7 91.8 8.2 91.0 7.8C90.1 7.3 89.2 6.8 88.3 6.4C87.4 6.0 86.5 5.6 85.6 5.2C84.7 4.8 83.9 4.5 83.0 4.2C82.1 3.8 81.2 3.5 80.3 3.2C79.5 2.9 78.6 2.7 77.7 2.4C76.9 2.2 76.0 2.0 75.1 1.8C74.2 1.6 73.4 1.4 72.5 1.2C71.6 1.0 70.8 0.9 69.9 0.8C69.1 0.6 68.2 0.5 67.3 0.4C66.5 0.3 65.2 0.2 64.8 0.2C64.3 0.1 64.4 -0.2 64.8 0.2C65.1 0.5 66.2 1.7 67.0 2.2C67.7 2.7 68.5 2.9 69.3 3.2C70.0 3.5 70.8 3.8 71.5 4.1C72.3 4.5 73.0 4.8 73.7 5.2C74.4 5.5 75.2 5.9 75.9 6.3C76.5 6.7 77.2 7.1 77.9 7.5C78.6 8.0 79.2 8.4 79.9 8.9C80.5 9.4 81.1 9.9 81.7 10.4C82.3 10.9 82.9 11.4 83.5 12.0C84.0 12.5 84.6 13.1 85.1 13.7C85.6 14.2 86.1 14.8 86.6 15.5C87.1 16.1 87.6 16.7 88.0 17.3C88.4 18.0 88.9 18.6 89.2 19.3C89.6 20.0 90.0 20.7 90.3 21.4C90.7 22.0 91.0 22.7 91.3 23.5C91.6 24.2 91.9 24.9 92.1 25.6C92.4 26.3 92.6 27.1 92.8 27.8C93.0 28.5 93.2 29.3 93.3 30.0C93.5 30.8 93.6 31.5 93.7 32.2C93.8 33.0 93.9 33.7 94.0 34.5C94.1 35.2 94.1 36.0 94.2 36.7C94.2 37.5 94.2 38.2 94.2 39.0C94.2 39.8 94.2 40.5 94.2 41.3C94.1 42.0 94.1 42.8 94.0 43.5C93.9 44.3 93.8 45.0 93.7 45.8C93.6 46.5 93.5 47.2 93.3 48.0C93.2 48.7 93.0 49.5 92.8 50.2C92.6 50.9 92.4 51.7 92.1 52.4C91.9 53.1 91.6 53.8 91.3 54.5C91.0 55.3 90.7 56.0 90.3 56.6C90.0 57.3 89.6 58.0 89.2 58.7C88.9 59.4 88.4 60.0 88.0 60.7C87.6 61.3 87.1 61.9 86.6 62.5C86.1 63.2 85.6 63.8 85.1 64.3C84.6 64.9 84.0 65.5 83.5 66.0C82.9 66.6 82.3 67.1 81.7 67.6C81.1 68.1 80.5 68.6 79.9 69.1C79.2 69.6 78.6 70.0 77.9 70.5C77.2 70.9 76.5 71.3 75.9 71.7C75.2 72.1 74.4 72.5 73.7 72.8C73.0 73.2 72.3 73.5 71.5 73.9C70.8 74.2 70.0 74.5 69.3 74.8C68.5 75.1 67.7 75.3 67.0 75.8C66.2 76.3 65.1 77.5 64.8 77.8C64.4 78.2 64.3 77.9 64.8 77.8Z"/>
-      <circle cx="60" cy="39" r="22.1" fill="url(#gh-iris)"/>
-      <circle cx="60" cy="39" r="7.7" fill="#2A1608"/>
-      <ellipse cx="52" cy="30" rx="6.4" ry="4.4" fill="#FDF3C8" opacity=".62"
-        transform="rotate(-28 52 30)"/>
-    </symbol>
-    <!-- Version de una tinta, para donde el degradado no se lee: el pie, un
-         icono de 16px, la impresion. -->
-    <symbol id="gh-ojo-plano" viewBox="0 0 120 78">
-      <path fill="currentColor" d="M55.2 0.2C54.8 0.2 53.5 0.3 52.7 0.4C51.8 0.5 50.9 0.6 50.1 0.8C49.2 0.9 48.4 1.0 47.5 1.2C46.6 1.4 45.8 1.6 44.9 1.8C44.0 2.0 43.1 2.2 42.3 2.4C41.4 2.7 40.5 2.9 39.7 3.2C38.8 3.5 37.9 3.8 37.0 4.2C36.1 4.5 35.3 4.8 34.4 5.2C33.5 5.6 32.6 6.0 31.7 6.4C30.8 6.8 29.9 7.3 29.0 7.8C28.2 8.2 27.3 8.7 26.4 9.3C25.5 9.8 24.6 10.3 23.7 10.9C22.8 11.5 22.0 12.1 21.1 12.8C20.2 13.4 19.3 14.1 18.4 14.8C17.6 15.5 16.7 16.3 15.8 17.1C15.0 17.9 14.1 18.7 13.3 19.5C12.4 20.4 11.6 21.3 10.8 22.2C10.0 23.1 9.2 24.1 8.4 25.1C7.6 26.1 6.8 27.1 6.1 28.2C5.3 29.3 4.6 30.4 3.9 31.6C3.2 32.7 2.5 33.9 1.9 35.2C1.2 36.4 -0.0 37.7 -0.0 39.0C-0.0 40.3 1.2 41.6 1.9 42.8C2.5 44.1 3.2 45.3 3.9 46.4C4.6 47.6 5.3 48.7 6.1 49.8C6.8 50.9 7.6 51.9 8.4 52.9C9.2 53.9 10.0 54.9 10.8 55.8C11.6 56.7 12.4 57.6 13.3 58.5C14.1 59.3 15.0 60.1 15.8 60.9C16.7 61.7 17.6 62.5 18.4 63.2C19.3 63.9 20.2 64.6 21.1 65.2C22.0 65.9 22.8 66.5 23.7 67.1C24.6 67.7 25.5 68.2 26.4 68.7C27.3 69.3 28.2 69.8 29.0 70.2C29.9 70.7 30.8 71.2 31.7 71.6C32.6 72.0 33.5 72.4 34.4 72.8C35.3 73.2 36.1 73.5 37.0 73.8C37.9 74.2 38.8 74.5 39.7 74.8C40.5 75.1 41.4 75.3 42.3 75.6C43.1 75.8 44.0 76.0 44.9 76.2C45.8 76.4 46.6 76.6 47.5 76.8C48.4 77.0 49.2 77.1 50.1 77.2C50.9 77.4 51.8 77.5 52.7 77.6C53.5 77.7 54.8 77.8 55.2 77.8C55.7 77.9 55.6 78.2 55.2 77.8C54.9 77.5 53.8 76.3 53.0 75.8C52.3 75.3 51.5 75.1 50.7 74.8C50.0 74.5 49.2 74.2 48.5 73.9C47.7 73.5 47.0 73.2 46.3 72.8C45.6 72.5 44.8 72.1 44.1 71.7C43.5 71.3 42.8 70.9 42.1 70.5C41.4 70.0 40.8 69.6 40.1 69.1C39.5 68.6 38.9 68.1 38.3 67.6C37.7 67.1 37.1 66.6 36.5 66.0C36.0 65.5 35.4 64.9 34.9 64.3C34.4 63.8 33.9 63.2 33.4 62.5C32.9 61.9 32.4 61.3 32.0 60.7C31.6 60.0 31.1 59.4 30.8 58.7C30.4 58.0 30.0 57.3 29.7 56.6C29.3 56.0 29.0 55.3 28.7 54.5C28.4 53.8 28.1 53.1 27.9 52.4C27.6 51.7 27.4 50.9 27.2 50.2C27.0 49.5 26.8 48.7 26.7 48.0C26.5 47.2 26.4 46.5 26.3 45.8C26.2 45.0 26.1 44.3 26.0 43.5C25.9 42.8 25.9 42.0 25.8 41.3C25.8 40.5 25.8 39.8 25.8 39.0C25.8 38.2 25.8 37.5 25.8 36.7C25.9 36.0 25.9 35.2 26.0 34.5C26.1 33.7 26.2 33.0 26.3 32.2C26.4 31.5 26.5 30.8 26.7 30.0C26.8 29.3 27.0 28.5 27.2 27.8C27.4 27.1 27.6 26.3 27.9 25.6C28.1 24.9 28.4 24.2 28.7 23.5C29.0 22.7 29.3 22.0 29.7 21.4C30.0 20.7 30.4 20.0 30.8 19.3C31.1 18.6 31.6 18.0 32.0 17.3C32.4 16.7 32.9 16.1 33.4 15.5C33.9 14.8 34.4 14.2 34.9 13.7C35.4 13.1 36.0 12.5 36.5 12.0C37.1 11.4 37.7 10.9 38.3 10.4C38.9 9.9 39.5 9.4 40.1 8.9C40.8 8.4 41.4 8.0 42.1 7.5C42.8 7.1 43.5 6.7 44.1 6.3C44.8 5.9 45.6 5.5 46.3 5.2C47.0 4.8 47.7 4.5 48.5 4.1C49.2 3.8 50.0 3.5 50.7 3.2C51.5 2.9 52.3 2.7 53.0 2.2C53.8 1.7 54.9 0.5 55.2 0.2C55.6 -0.2 55.7 0.1 55.2 0.2Z"/>
-      <path fill="currentColor" d="M64.8 77.8C65.2 77.8 66.5 77.7 67.3 77.6C68.2 77.5 69.1 77.4 69.9 77.2C70.8 77.1 71.6 77.0 72.5 76.8C73.4 76.6 74.2 76.4 75.1 76.2C76.0 76.0 76.9 75.8 77.7 75.6C78.6 75.3 79.5 75.1 80.3 74.8C81.2 74.5 82.1 74.2 83.0 73.8C83.9 73.5 84.7 73.2 85.6 72.8C86.5 72.4 87.4 72.0 88.3 71.6C89.2 71.2 90.1 70.7 91.0 70.2C91.8 69.8 92.7 69.3 93.6 68.7C94.5 68.2 95.4 67.7 96.3 67.1C97.2 66.5 98.0 65.9 98.9 65.2C99.8 64.6 100.7 63.9 101.6 63.2C102.4 62.5 103.3 61.7 104.2 60.9C105.0 60.1 105.9 59.3 106.7 58.5C107.6 57.6 108.4 56.7 109.2 55.8C110.0 54.9 110.8 53.9 111.6 52.9C112.4 51.9 113.2 50.9 113.9 49.8C114.7 48.7 115.4 47.6 116.1 46.4C116.8 45.3 117.5 44.1 118.1 42.8C118.8 41.6 120.0 40.3 120.0 39.0C120.0 37.7 118.8 36.4 118.1 35.2C117.5 33.9 116.8 32.7 116.1 31.6C115.4 30.4 114.7 29.3 113.9 28.2C113.2 27.1 112.4 26.1 111.6 25.1C110.8 24.1 110.0 23.1 109.2 22.2C108.4 21.3 107.6 20.4 106.7 19.5C105.9 18.7 105.0 17.9 104.2 17.1C103.3 16.3 102.4 15.5 101.6 14.8C100.7 14.1 99.8 13.4 98.9 12.8C98.0 12.1 97.2 11.5 96.3 10.9C95.4 10.3 94.5 9.8 93.6 9.3C92.7 8.7 91.8 8.2 91.0 7.8C90.1 7.3 89.2 6.8 88.3 6.4C87.4 6.0 86.5 5.6 85.6 5.2C84.7 4.8 83.9 4.5 83.0 4.2C82.1 3.8 81.2 3.5 80.3 3.2C79.5 2.9 78.6 2.7 77.7 2.4C76.9 2.2 76.0 2.0 75.1 1.8C74.2 1.6 73.4 1.4 72.5 1.2C71.6 1.0 70.8 0.9 69.9 0.8C69.1 0.6 68.2 0.5 67.3 0.4C66.5 0.3 65.2 0.2 64.8 0.2C64.3 0.1 64.4 -0.2 64.8 0.2C65.1 0.5 66.2 1.7 67.0 2.2C67.7 2.7 68.5 2.9 69.3 3.2C70.0 3.5 70.8 3.8 71.5 4.1C72.3 4.5 73.0 4.8 73.7 5.2C74.4 5.5 75.2 5.9 75.9 6.3C76.5 6.7 77.2 7.1 77.9 7.5C78.6 8.0 79.2 8.4 79.9 8.9C80.5 9.4 81.1 9.9 81.7 10.4C82.3 10.9 82.9 11.4 83.5 12.0C84.0 12.5 84.6 13.1 85.1 13.7C85.6 14.2 86.1 14.8 86.6 15.5C87.1 16.1 87.6 16.7 88.0 17.3C88.4 18.0 88.9 18.6 89.2 19.3C89.6 20.0 90.0 20.7 90.3 21.4C90.7 22.0 91.0 22.7 91.3 23.5C91.6 24.2 91.9 24.9 92.1 25.6C92.4 26.3 92.6 27.1 92.8 27.8C93.0 28.5 93.2 29.3 93.3 30.0C93.5 30.8 93.6 31.5 93.7 32.2C93.8 33.0 93.9 33.7 94.0 34.5C94.1 35.2 94.1 36.0 94.2 36.7C94.2 37.5 94.2 38.2 94.2 39.0C94.2 39.8 94.2 40.5 94.2 41.3C94.1 42.0 94.1 42.8 94.0 43.5C93.9 44.3 93.8 45.0 93.7 45.8C93.6 46.5 93.5 47.2 93.3 48.0C93.2 48.7 93.0 49.5 92.8 50.2C92.6 50.9 92.4 51.7 92.1 52.4C91.9 53.1 91.6 53.8 91.3 54.5C91.0 55.3 90.7 56.0 90.3 56.6C90.0 57.3 89.6 58.0 89.2 58.7C88.9 59.4 88.4 60.0 88.0 60.7C87.6 61.3 87.1 61.9 86.6 62.5C86.1 63.2 85.6 63.8 85.1 64.3C84.6 64.9 84.0 65.5 83.5 66.0C82.9 66.6 82.3 67.1 81.7 67.6C81.1 68.1 80.5 68.6 79.9 69.1C79.2 69.6 78.6 70.0 77.9 70.5C77.2 70.9 76.5 71.3 75.9 71.7C75.2 72.1 74.4 72.5 73.7 72.8C73.0 73.2 72.3 73.5 71.5 73.9C70.8 74.2 70.0 74.5 69.3 74.8C68.5 75.1 67.7 75.3 67.0 75.8C66.2 76.3 65.1 77.5 64.8 77.8C64.4 78.2 64.3 77.9 64.8 77.8Z"/>
-      <circle cx="60" cy="39" r="22.1" fill="currentColor" opacity=".55"/>
-      <circle cx="60" cy="39" r="7.7" fill="currentColor"/>
-    </symbol>
-  </defs>
-</svg>
 <div class="wrap">
 <header>
   <div class="marca">
-    <svg class="ojo-marca" viewBox="0 0 120 78" aria-hidden="true"><use href="#gh-ojo"/></svg>
+    <span class="ojo-marca"><svg viewBox="0 0 120 78" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un ojo cuyo iris son las 9 probabilidades de ganar">
+  <path d="M1.60 39.00A64.30 64.30 0 0 1 118.40 39.00A64.30 64.30 0 0 1 1.60 39.00Z" fill="none" stroke="#C2A550" stroke-width="2.1"/>
+  <g>
+    <path fill="#F0CE6E" d="M60.00 18.00A21.0 21.0 0 0 1 80.49 34.39L72.88 36.10A13.2 13.2 0 0 0 60.00 25.80Z"/>
+    <path fill="#C2A550" d="M80.68 35.32A21.0 21.0 0 0 1 71.65 56.47L67.32 49.98A13.2 13.2 0 0 0 73.00 36.69Z"/>
+    <path fill="#C2A550" d="M70.84 56.98A21.0 21.0 0 0 1 48.54 56.59L52.79 50.06A13.2 13.2 0 0 0 66.82 50.30Z"/>
+    <path fill="#7A6430" d="M47.75 56.06A21.0 21.0 0 0 1 39.29 42.49L46.98 41.19A13.2 13.2 0 0 0 52.30 49.72Z"/>
+    <path fill="#7A6430" d="M39.15 41.54A21.0 21.0 0 0 1 42.23 27.82L48.83 31.97A13.2 13.2 0 0 0 46.90 40.60Z"/>
+    <path fill="#7A6430" d="M42.75 27.02A21.0 21.0 0 0 1 49.26 20.96L53.25 27.66A13.2 13.2 0 0 0 49.16 31.47Z"/>
+    <path fill="#7A6430" d="M50.09 20.49A21.0 21.0 0 0 1 54.58 18.71L56.59 26.25A13.2 13.2 0 0 0 53.77 27.36Z"/>
+    <path fill="#7A6430" d="M55.50 18.49A21.0 21.0 0 0 1 58.05 18.09L58.78 25.86A13.2 13.2 0 0 0 57.17 26.11Z"/>
+    <path fill="#7A6430" d="M59.00 18.02A21.0 21.0 0 0 1 59.05 18.02L59.40 25.81A13.2 13.2 0 0 0 59.37 25.81Z"/>
+  </g>
+</svg></span>
     <span class="txt"><b>Gran Hermano Argentina</b><span id="sub-marca"></span></span>
     <span class="cinta"><i></i><span id="prox-gala"></span></span>
   </div>
@@ -1003,8 +1015,8 @@ footer p{max-width:84ch}
 
 <section id="animaciones">
   <div class="eyebrow">En movimiento</div>
-  <div class="titulo"><h2 class="tit">Lo que cuesta explicar quieto</h2></div>
-  <p class="sub">Tres gráficos que se dibujan solos para mostrar de dónde sale cada número, y que después quedan quietos para poder leerlos. Se calculan acá mismo a la resolución de tu pantalla: no son video.</p>
+  <div class="titulo"><h2 class="tit">De dónde sale cada número</h2></div>
+  <p class="sub" id="sub-anim"></p>
   <div class="anim" id="anim"></div>
 </section>
 
@@ -1174,6 +1186,14 @@ footer p{max-width:84ch}
       <a href="https://x.com/nerellone">@nerellone</a>
     </div>
   </div>
+  <p class="licencia aviso-marcas"><b>Esta página no es de Gran Hermano.</b> Es un análisis
+  independiente, sin relación con Telefe, Kuarzo, Banijay ni con la producción del programa, y
+  nadie de ahí la revisó ni la respalda. «Gran Hermano» y «Big Brother» son marcas de sus
+  titulares y se nombran acá para identificar el programa del que trata este análisis, que es
+  para lo que sirve nombrar una marca ajena. El ojo de arriba no es el logotipo del programa:
+  es un gráfico de este pronóstico con forma de ojo, y se redibuja después de cada gala.
+  Los datos de gala son hechos publicados por Telefe y no se reclama ningún derecho sobre
+  ellos; las publicaciones incrustadas son de sus autores y las sirve la propia plataforma.</p>
   <p class="licencia">© 2026 <a rel="author" href="https://nerln.pages.dev">Eugenio
   Nerelli</a>. Código bajo <a href="https://github.com/nerln/placa/blob/main/LICENSE">Apache-2.0</a>;
   datos y textos bajo <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY
@@ -1267,6 +1287,24 @@ const FECHA_LARGA = f => { if(!f) return "";
   const [y,m,d]=f.split("-").map(Number);
   const M=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
   return `${d} de ${M[m-1]}`; };
+
+const DIA_SEM = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+/* Cuándo fue algo, contado desde el reloj de quien lee. Escribir «anoche» en el
+   HTML sale mal en cuanto alguien abre la página dos días después, que es lo
+   normal: la página solo se regenera cuando hay gala. */
+const CUANDO_FUE = f => {
+  if(!f) return "";
+  const [y,m,d] = f.split("-").map(Number);
+  const cuando = new Date(y, m-1, d);
+  const hoy = new Date(); hoy.setHours(0,0,0,0);
+  const dias = Math.round((hoy - cuando) / 86400000);
+  if(dias <= 0) return "hoy";
+  if(dias === 1) return "anoche";
+  if(dias === 2) return "anteanoche";
+  if(dias < 7)   return "el " + DIA_SEM[cuando.getDay()];
+  return "el " + FECHA_LARGA(f);
+};
+
 
 const tt = $("#tt");
 function bindTT(node, html){
@@ -1405,11 +1443,12 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
   const soloMujeres = generos.size === 1 && generos.has("f");
   const ultimo = (D.eliminados || [])[0];
   $("#sub-placa").innerHTML = !conPlaca
-    ? (ultimo ? "Anoche salió <b>" + ultimo.apodo + "</b>" +
+    ? (ultimo ? (CUANDO_FUE(D.generado)[0].toUpperCase() + CUANDO_FUE(D.generado).slice(1)) +
+        " salió <b>" + ultimo.apodo + "</b>" +
         (soloMujeres ? ", el último varón: la casa queda con " + D.jugadores.length +
                        " mujeres y la final será la primera de esta edición sin ningún hombre. " : ". ")
        : "")
-      + "La gala de nominación es a mitad de semana, así que hoy nadie está nominada. El modelo "
+      + "Hasta la gala de nominación, a mitad de semana, no hay nadie en placa. El modelo "
       + "no se queda sin decir nada: sortea la placa por propensión, como hace con todas las "
       + "semanas futuras, y de ahí sale el riesgo de ser la próxima en irse."
     : D.encuesta && D.encuesta.cuota && Object.keys(D.encuesta.cuota).length
@@ -2549,7 +2588,7 @@ function contar(nodo){
     const vs = ultima && ultima.publicado ? ultima.publicado.versus : null;
     $("#intro-medicion").innerHTML = elim
       ? "Hasta el miércoles no hay placa nueva, así que tampoco hay encuesta que enfrentar: " +
-        "lo último que se midió fue la gala del lunes. <b>" + elim + "</b> salió con " +
+        "lo último que se midió fue la gala de " + CUANDO_FUE(D.generado) + ". <b>" + elim + "</b> salió con " +
         pc(g[0][1]/100, 1) + " del total de la placa" +
         (vs && vs[elim] ? " —" + nf(vs[elim],0) + "% en el mano a mano final, que es el número " +
          "que canta Telefe— " : ", ") +
@@ -2961,14 +3000,27 @@ function leerPaleta(){
   CARRIL = v("--sup3")      || "#E7EAEE";
 }
 
+let DATOS_ANIM = {};
+
+// El numero de simulaciones lo publica el modelo (resultados.json -> meta), no
+// se escribe a mano en cada sitio donde aparece.
+const nSims = () => ((DATOS_ANIM.n_sims || 0).toLocaleString("es-AR")) || "120.000";
+
 /* --- 1. El reparto real de una gala, como barra apilada ------------------- */
 function escenaIdentidad(){
   leerPaleta();
   const s = new Escena();
-  const DATOS = [["Luana",0.1],["Juanicar",0.3],["Hanssen",0.5],["Majluf",0.9],["Sol",46.7],["Campanita",53.3]];
-  const total = DATOS.reduce((a,[,v])=>a+v,0);                 // 101,8
+  // La gala que se explica es la ULTIMA que se jugó, no una elegida a mano: si
+  // alguien entra el martes quiere ver la del lunes, no la de hace tres
+  // semanas. Todo lo que sigue se deriva de sus cifras publicadas.
+  const G = DATOS_ANIM.gala;
+  const DATOS = G.filas;
+  const total = DATOS.reduce((a,[,v])=>a+v,0);
+  const EXCEDENTE = +(total - 100).toFixed(1);
+  const SALV = DATOS.filter(([,v]) => v < 40);
+  const nf1 = v => String(v).replace(".", ",");
 
-  s.add(new Texto({txt:"Gala 27 · 3 de agosto", x:6, y:8, tam:4.4, color:TIN, peso:700,
+  s.add(new Texto({txt:"Gala " + G.gala + " · " + G.fecha, x:6, y:8, tam:4.4, color:TIN, peso:700,
                    alinear:"left", display:true, visible:true, _op0:1}));
   const sub = s.add(new Texto({txt:"reparto del voto para eliminar, como lo publicó Telefe",
                                x:6, y:14, tam:3, color:TIN3, alinear:"left"}));
@@ -2993,23 +3045,27 @@ function escenaIdentidad(){
   s.esperar(.6);
 
   // la suma no da 100
-  const suma = s.add(new Texto({txt:"suman 101,8 %", x:50, y:47, tam:4.6, color:TIN, peso:700, display:true}));
+  const suma = s.add(new Texto({txt:"suman " + nf1(+total.toFixed(1)) + " %", x:50, y:47, tam:4.6,
+                                color:TIN, peso:700, display:true}));
   s.play(aparecer(suma, -1.5), .5).esperar(.9);
 
   // el mano a mano se reparte sobre el residuo
-  const marco = s.add(new Marco({x:X0 + ANCHO*(1 - (46.7+53.3)/total/2), y:Y+ALTO/2,
-                                 w:ANCHO*(46.7+53.3)/total, h:ALTO+3, color:ROJO, ancho:.4, r:.8}));
+  const VS = DATOS.filter(([,v]) => v >= 40).reduce((a,[,v]) => a+v, 0);
+  const marco = s.add(new Marco({x:X0 + ANCHO*(1 - VS/total/2), y:Y+ALTO/2,
+                                 w:ANCHO*VS/total, h:ALTO+3, color:ROJO, ancho:.4, r:.8}));
   const nota = s.add(new Texto({txt:"el mano a mano se renormaliza al 100 %\nsobre lo que quedaba sin repartir",
                                 x:50, y:58, tam:3.1, color:ROJO}));
   s.play([trazar(marco), aparecer(nota)], .55).esperar(1.6);
   s.play([desaparecer(marco), desaparecer(nota), desaparecer(suma)], .4);
 
   // la identidad, escrita
-  const eq1 = s.add(new Texto({txt:"101,8 − 100 = 1,8", x:50, y:50, tam:5, color:TIN, peso:700, display:true}));
+  const eq1 = s.add(new Texto({txt:nf1(+total.toFixed(1)) + " − 100 = " + nf1(EXCEDENTE),
+                               x:50, y:50, tam:5, color:TIN, peso:700, display:true}));
   s.play(escribir(eq1), .7).esperar(.4);
-  const marco2 = s.add(new Marco({x:X0 + ANCHO*(1.8/total)/2, y:Y+ALTO/2,
-                                  w:Math.max(ANCHO*1.8/total, 2.4), h:ALTO+3, color:AZUL, ancho:.4, r:.6}));
-  const eq2 = s.add(new Texto({txt:"0,1 + 0,3 + 0,5 + 0,9 = 1,8", x:50, y:59, tam:4, color:AZUL, peso:700, mono:true}));
+  const marco2 = s.add(new Marco({x:X0 + ANCHO*(EXCEDENTE/total)/2, y:Y+ALTO/2,
+                                  w:Math.max(ANCHO*EXCEDENTE/total, 2.4), h:ALTO+3, color:AZUL, ancho:.4, r:.6}));
+  const eq2 = s.add(new Texto({txt:SALV.map(([,v]) => nf1(v)).join(" + ") + " = " + nf1(EXCEDENTE),
+                               x:50, y:59, tam:4, color:AZUL, peso:700, mono:true}));
   s.play(trazar(marco2), .5);
   s.play(escribir(eq2), .7).esperar(.5);
 
@@ -3068,7 +3124,7 @@ function escenaMonteCarlo(){
   const J = [...DATOS_PAGINA.jugadores].sort((a,b) => DATOS_PAGINA.pgana[b] - DATOS_PAGINA.pgana[a]);
   const pmax = Math.max(...J.map(n => DATOS_PAGINA.pgana[n]));
 
-  s.add(new Texto({txt:"120.000 temporadas simuladas", x:50, y:7, tam:4.4, color:TIN,
+  s.add(new Texto({txt:nSims() + " temporadas simuladas", x:50, y:7, tam:4.4, color:TIN,
                    peso:700, display:true, visible:true, _op0:1}));
   const sub = s.add(new Texto({txt:"cada corrida juega las eliminaciones que faltan y anota quién gana",
                                x:50, y:13, tam:2.8, color:TIN3}));
@@ -3104,13 +3160,14 @@ function escenaMonteCarlo(){
    Reproductor
    ========================================================================== */
 function montarAnimaciones(raiz, quieto, datos){
+  DATOS_ANIM = datos;
   DATOS_PAGINA = datos;
   const CAPS = [
     {id:"identidad", nom:"El reparto de una gala", crear:escenaIdentidad,
      pie:"Cómo se lee una gala entera y por qué una resta prueba que la placa estaba completa."},
     {id:"escalas", nom:"Las dos escalas", crear:escenaDosEscalas,
      pie:"Cada línea es una jugadora. Cuanto más inclinada, más distinto la trata cada votación."},
-    {id:"montecarlo", nom:"Las 120.000 corridas", crear:escenaMonteCarlo,
+    {id:"montecarlo", nom:"Las " + nSims() + " corridas", crear:escenaMonteCarlo,
      pie:"De dónde sale cada porcentaje del pronóstico."},
   ];
 
@@ -3221,8 +3278,31 @@ return montarAnimaciones;
 })();
 
 
+(function(){
+  const g = D.galas[D.galas.length - 1];
+  const sa = $("#sub-anim");
+  // Nada de «anoche» ni «anteanoche»: la página es estática y alguien puede
+  // abrirla el jueves. La fecha, escrita, no envejece.
+  const nSims = D.meta.n_sims || 0;
+  if(sa) sa.innerHTML =
+    "La comprobación aritmética de la <b>gala " + g.gala + "</b>, la del " + FECHA_LARGA(g.fecha) +
+    "; las dos escalas de voto que el modelo se empeña en no mezclar; y qué forma tiene la " +
+    "incertidumbre después de correr la temporada " +
+    (nSims ? nf(nSims/1000, 0) + " mil" : "miles de") + " veces.";
+})();
+
 montarAnimaciones(document.getElementById("anim"), quieto, {
-  jugadores: D.jugadores, mu: D.mu, psi: D.psi, pgana: base.p_gana
+  jugadores: D.jugadores, mu: D.mu, psi: D.psi, pgana: base.p_gana,
+  n_sims: D.meta.n_sims,
+  // La escena de la identidad aritmética se dibuja con la última gala jugada.
+  // Los salvados van primero y de menor a mayor, que es el orden en que los
+  // canta Telefe, y el mano a mano cierra la barra.
+  gala: (function(){
+    const g = D.galas[D.galas.length - 1];
+    const salv = Object.entries(g.publicado.salvados).sort((a,b) => a[1]-b[1]);
+    const vs = Object.entries(g.publicado.versus).sort((a,b) => a[1]-b[1]);
+    return {gala: g.gala, fecha: FECHA_LARGA(g.fecha), filas: salv.concat(vs)};
+  })()
 });
 </script>
 

@@ -21,6 +21,16 @@ Las dos licencias piden lo mismo: **que el crédito viaje con la obra**.
 Si se borra la atribución, la licencia **se termina sola**: Apache-2.0 §4 y
 CC BY 4.0 §6.1. El uso pasa a ser infracción, no uso licenciado.
 
+## Lo que no es mío y no se reclama
+
+«Gran Hermano» y «Big Brother» son marcas de sus titulares. Esta página las
+nombra para identificar el programa del que habla, que es para lo que sirve
+nombrar una marca ajena, y no está afiliada a Telefe, Kuarzo ni Banijay. La
+marca de la página **no** es el logotipo del programa: es un gráfico de este
+pronóstico con forma de ojo, generado por `gui/marca.py` desde los datos de la
+corrida. Hubo una versión anterior que redibujaba el logotipo oficial midiéndolo
+y se retiró: salía parecidísimo, y ése era el problema.
+
 ## Lo que esta licencia NO cubre
 
 Los porcentajes de gala que publica Telefe son hechos y no me pertenecen. Lo que
