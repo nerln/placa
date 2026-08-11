@@ -114,9 +114,38 @@ def identidad_telefe():
     return err
 
 
+def tarjeta_al_dia():
+    """La previsualizacion del enlace tiene que ser de esta corrida.
+
+    build.py no la toca, asi que se puede reconstruir la pagina y olvidarse de
+    tarjeta.py: la pagina diria una cosa y el enlace compartido otra, sin que
+    nada se rompa. Por eso tarjeta.py deja la firma de la corrida dentro del
+    PNG y aca se lee. Se compara la firma, no los pixeles: el rasterizado
+    depende de la version de la libreria y compararlo daria falsos negativos.
+    """
+    png = WEB / "og.png"
+    if not png.exists():
+        return fallo("falta web/og.png: correr gui/tarjeta.py")
+    from PIL import Image                                       # noqa: PLC0415
+    sys.path.insert(0, str(ROOT / "gui"))
+    from tarjeta import firma                                   # noqa: PLC0415
+
+    res = json.loads((ROOT / "data" / "resultados.json").read_text())
+    esperada = firma(res["escenarios"]["base"]["p_gana"], res["generado"])
+    tiene = Image.open(png).text.get("corrida", "")
+    if tiene != esperada:
+        return fallo("web/og.png se dibujo con otra corrida.\n"
+                     f"    tiene:   {tiene or '(sin firma)'}\n"
+                     f"    espera:  {esperada}\n"
+                     "    Correr gui/tarjeta.py.")
+    print("  ok · web/og.png es de esta corrida")
+    return 0
+
+
 def main():
     print("verificando lo que se va a publicar")
-    err = (reconstruible() + probabilidades() + ramas_cierran() + identidad_telefe())
+    err = (reconstruible() + probabilidades() + ramas_cierran() +
+           identidad_telefe() + tarjeta_al_dia())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")
         sys.exit(1)

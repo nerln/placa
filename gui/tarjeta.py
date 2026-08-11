@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, PngImagePlugin
 
 ROOT = Path(__file__).resolve().parent.parent
 TIPO = ROOT / "gui" / "tipos" / "Archivo.ttf"
@@ -30,12 +30,21 @@ RECHAZO = (179, 18, 47)
 SUP2 = (247, 248, 250)
 
 
+def firma(p_gana, generado):
+    """Lo que identifica una corrida: la fecha y las cinco primeras al 0,01%."""
+    orden = sorted(p_gana, key=lambda n: -p_gana[n])[:5]
+    return generado + "|" + "|".join(f"{n}:{p_gana[n]:.4f}" for n in orden)
+
+
 def fuente(px, peso=400):
+    """Archivo es variable y sus ejes van en este orden: peso, ancho.
+
+    Al reves no falla: fija el peso en 100 -y sale todo en Thin- y el ancho en
+    700, que se sale del eje y se recorta al maximo. La tarjeta quedaba fina y
+    ancha sin que nada avisara.
+    """
     f = ImageFont.truetype(str(TIPO), px)
-    try:                                  # Archivo viene como variable
-        f.set_variation_by_axes([100, peso])
-    except Exception:
-        pass
+    f.set_variation_by_axes([peso, 100])
     return f
 
 
@@ -59,34 +68,48 @@ def main():
     d.text((64, 94), f"Pronóstico tras la gala del {int(dd)} de {MES[int(mm)-1]}",
            font=fuente(30, 400), fill=TINTA3)
 
-    d.text((64, 150), "¿Quién se lleva", font=fuente(64, 700), fill=TINTA)
-    d.text((64, 218), "los 70 millones?", font=fuente(64, 700), fill=TINTA)
+    d.text((64, 138), "¿Quién gana los 70 millones?", font=fuente(58, 700),
+           fill=TINTA)
 
-    # las cinco primeras, con su barra
-    y = 320
+    # las cinco primeras, con su barra. La escala es relativa a la primera y no
+    # al 100%: con nueve en juego nadie pasa del 25% y una barra sobre 100 seria
+    # una fila de muñones que no dejaria ver la unica diferencia que importa,
+    # que es la de arriba.
+    y, paso = 236, 56
+    x0, x1 = 330, 990
     top = base[orden[0]]
     for n in orden[:5]:
         p = base[n]
-        d.text((64, y), n, font=fuente(30, 700), fill=TINTA)
-        x0, x1 = 330, 1000
-        d.rounded_rectangle([x0, y + 6, x1, y + 26], 6, fill=SUP2)
+        primera = n == orden[0]
+        d.text((64, y), n, font=fuente(30, 700 if primera else 500),
+               fill=TINTA if primera else TINTA3)
+        d.rounded_rectangle([x0, y + 8, x1, y + 30], 7, fill=SUP2)
         ancho = int((x1 - x0) * p / top)
-        if ancho > 12:
-            d.rounded_rectangle([x0, y + 6, x0 + ancho, y + 26], 6,
-                                fill=TINTA if n == orden[0] else (150, 158, 170))
-        txt = f"{100*p:.1f}".replace(".", ",") + "%"
-        d.text((1020, y), txt, font=fuente(30, 700),
-               fill=TINTA if n == orden[0] else TINTA3)
-        y += 52
+        if ancho > 14:
+            d.rounded_rectangle([x0, y + 8, x0 + ancho, y + 30], 7,
+                                fill=TINTA if primera else (156, 164, 176))
+        d.text((W - 64, y), f"{100*p:.1f}".replace(".", ",") + "%",
+               font=fuente(30, 700), anchor="ra",
+               fill=TINTA if primera else TINTA3)
+        y += paso
 
-    d.line([64, H - 92, W - 64, H - 92], fill=LINEA, width=2)
-    d.text((64, H - 68), "nerln.github.io/placa", font=fuente(26, 700), fill=TINTA)
-    d.text((W - 64, H - 68), "Eugenio Nerelli", font=fuente(26, 400), fill=TINTA3,
+    d.line([64, H - 86, W - 64, H - 86], fill=LINEA, width=2)
+    d.text((64, H - 62), "nerln.github.io/placa", font=fuente(26, 700), fill=TINTA)
+    d.text((W - 64, H - 62), "Eugenio Nerelli", font=fuente(26, 400), fill=TINTA3,
            anchor="ra")
+
+    # La firma de la corrida viaja dentro del PNG, en un trozo de texto. Es para
+    # que gui/verificar.py pueda decir "esta tarjeta se dibujo con estos
+    # numeros" sin tener que redibujarla ni comparar pixeles, que dependen de la
+    # version de la libreria. Sirve contra el unico fallo silencioso que tiene
+    # esto: reconstruir la pagina y olvidarse de la tarjeta, y que el enlace
+    # compartido siga cantando el pronostico de la semana pasada.
+    meta = PngImagePlugin.PngInfo()
+    meta.add_text("corrida", firma(base, res["generado"]))
 
     salida = ROOT / "web" / "og.png"
     salida.parent.mkdir(exist_ok=True)
-    img.save(salida, "PNG", optimize=True)
+    img.save(salida, "PNG", optimize=True, pnginfo=meta)
     kb = salida.stat().st_size / 1024
     print(f"escrito web/og.png ({kb:.0f} KB) · {orden[0]} {100*base[orden[0]]:.1f}%")
 

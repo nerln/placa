@@ -26,6 +26,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # Pillow es solo para leer la firma que gui/tarjeta.py deja dentro del
+      # PNG de previsualizacion. No se redibuja nada en CI.
+      - run: pip install --quiet pillow
       - run: python3 gui/verificar.py
 
   deploy:
