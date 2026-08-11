@@ -99,7 +99,7 @@
    noche el negro no existe. El rechazo se queda en rojo, más claro para que
    cumpla contraste, y el apoyo pasa a un celeste frío que no compita con el
    oro. Contrastes contra --papel (#05182F): texto 13,4:1, secundario 8,1:1,
-   terciario 5,6:1 — todos por encima de 4,5. */
+   terciario 5,6:1, todos por encima de 4,5. */
 @media (prefers-color-scheme: dark){
   :root{
     --papel:#05182F;
@@ -187,7 +187,7 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
    fondo oscuro para leerse como oro y no como mostaza. */
 /* ---------- la marca ----------
    El ojo ya no vive sobre un recuadro negro propio: usa los oros de la página
-   —ámbar oscuro de día, oro claro de noche— y por eso pertenece al fondo en vez
+   (ámbar oscuro de día, oro claro de noche) y por eso pertenece al fondo en vez
    de estar pegado encima. Es un SVG y nada más, así que se anima con CSS y se
    puede pedir a cualquier tamaño sin volver a dibujarlo.
 
@@ -565,7 +565,7 @@ svg{display:block; max-width:100%; height:auto}
 .paso p:last-child{margin-bottom:0}
 /* Las fórmulas se escriben alineadas con espacios, así que en pantalla ancha
    van en `pre`. En el teléfono eso las cortaba por la mitad y lo que quedaba
-   fuera del recorte era justo la conclusión —«= 107,1 − 100 = 7,1 ✓ cuadra»—,
+   fuera del recorte era la conclusión, «= 107,1 − 100 = 7,1 ✓ cuadra»,
    o sea la única parte que importa. Por debajo de 560px se dejan plegar: se
    pierde la alineación en columnas y se gana poder leerlas enteras. */
 .formula{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:var(--t-xs);
@@ -904,8 +904,8 @@ footer p{max-width:84ch}
 .ramas-chips{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 4px}
 /* ---------- el simulador guiado ----------
    Tres capas de la misma corrida de Monte Carlo: el cuadro de hoy, el cuadro
-   si sale una, y el cuadro si además sale otra. No se recalcula nada al pulsar
-   — las tres están en data/sendas.json — así que responde al instante y los
+   si sale una, y el cuadro si además sale otra. No se recalcula nada al pulsar, porque
+   las tres están en data/sendas.json, así que responde al instante y los
    números cierran entre capas por construcción.
 
    Las migas de arriba no son decoración: son el camino elegido y se puede
@@ -1073,6 +1073,14 @@ footer p{max-width:84ch}
   <div class="aviso"><span style="color:var(--apoyo-txt); font-weight:700">▲</span><span id="vaviso"></span></div>
   <div class="compartir" id="compartir"></div>
 </div>
+
+<section id="retro">
+  <div class="eyebrow">La prueba hacia atrás</div>
+  <div class="titulo"><h2 class="tit" id="tit-retro"></h2></div>
+  <p class="sub" id="sub-retro"></p>
+  <div class="scroll-x"><table class="thist" id="t-retro"></table></div>
+  <p class="thist-pie" id="pie-retro"></p>
+</section>
 
 <section id="evolucion">
   <div class="eyebrow">Qué movió la gala</div>
@@ -1344,14 +1352,6 @@ footer p{max-width:84ch}
   <div class="figura"><div id="g-galas"></div></div>
 </section>
 
-<section id="retro">
-  <div class="eyebrow">La prueba hacia atrás</div>
-  <div class="titulo"><h2 class="tit" id="tit-retro"></h2></div>
-  <p class="sub" id="sub-retro"></p>
-  <div class="scroll-x"><table class="thist" id="t-retro"></table></div>
-  <p class="thist-pie" id="pie-retro"></p>
-</section>
-
 <section id="historial">
   <div class="eyebrow">El registro</div>
   <div class="titulo"><h2 class="tit" id="tit-hist"></h2></div>
@@ -1425,7 +1425,7 @@ footer p{max-width:84ch}
   datos y textos bajo <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY
   4.0</a>. Se puede reusar, incluso comercialmente, citando la fuente y enlazándola:
   <a href="https://github.com/nerln/placa/blob/main/CITATION.cff">cómo citar</a>. Esta corrida
-  lleva su propia firma —<code id="corrida"></code>— en <a
+  lleva su propia firma (<code id="corrida"></code>) en <a
   href="datos.json">datos.json</a>, dentro de la imagen de previsualización y en la etiqueta de
   git, para poder demostrar de dónde salió una copia.</p>
   <p><b>Fuentes primarias:</b> resultados oficiales de gala de Telefe / Mi Telefe; bases y condiciones de TELINFOR S.A. (ghglobal.ar); anexo de Wikipedia de la 13.ª temporada; Infobae Teleshow, LA NACION, El Destape, Ciudad Magazine, Revista Pronto, Crónica; encuestas de Fefe Bongiorno (@fedeebongiorno) y GH ENCUESTAS (@gh_trivia), leídas de sus propias publicaciones e incrustadas más arriba; datos históricos de las temporadas 11 y 12 de GH Argentina.</p>
@@ -1709,7 +1709,7 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
   });
 })();
   // El contorno punteado marca a quien no tiene NINGUNA gala con reparto
-  // completo. Esta semana no le toca a nadie —el mínimo es una—, así que la
+  // completo. Esta semana no le toca a nadie, porque el mínimo es una, así que la
   // frase que lo explicaba describía algo que no estaba en el gráfico.
   (function(){
     const n = $("#nota-punteado");
@@ -2146,7 +2146,7 @@ function pintarBoard(){
 (function(){
 /* Los perfiles de cada una, verificados uno por uno: tilde azul leído de la API
    pública de Instagram, o cruce con Wikidata y prensa. Quien no llegó a ese
-   listón no lleva enlace y se dice por qué — en este programa hay cuentas de
+   listón no lleva enlace y se dice por qué. En este programa hay cuentas de
    fans con nombres casi idénticos, y publicar una equivocada es peor que no
    publicar ninguna.
 
@@ -2237,7 +2237,7 @@ function redes(n){
 /* --- el ojo mira y parpadea ---
    La marca es un SVG, así que animarla es mover dos nodos: el grupo del iris se
    desplaza hacia el puntero y el conjunto se aplasta un instante para
-   parpadear. Es el chiste del programa —te ve— y cuesta unas pocas líneas
+   parpadear. Es el chiste del programa, te ve, y cuesta unas pocas líneas
    porque el dibujo es vectorial y no una imagen.
 
    Con prefers-reduced-motion no se hace nada: el ojo queda dibujado y quieto.
@@ -2451,7 +2451,7 @@ function contar(nodo){
     // La primera eliminación usa la placa real y el estado ya estimado, PERO
     // solo si hay placa. Entre la gala del lunes y la nominación del miércoles
     // no la hay, y entonces esa primera vuelta se sortea por propensión como
-    // todas las demás — que es exactamente lo que hace el modelo
+    // todas las demás, que es lo que hace el modelo
     // (usar_estado28). Sin esta rama, placa0 quedaba vacía, elegir([]) devolvía
     // undefined y la traza abría con «Gala 28 · placa de 0 · sale undefined».
     const GALA0 = D.galas[D.galas.length-1].gala + 1;
@@ -2652,7 +2652,7 @@ function contar(nodo){
 
    Es la unica parte de la pagina que no se sostiene sola: pide el guion de
    incrustacion a platform.twitter.com. Sirve de excusa para explicar por que la
-   pagina esta acá y no en un artefacto — un artefacto no puede hacer ni una
+   pagina esta acá y no en un artefacto: un artefacto no puede hacer ni una
    peticion a un servidor ajeno, asi que lo mas cerca del original que podia
    llegar era dibujar una tarjeta parecida. Esto no se parece a la publicacion:
    es la publicacion.
@@ -2724,7 +2724,7 @@ function contar(nodo){
                            return r.top < alto + 600 && r.bottom > -600; })) pedir();
   }
   // La primera llamada NO se hace ahora. En este punto del guion las secciones
-  // de arriba todavía están vacías —se rellenan más abajo—, así que el hueco
+  // de arriba todavía están vacías, se rellenan más abajo, así que el hueco
   // está mucho más cerca del pliegue de lo que va a estar cuando la página
   // termine de armarse, pasa el umbral y X se pide de inmediato. Medido: en
   // escritorio widgets.js salía a los 0,07 s con la publicación 1.377 px por
@@ -2820,14 +2820,14 @@ function contar(nodo){
     : "¿Puede volver alguien? Ya no, y por eso el modelo no lo simula";
   $("#txt-rein").innerHTML =
     "Sí es parte del juego: esta edición tuvo <b>" + usos + " reingresos</b> por dos vías con " +
-    "dueños distintos — el <b>repechaje</b>, que decide el público, y el <b>Golden Ticket</b>, " +
+    "dueños distintos. El <b>repechaje</b>, que decide el público, y el <b>Golden Ticket</b>, " +
     "que decide la producción cuando alguien se va fuera de calendario. " +
     (quienes.length
       ? "De las que quedan, " + (quienes.length === 1 ? "una volvió así: " : "volvieron así ") +
         "<b>" + quienes.join("</b> y <b>") + "</b>. "
       : "") +
     "Pero está cerrado: el " + FECHA_LARGA(R.cierre.fecha) + ", " + R.cierre.quien +
-    " lo dijo en su programa — «" + R.cierre.cita + "». " + R.cierre.cumplida;
+    " lo dijo en su programa: «" + R.cierre.cita + "». " + R.cierre.cumplida;
 
   const P = R.precedente;
   $("#cif-rein").innerHTML = [
@@ -3009,6 +3009,9 @@ function contar(nodo){
     ? "El rasgo de rechazo, solo, no anticipa quién sale: lo desmiente"
     : "Qué habría dicho el modelo antes de cada gala";
   $("#sub-retro").innerHTML =
+    "<b>Dicho sin estadística:</b> adivinar quién se va cada semana es un problema en el que " +
+    "este modelo pierde contra tirar una moneda, y la probabilidad de ganar la edición es otra " +
+    "cosa distinta que se mide aparte. Lo que sigue es la medición.<br><br>" +
     "Cada gala jugada se vuelve a predecir reajustando el rechazo con <b>solo las galas " +
     "anteriores</b>, y se mira en qué puesto de riesgo quedaba quien de verdad salió. " +
     "En " + R.n + " galas el puesto medio es <b>" + nf(R.puesto_medio,2) + "</b>, contra " +
@@ -3042,7 +3045,7 @@ function contar(nodo){
 /* ---------- el registro de pronósticos ----------
    Un pronóstico que solo muestra el número de hoy no se puede juzgar. Acá está
    cada corrida que la página publicó, en orden, incluida la rama condicionada
-   que se publicó la mañana de la gala 28 — que es exactamente la promesa que
+   que se publicó la mañana de la gala 28, que es la promesa que
    había que contrastar contra lo que pasó.
 
    Una corrida que no se guardó cuando se publicó ya no se puede reconstruir. Por eso el archivo es append-only y
@@ -3157,8 +3160,8 @@ function contar(nodo){
     {q: "Que el modelo se esté equivocando sobre cuánto la rechazan",
      por: "En las temporadas que gana, su rechazo sale <b>" + nf(R.mu_sigmas,2) + " desvíos</b> " +
           "por debajo de lo que estiman las galas jugadas (" + nf(R.mu_gana,2) + " contra " +
-          nf(R.mu_base,2) + " en escala logit). No es imposible —para eso el modelo sortea el " +
-          "rasgo en vez de fijarlo—, pero es la cola.",
+          nf(R.mu_base,2) + " en escala logit). Posible es, para eso el modelo sortea el " +
+          "rasgo en vez de fijarlo, pero cae en la cola.",
      cuanto: nf(R.mu_sigmas,2) + " σ por debajo"},
     {q: "Y que además la quieran más de lo que se le mide",
      por: "Su apoyo positivo tiene que salir " + nf(R.psi_sigmas,2) + " desvíos por encima. Las " +
@@ -3185,7 +3188,7 @@ function contar(nodo){
     "Todo junto pasa <b>una vez cada " + C.una_de_cada.toLocaleString("es-AR") + " temporadas</b>. " +
     "Para que pase tienen que salir bien seis cosas seguidas, y una de ellas es que el modelo " +
     "esté equivocado. Si el miércoles no queda en placa, este cuadro " +
-    "cambia entero — y ésa es la primera de las seis.";
+    "cambia entero, y ésa es la primera de las seis.";
 })();
 
 /* ---------- el zodíaco, con la misma vara que el resto ----------
@@ -3294,13 +3297,13 @@ function contar(nodo){
     (menor && mayor && menor[0] !== mayor[0]
       ? "esa noche <b>" + menor[0] + "</b> salió de placa con el " + nf(menor[1],1) + "% del voto y " +
         "<b>" + mayor[0] + "</b> con el " + nf(mayor[1],1) + "%" +
-        // El múltiplo solo se dice si el denominador aguanta: con 0,2% —una
-        // sola cifra significativa— «23 veces más» cambia a 19 o a 30 según
+        // El múltiplo solo se dice si el denominador aguanta: con 0,2%, que es una
+        // sola cifra significativa, «23 veces más» cambia a 19 o a 30 según
         // cómo redondeó Telefe, y eso no es un dato, es ruido con forma de dato.
         (menor[1] >= 1 && veces >= 2 ? ", " + veces + " veces más" : "") + ". "
       : "") +
     "El rechazo se mide comparando a quienes estuvieron en la misma placa, así que esos " +
-    "porcentajes empujan a cada una en direcciones opuestas — y el rechazo es lo que decide " +
+    "porcentajes empujan a cada una en direcciones opuestas, y el rechazo es lo que decide " +
     "quién sobrevive las semanas que faltan. Abajo, el mismo modelo corrido dos veces con la " +
     "misma semilla: la única diferencia es si las cifras de esa noche entran al ajuste.";
 
@@ -3385,8 +3388,8 @@ function contar(nodo){
       ? "Hasta el miércoles no hay placa nueva, así que tampoco hay encuesta que enfrentar: " +
         "lo último que se midió fue la gala de " + CUANDO_FUE(D.generado) + ". <b>" + elim + "</b> salió con " +
         pc(g[0][1]/100, 1) + " del total de la placa" +
-        (vs && vs[elim] ? " —" + nf(vs[elim],0) + "% en el mano a mano final, que es el número " +
-         "que canta Telefe— " : ", ") +
+        (vs && vs[elim] ? " (" + nf(vs[elim],0) + "% en el mano a mano final, que es el número " +
+         "que canta Telefe) " : ", ") +
         "y la única encuestadora con historial lo había puesto primero. Cuando el miércoles se " +
         "arme la placa habrá mediciones nuevas que enfrentar."
       : "Todavía no hay placa nueva, así que tampoco hay mediciones que enfrentar.";
@@ -3476,8 +3479,8 @@ function contar(nodo){
    después se va otra, ¿quién gana?». El segundo paso no se deduce del primero,
    porque quién queda cambia las placas siguientes.
 
-   Las tres capas —el cuadro de hoy, el cuadro tras una salida y el cuadro tras
-   dos— son subconjuntos de la MISMA corrida de Monte Carlo (data/sendas.json,
+   Las tres capas (el cuadro de hoy, el cuadro tras una salida y el cuadro tras
+   dos) son subconjuntos de la MISMA corrida de Monte Carlo (data/sendas.json,
    600 mil temporadas). Por eso responder es leer un objeto, no simular: es
    instantáneo, y los números cierran entre capas por construcción. Nada de lo
    que se toca acá recalcula el modelo. */
@@ -3508,7 +3511,7 @@ function contar(nodo){
       : "En la próxima gala se va una de las nominadas. ") +
     "Elegí una y después, si querés, elegí la siguiente: el cuadro se rehace en cada paso. " +
     "No son " + (Object.keys(S.ramas).length) + " modelos distintos ni " +
-    "un cálculo nuevo — son las mismas <b>" + (S.n_sims/1000).toFixed(0) + " mil temporadas " +
+    "un cálculo nuevo: son las mismas <b>" + (S.n_sims/1000).toFixed(0) + " mil temporadas " +
     "simuladas</b>, filtradas por las que terminan como vos decís.";
 
   /* --- las filas del cuadro, creadas una vez y luego solo actualizadas --- */
