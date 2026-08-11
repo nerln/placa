@@ -262,7 +262,7 @@ def main():
     # ultimo por lo mismo, con la previsualizacion del enlace.
     for paso in ("model/final_model.py", "model/ramas.py", "model/evolucion.py",
                  "model/bootstrap.py", "model/camino.py", "model/sendas.py",
-                 "model/campana.py", "gui/build.py",
+                 "model/campana.py", "model/retro.py", "gui/build.py",
                  "gui/tarjeta.py"):
         print(f"\n>>> {paso}")
         r = subprocess.run([sys.executable, str(ROOT / paso)], cwd=ROOT,

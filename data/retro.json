@@ -1,0 +1,238 @@
+{
+ "generado": "2026-08-10",
+ "p_valor": 0.0201,
+ "aciertos_esperados_azar": 1.01,
+ "min_galas": 3,
+ "n": 6,
+ "aciertos": 0,
+ "puesto_medio": 5.0,
+ "puesto_medio_azar": 3.5,
+ "log_verosimilitud": -4.083,
+ "log_verosimilitud_azar": -1.787,
+ "filas": [
+  {
+   "gala": 22,
+   "fecha": "2026-07-06",
+   "n_placa": 7,
+   "galas_previas": 3,
+   "eliminado": "Nigro",
+   "puesto_del_modelo": 6,
+   "acierto": false,
+   "p_modelo": 0.1646,
+   "p_azar": 0.1429,
+   "orden": [
+    {
+     "quien": "Mariela",
+     "p": 0.1713
+    },
+    {
+     "quien": "JC",
+     "p": 0.1679
+    },
+    {
+     "quien": "Luana",
+     "p": 0.1661
+    },
+    {
+     "quien": "Cola",
+     "p": 0.1655
+    },
+    {
+     "quien": "Majluf",
+     "p": 0.1646
+    },
+    {
+     "quien": "Nigro",
+     "p": 0.1646
+    },
+    {
+     "quien": "Hanssen",
+     "p": 0.0
+    }
+   ]
+  },
+  {
+   "gala": 23,
+   "fecha": "2026-07-13",
+   "n_placa": 6,
+   "galas_previas": 4,
+   "eliminado": "Manu",
+   "puesto_del_modelo": 6,
+   "acierto": false,
+   "p_modelo": 0.0,
+   "p_azar": 0.1667,
+   "orden": [
+    {
+     "quien": "Sol",
+     "p": 1.0
+    },
+    {
+     "quien": "JC",
+     "p": 0.0
+    },
+    {
+     "quien": "Emanuel",
+     "p": 0.0
+    },
+    {
+     "quien": "Yipio",
+     "p": 0.0
+    },
+    {
+     "quien": "Luana",
+     "p": 0.0
+    },
+    {
+     "quien": "Manu",
+     "p": 0.0
+    }
+   ]
+  },
+  {
+   "gala": 25,
+   "fecha": "2026-07-20",
+   "n_placa": 6,
+   "galas_previas": 5,
+   "eliminado": "Emanuel",
+   "puesto_del_modelo": 5,
+   "acierto": false,
+   "p_modelo": 0.0125,
+   "p_azar": 0.1667,
+   "orden": [
+    {
+     "quien": "Sol",
+     "p": 0.7734
+    },
+    {
+     "quien": "Zilli",
+     "p": 0.1191
+    },
+    {
+     "quien": "Yipio",
+     "p": 0.0541
+    },
+    {
+     "quien": "Cola",
+     "p": 0.0301
+    },
+    {
+     "quien": "Emanuel",
+     "p": 0.0125
+    },
+    {
+     "quien": "Hanssen",
+     "p": 0.0107
+    }
+   ]
+  },
+  {
+   "gala": 26,
+   "fecha": "2026-07-27",
+   "n_placa": 5,
+   "galas_previas": 6,
+   "eliminado": "Cola",
+   "puesto_del_modelo": 4,
+   "acierto": false,
+   "p_modelo": 0.1119,
+   "p_azar": 0.2,
+   "orden": [
+    {
+     "quien": "Tamara",
+     "p": 0.3539
+    },
+    {
+     "quien": "Majluf",
+     "p": 0.2661
+    },
+    {
+     "quien": "Mariela",
+     "p": 0.2071
+    },
+    {
+     "quien": "Cola",
+     "p": 0.1119
+    },
+    {
+     "quien": "Hanssen",
+     "p": 0.0609
+    }
+   ]
+  },
+  {
+   "gala": 27,
+   "fecha": "2026-08-03",
+   "n_placa": 6,
+   "galas_previas": 7,
+   "eliminado": "Campanita",
+   "puesto_del_modelo": 3,
+   "acierto": false,
+   "p_modelo": 0.1085,
+   "p_azar": 0.1667,
+   "orden": [
+    {
+     "quien": "Sol",
+     "p": 0.5779
+    },
+    {
+     "quien": "Luana",
+     "p": 0.2356
+    },
+    {
+     "quien": "Campanita",
+     "p": 0.1085
+    },
+    {
+     "quien": "Juanicar",
+     "p": 0.0385
+    },
+    {
+     "quien": "Majluf",
+     "p": 0.0356
+    },
+    {
+     "quien": "Hanssen",
+     "p": 0.0039
+    }
+   ]
+  },
+  {
+   "gala": 28,
+   "fecha": "2026-08-10",
+   "n_placa": 6,
+   "galas_previas": 8,
+   "eliminado": "Hanssen",
+   "puesto_del_modelo": 6,
+   "acierto": false,
+   "p_modelo": 0.0092,
+   "p_azar": 0.1667,
+   "orden": [
+    {
+     "quien": "Sol",
+     "p": 0.7031
+    },
+    {
+     "quien": "Pincoya",
+     "p": 0.1044
+    },
+    {
+     "quien": "Charlotte",
+     "p": 0.1019
+    },
+    {
+     "quien": "Majluf",
+     "p": 0.0448
+    },
+    {
+     "quien": "Zilli",
+     "p": 0.0366
+    },
+    {
+     "quien": "Hanssen",
+     "p": 0.0092
+    }
+   ]
+  }
+ ],
+ "por_que_no_hay_ediciones_anteriores": "Hace falta el reparto completo de votos de cada gala para estimar el rechazo, y de 2024 y 2025 nadie lo publicó: se cantaron los porcentajes del mano a mano final y poco más. Sin ese reparto no hay μ que ajustar. De esas dos temporadas solo se puede sacar tipología, que es lo que hace la sección de analogías.",
+ "nota": "Cada gala se predice reajustando el rechazo SOLO con las galas anteriores. El puesto es la posición que el modelo le daba dentro de esa placa a quien realmente salió; el azar daría (n+1)/2."
+}

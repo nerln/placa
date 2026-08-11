@@ -230,6 +230,8 @@ def main():
     ramas = json.loads(ramas_p.read_text()) if ramas_p.exists() else None
     evo_p = ROOT / "data" / "evolucion.json"
     evo = json.loads(evo_p.read_text()) if evo_p.exists() else None
+    ret_p = ROOT / "data" / "retro.json"
+    retro = json.loads(ret_p.read_text()) if ret_p.exists() else None
     cmp_p = ROOT / "data" / "campana.json"
     campana = json.loads(cmp_p.read_text()) if cmp_p.exists() else None
     rei_p = ROOT / "data" / "reingresos.json"
@@ -266,6 +268,7 @@ def main():
         "sendas": sendas,
         "reingresos": reingresos,
         "campana": campana,
+        "retro": retro,
         "actualidad": act,
         "historial_pronostico": corridas,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},

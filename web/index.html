@@ -31,7 +31,7 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-10T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"3c716479a8e124d6","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-10T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"b8ab24837eee47fb","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
 <script src="datos.js"></script>
 <script data-goatcounter="https://placa.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>
@@ -1374,6 +1374,14 @@ footer p{max-width:84ch}
   <div class="titulo"><h2 class="tit" id="tit-galas"></h2></div>
   <p class="sub">Cada barra es una noche entera de votación, con el reparto llevado a cuota sobre el total de la placa. Los pedacitos de la izquierda son los que se salvaron temprano. El bloque grande de la derecha es el mano a mano final.</p>
   <div class="figura"><div id="g-galas"></div></div>
+</section>
+
+<section id="retro">
+  <div class="eyebrow">La prueba hacia atrás</div>
+  <div class="titulo"><h2 class="tit" id="tit-retro"></h2></div>
+  <p class="sub" id="sub-retro"></p>
+  <div class="scroll-x"><table class="thist" id="t-retro"></table></div>
+  <p class="thist-pie" id="pie-retro"></p>
 </section>
 
 <section id="historial">
@@ -3006,6 +3014,61 @@ function contar(nodo){
     "La raya no es un cero. Quien no aparece con consigna es alguien de quien no hay " +
     "observación, y eso es distinto de alguien de quien se sabe que no hay campaña. " +
     "Ventana: " + (C.ventana || "") + ".</p>";
+})();
+
+/* ---------- la prueba hacia atrás ----------
+   Pediste reconstruir el modelo contra pronósticos de ediciones pasadas. No se
+   puede: hace falta el reparto completo de votos de cada gala para ajustar el
+   rechazo, y de 2024 y 2025 nadie lo publicó. Con esta temporada sí, porque el
+   reparto está cantado, y sale un resultado incómodo que conviene publicar
+   entero.
+
+   Para cada gala ya jugada se reajusta el rechazo usando SOLO las galas
+   anteriores y se mira en qué puesto de riesgo quedaba quien realmente salió.
+   El azar pondría al eliminado en el puesto del medio. El rasgo lo pone
+   sistemáticamente en el fondo.
+
+   Y eso es coherente con lo que el propio modelo mide: la correlación del
+   rechazo entre galas consecutivas es −0,13 y el 61% de la varianza es ruido de
+   la semana. Quien viene siendo el blanco tiende a salvarse. */
+(function(){
+  const R = D.retro, t = $("#t-retro");
+  if(!R || !t || !R.n){ const sec = $("#retro"); if(sec) sec.remove(); return; }
+  const f = R.filas.filter(x => x.puesto_del_modelo);
+  const peor = R.puesto_medio > R.puesto_medio_azar;
+
+  $("#tit-retro").textContent = peor
+    ? "El rasgo de rechazo, solo, no anticipa quién sale: lo desmiente"
+    : "Qué habría dicho el modelo antes de cada gala";
+  $("#sub-retro").innerHTML =
+    "Cada gala jugada se vuelve a predecir reajustando el rechazo con <b>solo las galas " +
+    "anteriores</b>, y se mira en qué puesto de riesgo quedaba quien de verdad salió. " +
+    "En " + R.n + " galas el puesto medio es <b>" + nf(R.puesto_medio,2) + "</b>, contra " +
+    nf(R.puesto_medio_azar,2) + " que daría el azar" +
+    (R.p_valor != null ? " (test de permutación, p = " + nf(R.p_valor,3) + ")" : "") + ". " +
+    "Acertó el nombre <b>" + R.aciertos + " de " + R.n + "</b>; el azar habría acertado " +
+    nf(R.aciertos_esperados_azar,1) + ".";
+
+  t.innerHTML = "<thead><tr><th>Gala</th><th>Salió</th><th>Placa</th>" +
+    "<th>Puesto de riesgo</th><th>Probabilidad</th></tr></thead><tbody>" +
+    f.map(x => "<tr><td>" + x.gala + "<span class='d'>" + x.fecha.slice(8) + "/" +
+      x.fecha.slice(5,7) + "</span></td>" +
+      "<td>" + x.eliminado + "</td>" +
+      "<td>" + x.n_placa + "</td>" +
+      "<td class='hoy'>" + x.puesto_del_modelo + ".º de " + x.n_placa + "</td>" +
+      "<td>" + pc(x.p_modelo,1) + "</td></tr>").join("") + "</tbody>";
+
+  $("#pie-retro").innerHTML =
+    "Esto mide una cosa concreta: el rasgo de rechazo proyectado una semana hacia adelante, " +
+    "dentro de una placa. No mide el pronóstico entero, que además usa el apoyo positivo, la " +
+    "encuesta calibrada cuando la hay, y simula todas las galas que faltan. " +
+    "<b>El resultado es coherente con lo que el propio modelo mide</b>: la correlación del " +
+    "rechazo entre galas consecutivas es −0,13 y el " +
+    Math.round(100*(1 - D.meta.icc_estable)) + "% de su varianza es ruido de esa semana. " +
+    "Quien viene siendo el blanco de las últimas semanas tiende a salvarse, y sale alguien que " +
+    "tuvo una mala noche. Por eso el riesgo de la próxima gala es la parte más floja de esta " +
+    "página, y por eso está medido acá en vez de quedar como impresión. " +
+    R.por_que_no_hay_ediciones_anteriores;
 })();
 
 /* ---------- el registro de pronósticos ----------
