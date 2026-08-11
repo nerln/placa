@@ -182,6 +182,7 @@ h1{font-family:"Archivo",sans-serif; font-size:var(--t-h1); line-height:1.02; ma
 h1 em{font-style:normal; color:var(--rechazo-txt)}
 .bajada{max-width:60ch; color:var(--tinta2); font-size:var(--t-lg); margin:0; line-height:1.5}
 
+
 /* ---------- veredicto ---------- */
 .veredicto{margin-top:24px; background:var(--sup); border:2px solid var(--tinta); border-radius:var(--r-md); overflow:hidden}
 .vtop{padding:22px 18px 18px}
@@ -285,6 +286,24 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .placa .btn{background:transparent; color:#F0CE6E; border-color:#C2A550}
 .placa .btn:hover{background:#C2A550; color:#04162B}
 .placa .foco{mix-blend-mode:screen}
+
+
+/* ---------- compartir ----------
+   El enlace compartido trae su propia tarjeta con los números de hoy
+   (gui/tarjeta.py), asi que compartir la pagina es compartir el pronostico.
+   Son enlaces, no botones de una red: la pagina no carga ningun guion de
+   Facebook ni de X para esto, y por lo tanto nadie mide quien la lee. */
+.compartir{display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+  padding:14px 18px 16px; border-top:1px solid var(--linea)}
+.compartir .qui{font-size:var(--t-xs); color:var(--tinta3); margin-right:2px}
+.compartir a, .compartir button{font:inherit; font-family:"Archivo",sans-serif;
+  font-size:var(--t-xs); font-weight:700; display:inline-flex; align-items:center; gap:7px;
+  padding:9px 13px; min-height:40px; border:1px solid var(--linea); border-radius:var(--r-sm);
+  background:var(--sup2); color:var(--tinta); text-decoration:none; cursor:pointer;
+  transition:border-color .14s var(--ui), background .14s var(--ui)}
+.compartir a:hover, .compartir button:hover{border-color:var(--tinta); background:var(--sup)}
+.compartir svg{width:14px; height:14px; flex:none}
+.compartir button.hecho{border-color:var(--apoyo); color:var(--apoyo-txt)}
 
 /* ---------- controles ---------- */
 .btn{font:inherit; font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-xs);
@@ -544,6 +563,10 @@ footer p{max-width:84ch}
 .medicion.sola > div:first-child{max-width:82ch}
 .medicion.sola .tw-hueco{margin-top:4px; max-width:550px}
 .medicion .tw-hueco{margin:0}
+/* Dos publicaciones enfrentadas: la campaña que pedía la eliminación y el
+   sondeo que la leyó al revés. Se ven mejor juntas que en fila. */
+.tw-par{display:grid; gap:20px; grid-template-columns:1fr; margin-top:20px; align-items:start}
+@media (min-width:860px){.tw-par{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .tw-marco{min-width:0}
 .tw-marco .twitter-tweet{margin:0 !important; border:1px solid var(--linea);
@@ -800,6 +823,7 @@ footer p{max-width:84ch}
   </div>
   <div class="vbar" id="vbar"></div>
   <div class="aviso"><span style="color:var(--apoyo-txt); font-weight:700">▲</span><span id="vaviso"></span></div>
+  <div class="compartir" id="compartir"></div>
 </div>
 
 <section id="evolucion">
@@ -820,6 +844,7 @@ footer p{max-width:84ch}
       <p id="evo-explica" style="font-size:14.2px; color:var(--tinta2); margin:0"></p>
     </div>
   </div>
+  <div class="tw-hueco" data-post="evolucion" style="margin-top:18px; max-width:550px"></div>
 </section>
 
 <section id="placa">
@@ -961,7 +986,10 @@ footer p{max-width:84ch}
       <p style="font-size:14.2px; color:var(--tinta2); margin:0" id="oficial-trend"></p>
     </div>
   </div>
-  <div class="tw-hueco" data-post="tendencias" style="margin-top:18px"></div>
+  <div class="tw-par">
+    <div class="tw-hueco" data-post="campania"></div>
+    <div class="tw-hueco" data-post="tendencias"></div>
+  </div>
 </section>
 
 <section id="zodiaco">
@@ -1222,6 +1250,50 @@ if($("#corrida")) $("#corrida").textContent = D.corrida || "—";
 $("#pie").innerHTML = "Modelo y visualización generados el " + FECHA_LARGA(D.generado) + " de 2026. " +
   "El pronóstico refleja el estado del juego a esa fecha e ignora, por construcción, cualquier hecho posterior. " +
   "Se recalcula solo después de cada gala.";
+
+/* ---------- compartir el pronóstico ----------
+   Enlaces de intención, no widgets: X, WhatsApp y copiar. Ninguno carga código
+   de nadie, así que compartir no le cuenta a ninguna plataforma quién estuvo
+   acá. El texto se arma con los números de la corrida, y la vista previa del
+   enlace la dibuja gui/tarjeta.py con los mismos, así que lo que se pega en
+   cualquier lado ya dice el pronóstico sin que nadie lo abra. */
+(function(){
+  const c = $("#compartir");
+  if(!c) return;
+  const base = D.escenarios.base.p_gana;
+  const ord = Object.keys(base).sort((a,b) => base[b]-base[a]);
+  const url = (location.origin && location.origin !== "null")
+    ? location.origin + location.pathname : "https://nerln.github.io/placa/";
+  const txt = "¿Quién gana Gran Hermano: Generación Dorada? " +
+    ord.slice(0,3).map(n => n + " " + pc(base[n],1)).join(" · ") +
+    ". Modelo sobre los votos que publica Telefe, no encuestas.";
+
+  const IC = {
+    x:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.11z"/></svg>',
+    wa:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.16c-.25.69-1.44 1.32-1.98 1.36-.53.05-1.02.24-3.45-.72-2.9-1.14-4.73-4.1-4.87-4.29-.14-.19-1.16-1.54-1.16-2.94s.73-2.09.99-2.37c.26-.29.57-.36.76-.36l.55.01c.17 0 .41-.7.64.49.24.56.81 1.96.88 2.1.07.14.12.31.02.5-.09.19-.14.31-.28.47l-.42.49c-.14.14-.28.29-.12.57.16.29.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.21 1.36.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.29.38-.24.64-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.69-.18 1.38z"/></svg>',
+    cp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>',
+  };
+  c.innerHTML =
+    "<span class='qui'>Compartir</span>" +
+    "<a href='https://x.com/intent/post?text=" + encodeURIComponent(txt) +
+      "&url=" + encodeURIComponent(url) + "' target='_blank' rel='noopener'>" + IC.x + "Postear</a>" +
+    "<a href='https://wa.me/?text=" + encodeURIComponent(txt + " " + url) +
+      "' target='_blank' rel='noopener'>" + IC.wa + "WhatsApp</a>" +
+    "<button type='button' id='copiar'>" + IC.cp + "<span>Copiar</span></button>";
+
+  $("#copiar").addEventListener("click", async e => {
+    const b = e.currentTarget, s = b.querySelector("span");
+    try{
+      await navigator.clipboard.writeText(txt + " " + url);
+      s.textContent = "Copiado"; b.classList.add("hecho");
+    }catch(_){
+      // Sin permiso de portapapeles no se finge que funcionó: se muestra el
+      // texto seleccionado para que lo copie a mano quien quiera.
+      s.textContent = "No se pudo";
+    }
+    setTimeout(() => { s.textContent = "Copiar"; b.classList.remove("hecho"); }, 2200);
+  });
+})();
 
 /* ---------- veredicto ---------- */
 const base = D.escenarios.base;
