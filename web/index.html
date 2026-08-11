@@ -28,7 +28,7 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"172c3d9993204bd1","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"362ba63ede20c5ea","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
 <script src="datos.js"></script>
 <style>
 /* ==========================================================================
@@ -626,6 +626,13 @@ footer p{max-width:84ch}
   border-bottom:1px solid var(--linea)}
 .tw-marco .twitter-tweet a:hover{color:var(--tinta); border-color:var(--tinta)}
 .tw-marco iframe{max-width:100% !important}
+
+/* Instagram sirve el iframe con alto fijo y fondo blanco, sin tema oscuro y en
+   el idioma de quien mira, no en el de la página. Se le pone un alto declarado
+   para que no salte al cargar. */
+.ig-marco{position:relative; border:1px solid var(--linea); border-radius:var(--r-sm);
+  overflow:hidden; background:#fff; max-width:550px}
+.ig-marco iframe{display:block; width:100%; height:640px; border:0}
 .tw-nota{font-size:var(--t-xs); color:var(--tinta3); margin:10px 0 0; line-height:1.55}
 .tw-nota b{color:var(--tinta2)}
 
@@ -652,7 +659,7 @@ footer p{max-width:84ch}
   color:var(--tinta3); line-height:1.45; margin-top:2px}
 .trend-fila .dur{font-size:var(--t-xs); color:var(--tinta3); white-space:nowrap;
   font-variant-numeric:tabular-nums}
-.signos{display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:1px;
+.signos{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px;
   background:var(--linea2); border:1px solid var(--linea2)}
 .signo{background:var(--sup); padding:11px 12px}
 .signo .s{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.06em;
@@ -2303,6 +2310,23 @@ function contar(nodo){
     // Un hueco sin publicacion no deja un agujero: se borra y el texto de
     // alrededor sigue teniendo sentido sin el.
     if(!o){ h.remove(); return; }
+    // Instagram no da un marcado como el de X: su API de oEmbed publica pide
+    // un token desde 2020. Lo que sigue funcionando sin nada es la ruta
+    // /embed/ dentro de un iframe, que Instagram sirve sin X-Frame-Options.
+    // Tiene dos pegas que conviene saber: el alto es fijo, porque el iframe no
+    // se autoajusta sin su guion, y no tiene tema oscuro. Por eso va con alto
+    // declarado y loading="lazy": si nadie baja hasta acá, Instagram no se
+    // entera de que la página existe.
+    if(o.red === "ig"){
+      h.innerHTML =
+        "<div class='ig-marco'><iframe src='https://www.instagram.com/" +
+          (o.tipo || "p") + "/" + o.codigo + "/embed/captioned/' loading='lazy' " +
+          "title='Publicación de " + o.autor + " en Instagram' " +
+          "scrolling='no' frameborder='0' allowtransparency='true'></iframe></div>" +
+        "<p class='tw-nota'>" + o.lectura + "</p>";
+      puestos.push(h);
+      return;
+    }
     h.innerHTML =
       "<div class='tw-marco'>" + o.html + "</div>" +
       "<p class='tw-nota'>" + o.lectura + "</p>";
@@ -2311,7 +2335,9 @@ function contar(nodo){
     });
     puestos.push(h);
   });
-  if(!puestos.length) return;
+  // El guion de X solo hace falta si hay alguna publicacion de X: una pagina
+  // con solo Instagram no tiene por que pedirle nada a X.
+  if(!puestos.some(h => porSitio[h.dataset.post].red !== "ig")) return;
 
   let pedido = false;
   function pedir(){
@@ -2497,7 +2523,7 @@ function contar(nodo){
    que el post no existe, no fabricar un permalink. La que sí tiene post se
    incrusta al lado, servida por X. */
 (function(){
-  const E = D.encuesta;
+  const E = D.encuesta, A = D.actualidad;
   const cont = $("#desacuerdo");
   if(!cont) return;
   const hayEncuesta = E && E.cuota && Object.keys(E.cuota).length;
@@ -2527,7 +2553,8 @@ function contar(nodo){
     $("#pie-medicion").innerHTML =
       "Una encuesta sin historial no se puede calibrar, y sin calibrar no es un dato: es una " +
       "opinión con porcentajes. Por eso de las cuatro que circulan cada semana solo entra una al " +
-      "modelo, y las otras aparecen acá para poder compararlas, no para promediarlas.";
+      "modelo, y las otras aparecen acá para poder compararlas, no para promediarlas. " +
+      (A && A.posts && A.posts._instagram ? A.posts._instagram : "");
     return;
   }
 
@@ -2705,7 +2732,11 @@ function contar(nodo){
       "El modelo le da a <b>" + sel + "</b> un " + pc(r.p_sale,0) + " de ser la próxima en irse, sobre " +
       r.n_efectivo.toLocaleString("es-AR") + " temporadas simuladas que acaban así. " +
       "Quien más gana con esa salida es <b>" + g.quien + "</b>, que suma " +
-      nf(g.delta_pp,1) + " puntos" + (g2 ? ", seguida de " + g2.quien + " con " + nf(g2.delta_pp,1) : "") + ". " +
+      nf(g.delta_pp,2) + " puntos" + (g2
+        ? (Math.abs(g.delta_pp - g2.delta_pp) < 0.005
+            ? ", empatada con " + g2.quien
+            : ", seguida de " + g2.quien + " con " + nf(g2.delta_pp,2))
+        : "") + ". " +
       "Las ramas, pesadas por su probabilidad, devuelven exactamente el pronóstico general: " +
       "es una identidad, no una coincidencia.";
   }
