@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-FileCopyrightText: 2026 nerln <https://github.com/nerln>
 # SPDX-License-Identifier: Apache-2.0
 """
 Inyecta los resultados del modelo en la plantilla HTML. Nada se transcribe a
@@ -96,6 +96,13 @@ def cuotas_absolutas(g):
 
 SITIO = "https://nerln.github.io/placa/"
 
+# GoatCounter: codigo abierto, alojado en la UE, y guarda agregados por pagina y
+# hora en vez de eventos por persona. No escribe ni lee nada en el equipo de
+# quien visita, asi que no hace falta banner de consentimiento; el aviso va en
+# la propia pagina, en la seccion "Como se mide esta pagina".
+ANALITICA = ('<script data-goatcounter="https://placa.goatcounter.com/count" '
+             'async src="https://gc.zgo.at/count.js"></script>')
+
 
 def meta(datos):
     """La cabecera del sitio: lo que se ve cuando alguien pega el enlace.
@@ -118,7 +125,7 @@ def meta(datos):
     et = [
         ('<link rel="canonical" href="%s">' % SITIO),
         ('<meta name="description" content="%s">' % desc),
-        ('<meta name="author" content="Eugenio Nerelli">'),
+        ('<meta name="author" content="nerln">'),
         ('<meta property="og:type" content="article">'),
         ('<meta property="og:site_name" content="nerln">'),
         ('<meta property="og:locale" content="es_AR">'),
@@ -133,6 +140,7 @@ def meta(datos):
         ('<meta name="twitter:title" content="%s">' % titulo),
         ('<meta name="twitter:description" content="%s">' % desc),
         ('<meta name="twitter:image" content="%s">' % og),
+        ('<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">'),
         ('<meta name="theme-color" content="#EEF0F3" media="(prefers-color-scheme: light)">'),
         ('<meta name="theme-color" content="#05182F" media="(prefers-color-scheme: dark)">'),
         # No es un descargo legal, es un hecho que conviene que viaje con la
@@ -154,9 +162,43 @@ def jsonld(datos, desc):
     tenga a mano de quien son y bajo que licencia. Vale mas que cualquier aviso
     escondido: es un estandar que se lee de verdad, y va a la vista.
     """
+    autor = {
+        "@type": "Person", "@id": SITIO + "#nerln", "name": "nerln",
+        "url": "https://github.com/nerln",
+        "sameAs": ["https://github.com/nerln", "https://x.com/nerellone",
+                   "https://nerln.pages.dev"],
+    }
+    articulo = {
+        "@type": "Article",
+        "@id": SITIO + "#articulo",
+        "headline": "¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades",
+        "description": desc,
+        "inLanguage": "es-AR",
+        "datePublished": "2026-08-08",
+        "dateModified": datos["generado"] + "T23:00:00-03:00",
+        "author": {"@id": SITIO + "#nerln"},
+        "publisher": {"@id": SITIO + "#nerln"},
+        "isBasedOn": {"@id": SITIO + "#datos"},
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "mainEntityOfPage": SITIO,
+        "image": SITIO + "og.png",
+        "about": [
+            {"@type": "TVSeries", "name": "Gran Hermano Argentina"},
+            {"@type": "TVSeason", "name": "Generación Dorada", "seasonNumber": 13},
+        ],
+        "citation": ("Resultados de votación publicados por Telefe en cada gala de "
+                     "eliminación de la 13.ª edición"),
+    }
     return json.dumps({
         "@context": "https://schema.org",
+        "@graph": [autor, articulo, _dataset(datos, desc)],
+    }, ensure_ascii=False, separators=(",", ":"))
+
+
+def _dataset(datos, desc):
+    return {
         "@type": "Dataset",
+        "@id": SITIO + "#datos",
         "name": "Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)",
         "description": desc,
         "url": SITIO,
@@ -166,20 +208,15 @@ def jsonld(datos, desc):
         "dateModified": datos["generado"],
         "version": datos["corrida"],
         "inLanguage": "es-AR",
-        "creator": {
-            "@type": "Person",
-            "name": "Eugenio Nerelli",
-            "url": "https://nerln.pages.dev",
-            "sameAs": ["https://github.com/nerln", "https://x.com/nerellone"],
-        },
-        "citation": ("Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» "
-                     "(2026), https://github.com/nerln/placa"),
+        "creator": {"@id": SITIO + "#nerln"},
+        "citation": ("nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), "
+                     "https://github.com/nerln/placa"),
         "distribution": [{
             "@type": "DataDownload",
             "encodingFormat": "application/json",
             "contentUrl": SITIO + "datos.json",
         }],
-    }, ensure_ascii=False, separators=(",", ":"))
+    }
 
 
 def main():
@@ -216,7 +253,7 @@ def main():
     datos = {
         "generado": res["generado"],
         "corrida": firma_corrida(),
-        "autor": "Eugenio Nerelli · https://github.com/nerln/placa",
+        "autor": "nerln · https://github.com/nerln/placa",
         "licencia": "CC-BY-4.0 · https://creativecommons.org/licenses/by/4.0/",
         "meta": res["meta"],
         "jugadores": res["jugadores"],
@@ -270,7 +307,10 @@ def main():
                  .replace("/*__FUENTES__*/", fuentes)
                  .replace("<!--__META__-->", meta(datos))
                  .replace("<!--__MARCA__-->", marca)
-                 .replace("<!--__DATOS_SRC__-->", '<script src="datos.js"></script>'))
+                 .replace("<!--__DATOS_SRC__-->", '<script src="datos.js"></script>')
+                 # El contador solo vive en la pagina publicada. El artefacto
+                 # autocontenido se queda sin ninguna llamada a terceros.
+                 .replace("<!--__ANALITICA__-->", ANALITICA))
     # La plantilla nacio para un artefacto, donde el <head> lo pone el que
     # publica. Sirviendola nosotros hay que armar el documento entero: se corta
     # donde termina la hoja de estilos, y lo de arriba es cabeza y lo de abajo
@@ -284,13 +324,25 @@ def main():
              '\n</head>\n<body>\n' + cuerpo[corte:] + '\n</body>\n</html>\n')
     (WEB / "index.html").write_text(sitio)
 
+    # El sitemap de una sola pagina no sirve para que la encuentren: sirve de
+    # reloj. lastmod sale de la fecha de la ultima gala, asi que es
+    # comprobable contra la propia pagina, que es la condicion que pone Google
+    # para hacerle caso.
+    (WEB / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f'  <url>\n    <loc>{SITIO}</loc>\n'
+        f'    <lastmod>{datos["generado"]}T23:00:00-03:00</lastmod>\n'
+        '  </url>\n</urlset>\n')
+
     # --- el artefacto autocontenido, por si hace falta --------------------
     out = (tpl.replace("/*__DATOS__*/null", crudo)
               .replace("/*__ANIMACIONES__*/", motor)
               .replace("/*__FUENTES__*/", fuentes)
               .replace("<!--__META__-->", "")
               .replace("<!--__MARCA__-->", marca)
-              .replace("<!--__DATOS_SRC__-->", ""))
+              .replace("<!--__DATOS_SRC__-->", "")
+              .replace("<!--__ANALITICA__-->", ""))
     (G / "pronostico.html").write_text(out)
 
     nr = len(ramas["ramas"]) if ramas else 0

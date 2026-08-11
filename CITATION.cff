@@ -9,9 +9,8 @@ abstract: >-
   de datos de galas, encuestas y resultados que lo alimenta.
 type: software
 authors:
-  - family-names: Nerelli
-    given-names: Eugenio
-    website: "https://nerln.pages.dev"
+  - alias: nerln
+    website: "https://github.com/nerln"
 repository-code: "https://github.com/nerln/placa"
 url: "https://nerln.github.io/placa/"
 license:

@@ -13,7 +13,7 @@ Las dos licencias piden lo mismo: **que el crédito viaje con la obra**.
 
 ## Atribución mínima que satisface a ambas
 
-> Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026).
+> nerln, «placa: pronóstico de Gran Hermano Argentina» (2026).
 > https://github.com/nerln/placa — código bajo Apache-2.0,
 > datos y textos bajo CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
 > Modificado. ← (esta última palabra solo si cambiaste algo)

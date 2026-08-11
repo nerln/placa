@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-FileCopyrightText: 2026 nerln <https://github.com/nerln>
 # SPDX-License-Identifier: Apache-2.0
 """
 Tres animaciones que explican el modelo, hechas con Manim.

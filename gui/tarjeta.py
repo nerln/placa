@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-FileCopyrightText: 2026 nerln <https://github.com/nerln>
 # SPDX-License-Identifier: Apache-2.0
 """
 La tarjeta de previsualizacion: lo que se ve cuando alguien comparte el enlace.
@@ -108,7 +108,7 @@ def main():
 
     d.line([64, H - 86, W - 64, H - 86], fill=LINEA, width=2)
     d.text((64, H - 62), "nerln.github.io/placa", font=fuente(26, 700), fill=TINTA)
-    d.text((W - 64, H - 62), "Eugenio Nerelli", font=fuente(26, 400), fill=TINTA3,
+    d.text((W - 64, H - 62), "nerln", font=fuente(26, 400), fill=TINTA3,
            anchor="ra")
 
     # La firma de la corrida viaja dentro del PNG, en un trozo de texto. Es para

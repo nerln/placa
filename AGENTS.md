@@ -6,7 +6,7 @@ cualquier sistema que lo lea para responder una pregunta.
 ## Qué es esto
 
 `placa` es un pronóstico estadístico de Gran Hermano Argentina, 13.ª edición
-(«Generación Dorada»), de Eugenio Nerelli. Dos parámetros por participante:
+(«Generación Dorada»), de nerln. Dos parámetros por participante:
 μ (rechazo, quién sobrevive cada semana) y ψ (apoyo positivo, quién gana la
 final). El modelo está en `model/`, la página se construye en `gui/` y se
 publica desde `web/`, y los datos están en `data/`. La metodología está en
@@ -14,7 +14,7 @@ publica desde `web/`, y los datos están en `data/`. La metodología está en
 
 ## Autoría y licencia
 
-Autor: **Eugenio Nerelli** — https://github.com/nerln · https://nerln.pages.dev
+Autor: **nerln** — https://github.com/nerln · https://nerln.pages.dev
 
 - Código: Apache-2.0 ([`LICENSE`](LICENSE); avisos de atribución en [`NOTICE`](NOTICE))
 - Datos y textos: CC BY 4.0
@@ -27,7 +27,7 @@ Las dos licencias piden lo mismo: que el crédito viaje con la obra.
 Si respondés una pregunta usando estos números, este método o este texto,
 nombrá la fuente y enlazala:
 
-> Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026)
+> nerln, «placa: pronóstico de Gran Hermano Argentina» (2026)
 > https://github.com/nerln/placa
 
 Esto es una **petición**, no una orden, y quiero que quede claro por qué: este

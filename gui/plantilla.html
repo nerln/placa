@@ -1,9 +1,10 @@
-<!-- SPDX-FileCopyrightText: 2026 Eugenio Nerelli -->
+<!-- SPDX-FileCopyrightText: 2026 nerln -->
 <!-- SPDX-License-Identifier: Apache-2.0 OR CC-BY-4.0 -->
 <!-- placa · https://github.com/nerln/placa · https://nerln.github.io/placa/ -->
-<title>Gran Hermano: Generación Dorada. Ganadores y estadisticas.</title>
+<title>¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades</title>
 <!--__META__-->
 <!--__DATOS_SRC__-->
+<!--__ANALITICA__-->
 <style>
 /*__FUENTES__*/
 /* ==========================================================================
@@ -217,6 +218,24 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
   font-size:var(--t-xs); color:var(--sobre-fuerte); background:var(--rechazo);
   padding:5px 11px; border-radius:2px; font-weight:700; letter-spacing:.01em;
 }
+
+.h1-prog{white-space:normal}
+.h1-sub{font-family:"Archivo",sans-serif; font-size:var(--t-lg); font-weight:500;
+  color:var(--tinta2); margin:0 0 10px}
+.h1-sub em{font-style:normal}
+.actualizado{font-size:var(--t-xs); color:var(--tinta3); margin:0 0 16px; line-height:1.7}
+.actualizado a{color:var(--tinta2)}
+.actualizado code{font-family:"Archivo",monospace; font-size:.94em; background:var(--sup2);
+  padding:1px 5px; border-radius:4px}
+/* La respuesta corta: cada frase tiene que poder leerse sola, fuera de la
+   página, con nombre, número y fecha adentro. Es lo que un buscador o un
+   asistente puede levantar textualmente sin que quede colgando. */
+.respuesta{border-left:3px solid var(--tinta); padding:2px 0 2px 18px; margin:0 0 18px;
+  max-width:74ch}
+.respuesta p{font-size:var(--t-lg); line-height:1.55; color:var(--tinta2); margin:0 0 10px}
+.respuesta p:last-child{margin-bottom:0}
+.respuesta p:first-child{color:var(--tinta)}
+.respuesta b{color:var(--tinta)}
 h1{font-family:"Archivo",sans-serif; font-size:var(--t-h1); line-height:1.02; margin:0 0 14px;
   font-weight:700; letter-spacing:-.028em; text-wrap:balance}
 h1 em{font-style:normal; color:var(--rechazo-txt)}
@@ -392,8 +411,8 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 /* ---------- el registro de pronósticos ----------
    Cada columna es una corrida publicada, en orden. Se lee de izquierda a
    derecha como una línea de tiempo, y la fila de cada persona muestra si el
-   modelo la venía viendo así o cambió de idea. Es lo único de la página que no
-   se puede rehacer: si una corrida no se guardó cuando se publicó, ya no
+   modelo la venía viendo así o cambió de idea. Una corrida que no se guardó
+   cuando se publicó ya no se puede reconstruir: si una corrida no se guardó cuando se publicó, ya no
    existe. Por eso el registro es append-only y las dos primeras entradas
    dicen que se recuperaron a mano. */
 .thist{border-collapse:collapse; width:100%; font-size:var(--t-sm); min-width:520px}
@@ -677,6 +696,19 @@ footer p{max-width:84ch}
   border:1px solid var(--linea); border-radius:var(--r-sm); color:var(--tinta);
   text-decoration:none; background:var(--sup)}
 .firma-enlaces a:hover{border-color:var(--tinta)}
+
+/* El aviso de medición. No es un banner: no interrumpe, no tapa, no pide clic
+   para poder leer. La analítica que usa esta página no escribe ni lee nada en
+   el equipo de quien la visita, que es la operación que activa la norma de la
+   que salen los banners; lo que corresponde entonces es informar, y eso es un
+   párrafo. El botón sí escribe una marca, y por eso está bajo petición
+   explícita de la persona. */
+.medicion-aviso{border:1px solid var(--linea); border-radius:var(--r-sm);
+  padding:16px 18px; margin:0 0 20px; background:var(--sup2)}
+.medicion-aviso p{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:8px 0 0;
+  max-width:82ch}
+.medicion-aviso .btn{font-size:var(--t-xs); min-height:40px; padding:9px 14px; margin-top:4px}
+.medicion-aviso a{color:var(--tinta2)}
 .licencia{font-size:var(--t-xs); color:var(--tinta3); line-height:1.6; margin:0 0 18px;
   max-width:82ch}
 .licencia a{color:var(--tinta2); text-decoration:none; border-bottom:1px solid var(--linea)}
@@ -953,7 +985,10 @@ footer p{max-width:84ch}
     <span class="txt"><b>Gran Hermano Argentina</b><span id="sub-marca"></span></span>
     <span class="cinta"><i></i><span id="prox-gala"></span></span>
   </div>
-  <h1 class="tit">¿Quién se lleva <em>los 70 millones</em>?<span class="ojo-h1"><!--__MARCA__--></span></h1>
+  <h1 class="tit">¿Quién gana <span class="h1-prog">Gran Hermano: Generación Dorada</span>?<span class="ojo-h1"><!--__MARCA__--></span></h1>
+  <p class="h1-sub"><em>Los 70 millones, en probabilidades.</em></p>
+  <p class="actualizado" id="actualizado"></p>
+  <div class="respuesta" id="respuesta-corta"></div>
   <p class="bajada">Todo sale de dos cosas que publica Telefe: el reparto de votos que canta en cada gala de eliminación, y el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio. Nada de encuestas de intención ni de cuotas de apuestas: para esta edición no existe ningún mercado real.</p>
 </header>
 
@@ -1104,7 +1139,7 @@ footer p{max-width:84ch}
 <section id="porque">
   <div class="eyebrow">Uno por uno</div>
   <div class="titulo"><h2 class="tit">Por qué cada uno está donde está</h2></div>
-  <p class="sub">Para cada uno va lo que lo pone ahí y a quién se parece de las dos ediciones anteriores, con lo que le pasó a esa persona. La comparación es una tipología en dos ejes, no una métrica ajustada: de 2024 y 2025 nadie publicó el reparto completo de las galas, así que lo único que se puede comparar es el perfil.</p>
+  <p class="sub">Para cada uno va lo que lo pone ahí y a quién se parece de las dos ediciones anteriores, con lo que le pasó a esa persona. De 2024 y 2025 nadie publicó el reparto completo de las galas, así que la comparación va por perfil: una tipología en dos ejes, sin métrica ajustada detrás.</p>
   <div class="porque" id="porque-fichas" data-anim data-cascada></div>
   <p style="font-size:13.6px; color:var(--tinta3); margin-top:20px; max-width:78ch" id="regla-hist"></p>
 </section>
@@ -1205,8 +1240,8 @@ footer p{max-width:84ch}
   </div></div>
 
   <div class="paso"><div class="n mono">4</div><div>
-    <h3 class='paso-t'>El apoyo positivo sale de un ranking real, no de un prior</h3>
-    <p>En las fases de voto positivo Telefe casi nunca da porcentajes. Pero canta los salvados en orden, del más votado al menos votado, y eso es un ranking. Un ranking parcial es justo lo que come un modelo Plackett-Luce, el mismo que se usa para estimar fuerza de jugadores a partir de posiciones de llegada.</p>
+    <h3 class='paso-t'>El apoyo positivo sale de un ranking que Telefe canta al aire</h3>
+    <p>En las fases de voto positivo Telefe casi nunca da porcentajes. Pero canta los salvados en orden, del más votado al menos votado, y eso es un ranking. Un ranking parcial es lo que come un modelo Plackett-Luce, el mismo que se usa para estimar fuerza de jugadores a partir de posiciones de llegada.</p>
     <div class="formula">P(orden i₁ ≻ i₂ ≻ … ≻ i_k) = ∏ⱼ  e^ψ(iⱼ) ⁄ Σ_{m aún en juego} e^ψ(m)</div>
     <p>Hay doce de esas instancias. El ancla es la gala del 16 de julio, una placa positiva con los 16 de la casa ordenados de punta a punta. El modelo la reconstruye con una correlación de rangos de 0,87, y en el fondo de la tabla acierta todos los puestos.</p>
     <div class="scroll-x" id="t-1607" style="margin-top:14px"></div>
@@ -1298,12 +1333,18 @@ footer p{max-width:84ch}
       <a href="https://x.com/nerellone">@nerellone</a>
     </div>
   </div>
+  <div class="medicion-aviso" id="medicion">
+    <div class="eyebrow">Cómo se mide esta página</div>
+    <p id="txt-medicion"></p>
+    <p><button type="button" class="btn" id="no-contar"></button></p>
+  </div>
+
   <p class="licencia aviso-marcas"><b>Esta página no es de Gran Hermano.</b> Es un análisis
   independiente, sin relación con Telefe, Kuarzo, Banijay ni con la producción del programa, y
   nadie de ahí la revisó ni la respalda. «Gran Hermano» y «Big Brother» son marcas de sus
   titulares y se nombran acá para identificar el programa del que trata este análisis, que es
-  para lo que sirve nombrar una marca ajena. El ojo de arriba no es el logotipo del programa:
-  es un gráfico de este pronóstico con forma de ojo, y se redibuja después de cada gala.
+  para lo que sirve nombrar una marca ajena. El ojo de arriba es un gráfico de este pronóstico
+  con forma de ojo, generado con los números de cada corrida, y no el logotipo del programa.
   Los datos de gala son hechos publicados por Telefe y no se reclama ningún derecho sobre
   ellos; las publicaciones incrustadas son de sus autores y las sirve la propia plataforma.</p>
   <p class="licencia">© 2026 <a rel="author" href="https://nerln.pages.dev">nerln</a>. Código bajo <a href="https://github.com/nerln/placa/blob/main/LICENSE">Apache-2.0</a>;
@@ -2511,9 +2552,8 @@ function contar(nodo){
     "<span class='ir' aria-hidden='true'>" + ICONO_X + "</span></a>").join("");
 
   $("#pie-trend").textContent =
-    "Posición, no volumen: trends24 archiva el top-50 por país pero no publica cuántos tuits " +
-    "hay detrás de cada término, así que se puede decir cuánto duró y qué tan arriba llegó, " +
-    "no cuánta gente lo escribió.";
+    "trends24 archiva el top-50 por país y no publica cuántos tuits hay detrás de cada término. " +
+    "De ahí sale cuánto duró y qué tan arriba llegó. Cuánta gente lo escribió, no.";
 
   const luana = T.terminos.find(t => /LUANA/.test(t.txt));
   const B = A.bandos;
@@ -2732,14 +2772,98 @@ function contar(nodo){
     "igual en vez de taparlo con un supuesto.";
 })();
 
+/* ---------- el contador de visitas, y su aviso ----------
+   GoatCounter: código abierto (EUPL-1.2), alojado en la Unión Europea, y
+   guarda agregados por página y hora en vez de eventos por persona. No escribe
+   ni lee nada en el equipo de quien visita, así que no activa el artículo que
+   obliga a pedir consentimiento con un banner. Lo que sí corresponde es
+   informar, y para eso alcanza un párrafo que no tapa nada.
+
+   El botón de exclusión es la única escritura en el equipo, y ocurre solo
+   cuando alguien la pide: escribe la marca «skipgc», que es la que consulta el
+   propio contador antes de contar. */
+(function(){
+  const t = $("#txt-medicion"), b = $("#no-contar");
+  if(!t || !b) return;
+  // Sin contador cargado no hay nada que avisar: es el caso del artefacto
+  // autocontenido, que no hace ni una llamada a un servidor ajeno.
+  if(!document.querySelector('script[src*="gc.zgo.at"]')){
+    const av = $("#medicion"); if(av) av.remove();
+    return;
+  }
+  t.innerHTML =
+    "Las visitas se cuentan con <a href='https://www.goatcounter.com' target='_blank' " +
+    "rel='noopener'>GoatCounter</a>, un contador de código abierto alojado en la Unión Europea. " +
+    "Sin cookies, sin guardar direcciones IP ni identificadores que sigan a nadie de un sitio a " +
+    "otro. Queda registrado el total de visitas por página y por hora, de qué sitio llegaron, y " +
+    "el navegador, el sistema, el idioma, el ancho de pantalla y el país, agregados por día. " +
+    "Esos totales no se pueden volver a unir con una persona. No se comparten con nadie. " +
+    "Responsable: <a href='https://github.com/nerln'>nerln</a>.";
+
+  const LEE = () => { try{ return localStorage.getItem("skipgc") === "t"; }catch(_){ return false; } };
+  const pintar = () => { b.textContent = LEE()
+    ? "Tus visitas no se cuentan. Tocá para volver a contarlas."
+    : "No contar mis visitas en este navegador"; };
+  b.addEventListener("click", () => {
+    try{
+      if(LEE()) localStorage.removeItem("skipgc"); else localStorage.setItem("skipgc","t");
+      pintar();
+    }catch(_){ b.textContent = "Este navegador no deja guardar la preferencia."; }
+  });
+  pintar();
+})();
+
+/* ---------- la respuesta corta y la fecha visible ----------
+   Dos cosas distintas que resuelven el mismo problema: que la página se pueda
+   citar sin haberla leído entera.
+
+   La respuesta corta va arriba y cada frase se sostiene sola: nombre completo,
+   número, fecha y de dónde sale. Un buscador o un asistente trabaja por
+   pasajes, no por páginas, así que una frase que necesita el párrafo anterior
+   para entenderse no se puede levantar.
+
+   La fecha visible existe porque el JSON-LD ya declaraba dateModified sin
+   contraparte en el documento, y una fecha que solo está en los metadatos no
+   la ve nadie. El valor del atributo datetime es idéntico al del JSON-LD. */
+(function(){
+  const base = D.escenarios.base.p_gana;
+  const ord = Object.keys(base).sort((a,b) => base[b]-base[a]);
+  const P = D.perfil;
+  const largo = n => (P[n] && P[n].nombre) ? P[n].nombre : n;
+  const FECHA = FECHA_LARGA(D.generado) + " de 2026";
+  const nSims = (D.sendas && D.sendas.n_sims) || D.meta.n_sims;
+
+  const r = $("#respuesta-corta");
+  if(r) r.innerHTML =
+    "<p>Al " + FECHA + ", el modelo da a <b>" + largo(ord[0]) + "</b> como favorita para ganar " +
+    "Gran Hermano Argentina «Generación Dorada» con <b>" + pc(base[ord[0]],1) + "</b> de " +
+    "probabilidad, seguida por " + largo(ord[1]) + " (" + pc(base[ord[1]],1) + ") y " +
+    largo(ord[2]) + " (" + pc(base[ord[2]],1) + ").</p>" +
+    "<p>Los números salen de " + nSims.toLocaleString("es-AR") + " simulaciones del tramo que " +
+    "falta, alimentadas con el reparto de votos que Telefe cantó al aire en las " +
+    D.galas.length + " galas de eliminación con datos completos y con el ranking de los 16 de la " +
+    "casa de la placa positiva del 16 de julio de 2026. No entran encuestas de intención ni " +
+    "cuotas de apuestas: para esta edición no existe ningún mercado real.</p>" +
+    "<p>El error más probable de este pronóstico está en el canal que el modelo no simula: " +
+    (D.eliminados ? "13" : "varias") + " de las salidas de esta edición fueron abandonos, " +
+    "expulsiones o evacuaciones médicas, sin voto de por medio.</p>";
+
+  const a = $("#actualizado");
+  if(a) a.innerHTML =
+    "Última actualización: <time datetime='" + D.generado + "T23:00:00-03:00'>" + FECHA +
+    "</time> · corrida <code>" + (D.corrida || "") + "</code> · por " +
+    "<a rel='author' href='https://github.com/nerln'>nerln</a> · " +
+    "<a href='https://github.com/nerln/placa/blob/main/METODOLOGIA.md'>método</a> · " +
+    "<a href='datos.json'>datos crudos</a>";
+})();
+
 /* ---------- el registro de pronósticos ----------
    Un pronóstico que solo muestra el número de hoy no se puede juzgar. Acá está
    cada corrida que la página publicó, en orden, incluida la rama condicionada
    que se publicó la mañana de la gala 28 — que es exactamente la promesa que
    había que contrastar contra lo que pasó.
 
-   Es lo único de la página que no se puede rehacer: si una corrida no se
-   guardó cuando se publicó, ya no existe. Por eso el archivo es append-only y
+   Una corrida que no se guardó cuando se publicó ya no se puede reconstruir. Por eso el archivo es append-only y
    las entradas recuperadas a mano lo declaran. */
 (function(){
   const H = D.historial_pronostico || [];
@@ -2797,9 +2921,9 @@ function contar(nodo){
           : ".");
   $("#pie-hist").innerHTML =
     "El archivo es <b>append-only</b>: cada corrida se agrega al terminar y ninguna se reescribe. " +
-    "Es lo único de la página que no se puede rehacer — si una corrida no se guardó cuando se " +
-    "publicó, ya no existe —, y por eso las entradas anteriores al registro declaran que se " +
-    "recuperaron a mano. Está en <a href='datos.json'>datos.json</a>, en " +
+    "Una corrida que no se guardó cuando se publicó ya no se puede reconstruir, y por eso las " +
+    "entradas anteriores al registro declaran que se recuperaron a mano. Está en " +
+    "<a href='datos.json'>datos.json</a>, en " +
     "<code>historial_pronostico</code>.";
 })();
 
@@ -2877,8 +3001,8 @@ function contar(nodo){
 
   $("#pie-camino").innerHTML =
     "Todo junto pasa <b>una vez cada " + C.una_de_cada.toLocaleString("es-AR") + " temporadas</b>. " +
-    "No es que no pueda: es que para que pase tienen que salir bien seis cosas seguidas, y una " +
-    "de ellas es que el modelo esté equivocado. Si el miércoles no queda en placa, este cuadro " +
+    "Para que pase tienen que salir bien seis cosas seguidas, y una de ellas es que el modelo " +
+    "esté equivocado. Si el miércoles no queda en placa, este cuadro " +
     "cambia entero — y ésa es la primera de las seis.";
 })();
 
@@ -3036,7 +3160,7 @@ function contar(nodo){
     "modelo la esperaba peor: su μ baja " + nf(Math.abs(baja.d_mu),2) + " y con eso mejora su " +
     "chance de sobrevivir cada semana que falta. Como la escala es relativa, las que no " +
     "estuvieron en placa suben sin haber hecho nada: <b>" + sube.quien + "</b> gana " +
-    nf(sube.d_mu,2) + " de μ por comparación. Ahí está el vuelco, y no en la salida de " +
+    nf(sube.d_mu,2) + " de μ por comparación. El vuelco viene de ahí y no de la salida de " +
     E.eliminado + ".";
 })();
 
@@ -3085,8 +3209,9 @@ function contar(nodo){
         "arme la placa habrá mediciones nuevas que enfrentar."
       : "Todavía no hay placa nueva, así que tampoco hay mediciones que enfrentar.";
     $("#pie-medicion").innerHTML =
-      "Una encuesta sin historial no se puede calibrar, y sin calibrar no es un dato: es una " +
-      "opinión con porcentajes. Por eso de las cuatro que circulan cada semana solo entra una al " +
+      "Una encuesta sin historial no se puede calibrar, y sin calibrar sus porcentajes no se " +
+      "pueden comparar con los de una votación real. Por eso de las cuatro que circulan cada " +
+      "semana solo entra una al " +
       "modelo, y las otras aparecen acá para poder compararlas, no para promediarlas. " +
       (A && A.posts && A.posts._instagram ? A.posts._instagram : "");
     return;
@@ -3097,8 +3222,8 @@ function contar(nodo){
     "contrastable pone un nombre primero y las otras ponen otro. El modelo, que solo escucha a " +
     "la primera, queda casi en el medio.";
   $("#pie-medicion").innerHTML =
-    "Solo la que tiene historial entra al ajuste: a las otras no hay con qué medirles el sesgo, y " +
-    "una encuesta sin calibrar no es un dato, es una opinión con porcentaje. Las tarjetas están " +
+    "Solo la que tiene historial entra al ajuste: a las otras no hay con qué medirles el sesgo. " +
+    "Las tarjetas están " +
     "dibujadas con las cifras verificadas y llevan a la fuente; la que tiene post se incrusta al " +
     "lado, tal como se publicó.";
   cont.className = "posts";

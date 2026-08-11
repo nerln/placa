@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 Eugenio Nerelli <kira_and_light@hotmail.it>
+# SPDX-FileCopyrightText: 2026 nerln <https://github.com/nerln>
 # SPDX-License-Identifier: Apache-2.0
 """
 Lo que se publica tiene que salir de lo que esta publicado.
