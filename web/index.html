@@ -30,7 +30,7 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"1fa5577e06389833","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"924ab8070265eeb7","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
 <script src="datos.js"></script>
 <style>
 /* ==========================================================================
@@ -463,6 +463,16 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .thist .d.sube{color:var(--apoyo-txt)} .thist .d.baja{color:var(--rechazo-txt)}
 .thist-pie{font-size:var(--t-xs); color:var(--tinta3); margin:14px 0 0; max-width:78ch;
   line-height:1.6}
+
+
+.rein-cifras{display:grid; gap:1px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  margin-top:4px}
+.rein-cifras > div{background:var(--sup2); padding:11px 12px}
+.rein-cifras .k{font-size:var(--t-etq); letter-spacing:.06em; text-transform:uppercase;
+  color:var(--tinta3); font-family:"Archivo",sans-serif; font-weight:700}
+.rein-cifras .v{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-lg);
+  color:var(--tinta); margin-top:3px; font-variant-numeric:tabular-nums}
+.rein-cifras .d{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5; margin-top:2px}
 
 /* ---------- controles ---------- */
 .btn{font:inherit; font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-xs);
@@ -1321,6 +1331,15 @@ footer p{max-width:84ch}
 <section id="limites">
   <div class="eyebrow">Límites</div>
   <div class="titulo"><h2 class="tit">Límites, huecos y advertencias</h2></div>
+  <div class="tarjeta" id="reingresos" style="margin:0 0 18px">
+    <div class="eyebrow">La pregunta que faltaba</div>
+    <h3 style="font-family:'Archivo',sans-serif; font-size:var(--t-md); margin:0 0 8px"
+        id="tit-rein"></h3>
+    <p style="font-size:14.4px; color:var(--tinta2); margin:0 0 12px" id="txt-rein"></p>
+    <div class="rein-cifras" id="cif-rein"></div>
+    <p style="font-size:12.6px; color:var(--tinta3); margin:12px 0 0" id="pie-rein"></p>
+  </div>
+
   <div class="g2">
     <div class="tarjeta">
       <h3 style="margin-top:0">Huecos reales en los datos</h3>
@@ -2741,6 +2760,53 @@ function contar(nodo){
       "concentración extrema del voto real. Por eso el modelo le hace caso en <em>a quién pone " +
       "primero</em> y la ignora casi por completo en el resto del reparto.";
   }
+})();
+
+/* ---------- ¿pueden volver? ----------
+   El modelo simula eliminaciones y no simula que alguien vuelva a entrar. Si
+   los reingresos siguieran abiertos, eso sería un agujero grande: el plantel
+   que se simula dejaría de ser el plantel real antes de la final. Así que la
+   pregunta hay que contestarla con datos y no con un «no se modela».
+
+   Los dos mecanismos existieron y se usaron bastante. Están cerrados desde
+   junio, hay una declaración en cámara que lo dice, y se cumplió dos veces de
+   forma verificable. Y el precedente de las dos temporadas anteriores acota
+   cuánto costaría equivocarse. */
+(function(){
+  const R = D.reingresos, sec = $("#reingresos");
+  if(!R || !sec){ if(sec) sec.remove(); return; }
+  const usos = R.mecanismos.reduce((a,m) => a + m.veces, 0);
+  const quienes = R.mecanismos.flatMap(m => m.quien).filter(n => D.jugadores.includes(n));
+
+  $("#tit-rein").textContent = R.abiertos
+    ? "Sí: todavía puede volver a entrar gente, y el modelo no lo simula"
+    : "¿Puede volver alguien? Ya no, y por eso el modelo no lo simula";
+  $("#txt-rein").innerHTML =
+    "Sí es parte del juego: esta edición tuvo <b>" + usos + " reingresos</b> por dos vías con " +
+    "dueños distintos — el <b>repechaje</b>, que decide el público, y el <b>Golden Ticket</b>, " +
+    "que decide la producción cuando alguien se va fuera de calendario. " +
+    (quienes.length
+      ? "De las que quedan, " + (quienes.length === 1 ? "una volvió así: " : "volvieron así ") +
+        "<b>" + quienes.join("</b> y <b>") + "</b>. "
+      : "") +
+    "Pero está cerrado: el " + FECHA_LARGA(R.cierre.fecha) + ", " + R.cierre.quien +
+    " lo dijo en su programa — «" + R.cierre.cita + "». " + R.cierre.cumplida;
+
+  const P = R.precedente;
+  $("#cif-rein").innerHTML = [
+    {k:"Último ingreso al juego", v: FECHA_LARGA(R.ultimo_ingreso.fecha),
+     d: R.ultimo_ingreso.quien + ", día " + R.ultimo_ingreso.dia + " de unos 196"},
+    {k:"En las dos anteriores", v: Math.round((P[0].pct + P[1].pct)/2) + "%",
+     d:"de la temporada era lo más tarde que alguien entró al juego"},
+    {k:"Reingresados en una final", v:"0",
+     d:"en las temporadas 11 y 12; el mejor quedó 12.º"},
+  ].map(x => "<div><div class='k'>" + x.k + "</div><div class='v'>" + x.v + "</div>" +
+             "<div class='d'>" + x.d + "</div></div>").join("");
+
+  $("#pie-rein").innerHTML = R.conclusion +
+    " Queda un residuo: si la producción cambiara de idea a esta altura, el modelo no lo vería " +
+    "venir. Es la misma clase de agujero que las salidas por afuera del voto, y se declara " +
+    "igual en vez de taparlo con un supuesto.";
 })();
 
 /* ---------- el registro de pronósticos ----------

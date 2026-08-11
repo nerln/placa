@@ -1,0 +1,29 @@
+{
+ "_nota": "Verificado el 11/08/2026 contra Wikipedia EN/ES de la temporada 13, prensa argentina y declaraciones en cámara. Contesta si el modelo tiene un agujero por no simular reingresos.",
+ "abiertos": false,
+ "mecanismos": [
+  {"nombre": "Repechaje", "decide": "el público", "veces": 1,
+   "cuando": "2026-05-20", "dia": 87,
+   "quien": ["Yipio", "Lola Tomaszeuski"],
+   "detalle": "16 ex de esta edición se postularon; el público eligió dos. Sol Abraham se bajó."},
+  {"nombre": "Golden Ticket", "decide": "la producción", "veces": 4,
+   "cuando": "2026-05-31", "dia": 98,
+   "quien": ["Cinzia", "Brian Sarmiento", "Andrea del Boca", "Sol"],
+   "detalle": "Se habilita cuando alguien se va fuera de calendario, para reponer el número de la casa. Es reactivo, no programado."}
+ ],
+ "cierre": {
+  "fecha": "2026-07-06",
+  "quien": "Santiago del Moro",
+  "cita": "El repechaje ya fue. A esta altura, para competir, no creo que ingrese nada más.",
+  "fuente": "https://www.elnueve.com/contenidos/hay-repechaje-en-gran-hermano-el-tajante-anuncio-de-santiago-del-moro-que-sacudio-todo_20260706/",
+  "cumplida": "El 21 de julio entraron ocho ex de temporadas anteriores y del Moro fijó en cámara que no competían por el premio; todos estaban afuera para el 6 de agosto. El 11 de agosto se anunciaron visitas de ex de esta edición, también sin competir."
+ },
+ "ultimo_ingreso": {"quien": "Majluf", "fecha": "2026-06-02", "dia": 100, "tipo": "nueva"},
+ "precedente": [
+  {"temporada": 11, "anio": 2024, "dias": 210, "ultimo_ingreso_dia": 121,
+   "pct": 57.6, "mejor_reingresado": "Coty Romero, eliminada el día 140 (~12.ª)"},
+  {"temporada": 12, "anio": 2025, "dias": 205, "ultimo_ingreso_dia": 116,
+   "pct": 56.6, "mejor_reingresado": "Catalina Gorostidi, eliminada el día 140 (13.ª)"}
+ ],
+ "conclusion": "En las dos temporadas anteriores nadie entró al juego después del 58% de la temporada, y ningún reingresado llegó siquiera al top-10. Esta edición cerró su última puerta al 51% y hoy va por el 87%."
+}
