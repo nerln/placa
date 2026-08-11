@@ -814,7 +814,7 @@ footer p{max-width:84ch}
     <span class="cinta"><i></i><span id="prox-gala"></span></span>
   </div>
   <h1 class="tit">¿Quién se lleva <em>los 70 millones</em>?</h1>
-  <p class="bajada">Acá no hay corazonadas de panelistas ni cuotas de casas de apuestas, entre otras cosas porque para esta edición no existe ningún mercado real. Lo único que se usó son los resultados de votación que publica Telefe cada gala, y una foto que casi nadie miró: el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio.</p>
+  <p class="bajada">Todo sale de dos cosas que Telefe publica y casi nadie cruza: el reparto de votos que canta en cada gala de eliminación, y una foto que pasó de largo, el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio. Nada de encuestas de intención ni de cuotas de apuestas: para esta edición no existe ningún mercado real.</p>
 </header>
 
 <div class="veredicto">
@@ -2382,11 +2382,10 @@ function contar(nodo){
     : "El zodíaco, con la misma vara que el modelo";
 
   $("#sub-zod").innerHTML =
-    "El horóscopo es el modelo rival: no mira una sola gala ni un solo voto. Acá se lo trata " +
-    "igual que al propio — la fecha de nacimiento sale de una fuente citada, el signo se calcula " +
-    "de la fecha, y la probabilidad de cada signo es la suma de las de sus nativas. De las " +
-    (conocidas + faltan) + " que quedan en juego hay fecha publicada de " + conocidas + "; de las " +
-    "otras " + faltan + " no la hay, y así queda dicho en vez de rellenarlo.";
+    "El horóscopo es el modelo rival: no mira una sola gala ni un solo voto. La fecha de " +
+    "nacimiento sale de una fuente citada, el signo se calcula de la fecha, y la probabilidad de " +
+    "cada signo es la suma de las de sus nativas. De las " + (conocidas + faltan) + " que quedan " +
+    "hay fecha publicada de " + conocidas + "; las otras " + faltan + " figuran sin signo.";
 
   const orden = Object.entries(porSigno)
     .map(([sig, qs]) => [sig, qs, qs.reduce((a,q) => a + base.p_gana[q], 0)])
@@ -2419,7 +2418,7 @@ function contar(nodo){
 })();
 
 /* ---------- qué movió la gala: separar "quién salió" de "por cuánto" -------
-   La rama que esta página publicaba antes de la gala contestaba una sola
+   La rama publicada antes de la gala contestaba una sola
    pregunta, quién se va. La gala contestó dos: además dijo por cuánto, y eso es
    información nueva sobre el rechazo de las que estaban en placa. Para que no
    parezca magia, el modelo se corre dos veces con la misma semilla, el mismo
@@ -2436,12 +2435,33 @@ function contar(nodo){
   $("#tit-evo").textContent = giro
     ? "Salió " + E.eliminado + ", pero lo que cambió el pronóstico fueron los porcentajes"
     : "Lo que aportó la gala, más allá de quién salió";
+  // Se explica el mecanismo, no lo que decía la página ayer. La gala da dos
+  // datos y el segundo es el que importa: quién se fue lo sabe cualquiera, por
+  // cuánto se salvó cada una es lo que reordena la carrera.
+  // Solo las que salieron de placa ANTES del mano a mano. Las dos del versus
+  // juegan otro partido -se reparten el voto que sobra entre ellas dos- y
+  // compararlas con una salvada da relaciones absurdas: 0,2% contra 39% no son
+  // «195 veces más rechazo», son dos preguntas distintas.
+  const orden = Object.entries(E.cuotas).sort((a,b) => a[1]-b[1]);
+  const salvadas = orden.slice(0, -2);
+  const menor = salvadas[0], mayor = salvadas[salvadas.length-1];
+  const veces = mayor && menor && menor[1] > 0 ? Math.round(mayor[1] / menor[1]) : 0;
+
   $("#sub-evo").innerHTML =
-    "Antes de la gala esta página decía que si salía <b>" + E.eliminado + "</b> quedaba primera " +
-    "<b>" + antes[0].quien + "</b>. Salió " + E.eliminado + " y hoy la primera es <b>" + ahora[0].quien +
-    "</b>. No es que el modelo se haya contradicho: la rama sabía <em>quién</em> se iba, no " +
-    "<em>por cuánto</em>. Abajo, el mismo modelo corrido dos veces con la misma semilla, " +
-    "cambiando solo si los porcentajes de esa noche informan el rechazo.";
+    "Una gala de eliminación contesta dos preguntas, y la segunda es la que mueve el pronóstico. " +
+    "La primera es quién se va. La segunda, <b>por cuánto se salvó cada una de las demás</b>: " +
+    (menor && mayor && menor[0] !== mayor[0]
+      ? "esa noche <b>" + menor[0] + "</b> salió de placa con el " + nf(menor[1],1) + "% del voto y " +
+        "<b>" + mayor[0] + "</b> con el " + nf(mayor[1],1) + "%" +
+        // El múltiplo solo se dice si el denominador aguanta: con 0,2% —una
+        // sola cifra significativa— «23 veces más» cambia a 19 o a 30 según
+        // cómo redondeó Telefe, y eso no es un dato, es ruido con forma de dato.
+        (menor[1] >= 1 && veces >= 2 ? ", " + veces + " veces más" : "") + ". "
+      : "") +
+    "El rechazo se mide comparando a quienes estuvieron en la misma placa, así que esos " +
+    "porcentajes empujan a cada una en direcciones opuestas — y el rechazo es lo que decide " +
+    "quién sobrevive las semanas que faltan. Abajo, el mismo modelo corrido dos veces con la " +
+    "misma semilla: la única diferencia es si las cifras de esa noche entran al ajuste.";
 
   const cont = $("#evo");
   cont.innerHTML =
