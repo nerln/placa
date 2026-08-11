@@ -443,6 +443,24 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
   color:var(--tinta); margin-top:3px; font-variant-numeric:tabular-nums}
 .rein-cifras .d{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5; margin-top:2px}
 
+
+/* El índice de campaña, pegado al termómetro porque sale de él. Quien no tiene
+   consigna aparece igual, con una raya: la fila vacía es el dato. */
+.campana{margin-top:20px; border-top:1px solid var(--linea); padding-top:16px}
+.camp-fila{display:grid; grid-template-columns:96px 1fr 62px; gap:12px; align-items:center;
+  padding:8px 0; border-bottom:1px solid var(--linea2)}
+.camp-fila .q{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.camp-fila.sin .q{color:var(--tinta3); font-weight:500}
+.camp-eje{position:relative; height:14px; background:var(--sup2); border-radius:3px}
+.camp-eje::before{content:""; position:absolute; left:50%; top:-3px; bottom:-3px; width:1px;
+  background:var(--linea)}
+.camp-eje i{position:absolute; top:0; bottom:0; border-radius:3px}
+.camp-eje i.neg{background:var(--rechazo)} .camp-eje i.pos{background:var(--apoyo)}
+.camp-fila .v{font-family:"Archivo",sans-serif; font-weight:700; text-align:right;
+  font-variant-numeric:tabular-nums; font-size:var(--t-sm)}
+.camp-fila.sin .v{color:var(--tinta3); font-weight:500}
+.camp-fila .t{font-size:var(--t-xs); color:var(--tinta3); grid-column:2/-1; margin-top:-4px}
+
 /* ---------- controles ---------- */
 .btn{font:inherit; font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-xs);
   letter-spacing:.02em; cursor:pointer; background:var(--sup); color:var(--tinta);
@@ -1192,6 +1210,8 @@ footer p{max-width:84ch}
       <p style="font-size:14.2px; color:var(--tinta2); margin:0" id="oficial-trend"></p>
     </div>
   </div>
+  <div class="campana" id="campana"></div>
+
   <div class="tw-par">
     <div class="tw-hueco" data-post="campania"></div>
     <div class="tw-hueco" data-post="tendencias"></div>
@@ -2855,6 +2875,59 @@ function contar(nodo){
     "<a rel='author' href='https://github.com/nerln'>nerln</a> · " +
     "<a href='https://github.com/nerln/placa/blob/main/METODOLOGIA.md'>método</a> · " +
     "<a href='datos.json'>datos crudos</a>";
+})();
+
+/* ---------- el índice de campaña ----------
+   El termómetro dice qué estuvo en tendencias. Solo eso no distingue amor de
+   odio: «Mariela» en el puesto 2 no dice si la quieren o la quieren afuera.
+   Pero una parte de esos términos lleva el signo escrito adentro, porque son
+   consignas, y ésos se pueden sumar.
+
+   Se llama campaña y no sentimiento a propósito: sentimiento obligaría a
+   defender que mide lo que siente el público. Y quien no tiene consigna
+   aparece con una raya, no con un cero: sin campaña no es lo mismo que con
+   campaña neutra. */
+(function(){
+  const C = D.campana, cont = $("#campana");
+  if(!C || !cont){ if(cont) cont.remove(); return; }
+  const base = D.escenarios.base;
+  const ord = [...D.jugadores].sort((a,b) => {
+    const x = C.indice[a].icd, y = C.indice[b].icd;
+    if(x === null && y === null) return base.p_sale28[b]-base.p_sale28[a];
+    if(x === null) return 1;
+    if(y === null) return -1;
+    return x - y;
+  });
+  const MAX = Math.max(1, ...D.jugadores.map(n => Math.abs(C.indice[n].icd || 0)));
+
+  cont.innerHTML =
+    "<div class='eyebrow' style='margin-bottom:8px'>El termómetro, con signo</div>" +
+    "<p style='font-size:14.2px; color:var(--tinta2); margin:0 0 14px; max-width:78ch'>" +
+    "De los " + (C.indice ? Object.keys(C.indice).length : 0) + " nombres que quedan, <b>" +
+    C.observados + "</b> tuvieron una consigna en tendencias durante la ventana. " +
+    "Una consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82. " +
+    "<b>Esto no entra al modelo</b>: para que entrara habría que medir cuánto pesa contra las " +
+    "galas ya jugadas, y con una sola ventana de tendencias no hay con qué.</p>" +
+    ord.map(n => {
+      const v = C.indice[n], x = v.icd;
+      const sin = x === null;
+      const ancho = sin ? 0 : 50 * Math.abs(x) / MAX;
+      const barra = sin ? "" :
+        "<i class='" + (x < 0 ? "neg" : "pos") + "' style='" +
+        (x < 0 ? "right:50%;" : "left:50%;") + "width:" + ancho + "%'></i>";
+      return "<div class='camp-fila" + (sin ? " sin" : "") + "'>" +
+        "<span class='q'>" + n + "</span>" +
+        "<span class='camp-eje'>" + barra + "</span>" +
+        "<span class='v'>" + (sin ? "—" : (x>0?"+":"−") + nf(Math.abs(x),2)) + "</span>" +
+        (v.terminos.length
+          ? "<span class='t'>" + v.terminos.map(t => t.txt + " · #" + t.mejor).join(" · ") + "</span>"
+          : "") +
+        "</div>";
+    }).join("") +
+    "<p style='font-size:12.6px; color:var(--tinta3); margin:14px 0 0; max-width:78ch'>" +
+    "La raya no es un cero. Quien no aparece con consigna es alguien de quien no hay " +
+    "observación, y eso es distinto de alguien de quien se sabe que no hay campaña. " +
+    "Ventana: " + (C.ventana || "") + ".</p>";
 })();
 
 /* ---------- el registro de pronósticos ----------

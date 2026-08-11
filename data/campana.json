@@ -1,0 +1,81 @@
+{
+ "generado": "2026-08-11",
+ "ventana": "10/08 13:56 → 11/08 07:09 UTC",
+ "fuente": "posiciones del top-50 de X en Argentina archivadas por trends24",
+ "formula": "ICD(i) = Σ signo(t) · (51 − mejor_posición(t)) / 50, sobre los términos que nombran a i y llevan consigna. Una sola consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82; al 50, 0,02. Dos consignas suman.",
+ "entra_al_modelo": false,
+ "por_que_no": "Para que entrara habría que estimar cuánto pesa contra las galas ya jugadas, y con una sola ventana de tendencias no hay con qué. Se publica como descripción.",
+ "null_no_es_cero": "Quien no tiene ningún término con consigna queda en null. Sin campaña no es lo mismo que con campaña neutra: es no medido.",
+ "indice": {
+  "Tamara": {
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
+  },
+  "Pincoya": {
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
+  },
+  "Charlotte": {
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
+  },
+  "Zilli": {
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
+  },
+  "Luana": {
+   "icd": -1.0,
+   "n_terminos": 1,
+   "estado": "observado",
+   "terminos": [
+    {
+     "txt": "LUANA AL 9009",
+     "signo": -1,
+     "mejor": 1,
+     "peso": 1.0
+    }
+   ]
+  },
+  "Yipio": {
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
+  },
+  "Mariela": {
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
+  },
+  "Majluf": {
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
+  },
+  "Sol": {
+   "icd": 0.82,
+   "n_terminos": 1,
+   "estado": "observado",
+   "terminos": [
+    {
+     "txt": "SOL A LA FINAL",
+     "signo": 1,
+     "mejor": 10,
+     "peso": 0.82
+    }
+   ]
+  }
+ },
+ "observados": 2,
+ "de": 9
+}

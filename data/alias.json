@@ -1,0 +1,12 @@
+{
+ "_nota": "Cómo se nombra a cada una en X, que no siempre es el apodo con el que aparece en el modelo. Archivo aparte y versionado: el mapeo término→persona es la decisión más discutible del índice de campaña, y así se puede discutir sin leer código.",
+ "Sol": ["SOLANGE", "SOLANGE ABRAHAM", "SOLCITO"],
+ "Yipio": ["YISELA", "YISELA PINTOS"],
+ "Pincoya": ["JENNIFER", "GALVARINI"],
+ "Charlotte": ["CANIGGIA", "CHARLOTE"],
+ "Tamara": ["PAGANINI"],
+ "Zilli": ["YANINA ZILLI"],
+ "Luana": ["LUANA FERNANDEZ"],
+ "Mariela": ["MARIELA PRIETO"],
+ "Majluf": ["ALEJANDRA MAJLUF"]
+}
