@@ -132,7 +132,9 @@ def meta(datos):
         ('<meta name="twitter:title" content="%s">' % titulo),
         ('<meta name="twitter:description" content="%s">' % desc),
         ('<meta name="twitter:image" content="%s">' % og),
-        ('<meta name="theme-color" content="#141a1e">'),
+        ('<meta name="theme-color" content="#0B0C0C">'),
+        ('<link rel="icon" href="ojo.svg" type="image/svg+xml">'),
+        ('<link rel="apple-touch-icon" href="og.png">'),
         ('<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">'),
         ('<script type="application/ld+json">%s</script>' % jsonld(datos, desc)),
     ]
