@@ -234,6 +234,8 @@ def main():
         "orden_escenarios": ESCENARIOS,
         "bootstrap": boot,
         "galas": galas_completas,
+        # cuantas se miraron en total, para poder decir "9 de 11" sin escribirlo
+        "galas_totales": len(galas["galas"]),
         "ranking1607": RANKING_1607,
         "analogos": analogos(res, hist["casos"]),
         "regla_historica": hist["_regla"],

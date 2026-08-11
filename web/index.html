@@ -30,7 +30,7 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"7716ac4530de62d9","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"d1c4728bdeaba838","inLanguage":"es-AR","creator":{"@type":"Person","name":"Eugenio Nerelli","url":"https://nerln.pages.dev","sameAs":["https://github.com/nerln","https://x.com/nerellone"]},"citation":"Eugenio Nerelli, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}</script>
 <script src="datos.js"></script>
 <style>
 /* ==========================================================================
@@ -486,7 +486,17 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 /* ---------- figuras ---------- */
 .figura{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); padding:14px 12px 10px}
 .figura figcaption{font-size:var(--t-xs); color:var(--tinta3); margin-top:12px; line-height:1.6}
-.scroll-x{overflow-x:auto; -webkit-overflow-scrolling:touch; min-width:0; max-width:100%}
+/* Señal de que hay más a la derecha: un degradado pegado al borde que se apaga
+   solo cuando se llega al final, hecho con background-attachment:local. Sin
+   JavaScript y sin ocupar sitio. Hace falta porque las barras superpuestas de
+   macOS y iOS son invisibles hasta que se arrastra. */
+.scroll-x{
+  background:
+    linear-gradient(to right, var(--papel) 30%, rgba(0,0,0,0)) left / 34px 100% no-repeat local,
+    linear-gradient(to left,  var(--papel) 30%, rgba(0,0,0,0)) right / 34px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(20,22,26,.14), rgba(0,0,0,0)) left / 14px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(20,22,26,.14), rgba(0,0,0,0)) right / 14px 100% no-repeat scroll;
+  overflow-x:auto; -webkit-overflow-scrolling:touch; min-width:0; max-width:100%}
 svg{display:block; max-width:100%; height:auto}
 .lienzo{position:relative; width:100%; aspect-ratio:1/1; max-height:76vh; touch-action:pan-y}
 .lienzo canvas{width:100%; height:100%; display:block}
@@ -515,9 +525,18 @@ svg{display:block; max-width:100%; height:auto}
 .paso .paso-t{margin:0 0 8px; font-size:var(--t-md); font-weight:700}
 .paso p{margin:0 0 10px; color:var(--tinta2); font-size:var(--t-sm); line-height:1.6}
 .paso p:last-child{margin-bottom:0}
+/* Las fórmulas se escriben alineadas con espacios, así que en pantalla ancha
+   van en `pre`. En el teléfono eso las cortaba por la mitad y lo que quedaba
+   fuera del recorte era justo la conclusión —«= 107,1 − 100 = 7,1 ✓ cuadra»—,
+   o sea la única parte que importa. Por debajo de 560px se dejan plegar: se
+   pierde la alineación en columnas y se gana poder leerlas enteras. */
 .formula{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:var(--t-xs);
   background:var(--sup2); border-left:3px solid var(--tinta);
-  padding:12px 14px; margin:12px 0; color:var(--tinta2); overflow-x:auto; white-space:pre; line-height:1.65}
+  padding:12px 14px; margin:12px 0; color:var(--tinta2); overflow-x:auto; white-space:pre;
+  line-height:1.65}
+@media (max-width:560px){
+  .formula{white-space:pre-wrap; overflow-wrap:anywhere; font-size:12.5px; line-height:1.7}
+}
 
 table{border-collapse:collapse; width:100%; font-size:var(--t-xs)}
 th,td{padding:9px 10px; text-align:right; border-bottom:1px solid var(--linea2); white-space:nowrap}
@@ -586,6 +605,10 @@ ul.limpia b{color:var(--tinta)}
 .sim-mandos{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px}
 .sim-cuerpo{display:grid; grid-template-columns:minmax(0,1fr); gap:18px}
 .sim-traza{margin:0; padding:0; list-style:none; font-size:var(--t-xs); min-height:120px}
+/* Antes de la primera corrida la lista estaba vacía y quedaba un rectángulo en
+   blanco de 120px bajo su propio rótulo. Ahora dice qué va a aparecer ahí. */
+.sim-traza:empty::before{content:"Acá va a aparecer la temporada semana por semana: quién queda en placa, quién se va, y quién gana la final.";
+  display:block; color:var(--tinta3); line-height:1.6; max-width:46ch}
 .sim-traza li{display:grid; grid-template-columns:56px minmax(0,1fr); gap:9px; padding:6px 0;
   border-bottom:1px solid var(--linea2); animation:entra .3s var(--sal)}
 .sim-traza li .g{color:var(--tinta3); font-variant-numeric:tabular-nums}
@@ -753,8 +776,8 @@ footer p{max-width:84ch}
 .trend-fila .dur{font-size:var(--t-xs); color:var(--tinta3); white-space:nowrap;
   font-variant-numeric:tabular-nums}
 .signos{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px;
-  background:var(--linea2); border:1px solid var(--linea2)}
-.signo{background:var(--sup); padding:11px 12px}
+  background:transparent; border:0}
+.signo{background:var(--sup); padding:11px 12px; box-shadow:0 0 0 1px var(--linea2)}
 .signo .s{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.06em;
   text-transform:uppercase; color:var(--tinta3); font-weight:700}
 .signo .q{font-weight:700; font-size:var(--t-sm); margin-top:2px}
@@ -934,7 +957,7 @@ footer p{max-width:84ch}
     <span class="cinta"><i></i><span id="prox-gala"></span></span>
   </div>
   <h1 class="tit">¿Quién se lleva <em>los 70 millones</em>?</h1>
-  <p class="bajada">Todo sale de dos cosas que Telefe publica y casi nadie cruza: el reparto de votos que canta en cada gala de eliminación, y una foto que pasó de largo, el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio. Nada de encuestas de intención ni de cuotas de apuestas: para esta edición no existe ningún mercado real.</p>
+  <p class="bajada">Todo sale de dos cosas que publica Telefe: el reparto de votos que canta en cada gala de eliminación, y el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio. Nada de encuestas de intención ni de cuotas de apuestas: para esta edición no existe ningún mercado real.</p>
 </header>
 
 <div class="veredicto">
@@ -998,7 +1021,7 @@ footer p{max-width:84ch}
       <div class="eyebrow">La encuesta que entra al modelo</div>
       <p style="font-size:14.6px; color:var(--tinta2); margin-top:0">Se la calibró contra los resultados oficiales de las galas anteriores, midiendo el error en escala logit centrada dentro de cada gala.</p>
       <div class="scroll-x"><table id="t-encuesta"></table></div>
-      <p style="font-size:13.4px; color:var(--tinta2); margin-bottom:0">Su <b>puesto 1 acierta 4 de 4</b> y se mide con un desvío de apenas 0,53 logits. Sus puestos 2 y 3 tienen un desvío tres veces mayor y un sesgo al alza: la encuesta no reproduce la concentración extrema del voto real. Por eso el modelo le hace caso en <em>a quién pone primero</em> y la ignora casi por completo en el resto del reparto.</p>
+      <p style="font-size:13.4px; color:var(--tinta2); margin-bottom:0" id="pie-calibra"></p>
     </div>
     <div class="tarjeta">
       <div class="eyebrow">Salidas</div>
@@ -1055,7 +1078,7 @@ footer p{max-width:84ch}
   <p class="sub">Toda la temporada el público paga para sacar gente. En la final paga para coronar a alguien. Suena parecido y no lo es: mirando 2024 y 2025, las dos cosas casi no correlacionan. Que nadie te quiera echar no significa que alguien te quiera adentro, y esa diferencia decide la edición.</p>
   <figure class="figura">
     <div class="scroll-x" id="g-plano"></div>
-    <figcaption>Hacia la derecha, quien más votos recibe para ser eliminado (μ). Hacia arriba, quien más recibe cuando se vota para salvar (ψ). El tamaño del punto es la probabilidad de ganar. Se gana en el rincón celeste de arriba a la izquierda: querido y sin que nadie te apunte. El contorno punteado marca a quienes no tienen ninguna gala con reparto completo, así que su posición horizontal es casi sólo el prior.</figcaption>
+    <figcaption>Hacia la derecha, quien más votos recibe para ser eliminado (μ). Hacia arriba, quien más recibe cuando se vota para salvar (ψ). El tamaño del punto es la probabilidad de ganar. Se gana en el rincón celeste de arriba a la izquierda: querido y sin que nadie te apunte. <span id="nota-punteado"></span></figcaption>
   </figure>
   <div class="g3" style="margin-top:20px">
     <div class="dato"><div class="k">La trampa</div><div class="v serif">2%</div>
@@ -1070,7 +1093,7 @@ footer p{max-width:84ch}
 <section id="porque">
   <div class="eyebrow">Uno por uno</div>
   <div class="titulo"><h2 class="tit">Por qué cada uno está donde está</h2></div>
-  <p class="sub">Un porcentaje sin explicación no sirve de nada. Para cada uno va lo que lo pone ahí y a quién se parece de las dos ediciones anteriores, con lo que le pasó a esa persona. La comparación es una tipología en dos ejes, no una métrica ajustada: de 2024 y 2025 nadie publicó el reparto completo de las galas, así que lo único que se puede comparar es el perfil.</p>
+  <p class="sub">Para cada uno va lo que lo pone ahí y a quién se parece de las dos ediciones anteriores, con lo que le pasó a esa persona. La comparación es una tipología en dos ejes, no una métrica ajustada: de 2024 y 2025 nadie publicó el reparto completo de las galas, así que lo único que se puede comparar es el perfil.</p>
   <div class="porque" id="porque-fichas" data-anim data-cascada></div>
   <p style="font-size:13.6px; color:var(--tinta3); margin-top:20px; max-width:78ch" id="regla-hist"></p>
 </section>
@@ -1086,7 +1109,7 @@ footer p{max-width:84ch}
 <section id="simulador">
   <div class="eyebrow">Probalo vos</div>
   <h2>Corré la temporada y mirá qué pasa</h2>
-  <p class="sub">Este simulador es el modelo, corriendo acá adentro. Cada temporada sortea los parámetros dentro de su incertidumbre, arma las placas, elimina semana a semana y resuelve la final. No hay resultados guardados: lo que ves se calcula en el momento.</p>
+  <p class="sub">Cada temporada sortea los parámetros dentro de su incertidumbre, arma las placas, elimina semana a semana y resuelve la final, con el mismo procedimiento que el pronóstico.</p>
   <div class="sim" id="sim">
     <div class="sim-mandos">
       <button class="btn" id="sim-una" type="button">Correr una temporada</button>
@@ -1149,40 +1172,39 @@ footer p{max-width:84ch}
 <section id="metodo">
   <div class="eyebrow">El método</div>
   <div class="titulo"><h2 class="tit">El método, paso por paso</h2></div>
-  <p class="sub">Cinco etapas. Ningún número de acá abajo sale de una intuición: o es un resultado oficial de votación, o es una calibración medida contra resultados oficiales.</p>
+  <p class="sub">Cinco etapas. Cada número de acá abajo es un resultado oficial de votación o una calibración medida contra resultados oficiales.</p>
 
   <div class="paso"><div class="n mono">1</div><div>
-    <h3 class='paso-t'>Se descubrió que ocho galas son observaciones completas</h3>
+    <h3 class='paso-t' id="m1-tit"></h3>
     <p>Telefe canta cada salvación con su porcentaje sobre el total de la placa, y recién renormaliza al 100% cuando quedan dos. Eso deja una huella que se puede comprobar con una resta: la suma de todo lo publicado, menos 100, tiene que dar exactamente lo que sumaron los salvados.</p>
     <div class="formula" id="f-identidad"></div>
-    <p>Da exacto en 8 de las 11 galas recientes. Cuando da, sabemos que en esa placa no faltaba nadie, y entonces la gala deja de ser un dato suelto y pasa a ser el reparto completo de los votos de esa noche. Es la misma resta que corre el actualizador automático cada vez que entra una gala nueva, antes de tocar nada.</p>
+    <p><span id="m1-exacto"></span> Cuando da, sabemos que en esa placa no faltaba nadie, y entonces la gala deja de ser un dato suelto y pasa a ser el reparto completo de los votos de esa noche. Es la misma resta que corre el actualizador automático cada vez que entra una gala nueva, antes de tocar nada.</p>
   </div></div>
 
   <div class="paso"><div class="n mono">2</div><div>
-    <h3 class='paso-t'>El rechazo no es un rasgo fijo: la mitad es ruido semanal</h3>
-    <p>El primer intento le daba a cada persona un rechazo fijo. Se cayó a pedazos enseguida. Luana pasó del 38,45% al 0,10% en tres semanas. Emanuel saltó del 0,4% al 53,8%. Cola, del 0,5% al 68,2%. Si mirás la cuota de alguien en dos galas seguidas, la correlación es −0,13: básicamente cero.</p>
-    <div class="formula">θ(i, gala) = μ(i) + ε(i, gala)      ε ~ Normal(0, ω²)
-μ = rasgo estable · 52%          ω = 1,75 logits · 48%</div>
-    <p>Separando las dos partes y corrigiendo por ruido de muestreo, queda mitad y mitad. Un shock semanal de una desviación multiplica por 5,8 las chances de ser el elegido de la noche, que es otra forma de decir que el relato de la semana pesa tanto como quién sos. Ese mismo ω es el que define cuánta incertidumbre arrastra el pronóstico hacia adelante.</p>
+    <h3 class='paso-t' id="m2-tit"></h3>
+    <p>Un rechazo fijo por persona no aguanta los datos. Luana pasó del 38,45% al 0,10% en tres semanas. Emanuel saltó del 0,4% al 53,8%. Cola, del 0,5% al 68,2%. Si mirás la cuota de alguien en dos galas seguidas, la correlación es −0,13: básicamente cero.</p>
+    <div class="formula" id="f-varianza"></div>
+    <p id="m2-cierre"></p>
   </div></div>
 
   <div class="paso"><div class="n mono">3</div><div>
     <h3 class='paso-t'>La encuesta entra calibrada, no a ojo</h3>
-    <p>Cada encuesta suya se comparó contra el resultado oficial de la gala siguiente. De ahí salen un sesgo y un desvío distintos para cada posición del ranking, y con eso se pondera. Un agregador que va 4 de 4 no se puede ignorar, pero tampoco creerle el reparto entero: le acierta al blanco de la noche y le erra feo al resto. Si alguna semana no hay encuesta, el modelo corre igual con la preferencia revelada sola.</p>
+    <p>Cada encuesta suya se comparó contra el resultado oficial de la gala siguiente. De ahí salen un sesgo y un desvío distintos para cada posición del ranking, y con eso se pondera. Un agregador que va <span id="m3-aciertos"></span> no se puede ignorar, pero tampoco creerle el reparto entero: le acierta al blanco de la noche y le erra feo al resto. Si alguna semana no hay encuesta, el modelo corre igual con la preferencia revelada sola.</p>
   </div></div>
 
   <div class="paso"><div class="n mono">4</div><div>
     <h3 class='paso-t'>El apoyo positivo sale de un ranking real, no de un prior</h3>
     <p>En las fases de voto positivo Telefe casi nunca da porcentajes. Pero canta los salvados en orden, del más votado al menos votado, y eso es un ranking. Un ranking parcial es justo lo que come un modelo Plackett-Luce, el mismo que se usa para estimar fuerza de jugadores a partir de posiciones de llegada.</p>
     <div class="formula">P(orden i₁ ≻ i₂ ≻ … ≻ i_k) = ∏ⱼ  e^ψ(iⱼ) ⁄ Σ_{m aún en juego} e^ψ(m)</div>
-    <p>Hay doce de esas instancias. El ancla es la gala del 16 de julio, una placa positiva con los 16 de la casa ordenados de punta a punta. El modelo la reconstruye con una correlación de rangos de 0,87, y en el fondo de la tabla no falla ni un puesto.</p>
+    <p>Hay doce de esas instancias. El ancla es la gala del 16 de julio, una placa positiva con los 16 de la casa ordenados de punta a punta. El modelo la reconstruye con una correlación de rangos de 0,87, y en el fondo de la tabla acierta todos los puestos.</p>
     <div class="scroll-x" id="t-1607" style="margin-top:14px"></div>
   </div></div>
 
   <div class="paso"><div class="n mono">5</div><div>
     <h3 class='paso-t'>Se simula el tramo que falta, no se extrapola</h3>
     <p>Cada corrida empieza sorteando los parámetros dentro de su incertidumbre, y después juega las semanas que faltan como si fuera el programa: alguien gana el liderazgo, se arma la placa según lo seguido que cae nominado cada uno, y sale el más votado en contra esa noche. Cuando quedan tres, o cuatro, se cambia el signo del voto y se define el campeón.</p>
-    <p>Y como las dos primeras quedaron pegadas, mirar el número de arriba no alcanzaba para elegir. Por eso se remuestreó toda la cadena de punta a punta: sacar y reponer evidencia, volver a estimar las dos escalas, volver a simular. La pregunta «¿a quién pongo?» se contesta con la frecuencia con la que cada una queda primera, no con la diferencia de 1,3 puntos.</p>
+    <p>Y como las dos primeras quedaron pegadas, mirar el número de arriba no alcanzaba para elegir. Por eso se remuestreó toda la cadena de punta a punta: sacar y reponer evidencia, volver a estimar las dos escalas, volver a simular. La pregunta «¿a quién pongo?» se contesta con la frecuencia con la que cada una queda primera, no con la diferencia de <span id="m5-brecha"></span>.</p>
   </div></div>
 </section>
 
@@ -1199,7 +1221,7 @@ footer p{max-width:84ch}
 <section id="sensibilidad">
   <div class="eyebrow">Sensibilidad</div>
   <div class="titulo"><h2 class="tit">Sensibilidad a cada supuesto</h2></div>
-  <p class="sub">Cada columna cambia una decisión que se podría haber tomado distinto. Cuanto más dorada la celda, más alta la probabilidad.</p>
+  <p class="sub">Cada columna cambia una decisión que se podría haber tomado distinto. Cuanto más intensa la celda, más alta la probabilidad.</p>
   <div class="figura scroll-x"><table id="t-sens"></table></div>
 </section>
 
@@ -1227,7 +1249,7 @@ footer p{max-width:84ch}
       <ul class="limpia">
         <li><b>Nadie confirmó cuándo es la final.</b> Telefe no sacó comunicado. Circulan el 6 de septiembre, que es la versión más repetida aunque viene de una sola fuente original, y el 31 de agosto, que es hasta cuándo tienen vigencia las bases de votación. Como el modelo cuenta eliminaciones y no días de calendario, el impacto queda acotado.</li>
         <li><b>Ni el número de finalistas ni la mecánica de la final están confirmados</b> para esta edición. Se asume lo de 2024 y 2025: tres finalistas y voto positivo. El escenario de cuatro finalistas está en la tabla de sensibilidad.</li>
-        <li><b>Hay participantes sin ninguna gala con reparto completo.</b> Su rechazo se estima casi solo con el prior y con la encuesta más reciente. Son las estimaciones más frágiles del cuadro, y el gráfico las marca con contorno punteado.</li>
+        <li><b>Hay rechazos que salen de una sola gala.</b> <span id="lim-fragiles"></span> Con una observación no se separa el rasgo del ruido de esa noche, así que su μ es casi el prior corregido una vez. Son las estimaciones más frágiles del cuadro.</li>
         <li><b>No existe ningún mercado de apuestas utilizable.</b> El único mercado hallado, en Manifold, tiene una sola operación y cotiza a un participante eliminado en marzo.</li>
       </ul>
     </div>
@@ -1493,7 +1515,7 @@ orden.forEach((n,i) => {
 $("#vaviso").innerHTML = "<b>La ventaja es menor que la incertidumbre.</b> " + g2 + " queda a " +
   nf(100*(base.p_gana[g1]-base.p_gana[g2]),1) + " puntos (" + pc(base.p_gana[g2]) +
   ") y encabeza el modelo en el " + Math.round(100*D.bootstrap.p_favorito[g2]) +
-  "% de los remuestreos. Con " + D.jugadores.length + " personas todavía en juego, cualquier pronóstico honesto reparte: ni la favorita llega a una de cada cuatro.";
+  "% de los remuestreos. Con " + D.jugadores.length + " personas todavía en juego, el pronóstico reparte: ni la favorita llega a una de cada cuatro.";
 $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,2);
 
 /* ---------- placa de nominados ---------- */
@@ -1518,7 +1540,7 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
                        " mujeres y la final será la primera de esta edición sin ningún hombre. " : ". ")
        : "")
       + "Hasta la gala de nominación, a mitad de semana, no hay nadie en placa. El modelo "
-      + "no se queda sin decir nada: sortea la placa por propensión, como hace con todas las "
+      + "sortea la placa por propensión, como hace con todas las "
       + "semanas futuras, y de ahí sale el riesgo de ser la próxima en irse."
     : D.encuesta && D.encuesta.cuota && Object.keys(D.encuesta.cuota).length
     ? "Las dos fuentes de evidencia se contradicen y se cancelan casi exactamente. Por un lado están las votaciones reales, donde el que la encuesta da eliminado se venía salvando con porcentajes ínfimos gala tras gala. Por el otro está Fefe Bongiorno, el único agregador de la temporada que acierta, y dice lo contrario."
@@ -1552,11 +1574,43 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
     cont.appendChild(c);
   });
 })();
+  // El contorno punteado marca a quien no tiene NINGUNA gala con reparto
+  // completo. Esta semana no le toca a nadie —el mínimo es una—, así que la
+  // frase que lo explicaba describía algo que no estaba en el gráfico.
+  (function(){
+    const n = $("#nota-punteado");
+    if(!n) return;
+    const sin = D.jugadores.filter(x => (D.n_galas[x] || 0) === 0);
+    const una = D.jugadores.filter(x => (D.n_galas[x] || 0) === 1);
+    n.innerHTML = sin.length
+      ? "El contorno punteado marca a quienes no tienen ninguna gala con reparto completo, así " +
+        "que su posición horizontal es casi sólo el prior: " + sin.join(", ") + "."
+      : (una.length
+          ? "Nadie queda sin ninguna gala medida, pero el rechazo de " + una.join(", ") +
+            " sale de una sola: su posición horizontal es la más frágil del gráfico."
+          : "");
+  })();
+  // Quiénes son los frágiles sale de los datos: la lista cambia sola cuando
+  // alguien cae en placa y su rechazo pasa a estar medido de verdad.
+  (function(){
+    const n = $("#lim-fragiles");
+    if(!n) return;
+    const pocas = D.jugadores.filter(x => (D.n_galas[x] || 0) <= 1)
+      .sort((a,b) => (D.n_galas[a]||0) - (D.n_galas[b]||0));
+    n.textContent = pocas.length
+      ? "Hoy: " + pocas.join(", ") + "."
+      : "Hoy no le pasa a nadie.";
+  })();
+
+
 
 /* ---------- eliminados recientes ---------- */
 (function(){
   const c = $("#eliminados");
-  D.eliminados.slice(0,4).forEach(e => {
+  // El archivo las trae en el orden en que se fueron cargando, que no es el
+  // cronológico: quedaba 10/08 → 03/08 → 06/08 → 27/07 y parecía un error.
+  [...D.eliminados].sort((a,b) => (b.fecha||"").localeCompare(a.fecha||""))
+    .slice(0,4).forEach(e => {
     const row = el("div");
     row.className = "salida";
     row.innerHTML = "<div class='salida-cab'>" +
@@ -1904,7 +1958,9 @@ function pintarBoard(){
 (function(){
   const t = $("#t-sens");
   const ord = [...D.jugadores].sort((a,b)=>base.p_gana[b]-base.p_gana[a]);
-  const cols = D.orden_escenarios.filter(([k]) => D.escenarios[k]);
+  const iguales = k => k !== "base" && D.escenarios[k] &&
+    D.jugadores.every(n => Math.abs(D.escenarios[k].p_gana[n] - base.p_gana[n]) < 5e-4);
+  const cols = D.orden_escenarios.filter(([k]) => D.escenarios[k] && !iguales(k));
   let max = 0;
   cols.forEach(([k]) => ord.forEach(n => max = Math.max(max, D.escenarios[k].p_gana[n])));
   t.innerHTML = "<thead><tr><th>Participante</th>" + cols.map(([,lab]) => "<th>"+lab+"</th>").join("") +
@@ -1933,8 +1989,13 @@ function pintarBoard(){
       const tintaSeg = (n===g.eliminado || esVivo) ? "var(--sobre-fuerte)" : "var(--tinta2)";
       seg.style.cssText = "width:"+v+"%;background:"+relleno+
         ";min-width:2px;display:grid;place-items:center;overflow:hidden";
-      if(v>11) seg.innerHTML = "<span style='font-size:11.5px;color:"+tintaSeg+
-        ";font-weight:700;white-space:nowrap'>"+n+" "+nf(v,1)+"%</span>";
+      // Cabe o no cabe en píxeles, no en porcentaje: un 11% de 390px son 43px
+      // y ahí «Yipio 17,0%» se cortaba a la mitad del signo.
+      const px = (cont.clientWidth || 600) * v/100;
+      const etq = n + " " + nf(v,1) + "%";
+      if(px > etq.length * 6.6 + 10)
+        seg.innerHTML = "<span style='font-size:11.5px;color:"+tintaSeg+
+          ";font-weight:700;white-space:nowrap'>"+etq+"</span>";
       bindTT(seg, "<b>"+n+"</b>"+nf(v,2)+"% del voto total de la placa"+(n===g.eliminado?"<br><span style='color:var(--rechazo-txt)'>eliminado</span>":""));
       bar.appendChild(seg);
     });
@@ -1982,6 +2043,7 @@ function redes(n){
   const ord = [...D.jugadores].sort((a,b) => base.p_gana[b]-base.p_gana[a]);
 
   const nivelTxt = {bajo:"bajo", medio:"medio", alto:"alto"};
+  const MAS_ALTO = [...D.jugadores].sort((a,b) => D.mu[b]-D.mu[a])[0];
   const razon = n => {
     const a = D.analogos[n], mu = D.mu[n], psi = D.psi[n], g = D.n_galas[n];
     const partes = [];
@@ -1990,7 +2052,12 @@ function redes(n){
     else if(a.rechazo === "bajo")
       partes.push("Cuando cae en placa casi no recibe votos para eliminar: μ = " + nf(mu) + " sobre " + g + (g===1?" gala":" galas") + " con dato");
     else if(a.rechazo === "alto")
-      partes.push("Es el blanco preferido del voto negativo: μ = " + nf(mu) + ", el más alto de la casa");
+      // El tercil superior no es el máximo: decir «el más alto de la casa» de
+      // todos los del tercil se lo decía a tres personas a la vez, y solo una
+      // podía ser cierta. Ahora se comprueba quién es el máximo de verdad.
+      partes.push(n === MAS_ALTO
+        ? "Es el blanco preferido del voto negativo: μ = " + nf(mu) + ", el más alto de la casa"
+        : "Está entre los más votados para eliminar: μ = " + nf(mu) + ", en el tercio alto");
     else
       partes.push("Rechazo intermedio: μ = " + nf(mu) + ", ni entre los blancos ni entre los intocables");
 
@@ -2240,20 +2307,29 @@ function contar(nodo){
     let vivos = [...J];
     const traza = [];
 
-    // la gala que viene usa la placa real y el estado ya estimado
-    const placa0 = D.placa28.slice();
-    const s0 = {};
-    placa0.forEach(n => { const [mu0, sd] = D.estado28[n]; s0[n] = mu0 + sd*gauss(); });
-    placa0.forEach(n => {                       // lo observado también corrige el rasgo
-      const pv = D.se_mu[n]**2, ov = OM*OM;
-      m[n] = (D.mu[n]/pv + s0[n]/ov) / (1/pv + 1/ov);
-    });
-    let fuera = elegir(placa0, softmax(placa0.map(n=>s0[n])));
-    vivos = vivos.filter(x=>x!==fuera);
-    traza.push({gala:28, placa:placa0, fuera, lider:D.placa_vigente.inmune_lider});
+    // La primera eliminación usa la placa real y el estado ya estimado, PERO
+    // solo si hay placa. Entre la gala del lunes y la nominación del miércoles
+    // no la hay, y entonces esa primera vuelta se sortea por propensión como
+    // todas las demás — que es exactamente lo que hace el modelo
+    // (usar_estado28). Sin esta rama, placa0 quedaba vacía, elegir([]) devolvía
+    // undefined y la traza abría con «Gala 28 · placa de 0 · sale undefined».
+    const GALA0 = D.galas[D.galas.length-1].gala + 1;
+    const placa0 = (D.placa28 || []).slice();
+    let fuera = null;
+    let g = GALA0;
+    if(placa0.length){
+      const s0 = {};
+      placa0.forEach(n => { const [mu0, sd] = D.estado28[n]; s0[n] = mu0 + sd*gauss(); });
+      placa0.forEach(n => {                     // lo observado también corrige el rasgo
+        const pv = D.se_mu[n]**2, ov = OM*OM;
+        m[n] = (D.mu[n]/pv + s0[n]/ov) / (1/pv + 1/ov);
+      });
+      fuera = elegir(placa0, softmax(placa0.map(n=>s0[n])));
+      vivos = vivos.filter(x=>x!==fuera);
+      traza.push({gala:g++, placa:placa0, fuera, lider:D.placa_vigente.inmune_lider});
+    }
 
     const nFin = Math.random() < 0.70 ? 3 : 4;
-    let g = 29;
     while(vivos.length > nFin){
       const lider = vivos[Math.floor(Math.random()*vivos.length)];
       const cand = vivos.filter(x=>x!==lider);
@@ -2357,8 +2433,11 @@ function contar(nodo){
     filas.push(["Voto positivo del 16/07", pos1607 >= 0 ? "puesto <b>"+(pos1607+1)+"</b> de 16" : "no estaba"]);
     filas.push(["Apoyo estimado ψ", "<b>"+(D.psi[n]>0?"+":"")+nf(D.psi[n])+"</b> ± "+nf(D.se_psi[n])+
       " · sobre "+D.fases_psi[n]+" fases positivas"]);
-    filas.push(["Cae en placa", (p.placas_recientes ?? "?")+" veces desde junio · "+
-      (p.votos_recientes ?? "?")+" puntos de nominación en las últimas 4 galas"]);
+    // Singular y plural: la ficha decía «1 puntos de nominación».
+    const vn = p.votos_recientes, pl = p.placas_recientes;
+    filas.push(["Cae en placa",
+      (pl ?? "?") + (pl === 1 ? " vez" : " veces") + " desde junio · " +
+      (vn ?? "?") + (vn === 1 ? " punto" : " puntos") + " de nominación en las últimas 4 galas"]);
     filas.push(["Pronóstico del modelo", "<b>"+pc(base.p_gana[n])+"</b> de ganar · llega a la final "+
       pc(base.p_final[n],0)]);
     $("#ficha").innerHTML = "<h4>De dónde salen los números de "+n+"</h4><table><tbody>" +
@@ -2504,6 +2583,14 @@ function contar(nodo){
     if(puestos.some(h => { const r = h.getBoundingClientRect();
                            return r.top < alto + 600 && r.bottom > -600; })) pedir();
   }
+  // La primera llamada NO se hace ahora. En este punto del guion las secciones
+  // de arriba todavía están vacías —se rellenan más abajo—, así que el hueco
+  // está mucho más cerca del pliegue de lo que va a estar cuando la página
+  // termine de armarse, pasa el umbral y X se pide de inmediato. Medido: en
+  // escritorio widgets.js salía a los 0,07 s con la publicación 1.377 px por
+  // debajo del pliegue, o sea que el diferido no difería nada. Se espera a que
+  // el navegador haya maquetado todo.
+  requestAnimationFrame(() => requestAnimationFrame(alScroll));
   // Dos disparadores para lo mismo, a propósito: el observador es la forma
   // correcta y el scroll a mano es el que sigue andando donde el observador no
   // se despierta. El primero que llegue pide el guion; el otro se encuentra
@@ -2515,7 +2602,61 @@ function contar(nodo){
     puestos.forEach(h => io.observe(h));
   }
   addEventListener("scroll", alScroll, {passive:true});
-  alScroll();
+})();
+
+/* ---------- los números del método, escritos por los datos ----------
+   Estaban a mano en la prosa y el modelo los dejó atrás: decía ocho galas
+   cuando ya son nueve, ω = 1,75 cuando vale 1,94, «4 de 4» cuando la encuesta
+   va 5 de 5, «52% / 48%» cuando la descomposición da 39/61, y «1,3 puntos» de
+   brecha cuando son 3,0. Ninguno era un error de cálculo: eran copias que
+   envejecieron, y envejecieron en silencio porque nada las comprobaba. Un
+   número que no se puede escribir a mano no se puede quedar viejo. */
+(function(){
+  const M = D.meta, base = D.escenarios.base;
+  const NUM = ["cero","una","dos","tres","cuatro","cinco","seis","siete","ocho","nueve",
+               "diez","once","doce","trece"];
+  const nC = D.galas.length, nT = D.galas_totales || nC;
+
+  const t1 = $("#m1-tit");
+  if(t1) t1.textContent = (NUM[nC] || nC)[0].toUpperCase() + (NUM[nC] || nC).slice(1) + " galas son observaciones completas";
+  const e1 = $("#m1-exacto");
+  if(e1) e1.textContent = nT > nC
+    ? "Da exacto en " + nC + " de las " + nT + " galas recientes."
+    : "Da exacto en las " + (NUM[nC] || nC) + " galas recientes.";
+
+  const rasgo = Math.round(100 * M.icc_estable), ruido = 100 - rasgo;
+  const t2 = $("#m2-tit");
+  if(t2) t2.textContent = "El rechazo no es un rasgo fijo: " +
+    (ruido > 55 ? "la mayor parte es ruido semanal" : "casi la mitad es ruido semanal");
+  const f2 = $("#f-varianza");
+  if(f2) f2.textContent =
+    "θ(i, gala) = μ(i) + ε(i, gala)      ε ~ Normal(0, ω²)\n" +
+    "μ = rasgo estable · " + rasgo + "%      ω = " + nf(M.omega,2) + " logits · " + ruido + "%";
+  const c2 = $("#m2-cierre");
+  if(c2) c2.innerHTML =
+    "Separando las dos partes y corrigiendo por ruido de muestreo, el rasgo estable se queda con " +
+    "<b>" + rasgo + "%</b> y la semana con <b>" + ruido + "%</b>. Un shock semanal de una " +
+    "desviación multiplica por <b>" + nf(Math.exp(M.omega),1) + "</b> las chances de ser el " +
+    "elegido de la noche, que es otra forma de decir que el relato de la semana pesa más que " +
+    "quién sos. Ese mismo ω define cuánta incertidumbre arrastra el pronóstico hacia adelante.";
+
+  const par = M.encuesta_aciertos_puesto1 || [0,0];
+  const a3 = $("#m3-aciertos");
+  if(a3) a3.textContent = par[0] + " de " + par[1];
+
+  const ord = Object.keys(base.p_gana).sort((a,b) => base.p_gana[b]-base.p_gana[a]);
+  const b5 = $("#m5-brecha");
+  if(b5) b5.textContent = nf(100*(base.p_gana[ord[0]] - base.p_gana[ord[1]]),1) + " puntos";
+
+  const pc1 = $("#pie-calibra");
+  if(pc1){
+    const d1 = M.encuesta_desvio["1"], d2 = M.encuesta_desvio["2"];
+    pc1.innerHTML = "Su <b>puesto 1 acierta " + par[0] + " de " + par[1] + "</b> y se mide con " +
+      "un desvío de apenas " + nf(d1,2) + " logits. Sus puestos 2 y 3 tienen un desvío <b>" +
+      nf(d2/d1,1) + " veces mayor</b> y un sesgo al alza: la encuesta no reproduce la " +
+      "concentración extrema del voto real. Por eso el modelo le hace caso en <em>a quién pone " +
+      "primero</em> y la ignora casi por completo en el resto del reparto.";
+  }
 })();
 
 /* ---------- el registro de pronósticos ----------
@@ -2610,12 +2751,14 @@ function contar(nodo){
   // sobrevivir, y el modelo lo mide: sale de las propias simulaciones.
   const elim = Math.round(C.eliminaciones_que_sobrevive);
   const riesgo = base.p_sale28[q];
+  const segundoRiesgo = Object.entries(base.p_sale28)
+    .filter(([k]) => k !== q).sort((a,b) => b[1]-a[1])[0][1];
 
   $("#tit-camino").textContent =
     "Para que gane " + q + " tienen que pasar " + (NUM[elim] || elim) + " cosas seguidas";
   $("#sub-camino").innerHTML =
     "<b>" + q + "</b> es la última del cuadro, con " + pc(base.p_gana[q],1) + ". Un número así se " +
-    "lee como «improbable, pero quién sabe», y no dice nada. Esto es lo que hay dentro: de " +
+    "lee como «improbable, pero quién sabe». Detrás hay una descripción concreta: de " +
     (C.n_sims/1000).toFixed(0) + " mil temporadas simuladas gana <b>" +
     C.n.toLocaleString("es-AR") + "</b>, y todas se parecen entre sí. Cada peldaño de abajo es " +
     "creíble por separado; la escalera entera es lo que no se sostiene.";
@@ -2623,8 +2766,8 @@ function contar(nodo){
   const riv = C.rivales_final[0], duelo = C.duelo_final[0];
   const pasos = [
     {q: "No irse en la primera, siendo la que más riesgo tiene",
-     por: "El modelo le da el " + pc(riesgo,1) + " de ser la próxima en salir, más que a las " +
-          "otras ocho juntas. La escalera empieza con una moneda cargada en contra.",
+     por: "El modelo le da el " + pc(riesgo,1) + " de ser la próxima en salir; a la segunda, " +
+          pc(segundoRiesgo,1) + ". La escalera empieza con una moneda cargada en contra.",
      cuanto: pc(1 - riesgo, 0) + " de sobrevivir"},
     {q: "Y no irse en ninguna de las " + (NUM[elim - 1] || (elim - 1)) + " siguientes",
      por: "Con " + (NUM[D.jugadores.length] || D.jugadores.length) + " en la casa y una final de " +
@@ -2728,7 +2871,8 @@ function contar(nodo){
       "<td style='white-space:normal; text-align:left; color:var(--tinta2)'>" + qs.join(" · ") +
       "</td></tr>").join("") +
     "<tr><td colspan='3' style='white-space:normal; text-align:left; color:var(--tinta3)'>" +
-    "De " + Z.ganadores.length + " ediciones hay fecha de " + gs.length + ". Las otras " +
+    "De las " + Z.ganadores.length + " ediciones anteriores hay fecha de " + gs.length +
+    ". Las otras " +
     (Z.ganadores.length - gs.length) + " no la tienen publicada, así que esta tabla no es el " +
     "historial completo y ningún signo puede reclamar nada.</td></tr></tbody>";
 
@@ -2865,8 +3009,7 @@ function contar(nodo){
         (vs && vs[elim] ? " —" + nf(vs[elim],0) + "% en el mano a mano final, que es el número " +
          "que canta Telefe— " : ", ") +
         "y la única encuestadora con historial lo había puesto primero. Cuando el miércoles se " +
-        "arme la placa, acá vuelve el muro con todas las mediciones enfrentadas y la del modelo " +
-        "al lado."
+        "arme la placa habrá mediciones nuevas que enfrentar."
       : "Todavía no hay placa nueva, así que tampoco hay mediciones que enfrentar.";
     $("#pie-medicion").innerHTML =
       "Una encuesta sin historial no se puede calibrar, y sin calibrar no es un dato: es una " +
@@ -3055,8 +3198,9 @@ function contar(nodo){
             ? ", empatada con " + g2.quien
             : ", seguida de " + g2.quien + " con " + nf(g2.delta_pp,2))
         : "") + ". " +
-      "Las ramas, pesadas por su probabilidad, devuelven exactamente el pronóstico general: " +
-      "es una identidad, no una coincidencia.";
+      "Las ramas, pesadas por su probabilidad, devuelven el caso base de esta misma " +
+      "corrida: es una identidad, no una coincidencia. Contra el cuadro general puede haber " +
+      "una décima de diferencia, porque el cuadro sale de una corrida con menos simulaciones.";
   }
   pintar();
 })();
@@ -3558,7 +3702,7 @@ return montarAnimaciones;
   const nSims = D.meta.n_sims || 0;
   if(sa) sa.innerHTML =
     "La comprobación aritmética de la <b>gala " + g.gala + "</b>, la del " + FECHA_LARGA(g.fecha) +
-    "; las dos escalas de voto que el modelo se empeña en no mezclar; y qué forma tiene la " +
+    "; las dos escalas de voto que el modelo mantiene separadas; y qué forma tiene la " +
     "incertidumbre después de correr la temporada " +
     (nSims ? nf(nSims/1000, 0) + " mil" : "miles de") + " veces.";
 })();
