@@ -100,8 +100,21 @@ SITIO = "https://nerln.github.io/placa/"
 # hora en vez de eventos por persona. No escribe ni lee nada en el equipo de
 # quien visita, asi que no hace falta banner de consentimiento; el aviso va en
 # la propia pagina, en la seccion "Como se mide esta pagina".
-ANALITICA = ('<script data-goatcounter="https://placa.goatcounter.com/count" '
-             'async src="https://gc.zgo.at/count.js"></script>')
+def analitica():
+    """El script del contador, solo si el codigo esta registrado.
+
+    Un codigo sin registrar devuelve 400, asi que emitirlo igual significaria
+    una peticion fallida a un tercero en cada visita y un error en la consola de
+    cada persona. El interruptor vive en data/analitica.json.
+    """
+    p = ROOT / "data" / "analitica.json"
+    if not p.exists():
+        return ""
+    a = json.loads(p.read_text())
+    if not a.get("registrado") or not a.get("codigo"):
+        return ""
+    return (f'<script data-goatcounter="https://{a["codigo"]}.goatcounter.com/count" '
+            'async src="https://gc.zgo.at/count.js"></script>')
 
 
 def meta(datos):
@@ -316,7 +329,7 @@ def main():
                  .replace("<!--__DATOS_SRC__-->", '<script src="datos.js"></script>')
                  # El contador solo vive en la pagina publicada. El artefacto
                  # autocontenido se queda sin ninguna llamada a terceros.
-                 .replace("<!--__ANALITICA__-->", ANALITICA))
+                 .replace("<!--__ANALITICA__-->", analitica()))
     # La plantilla nacio para un artefacto, donde el <head> lo pone el que
     # publica. Sirviendola nosotros hay que armar el documento entero: se corta
     # donde termina la hoja de estilos, y lo de arriba es cabeza y lo de abajo

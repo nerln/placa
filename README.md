@@ -132,6 +132,22 @@ gui/    plantilla.html           la página, con huecos para los datos y el moto
 web/    index.html · datos.json · datos.js · og.png · ojo.svg · llms.txt
 ```
 
+## Contador de visitas
+
+Está preparado y apagado. Se enciende registrando el código `placa` en
+[goatcounter.com/signup](https://www.goatcounter.com/signup) y poniendo
+`"registrado": true` en [`data/analitica.json`](data/analitica.json). Hasta
+entonces la página no emite el script ni el aviso, porque un código sin
+registrar devuelve 400 y haría una petición fallida a un tercero en cada visita.
+
+GoatCounter es de código abierto (EUPL-1.2), está alojado en la Unión Europea y
+guarda agregados por página y hora en vez de eventos por persona. No escribe ni
+lee nada en el equipo de quien visita, así que no activa el artículo 5(3) de la
+directiva ePrivacy: no hace falta banner de consentimiento, y poner uno
+empeoraría la situación, porque un banner necesita guardar la elección en el
+dispositivo. Lo que corresponde es informar, y eso es el párrafo «Cómo se mide
+esta página» que aparece al pie cuando el contador está encendido.
+
 ## Correr
 
 ```bash

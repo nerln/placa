@@ -1,0 +1,7 @@
+{
+ "_nota": "El contador de visitas. Mientras 'registrado' sea false, la página no emite el script ni el aviso: un código sin registrar devuelve 400 y haría una petición fallida a un tercero en cada visita, más un error en consola. Para encenderlo: registrar el código en https://www.goatcounter.com/signup y poner registrado en true.",
+ "servicio": "goatcounter",
+ "codigo": "placa",
+ "registrado": false,
+ "por_que_goatcounter": "Código abierto EUPL-1.2, alojado en la Unión Europea (Hetzner, Helsinki), y guarda agregados por página y hora en vez de eventos por persona. No escribe ni lee nada en el equipo de quien visita, así que no activa el artículo 5(3) de la directiva ePrivacy y no hace falta banner de consentimiento."
+}
