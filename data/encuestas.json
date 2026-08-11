@@ -5,10 +5,14 @@
    "fecha": "2026-08-07",
    "gala": 28,
    "encuesta": {
-    "Hanssen": 50.93,
-    "Sol": 35.13,
-    "Charlotte": 10.18
-   }
+    "Hanssen": 50.8,
+    "Sol": 35.3,
+    "Charlotte": 10.1
+   },
+   "n": 30695,
+   "otro": 3.8,
+   "url": "https://x.com/fedeebongiorno/status/2085548917098213421",
+   "_nota": "Cifras leidas del resultado final que muestra el propio post, que ahora se incrusta en la pagina. Antes estaban cargadas de una nota de prensa y diferian en la primera decimal (50,93 / 35,13 / 10,18); con la fuente a la vista al lado, manda la fuente."
   },
   {
    "fecha": "2026-08-01",
