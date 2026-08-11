@@ -144,6 +144,34 @@ def tarjeta_al_dia():
     return 0
 
 
+def javascript_valido():
+    """El guion de la pagina tiene que parsear.
+
+    Esta comprobacion existe porque ya paso: una edicion dejo una llave de mas,
+    el HTML se construyo sin quejarse, la pagina se veia bien -todo lo que se
+    dibuja del lado del servidor seguia ahi- y el guion entero estaba muerto.
+    Ninguna otra comprobacion lo veia: web/ era reconstruible, los numeros
+    cerraban, la firma coincidia. Un error de sintaxis no cambia ningun dato.
+    """
+    html = (WEB / "index.html").read_text()
+    i = html.rindex("<script>") + len("<script>")
+    j = html.rindex("</script>")
+    tmp = ROOT / "web" / ".guion.js"
+    tmp.write_text(html[i:j])
+    try:
+        r = subprocess.run(["node", "--check", str(tmp)], capture_output=True, text=True)
+    except FileNotFoundError:
+        tmp.unlink(missing_ok=True)
+        print("  (sin node: no se comprueba la sintaxis del guion)")
+        return 0
+    tmp.unlink(missing_ok=True)
+    if r.returncode:
+        return fallo("el guion de web/index.html no parsea:\n    " +
+                     r.stderr.strip().splitlines()[-1][:160])
+    print(f"  ok · el guion parsea ({(j - i)/1024:.0f} KB)")
+    return 0
+
+
 def firma_coherente():
     """La firma de la corrida tiene que ser la misma en los cuatro canales.
 
@@ -174,7 +202,8 @@ def firma_coherente():
 def main():
     print("verificando lo que se va a publicar")
     err = (reconstruible() + probabilidades() + ramas_cierran() +
-           identidad_telefe() + tarjeta_al_dia() + firma_coherente())
+           identidad_telefe() + tarjeta_al_dia() + firma_coherente() +
+           javascript_valido())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")
         sys.exit(1)

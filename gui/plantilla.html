@@ -25,7 +25,8 @@
 /* ==========================================================================
    Dos temas, no uno. La página sigue al sistema y respeta el interruptor del
    visor: prefers-color-scheme cubre la preferencia del aparato y el atributo
-   data-theme, que el visor estampa en la raíz, gana en los dos sentidos.
+   El horario lo pone el sistema y no hay botón: una página que se lee de
+   noche tiene que verse de noche sin que nadie la configure.
 
    El oscuro no es el claro invertido. Los dos colores con significado se
    volvieron a elegir contra su propia superficie:
@@ -58,6 +59,11 @@
   --sombra-tt:#14161A;
   --tt-txt:#FFFFFF;
   --sobre-fuerte:#FFFFFF;
+  --oro:#8A6A16;
+  --oro-txt:#6E5411;
+  --oro-1:#6E5411;
+  --oro-2:#A8842A;
+  --oro-3:#B08F3E;
 }
 /* ---------- el modo oscuro es la gala ----------
    La página tiene dos horarios y los sigue del sistema, sin botón: de día es
@@ -71,7 +77,7 @@
    oro. Contrastes contra --papel (#05182F): texto 13,4:1, secundario 8,1:1,
    terciario 5,6:1 — todos por encima de 4,5. */
 @media (prefers-color-scheme: dark){
-  :root:where(:not([data-theme="light"])){
+  :root{
     --papel:#05182F;
     --sup:#0A2140;
     --sup2:#0D2749;
@@ -92,63 +98,24 @@
     --sobre-fuerte:#04162B;
     --oro:#E8C463;
     --oro-txt:#F0CE6E;
+    --oro-1:#F0CE6E;
+    --oro-2:#C2A550;
+    --oro-3:#7A6430;
   }
-  /* De noche el ojo ya está sobre fondo oscuro: no necesita su propia caja. */
-  :root:where(:not([data-theme="light"])) .ojo-marca{background:transparent; padding:5px 0 5px 0}
   /* La placa deja de ser una isla oscura dentro de una página clara y pasa a
      ser el sitio más iluminado de la página, como al aire. */
-  :root:where(:not([data-theme="light"])) .placa{
+  :root .placa{
     background:radial-gradient(ellipse 120% 90% at 50% 34%, #17406B 0%, #0A2A4A 52%, #04162B 100%),
       #072138;
     border-color:#1C4A78}
   /* Los títulos y el pronóstico, en oro. */
-  :root:where(:not([data-theme="light"])) h1 em{color:var(--oro-txt)}
-  :root:where(:not([data-theme="light"])) .eyebrow{color:var(--oro-txt)}
-  :root:where(:not([data-theme="light"])) .cinta{background:var(--oro); color:#04162B}
-  :root:where(:not([data-theme="light"])) .veredicto{border-color:var(--oro)}
-  :root:where(:not([data-theme="light"])) .big.num{color:var(--oro-txt)}
+  :root h1 em{color:var(--oro-txt)}
+  :root .eyebrow{color:var(--oro-txt)}
+  :root .cinta{background:var(--oro); color:#04162B}
+  :root .veredicto{border-color:var(--oro)}
+  :root .big.num{color:var(--oro-txt)}
   /* Las publicaciones incrustadas de X sí saben ponerse oscuras: se les pide. */
-  :root:where(:not([data-theme="light"])) .tw-marco .twitter-tweet{background:var(--sup2)}
-}
-:root[data-theme="dark"]{
-  --papel:#12141A;
-  --sup:#1C202A;
-  --sup2:#232833;
-  --sup3:#2C3341;
-  --tinta:#F0F2F5;
-  --tinta2:#B6BDC9;
-  --tinta3:#9BA4B3;
-  --linea:rgba(240,242,245,.18);
-  --linea2:rgba(240,242,245,.10);
-  --rechazo:#E1526B;
-  --rechazo-txt:#F58BA0;
-  --rechazo-suave:#331C24;
-  --apoyo:#3D96CC;
-  --apoyo-txt:#8FCAED;
-  --apoyo-suave:#183241;
-  --sombra-tt:#2C3341;
-  --tt-txt:#F0F2F5;
-  --sobre-fuerte:#0B0D11;
-}
-:root[data-theme="light"]{
-  --papel:#EEF0F3;
-  --sup:#FFFFFF;
-  --sup2:#F7F8FA;
-  --sup3:#E7EAEE;
-  --tinta:#14161A;
-  --tinta2:#494F58;
-  --tinta3:#606874;
-  --linea:rgba(20,22,26,.16);
-  --linea2:rgba(20,22,26,.08);
-  --rechazo:#B3122F;
-  --rechazo-txt:#B3122F;
-  --rechazo-suave:#FBE9EC;
-  --apoyo:#0070A3;
-  --apoyo-txt:#0070A3;
-  --apoyo-suave:#E4F1F8;
-  --sombra-tt:#14161A;
-  --tt-txt:#FFFFFF;
-  --sobre-fuerte:#FFFFFF;
+  :root .tw-marco .twitter-tweet{background:var(--sup2)}
 }
 :root{
   --marca:#14161A;
@@ -195,10 +162,34 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
 /* El ojo de la marca. Va sobre su propio recuadro carbon porque el logo es de
    oro sobre negro y sobre papel claro el degradado se apaga: el oro necesita
    fondo oscuro para leerse como oro y no como mostaza. */
-.ojo-marca{width:52px; flex:none; border-radius:4px; background:#0B0C0C;
-  padding:5px 6px; display:block; box-sizing:content-box}
-.ojo-marca svg{display:block; width:100%; height:auto}
-@media (min-width:700px){.ojo-marca{width:64px}}
+/* ---------- la marca ----------
+   El ojo ya no vive sobre un recuadro negro propio: usa los oros de la página
+   —ámbar oscuro de día, oro claro de noche— y por eso pertenece al fondo en vez
+   de estar pegado encima. Es un SVG y nada más, así que se anima con CSS y se
+   puede pedir a cualquier tamaño sin volver a dibujarlo.
+
+   Al entrar, el párpado se traza y después los arcos del iris aparecen de mayor
+   a menor: primero la favorita. El orden no es decorativo, es el mismo de la
+   tabla. Con prefers-reduced-motion no pasa nada de esto y el ojo está
+   directamente dibujado. */
+.ojo-marca{width:54px; flex:none; display:block}
+.ojo-marca svg{display:block; width:100%; height:auto; overflow:visible}
+@media (min-width:700px){.ojo-marca{width:66px}}
+
+.ojo-parpado{
+  stroke-dasharray:var(--largo,300); stroke-dashoffset:var(--largo,300);
+  animation:ojo-trazo .9s var(--sal) forwards}
+.ojo-arco{
+  transform-box:fill-box; transform-origin:center;
+  opacity:0; animation:ojo-arco .5s var(--sal) forwards;
+  animation-delay:calc(.42s + var(--i,0) * 70ms)}
+.ojo-arco:hover{filter:brightness(1.18)}
+@keyframes ojo-trazo{to{stroke-dashoffset:0}}
+@keyframes ojo-arco{from{opacity:0; transform:scale(.55)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .ojo-parpado{stroke-dashoffset:0; animation:none}
+  .ojo-arco{opacity:1; animation:none}
+}
 
 .marca .txt{font-size:var(--t-xs); color:var(--tinta3); line-height:1.45}
 .marca .txt b{display:block; color:var(--tinta); font-family:"Archivo",sans-serif; font-weight:700;
@@ -339,6 +330,45 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .compartir a:hover, .compartir button:hover{border-color:var(--tinta); background:var(--sup)}
 .compartir svg{width:14px; height:14px; flex:none}
 .compartir button.hecho{border-color:var(--apoyo); color:var(--apoyo-txt)}
+
+
+/* ---------- el camino de la última ----------
+   Una lista numerada de condiciones, cada una con lo que cuesta. Se lee como
+   una escalera: cada peldaño es plausible por separado y el conjunto es el que
+   no se sostiene. Es la forma de la explicación, no un adorno. */
+.camino{list-style:none; counter-reset:paso; margin:0; padding:0;
+  border-top:1px solid var(--linea)}
+.camino li{counter-increment:paso; display:grid; gap:4px 16px; padding:16px 0;
+  border-bottom:1px solid var(--linea2);
+  grid-template-columns:34px minmax(0,1fr); align-items:baseline}
+@media (min-width:720px){.camino li{grid-template-columns:34px minmax(0,1fr) auto}}
+.camino li::before{content:counter(paso); font-family:"Archivo",sans-serif; font-weight:700;
+  font-size:var(--t-sm); color:var(--oro-txt); font-variant-numeric:tabular-nums}
+.camino .q{font-size:var(--t-base); line-height:1.5; color:var(--tinta)}
+.camino .q b{font-weight:700}
+.camino .por{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5;
+  grid-column:2 / -1; max-width:70ch}
+.camino .cuanto{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-md);
+  color:var(--tinta2); font-variant-numeric:tabular-nums; white-space:nowrap;
+  grid-column:2 / -1; margin-top:2px}
+@media (min-width:720px){
+  .camino .cuanto{grid-column:3; grid-row:1; margin-top:0; text-align:right}
+  .camino .por{grid-column:2 / 3}
+}
+.camino-pie{margin:20px 0 0; font-size:var(--t-lg); line-height:1.5; color:var(--tinta);
+  max-width:74ch; border-left:3px solid var(--oro); padding-left:16px}
+.camino-pie b{color:var(--oro-txt)}
+
+
+.redes{display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; align-items:center}
+.redes a{display:inline-flex; align-items:center; gap:6px; font-size:var(--t-xs);
+  font-family:"Archivo",sans-serif; font-weight:700; color:var(--tinta2);
+  text-decoration:none; border:1px solid var(--linea); border-radius:var(--r-sm);
+  padding:6px 10px; min-height:34px; transition:border-color .14s var(--ui), color .14s var(--ui)}
+.redes a:hover{border-color:var(--tinta); color:var(--tinta)}
+.redes svg{width:13px; height:13px; flex:none}
+.redes .nota, .redes.vacio{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5}
+.redes.vacio{margin-top:12px}
 
 /* ---------- controles ---------- */
 .btn{font:inherit; font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-xs);
@@ -909,6 +939,14 @@ footer p{max-width:84ch}
   <p class="rama-pie" id="rama-pie"></p>
 </section>
 
+<section id="camino">
+  <div class="eyebrow">La prueba por el absurdo</div>
+  <div class="titulo"><h2 class="tit" id="tit-camino"></h2></div>
+  <p class="sub" id="sub-camino"></p>
+  <ol class="camino" id="camino-lista"></ol>
+  <p class="camino-pie" id="pie-camino"></p>
+</section>
+
 <section id="tabla">
   <div class="eyebrow">El plantel</div>
   <div class="titulo"><h2 class="tit">Probabilidad de ganar la edición</h2></div>
@@ -1204,15 +1242,14 @@ const pc = (x,d=1) => (100*x).toFixed(d).replace(".",",")+"%";
 const nf = (x,d=2) => x.toFixed(d).replace(".",",");
 const el = (t,c,h) => { const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e; };
 const clamp01 = p => p < 0 ? 0 : p > 1 ? 1 : p;
-/* El tema puede cambiar en cualquier momento: porque el sistema pasa a oscuro
-   o porque el visor estampa data-theme en la raíz. Los lienzos no heredan CSS,
-   así que hay que avisarles para que se vuelvan a dibujar. */
+/* El tema puede cambiar mientras la página está abierta, porque el sistema pasa
+   a oscuro al anochecer. Los lienzos no heredan CSS, así que hay que avisarles
+   para que se vuelvan a dibujar con la paleta nueva. */
 const oyentesTema = [];
 function alCambiarTema(fn){ oyentesTema.push(fn); }
 (function(){
   const avisar = () => oyentesTema.forEach(f => { try{ f(); }catch(_){} });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", avisar);
-  new MutationObserver(avisar).observe(document.documentElement, {attributeFilter:["data-theme"]});
 })();
 const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const SVGNS="http://www.w3.org/2000/svg";
@@ -1814,6 +1851,34 @@ function pintarBoard(){
 
 /* ---------- por qué cada uno está donde está ---------- */
 (function(){
+/* Los perfiles de cada una, verificados uno por uno: tilde azul leído de la API
+   pública de Instagram, o cruce con Wikidata y prensa. Quien no llegó a ese
+   listón no lleva enlace y se dice por qué — en este programa hay cuentas de
+   fans con nombres casi idénticos, y publicar una equivocada es peor que no
+   publicar ninguna.
+
+   No se publican seguidores. A Charlotte le falta el dato justo por estar
+   adentro, y los de las demás miden exposición reciente y no apoyo: una columna
+   con dos huecos de nueve invita a leer los vacíos como «poco fandom». */
+function redes(n){
+  const r = (D.perfil[n] || {}).redes;
+  if(!r) return "";
+  const IG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" ' +
+    'aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/>' +
+    '<circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>';
+  const X = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 ' +
+    '2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 ' +
+    '6.23zm-1.16 17.52h1.83L7.08 4.13H5.11z"/></svg>';
+  const en = [];
+  if(r.ig) en.push("<a href='https://www.instagram.com/" + r.ig + "/' target='_blank' " +
+    "rel='noopener nofollow'>" + IG + "@" + r.ig + "</a>");
+  if(r.x) en.push("<a href='https://x.com/" + r.x + "' target='_blank' rel='noopener nofollow'>" +
+    X + "@" + r.x + "</a>");
+  if(!en.length) return "<div class='redes vacio'>" + (r.nota || "sin perfil verificado") + "</div>";
+  return "<div class='redes'>" + en.join("") +
+    (r.nota ? "<span class='nota'>" + r.nota + "</span>" : "") + "</div>";
+}
+
   const cont = $("#porque-fichas");
   $("#regla-hist").textContent = D.regla_historica;
   const ord = [...D.jugadores].sort((a,b) => base.p_gana[b]-base.p_gana[a]);
@@ -1854,7 +1919,7 @@ function pintarBoard(){
       "<div><div class='cab'><span class='n'>"+n+"</span><span class='p mono'>"+pc(base.p_gana[n])+"</span></div>" +
       "<div class='ejes'>"+pills+"</div>" +
       "<p class='razon'>"+razon(n)+"</p>" +
-      "<div class='espejo'>"+espejo+"</div></div>";
+      "<div class='espejo'>"+espejo+"</div>" + redes(n) + "</div>";
     cont.appendChild(card);
   });
 })();
@@ -1863,48 +1928,55 @@ function pintarBoard(){
    MOVIMIENTO
    ========================================================================== */
 
-/* --- el ojo mira y parpadea --- */
+/* --- el ojo mira y parpadea ---
+   La marca es un SVG, así que animarla es mover dos nodos: el grupo del iris se
+   desplaza hacia el puntero y el conjunto se aplasta un instante para
+   parpadear. Es el chiste del programa —te ve— y cuesta unas pocas líneas
+   porque el dibujo es vectorial y no una imagen.
+
+   Con prefers-reduced-motion no se hace nada: el ojo queda dibujado y quieto.
+   El parpadeo va a intervalos irregulares porque uno regular parece un
+   metrónomo, y solo mientras la pestaña está a la vista. */
 (function(){
   if(quieto) return;
-  const ojos = [...document.querySelectorAll("#ojo-marca svg, .ojo-sec svg, #ojo-btn svg")];
+  const ojos = [...document.querySelectorAll(".ojo-marca svg")]
+    .map(svg => ({svg, iris: svg.querySelector(".ojo-iris")}))
+    .filter(o => o.iris);
   if(!ojos.length) return;
-  const partes = ojos.map(s => ({
-    svg: s,
-    iris: s.querySelector("circle:nth-of-type(1)"),
-    pupila: s.querySelector("circle:nth-of-type(2)"),
-    brillo: s.querySelector("circle:nth-of-type(3)"),
-    tapa: s.querySelector("path"),
-  })).filter(p => p.iris && p.pupila);
 
   let mx = .5, my = .5, raf = null;
-  addEventListener("pointermove", e => { mx = e.clientX/innerWidth; my = e.clientY/innerHeight;
-    if(!raf) raf = requestAnimationFrame(seguir); }, {passive:true});
+  addEventListener("pointermove", e => {
+    mx = e.clientX / innerWidth; my = e.clientY / innerHeight;
+    if(!raf) raf = requestAnimationFrame(seguir);
+  }, {passive:true});
 
   function seguir(){
     raf = null;
-    partes.forEach(p => {
-      const r = p.svg.getBoundingClientRect();
-      if(r.bottom < -80 || r.top > innerHeight+80) return;
-      const cx = (r.left+r.width/2)/innerWidth, cy = (r.top+r.height/2)/innerHeight;
-      const dx = Math.max(-1, Math.min(1, (mx-cx)*2.4)) * 7;
-      const dy = Math.max(-1, Math.min(1, (my-cy)*2.4)) * 4;
-      [p.iris, p.pupila, p.brillo].forEach(c => { if(c) c.setAttribute("transform", `translate(${dx} ${dy})`); });
+    ojos.forEach(o => {
+      const r = o.svg.getBoundingClientRect();
+      if(!r.width || r.bottom < -80 || r.top > innerHeight + 80) return;
+      const cx = (r.left + r.width/2) / innerWidth;
+      const cy = (r.top + r.height/2) / innerHeight;
+      // El iris se mueve dentro del párpado, no fuera: 6 y 3 unidades del
+      // lienzo de 120x78 es lo que cabe sin que asome por el borde.
+      const dx = Math.max(-1, Math.min(1, (mx - cx) * 2.4)) * 6;
+      const dy = Math.max(-1, Math.min(1, (my - cy) * 2.4)) * 3;
+      o.iris.setAttribute("transform", "translate(" + dx.toFixed(2) + " " + dy.toFixed(2) + ")");
     });
   }
-  // parpadeo irregular: un ojo que parpadea a intervalos fijos parece un metrónomo
+
   (function parpadear(){
-    const espera = 2600 + Math.random()*5200;
     setTimeout(() => {
-      partes.forEach(p => {
-        if(!p.tapa) return;
-        p.tapa.animate(
-          [{transform:"scaleY(1)"},{transform:"scaleY(.06)"},{transform:"scaleY(1)"}],
-          {duration:190, easing:"ease-in-out", transformOrigin:"50% 50%"});
-        [p.iris,p.pupila,p.brillo].forEach(c => c && c.animate(
-          [{opacity:1},{opacity:0},{opacity:1}], {duration:190, easing:"ease-in-out"}));
-      });
+      if(document.visibilityState === "visible"){
+        ojos.forEach(o => {
+          o.svg.animate([{transform:"scaleY(1)"}, {transform:"scaleY(.07)"}, {transform:"scaleY(1)"}],
+                        {duration:190, easing:"ease-in-out"});
+          o.iris.animate([{opacity:1}, {opacity:0}, {opacity:1}],
+                         {duration:190, easing:"ease-in-out"});
+        });
+      }
       parpadear();
-    }, espera);
+    }, 2600 + Math.random() * 5200);
   })();
 })();
 
@@ -2346,6 +2418,83 @@ function contar(nodo){
   }
   addEventListener("scroll", alScroll, {passive:true});
   alScroll();
+})();
+
+/* ---------- el camino de la última ----------
+   Decir «Sol 0,8%» no explica nada: ochocientos por mil es abstracto y se lee
+   como «improbable pero quién sabe». Así que en vez de resumir las temporadas
+   en que gana, se abren y se mira qué tienen en común. La respuesta es la
+   explicación, y es una reducción al absurdo hecha con los mismos números:
+   cada peldaño es plausible por separado, y la escalera entera no.
+
+   Todo sale de data/camino.json (model/camino.py), que es el mismo Monte Carlo
+   del pronóstico guardando el interior de cada simulación. */
+(function(){
+  const C = D.camino, lista = $("#camino-lista");
+  if(!C || !lista){ const sec = $("#camino"); if(sec) sec.remove(); return; }
+  const base = D.escenarios.base;
+  const q = C.quien;
+  const R = C.rasgos;
+  const NUM = ["cero","una","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez"];
+
+  // Cuántas eliminaciones quedan hasta la final. Es lo que de verdad tiene que
+  // sobrevivir, y el modelo lo mide: sale de las propias simulaciones.
+  const elim = Math.round(C.eliminaciones_que_sobrevive);
+  const riesgo = base.p_sale28[q];
+
+  $("#tit-camino").textContent =
+    "Para que gane " + q + " tienen que pasar " + (NUM[elim] || elim) + " cosas seguidas";
+  $("#sub-camino").innerHTML =
+    "<b>" + q + "</b> es la última del cuadro, con " + pc(base.p_gana[q],1) + ". Un número así se " +
+    "lee como «improbable, pero quién sabe», y no dice nada. Esto es lo que hay dentro: de " +
+    (C.n_sims/1000).toFixed(0) + " mil temporadas simuladas gana <b>" +
+    C.n.toLocaleString("es-AR") + "</b>, y todas se parecen entre sí. Cada peldaño de abajo es " +
+    "creíble por separado; la escalera entera es lo que no se sostiene.";
+
+  const riv = C.rivales_final[0], duelo = C.duelo_final[0];
+  const pasos = [
+    {q: "No irse en la primera, siendo la que más riesgo tiene",
+     por: "El modelo le da el " + pc(riesgo,1) + " de ser la próxima en salir, más que a las " +
+          "otras ocho juntas. La escalera empieza con una moneda cargada en contra.",
+     cuanto: pc(1 - riesgo, 0) + " de sobrevivir"},
+    {q: "Y no irse en ninguna de las " + (NUM[elim - 1] || (elim - 1)) + " siguientes",
+     por: "Con " + (NUM[D.jugadores.length] || D.jugadores.length) + " en la casa y una final de " +
+          "tres, quedan " + (NUM[elim] || elim) + " eliminaciones por delante. " +
+          "No alcanza con salvarse una vez: hay que salvarse todas, y cada semana vuelve a " +
+          "entrar en placa con el rechazo más alto del plantel.",
+     cuanto: pc(base.p_final[q], 1) + " de llegar a la final"},
+    {q: "Que el modelo se esté equivocando sobre cuánto la rechazan",
+     por: "En las temporadas que gana, su rechazo sale <b>" + nf(R.mu_sigmas,2) + " desvíos</b> " +
+          "por debajo de lo que estiman las galas jugadas (" + nf(R.mu_gana,2) + " contra " +
+          nf(R.mu_base,2) + " en escala logit). No es imposible —para eso el modelo sortea el " +
+          "rasgo en vez de fijarlo—, pero es la cola.",
+     cuanto: nf(R.mu_sigmas,2) + " σ por debajo"},
+    {q: "Y que además la quieran más de lo que se le mide",
+     por: "Su apoyo positivo tiene que salir " + nf(R.psi_sigmas,2) + " desvíos por encima. Las " +
+          "dos cosas a la vez, en la misma temporada.",
+     cuanto: nf(R.psi_sigmas,2) + " σ por encima"},
+    {q: "Que le toque la final que le conviene",
+     por: "Llega más veces con <b>" + riv.quien + "</b> (" + pc(riv.p,0) + " de sus victorias) " +
+          "que con la favorita. Una final con la que hoy encabeza el cuadro le sirve mucho menos.",
+     cuanto: pc(C.finalistas["3"] || 0, 0) + " son finales de tres"},
+    {q: "Y ganar el mano a mano",
+     por: "Éste es el único peldaño donde no está en desventaja: cuando llega a la final la " +
+          "gana " + pc(base.p_gana[q]/Math.max(base.p_final[q],1e-9), 0) + " de las veces, y el " +
+          "rival más frecuente es <b>" + duelo.quien + "</b>. El voto de la final es positivo y " +
+          "ahí su rechazo deja de contar.",
+     cuanto: pc(base.p_gana[q]/Math.max(base.p_final[q],1e-9), 0) + " de conversión"},
+  ];
+
+  lista.innerHTML = pasos.map(x =>
+    "<li><span class='q'>" + x.q + "</span>" +
+    "<span class='cuanto'>" + x.cuanto + "</span>" +
+    "<span class='por'>" + x.por + "</span></li>").join("");
+
+  $("#pie-camino").innerHTML =
+    "Todo junto pasa <b>una vez cada " + C.una_de_cada.toLocaleString("es-AR") + " temporadas</b>. " +
+    "No es que no pueda: es que para que pase tienen que salir bien seis cosas seguidas, y una " +
+    "de ellas es que el modelo esté equivocado. Si el miércoles no queda en placa, este cuadro " +
+    "cambia entero — y ésa es la primera de las seis.";
 })();
 
 /* ---------- el zodíaco, con la misma vara que el resto ----------

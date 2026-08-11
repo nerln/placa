@@ -193,6 +193,8 @@ def main():
     ramas = json.loads(ramas_p.read_text()) if ramas_p.exists() else None
     evo_p = ROOT / "data" / "evolucion.json"
     evo = json.loads(evo_p.read_text()) if evo_p.exists() else None
+    cam_p = ROOT / "data" / "camino.json"
+    camino = json.loads(cam_p.read_text()) if cam_p.exists() else None
     act_p = ROOT / "data" / "actualidad.json"
     act = json.loads(act_p.read_text()) if act_p.exists() else None
     hp_p = ROOT / "data" / "historial_pronostico.json"
@@ -217,6 +219,7 @@ def main():
         "perfil": perfil,
         "ramas": ramas,
         "evolucion": evo,
+        "camino": camino,
         "actualidad": act,
         "historial_pronostico": corridas,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},
@@ -242,7 +245,7 @@ def main():
     crudo = json.dumps(datos, ensure_ascii=False)
     # La marca se dibuja con los numeros de esta corrida, asi que despues de
     # cada gala el ojo de la cabecera tiene otro iris. Ver gui/marca.py.
-    marca = marca_svg(res["escenarios"]["base"]["p_gana"], fondo=False)
+    marca = marca_svg(res["escenarios"]["base"]["p_gana"], fondo=False, animar=True)
 
     # --- el sitio, para GitHub Pages -------------------------------------
     # Los datos salen a un archivo aparte en vez de ir incrustados. Sirve para

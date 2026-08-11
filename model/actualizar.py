@@ -261,7 +261,8 @@ def main():
     # tenerlas: son numeros que parecen frescos y no lo son. tarjeta.py va
     # ultimo por lo mismo, con la previsualizacion del enlace.
     for paso in ("model/final_model.py", "model/ramas.py", "model/evolucion.py",
-                 "model/bootstrap.py", "gui/build.py", "gui/tarjeta.py"):
+                 "model/bootstrap.py", "model/camino.py", "gui/build.py",
+                 "gui/tarjeta.py"):
         print(f"\n>>> {paso}")
         r = subprocess.run([sys.executable, str(ROOT / paso)], cwd=ROOT,
                            capture_output=True, text=True)

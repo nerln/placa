@@ -19,7 +19,11 @@
    "placas_recientes": 3,
    "votos_recientes": 14,
    "bono_fulminante": 0.0,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "ig": "tamarapaganini",
+    "conf": "alta"
+   }
   },
   {
    "apodo": "Pincoya",
@@ -34,7 +38,11 @@
    "placas_recientes": 3,
    "votos_recientes": 5,
    "bono_fulminante": 0.0,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "ig": "pincoyasinglamourrr",
+    "conf": "media"
+   }
   },
   {
    "apodo": "Charlotte",
@@ -49,7 +57,13 @@
    "placas_recientes": 3,
    "votos_recientes": 1,
    "bono_fulminante": 0.45,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "ig": "chcaniggia",
+    "x": "CHCaniggia",
+    "conf": "media",
+    "nota": "su Instagram está desactivado mientras está en la casa"
+   }
   },
   {
    "apodo": "Zilli",
@@ -64,7 +78,11 @@
    "placas_recientes": 4,
    "votos_recientes": 7,
    "bono_fulminante": 0.3,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "ig": "yzilli",
+    "conf": "alta"
+   }
   },
   {
    "apodo": "Luana",
@@ -79,7 +97,12 @@
    "placas_recientes": 4,
    "votos_recientes": 5,
    "bono_fulminante": 0.0,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "ig": "luanafernandezok_",
+    "x": "lulafernandezok",
+    "conf": "alta"
+   }
   },
   {
    "apodo": "Yipio",
@@ -94,7 +117,12 @@
    "placas_recientes": 6,
    "votos_recientes": 11,
    "bono_fulminante": 0.0,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "ig": "yipio",
+    "x": "yiselapintos",
+    "conf": "alta"
+   }
   },
   {
    "apodo": "Mariela",
@@ -109,7 +137,11 @@
    "placas_recientes": 4,
    "votos_recientes": 12,
    "bono_fulminante": 0.0,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "ig": "marielaaliciaprieto",
+    "conf": "media"
+   }
   },
   {
    "apodo": "Majluf",
@@ -124,7 +156,11 @@
    "placas_recientes": 7,
    "votos_recientes": 24,
    "bono_fulminante": 0.0,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "conf": "baja",
+    "nota": "no se encontró ninguna cuenta que se pueda dar por suya"
+   }
   },
   {
    "apodo": "Sol",
@@ -139,7 +175,12 @@
    "placas_recientes": 8,
    "votos_recientes": 17,
    "bono_fulminante": 0.0,
-   "genero": "f"
+   "genero": "f",
+   "redes": {
+    "ig": "solcitoabraham",
+    "x": "SolcitoAbraham",
+    "conf": "alta"
+   }
   }
  ],
  "eliminados_recientes": [
@@ -189,5 +230,6 @@
    "detalle": "55,3% en el versus contra Sol"
   }
  ],
- "_nota_genero": "genero: 'f'/'m'. Al 10/08/2026 no queda ningun varon en juego, confirmado por Mi Telefe en la nota de la eliminacion de Hanssen."
+ "_nota_genero": "genero: 'f'/'m'. Al 10/08/2026 no queda ningun varon en juego, confirmado por Mi Telefe en la nota de la eliminacion de Hanssen.",
+ "_redes_nota": "Perfiles verificados el 11 de agosto de 2026: tilde azul leido de la API publica de perfiles de Instagram, o cruce con Wikidata y prensa. Los que no llegaron a ese liston quedan sin enlace: una cuenta de fans con nombre casi identico es lo normal en este programa. NO se publican seguidores: a Charlotte le falta el dato justo por estar en juego, y los de las demas miden exposicion reciente, no apoyo."
 }

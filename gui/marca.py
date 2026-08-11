@@ -35,12 +35,18 @@ ROOT = Path(__file__).resolve().parent.parent
 W, H = 120.0, 78.0
 CX, CY = W / 2, H / 2
 A, B = W / 2 - 1.6, H / 2 - 1.6          # la almendra, con sitio para el trazo
-R_FUERA, R_DENTRO = 21.0, 13.2           # el anillo del iris
-HUECO = 2.6                              # grados entre arco y arco
+R_FUERA, R_DENTRO = 25.5, 15.0           # el anillo del iris
+HUECO = 3.0                              # grados entre arco y arco
 
-ORO_VIVO = "#F0CE6E"
-ORO = "#C2A550"
-ORO_APAGADO = "#7A6430"
+# Los colores NO se escriben aca. La marca los toma de la pagina con
+# var(--oro-*), que es lo que hace que de dia sea ambar oscuro sobre papel y de
+# noche oro claro sobre azul, sin dos versiones del dibujo. Los valores que van
+# detras de cada var() son solo el respaldo para cuando el SVG se sirve suelto
+# -el favicon, por ejemplo- y ahi no hay pagina de la que heredar.
+ORO_VIVO = "var(--oro-1,#F0CE6E)"
+ORO = "var(--oro-2,#C2A550)"
+ORO_APAGADO = "var(--oro-3,#7A6430)"
+BORDE = "var(--oro-2,#C2A550)"
 TINTA = "#0B0C0C"
 
 
@@ -66,8 +72,15 @@ def _arco(g0, g1):
             f"L{x2:.2f} {y2:.2f}A{R_DENTRO} {R_DENTRO} 0 {largo} 0 {x3:.2f} {y3:.2f}Z")
 
 
-def iris(p_gana):
-    """Los arcos del iris, del mas probable al menos, empezando arriba."""
+def iris(p_gana, animar=True):
+    """Los arcos del iris, del mas probable al menos, empezando arriba.
+
+    Cada arco sale con su propio retraso, de mayor a menor, asi que al cargar la
+    pagina el iris se arma contando: primero la favorita, despues las que la
+    siguen. No es adorno, es el mismo orden que dice la tabla de mas abajo. El
+    CSS de la pagina apaga la animacion entera si el sistema pide menos
+    movimiento.
+    """
     orden = sorted(p_gana, key=lambda n: -p_gana[n])
     total = sum(p_gana.values()) or 1
     fuera = []
@@ -78,20 +91,35 @@ def iris(p_gana):
             g += ancho                           # no se dibuja: seria una raya
             continue
         color = ORO_VIVO if i == 0 else (ORO if i < 3 else ORO_APAGADO)
-        fuera.append(f'<path fill="{color}" d="{_arco(g, g + ancho - HUECO)}"/>')
+        retraso = f' style="--i:{i}"' if animar else ""
+        # Cada arco dice de quien es al pasarle por encima, y los lectores de
+        # pantalla lo leen. Un grafico que no se puede interrogar es un adorno.
+        pct = f"{100 * p_gana[n]:.1f}".replace(".", ",")
+        fuera.append(f'<path class="ojo-arco" fill="{color}"{retraso} '
+                     f'd="{_arco(g, g + ancho - HUECO)}">'
+                     f'<title>{n}: {pct}%</title></path>')
         g += ancho
     return "\n    ".join(fuera), orden
 
 
-def svg(p_gana, fondo=True, ident=""):
-    arcos, orden = iris(p_gana)
-    n = len(orden)
+def svg(p_gana, fondo=True, animar=False):
+    """El SVG de la marca.
+
+    fondo=True  -> version suelta (favicon): trae su propio fondo y sus colores
+                   de respaldo, porque no hay pagina de la que heredar.
+    animar=True -> version de la pagina: clases para que el CSS la dibuje al
+                   entrar. Sin fondo: hereda el de la cabecera.
+    """
+    arcos, orden = iris(p_gana, animar)
+    n = arcos.count("<path")
     fondo_svg = f'<rect width="{W:.0f}" height="{H:.0f}" fill="{TINTA}"/>\n  ' if fondo else ""
-    return (f'<svg viewBox="0 0 {W:.0f} {H:.0f}" xmlns="http://www.w3.org/2000/svg" '
-            f'role="img" aria-label="Un ojo cuyo iris son las {n} probabilidades de ganar">\n  '
+    cls = ' class="ojo"' if animar else ""
+    return (f'<svg{cls} viewBox="0 0 {W:.0f} {H:.0f}" xmlns="http://www.w3.org/2000/svg" '
+            f'role="img" aria-label="Un ojo cuyo iris reparte el pronóstico entre las {n} con más probabilidad de ganar">\n  '
             f'{fondo_svg}'
-            f'<path d="{_almendra()}" fill="none" stroke="{ORO}" stroke-width="2.1"/>\n  '
-            f'<g>\n    {arcos}\n  </g>\n'
+            f'<path class="ojo-parpado" d="{_almendra()}" fill="none" stroke="{BORDE}" '
+            f'stroke-width="2.6"/>\n  '
+            f'<g class="ojo-iris">\n    {arcos}\n  </g>\n'
             f'</svg>')
 
 
