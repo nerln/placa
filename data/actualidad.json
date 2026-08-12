@@ -1,1 +1,350 @@
-{"generado": "2026-08-11", "zodiaco": {"signos": {"Tamara": {"fecha": "1974-02-11", "signo": "Acuario", "confianza": "alta", "fuente": "El Destape + Big Brother Wiki"}, "Pincoya": {"fecha": "1975-05-13", "signo": "Tauro", "confianza": "media", "fuente": "Big Brother Wiki"}, "Charlotte": {"fecha": "1993-02-15", "signo": "Acuario", "confianza": "alta", "fuente": "Wikipedia ES"}, "Zilli": {"fecha": "1966-03-04", "signo": "Piscis", "confianza": "alta", "fuente": "Wikipedia ES + Vía País"}, "Luana": {"fecha": "1997-07-21", "signo": "Cáncer", "confianza": "media", "fuente": "Big Brother Wiki"}, "Majluf": {"fecha": "?-02-02", "signo": "Acuario", "confianza": "alta", "fuente": "Wikipedia ES (día y mes; el año se disputa entre 1963 y 1966)"}, "Sol": {"fecha": "1988-12-30", "signo": "Capricornio", "confianza": "alta", "fuente": "fichas de prensa"}}, "sin_fecha": {"Yipio": "Ni día ni mes publicados. Solo una entrevista uruguaya de 2021 que le da 35 años.", "Mariela": "Ni día ni mes publicados. Y la edad se disputa: las dos Wikipedias dicen 48, que es lo que carga esta página, y una ficha de prensa de 2026 dice 53."}, "ganadores": [{"edicion": "GH 1", "anio": 2001, "quien": "Marcelo Corazza", "fecha": null, "signo": null, "confianza": "sin fecha publicada"}, {"edicion": "GH 2", "anio": 2001, "quien": "Roberto Parra", "fecha": null, "signo": null, "confianza": "sin fecha publicada"}, {"edicion": "GH 3", "anio": 2003, "quien": "Viviana Colmenero", "fecha": "1972-02-25", "signo": "Piscis", "confianza": "media"}, {"edicion": "GH 4", "anio": 2007, "quien": "Marianela Mirra", "fecha": "1984-02-14", "signo": "Acuario", "confianza": "alta"}, {"edicion": "Famosos", "anio": 2007, "quien": "Diego Leonardi", "fecha": "1978-02-18", "signo": "Acuario", "confianza": "media"}, {"edicion": "GH 5", "anio": 2007, "quien": "Esteban Morais", "fecha": null, "signo": null, "confianza": "sin fecha publicada"}, {"edicion": "GH 6", "anio": 2011, "quien": "Cristian U", "fecha": "1980-10-12", "signo": "Libra", "confianza": "media"}, {"edicion": "GH 7", "anio": 2012, "quien": "Rodrigo F. Rumi", "fecha": "1992-08-26", "signo": "Virgo", "confianza": "media"}, {"edicion": "GH 8", "anio": 2015, "quien": "Francisco Delgado", "fecha": "1985-09-09", "signo": "Virgo", "confianza": "media"}, {"edicion": "GH 9", "anio": 2016, "quien": "Luifa Galesio", "fecha": "1993-03-25", "signo": "Aries", "confianza": "alta"}, {"edicion": "GH 10", "anio": 2023, "quien": "Marcos Ginocchio", "fecha": "1999-10-16", "signo": "Libra", "confianza": "alta"}, {"edicion": "GH 11", "anio": 2024, "quien": "Bautista Mascia", "fecha": "1996-11-25", "signo": "Sagitario", "confianza": "alta"}, {"edicion": "GH 12", "anio": 2025, "quien": "Tato Algorta", "fecha": null, "signo": null, "confianza": "sin fecha publicada"}], "coincidencia": {"acuarios": 3, "con_fecha": 7, "p_un_signo": 0.0157, "p_cualquier_signo": 0.188, "texto": "Tres de las siete con fecha conocida son de Acuario. Suena mucho, y la cuenta dice que no lo es tanto: la probabilidad de que un signo concreto se lleve tres de siete es del 1,6%, pero como el ojo busca en los doce a la vez, la de que ALGUNO lo haga sube al 19%. Es decir: pasa una de cada cinco veces por puro azar."}}, "tendencias": {"_nota": "Posiciones en el top-50 de tendencias de X en Argentina, leídas de los snapshots públicos de trends24. Ventana del 10/08 13:56 UTC al 11/08 07:09 UTC. trends24 no publica volumen de tuits para estos términos, solo posición.", "ventana": "10/08 13:56 → 11/08 07:09 UTC", "terminos": [{"txt": "HANSSEN AL 9009", "mejor": 1, "horas": 23, "tipo": "campaña de voto", "nota": "Fue la tendencia más longeva de la jornada y pedía su eliminación. Salió con el 58%."}, {"txt": "LUANA AL 9009", "mejor": 1, "horas": null, "tipo": "campaña de voto", "nota": "Aparece después de la gala: es la campaña que empieza a armarse para la próxima."}, {"txt": "#GranHermano", "mejor": 1, "horas": null, "tipo": "genérico", "nota": "Entra al top recién con la gala."}, {"txt": "SOLANGE ABRAHAM", "mejor": 6, "horas": null, "tipo": "nombre"}, {"txt": "SOL A LA FINAL", "mejor": 10, "horas": null, "tipo": "apoyo"}, {"txt": "CASA DE MUJERES", "mejor": 10, "horas": 3, "tipo": "tema", "nota": "El único término sobre la casa femenina. Menos de tres horas en el top-50."}, {"txt": "Mariela", "mejor": 2, "horas": null, "tipo": "nombre"}, {"txt": "Hanssen", "mejor": 3, "horas": null, "tipo": "nombre"}, {"txt": "Majluf", "mejor": 20, "horas": null, "tipo": "nombre"}, {"txt": "Zilli", "mejor": 20, "horas": null, "tipo": "nombre"}, {"txt": "Tamara", "mejor": 18, "horas": null, "tipo": "nombre"}, {"txt": "Yipio", "mejor": 27, "horas": null, "tipo": "nombre"}], "oficial": {"txt": "#GeneraciónDorada", "apariciones": 0, "nota": "El hashtag que Telefe pone en todos sus posts no entró ni una vez al top-50 en los 21 snapshots de la ventana. Lo que trendea son las campañas del fandom."}}, "bandos": {"_nota": "En la gala Del Moro les pidió ponerse del lado de quien querían que siguiera. Es el mapa de alianzas más medible que hay, y anticipa la placa de la nominación de mitad de semana.", "con_hanssen": ["Yipio", "Luana", "Tamara"], "con_sol": ["Pincoya", "Zilli", "Majluf", "Mariela"], "fuente": "Infobae, 11/08/2026"}, "dias_en_casa": {"Pincoya": 167, "Zilli": 166, "Luana": 166, "Yipio": 153, "Sol": 134, "Tamara": 132, "Charlotte": 81, "Mariela": 81, "Majluf": 68}, "posts": {"_nota": "Código de incrustación oficial de X, pedido a su propia API de oEmbed (publish.twitter.com/oembed). No es una captura ni una transcripción: es la publicación, servida por X. Si el autor la borra, desaparece de acá también.", "gala": 28, "items": [{"url": "https://x.com/fedeebongiorno/status/2085548917098213421", "lectura": "La del 7 de agosto dio a Hanssen primero con 50,8% sobre 30.695 votos y salió con 58,0%: acertó el nombre y se quedó corta por siete puntos, que es el sesgo que el modelo le corrige.", "autor": "Fefe", "handle": "@fedeebongiorno", "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">👁️ ENCUESTA FINAL: Quién querés que sea ELIMINADO de <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a>?</p>&mdash; Fefe (@fedeebongiorno) <a href=\"https://x.com/fedeebongiorno/status/2085548917098213421?ref_src=twsrc%5Etfw\">7 de agosto de 2026</a></blockquote>", "donde": "encuesta"}, {"url": "https://x.com/gh_trivia/status/2086632168709644385", "lectura": "La otra cara del termómetro: un sondeo publicado con la votación todavía abierta, que daba a Sol primera con 60%. Terminó segunda con 42%. Mide a quien está despierto y con ganas de contestar, que no es lo mismo que quien paga por votar, y por eso no entra al modelo.", "autor": "GH ENCUESTAS 🇦🇷", "handle": "@gh_trivia", "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">POR AHORA:<br><br>60% Sol<br>35% Hanssen<br>3% Majluf<br><br>2% Otro/a<a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://t.co/hIVtIS6fvP\">https://t.co/hIVtIS6fvP</a></p>&mdash; GH ENCUESTAS 🇦🇷 (@gh_trivia) <a href=\"https://x.com/gh_trivia/status/2086632168709644385?ref_src=twsrc%5Etfw\">10 de agosto de 2026</a></blockquote>", "donde": "tendencias"}, {"url": "https://x.com/GranHermanoAr/status/2087009639426674990", "donde": "evolucion", "lectura": "El anuncio, de la cuenta que emite el programa. Salió el último varón, así que a la final llegan solo mujeres: cambia el plantel que se simula de acá al final, y ninguna de las regularidades históricas que usa el modelo distingue por género.", "autor": "Gran Hermano", "handle": "@GranHermanoAr", "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\"><a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a>: Matías Hanssen fue eliminado y habrá una final inédita con solo mujeres<a href=\"https://t.co/glWDd8hi8R\">https://t.co/glWDd8hi8R</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087009639426674990?ref_src=twsrc%5Etfw\">11 de agosto de 2026</a></blockquote>"}, {"url": "https://x.com/solqueengh/status/2085558349001544097", "donde": "campania", "lectura": "Cuatro días antes de la gala, la campaña. HANSSEN AL 9009 estuvo veintitrés horas entre las cuatro primeras tendencias del país y terminó con Hanssen afuera. Es el caso más limpio de la temporada de fandom organizado que se convierte en resultado, y es lo que el modelo intenta capturar con el rasgo de rechazo.", "autor": "TEAM SOL☀️", "handle": "@solqueengh", "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">del moro diciendo que los votos que ya estan siguen que no se reinicia la placa, la detestan a sol y la gente sigue diciendo que es acomodada vayanse a cagar<br><br>HANSSEN AL 9009<a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a></p>&mdash; TEAM SOL☀️ (@solqueengh) <a href=\"https://x.com/solqueengh/status/2085558349001544097?ref_src=twsrc%5Etfw\">7 de agosto de 2026</a></blockquote>"}], "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."}}
+{
+ "generado": "2026-08-11",
+ "zodiaco": {
+  "signos": {
+   "Tamara": {
+    "fecha": "1974-02-11",
+    "signo": "Acuario",
+    "confianza": "alta",
+    "fuente": "El Destape + Big Brother Wiki"
+   },
+   "Pincoya": {
+    "fecha": "1975-05-13",
+    "signo": "Tauro",
+    "confianza": "media",
+    "fuente": "Big Brother Wiki"
+   },
+   "Charlotte": {
+    "fecha": "1993-02-15",
+    "signo": "Acuario",
+    "confianza": "alta",
+    "fuente": "Wikipedia ES"
+   },
+   "Zilli": {
+    "fecha": "1966-03-04",
+    "signo": "Piscis",
+    "confianza": "alta",
+    "fuente": "Wikipedia ES + Vía País"
+   },
+   "Luana": {
+    "fecha": "1997-07-21",
+    "signo": "Cáncer",
+    "confianza": "media",
+    "fuente": "Big Brother Wiki"
+   },
+   "Majluf": {
+    "fecha": "?-02-02",
+    "signo": "Acuario",
+    "confianza": "alta",
+    "fuente": "Wikipedia ES (día y mes; el año se disputa entre 1963 y 1966)"
+   },
+   "Sol": {
+    "fecha": "1988-12-30",
+    "signo": "Capricornio",
+    "confianza": "alta",
+    "fuente": "fichas de prensa"
+   }
+  },
+  "sin_fecha": {
+   "Yipio": "Ni día ni mes publicados. Solo una entrevista uruguaya de 2021 que le da 35 años.",
+   "Mariela": "Ni día ni mes publicados. Y la edad se disputa: las dos Wikipedias dicen 48, que es lo que carga esta página, y una ficha de prensa de 2026 dice 53."
+  },
+  "ganadores": [
+   {
+    "edicion": "GH 1",
+    "anio": 2001,
+    "quien": "Marcelo Corazza",
+    "fecha": null,
+    "signo": null,
+    "confianza": "sin fecha publicada"
+   },
+   {
+    "edicion": "GH 2",
+    "anio": 2001,
+    "quien": "Roberto Parra",
+    "fecha": null,
+    "signo": null,
+    "confianza": "sin fecha publicada"
+   },
+   {
+    "edicion": "GH 3",
+    "anio": 2003,
+    "quien": "Viviana Colmenero",
+    "fecha": "1972-02-25",
+    "signo": "Piscis",
+    "confianza": "media"
+   },
+   {
+    "edicion": "GH 4",
+    "anio": 2007,
+    "quien": "Marianela Mirra",
+    "fecha": "1984-02-14",
+    "signo": "Acuario",
+    "confianza": "alta"
+   },
+   {
+    "edicion": "Famosos",
+    "anio": 2007,
+    "quien": "Diego Leonardi",
+    "fecha": "1978-02-18",
+    "signo": "Acuario",
+    "confianza": "media"
+   },
+   {
+    "edicion": "GH 5",
+    "anio": 2007,
+    "quien": "Esteban Morais",
+    "fecha": null,
+    "signo": null,
+    "confianza": "sin fecha publicada"
+   },
+   {
+    "edicion": "GH 6",
+    "anio": 2011,
+    "quien": "Cristian U",
+    "fecha": "1980-10-12",
+    "signo": "Libra",
+    "confianza": "media"
+   },
+   {
+    "edicion": "GH 7",
+    "anio": 2012,
+    "quien": "Rodrigo F. Rumi",
+    "fecha": "1992-08-26",
+    "signo": "Virgo",
+    "confianza": "media"
+   },
+   {
+    "edicion": "GH 8",
+    "anio": 2015,
+    "quien": "Francisco Delgado",
+    "fecha": "1985-09-09",
+    "signo": "Virgo",
+    "confianza": "media"
+   },
+   {
+    "edicion": "GH 9",
+    "anio": 2016,
+    "quien": "Luifa Galesio",
+    "fecha": "1993-03-25",
+    "signo": "Aries",
+    "confianza": "alta"
+   },
+   {
+    "edicion": "GH 10",
+    "anio": 2023,
+    "quien": "Marcos Ginocchio",
+    "fecha": "1999-10-16",
+    "signo": "Libra",
+    "confianza": "alta"
+   },
+   {
+    "edicion": "GH 11",
+    "anio": 2024,
+    "quien": "Bautista Mascia",
+    "fecha": "1996-11-25",
+    "signo": "Sagitario",
+    "confianza": "alta"
+   },
+   {
+    "edicion": "GH 12",
+    "anio": 2025,
+    "quien": "Tato Algorta",
+    "fecha": null,
+    "signo": null,
+    "confianza": "sin fecha publicada"
+   }
+  ],
+  "coincidencia": {
+   "acuarios": 3,
+   "con_fecha": 7,
+   "p_un_signo": 0.0157,
+   "p_cualquier_signo": 0.188,
+   "texto": "Tres de las siete con fecha conocida son de Acuario. Suena mucho, y la cuenta dice que no lo es tanto: la probabilidad de que un signo concreto se lleve tres de siete es del 1,6%, pero como el ojo busca en los doce a la vez, la de que ALGUNO lo haga sube al 19%. Es decir: pasa una de cada cinco veces por puro azar."
+  }
+ },
+ "tendencias": {
+  "_nota": "Posiciones en el top-50 de tendencias de X en Argentina, leídas de los snapshots públicos de trends24. Ventana del 10/08 13:56 UTC al 11/08 07:09 UTC. trends24 no publica volumen de tuits para estos términos, solo posición.",
+  "ventana": "10/08 13:56 → 11/08 07:09 UTC",
+  "terminos": [
+   {
+    "txt": "HANSSEN AL 9009",
+    "mejor": 1,
+    "horas": 23,
+    "tipo": "campaña de voto",
+    "nota": "Fue la tendencia más longeva de la jornada y pedía su eliminación. Salió con el 58%."
+   },
+   {
+    "txt": "LUANA AL 9009",
+    "mejor": 1,
+    "horas": null,
+    "tipo": "campaña de voto",
+    "nota": "Aparece después de la gala: es la campaña que empieza a armarse para la próxima."
+   },
+   {
+    "txt": "#GranHermano",
+    "mejor": 1,
+    "horas": null,
+    "tipo": "genérico",
+    "nota": "Entra al top recién con la gala."
+   },
+   {
+    "txt": "SOLANGE ABRAHAM",
+    "mejor": 6,
+    "horas": null,
+    "tipo": "nombre"
+   },
+   {
+    "txt": "SOL A LA FINAL",
+    "mejor": 10,
+    "horas": null,
+    "tipo": "apoyo"
+   },
+   {
+    "txt": "CASA DE MUJERES",
+    "mejor": 10,
+    "horas": 3,
+    "tipo": "tema",
+    "nota": "El único término sobre la casa femenina. Menos de tres horas en el top-50."
+   },
+   {
+    "txt": "Mariela",
+    "mejor": 2,
+    "horas": null,
+    "tipo": "nombre"
+   },
+   {
+    "txt": "Hanssen",
+    "mejor": 3,
+    "horas": null,
+    "tipo": "nombre"
+   },
+   {
+    "txt": "Majluf",
+    "mejor": 20,
+    "horas": null,
+    "tipo": "nombre"
+   },
+   {
+    "txt": "Zilli",
+    "mejor": 20,
+    "horas": null,
+    "tipo": "nombre"
+   },
+   {
+    "txt": "Tamara",
+    "mejor": 18,
+    "horas": null,
+    "tipo": "nombre"
+   },
+   {
+    "txt": "Yipio",
+    "mejor": 27,
+    "horas": null,
+    "tipo": "nombre"
+   }
+  ],
+  "oficial": {
+   "txt": "#GeneraciónDorada",
+   "apariciones": 0,
+   "nota": "El hashtag que Telefe pone en todos sus posts no entró ni una vez al top-50 en los 21 snapshots de la ventana. Lo que trendea son las campañas del fandom."
+  }
+ },
+ "bandos": {
+  "_nota": "En la gala Del Moro les pidió ponerse del lado de quien querían que siguiera. Es el mapa de alianzas más medible que hay, y anticipa la placa de la nominación de mitad de semana.",
+  "con_hanssen": [
+   "Yipio",
+   "Luana",
+   "Tamara"
+  ],
+  "con_sol": [
+   "Pincoya",
+   "Zilli",
+   "Majluf",
+   "Mariela"
+  ],
+  "fuente": "Infobae, 11/08/2026"
+ },
+ "dias_en_casa": {
+  "Pincoya": 167,
+  "Zilli": 166,
+  "Luana": 166,
+  "Yipio": 153,
+  "Sol": 134,
+  "Tamara": 132,
+  "Charlotte": 81,
+  "Mariela": 81,
+  "Majluf": 68
+ },
+ "posts": {
+  "_nota": "Código de incrustación oficial de X, pedido a su propia API de oEmbed (publish.twitter.com/oembed). No es una captura ni una transcripción: es la publicación, servida por X. Si el autor la borra, desaparece de acá también.",
+  "gala": 28,
+  "items": [
+   {
+    "url": "https://x.com/fedeebongiorno/status/2085548917098213421",
+    "lectura": "La del 7 de agosto dio a Hanssen primero con 50,8% sobre 30.695 votos y salió con 58,0%: acertó el nombre y se quedó corta por siete puntos, que es el sesgo que el modelo le corrige.",
+    "autor": "Fefe",
+    "handle": "@fedeebongiorno",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">👁️ ENCUESTA FINAL: Quién querés que sea ELIMINADO de <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a>?</p>&mdash; Fefe (@fedeebongiorno) <a href=\"https://x.com/fedeebongiorno/status/2085548917098213421?ref_src=twsrc%5Etfw\">7 de agosto de 2026</a></blockquote>",
+    "donde": "encuesta"
+   },
+   {
+    "url": "https://x.com/gh_trivia/status/2086632168709644385",
+    "lectura": "La otra cara del termómetro: un sondeo publicado con la votación todavía abierta, que daba a Sol primera con 60%. Terminó segunda con 42%. Mide a quien está despierto y con ganas de contestar, que no es lo mismo que quien paga por votar, y por eso no entra al modelo.",
+    "autor": "GH ENCUESTAS 🇦🇷",
+    "handle": "@gh_trivia",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">POR AHORA:<br><br>60% Sol<br>35% Hanssen<br>3% Majluf<br><br>2% Otro/a<a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://t.co/hIVtIS6fvP\">https://t.co/hIVtIS6fvP</a></p>&mdash; GH ENCUESTAS 🇦🇷 (@gh_trivia) <a href=\"https://x.com/gh_trivia/status/2086632168709644385?ref_src=twsrc%5Etfw\">10 de agosto de 2026</a></blockquote>",
+    "donde": "tendencias"
+   },
+   {
+    "url": "https://x.com/GranHermanoAr/status/2087009639426674990",
+    "donde": "evolucion",
+    "lectura": "El anuncio, de la cuenta que emite el programa. Salió el último varón, así que a la final llegan solo mujeres: cambia el plantel que se simula de acá al final, y ninguna de las regularidades históricas que usa el modelo distingue por género.",
+    "autor": "Gran Hermano",
+    "handle": "@GranHermanoAr",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\"><a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a>: Matías Hanssen fue eliminado y habrá una final inédita con solo mujeres<a href=\"https://t.co/glWDd8hi8R\">https://t.co/glWDd8hi8R</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087009639426674990?ref_src=twsrc%5Etfw\">11 de agosto de 2026</a></blockquote>"
+   },
+   {
+    "url": "https://x.com/solqueengh/status/2085558349001544097",
+    "donde": "campania",
+    "lectura": "Cuatro días antes de la gala, la campaña. HANSSEN AL 9009 estuvo veintitrés horas entre las cuatro primeras tendencias del país y terminó con Hanssen afuera. Es el caso más limpio de la temporada de fandom organizado que se convierte en resultado, y es lo que el modelo intenta capturar con el rasgo de rechazo.",
+    "autor": "TEAM SOL☀️",
+    "handle": "@solqueengh",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">del moro diciendo que los votos que ya estan siguen que no se reinicia la placa, la detestan a sol y la gente sigue diciendo que es acomodada vayanse a cagar<br><br>HANSSEN AL 9009<a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a></p>&mdash; TEAM SOL☀️ (@solqueengh) <a href=\"https://x.com/solqueengh/status/2085558349001544097?ref_src=twsrc%5Etfw\">7 de agosto de 2026</a></blockquote>"
+   },
+   {
+    "url": "https://x.com/GranHermanoAr/status/2087362816818708752",
+    "lectura": "El posteo oficial dice «vuelve al juego». Vuelve a la casa: las visitas no compiten por el premio. Los corazones que se ven acá los sirve X en el momento en que se abre esta página, así que la comparación con el de al lado es de ahora y no de cuando se escribió esto.",
+    "autor": "Gran Hermano",
+    "handle": "@GranHermanoAr",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">Campanita vuelve al juego de la mano de Mariela 🪄🧚<br><br>👁️ Mirá <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> en <a href=\"https://t.co/Ppl6ji2TwC\">https://t.co/Ppl6ji2TwC</a> y espiá la casa GRATIS las 24 horas por <a href=\"https://x.com/DGO_Latam?ref_src=twsrc%5Etfw\">@dgo_latam</a> y reviví los vivos por <a href=\"https://x.com/PrimeVideoLat?ref_src=twsrc%5Etfw\">@PrimeVideoLat</a> 🎬 <a href=\"https://t.co/5Fb2Xgw1wD\">pic.twitter.com/5Fb2Xgw1wD</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087362816818708752?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
+    "donde": "vuelven"
+   },
+   {
+    "url": "https://x.com/GranHermanoAr/status/2087361225990472184",
+    "lectura": "La misma cuenta, el mismo formato, seis minutos antes. Es la comparación más limpia que da la noche: nueve regresos anunciados igual, y el reparto de atención entre ellos resultó muy desigual.",
+    "autor": "Gran Hermano",
+    "handle": "@GranHermanoAr",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">Tommy vuelve a la casa unos días para jugar junto a Sol 🌞<br><br>👁️ Mirá <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> en <a href=\"https://t.co/Ppl6ji2TwC\">https://t.co/Ppl6ji2TwC</a> con la conducción de <a href=\"https://x.com/SANTIAGODELMORO?ref_src=twsrc%5Etfw\">@santiagodelmoro</a> <a href=\"https://t.co/oQ2iLhF4x1\">pic.twitter.com/oQ2iLhF4x1</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087361225990472184?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
+    "donde": "vuelven"
+   },
+   {
+    "url": "https://x.com/GranHermanoAr/status/2087355586941722716",
+    "lectura": "El mecanismo contado por la cuenta que emite el programa: diecisiete esperando afuera y nueve lugares, uno por cada jugadora.",
+    "autor": "Gran Hermano",
+    "handle": "@GranHermanoAr",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">17 exjugadores están listos para volver a la casa y ahora ellas tienen que elegir quién entra 🏠🔥<br><br>👁️ Mirá <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> en <a href=\"https://t.co/Ppl6ji2TwC\">https://t.co/Ppl6ji2TwC</a> con la conducción de <a href=\"https://x.com/SANTIAGODELMORO?ref_src=twsrc%5Etfw\">@santiagodelmoro</a> <a href=\"https://t.co/4zhm1v8lNi\">pic.twitter.com/4zhm1v8lNi</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087355586941722716?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
+    "donde": "vuelven"
+   },
+   {
+    "url": "https://x.com/streamstelefe/status/2087357070643188114",
+    "lectura": "Que a alguien la elijan para volver no significa que le guste. Es la única pieza verificada de la noche que documenta el rechazo a un regreso.",
+    "autor": "Streams Telefe",
+    "handle": "@streamstelefe",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">🤨Polémica reacción de Danelik al enterarse que Luana la eligió para entrar nuevamente a la casa 😵<br><br>Sumate ahora a <a href=\"https://x.com/hashtag/GHxTorayFefe?src=hash&amp;ref_src=twsrc%5Etfw\">#GHxTorayFefe</a> por <a href=\"https://x.com/hashtag/StreamsTelefe?src=hash&amp;ref_src=twsrc%5Etfw\">#StreamsTelefe</a> en <a href=\"https://t.co/sPOpUDZjzE\">https://t.co/sPOpUDZjzE</a> <a href=\"https://t.co/sd65x6go3S\">pic.twitter.com/sd65x6go3S</a></p>&mdash; Streams Telefe (@streamstelefe) <a href=\"https://x.com/streamstelefe/status/2087357070643188114?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
+    "donde": "vuelven"
+   }
+  ],
+  "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
+ }
+}

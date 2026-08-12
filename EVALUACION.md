@@ -9,6 +9,11 @@ pasa si Telefe mueve la fecha de la final.
 
 Firmado con la corrida del **10 de agosto de 2026**, hash `73cf007bb35633fc`.
 
+Ese hash es el de los datos publicados el día en que se congeló esta regla, y sirve
+para recuperar ese estado exacto del repositorio. Se mueve cada vez que se publica
+cualquier dato nuevo, incluidas las novedades que no tocan el modelo. Lo que no se
+mueve es lo escrito acá abajo.
+
 ---
 
 ## Las dos preguntas, que se puntúan por separado

@@ -1,29 +1,341 @@
 {
- "_nota": "Verificado el 11/08/2026 contra Wikipedia EN/ES de la temporada 13, prensa argentina y declaraciones en cámara. Contesta si el modelo tiene un agujero por no simular reingresos.",
+ "_nota": "Verificado el 12/08/2026 contra la nota oficial de Mi Telefe, prensa argentina y declaraciones en cámara. Contesta si el modelo tiene un agujero por no simular reingresos, y distingue el reingreso al juego de la visita, que es lo que el titular de cualquier medio llama igual.",
  "abiertos": false,
  "mecanismos": [
-  {"nombre": "Repechaje", "decide": "el público", "veces": 1,
-   "cuando": "2026-05-20", "dia": 87,
-   "quien": ["Yipio", "Lola Tomaszeuski"],
-   "detalle": "16 ex de esta edición se postularon; el público eligió dos. Sol Abraham se bajó."},
-  {"nombre": "Golden Ticket", "decide": "la producción", "veces": 4,
-   "cuando": "2026-05-31", "dia": 98,
-   "quien": ["Cinzia", "Brian Sarmiento", "Andrea del Boca", "Sol"],
-   "detalle": "Se habilita cuando alguien se va fuera de calendario, para reponer el número de la casa. Es reactivo, no programado."}
+  {
+   "nombre": "Repechaje",
+   "decide": "el público",
+   "veces": 1,
+   "cuando": "2026-05-20",
+   "dia": 87,
+   "quien": [
+    "Yipio",
+    "Lola Tomaszeuski"
+   ],
+   "detalle": "16 ex de esta edición se postularon; el público eligió dos. Sol Abraham se bajó."
+  },
+  {
+   "nombre": "Golden Ticket",
+   "decide": "la producción",
+   "veces": 4,
+   "cuando": "2026-05-31",
+   "dia": 98,
+   "quien": [
+    "Cinzia",
+    "Brian Sarmiento",
+    "Andrea del Boca",
+    "Sol"
+   ],
+   "detalle": "Se habilita cuando alguien se va fuera de calendario, para reponer el número de la casa. Es reactivo, no programado."
+  }
  ],
  "cierre": {
   "fecha": "2026-07-06",
   "quien": "Santiago del Moro",
   "cita": "El repechaje ya fue. A esta altura, para competir, no creo que ingrese nada más.",
   "fuente": "https://www.elnueve.com/contenidos/hay-repechaje-en-gran-hermano-el-tajante-anuncio-de-santiago-del-moro-que-sacudio-todo_20260706/",
-  "cumplida": "El 21 de julio entraron ocho ex de temporadas anteriores y del Moro fijó en cámara que no competían por el premio; todos estaban afuera para el 6 de agosto. El 11 de agosto se anunciaron visitas de ex de esta edición, también sin competir."
+  "cumplida": "Se cumplió dos veces de forma verificable. El 21 de julio entraron ocho ex de temporadas anteriores y del Moro fijó en cámara que no competían por el premio; todos estaban afuera para el 6 de agosto. El 11 de agosto entraron nueve ex de esta edición, Campanita entre ellos, también sin competir."
  },
- "ultimo_ingreso": {"quien": "Majluf", "fecha": "2026-06-02", "dia": 100, "tipo": "nueva"},
+ "ultimo_ingreso": {
+  "quien": "Majluf",
+  "fecha": "2026-06-02",
+  "dia": 100,
+  "tipo": "nueva"
+ },
  "precedente": [
-  {"temporada": 11, "anio": 2024, "dias": 210, "ultimo_ingreso_dia": 121,
-   "pct": 57.6, "mejor_reingresado": "Coty Romero, eliminada el día 140 (~12.ª)"},
-  {"temporada": 12, "anio": 2025, "dias": 205, "ultimo_ingreso_dia": 116,
-   "pct": 56.6, "mejor_reingresado": "Catalina Gorostidi, eliminada el día 140 (13.ª)"}
+  {
+   "temporada": 11,
+   "anio": 2024,
+   "dias": 210,
+   "ultimo_ingreso_dia": 121,
+   "pct": 57.6,
+   "mejor_reingresado": "Coty Romero, eliminada el día 140 (~12.ª)"
+  },
+  {
+   "temporada": 12,
+   "anio": 2025,
+   "dias": 205,
+   "ultimo_ingreso_dia": 116,
+   "pct": 56.6,
+   "mejor_reingresado": "Catalina Gorostidi, eliminada el día 140 (13.ª)"
+  }
  ],
- "conclusion": "En las dos temporadas anteriores nadie entró al juego después del 58% de la temporada, y ningún reingresado llegó siquiera al top-10. Esta edición cerró su última puerta al 51% y hoy va por el 87%."
+ "visitas": {
+  "_nota": "Entrar a la casa y entrar al juego no son lo mismo, y los titulares no los distinguen. Quien entra de visita no compite por el premio, no puede ganar y no está en ninguna de las 600.000 temporadas simuladas. Por eso el plantel del modelo no cambió el 11 de agosto aunque nueve personas más durmieran en la casa.",
+  "tandas": [
+   {
+    "fecha": "2026-07-21",
+    "quienes": "ocho ex de temporadas anteriores",
+    "compiten": false,
+    "duracion": "hasta el 6 de agosto",
+    "detalle": "Del Moro fijó en cámara que no competían por el premio. Todos estaban afuera el 6 de agosto."
+   },
+   {
+    "fecha": "2026-08-11",
+    "quienes": "nueve ex de esta misma edición",
+    "compiten": false,
+    "duracion": "algunos días",
+    "detalle": "17 exjugadores esperaron en «la arena». Las nueve en competencia sortearon el orden con el bolillero y cada una eligió a uno para que entrara y jugaran juntas durante algunos días. Ocho de los diecisiete no fueron elegidos y quedaron afuera sin fecha.",
+    "duplas": [
+     [
+      "Luana",
+      "Danelik Galazán"
+     ],
+     [
+      "Yipio",
+      "Catalina «Titi» Tcherkaski"
+     ],
+     [
+      "Pincoya",
+      "Brian Sarmiento"
+     ],
+     [
+      "Sol",
+      "Tomy Riguera"
+     ],
+     [
+      "Mariela",
+      "Steffany «Campanita» Pereira"
+     ],
+     [
+      "Charlotte",
+      "Sebastián «Cola» Almeida"
+     ],
+     [
+      "Tamara",
+      "Nazareno Pompei"
+     ],
+     [
+      "Zilli",
+      "Martín Rodríguez"
+     ],
+     [
+      "Majluf",
+      "Jenny Mavinga"
+     ]
+    ],
+    "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487"
+   }
+  ],
+  "campanita": {
+   "quien": "Steffany «Campanita» Pereira",
+   "eliminada": "2026-08-03",
+   "cuota_contra": 53.3,
+   "dias_adentro": 76,
+   "volvio": "2026-08-11",
+   "elegida_por": "Mariela",
+   "compite": false,
+   "por_que_no": "Volvió porque la eligió una compañera en el sorteo, no porque la producción revirtiera su eliminación ni porque el público la votara. Se había negado a salir el día que la eliminaron, y el 6 de agosto irrumpió en El Debate con una cacerola. Nada de eso le devolvió el juego.",
+   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487"
+  },
+  "efecto_en_el_modelo": "Efecto en el pronóstico: ninguno sobre quién puede ganar, porque las nueve candidatas son las mismas nueve. Lo que sí cambia es cómo se arma la placa, porque cada visita vota en la nominación junto a la jugadora que la eligió."
+ },
+ "historia": {
+  "_nota": "Los 21 reingresos al juego de las tres últimas ediciones, con el día en que ocurrieron. Verificado día a día contra Wikipedia EN, que es la única que lleva el calendario completo de las tres. Sirve para una sola pregunta: en qué momento de una temporada la producción deja de meter gente.",
+  "hoy": {
+   "dia": 171,
+   "fecha": "2026-08-12",
+   "aviso": "El porcentaje de hoy depende de que la final sea el 6 de septiembre, que Telefe no confirmó."
+  },
+  "temporadas": [
+   {
+    "n": 11,
+    "anio": 2024,
+    "dias": 210,
+    "reingresos": [
+     {
+      "quien": "Catalina Gorostidi",
+      "dia": 77,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Isabel Denegri",
+      "dia": 77,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Joel Ojeda",
+      "dia": 77,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Denisse González",
+      "dia": 85,
+      "via": "golden"
+     },
+     {
+      "quien": "Sabrina Cortez",
+      "dia": 85,
+      "via": "golden"
+     },
+     {
+      "quien": "Coty Romero",
+      "dia": 121,
+      "via": "golden"
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "anio": 2025,
+    "dias": 205,
+    "reingresos": [
+     {
+      "quien": "Brian Alberto",
+      "dia": 35,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Jenifer Lauría",
+      "dia": 43,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Luca Figurelli",
+      "dia": 64,
+      "via": "golden"
+     },
+     {
+      "quien": "Renato Rossini",
+      "dia": 65,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Giuliano Vaschetto",
+      "dia": 67,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Delfina De Lellis",
+      "dia": 71,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Claudio Di Lorenzo",
+      "dia": 99,
+      "via": "golden"
+     },
+     {
+      "quien": "Juliana Scaglione",
+      "dia": 99,
+      "via": "golden"
+     },
+     {
+      "quien": "Catalina Gorostidi",
+      "dia": 116,
+      "via": "golden"
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "anio": 2026,
+    "dias": 196,
+    "actual": true,
+    "reingresos": [
+     {
+      "quien": "Cinzia",
+      "dia": 66,
+      "via": "golden"
+     },
+     {
+      "quien": "Yipio",
+      "dia": 87,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Lola Tomaszewski",
+      "dia": 87,
+      "via": "repechaje"
+     },
+     {
+      "quien": "Brian Sarmiento",
+      "dia": 87,
+      "via": "golden"
+     },
+     {
+      "quien": "Andrea del Boca",
+      "dia": 87,
+      "via": "golden"
+     },
+     {
+      "quien": "Sol",
+      "dia": 98,
+      "via": "golden"
+     }
+    ]
+   }
+  ],
+  "apagado": [
+   {
+    "quien": "Andrea del Boca",
+    "fecha": "2026-07-08",
+    "dia": 136,
+    "via": "abandono"
+   },
+   {
+    "quien": "Cinzia",
+    "fecha": "2026-07-30",
+    "dia": 158,
+    "via": "evacuación médica"
+   },
+   {
+    "quien": "Juanicar",
+    "fecha": "2026-08-06",
+    "dia": 165,
+    "via": "abandono"
+   }
+  ],
+  "campanita_es_el_caso_debil": "El Golden Ticket repone salidas fuera de calendario: alguien abandona o lo expulsan y la producción devuelve a otro para que la casa no se vacíe. Campanita salió por voto del público, que es la única vía que ese mecanismo nunca repuso. Quienes calificarían por la regla histórica son Juanicar y Cinzia, y a ninguno de los dos lo repusieron.",
+  "candado": "Corre en contra, además, un motivo comercial: desde el 10 de agosto Telefe vende una final sin varones, que no había pasado nunca en ningún país. De los ex disponibles, cinco son varones. Devolver a cualquiera de ellos al juego borra el titular que ellos mismos anunciaron.",
+  "estimacion": {
+   "valor": 0.04,
+   "campanita": 0.015,
+   "es_del_modelo": false,
+   "como": "No sale del modelo: el modelo simula eliminaciones y no simula reingresos. Es una estimación declarada a mano, y se publica con su base para que se pueda discutir. La base es la tasa histórica de arriba, las tres no reposiciones seguidas y las dos declaraciones. Lo que la mantiene lejos de cero es que esta edición ya improvisó bastante: 43 participantes, trece salidas fuera del voto y un Golden Ticket anulado por el veto de una jugadora."
+  }
+ },
+ "tendencias": {
+  "_nota": "Barrido del archivo horario de getdaytrends y de trends24 para Argentina y Chile, del 3 al 12 de agosto de 2026. Son archivos de terceros y no una medición propia: trends24 solo conserva 24 horas, así que lo anterior sale del archivo horario.",
+  "consigna": {
+   "termino": "CAMPANITA AL 9009",
+   "pico": 1,
+   "cuando": "2026-08-02",
+   "sostenido": "quince horas entre el segundo y el tercer puesto el 3 de agosto",
+   "que_pedia": "que la eliminaran",
+   "resultado": "Ganó. Salió con el 53,3% en contra."
+  },
+  "atrinchero": {
+   "termino": "CAMPANITA NO SE VA",
+   "pico": 3,
+   "horas": 4
+  },
+  "nunca_trendearon": [
+   "QUE VUELVA CAMPANITA",
+   "VOLVE CAMPANITA",
+   "CAMPANITA MERECE VOLVER",
+   "CAMPANITA VUELVE",
+   "REINGRESO",
+   "REINGRESO CAMPANITA"
+  ],
+  "si_trendearon": [
+   {
+    "termino": "QUE VUELVA CINZIA",
+    "pico": 5,
+    "dias": 3.5
+   },
+   {
+    "termino": "QUE VUELVA PAUI",
+    "pico": 3,
+    "dias": 1
+   }
+  ],
+  "noche_del_regreso": {
+   "fecha": "2026-08-11",
+   "nombres_en_top50": 10,
+   "campanita_aparecio": false,
+   "detalle": "Fueron Luana, Danelik, Mavinga, Brian, Tomy, Titi, Mariela, Nazareno, Majluf y Zilli. «Campanita» no apareció en ningún recorte, aunque Mariela, que fue quien la eligió, estuvo entre los diez primeros."
+  },
+  "lectura": "El pedido de que volviera no existió. Lo que sí existió, y llegó al primer puesto del país, fue una consigna para que se fuera, y se cumplió. En esos mismos días dos campañas de regreso sí funcionaron, para Cinzia y para Paui, así que el formato de pedir un regreso estaba vivo y disponible."
+ }
 }

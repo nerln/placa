@@ -31,7 +31,7 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-10T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"73cf007bb35633fc","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-10T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 22,2% · Tamara 19,2% · Pincoya 18,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-10","version":"3dcb6b4b8b03d723","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
 <script src="datos.js"></script>
 
 <style>
@@ -116,6 +116,16 @@
   --oro-1:#6E5411;
   --oro-2:#A8842A;
   --oro-3:#B08F3E;
+
+/* La medida del texto. Dos anchos y no diez: uno para la lectura corrida y uno
+   para las notas. Elegirlos bloque a bloque daba un borde derecho dentado, con
+   un párrafo terminando a 340px del margen y el siguiente a 606px, y en
+   pantalla ancha eso se lee como si algunas cosas estuvieran corridas. */
+  /* En rem y no en ch: ch depende del tamaño de letra del bloque, así que la
+     misma medida daba anchos distintos en píxeles según el cuerpo del texto, y
+     el borde derecho quedaba dentado igual. En rem, dos bordes y solo dos. */
+  --medida:52rem;
+  --medida-corta:42rem;
   --ojo-mask:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 78'><path d='M1.60 39.00A64.30 64.30 0 0 1 118.40 39.00A64.30 64.30 0 0 1 1.60 39.00Z' fill='none' stroke='black' stroke-width='7'/><circle cx='60' cy='39' r='20' fill='black'/></svg>");
 }
 /* ---------- el modo oscuro es la gala ----------
@@ -281,8 +291,38 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
 /* La respuesta corta: cada frase tiene que poder leerse sola, fuera de la
    página, con nombre, número y fecha adentro. Es lo que un buscador o un
    asistente puede levantar textualmente sin que quede colgando. */
+
+/* ---------- lo último ----------
+   Arriba de todo, antes del pronóstico. Quien entra a esta página quiere saber
+   primero si cambió algo desde la última vez, y si el número que está por leer
+   ya tiene eso adentro o todavía no. Por eso cada entrada dice explícitamente
+   si el pronóstico la incorpora. */
+.ultimo{border:1px solid var(--linea); border-left:3px solid var(--rechazo);
+  border-radius:var(--r-sm); background:var(--sup); padding:14px 16px; margin:0 0 18px;
+  max-width:var(--medida)}
+.ultimo-cab{display:flex; align-items:center; gap:8px; margin-bottom:10px}
+.ultimo-cab .etq{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-etq);
+  letter-spacing:.08em; text-transform:uppercase; color:var(--rechazo-txt)}
+.ultimo-cab .pulso{width:7px; height:7px; border-radius:50%; background:var(--rechazo);
+  flex:none; animation:pulso 2.6s ease-in-out infinite}
+@keyframes pulso{0%,100%{opacity:1} 50%{opacity:.28}}
+@media (prefers-reduced-motion:reduce){.ultimo-cab .pulso{animation:none}}
+.ultimo-item{padding:9px 0; border-top:1px solid var(--linea2)}
+.ultimo-item:first-of-type{border-top:0; padding-top:0}
+.ultimo-item .cuando{font-size:var(--t-xs); color:var(--tinta3); font-variant-numeric:tabular-nums}
+.ultimo-item .que{font-size:var(--t-md); font-weight:700; font-family:"Archivo",sans-serif;
+  margin:2px 0 4px; line-height:1.35}
+.ultimo-item .det{font-size:var(--t-sm); color:var(--tinta2); line-height:1.55; margin:0}
+.ultimo-item .estado{display:inline-flex; align-items:center; gap:6px; margin-top:7px;
+  font-size:var(--t-xs); font-weight:700; font-family:"Archivo",sans-serif;
+  padding:4px 9px; border-radius:var(--r-sm); border:1px solid var(--linea)}
+.ultimo-item .estado.recalculado{color:var(--apoyo-txt); border-color:var(--apoyo)}
+.ultimo-item .estado.pendiente{color:var(--rechazo-txt); border-color:var(--rechazo)}
+.ultimo-item .afecta{font-size:var(--t-xs); color:var(--tinta3); margin-top:6px; line-height:1.5}
+.ultimo-item .estado.parcial{color:var(--tinta2)}
+.ultimo-item a{color:var(--tinta2)}
 .respuesta{border-left:3px solid var(--tinta); padding:2px 0 2px 18px; margin:0 0 18px;
-  max-width:74ch}
+  max-width:var(--medida)}
 .respuesta p{font-size:var(--t-lg); line-height:1.55; color:var(--tinta2); margin:0 0 10px}
 .respuesta p:last-child{margin-bottom:0}
 .respuesta p:first-child{color:var(--tinta)}
@@ -290,7 +330,16 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
 h1{font-family:"Archivo",sans-serif; font-size:var(--t-h1); line-height:1.02; margin:0 0 14px;
   font-weight:700; letter-spacing:-.028em; text-wrap:balance}
 h1 em{font-style:normal; color:var(--rechazo-txt)}
-.bajada{max-width:60ch; color:var(--tinta2); font-size:var(--t-lg); margin:0; line-height:1.5}
+
+/* Un solo borde derecho para todo lo que se lee como texto corrido. Antes cada
+   bloque llevaba su propia medida y el resultado era un margen derecho dentado.
+   Las tablas, las rejas y los gráficos no entran acá: ésos sí van a todo lo
+   ancho a propósito. */
+section > p, header > p, .sub, .paso p, .tarjeta > p, .respuesta,
+.camino-pie, .h1-sub{max-width:var(--medida)}
+.thist-pie, .tw-nota, .licencia, .actualizado, .nota-escenario,
+.medicion-aviso p{max-width:var(--medida-corta)}
+.bajada{max-width:var(--medida-corta); color:var(--tinta2); font-size:var(--t-lg); margin:0; line-height:1.5}
 
 
 /* ---------- veredicto ---------- */
@@ -300,7 +349,7 @@ h1 em{font-style:normal; color:var(--rechazo-txt)}
   text-transform:uppercase; color:var(--tinta3); font-weight:700; margin-bottom:8px}
 .vnom{font-family:"Archivo",sans-serif; font-size:clamp(26px,7.6vw,46px); line-height:1.04;
   font-weight:700; letter-spacing:-.026em; margin:0}
-.vmeta{color:var(--tinta2); font-size:var(--t-sm); margin:12px 0 0; max-width:54ch; line-height:1.55}
+.vmeta{color:var(--tinta2); font-size:var(--t-sm); margin:12px 0 0; max-width:var(--medida-corta); line-height:1.55}
 .vprob{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-top:16px;
   padding-top:16px; border-top:1px solid var(--linea2)}
 .vprob .big{font-family:"Archivo",sans-serif; font-size:clamp(48px,15vw,78px); line-height:.86;
@@ -318,7 +367,7 @@ h2{font-family:"Archivo",sans-serif; font-size:var(--t-h2); font-weight:700; mar
   letter-spacing:-.022em; line-height:1.1; text-wrap:balance}
 .eyebrow{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.1em;
   text-transform:uppercase; color:var(--rechazo-txt); font-weight:700; margin-bottom:8px}
-.sub{color:var(--tinta2); margin:12px 0 20px; max-width:68ch; font-size:var(--t-base); line-height:1.55}
+.sub{color:var(--tinta2); margin:12px 0 20px; max-width:var(--medida); font-size:var(--t-base); line-height:1.55}
 h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; margin:24px 0 10px; letter-spacing:-.01em}
 .tarjeta{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-md); padding:18px 16px}
 
@@ -431,7 +480,7 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .camino .q{font-size:var(--t-base); line-height:1.5; color:var(--tinta)}
 .camino .q b{font-weight:700}
 .camino .por{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5;
-  grid-column:2 / -1; max-width:70ch}
+  grid-column:2 / -1; max-width:var(--medida)}
 .camino .cuanto{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-md);
   color:var(--tinta2); font-variant-numeric:tabular-nums; white-space:nowrap;
   grid-column:2 / -1; margin-top:2px}
@@ -440,7 +489,7 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
   .camino .por{grid-column:2 / 3}
 }
 .camino-pie{margin:20px 0 0; font-size:var(--t-lg); line-height:1.5; color:var(--tinta);
-  max-width:74ch; border-left:3px solid var(--oro); padding-left:16px}
+  max-width:var(--medida); border-left:3px solid var(--oro); padding-left:16px}
 .camino-pie b{color:var(--oro-txt)}
 
 
@@ -481,10 +530,60 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .thist td.fuera{color:var(--tinta3); font-style:italic}
 .thist .d{font-size:11.5px; display:block; color:var(--tinta3); font-weight:400}
 .thist .d.sube{color:var(--apoyo-txt)} .thist .d.baja{color:var(--rechazo-txt)}
-.thist-pie{font-size:var(--t-xs); color:var(--tinta3); margin:14px 0 0; max-width:78ch;
+.thist-pie{font-size:var(--t-xs); color:var(--tinta3); margin:14px 0 0; max-width:var(--medida);
   line-height:1.6}
 
 
+
+/* ---------- quién puede volver ----------
+   Dos cosas que la prensa llama igual y que para el modelo son opuestas:
+   entrar a la casa y entrar al juego. Quien entra de visita no está en ninguna
+   de las temporadas simuladas, y por eso el plantel no se toca. */
+
+/* ---------- cuándo entra la gente ----------
+   Un punto por reingreso, tres filas por temporada, y el eje es el porcentaje
+   de temporada transcurrido. Todo el color sale de variables, así que el tema
+   de noche no necesita un segundo dibujo. */
+#v-grafico{max-width:calc(var(--medida) + 32px)}
+#v-grafico figcaption{font-family:"Archivo",sans-serif; font-weight:700;
+  font-size:var(--t-md); margin:0 0 10px}
+#v-grafico svg{width:100%; height:auto; display:block; overflow:visible}
+.gr-banda{fill:var(--tinta); opacity:.05}
+.gr-eje{stroke:var(--linea); stroke-width:1}
+.gr-fila{stroke:var(--linea2); stroke-width:1}
+.gr-txt{font-family:"Archivo",sans-serif; font-size:11px; fill:var(--tinta3)}
+.gr-txt.fuerte{fill:var(--tinta2); font-weight:700}
+.gr-hoy{stroke:var(--rechazo); stroke-width:2}
+.gr-hoy-txt{font-family:"Archivo",sans-serif; font-size:11px; font-weight:700; fill:var(--rechazo-txt)}
+.gr-punto{stroke:var(--sup); stroke-width:1.5}
+.gr-punto.repechaje{fill:var(--apoyo)}
+.gr-punto.golden{fill:var(--oro-2)}
+.gr-leyenda{font-family:"Archivo",sans-serif; font-size:11px; fill:var(--tinta2)}
+@media(prefers-reduced-motion:no-preference){
+  .gr-punto{transform-box:fill-box; transform-origin:center;
+    animation:gr-entra .5s cubic-bezier(.2,.9,.3,1.2) backwards}
+  @keyframes gr-entra{from{transform:scale(0); opacity:0} to{transform:scale(1); opacity:1}}
+}
+.duplas{list-style:none; padding:0; margin:10px 0 0; font-size:var(--t-sm)}
+.duplas li{display:flex; align-items:baseline; gap:8px; padding:5px 0;
+  border-top:1px solid var(--linea2)}
+.duplas li:first-child{border-top:0}
+.duplas .j{font-weight:700; min-width:5.5rem; flex:none}
+.duplas .flecha{color:var(--tinta3); flex:none}
+.duplas .v{color:var(--tinta2)}
+.duplas .marcada .v{color:var(--tinta); font-weight:700}
+.puerta{padding:9px 0; border-top:1px solid var(--linea2)}
+.puerta:first-of-type{border-top:0}
+.puerta .n{font-weight:700; font-family:"Archivo",sans-serif; font-size:var(--t-sm)}
+.puerta .e{font-size:var(--t-xs); font-weight:700; margin-left:7px; padding:2px 7px;
+  border-radius:var(--r-sm); border:1px solid var(--linea); color:var(--tinta3)}
+.puerta .e.cerrada{color:var(--rechazo-txt); border-color:var(--rechazo)}
+.puerta .e.entornada{color:var(--tinta2)}
+.tw-lista li{padding:3px 0; font-size:var(--t-sm)}
+.tw-lista code{font-size:.92em; color:var(--tinta2)}
+#v-tendencias{max-width:calc(var(--medida) + 32px)}
+.puerta p{font-size:var(--t-sm); color:var(--tinta2); margin:4px 0 0; line-height:1.5}
+#v-caso, #v-pronostico{max-width:calc(var(--medida) + 32px)}   /* la medida del texto más el relleno de .tarjeta */
 .rein-cifras{display:grid; gap:1px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   margin-top:4px}
 .rein-cifras > div{background:var(--sup2); padding:11px 12px}
@@ -675,7 +774,7 @@ ul.limpia b{color:var(--tinta)}
 /* Antes de la primera corrida la lista estaba vacía y quedaba un rectángulo en
    blanco de 120px bajo su propio rótulo. Ahora dice qué va a aparecer ahí. */
 .sim-traza:empty::before{content:"Acá va a aparecer la temporada semana por semana: quién queda en placa, quién se va, y quién gana la final.";
-  display:block; color:var(--tinta3); line-height:1.6; max-width:46ch}
+  display:block; color:var(--tinta3); line-height:1.6; max-width:var(--medida-corta)}
 .sim-traza li{display:grid; grid-template-columns:56px minmax(0,1fr); gap:9px; padding:6px 0;
   border-bottom:1px solid var(--linea2); animation:entra .3s var(--sal)}
 .sim-traza li .g{color:var(--tinta3); font-variant-numeric:tabular-nums}
@@ -742,7 +841,7 @@ ul.limpia b{color:var(--tinta)}
 
 footer{margin-top:52px; padding-top:20px; border-top:2px solid var(--tinta); color:var(--tinta3);
   font-size:var(--t-xs); line-height:1.65}
-footer p{max-width:84ch}
+footer p{max-width:var(--medida)}
 .tt{position:fixed; pointer-events:none; opacity:0; transition:opacity .1s; z-index:50;
   background:var(--sombra-tt); color:var(--tt-txt); border:1px solid var(--linea);
   border-radius:var(--r-sm); padding:10px 12px;
@@ -757,7 +856,7 @@ footer p{max-width:84ch}
   border-bottom:1px solid var(--linea)}
 .firma-quien{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-md);
   color:var(--tinta); letter-spacing:-.01em}
-.firma-que{font-size:var(--t-xs); color:var(--tinta3); max-width:44ch; margin-top:3px;
+.firma-que{font-size:var(--t-xs); color:var(--tinta3); max-width:var(--medida-corta); margin-top:3px;
   line-height:1.5}
 .firma-enlaces{display:flex; gap:8px; flex-wrap:wrap}
 .firma-enlaces a{font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
@@ -775,11 +874,11 @@ footer p{max-width:84ch}
 .medicion-aviso{border:1px solid var(--linea); border-radius:var(--r-sm);
   padding:16px 18px; margin:0 0 20px; background:var(--sup2)}
 .medicion-aviso p{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:8px 0 0;
-  max-width:82ch}
+  max-width:var(--medida)}
 .medicion-aviso .btn{font-size:var(--t-xs); min-height:40px; padding:9px 14px; margin-top:4px}
 .medicion-aviso a{color:var(--tinta2)}
 .licencia{font-size:var(--t-xs); color:var(--tinta3); line-height:1.6; margin:0 0 18px;
-  max-width:82ch}
+  max-width:var(--medida)}
 .licencia a{color:var(--tinta2); text-decoration:none; border-bottom:1px solid var(--linea)}
 .licencia a:hover{color:var(--tinta); border-color:var(--tinta)}
 .aviso-marcas{border-left:2px solid var(--linea); padding-left:14px}
@@ -804,7 +903,7 @@ footer p{max-width:84ch}
 .medicion{display:grid; gap:24px; grid-template-columns:1fr; align-items:start}
 @media (min-width:900px){.medicion{grid-template-columns:1fr minmax(300px,420px)}}
 .medicion.sola{grid-template-columns:1fr !important}
-.medicion.sola > div:first-child{max-width:82ch}
+.medicion.sola > div:first-child{max-width:var(--medida)}
 .medicion.sola .tw-hueco{margin-top:4px; max-width:550px}
 .medicion .tw-hueco{margin:0}
 /* Dos publicaciones enfrentadas: la campaña que pedía la eliminación y el
@@ -829,6 +928,15 @@ footer p{max-width:84ch}
 .ig-marco{position:relative; border:1px solid var(--linea); border-radius:var(--r-sm);
   overflow:hidden; background:#fff; max-width:550px}
 .ig-marco iframe{display:block; width:100%; height:640px; border:0}
+
+/* ---------- una coleccion de publicaciones ----------
+   Cuando un hecho se lee distinto segun quien lo cuente, una sola cita elige
+   por el lector. La coleccion pone varias al lado y deja que se contradigan. */
+.tw-coleccion{display:grid; gap:14px; grid-template-columns:1fr}
+@media(min-width:900px){.tw-coleccion{grid-template-columns:1fr 1fr}}
+.tw-una{min-width:0}
+.tw-una .tw-marco{margin:0}
+.tw-una .tw-nota{margin-top:8px}
 .tw-nota{font-size:var(--t-xs); color:var(--tinta3); margin:10px 0 0; line-height:1.55}
 .tw-nota b{color:var(--tinta2)}
 
@@ -1084,6 +1192,7 @@ footer p{max-width:84ch}
 </svg></span></h1>
   <p class="h1-sub"><em>Los 70 millones, en probabilidades.</em></p>
   <p class="actualizado" id="actualizado"></p>
+  <div class="ultimo" id="ultimo"></div>
   <div class="respuesta" id="respuesta-corta"></div>
   <p class="bajada">Todo sale de dos cosas que publica Telefe: el reparto de votos que canta en cada gala de eliminación, y el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio. Nada de encuestas de intención ni de cuotas de apuestas: para esta edición no existe ningún mercado real.</p>
 </header>
@@ -1179,6 +1288,41 @@ footer p{max-width:84ch}
   </div>
 </section>
 
+<section id="vuelven">
+  <div class="eyebrow">Quién puede volver</div>
+  <div class="titulo"><h2 class="tit">Volver a la casa y volver al juego no son lo mismo</h2></div>
+  <p class="sub" id="v-sub"></p>
+
+  <div class="tarjeta" id="v-caso" style="margin:0 0 18px"></div>
+
+  <div class="g2">
+    <div class="tarjeta" id="v-duplas"></div>
+    <div class="tarjeta" id="v-puertas"></div>
+  </div>
+
+  <figure id="v-grafico" style="margin:22px 0 0">
+    <figcaption id="v-grafico-tit"></figcaption>
+    <div id="v-grafico-svg"></div>
+    <p class="thist-pie" id="v-grafico-pie"></p>
+  </figure>
+
+  <div class="tarjeta" id="v-tendencias" style="margin:18px 0 0"></div>
+
+  <div id="v-eco" style="margin-top:22px">
+    <h3 style="font-family:'Archivo',sans-serif; font-size:var(--t-md); margin:0 0 4px">Cómo se contó el regreso</h3>
+    <p class="thist-pie" style="margin:0 0 12px">Las publicaciones van tal como las sirve X, sin
+    transcribir ni recortar, así que los corazones que se ven son los de ahora mismo. Si quien las
+    escribió las borra, desaparecen de acá también. X fecha en horario universal, así que estas
+    publicaciones de la noche del 11 en la Argentina aparecen con fecha del 12.</p>
+    <div class="tw-hueco" data-post="vuelven"></div>
+  </div>
+
+  <div class="rein-cifras" id="v-cifras" style="margin-top:18px"></div>
+
+  <div class="tarjeta" id="v-pronostico" style="margin:18px 0 0"></div>
+  <p class="camino-pie" id="v-pie"></p>
+</section>
+
 <section id="ramas">
   <div class="eyebrow">Y después</div>
   <div class="titulo"><h2 class="tit" id="tit-ramas"></h2></div>
@@ -1245,7 +1389,7 @@ footer p{max-width:84ch}
   <div class="titulo"><h2 class="tit">Por qué cada uno está donde está</h2></div>
   <p class="sub">Para cada uno va lo que lo pone ahí y a quién se parece de las dos ediciones anteriores, con lo que le pasó a esa persona. De 2024 y 2025 nadie publicó el reparto completo de las galas, así que la comparación va por perfil: una tipología en dos ejes, sin métrica ajustada detrás.</p>
   <div class="porque" id="porque-fichas" data-anim data-cascada></div>
-  <p style="font-size:13.6px; color:var(--tinta3); margin-top:20px; max-width:78ch" id="regla-hist"></p>
+  <p style="font-size:13.6px; color:var(--tinta3); margin-top:20px; max-width:var(--medida)" id="regla-hist"></p>
 </section>
 
 <section id="animaciones">
@@ -1305,20 +1449,10 @@ footer p{max-width:84ch}
 </section>
 
 <section id="zodiaco">
-  <div class="eyebrow">El modelo rival</div>
-  <div class="titulo"><h2 class="tit" id="tit-zod">El zodíaco, con la misma vara</h2></div>
+  <div class="eyebrow">Y una de regalo</div>
+  <div class="titulo"><h2 class="tit" id="tit-zod"></h2></div>
   <p class="sub" id="sub-zod"></p>
-  <div class="signos" id="signos"></div>
-  <div class="g2" style="margin-top:18px">
-    <div class="tarjeta">
-      <div class="eyebrow">Los campeones, por signo</div>
-      <div class="scroll-x"><table id="t-zod"></table></div>
-    </div>
-    <div class="tarjeta">
-      <div class="eyebrow">¿Tres acuarios es mucho?</div>
-      <p style="font-size:14.2px; color:var(--tinta2); margin:0" id="zod-coincidencia"></p>
-    </div>
-  </div>
+  <p id="zod-coincidencia" style="font-size:15px; color:var(--tinta2)"></p>
 </section>
 
 <section id="metodo">
@@ -1395,15 +1529,6 @@ footer p{max-width:84ch}
 <section id="limites">
   <div class="eyebrow">Límites</div>
   <div class="titulo"><h2 class="tit">Límites, huecos y advertencias</h2></div>
-  <div class="tarjeta" id="reingresos" style="margin:0 0 18px">
-    <div class="eyebrow">La pregunta que faltaba</div>
-    <h3 style="font-family:'Archivo',sans-serif; font-size:var(--t-md); margin:0 0 8px"
-        id="tit-rein"></h3>
-    <p style="font-size:14.4px; color:var(--tinta2); margin:0 0 12px" id="txt-rein"></p>
-    <div class="rein-cifras" id="cif-rein"></div>
-    <p style="font-size:12.6px; color:var(--tinta3); margin:12px 0 0" id="pie-rein"></p>
-  </div>
-
   <div class="g2">
     <div class="tarjeta">
       <h3 style="margin-top:0">Huecos reales en los datos</h3>
@@ -2702,15 +2827,14 @@ function contar(nodo){
   const huecos = [...document.querySelectorAll(".tw-hueco")];
   if(!huecos.length) return;
   const items = ((A && A.posts && A.posts.items) || []);
+  // Un hueco puede llevar una publicacion o varias. Una sola es el caso de la
+  // encuesta que se explica al lado de su tabla; varias es el caso de un tema
+  // que no se entiende con una sola voz, como el regreso de una eliminada, que
+  // se lee distinto segun quien lo cuente.
   const porSitio = {};
-  items.forEach(o => (porSitio[o.donde] = o));
+  items.forEach(o => (porSitio[o.donde] = porSitio[o.donde] || []).push(o));
 
-  const puestos = [];
-  huecos.forEach(h => {
-    const o = porSitio[h.dataset.post];
-    // Un hueco sin publicacion no deja un agujero: se borra y el texto de
-    // alrededor sigue teniendo sentido sin el.
-    if(!o){ h.remove(); return; }
+  const marcar = o => o.red === "ig"
     // Instagram no da un marcado como el de X: su API de oEmbed publica pide
     // un token desde 2020. Lo que sigue funcionando sin nada es la ruta
     // /embed/ dentro de un iframe, que Instagram sirve sin X-Frame-Options.
@@ -2718,19 +2842,24 @@ function contar(nodo){
     // se autoajusta sin su guion, y no tiene tema oscuro. Por eso va con alto
     // declarado y loading="lazy": si nadie baja hasta acá, Instagram no se
     // entera de que la página existe.
-    if(o.red === "ig"){
-      h.innerHTML =
-        "<div class='ig-marco'><iframe src='https://www.instagram.com/" +
-          (o.tipo || "p") + "/" + o.codigo + "/embed/captioned/' loading='lazy' " +
-          "title='Publicación de " + o.autor + " en Instagram' " +
-          "scrolling='no' frameborder='0' allowtransparency='true'></iframe></div>" +
-        "<p class='tw-nota'>" + o.lectura + "</p>";
-      puestos.push(h);
-      return;
-    }
-    h.innerHTML =
-      "<div class='tw-marco'>" + o.html + "</div>" +
+    ? "<div class='ig-marco'><iframe src='https://www.instagram.com/" +
+        (o.tipo || "p") + "/" + o.codigo + "/embed/captioned/' loading='lazy' " +
+        "title='Publicación de " + o.autor + " en Instagram' " +
+        "scrolling='no' frameborder='0' allowtransparency='true'></iframe></div>" +
+      "<p class='tw-nota'>" + o.lectura + "</p>"
+    : "<div class='tw-marco'>" + o.html + "</div>" +
       "<p class='tw-nota'>" + o.lectura + "</p>";
+
+  const puestos = [];
+  huecos.forEach(h => {
+    const grupo = porSitio[h.dataset.post];
+    // Un hueco sin publicacion no deja un agujero: se borra y el texto de
+    // alrededor sigue teniendo sentido sin el.
+    if(!grupo || !grupo.length){ h.remove(); return; }
+    h.innerHTML = grupo.length === 1 ? marcar(grupo[0])
+      : "<div class='tw-coleccion'>" +
+          grupo.map(o => "<div class='tw-una'>" + marcar(o) + "</div>").join("") +
+        "</div>";
     h.querySelectorAll("a[href]").forEach(a => {
       a.target = "_blank"; a.rel = "noopener nofollow ugc";
     });
@@ -2738,7 +2867,7 @@ function contar(nodo){
   });
   // El guion de X solo hace falta si hay alguna publicacion de X: una pagina
   // con solo Instagram no tiene por que pedirle nada a X.
-  if(!puestos.some(h => porSitio[h.dataset.post].red !== "ig")) return;
+  if(!puestos.some(h => porSitio[h.dataset.post].some(o => o.red !== "ig"))) return;
 
   let pedido = false;
   function pedir(){
@@ -2831,51 +2960,270 @@ function contar(nodo){
   }
 })();
 
-/* ---------- ¿pueden volver? ----------
+/* ---------- quién puede volver ----------
    El modelo simula eliminaciones y no simula que alguien vuelva a entrar. Si
-   los reingresos siguieran abiertos, eso sería un agujero grande: el plantel
-   que se simula dejaría de ser el plantel real antes de la final. Así que la
-   pregunta hay que contestarla con datos y no con un «no se modela».
+   los reingresos siguieran abiertos eso sería un agujero grande: el plantel que
+   se simula dejaría de ser el plantel real antes de la final.
 
-   Los dos mecanismos existieron y se usaron bastante. Están cerrados desde
-   junio, hay una declaración en cámara que lo dice, y se cumplió dos veces de
-   forma verificable. Y el precedente de las dos temporadas anteriores acota
-   cuánto costaría equivocarse. */
+   El 11 de agosto entraron nueve personas a la casa y ninguna entró al juego.
+   Es la distinción que ningún titular hace y de la que depende que el número de
+   arriba siga siendo el número. Así que la sección la explica primero con el
+   caso que todo el mundo tiene fresco, y después con las puertas. */
 (function(){
-  const R = D.reingresos, sec = $("#reingresos");
+  const R = D.reingresos, sec = $("#vuelven");
   if(!R || !sec){ if(sec) sec.remove(); return; }
-  const usos = R.mecanismos.reduce((a,m) => a + m.veces, 0);
+  const V = R.visitas, C = V && V.campanita;
+  const usos = R.mecanismos.reduce((a, m) => a + m.veces, 0);
   const quienes = R.mecanismos.flatMap(m => m.quien).filter(n => D.jugadores.includes(n));
 
-  $("#tit-rein").textContent = R.abiertos
-    ? "Sí: todavía puede volver a entrar gente, y el modelo no lo simula"
-    : "¿Puede volver alguien? Ya no, y por eso el modelo no lo simula";
-  $("#txt-rein").innerHTML =
-    "Sí es parte del juego: esta edición tuvo <b>" + usos + " reingresos</b> por dos vías con " +
-    "dueños distintos. El <b>repechaje</b>, que decide el público, y el <b>Golden Ticket</b>, " +
-    "que decide la producción cuando alguien se va fuera de calendario. " +
-    (quienes.length
-      ? "De las que quedan, " + (quienes.length === 1 ? "una volvió así: " : "volvieron así ") +
-        "<b>" + quienes.join("</b> y <b>") + "</b>. "
-      : "") +
-    "Pero está cerrado: el " + FECHA_LARGA(R.cierre.fecha) + ", " + R.cierre.quien +
-    " lo dijo en su programa: «" + R.cierre.cita + "». " + R.cierre.cumplida;
+  $("#v-sub").textContent =
+    "Nueve personas eliminadas volvieron a dormir en la casa. Ninguna puede ganar. " +
+    "Lo que sigue explica por qué eso no mueve ni un punto del pronóstico, y qué " +
+    "tendría que pasar para que sí lo moviera.";
 
-  const P = R.precedente;
-  $("#cif-rein").innerHTML = [
-    {k:"Último ingreso al juego", v: FECHA_LARGA(R.ultimo_ingreso.fecha),
-     d: R.ultimo_ingreso.quien + ", día " + R.ultimo_ingreso.dia + " de unos 196"},
-    {k:"En las dos anteriores", v: Math.round((P[0].pct + P[1].pct)/2) + "%",
-     d:"de la temporada era lo más tarde que alguien entró al juego"},
+  if(C){
+    const cuota = String(C.cuota_contra).replace(".", ",");
+    $("#v-caso").innerHTML =
+      "<div class='eyebrow'>El caso que lo explica</div>" +
+      "<h3 style=\"font-family:'Archivo',sans-serif; font-size:var(--t-md); margin:0 0 8px\">" +
+        C.quien.replace(/^.*«(.+)».*$/, "$1") + " entró de nuevo, como visita</h3>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
+        "Salió el " + FECHA_LARGA(C.eliminada) + " con <b>" + cuota + "%</b> en contra, " +
+        "después de " + C.dias_adentro + " días adentro. Volvió a entrar el " +
+        FECHA_LARGA(C.volvio) + ", elegida por <b>" + C.elegida_por + "</b>. " +
+        C.por_que_no + "</p>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:10px 0 0'>" +
+        V.efecto_en_el_modelo + "</p>";
+  } else { $("#v-caso").remove(); }
+
+  const ult = V && V.tandas && V.tandas[V.tandas.length - 1];
+  if(ult && ult.duplas){
+    $("#v-duplas").innerHTML =
+      "<h3 style='margin-top:0'>Quién está adentro sin jugar</h3>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" + ult.detalle + "</p>" +
+      "<ul class='duplas'>" + ult.duplas.map(d =>
+        "<li" + (C && d[1] === C.quien ? " class='marcada'" : "") + ">" +
+          "<span class='j'>" + d[0] + "</span>" +
+          "<span class='flecha'>eligió a</span>" +
+          "<span class='v'>" + d[1] + "</span></li>").join("") + "</ul>" +
+      "<p class='tw-nota' style='margin-top:10px'>La columna de la izquierda son las nueve que " +
+      "el modelo simula. La de la derecha no está en ninguna simulación.</p>";
+  } else { $("#v-duplas").remove(); }
+
+  const puertas = R.mecanismos.map(m =>
+    "<div class='puerta'><span class='n'>" + m.nombre + "</span>" +
+    "<span class='e cerrada'>cerrada</span>" +
+    "<p>Decide " + m.decide + ". " + (m.veces === 1
+      ? "Se usó una vez esta edición, el " + FECHA_LARGA(m.cuando) + "."
+      : "Se usó <b>" + m.veces + "</b> veces esta edición, la última el " +
+        FECHA_LARGA(m.cuando) + ".") + " " + m.detalle + "</p></div>").join("") +
+    "<div class='puerta'><span class='n'>Visitas</span>" +
+    "<span class='e entornada'>abierta, y no sirve para ganar</span>" +
+    "<p>Decide la producción y no hace falta que nadie vote. Es la puerta por la que " +
+    "entraron las nueve del martes y los ocho ex de temporadas anteriores el " +
+    FECHA_LARGA("2026-07-21") + ", que ya estaban afuera el 6 de agosto. Ocho de los " +
+    "diecisiete que esperaban en la arena no fueron elegidos y pueden volver a ser " +
+    "llamados cualquier día.</p></div>";
+
+  $("#v-puertas").innerHTML =
+    "<h3 style='margin-top:0'>Las tres puertas, y cuál sigue abierta</h3>" + puertas +
+    "<p class='tw-nota' style='margin-top:10px'>Lo que cerró las dos primeras es una " +
+    "declaración, no una regla: el " + FECHA_LARGA(R.cierre.fecha) + ", " + R.cierre.quien +
+    " dijo «" + R.cierre.cita + "». Se cumplió las dos veces que se puso a prueba.</p>";
+
+
+  /* El gráfico. Veintiún puntos y una línea vertical: la banda donde entra
+     gente ocupa la primera mitad de cualquier temporada, y donde estamos hoy
+     no hay ninguno. No hace falta un modelo para leerlo, y por eso se dibuja
+     en vez de contarlo en una frase. */
+  const H = R.historia;
+  if(H){
+    const AN = 720, AL = 196, IZQ = 52, DER = 16, ARR = 30, ABA = 46;
+    const ancho = AN - IZQ - DER;
+    const x = pc => IZQ + ancho * pc / 100;
+    const filas = H.temporadas.map((t, i) => ARR + 8 + i * 32);
+    const pcts = H.temporadas.flatMap(t => t.reingresos.map(r => 100 * r.dia / t.dias));
+    const min = Math.min(...pcts), max = Math.max(...pcts);
+    const actual = H.temporadas.find(t => t.actual);
+    const hoyPc = 100 * H.hoy.dia / actual.dias;
+    const uno = n => n.toFixed(1).replace(".", ",");
+
+    let g = "<svg viewBox='0 0 " + AN + " " + AL + "' role='img' " +
+      "aria-label='Cada reingreso de las tres últimas ediciones, ubicado en el porcentaje de " +
+      "temporada transcurrido. Los veintiún puntos caen entre el " + uno(min) + "% y el " +
+      uno(max) + "%. La edición actual va por el " + uno(hoyPc) + "%, donde no hay ningún punto.'>";
+
+    g += "<rect class='gr-banda' x='" + x(min) + "' y='" + (ARR - 6) + "' width='" +
+         (x(max) - x(min)) + "' height='" + (AL - ABA - ARR + 12) + "' rx='3'/>";
+    g += "<text class='gr-txt' x='" + ((x(min) + x(max)) / 2) + "' y='" + (ARR - 12) +
+         "' text-anchor='middle'>los 21 reingresos caen acá, entre el " + uno(min) +
+         "% y el " + uno(max) + "%</text>";
+
+    H.temporadas.forEach((t, i) => {
+      const y = filas[i];
+      g += "<line class='gr-fila' x1='" + IZQ + "' y1='" + y + "' x2='" + (AN - DER) +
+           "' y2='" + y + "'/>";
+      g += "<text class='gr-txt" + (t.actual ? " fuerte" : "") + "' x='" + (IZQ - 10) +
+           "' y='" + (y + 4) + "' text-anchor='end'>" + t.anio + (t.actual ? " · hoy" : "") +
+           "</text>";
+      // Cuatro personas entraron el mismo dia de esta edicion. Dibujadas en su
+      // sitio exacto se tapan y el grafico miente por omision: se ven tres
+      // puntos donde hay seis. Los empates se apilan en vertical.
+      const porDia = {};
+      t.reingresos.forEach(r => (porDia[r.dia] = porDia[r.dia] || []).push(r));
+      let k = 0;
+      Object.keys(porDia).forEach(dia => {
+        const grupo = porDia[dia], pc = 100 * dia / t.dias;
+        grupo.forEach((r, j) => {
+          const dy = (j - (grupo.length - 1) / 2) * 6.5;
+          g += "<circle class='gr-punto " + r.via + "' cx='" + x(pc).toFixed(1) + "' cy='" +
+               (y + dy).toFixed(1) + "' r='5' style='animation-delay:" +
+               (0.04 * (i * 9 + k++)).toFixed(2) + "s'>" +
+               "<title>" + r.quien + ", día " + r.dia + " de " + t.dias + " · " + uno(pc) + "%" +
+               "</title></circle>";
+        });
+      });
+    });
+
+    const yh = filas[filas.length - 1];
+    g += "<line class='gr-hoy' x1='" + x(hoyPc) + "' y1='" + (ARR - 4) + "' x2='" + x(hoyPc) +
+         "' y2='" + (yh + 16) + "'/>";
+    g += "<text class='gr-hoy-txt' x='" + (x(hoyPc) - 7) + "' y='" + (yh + 28) +
+         "' text-anchor='end'>hoy, " + uno(hoyPc) + "%</text>";
+
+    const ye = AL - ABA + 14;
+    g += "<line class='gr-eje' x1='" + IZQ + "' y1='" + ye + "' x2='" + (AN - DER) +
+         "' y2='" + ye + "'/>";
+    [0, 25, 50, 75, 100].forEach(v => {
+      g += "<line class='gr-eje' x1='" + x(v) + "' y1='" + ye + "' x2='" + x(v) + "' y2='" +
+           (ye + 4) + "'/>";
+      g += "<text class='gr-txt' x='" + x(v) + "' y='" + (ye + 16) + "' text-anchor='middle'>" +
+           v + "%</text>";
+    });
+    g += "<circle class='gr-punto repechaje' cx='" + IZQ + "' cy='" + (ye + 30) + "' r='5'/>";
+    g += "<text class='gr-leyenda' x='" + (IZQ + 12) + "' y='" + (ye + 34) +
+         "'>repechaje, lo decide el público</text>";
+    g += "<circle class='gr-punto golden' cx='" + (IZQ + 232) + "' cy='" + (ye + 30) + "' r='5'/>";
+    g += "<text class='gr-leyenda' x='" + (IZQ + 244) + "' y='" + (ye + 34) +
+         "'>Golden Ticket, lo decide la producción</text>";
+    g += "</svg>";
+
+    $("#v-grafico-tit").textContent = "En qué momento de una temporada entra gente al juego";
+    $("#v-grafico-svg").innerHTML = g;
+    $("#v-grafico-pie").innerHTML =
+      "Cada punto es un reingreso al juego de las ediciones de 2024, 2025 y ésta, ubicado en el " +
+      "porcentaje de temporada que había transcurrido ese día. " + H.hoy.aviso;
+  } else { const f = $("#v-grafico"); if(f) f.remove(); }
+
+  // Las cifras salen del historial y no de contar usos del mecanismo: el
+  // repechaje se usó una vez y devolvió a dos personas, así que «veces» y
+  // «personas» son dos números distintos y el que interesa acá es el segundo.
+  const T = H ? H.temporadas : [];
+  const act = T.find(t => t.actual);
+  const nAct = act ? act.reingresos.length : 0;
+  const postrero = act ? act.reingresos.reduce((a, b) => b.dia > a.dia ? b : a) : null;
+  const tardio = T.flatMap(t => t.reingresos.map(r => 100 * r.dia / t.dias))
+                  .reduce((a, b) => Math.max(a, b), 0);
+  $("#v-cifras").innerHTML = [
+    {k:"Volvieron al juego esta edición", v: String(nAct),
+     d: (usos + " usos de los dos mecanismos, porque el repechaje devolvió dos de una. ") +
+        (quienes.length === 0 ? "Ninguna de las que siguen entró por ahí."
+         : quienes.length === 1 ? "De las que siguen, entró así " + quienes[0] + "."
+         : "De las que siguen entraron así " + quienes.join(" y ") + ".")},
+    {k:"El último volvió hace", v: postrero ? (H.hoy.dia - postrero.dia) + " días" : "—",
+     d: postrero ? postrero.quien + ", el día " + postrero.dia + " de unos " + act.dias +
+              ". Después entró Majluf, que fue jugadora nueva y no un regreso." : ""},
+    {k:"El reingreso más tardío que se registró", v: tardio.toFixed(1).replace(".", ",") + "%",
+     d:"de temporada transcurrida, en 2024. Esta edición va por el " +
+       (100 * H.hoy.dia / act.dias).toFixed(1).replace(".", ",") + "%."},
     {k:"Reingresados en una final", v:"0",
-     d:"en las temporadas 11 y 12; el mejor quedó 12.º"},
+     d:"de 15, en 2024 y 2025. Ninguno pasó siquiera del día 140."},
   ].map(x => "<div><div class='k'>" + x.k + "</div><div class='v'>" + x.v + "</div>" +
              "<div class='d'>" + x.d + "</div></div>").join("");
 
-  $("#pie-rein").innerHTML = R.conclusion +
-    " Queda un residuo: si la producción cambiara de idea a esta altura, el modelo no lo vería " +
-    "venir. Es la misma clase de agujero que las salidas por afuera del voto, y se declara " +
-    "igual en vez de taparlo con un supuesto.";
+  // Si no quedo ninguna publicacion verificada en el hueco, el titulo de arriba
+  // se queda solo anunciando algo que no esta. Se va con el.
+  requestAnimationFrame(() => {
+    const eco = $("#v-eco");
+    if(eco && !eco.querySelector(".tw-hueco")) eco.remove();
+  });
+
+
+  /* Lo que pedia la calle, que no es lo que uno supondria. La consigna con su
+     nombre que llego al primer puesto del pais pedia que se fuera, y se
+     cumplio. La que pedia que volviera no existio nunca: seis terminos
+     consultados, seis veces "no encontrado". Y en los mismos dias dos campanas
+     de regreso si funcionaron, para otras dos personas, asi que no es que el
+     formato no estuviera disponible. */
+  const TR = R.tendencias;
+  if(TR){
+    const li = t => "<li><code>" + t + "</code></li>";
+    $("#v-tendencias").innerHTML =
+      "<div class='eyebrow'>Lo que se pidió</div>" +
+      "<h3 style='margin:0 0 10px'>La consigna que llegó al primer puesto del país pedía lo contrario</h3>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 12px'>" +
+        "<code>" + TR.consigna.termino + "</code> fue tendencia número <b>" + TR.consigna.pico +
+        "</b> en la Argentina el " + FECHA_LARGA(TR.consigna.cuando) + ", y se sostuvo " +
+        TR.consigna.sostenido + ". Pedía " + TR.consigna.que_pedia + ". " +
+        TR.consigna.resultado + " Cuando se atrincheró, <code>" + TR.atrinchero.termino +
+        "</code> llegó al puesto " + TR.atrinchero.pico + " y duró " + TR.atrinchero.horas +
+        " horas.</p>" +
+      "<div class='g2' style='gap:14px'>" +
+        "<div><div class='k'>Nunca fueron tendencia</div><ul class='limpia tw-lista'>" +
+          TR.nunca_trendearon.map(li).join("") + "</ul></div>" +
+        "<div><div class='k'>Sí lo fueron, en los mismos días</div><ul class='limpia tw-lista'>" +
+          TR.si_trendearon.map(t => "<li><code>" + t.termino + "</code> · puesto " + t.pico +
+            ", " + String(t.dias).replace(".", ",") + (t.dias === 1 ? " día" : " días") +
+            "</li>").join("") + "</ul></div>" +
+      "</div>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" + TR.lectura + "</p>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" +
+        "La noche del regreso, <b>" + TR.noche_del_regreso.nombres_en_top50 + "</b> nombres de " +
+        "ese mismo segmento entraron al top-50 argentino. " + TR.noche_del_regreso.detalle +
+      "</p>" +
+      "<p class='tw-nota' style='margin:10px 0 0'>" + TR._nota + "</p>";
+  } else { const t = $("#v-tendencias"); if(t) t.remove(); }
+
+  // La estimacion. Se publica separada del resto de la pagina y con la etiqueta
+  // puesta, porque no sale del modelo: el modelo simula eliminaciones y no
+  // simula que alguien vuelva. Darla sin decir eso seria vestir un juicio de
+  // resultado calculado.
+  const E = H && H.estimacion;
+  if(E){
+    const pc = n => (100 * n).toFixed(1).replace(".", ",").replace(",0", "") + "%";
+    $("#v-pronostico").innerHTML =
+      "<div class='eyebrow'>Fuera del modelo</div>" +
+      "<h3 style='margin:0 0 10px'>¿Puede volver alguien todavía?</h3>" +
+      "<div class='rein-cifras' style='margin:0 0 12px'>" +
+        "<div><div class='k'>Que alguien vuelva a competir</div><div class='v'>" + pc(E.valor) +
+          "</div><div class='d'>de acá a la final</div></div>" +
+        "<div><div class='k'>Que vuelva " + (C ? C.quien.replace(/^.*«(.+)».*$/, "$1") : "ella") +
+          "</div><div class='v'>" + pc(E.campanita) + "</div><div class='d'>y es la más " +
+          "reclamada de todas</div></div></div>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 10px'>" +
+        H.campanita_es_el_caso_debil + "</p>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 10px'>" +
+        (H.apagado ? "El mecanismo que podría hacerlo está apagado desde hace <b>" +
+          (H.hoy.dia - postrero.dia) + " días</b>, que es lo que lleva sin usarse. En ese lapso " +
+          "hubo " + H.apagado.length + " salidas fuera de calendario, que es justo el caso que " +
+          "históricamente lo disparaba (" +
+          H.apagado.map(a => a.quien + ", " + a.via).join("; ") +
+          "), y ninguna se repuso. " : "") + H.candado + "</p>" +
+      "<p class='tw-nota' style='margin:0'>" + E.como + "</p>";
+  } else { $("#v-pronostico").remove(); }
+
+  // El cierre se arma con los numeros del historial en vez de repetirlos a mano,
+  // que es como envejecen sin que nadie se entere.
+  const tarde = tardio.toFixed(0), aca = (100 * H.hoy.dia / act.dias).toFixed(0);
+  const cierre = "En las tres últimas ediciones nadie entró al juego después del " + tarde +
+    "% de la temporada. Esta edición cerró su última puerta al " +
+    (100 * postrero.dia / act.dias).toFixed(0) + "% y hoy va por el " + aca + "%. " +
+    "Lo que sigue abierto es la puerta de visitas, que es otra puerta.";
+
+  $("#v-pie").innerHTML = cierre +
+    " Queda un residuo declarado: si la producción cambiara de idea a esta altura, el modelo no " +
+    "lo vería venir. Es la misma clase de agujero que las salidas por afuera del voto, y se " +
+    "anota igual en vez de taparlo con un supuesto.";
 })();
 
 /* ---------- el contador de visitas, y su aviso ----------
@@ -2988,7 +3336,7 @@ function contar(nodo){
 
   cont.innerHTML =
     "<div class='eyebrow' style='margin-bottom:8px'>El termómetro, con signo</div>" +
-    "<p style='font-size:14.2px; color:var(--tinta2); margin:0 0 14px; max-width:78ch'>" +
+    "<p style='font-size:14.2px; color:var(--tinta2); margin:0 0 14px; max-width:var(--medida)'>" +
     "De los " + (C.indice ? Object.keys(C.indice).length : 0) + " nombres que quedan, <b>" +
     C.observados + "</b> tuvieron una consigna en tendencias durante la ventana. " +
     "Una consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82. " +
@@ -3010,7 +3358,7 @@ function contar(nodo){
           : "") +
         "</div>";
     }).join("") +
-    "<p style='font-size:12.6px; color:var(--tinta3); margin:14px 0 0; max-width:78ch'>" +
+    "<p style='font-size:12.6px; color:var(--tinta3); margin:14px 0 0; max-width:var(--medida)'>" +
     "La raya no es un cero. Quien no aparece con consigna es alguien de quien no hay " +
     "observación, y eso es distinto de alguien de quien se sabe que no hay campaña. " +
     "Ventana: " + (C.ventana || "") + ".</p>";
@@ -3072,6 +3420,36 @@ function contar(nodo){
     "tuvo una mala noche. Por eso el riesgo de la próxima gala es la parte más floja de esta " +
     "página, y por eso está medido acá en vez de quedar como impresión. " +
     R.por_que_no_hay_ediciones_anteriores;
+})();
+
+/* ---------- lo último ----------
+   Un pronóstico que se recalcula solo después de cada gala tiene un hueco
+   inevitable: entre que pasa algo y que el modelo lo incorpora. Esconder ese
+   hueco sería lo cómodo. Acá se declara: cada entrada dice si el número que
+   está debajo ya la tiene adentro o todavía no. */
+(function(){
+  const U = D.ultimo, cont = $("#ultimo");
+  if(!cont) return;
+  const items = (U && U.entradas) || [];
+  if(!items.length){ cont.remove(); return; }
+  const ETIQ = {recalculado: "Ya está en el pronóstico de abajo",
+                pendiente: "Todavía no está en el pronóstico de abajo",
+                sin_efecto: "No cambia el pronóstico",
+                parcial: "Cambia la placa, no el pronóstico"};
+  cont.innerHTML =
+    "<div class='ultimo-cab'><span class='pulso'></span>" +
+    "<span class='etq'>Lo último</span></div>" +
+    items.slice(0, 3).map(e =>
+      "<div class='ultimo-item'>" +
+        "<div class='cuando'>" + FECHA_LARGA(e.fecha) + " · " + CUANDO_FUE(e.fecha) + "</div>" +
+        "<div class='que'>" + e.titulo + "</div>" +
+        "<p class='det'>" + e.detalle +
+          (e.fuente ? " <a href='" + e.fuente + "' target='_blank' rel='noopener nofollow'>" +
+                      "fuente</a>" : "") + "</p>" +
+        (e.impacto ? "<span class='estado " + e.impacto + "'>" +
+          (ETIQ[e.impacto] || e.impacto) + "</span>" : "") +
+        (e.afecta ? "<div class='afecta'>" + e.afecta + "</div>" : "") +
+      "</div>").join("");
 })();
 
 /* ---------- el registro de pronósticos ----------
@@ -3257,38 +3635,9 @@ function contar(nodo){
     : "El zodíaco, con la misma vara que el modelo";
 
   $("#sub-zod").innerHTML =
-    "El horóscopo es el modelo rival: no mira una sola gala ni un solo voto. La fecha de " +
-    "nacimiento sale de una fuente citada, el signo se calcula de la fecha, y la probabilidad de " +
-    "cada signo es la suma de las de sus nativas. De las " + (conocidas + faltan) + " que quedan " +
-    "hay fecha publicada de " + conocidas + "; las otras " + faltan + " figuran sin signo.";
-
-  const orden = Object.entries(porSigno)
-    .map(([sig, qs]) => [sig, qs, qs.reduce((a,q) => a + base.p_gana[q], 0)])
-    .sort((a,b) => b[2]-a[2]);
-  $("#signos").innerHTML =
-    orden.map(([sig, qs, p]) =>
-      "<div class='signo'><div class='s'>" + sig + "</div>" +
-      "<div class='q'>" + qs.join(", ") + "</div>" +
-      "<div class='p'>" + pc(p,1) + "</div></div>").join("") +
-    Object.entries(Z.sin_fecha || {}).map(([q, por]) =>
-      "<div class='signo falta'><div class='s'>sin fecha</div>" +
-      "<div class='q'><b style='color:var(--tinta)'>" + q + "</b><br>" + por + "</div></div>").join("");
-
-  const gs = Z.ganadores.filter(g => g.signo);
-  const cuenta = {};
-  gs.forEach(g => (cuenta[g.signo] = cuenta[g.signo] || []).push(g.quien + " (" + g.anio + ")"));
-  const filas = Object.entries(cuenta).sort((a,b) => b[1].length - a[1].length);
-  $("#t-zod").innerHTML =
-    "<thead><tr><th>Signo</th><th>Campeones</th><th>Quiénes</th></tr></thead><tbody>" +
-    filas.map(([sig, qs]) =>
-      "<tr><td><b>" + sig + "</b></td><td class='mono'>" + qs.length + "</td>" +
-      "<td style='white-space:normal; text-align:left; color:var(--tinta2)'>" + qs.join(" · ") +
-      "</td></tr>").join("") +
-    "<tr><td colspan='3' style='white-space:normal; text-align:left; color:var(--tinta3)'>" +
-    "De las " + Z.ganadores.length + " ediciones anteriores hay fecha de " + gs.length +
-    ". Las otras " +
-    (Z.ganadores.length - gs.length) + " no la tienen publicada, así que esta tabla no es el " +
-    "historial completo y ningún signo puede reclamar nada.</td></tr></tbody>";
+    "De las " + (conocidas + faltan) + " que quedan hay fecha de nacimiento publicada de " +
+    conocidas + ". El signo sale de la fecha, y la probabilidad de cada signo es la suma de las " +
+    "de sus nativas.";
 
   $("#zod-coincidencia").innerHTML = (Z.coincidencia && Z.coincidencia.texto) || "";
 })();

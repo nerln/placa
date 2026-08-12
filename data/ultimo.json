@@ -1,0 +1,21 @@
+{
+ "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
+ "entradas": [
+  {
+   "fecha": "2026-08-11",
+   "titulo": "Campanita volvió a entrar a la casa, de visita",
+   "detalle": "Las nueve en competencia eligieron cada una a un exparticipante para que entrara unos días. Mariela eligió a Campanita, que se había ido el 3 de agosto con el 53,3% en contra. Entran de visita: no compiten por el premio y no pueden ganar. El plantel sigue siendo de nueve y son las mismas nueve.",
+   "afecta": "El pronóstico de abajo no se mueve. Lo que cambia es cómo se arma la placa, porque cada visita vota en la nominación.",
+   "impacto": "parcial",
+   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487"
+  },
+  {
+   "fecha": "2026-08-10",
+   "titulo": "Salió Hanssen y la casa queda con nueve mujeres",
+   "detalle": "Perdió el mano a mano contra Sol. Es la primera vez en la historia del formato, en cualquier país, que una final se juega sin ningún hombre.",
+   "afecta": "El pronóstico de esta página ya está recalculado con el plantel de nueve.",
+   "impacto": "recalculado",
+   "fuente": "https://x.com/GranHermanoAr/status/2087009639426674990"
+  }
+ ]
+}
