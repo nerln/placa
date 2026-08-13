@@ -2,10 +2,18 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-08-12",
+   "titulo": "Placa de siete sobre nueve: se salvaron Mariela y Pincoya",
+   "detalle": "Yipio, líder de la semana, fulminó a Sol antes de que empezara la votación. Después las nueve nominaron con dos puntos cada una y sus visitas con uno. Zilli usó la espontánea contra Yipio y la dejó en placa a la líder. Quedaron nominadas Sol, Tamara, Majluf, Charlotte, Luana, Yipio y Zilli.",
+   "afecta": "El pronóstico de abajo ya está recalculado con esta placa.",
+   "impacto": "recalculado",
+   "fuente": "https://www.infobae.com/teleshow/2026/08/13/asi-quedo-la-placa-de-nominados-de-gran-hermano-despues-del-reingreso-de-los-exjugadores/"
+  },
+  {
    "fecha": "2026-08-11",
-   "titulo": "Campanita volvió a entrar a la casa, de visita",
-   "detalle": "Las nueve en competencia eligieron cada una a un exparticipante para que entrara unos días. Mariela eligió a Campanita, que se había ido el 3 de agosto con el 53,3% en contra. Entran de visita: no compiten por el premio y no pueden ganar. El plantel sigue siendo de nueve y son las mismas nueve.",
-   "afecta": "El pronóstico de abajo no se mueve. Lo que cambia es cómo se arma la placa, porque cada visita vota en la nominación.",
+   "titulo": "Volvieron nueve exjugadores a la casa por unos días",
+   "detalle": "Diecisiete esperaban en «la arena». Las nueve en competencia sortearon el orden con el bolillero y cada una eligió a uno. Mariela eligió a Campanita, que se había ido el 3 de agosto con el 53,3% en contra.",
+   "afecta": "Cada visita vota en la nominación junto a la jugadora que la eligió.",
    "impacto": "parcial",
    "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487"
   },

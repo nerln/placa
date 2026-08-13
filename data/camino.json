@@ -1,89 +1,89 @@
 {
- "generado": "2026-08-10",
+ "generado": "2026-08-12",
  "quien": "Sol",
- "p_gana": 0.007536666666666666,
- "n": 2261,
+ "p_gana": 0.006323333333333334,
+ "n": 1897,
  "n_sims": 300000,
- "una_de_cada": 133,
+ "una_de_cada": 158,
  "rasgos": {
-  "mu_base": 2.213,
-  "mu_sd": 0.759,
-  "mu_gana": 1.601,
-  "mu_sigmas": 0.81,
-  "psi_base": 0.875,
-  "psi_sd": 1.064,
-  "psi_gana": 1.321,
-  "psi_sigmas": 0.42
+  "mu_base": 2.263,
+  "mu_sd": 0.275,
+  "mu_gana": 2.071,
+  "mu_sigmas": 0.7,
+  "psi_base": 0.873,
+  "psi_sd": 1.065,
+  "psi_gana": 1.372,
+  "psi_sigmas": 0.47
  },
  "eliminaciones_que_sobrevive": 5.6,
  "finalistas": {
-  "3": 0.6178681999115435,
-  "4": 0.38213180008845643
+  "3": 0.60305745914602,
+  "4": 0.39694254085397995
  },
  "rivales_final": [
   {
-   "quien": "Zilli",
-   "p": 0.38257408226448475
-  },
-  {
    "quien": "Mariela",
-   "p": 0.38257408226448475
-  },
-  {
-   "quien": "Tamara",
-   "p": 0.36444051304732417
-  },
-  {
-   "quien": "Charlotte",
-   "p": 0.30296329057938964
+   "p": 0.4496573537163943
   },
   {
    "quien": "Pincoya",
-   "p": 0.2963290579389651
+   "p": 0.3379019504480759
+  },
+  {
+   "quien": "Tamara",
+   "p": 0.3331576172904586
+  },
+  {
+   "quien": "Zilli",
+   "p": 0.3305218766473379
+  },
+  {
+   "quien": "Charlotte",
+   "p": 0.2783342119135477
   }
  ],
  "duelo_final": [
   {
-   "quien": "Tamara",
-   "p": 0.18398938522777533
-  },
-  {
-   "quien": "Zilli",
-   "p": 0.167624944714728
-  },
-  {
    "quien": "Pincoya",
-   "p": 0.15966386554621848
+   "p": 0.17501317870321562
+  },
+  {
+   "quien": "Tamara",
+   "p": 0.1665788086452293
   },
   {
    "quien": "Charlotte",
-   "p": 0.15302963290579388
+   "p": 0.15972588297311544
+  },
+  {
+   "quien": "Zilli",
+   "p": 0.14022140221402213
   }
  ],
  "primeras_salidas": [
   {
    "orden": [
-    "Yipio",
-    "Luana",
-    "Majluf"
-   ],
-   "p": 0.009730207872622734
-  },
-  {
-   "orden": [
-    "Zilli",
+    "Charlotte",
     "Majluf",
     "Yipio"
    ],
-   "p": 0.009730207872622734
+   "p": 0.012651555086979441
   },
   {
    "orden": [
-    "Yipio",
+    "Luana",
     "Majluf",
-    "Luana"
+    "Yipio"
    ],
-   "p": 0.009730207872622734
+   "p": 0.012124406958355299
+  },
+  {
+   "orden": [
+    "Luana",
+    "Yipio",
+    "Majluf"
+   ],
+   "p": 0.010542962572482868
   }
  ],
  "nota": "Las temporadas en que gana son un subconjunto de la misma corrida de Monte Carlo del pronóstico, no una simulación aparte. Lo que se describe es lo que esas temporadas tienen en común."

@@ -330,6 +330,14 @@ def main():
                  .replace("<!--__META__-->", meta(datos))
                  .replace("<!--__MARCA__-->", marca)
                  .replace("<!--__DATOS_SRC__-->", '<script src="datos.js"></script>')
+                 # GSAP, servido desde web/vendor y no desde un CDN: la pagina
+                 # publicada tampoco pide nada a terceros. Va con defer y lo
+                 # unico que anima es el reordenamiento de "que movio la gala";
+                 # si no carga, esa tabla se queda quieta y correcta. Solo el
+                 # core: nada de ScrollTrigger ni de Flip, que esto se abre con
+                 # datos moviles.
+                 .replace("<!--__GSAP__-->",
+                          '<script src="vendor/gsap.min.js" defer></script>')
                  # El contador solo vive en la pagina publicada. El artefacto
                  # autocontenido se queda sin ninguna llamada a terceros.
                  .replace("<!--__ANALITICA__-->", analitica()))
@@ -364,6 +372,7 @@ def main():
               .replace("<!--__META__-->", "")
               .replace("<!--__MARCA__-->", marca)
               .replace("<!--__DATOS_SRC__-->", "")
+              .replace("<!--__GSAP__-->", "")
               .replace("<!--__ANALITICA__-->", ""))
     (G / "pronostico.html").write_text(out)
 

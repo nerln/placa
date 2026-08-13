@@ -39,19 +39,19 @@
    "_fuente": "captura de la pagina publicada el 10/08/2026, antes de la gala"
   },
   {
-   "fecha": "2026-08-10",
+   "fecha": "2026-08-12",
    "galas_hasta": 28,
    "en_juego": 9,
    "p_gana": {
-    "Tamara": 0.1917,
-    "Pincoya": 0.1855,
-    "Charlotte": 0.222,
-    "Zilli": 0.1316,
-    "Luana": 0.1159,
-    "Yipio": 0.0752,
-    "Mariela": 0.0439,
-    "Majluf": 0.0268,
-    "Sol": 0.0076
+    "Tamara": 0.195,
+    "Pincoya": 0.2031,
+    "Charlotte": 0.2063,
+    "Zilli": 0.1346,
+    "Luana": 0.1073,
+    "Yipio": 0.0735,
+    "Mariela": 0.0477,
+    "Majluf": 0.0265,
+    "Sol": 0.006
    }
   }
  ]

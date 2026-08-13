@@ -186,6 +186,7 @@ def main():
         galas["placa_vigente"] = {
             "gala": (a.gala or galas["placa_vigente"]["gala"]) + 1,
             "fecha": a.fecha_proxima or "",
+            "fecha_nominacion": a.fecha,
             "integrantes": [],
             "inmune_lider": a.nuevo_lider or "",
             "libres": vivos,
@@ -198,6 +199,7 @@ def main():
         galas["placa_vigente"] = {
             "gala": (a.gala or galas["placa_vigente"]["gala"]) + 1,
             "fecha": a.fecha_proxima or "",
+            "fecha_nominacion": a.fecha,
             "integrantes": nueva,
             "inmune_lider": a.nuevo_lider or "",
             "libres": [v for v in vivos if v not in nueva],

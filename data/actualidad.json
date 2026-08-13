@@ -314,7 +314,7 @@
    },
    {
     "url": "https://x.com/GranHermanoAr/status/2087362816818708752",
-    "lectura": "El posteo oficial dice «vuelve al juego». Vuelve a la casa: las visitas no compiten por el premio. Los corazones que se ven acá los sirve X en el momento en que se abre esta página, así que la comparación con el de al lado es de ahora y no de cuando se escribió esto.",
+    "lectura": "Mariela la eligió a ella. Los corazones que se ven acá los sirve X en el momento en que se abre esta página, así que la comparación con el de al lado es de ahora y no de cuando se escribió esto.",
     "autor": "Gran Hermano",
     "handle": "@GranHermanoAr",
     "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">Campanita vuelve al juego de la mano de Mariela 🪄🧚<br><br>👁️ Mirá <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> en <a href=\"https://t.co/Ppl6ji2TwC\">https://t.co/Ppl6ji2TwC</a> y espiá la casa GRATIS las 24 horas por <a href=\"https://x.com/DGO_Latam?ref_src=twsrc%5Etfw\">@dgo_latam</a> y reviví los vivos por <a href=\"https://x.com/PrimeVideoLat?ref_src=twsrc%5Etfw\">@PrimeVideoLat</a> 🎬 <a href=\"https://t.co/5Fb2Xgw1wD\">pic.twitter.com/5Fb2Xgw1wD</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087362816818708752?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
@@ -343,8 +343,194 @@
     "handle": "@streamstelefe",
     "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">🤨Polémica reacción de Danelik al enterarse que Luana la eligió para entrar nuevamente a la casa 😵<br><br>Sumate ahora a <a href=\"https://x.com/hashtag/GHxTorayFefe?src=hash&amp;ref_src=twsrc%5Etfw\">#GHxTorayFefe</a> por <a href=\"https://x.com/hashtag/StreamsTelefe?src=hash&amp;ref_src=twsrc%5Etfw\">#StreamsTelefe</a> en <a href=\"https://t.co/sPOpUDZjzE\">https://t.co/sPOpUDZjzE</a> <a href=\"https://t.co/sd65x6go3S\">pic.twitter.com/sd65x6go3S</a></p>&mdash; Streams Telefe (@streamstelefe) <a href=\"https://x.com/streamstelefe/status/2087357070643188114?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
     "donde": "vuelven"
+   },
+   {
+    "donde": "termometro",
+    "red": "ig",
+    "tipo": "p",
+    "codigo": "Db9rTd6PHuk",
+    "autor": "Gran Hermano Encuestas",
+    "handle": "ghtrivia_arg",
+    "lectura": "La placa y sus dos fases, contadas por una cuenta de encuestas del fandom el mismo día de la nominación.",
+    "url": "https://www.instagram.com/p/Db9rTd6PHuk/"
+   },
+   {
+    "donde": "termometro",
+    "url": "https://x.com/melanierocknr/status/2087722292050542752",
+    "autor": "Melanie",
+    "handle": "@melanierocknr",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">Bueno ahora es SOL AL 9009 (Pincoya no creo q caiga en placa) sino si es PINCOYA AL 9009 tmb placa positiva. cuando apenas arranquen los votos. Y en la negativa por quien vamos? Fandom de Pincoya, Sol y Zilly.  <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a></p>&mdash; Melanie (@melanierocknr) <a href=\"https://x.com/melanierocknr/status/2087722292050542752?ref_src=twsrc%5Etfw\">13 de agosto de 2026</a></blockquote>\n\n",
+    "lectura": "Acá se ve el mecanismo por dentro: la consigna se arma para la fase positiva y la misma persona pregunta por quién van a ir cuando el voto cambie de signo."
+   },
+   {
+    "donde": "termometro",
+    "red": "ig",
+    "tipo": "p",
+    "codigo": "Db9sLe7tcQP",
+    "autor": "Sol",
+    "handle": "solupdate_",
+    "lectura": "La cuenta de Sol usa la fórmula «AL 9009» aclarando entre paréntesis que la placa es positiva. Es la misma frase que en otras galas pedía lo contrario.",
+    "url": "https://www.instagram.com/p/Db9sLe7tcQP/"
    }
   ],
   "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
+ },
+ "proxima_gala": {
+  "_nota": "Cómo se resuelve esta placa. Se anota aparte porque no es el mecanismo de siempre: hay dos fases con signos opuestos y una regla de eliminación que arrastra a una segunda persona. Verificado en Infobae y en A24/PrimiciasYa, que coinciden en las dos fechas y en el reparto de votos.",
+  "gala": 26,
+  "tipo": "eliminación",
+  "fecha": "2026-08-17",
+  "placa": [
+   "Sol",
+   "Tamara",
+   "Majluf",
+   "Charlotte",
+   "Luana",
+   "Yipio",
+   "Zilli"
+  ],
+  "libres": [
+   "Mariela",
+   "Pincoya"
+  ],
+  "lider": {
+   "quien": "Yipio",
+   "semana": 25,
+   "fulmino": "Sol",
+   "en_placa": true,
+   "detalle": "La fulminó antes de que empezara la votación. Zilli le contestó con la espontánea y la líder terminó nominada."
+  },
+  "fases": [
+   {
+    "desde": "2026-08-12",
+    "hasta": "2026-08-16",
+    "signo": "positivo",
+    "que": "Se vota a quien se quiere salvar.",
+    "detalle": "Es una placa del tipo «Generación Dorada». Los jugadores no van a saber quiénes bajaron de placa el domingo."
+   },
+   {
+    "desde": "2026-08-16",
+    "hasta": "2026-08-17",
+    "signo": "negativo",
+    "que": "Se vota a quien se quiere eliminar.",
+    "detalle": "Sobre las que sigan en placa después de la fase positiva."
+   }
+  ],
+  "regla": "La eliminación es en dupla: quien abandone la casa el lunes se lleva consigo a la visita que había elegido.",
+  "pesos_nominacion": {
+   "jugadora": 2,
+   "visita": 1,
+   "extra": "Además hubo dos beneficios en juego: los votos de Luana contra Zilli se duplicaron por un beneficio de Hanssen, y Yipio repartió cinco puntos por el beneficio de sponsor."
+  },
+  "fuentes": [
+   "https://www.infobae.com/teleshow/2026/08/13/asi-quedo-la-placa-de-nominados-de-gran-hermano-despues-del-reingreso-de-los-exjugadores/",
+   "https://www.a24.com/primiciasya/una-fulminada-dos-finalistas-y-una-placa-explosiva-asi-quedo-la-placa-nominados-gran-hermano-n1585108"
+  ]
+ },
+ "termometro_placa": {
+  "_nota": "Barrido de las 24 tarjetas horarias de trends24.in/argentina, tomado el 13 de agosto de 2026 a las 05:28 de la Argentina, unas seis horas después de la gala de nominación. Es un archivo de terceros y no una medición propia. Mide cuánta gente escribe, que no es cuánta gente vota: votar cuesta plata y no tiene tope.",
+  "medido": "2026-08-13T05:28-03:00",
+  "consignas": [
+   {
+    "termino": "SOL AL 9009",
+    "pico": 1,
+    "horas": 3,
+    "ultimo": {
+     "cuando": "13/08 05:28",
+     "puesto": 2
+    }
+   },
+   {
+    "termino": "YIPIO AL 9009",
+    "pico": 5,
+    "horas": 6,
+    "ultimo": {
+     "cuando": "13/08 03:45",
+     "puesto": 25
+    }
+   },
+   {
+    "termino": "ZILLI AL 9009",
+    "pico": 9,
+    "horas": 3,
+    "ultimo": {
+     "cuando": "13/08 03:45",
+     "puesto": 19
+    }
+   },
+   {
+    "termino": "CHARLOTTE AL 9009",
+    "pico": 16,
+    "horas": 3,
+    "ultimo": {
+     "cuando": "13/08 02:54",
+     "puesto": 18
+    }
+   },
+   {
+    "termino": "TAMARA AL 9009",
+    "pico": 20,
+    "horas": 4,
+    "ultimo": {
+     "cuando": "13/08 02:54",
+     "puesto": 20
+    }
+   }
+  ],
+  "otros": [
+   {
+    "termino": "Luana",
+    "pico": 2,
+    "horas": 14,
+    "ultimo": {
+     "cuando": "13/08 05:28",
+     "puesto": 4
+    }
+   },
+   {
+    "termino": "BODA SOLZIA",
+    "pico": 2,
+    "horas": 6,
+    "ultimo": {
+     "cuando": "13/08 05:28",
+     "puesto": 7
+    }
+   },
+   {
+    "termino": "#LAMACIELPARALUANA",
+    "pico": 6,
+    "horas": 5,
+    "ultimo": {
+     "cuando": "12/08 22:36",
+     "puesto": 43
+    }
+   },
+   {
+    "termino": "SOL PROTAGONISTA",
+    "pico": 9,
+    "horas": 4,
+    "ultimo": {
+     "cuando": "12/08 20:52",
+     "puesto": 36
+    }
+   },
+   {
+    "termino": "#GranHermano",
+    "pico": 7,
+    "horas": 14,
+    "ultimo": {
+     "cuando": "13/08 05:28",
+     "puesto": 15
+    }
+   }
+  ],
+  "sin_consigna": [
+   "Luana",
+   "Majluf"
+  ],
+  "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009», y el 9009 es el número al que se manda. Lo que pide cambia con la fase: en una placa negativa pide que la echen, y en una positiva pide que la salven. Es la misma frase con el signo dado vuelta.",
+  "el_detalle": "Hasta el domingo la placa es positiva, así que estas consignas piden que las salven. La columna de arriba mide apoyo, no rechazo, y va a cambiar de signo el domingo sin que las palabras cambien.",
+  "fuente": "https://trends24.in/argentina/",
+  "prueba": "No es una interpretación: las cuentas que las escriben lo aclaran. La de Sol publicó «SOL AL 9009 (Placa Positiva)», y otra cuenta separó las dos fases en el mismo mensaje preguntando por quién iban a ir «en la negativa»."
  }
 }

@@ -122,8 +122,15 @@ def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
 
 
 def _fecha_corrida():
-    g = json.loads((ROOT / "data" / "galas.json").read_text())["galas"]
-    return max(x["fecha"] for x in g)
+    """Igual que en final_model: cuenta la ultima gala resuelta y tambien la
+    nominacion de la placa vigente, que cambia el pronostico sin que se vaya
+    nadie."""
+    d = json.loads((ROOT / "data" / "galas.json").read_text())
+    fechas = [x["fecha"] for x in d["galas"]]
+    nom = (d.get("placa_vigente") or {}).get("fecha_nominacion")
+    if nom:
+        fechas.append(nom)
+    return max(fechas)
 
 
 def main():

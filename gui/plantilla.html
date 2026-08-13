@@ -4,6 +4,7 @@
 <title>¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades</title>
 <!--__META__-->
 <!--__DATOS_SRC__-->
+<!--__GSAP__-->
 <!--__ANALITICA__-->
 <style>
 /*__FUENTES__*/
@@ -520,7 +521,6 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .duplas .j{font-weight:700; min-width:5.5rem; flex:none}
 .duplas .flecha{color:var(--tinta3); flex:none}
 .duplas .v{color:var(--tinta2)}
-.duplas .marcada .v{color:var(--tinta); font-weight:700}
 .puerta{padding:9px 0; border-top:1px solid var(--linea2)}
 .puerta:first-of-type{border-top:0}
 .puerta .n{font-weight:700; font-family:"Archivo",sans-serif; font-size:var(--t-sm)}
@@ -532,7 +532,69 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .tw-lista code{font-size:.92em; color:var(--tinta2)}
 #v-tendencias{max-width:calc(var(--medida) + 32px)}
 .puerta p{font-size:var(--t-sm); color:var(--tinta2); margin:4px 0 0; line-height:1.5}
-#v-caso, #v-pronostico{max-width:calc(var(--medida) + 32px)}   /* la medida del texto más el relleno de .tarjeta */
+#v-pronostico{max-width:calc(var(--medida) + 32px)}   /* la medida del texto más el relleno de .tarjeta */
+
+/* ---------- cómo se resuelve esta placa ----------
+   Dos fases con signos opuestos en la misma placa. Durante cuatro días votar
+   sirve para salvar y después sirve para eliminar, así que un mismo mensaje
+   («votá a fulana») quiere decir lo contrario según el día. La barra lo
+   dibuja para que no haya que reconstruirlo leyendo. */
+
+/* ---------- el termómetro de la placa ----------
+   Cuánta gente escribe el nombre de cada nominada, que no es cuánta gente vota.
+   Se dibuja al lado del riesgo del modelo para que la diferencia entre las dos
+   listas se vea sin tener que compararlas de memoria. */
+.term-fila{display:grid; grid-template-columns:9.5rem 1fr auto; align-items:center;
+  gap:10px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
+.term-fila:first-of-type{border-top:0}
+.term-fila .t{font-family:"Archivo",sans-serif; font-weight:700; letter-spacing:.02em}
+.term-fila .barra{height:8px; border-radius:4px; background:var(--sup3); overflow:hidden}
+.term-fila .barra i{display:block; height:100%; border-radius:4px; background:var(--rechazo)}
+/* El color sigue al signo de la fase: mientras se vota para salvar, una barra
+   roja diria lo contrario de lo que mide. */
+#term-placa.positivo .term-fila .barra i{background:var(--apoyo)}
+.term-fila .p{font-variant-numeric:tabular-nums; color:var(--tinta2); font-size:var(--t-xs);
+  white-space:nowrap}
+.term-fila.muda .barra i{background:var(--linea)}
+.term-fila.muda .t{color:var(--tinta3)}
+#term-placa{max-width:calc(var(--medida) + 32px)}
+.fases{display:grid; grid-template-columns:1fr; gap:10px; margin:14px 0 0}
+@media(min-width:640px){
+/* ---------- el termómetro de la placa ----------
+   Cuánta gente escribe el nombre de cada nominada, que no es cuánta gente vota.
+   Se dibuja al lado del riesgo del modelo para que la diferencia entre las dos
+   listas se vea sin tener que compararlas de memoria. */
+.term-fila{display:grid; grid-template-columns:9.5rem 1fr auto; align-items:center;
+  gap:10px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
+.term-fila:first-of-type{border-top:0}
+.term-fila .t{font-family:"Archivo",sans-serif; font-weight:700; letter-spacing:.02em}
+.term-fila .barra{height:8px; border-radius:4px; background:var(--sup3); overflow:hidden}
+.term-fila .barra i{display:block; height:100%; border-radius:4px; background:var(--rechazo)}
+/* El color sigue al signo de la fase: mientras se vota para salvar, una barra
+   roja diria lo contrario de lo que mide. */
+#term-placa.positivo .term-fila .barra i{background:var(--apoyo)}
+.term-fila .p{font-variant-numeric:tabular-nums; color:var(--tinta2); font-size:var(--t-xs);
+  white-space:nowrap}
+.term-fila.muda .barra i{background:var(--linea)}
+.term-fila.muda .t{color:var(--tinta3)}
+#term-placa{max-width:calc(var(--medida) + 32px)}
+.fases{grid-template-columns:1fr 1fr}}
+.fase{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px;
+  position:relative; overflow:hidden}
+.fase.positivo{border-left:3px solid var(--apoyo)}
+.fase.negativo{border-left:3px solid var(--rechazo)}
+.fase .rotulo{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-etq);
+  letter-spacing:.08em; text-transform:uppercase}
+.fase.positivo .rotulo{color:var(--apoyo-txt)}
+.fase.negativo .rotulo{color:var(--rechazo-txt)}
+.fase .cuando{font-size:var(--t-xs); color:var(--tinta3); margin:3px 0 6px;
+  font-variant-numeric:tabular-nums}
+.fase .que{font-size:var(--t-sm); font-weight:700; font-family:"Archivo",sans-serif; margin-bottom:4px}
+.fase .det{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55; margin:0}
+.fase.ahora{background:var(--sup2)}
+.fase .aqui{position:absolute; top:8px; right:10px; font-size:var(--t-xs); font-weight:700;
+  font-family:"Archivo",sans-serif; color:var(--tinta3)}
+#prox{max-width:calc(var(--medida) + 32px)}
 .rein-cifras{display:grid; gap:1px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   margin-top:4px}
 .rein-cifras > div{background:var(--sup2); padding:11px 12px}
@@ -1183,6 +1245,11 @@ footer p{max-width:var(--medida)}
       </p>
     </div>
   </div>
+  <div class="tarjeta" id="prox" style="margin-top:20px"></div>
+
+  <div class="tarjeta" id="term-placa" style="margin-top:16px"></div>
+  <div class="tw-hueco" data-post="termometro" style="margin-top:16px"></div>
+
   <div class="g2" style="margin-top:20px">
     <div class="tarjeta">
       <div class="eyebrow">La encuesta que entra al modelo</div>
@@ -1212,10 +1279,8 @@ footer p{max-width:var(--medida)}
 
 <section id="vuelven">
   <div class="eyebrow">Quién puede volver</div>
-  <div class="titulo"><h2 class="tit">Volver a la casa y volver al juego no son lo mismo</h2></div>
+  <div class="titulo"><h2 class="tit">Quién puede volver al juego</h2></div>
   <p class="sub" id="v-sub"></p>
-
-  <div class="tarjeta" id="v-caso" style="margin:0 0 18px"></div>
 
   <div class="g2">
     <div class="tarjeta" id="v-duplas"></div>
@@ -2723,6 +2788,125 @@ function contar(nodo){
     "campañas que arma el fandom, con el número de teléfono adentro.";
 })();
 
+/* ---------- el termómetro de la placa ----------
+   Lo que la calle pide, contado en puestos de tendencia y no en opiniones.
+   Cuidado con el signo: «X AL 9009» significa «mandá mensajes por X», y lo que
+   eso consigue depende de la fase. En las galas de voto negativo esa consigna
+   echaba, y por eso es facil leerla mal ahora. Las propias cuentas que la
+   escriben aclaran entre parentesis que la placa es positiva, o sea que hoy
+   estan pidiendo lo contrario que en julio con las mismas palabras.
+
+   Va al lado del riesgo del modelo, que sale de otra fuente completamente
+   distinta: el reparto de votos que Telefe canto en las galas anteriores.
+
+   Y va con la advertencia que corresponde: esto mide cuanta gente escribe. El
+   voto real es pago y sin tope, asi que mide gasto y no personas. */
+(function(){
+  const T = D.actualidad && D.actualidad.termometro_placa, caja = $("#term-placa");
+  if(!caja) return;
+  const placa = (D.placa_vigente && D.placa_vigente.integrantes) || [];
+  if(!T || !T.consignas || !placa.length){ caja.remove(); return; }
+
+  // El puesto es mejor cuanto mas chico, asi que la barra se dibuja invertida
+  // sobre el top-50: encabezar el pais llena la barra.
+  const largo = p => Math.max(4, 100 * (51 - Math.min(p, 50)) / 50);
+  const porNombre = {};
+  T.consignas.forEach(c => (porNombre[c.termino.split(" ")[0].toLowerCase()] = c));
+
+  const filas = placa.map(n => {
+    const c = porNombre[n.toLowerCase()];
+    return {n, c};
+  }).sort((a, b) => (a.c ? a.c.pico : 99) - (b.c ? b.c.pico : 99));
+
+  // El signo de hoy sale de las fases que anuncio el programa, no de una
+  // suposicion: mientras corre la fase positiva, estas barras miden apoyo.
+  const G = D.actualidad.proxima_gala, ahora = new Date();
+  const fase = G && G.fases && G.fases.find(f =>
+    new Date(f.desde + "T12:00:00") <= ahora && ahora < new Date(f.hasta + "T12:00:00"));
+  if(fase) caja.classList.add(fase.signo);
+
+  caja.innerHTML =
+    "<div class='eyebrow'>Lo que pide la calle</div>" +
+    "<h3 style='margin:0 0 6px'>La misma consigna pide lo contrario según el día</h3>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 12px'>" +
+      T.significado + "</p>" +
+    filas.map(f => "<div class='term-fila" + (f.c ? "" : " muda") + "'>" +
+        "<span class='t'>" + f.n + "</span>" +
+        "<span class='barra'><i style='width:" + (f.c ? largo(f.c.pico) : 0) + "%'></i></span>" +
+        "<span class='p'>" + (f.c
+          ? "llegó al puesto " + f.c.pico + " · " + f.c.horas +
+            (f.c.horas === 1 ? " hora" : " horas")
+          : "sin consigna") + "</span></div>").join("") +
+    "<p class='tw-nota' style='margin:10px 0 0'>Cuanto más llena la barra, más arriba llegó la " +
+    "consigna en el top-50 argentino. Hoy eso significa apoyo.</p>" +
+    (() => {
+      // La que mas se nombra sin que nadie pida que se vaya. Es la unica de las
+      // dos listas que se contradice, y por eso se dice en vez de dejarla ahi.
+      const muda = filas.filter(f => !f.c).map(f => f.n);
+      const suelto = (T.otros || []).filter(o => muda.some(n => o.termino === n));
+      return suelto.length
+        ? "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" +
+          suelto.map(o => "<b>" + o.termino + "</b> se nombra igual, y bastante: llegó al puesto " +
+            o.pico + " y lleva " + o.horas + " horas en el top-50. Lo que no aparece es nadie " +
+            "pidiendo que se vaya.").join(" ") + "</p>"
+        : "";
+    })() +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" +
+      "<b>" + T.el_detalle + "</b> " + (T.prueba || "") + "</p>" +
+    "<p class='tw-nota' style='margin:10px 0 0'>" + T._nota +
+      " <a href='" + T.fuente + "' target='_blank' rel='noopener nofollow'>trends24</a>.</p>";
+})();
+
+/* ---------- cómo se resuelve esta placa ----------
+   Lo que hay que saber antes de mirar los porcentajes de arriba. Esta placa no
+   se resuelve como las anteriores: se vota para salvar hasta el domingo y para
+   eliminar después, y quien se va arrastra a la visita que había elegido. Nada
+   de esto sale del modelo, son las reglas que anunció el programa, y por eso
+   se cuentan aparte y con las dos fuentes al lado. */
+(function(){
+  const P = D.actualidad && D.actualidad.proxima_gala, caja = $("#prox");
+  if(!caja) return;
+  if(!P || !P.fases){ caja.remove(); return; }
+  // Para saber en qué fase estamos vale el día de quien lee, no el de la corrida.
+  // Las fechas de las dos fases las anunció el programa y no salen del modelo,
+  // así que marcar la de hoy no contamina el pronóstico con nada posterior.
+  const hoy = new Date();
+
+  const fases = P.fases.map(f => {
+    const ahora = new Date(f.desde + "T12:00:00") <= hoy && hoy < new Date(f.hasta + "T12:00:00");
+    return "<div class='fase " + f.signo + (ahora ? " ahora" : "") + "'>" +
+      (ahora ? "<span class='aqui'>ahora</span>" : "") +
+      "<div class='rotulo'>voto " + f.signo + "</div>" +
+      "<div class='cuando'>" + (f.signo === "positivo"
+        ? "hasta el " + FECHA_LARGA(f.hasta)
+        : "del " + FECHA_LARGA(f.desde) + " al " + FECHA_LARGA(f.hasta)) + "</div>" +
+      "<div class='que'>" + f.que + "</div>" +
+      "<p class='det'>" + f.detalle + "</p></div>";
+  }).join("");
+
+  const L = P.lider;
+  caja.innerHTML =
+    "<div class='eyebrow'>Cómo se resuelve</div>" +
+    "<h3 style='margin:0 0 6px'>La misma placa se vota con dos signos opuestos</h3>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
+      "Durante los primeros días votar sirve para <b>salvar</b>, y desde el domingo sirve para " +
+      "<b>eliminar</b>. Un mismo mensaje que diga «votá a fulana» pide lo contrario según el día " +
+      "en que se lea." +
+    "</p>" +
+    "<div class='fases'>" + fases + "</div>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:14px 0 0'>" +
+      "<b>" + P.regla + "</b>" +
+      (L ? " La líder de la semana fue <b>" + L.quien + "</b>. " + L.detalle : "") +
+      " En la nominación cada jugadora puso " + P.pesos_nominacion.jugadora + " puntos y cada " +
+      "visita " + P.pesos_nominacion.visita + ". " + P.pesos_nominacion.extra +
+    "</p>" +
+    "<p class='tw-nota' style='margin:10px 0 0'>El modelo trata la placa como un solo suceso: " +
+    "da la probabilidad de que cada una sea la que se va el " + FECHA_LARGA(P.fecha) + ", sin " +
+    "separar quién se salva el domingo. Reglas confirmadas por " +
+    P.fuentes.map((u, i) => "<a href='" + u + "' target='_blank' rel='noopener nofollow'>" +
+      (i ? "A24" : "Infobae") + "</a>").join(" y ") + ".</p>";
+})();
+
 /* ---------- las publicaciones, servidas por X ----------
    Cada medicion que el modelo lee de las redes se muestra donde se la explica,
    no en una vitrina aparte: la encuesta calibrada va debajo de su propia tabla
@@ -2894,29 +3078,14 @@ function contar(nodo){
 (function(){
   const R = D.reingresos, sec = $("#vuelven");
   if(!R || !sec){ if(sec) sec.remove(); return; }
-  const V = R.visitas, C = V && V.campanita;
+  const V = R.visitas;
   const usos = R.mecanismos.reduce((a, m) => a + m.veces, 0);
   const quienes = R.mecanismos.flatMap(m => m.quien).filter(n => D.jugadores.includes(n));
 
   $("#v-sub").textContent =
-    "Nueve personas eliminadas volvieron a dormir en la casa. Ninguna puede ganar. " +
-    "Lo que sigue explica por qué eso no mueve ni un punto del pronóstico, y qué " +
-    "tendría que pasar para que sí lo moviera.";
-
-  if(C){
-    const cuota = String(C.cuota_contra).replace(".", ",");
-    $("#v-caso").innerHTML =
-      "<div class='eyebrow'>El caso que lo explica</div>" +
-      "<h3 style=\"font-family:'Archivo',sans-serif; font-size:var(--t-md); margin:0 0 8px\">" +
-        C.quien.replace(/^.*«(.+)».*$/, "$1") + " entró de nuevo, como visita</h3>" +
-      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
-        "Salió el " + FECHA_LARGA(C.eliminada) + " con <b>" + cuota + "%</b> en contra, " +
-        "después de " + C.dias_adentro + " días adentro. Volvió a entrar el " +
-        FECHA_LARGA(C.volvio) + ", elegida por <b>" + C.elegida_por + "</b>. " +
-        C.por_que_no + "</p>" +
-      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:10px 0 0'>" +
-        V.efecto_en_el_modelo + "</p>";
-  } else { $("#v-caso").remove(); }
+    "Quedan veinticinco días y la pregunta es si el plantel de nueve puede cambiar de tamaño. " +
+    "Las dos vías por las que alguien vuelve a competir tienen fechas, dueños y un historial de " +
+    "tres temporadas que dice cuándo se usan.";
 
   const ult = V && V.tandas && V.tandas[V.tandas.length - 1];
   if(ult && ult.duplas){
@@ -2924,12 +3093,12 @@ function contar(nodo){
       "<h3 style='margin-top:0'>Quién está adentro sin jugar</h3>" +
       "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" + ult.detalle + "</p>" +
       "<ul class='duplas'>" + ult.duplas.map(d =>
-        "<li" + (C && d[1] === C.quien ? " class='marcada'" : "") + ">" +
+        "<li>" +
           "<span class='j'>" + d[0] + "</span>" +
           "<span class='flecha'>eligió a</span>" +
           "<span class='v'>" + d[1] + "</span></li>").join("") + "</ul>" +
-      "<p class='tw-nota' style='margin-top:10px'>La columna de la izquierda son las nueve que " +
-      "el modelo simula. La de la derecha no está en ninguna simulación.</p>";
+      "<p class='tw-nota' style='margin-top:10px'>Las de la derecha entraron el " +
+      FECHA_LARGA(ult.fecha) + " y se van en unos días.</p>";
   } else { $("#v-duplas").remove(); }
 
   const puertas = R.mecanismos.map(m =>
@@ -3119,7 +3288,7 @@ function contar(nodo){
       "<div class='rein-cifras' style='margin:0 0 12px'>" +
         "<div><div class='k'>Que alguien vuelva a competir</div><div class='v'>" + pc(E.valor) +
           "</div><div class='d'>de acá a la final</div></div>" +
-        "<div><div class='k'>Que vuelva " + (C ? C.quien.replace(/^.*«(.+)».*$/, "$1") : "ella") +
+        "<div><div class='k'>Que vuelva " + E.quien +
           "</div><div class='v'>" + pc(E.campanita) + "</div><div class='d'>y es la más " +
           "reclamada de todas</div></div></div>" +
       "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 10px'>" +
@@ -3617,7 +3786,8 @@ function contar(nodo){
       const pos = antes.findIndex(x => x.quien === f.quien) + 1;
       const salto = pos - (i+1);
       const cls = f.delta_pp > 0.3 ? " sube" : (f.delta_pp < -0.3 ? " baja" : "");
-      return "<div class='evo-fila" + (i===0 && giro ? " giro" : "") + "'>" +
+      return "<div class='evo-fila" + (i===0 && giro ? " giro" : "") +
+        "' data-salto='" + salto + "'>" +
         "<span class='q'>" + f.quien +
           (salto ? " <i>" + (salto>0 ? "sube " + salto : "baja " + (-salto)) + "</i>" : "") + "</span>" +
         "<span class='v'>" + pc(f.sin_pct,1) + "</span>" +
@@ -3650,6 +3820,75 @@ function contar(nodo){
     "estuvieron en placa suben sin haber hecho nada: <b>" + sube.quien + "</b> gana " +
     nf(sube.d_mu,2) + " de μ por comparación. El vuelco viene de ahí y no de la salida de " +
     E.eliminado + ".";
+
+  /* ---------- el reordenamiento, en movimiento ----------
+     La fila ya dice «sube 1» con palabras. Lo que las palabras no pueden hacer
+     es mostrar el reordenamiento: cada fila entra desde el puesto que ocupaba
+     antes de la gala -data-salto son los lugares que se movió- y viaja hasta el
+     suyo. Todas a la vez, porque un reordenamiento pasa de una sola vez, y las
+     que no se movieron se quedan quietas, que también es información.
+
+     La tabla se pinta directamente en el orden final, así que GSAP no la arma:
+     la rebobina y la vuelve a tocar. Sin JS, sin GSAP, con la librería caída o
+     con prefers-reduced-motion, la tabla está completa, ordenada y quieta.
+     Nada arranca en opacity:0, nada arranca en width:0.
+
+     Sin scroll-trigger y sin scrub, a propósito: esto se mira con el pulgar
+     mientras corre la gala, y una animación scrolleada a medias es una captura
+     de pantalla con el número equivocado. Se juega una vez sola al entrar en
+     pantalla y el botón la repite para quien llegó tarde. Las cifras no se
+     tocan nunca: se mueven las filas, no los números.
+
+     La regla global de prefers-reduced-motion es CSS y GSAP escribe estilos
+     inline, así que no lo alcanzaría: el control se hace acá, con `quieto`. */
+  (function(){
+    const filas = [...cont.querySelectorAll(".evo-fila")];
+    // Si nadie se movió de puesto no hay nada que contar, y un botón que no
+    // hace nada es peor que no tener botón.
+    if(quieto || filas.length < 2) return;
+    if(!filas.some(f => +f.dataset.salto)) return;
+
+    const jugar = function(){
+      const alto = filas[0].getBoundingClientRect().height;
+      gsap.killTweensOf(filas);
+      gsap.from(filas, {
+        y: (i, e) => (+e.dataset.salto || 0) * alto,
+        duration: .55,
+        ease: "power2.out",
+        clearProps: "transform"
+      });
+    };
+
+    // GSAP se sirve con defer, así que cuando corre este script todavía no
+    // está: todo se engancha en DOMContentLoaded, que pasa después de los
+    // defer. En el artefacto autocontenido no hay librería y no la va a haber
+    // -no hace ni un pedido a terceros-, así que ahí no se agrega el botón y
+    // la tabla se queda como está: completa y en orden.
+    const arrancar = function(){
+      if(!window.gsap) return;
+
+      const mandos = el("div","mandos");
+      mandos.innerHTML = '<button class="btn" id="evo-replay" type="button">' +
+                         'Ver el reordenamiento</button>';
+      cont.after(mandos);
+      mandos.firstChild.addEventListener("click", jugar);
+
+      if("IntersectionObserver" in window){
+        const ojo = new IntersectionObserver(function(voces){
+          if(!voces.some(v => v.isIntersecting)) return;
+          ojo.disconnect();
+          jugar();
+        }, {threshold:.35});
+        ojo.observe(cont);
+      }
+    };
+
+    if(document.readyState === "loading"){
+      document.addEventListener("DOMContentLoaded", arrancar, {once:true});
+    } else {
+      arrancar();
+    }
+  })();
 })();
 
 /* ---------- las mediciones públicas ----------

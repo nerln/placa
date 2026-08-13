@@ -61,7 +61,7 @@
   }
  ],
  "visitas": {
-  "_nota": "Entrar a la casa y entrar al juego no son lo mismo, y los titulares no los distinguen. Quien entra de visita no compite por el premio, no puede ganar y no está en ninguna de las 600.000 temporadas simuladas. Por eso el plantel del modelo no cambió el 11 de agosto aunque nueve personas más durmieran en la casa.",
+  "_nota": "Quien entra de visita no compite por el premio. Se anota acá porque las visitas votan en la nominación, así que entran en cómo se arma la placa.",
   "tandas": [
    {
     "fecha": "2026-07-21",
@@ -116,19 +116,7 @@
     ],
     "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487"
    }
-  ],
-  "campanita": {
-   "quien": "Steffany «Campanita» Pereira",
-   "eliminada": "2026-08-03",
-   "cuota_contra": 53.3,
-   "dias_adentro": 76,
-   "volvio": "2026-08-11",
-   "elegida_por": "Mariela",
-   "compite": false,
-   "por_que_no": "Volvió porque la eligió una compañera en el sorteo, no porque la producción revirtiera su eliminación ni porque el público la votara. Se había negado a salir el día que la eliminaron, y el 6 de agosto irrumpió en El Debate con una cacerola. Nada de eso le devolvió el juego.",
-   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487"
-  },
-  "efecto_en_el_modelo": "Efecto en el pronóstico: ninguno sobre quién puede ganar, porque las nueve candidatas son las mismas nueve. Lo que sí cambia es cómo se arma la placa, porque cada visita vota en la nominación junto a la jugadora que la eligió."
+  ]
  },
  "historia": {
   "_nota": "Los 21 reingresos al juego de las tres últimas ediciones, con el día en que ocurrieron. Verificado día a día contra Wikipedia EN, que es la única que lleva el calendario completo de las tres. Sirve para una sola pregunta: en qué momento de una temporada la producción deja de meter gente.",
@@ -292,7 +280,8 @@
    "valor": 0.04,
    "campanita": 0.015,
    "es_del_modelo": false,
-   "como": "No sale del modelo: el modelo simula eliminaciones y no simula reingresos. Es una estimación declarada a mano, y se publica con su base para que se pueda discutir. La base es la tasa histórica de arriba, las tres no reposiciones seguidas y las dos declaraciones. Lo que la mantiene lejos de cero es que esta edición ya improvisó bastante: 43 participantes, trece salidas fuera del voto y un Golden Ticket anulado por el veto de una jugadora."
+   "como": "No sale del modelo: el modelo simula eliminaciones y no simula reingresos. Es una estimación declarada a mano, y se publica con su base para que se pueda discutir. La base es la tasa histórica de arriba, las tres no reposiciones seguidas y las dos declaraciones. Lo que la mantiene lejos de cero es que esta edición ya improvisó bastante: 43 participantes, trece salidas fuera del voto y un Golden Ticket anulado por el veto de una jugadora.",
+   "quien": "Campanita"
   }
  },
  "tendencias": {
