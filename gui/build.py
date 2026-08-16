@@ -320,6 +320,13 @@ def main():
     # reconstruir la pagina entera, el navegador puede cachear la pagina y
     # pedir solo los datos, y datos.json queda como un archivo publico que
     # cualquiera puede leer sin pasar por el HTML.
+    #
+    # Y trae un peligro que costo dos mananas: GitHub Pages sirve todo con
+    # cache-control de diez minutos, asi que el navegador puede quedarse con un
+    # datos.js viejo y pegarlo a un HTML nuevo. La pagina se dibuja entera y sin
+    # un solo error, con los numeros de la semana pasada. Por eso el enlace
+    # lleva la firma de la corrida: si los datos cambian, cambia la direccion, y
+    # ninguna cache puede servir los de antes.
     WEB = ROOT / "web"
     WEB.mkdir(exist_ok=True)
     (WEB / "datos.json").write_text(crudo)
@@ -329,7 +336,8 @@ def main():
                  .replace("/*__FUENTES__*/", fuentes)
                  .replace("<!--__META__-->", meta(datos))
                  .replace("<!--__MARCA__-->", marca)
-                 .replace("<!--__DATOS_SRC__-->", '<script src="datos.js"></script>')
+                 .replace("<!--__DATOS_SRC__-->",
+                          f'<script src="datos.js?v={datos["corrida"]}"></script>')
                  # GSAP, servido desde web/vendor y no desde un CDN: la pagina
                  # publicada tampoco pide nada a terceros. Va con defer y lo
                  # unico que anima es el reordenamiento de "que movio la gala";

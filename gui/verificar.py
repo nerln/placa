@@ -29,6 +29,7 @@ rota de una forma que no cambia ningun dato y por eso no la ve nadie mas.
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -261,11 +262,36 @@ def riesgo_coherente():
     return 0
 
 
+def datos_sin_cache():
+    """El HTML tiene que pedir los datos de esta corrida y no «los datos».
+
+    GitHub Pages sirve con cache-control de diez minutos. Sin firma en la
+    direccion, un navegador puede pegar un datos.js viejo a un HTML nuevo: la
+    pagina se dibuja entera, sin un solo error en la consola, con los numeros de
+    la semana pasada. Es el peor fallo posible de esta pagina, porque no se ve.
+    """
+    idx = ROOT / "web" / "index.html"
+    dj = ROOT / "web" / "datos.json"
+    if not (idx.exists() and dj.exists()):
+        print("  (sin web/: no hay nada que comprobar)")
+        return 0
+    corrida = json.loads(dj.read_text()).get("corrida", "")
+    html = idx.read_text()
+    esperado = f'src="datos.js?v={corrida}"'
+    if esperado not in html:
+        m = re.search(r'src="datos\.js[^"]*"', html)
+        print(f"  FALLA · el HTML pide {m.group(0) if m else 'datos.js de otra forma'} "
+              f"y esta corrida es {corrida}: una cache puede servir datos viejos.")
+        return 1
+    print(f"  ok · el HTML pide los datos de esta corrida ({corrida})")
+    return 0
+
+
 def main():
     print("verificando lo que se va a publicar")
     err = (reconstruible() + probabilidades() + ramas_cierran() +
            identidad_telefe() + tarjeta_al_dia() + firma_coherente() +
-           riesgo_coherente() +
+           riesgo_coherente() + datos_sin_cache() +
            javascript_valido() + css_sin_javascript())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")
