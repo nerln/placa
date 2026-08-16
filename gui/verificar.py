@@ -230,10 +230,42 @@ def firma_coherente():
     return err
 
 
+def riesgo_coherente():
+    """El riesgo de salir se estima dos veces y las dos alimentan la pagina.
+
+    El caso base lo saca de su corrida y las ramas de la suya, que tiene mas
+    simulaciones. Son dos estimaciones del mismo numero, asi que difieren en
+    decimas y la pagina muestra una sola. Si alguna vez se separan de mas es que
+    dejaron de estimar lo mismo, y eso hay que verlo antes de publicar y no
+    despues de que alguien encuentre dos cifras distintas para lo mismo.
+    """
+    pd = ROOT / "data" / "resultados.json"
+    pr = ROOT / "data" / "ramas.json"
+    if not (pd.exists() and pr.exists()):
+        print("  (sin ramas o sin resultados: no hay nada que cotejar)")
+        return 0
+    base = (json.loads(pd.read_text()).get("escenarios") or {}).get("base", {}).get("p_sale28")
+    ramas = json.loads(pr.read_text()).get("ramas") or {}
+    if not base or not ramas:
+        print("  (sin riesgo por rama: no hay nada que cotejar)")
+        return 0
+    d, quien = max((abs(base.get(n, 0.0) - r["p_sale"]), n) for n, r in ramas.items())
+    # 0,6 puntos: bastante mas que el error de muestreo de dos corridas de este
+    # tamano, y bastante menos que cualquier discrepancia real de modelo.
+    if d > 0.006:
+        print(f"  FALLA · el caso base y las ramas discrepan en {100*d:.2f} puntos "
+              f"para {quien}: dejaron de estimar lo mismo.")
+        return 1
+    print(f"  ok · las dos estimaciones del riesgo coinciden "
+          f"(peor {quien}, {100*d:.2f} puntos)")
+    return 0
+
+
 def main():
     print("verificando lo que se va a publicar")
     err = (reconstruible() + probabilidades() + ramas_cierran() +
            identidad_telefe() + tarjeta_al_dia() + firma_coherente() +
+           riesgo_coherente() +
            javascript_valido() + css_sin_javascript())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")

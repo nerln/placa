@@ -2,6 +2,14 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-08-16",
+   "titulo": "Tamara salió al hospital por un sangrado de oído y volvió",
+   "detalle": "La producción la sacó de la casa para que la atendieran y confirmó poco después su regreso a la convivencia. Sigue en juego y sigue en placa. Su nombre entró al top-50 argentino directamente en el primer puesto a la 1.56 de la madrugada y lo mantuvo seis horas.",
+   "afecta": "El canal por el que se va gente sin votación es el hueco declarado más grande del modelo. Esta vez no se abrió.",
+   "impacto": "sin_efecto",
+   "fuente": "https://www.c5n.com/ratingcero/que-se-sabe-tamara-paganini-abandonar-gran-hermano-un-problema-salud-n240249"
+  },
+  {
    "fecha": "2026-08-12",
    "titulo": "Placa de siete sobre nueve: se salvaron Mariela y Pincoya",
    "detalle": "Yipio, líder de la semana, fulminó a Sol antes de que empezara la votación. Después las nueve nominaron con dos puntos cada una y sus visitas con uno. Zilli usó la espontánea contra Yipio y la dejó en placa a la líder. Quedaron nominadas Sol, Tamara, Majluf, Charlotte, Luana, Yipio y Zilli.",

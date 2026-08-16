@@ -31,7 +31,7 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 20,6% · Pincoya 20,3% · Tamara 19,5%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-12T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 20,6% · Pincoya 20,3% · Tamara 19,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-12","version":"8a23202da95a95a7","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 20,6% · Pincoya 20,3% · Tamara 19,5%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-12T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Charlotte 20,6% · Pincoya 20,3% · Tamara 19,5%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-12","version":"35b8a17698a7918e","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
 <script src="datos.js"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
@@ -595,6 +595,28 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    Cuánta gente escribe el nombre de cada nominada, que no es cuánta gente vota.
    Se dibuja al lado del riesgo del modelo para que la diferencia entre las dos
    listas se vea sin tener que compararlas de memoria. */
+
+/* ---------- el modelo contra las encuestas ----------
+   Cuatro columnas que contestan la misma pregunta y no coinciden. Se ponen una
+   al lado de la otra, cada una con lo que mide y con lo que acertó antes, en
+   vez de elegir la que da la razón. */
+.cotejo{width:100%; border-collapse:collapse; font-size:var(--t-sm)}
+.cotejo th{font-family:"Archivo",sans-serif; font-size:var(--t-xs); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--tinta3); text-align:right; padding:0 0 8px; font-weight:700;
+  vertical-align:bottom}
+.cotejo th:first-child{text-align:left}
+.cotejo td{padding:8px 0; border-top:1px solid var(--linea2); text-align:right;
+  font-variant-numeric:tabular-nums; color:var(--tinta2)}
+.cotejo td:first-child{text-align:left; font-family:"Archivo",sans-serif; font-weight:700;
+  color:var(--tinta)}
+.cotejo td.peor{color:var(--rechazo-txt); font-weight:700}
+.cotejo td.na{color:var(--linea)}
+.cotejo th .q{display:block; font-weight:400; text-transform:none; letter-spacing:0;
+  color:var(--tinta3); font-size:var(--t-xs)}
+.cotejo-pies{display:grid; gap:8px; margin:14px 0 0}
+.cotejo-pies div{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
+.cotejo-pies b{font-family:"Archivo",sans-serif}
+#cotejo{max-width:calc(var(--medida) + 32px)}
 .term-fila{display:grid; grid-template-columns:9.5rem 1fr auto; align-items:center;
   gap:10px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
 .term-fila:first-of-type{border-top:0}
@@ -615,6 +637,28 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    Cuánta gente escribe el nombre de cada nominada, que no es cuánta gente vota.
    Se dibuja al lado del riesgo del modelo para que la diferencia entre las dos
    listas se vea sin tener que compararlas de memoria. */
+
+/* ---------- el modelo contra las encuestas ----------
+   Cuatro columnas que contestan la misma pregunta y no coinciden. Se ponen una
+   al lado de la otra, cada una con lo que mide y con lo que acertó antes, en
+   vez de elegir la que da la razón. */
+.cotejo{width:100%; border-collapse:collapse; font-size:var(--t-sm)}
+.cotejo th{font-family:"Archivo",sans-serif; font-size:var(--t-xs); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--tinta3); text-align:right; padding:0 0 8px; font-weight:700;
+  vertical-align:bottom}
+.cotejo th:first-child{text-align:left}
+.cotejo td{padding:8px 0; border-top:1px solid var(--linea2); text-align:right;
+  font-variant-numeric:tabular-nums; color:var(--tinta2)}
+.cotejo td:first-child{text-align:left; font-family:"Archivo",sans-serif; font-weight:700;
+  color:var(--tinta)}
+.cotejo td.peor{color:var(--rechazo-txt); font-weight:700}
+.cotejo td.na{color:var(--linea)}
+.cotejo th .q{display:block; font-weight:400; text-transform:none; letter-spacing:0;
+  color:var(--tinta3); font-size:var(--t-xs)}
+.cotejo-pies{display:grid; gap:8px; margin:14px 0 0}
+.cotejo-pies div{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
+.cotejo-pies b{font-family:"Archivo",sans-serif}
+#cotejo{max-width:calc(var(--medida) + 32px)}
 .term-fila{display:grid; grid-template-columns:9.5rem 1fr auto; align-items:center;
   gap:10px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
 .term-fila:first-of-type{border-top:0}
@@ -1324,6 +1368,9 @@ footer p{max-width:var(--medida)}
     </div>
   </div>
   <div class="tarjeta" id="prox" style="margin-top:20px"></div>
+
+  <div class="tarjeta" id="cotejo" style="margin-top:16px"></div>
+  <div class="tw-hueco" data-post="cotejo" style="margin-top:16px; max-width:550px"></div>
 
   <div class="tarjeta" id="term-placa" style="margin-top:16px"></div>
   <div class="tw-hueco" data-post="termometro" style="margin-top:16px"></div>
@@ -2866,6 +2913,72 @@ function contar(nodo){
     "campañas que arma el fandom, con el número de teléfono adentro.";
 })();
 
+/* ---------- el modelo contra las encuestas ----------
+   Tres mediciones publicadas para esta placa dicen una cosa y el modelo dice
+   otra. No se elige: se ponen las cuatro columnas al lado, cada una con lo que
+   mide y con lo que acertó antes, y el lunes se sabe.
+
+   Ninguna de las tres entra al modelo. El motivo es tecnico y no de gusto: la
+   calibracion de encuestas de esta pagina se hizo contra galas de voto
+   negativo, y estas son de voto positivo o de imagen. Meterlas sin recalibrar
+   seria cambiar la regla en la mitad del partido. */
+(function(){
+  const M = D.actualidad && D.actualidad.medidas_sociales, caja = $("#cotejo");
+  if(!caja) return;
+  // El riesgo sale de donde lo saca la placa de arriba, que es el caso base.
+  // Las ramas lo estiman con su propia corrida y difieren en unas décimas: dos
+  // numeros para lo mismo en la misma pagina es peor que una decima de error.
+  const R = D.escenarios && D.escenarios.base && D.escenarios.base.p_sale28;
+  const placa = (D.placa_vigente && D.placa_vigente.integrantes) || [];
+  if(!M || !R || !placa.length){ caja.remove(); return; }
+
+  const num = (v, u) => u === "votos"
+    ? v.toLocaleString("es-AR")
+    : String(v).replace(".", ",") + "%";
+
+  // En una fase de voto positivo el riesgo esta abajo: la que menos apoyo junta
+  // es la que peor esta. Por eso «peor» es el minimo y no el maximo.
+  const peores = {};
+  M.fuentes.forEach(f => {
+    const vs = placa.filter(n => f.valores[n] != null);
+    if(vs.length) peores[f.id] = vs.reduce((a, b) => f.valores[a] <= f.valores[b] ? a : b);
+  });
+  const peorModelo = placa.reduce((a, b) => R[a] >= R[b] ? a : b);
+
+  const filas = placa.slice().sort((a, b) => R[b] - R[a]).map(n =>
+    "<tr><td>" + n + "</td>" +
+    "<td" + (n === peorModelo ? " class='peor'" : "") + ">" +
+      (100 * R[n]).toFixed(1).replace(".", ",") + "%</td>" +
+    M.fuentes.map(f => f.valores[n] == null
+      ? "<td class='na'>—</td>"
+      : "<td" + (peores[f.id] === n ? " class='peor'" : "") + ">" +
+        num(f.valores[n], f.unidad) + "</td>").join("") +
+    "</tr>").join("");
+
+  caja.innerHTML =
+    "<div class='eyebrow'>Las dos respuestas</div>" +
+    "<h3 style='margin:0 0 6px'>El modelo dice " + peorModelo + ". Las encuestas dicen " +
+      (peores.poggi || peores.bongiorno) + ".</h3>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 14px'>" + M.lectura + "</p>" +
+    "<div class='scroll-x'><table class='cotejo'>" +
+    "<tr><th></th><th>Modelo<span class='q'>riesgo de salir</span></th>" +
+      M.fuentes.map(f => "<th>" + f.quien + "<span class='q'>" + f.mide + "</span></th>").join("") +
+    "</tr>" + filas + "</table></div>" +
+    "<p class='tw-nota' style='margin:10px 0 0'>En rojo, la peor de cada columna. En las tres " +
+    "encuestas el riesgo está abajo: son de voto positivo o de imagen, así que la que menos " +
+    "junta es la que peor está.</p>" +
+    "<div class='cotejo-pies'>" +
+      M.fuentes.map(f => "<div><b>" + f.quien + "</b> · " + f.donde + " · " +
+        FECHA_LARGA(f.fecha) + ". " + f.historial + ". " + f.aviso +
+        (f.url ? " <a href='" + f.url + "' target='_blank' rel='noopener nofollow'>" +
+                 "la publicación</a>." : "")+ "</div>").join("") +
+    "</div>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:14px 0 0'>" +
+      M.por_que_difieren + "</p>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:10px 0 0'><b>" +
+      M.se_resuelve + "</b></p>";
+})();
+
 /* ---------- el termómetro de la placa ----------
    Lo que la calle pide, contado en puestos de tendencia y no en opiniones.
    Cuidado con el signo: «X AL 9009» significa «mandá mensajes por X», y lo que
@@ -2883,7 +2996,20 @@ function contar(nodo){
   const T = D.actualidad && D.actualidad.termometro_placa, caja = $("#term-placa");
   if(!caja) return;
   const placa = (D.placa_vigente && D.placa_vigente.integrantes) || [];
-  if(!T || !T.consignas || !placa.length){ caja.remove(); return; }
+  if(!T || !placa.length){ caja.remove(); return; }
+
+  // Que no haya ninguna consigna tambien es un dato, y en este caso el mas
+  // llamativo de la semana: cuatro dias atras habia cinco y una encabezaba el
+  // pais. Un hueco no se tapa borrando la seccion.
+  if(!T.consignas || !T.consignas.length){
+    caja.innerHTML =
+      "<div class='eyebrow'>Lo que pide la calle</div>" +
+      "<h3 style='margin:0 0 6px'>Se apagaron todas las consignas</h3>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" + (T.vacio || "") + "</p>" +
+      "<p class='tw-nota' style='margin:10px 0 0'>" + T._nota +
+      " <a href='" + T.fuente + "' target='_blank' rel='noopener nofollow'>trends24</a>.</p>";
+    return;
+  }
 
   // El puesto es mejor cuanto mas chico, asi que la barra se dibuja invertida
   // sobre el top-50: encabezar el pais llena la barra.
@@ -2899,8 +3025,9 @@ function contar(nodo){
   // El signo de hoy sale de las fases que anuncio el programa, no de una
   // suposicion: mientras corre la fase positiva, estas barras miden apoyo.
   const G = D.actualidad.proxima_gala, ahora = new Date();
+  const lim = (f, cual) => new Date(f[cual + "_hora"] || (f[cual] + "T23:00:00-03:00"));
   const fase = G && G.fases && G.fases.find(f =>
-    new Date(f.desde + "T12:00:00") <= ahora && ahora < new Date(f.hasta + "T12:00:00"));
+    lim(f, "desde") <= ahora && ahora < lim(f, "hasta"));
   if(fase) caja.classList.add(fase.signo);
 
   caja.innerHTML =
@@ -2950,8 +3077,13 @@ function contar(nodo){
   // así que marcar la de hoy no contamina el pronóstico con nada posterior.
   const hoy = new Date();
 
+  // Las fases se comparan con hora y no con dia: el cambio de signo ocurre al
+  // terminar la emision del domingo, asi que durante casi todo el domingo el
+  // voto todavia salva. Comparando por dia la pagina decia «negativo» desde la
+  // medianoche y mandaba a votar al reves a quien la leyera esa tarde.
+  const limite = (f, cual) => new Date(f[cual + "_hora"] || (f[cual] + "T23:00:00-03:00"));
   const fases = P.fases.map(f => {
-    const ahora = new Date(f.desde + "T12:00:00") <= hoy && hoy < new Date(f.hasta + "T12:00:00");
+    const ahora = limite(f, "desde") <= hoy && hoy < limite(f, "hasta");
     return "<div class='fase " + f.signo + (ahora ? " ahora" : "") + "'>" +
       (ahora ? "<span class='aqui'>ahora</span>" : "") +
       "<div class='rotulo'>voto " + f.signo + "</div>" +
