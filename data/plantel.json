@@ -1,6 +1,6 @@
 {
  "_nota": "Plantel vigente y atributos que consume el modelo. Este archivo es el que edita model/actualizar.py despues de cada gala: saca a quien fue eliminado, recalcula las propensiones de nominacion y deja el resto intacto. Nada de esto vive ya dentro del codigo.",
- "actualizado": "2026-08-12",
+ "actualizado": "2026-08-16",
  "edicion": "Gran Hermano Argentina: Generación Dorada",
  "temporada": 13,
  "estreno": "2026-02-23",

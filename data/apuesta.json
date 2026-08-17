@@ -1,0 +1,94 @@
+{
+ "generado": "2026-08-16",
+ "gala": 29,
+ "fecha_gala": "2026-08-17",
+ "placa": [
+  "Tamara",
+  "Majluf",
+  "Charlotte",
+  "Luana",
+  "Zilli"
+ ],
+ "bajaron_de_placa": {
+  "quienes": [
+   "Sol",
+   "Yipio"
+  ],
+  "cuando": "2026-08-16",
+  "como": "Los sacó la fase de voto positivo. Del Moro lo anunció al aire el domingo, para afuera: a las jugadoras no se les dijo.",
+  "fuente": "https://www.mitelefe.com/gran-hermano/noticias/cruces-en-la-cena-de-nominadas-y-dos-jugadoras-salvadas-de-la-eliminacion-pid2562969"
+ },
+ "es_del_modelo": false,
+ "que_es": "Predicción declarada para esta gala. No sale del modelo de la página: el modelo contesta la misma pregunta, y su prueba hacia atrás dice que en esa pregunta anda peor que el azar. Ésta se arma con las dos señales que se pueden observar desde afuera antes de que cierre la votación.",
+ "supuestos": {
+  "peso_campana": 1.0,
+  "peso_imagen": 1.0,
+  "piso_sin_consigna": 0.52,
+  "piso_sin_imagen": 0.5
+ },
+ "entradas": {
+  "campana": {
+   "Luana": 1.0,
+   "Majluf": 0.94,
+   "Tamara": 0.52,
+   "Charlotte": 0.52,
+   "Zilli": 0.84
+  },
+  "campana_medida": {
+   "Tamara": null,
+   "Majluf": -0.94,
+   "Charlotte": null,
+   "Luana": -1.0,
+   "Zilli": -0.84
+  },
+  "ventana_campana": "16/08 20:40 → 17/08 20:36 UTC",
+  "imagen": {
+   "Luana": 18,
+   "Majluf": 20,
+   "Tamara": 17,
+   "Charlotte": null,
+   "Zilli": 74
+  },
+  "imagen_quien": "Fefe Bongiorno",
+  "imagen_fecha": "2026-08-12",
+  "imagen_historial": "Es el único agregador de la temporada con historial: acertó el eliminado en 5 de 5 galas documentadas"
+ },
+ "p_sale": {
+  "Luana": 0.3304,
+  "Majluf": 0.303,
+  "Tamara": 0.1739,
+  "Charlotte": 0.1048,
+  "Zilli": 0.088
+ },
+ "sensibilidad": {
+  "las_dos": {
+   "Luana": 0.3304,
+   "Majluf": 0.303,
+   "Tamara": 0.1739,
+   "Charlotte": 0.1048,
+   "Zilli": 0.088
+  },
+  "solo_campana": {
+   "Luana": 0.2618,
+   "Majluf": 0.2461,
+   "Zilli": 0.2199,
+   "Tamara": 0.1361,
+   "Charlotte": 0.1361
+  },
+  "solo_imagen": {
+   "Tamara": 0.2586,
+   "Luana": 0.2555,
+   "Majluf": 0.2492,
+   "Charlotte": 0.1558,
+   "Zilli": 0.081
+  }
+ },
+ "modelo_dice": {
+  "Luana": 0.3042,
+  "Charlotte": 0.2378,
+  "Majluf": 0.1566,
+  "Zilli": 0.1523,
+  "Tamara": 0.1491
+ },
+ "coinciden": true
+}

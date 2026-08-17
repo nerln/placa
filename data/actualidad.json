@@ -164,84 +164,91 @@
   }
  },
  "tendencias": {
-  "_nota": "Posiciones en el top-50 de tendencias de X en Argentina, leídas de los snapshots públicos de trends24. Ventana del 10/08 13:56 UTC al 11/08 07:09 UTC. trends24 no publica volumen de tuits para estos términos, solo posición.",
-  "ventana": "10/08 13:56 → 11/08 07:09 UTC",
+  "_nota": "Posiciones del top-50 de X en Argentina archivadas por trends24, barrido de las 24 tarjetas horarias. «mejor» es el puesto más alto que alcanzó el término en la ventana y «horas» cuántas de las 24 estuvo dentro del top-50. Esta ventana cae entera dentro de la fase de voto NEGATIVO, así que las consignas piden eliminar.",
+  "ventana": "16/08 20:40 → 17/08 20:36 UTC",
+  "fase": "negativo",
   "terminos": [
+   {
+    "txt": "LUANA AL 9009",
+    "mejor": 1,
+    "horas": 24,
+    "tipo": "campaña de voto",
+    "nota": "Estuvo las veinticuatro horas de la ventana dentro del top-50 y llegó al primer puesto del país."
+   },
+   {
+    "txt": "MIÉRCOLES BODA SOLZIA",
+    "mejor": 2,
+    "horas": 20,
+    "tipo": "genérico",
+    "nota": "No es una campaña de voto: es una consigna de fandom sobre Sol y Zilli. No lleva signo y no entra al índice."
+   },
+   {
+    "txt": "Tamara",
+    "mejor": 3,
+    "horas": 18,
+    "tipo": "genérico",
+    "nota": "El nombre suelto, sin consigna. Viene de su salida al hospital de la madrugada del domingo."
+   },
+   {
+    "txt": "MAJLUF AL 9009",
+    "mejor": 4,
+    "horas": 23,
+    "tipo": "campaña de voto",
+    "nota": "Casi tan longeva como la de Luana, pero se quedó cuatro puestos abajo en su pico."
+   },
+   {
+    "txt": "ZILLI AL 9009",
+    "mejor": 9,
+    "horas": 17,
+    "tipo": "campaña de voto",
+    "nota": "La tercera y la más floja de las tres."
+   },
+   {
+    "txt": "#GranHermano",
+    "mejor": 14,
+    "horas": 2,
+    "tipo": "genérico",
+    "nota": "El hashtag oficial del programa, que casi no entra."
+   },
+   {
+    "txt": "Nazareno",
+    "mejor": 28,
+    "horas": 1,
+    "tipo": "genérico",
+    "nota": "La visita de Tamara."
+   },
+   {
+    "txt": "Cola",
+    "mejor": 39,
+    "horas": 5,
+    "tipo": "genérico",
+    "nota": "La visita de Charlotte."
+   }
+  ],
+  "chile": [
+   {
+    "txt": "LUANA AL 9009",
+    "mejor": 23,
+    "horas": 12
+   },
+   {
+    "txt": "Tamara",
+    "mejor": 20,
+    "horas": 18
+   },
+   {
+    "txt": "TAMARA AL 9009",
+    "mejor": 49,
+    "horas": 1
+   }
+  ],
+  "precedente": [
    {
     "txt": "HANSSEN AL 9009",
     "mejor": 1,
     "horas": 23,
     "tipo": "campaña de voto",
     "nota": "Fue la tendencia más longeva de la jornada y pedía su eliminación. Salió con el 58%."
-   },
-   {
-    "txt": "LUANA AL 9009",
-    "mejor": 1,
-    "horas": null,
-    "tipo": "campaña de voto",
-    "nota": "Aparece después de la gala: es la campaña que empieza a armarse para la próxima."
-   },
-   {
-    "txt": "#GranHermano",
-    "mejor": 1,
-    "horas": null,
-    "tipo": "genérico",
-    "nota": "Entra al top recién con la gala."
-   },
-   {
-    "txt": "SOLANGE ABRAHAM",
-    "mejor": 6,
-    "horas": null,
-    "tipo": "nombre"
-   },
-   {
-    "txt": "SOL A LA FINAL",
-    "mejor": 10,
-    "horas": null,
-    "tipo": "apoyo"
-   },
-   {
-    "txt": "CASA DE MUJERES",
-    "mejor": 10,
-    "horas": 3,
-    "tipo": "tema",
-    "nota": "El único término sobre la casa femenina. Menos de tres horas en el top-50."
-   },
-   {
-    "txt": "Mariela",
-    "mejor": 2,
-    "horas": null,
-    "tipo": "nombre"
-   },
-   {
-    "txt": "Hanssen",
-    "mejor": 3,
-    "horas": null,
-    "tipo": "nombre"
-   },
-   {
-    "txt": "Majluf",
-    "mejor": 20,
-    "horas": null,
-    "tipo": "nombre"
-   },
-   {
-    "txt": "Zilli",
-    "mejor": 20,
-    "horas": null,
-    "tipo": "nombre"
-   },
-   {
-    "txt": "Tamara",
-    "mejor": 18,
-    "horas": null,
-    "tipo": "nombre"
-   },
-   {
-    "txt": "Yipio",
-    "mejor": 27,
-    "horas": null,
-    "tipo": "nombre"
    }
   ],
   "oficial": {
@@ -379,22 +386,36 @@
     "handle": "@fedeebongiorno",
     "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">📈 Así dio el ranking de imagen positiva para los participantes de <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> en Twitter, en la semana 25:<br><br>— Pincoya sigue primera, seguida por Sol y Zilli<br><br>— Solo 4 de 9 con imagen positiva <br><br>— Tamara pasa al último puesto<br><br>*Los colores representan la opinión mayoritaria del… <a href=\"https://t.co/splcRGpAYc\">pic.twitter.com/splcRGpAYc</a></p>&mdash; Fefe (@fedeebongiorno) <a href=\"https://x.com/fedeebongiorno/status/2087586759383073119?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
     "lectura": "El ranking que da la fila de Bongiorno en la tabla de arriba. Dice tres cosas que conviene leer juntas: Pincoya sigue primera, solo cuatro de las nueve tienen imagen positiva, y Tamara pasó al último puesto."
+   },
+   {
+    "donde": "apuesta",
+    "url": "https://x.com/GranHermanoAr/status/2089179424444878991",
+    "autor": "Gran Hermano",
+    "handle": "@GranHermanoAr",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">¿QUIÉN QUERÉS QUE ABANDONE EN LA CASA? 🤔🔥<br><br>Enviá GH al 9009 o ingresá a <a href=\"https://t.co/yjfLeu7uep\">https://t.co/yjfLeu7uep</a><a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> <a href=\"https://t.co/JnooYWAZ8D\">pic.twitter.com/JnooYWAZ8D</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2089179424444878991?ref_src=twsrc%5Etfw\">17 de agosto de 2026</a></blockquote>\n\n",
+    "lectura": "La cuenta oficial abriendo la fase negativa a las 23.36 del domingo, apenas terminada la emisión. El mensaje es literal: «¿Quién querés que abandone la casa?». Cuatro días antes, la misma cuenta pedía lo contrario."
+   },
+   {
+    "donde": "apuesta",
+    "url": "https://x.com/GranHermanoAr/status/2089377082367168763",
+    "autor": "Gran Hermano",
+    "handle": "@GranHermanoAr",
+    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">La tensión crece en la recta final y esta noche se viene una gala de eliminación imperdible  👋🏻​🔥​<br><br>🫵​ HOY a las 22.15hs <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/GeneracionDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneracionDorada</a> con <a href=\"https://x.com/SANTIAGODELMORO?ref_src=twsrc%5Etfw\">@SANTIAGODELMORO</a> por Telefe <a href=\"https://t.co/wLITTBg08n\">pic.twitter.com/wLITTBg08n</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2089377082367168763?ref_src=twsrc%5Etfw\">17 de agosto de 2026</a></blockquote>\n\n",
+    "lectura": "El anuncio de la gala de esta noche, a las 22.15. Es la que cierra la votación."
    }
   ],
   "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
  },
  "proxima_gala": {
   "_nota": "Cómo se resuelve esta placa. Se anota aparte porque no es el mecanismo de siempre: hay dos fases con signos opuestos y una regla de eliminación que arrastra a una segunda persona. Verificado en Infobae y en A24/PrimiciasYa, que coinciden en las dos fechas y en el reparto de votos.",
-  "gala": 26,
+  "gala": 29,
   "tipo": "eliminación",
   "fecha": "2026-08-17",
   "placa": [
-   "Sol",
    "Tamara",
    "Majluf",
    "Charlotte",
    "Luana",
-   "Yipio",
    "Zilli"
   ],
   "libres": [
@@ -414,7 +435,7 @@
     "hasta": "2026-08-16",
     "signo": "positivo",
     "que": "Se vota a quien se quiere salvar.",
-    "detalle": "Es una placa del tipo «Generación Dorada». Cierra con la emisión del domingo, no a medianoche. Los jugadores no van a saber quiénes bajaron de placa.",
+    "detalle": "Es una placa del tipo «Generación Dorada». Cerró con la emisión del domingo y bajó a dos: Sol y Yipio. Es el rescate más chico de la temporada, dos de siete.",
     "desde_hora": "2026-08-12T23:59-03:00",
     "hasta_hora": "2026-08-16T23:00-03:00"
    },
@@ -423,7 +444,7 @@
     "hasta": "2026-08-17",
     "signo": "negativo",
     "que": "Se vota a quien se quiere eliminar.",
-    "detalle": "Se abre al terminar la emisión del domingo y cierra en la gala del lunes. Sobre las que sigan en placa después de la fase positiva.",
+    "detalle": "Se abrió a las 23.36 del domingo, apenas terminada la emisión, con el mensaje «¿Quién querés que abandone la casa?». Cierra en la gala de esta noche.",
     "desde_hora": "2026-08-16T23:00-03:00",
     "hasta_hora": "2026-08-17T22:15-03:00"
    }
@@ -438,13 +459,101 @@
    "https://www.infobae.com/teleshow/2026/08/13/asi-quedo-la-placa-de-nominados-de-gran-hermano-despues-del-reingreso-de-los-exjugadores/",
    "https://www.a24.com/primiciasya/una-fulminada-dos-finalistas-y-una-placa-explosiva-asi-quedo-la-placa-nominados-gran-hermano-n1585108"
   ],
-  "_aviso_hora": "Las horas de corte salen de que el cambio de signo ocurre «después de la emisión del programa del domingo», según La Nación e Infobae. Telefe no publicó un horario exacto, así que se toma el fin de la emisión, cerca de las 23. La página marca la fase con la hora de quien lee."
+  "_aviso_hora": "Las horas de corte salen de que el cambio de signo ocurre «después de la emisión del programa del domingo», según La Nación e Infobae. Telefe no publicó un horario exacto, así que se toma el fin de la emisión, cerca de las 23. La página marca la fase con la hora de quien lee.",
+  "salvadas": {
+   "quienes": [
+    "Sol",
+    "Yipio"
+   ],
+   "cuando": "2026-08-16",
+   "como": "Las sacó la fase de voto positivo. Del Moro lo anunció al aire el domingo y lo hizo para afuera: a las jugadoras no se les dijo, así que adentro siguen creyendo que la placa es de siete.",
+   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/cruces-en-la-cena-de-nominadas-y-dos-jugadoras-salvadas-de-la-eliminacion-pid2562969"
+  }
  },
  "termometro_placa": {
-  "_nota": "Barrido de las 24 tarjetas horarias de trends24.in/argentina, tomado el 16 de agosto de 2026 a las 11:30 de la Argentina. Es un archivo de terceros y no una medición propia.",
-  "medido": "2026-08-16T11:30-03:00",
-  "consignas": [],
-  "vacio": "Cuatro días atrás cinco de las siete tenían una consigna «AL 9009» en tendencia y «SOL AL 9009» llegó al primer puesto del país. Hoy no queda ninguna. Lo único del programa en el top-50 argentino es el nombre de Tamara, que entró directamente en el primer puesto a la una y media de la madrugada y lo mantuvo seis horas.",
+  "_nota": "Barrido de las 24 tarjetas horarias de trends24.in de Argentina y de Chile, tomado el 17 de agosto de 2026 a las 17.40 de la Argentina, unas cuatro horas y media antes de la gala. Archivo de terceros, no una medición propia. Mide cuánta gente escribe, que no es cuánta gente vota: el voto es pago y sin tope.",
+  "medido": "2026-08-17T17:40-03:00",
+  "fase": "negativo",
+  "consignas": [
+   {
+    "termino": "LUANA AL 9009",
+    "pico": 1,
+    "horas": 24,
+    "ahora": {
+     "cuando": "17/08 17:36",
+     "puesto": 2
+    }
+   },
+   {
+    "termino": "MAJLUF AL 9009",
+    "pico": 4,
+    "horas": 23,
+    "ahora": {
+     "cuando": "17/08 17:36",
+     "puesto": 17
+    }
+   },
+   {
+    "termino": "ZILLI AL 9009",
+    "pico": 9,
+    "horas": 17,
+    "ahora": {
+     "cuando": "17/08 13:16",
+     "puesto": 37
+    }
+   }
+  ],
+  "chile": [
+   {
+    "termino": "LUANA AL 9009",
+    "pico": 23,
+    "horas": 12,
+    "ahora": {
+     "cuando": "17/08 17:48",
+     "puesto": 25
+    }
+   },
+   {
+    "termino": "TAMARA AL 9009",
+    "pico": 49,
+    "horas": 1,
+    "ahora": {
+     "cuando": "17/08 14:21",
+     "puesto": 49
+    }
+   }
+  ],
+  "otros": [
+   {
+    "termino": "Tamara",
+    "pico": 3,
+    "horas": 18,
+    "ahora": {
+     "cuando": "17/08 13:16",
+     "puesto": 4
+    }
+   },
+   {
+    "termino": "MIÉRCOLES BODA SOLZIA",
+    "pico": 2,
+    "horas": 20,
+    "ahora": {
+     "cuando": "17/08 17:36",
+     "puesto": 4
+    }
+   },
+   {
+    "termino": "#GranHermano",
+    "pico": 14,
+    "horas": 2,
+    "ahora": {
+     "cuando": "17/08 03:48",
+     "puesto": 14
+    }
+   }
+  ],
+  "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona». Desde el domingo la placa es negativa, así que ahora pide que la echen. El jueves, con la placa todavía positiva, la misma fórmula pedía lo contrario.",
+  "el_vuelco": "El jueves la consigna número uno del país era «SOL AL 9009» y pedía salvarla. Hoy «SOL AL 9009» no existe: en su lugar hay una tendencia a favor de Sol en el segundo puesto. La número uno es «LUANA AL 9009» y pide echarla.",
   "fuente": "https://trends24.in/argentina/"
  },
  "medidas_sociales": {

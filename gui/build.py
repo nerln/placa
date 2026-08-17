@@ -243,6 +243,8 @@ def main():
     ramas = json.loads(ramas_p.read_text()) if ramas_p.exists() else None
     evo_p = ROOT / "data" / "evolucion.json"
     evo = json.loads(evo_p.read_text()) if evo_p.exists() else None
+    ap_p = ROOT / "data" / "apuesta.json"
+    apuesta = json.loads(ap_p.read_text()) if ap_p.exists() else None
     ult_p = ROOT / "data" / "ultimo.json"
     ultimo = json.loads(ult_p.read_text()) if ult_p.exists() else None
     ret_p = ROOT / "data" / "retro.json"
@@ -285,6 +287,7 @@ def main():
         "campana": campana,
         "retro": retro,
         "ultimo": ultimo,
+        "apuesta": apuesta,
         "actualidad": act,
         "historial_pronostico": corridas,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},

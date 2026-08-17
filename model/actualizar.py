@@ -96,6 +96,21 @@ def sacar_jugador(plantel, apodo, fecha, modo, detalle):
     return plantel
 
 
+def _proxima_gala(galas, a):
+    """El numero de la proxima gala de eliminacion.
+
+    Sale de la ultima gala JUGADA mas uno, no de sumarle uno a la placa vigente.
+    Sumandole uno a la vigente, refrescar la misma placa dos veces -- que es lo
+    que pasa cuando el voto positivo baja gente y hay que volver a cargarla --
+    inventaba una gala que no existio, y el registro de predicciones quedaba con
+    dos numeros distintos para la misma noche.
+    """
+    if a.gala:
+        return a.gala
+    jugadas = [g.get("gala") or 0 for g in galas.get("galas", [])]
+    return (max(jugadas) if jugadas else 0) + 1
+
+
 def main():
     ap = argparse.ArgumentParser(description="Incorpora una gala y recalcula el pronostico")
     ap.add_argument("--gala", type=int)
@@ -184,7 +199,7 @@ def main():
     if a.eliminado and not a.nueva_placa:
         vivos = [j["apodo"] for j in plantel["jugadores"]]
         galas["placa_vigente"] = {
-            "gala": (a.gala or galas["placa_vigente"]["gala"]) + 1,
+            "gala": _proxima_gala(galas, a),
             "fecha": a.fecha_proxima or "",
             "fecha_nominacion": a.fecha,
             "integrantes": [],
@@ -197,7 +212,7 @@ def main():
         vivos = [j["apodo"] for j in plantel["jugadores"]]
         nueva = [x for x in lista(a.nueva_placa) if x in vivos]
         galas["placa_vigente"] = {
-            "gala": (a.gala or galas["placa_vigente"]["gala"]) + 1,
+            "gala": _proxima_gala(galas, a),
             "fecha": a.fecha_proxima or "",
             "fecha_nominacion": a.fecha,
             "integrantes": nueva,

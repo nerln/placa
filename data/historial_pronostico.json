@@ -39,20 +39,104 @@
    "_fuente": "captura de la pagina publicada el 10/08/2026, antes de la gala"
   },
   {
-   "fecha": "2026-08-12",
+   "fecha": "2026-08-16",
    "galas_hasta": 28,
    "en_juego": 9,
    "p_gana": {
-    "Tamara": 0.195,
-    "Pincoya": 0.2031,
-    "Charlotte": 0.2063,
-    "Zilli": 0.1346,
-    "Luana": 0.1073,
-    "Yipio": 0.0735,
-    "Mariela": 0.0477,
-    "Majluf": 0.0265,
-    "Sol": 0.006
+    "Tamara": 0.1828,
+    "Pincoya": 0.2175,
+    "Charlotte": 0.1872,
+    "Zilli": 0.1266,
+    "Luana": 0.0963,
+    "Yipio": 0.0965,
+    "Mariela": 0.0522,
+    "Majluf": 0.0267,
+    "Sol": 0.0142
    }
   }
- ]
+ ],
+ "predicciones_gala": [
+  {
+   "gala": 29,
+   "fecha_gala": "2026-08-17",
+   "corrida": "2026-08-12",
+   "placa": [
+    "Sol",
+    "Tamara",
+    "Majluf",
+    "Charlotte",
+    "Luana",
+    "Yipio",
+    "Zilli"
+   ],
+   "p_sale": {
+    "Sol": 0.454925,
+    "Tamara": 0.062675,
+    "Majluf": 0.06389,
+    "Charlotte": 0.107595,
+    "Luana": 0.13885,
+    "Yipio": 0.108952,
+    "Zilli": 0.063113
+   },
+   "n_sims": 400000,
+   "_superada": "Escrita a las 18.44 del 17 de agosto, cuando la placa todavia figuraba de siete. A las 18.50 se confirmo que la emision del domingo habia bajado a Sol y a Yipio, y la prediccion se rehizo sobre la placa de cinco. Se conserva porque es lo que la cuenta decia en ese momento."
+  },
+  {
+   "gala": 29,
+   "fecha_gala": "2026-08-17",
+   "corrida": "2026-08-16",
+   "placa": [
+    "Tamara",
+    "Majluf",
+    "Charlotte",
+    "Luana",
+    "Zilli"
+   ],
+   "p_sale": {
+    "Tamara": 0.149055,
+    "Majluf": 0.156562,
+    "Charlotte": 0.237817,
+    "Luana": 0.304225,
+    "Zilli": 0.15234
+   },
+   "n_sims": 400000
+  }
+ ],
+ "_nota_predicciones": "Append-only, y a proposito: es la promesa que despues hay que puntuar. Cada entrada es la distribucion de quien se va que la pagina publicaba antes de esa gala. No se reescribe ninguna aunque la corrida siguiente diga otra cosa.",
+ "apuestas": [
+  {
+   "gala": 29,
+   "fecha_gala": "2026-08-17",
+   "corrida": "2026-08-16",
+   "escrita": "2026-08-17T19:10-03:00",
+   "placa": [
+    "Tamara",
+    "Majluf",
+    "Charlotte",
+    "Luana",
+    "Zilli"
+   ],
+   "p_sale": {
+    "Luana": 0.3304,
+    "Majluf": 0.303,
+    "Tamara": 0.1739,
+    "Charlotte": 0.1048,
+    "Zilli": 0.088
+   },
+   "supuestos": {
+    "peso_campana": 1.0,
+    "peso_imagen": 1.0,
+    "piso_sin_consigna": 0.52,
+    "piso_sin_imagen": 0.5
+   },
+   "modelo_decia": {
+    "Luana": 0.3042,
+    "Charlotte": 0.2378,
+    "Majluf": 0.1566,
+    "Zilli": 0.1523,
+    "Tamara": 0.1491
+   }
+  }
+ ],
+ "_nota_apuestas": "La prediccion declarada, que no es la del modelo. Se escribe antes de cada gala y no se reescribe nunca: la gracia es poder puntuar despues las dos por separado, la del modelo y esta. Cada entrada lleva la hora en que se escribio y los supuestos con que se armo."
 }

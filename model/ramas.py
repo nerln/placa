@@ -130,6 +130,48 @@ def _fecha_corrida():
     return max(fechas)
 
 
+def congelar_prediccion(salida, placa_vigente):
+    """Guarda la prediccion de eliminacion ANTES de que se juegue la gala.
+
+    EVALUACION.md puntua la pregunta «quien se va en cada gala» con Brier, y
+    solo cuenta lo que estaba publicado antes del hecho. Pero la distribucion
+    vivia unicamente en data/ramas.json, que cada corrida sobrescribe: despues
+    de la gala ya no habia con que puntuar. Esto la deja escrita en el registro
+    append-only, con fecha y con la placa que habia en ese momento.
+
+    Se guarda una entrada por corrida, no una por gala. Si una corrida repite
+    exactamente lo mismo que la anterior no se anota de nuevo, para que
+    reconstruir la web varias veces el mismo dia no ensucie el registro. Lo que
+    no se hace nunca es reescribir una entrada vieja: la gracia es justamente
+    que quede lo que se dijo, aunque despues cambie.
+    """
+    if not salida["hay_placa"]:
+        return
+    ph = ROOT / "data" / "historial_pronostico.json"
+    H = json.loads(ph.read_text())
+    reg = H.setdefault("predicciones_gala", [])
+    dist = {k: round(v["p_sale"], 6) for k, v in salida["ramas"].items()}
+    entrada = {
+        "gala": placa_vigente.get("gala"),
+        "fecha_gala": placa_vigente.get("fecha"),
+        "corrida": salida["generado"],
+        "placa": salida["placa"],
+        "p_sale": dist,
+        "n_sims": salida["n_sims"],
+    }
+    if reg and all(reg[-1].get(k) == entrada[k] for k in ("gala", "corrida", "p_sale")):
+        return
+    reg.append(entrada)
+    H.setdefault("_nota_predicciones", (
+        "Append-only, y a proposito: es la promesa que despues hay que puntuar. "
+        "Cada entrada es la distribucion de quien se va que la pagina publicaba "
+        "antes de esa gala. No se reescribe ninguna aunque la corrida siguiente "
+        "diga otra cosa."))
+    ph.write_text(json.dumps(H, ensure_ascii=False, indent=1))
+    print(f"registrada la prediccion de la gala {entrada['gala']} "
+          f"({len(reg)} en el registro)")
+
+
 def main():
     cfg, mu, se, omega, var_true, nobs = fm.escala_rechazo()
     placa28, m28, s28, *_ = fm.estado_28(mu, se, omega, cfg)
@@ -195,6 +237,7 @@ def main():
                  "probabilidad devuelven exactamente el caso base."),
     }
     (ROOT / "data" / "ramas.json").write_text(json.dumps(salida, ensure_ascii=False))
+    congelar_prediccion(salida, cfg.get("placa_vigente") or {})
 
     print(f"\n{'quien sale':<12} {'prob':>7} {'n':>8}   quien mas gana con esa salida")
     for nombre in sorted(ramas, key=lambda x: -ramas[x]["p_sale"]):
