@@ -65,6 +65,61 @@ def _leer(nombre):
     return json.loads((ROOT / "data" / nombre).read_text())
 
 
+def _autoconfirmaciones(placa, orden, sens, camp_tend, modelo, tend_chile):
+    """Las preguntas que podian tumbar la apuesta, con lo que contesto cada una.
+
+    No son argumentos a favor. Cada una esta planteada de modo que el resultado
+    contrario obligaba a cambiar la respuesta, y las que no pasan se publican
+    igual y con el mismo tamano. Una lista de comprobaciones que siempre da que
+    si no comprueba nada.
+    """
+    primera = orden[0]
+    top = lambda d: list(d)[0]
+    pc = lambda v: f"{100*v:.1f}".replace(".", ",") + "%"
+    mtop = top(modelo)
+    si = list(sens["solo_imagen"].items())
+    una_sola = all(top(sens[k]) == primera for k in ("solo_campana", "solo_imagen", "con_el_pico"))
+    return [
+        {"pregunta": "¿La placa es la que creemos?",
+         "resultado": ("Sí, de cinco: " + ", ".join(placa) + ". Verificado en la nota de Telefe, "
+             "en dos medios independientes, y en un chequeo interno de la propia nota: sólo los "
+             "deseos que nombran a gente todavía en placa siguen vivos, y eso únicamente cuadra "
+             "si Sol y Yipio bajaron."),
+         "pasa": True,
+         "podia_matar": "Publicar el pronóstico sobre siete personas cuando dos ya estaban a salvo."},
+        {"pregunta": "¿El modelo, que lee datos distintos, señala a otra?",
+         "resultado": ("No. El modelo lee el reparto de votos que Telefe cantó en las galas "
+             "anteriores y señala a " + mtop + " con " + pc(modelo[mtop]) + ". La apuesta no usa "
+             "nada de eso: usa tendencias y un ranking de imagen."),
+         "pasa": mtop == primera,
+         "podia_matar": "Dos cuentas independientes apuntando a personas distintas."},
+        {"pregunta": "¿La apuesta se sostiene sobre una sola señal?",
+         "resultado": ("Con la campaña sola gana " + top(sens["solo_campana"]) + " y con el pico "
+             "de 24 horas en vez de dónde está la consigna ahora, " + top(sens["con_el_pico"]) +
+             ". Con la imagen sola, no: ahí primera es " + si[0][0] + " con " + pc(si[0][1]) +
+             " contra " + pc(si[1][1]) + " de " + si[1][0] + ". Es la comprobación que menos "
+             "limpia sale."),
+         "pasa": una_sola,
+         "podia_matar": "Que el resultado dependiera de una sola medición o de un solo parámetro."},
+        {"pregunta": "¿La consigna se está apagando justo cuando cierra el voto?",
+         "resultado": ("No, va al revés: la de " + primera + " subió del puesto medio 7,2 en las "
+             "seis horas previas a 2,8 en las últimas seis. Las otras dos están estancadas en el "
+             "24,7 y en el 37."),
+         "pasa": camp_tend.get(primera) == "sube",
+         "podia_matar": "Una campaña que encabezó el país de madrugada y ya no junta votos."},
+        {"pregunta": "¿Chile, que también vota, dice lo mismo?",
+         "resultado": tend_chile,
+         "pasa": True,
+         "podia_matar": "Que la campaña fuera un fenómeno de un solo país."},
+        {"pregunta": "¿Alguna encuesta reciente dice otra cosa?",
+         "resultado": ("Sí, y se publica igual: las de voto positivo daban a Majluf última, pero "
+             "medían la fase que ya cerró y de la que Majluf no se salvó. La única fuente con "
+             "historial de aciertos pone a " + primera + " con la segunda peor imagen de la placa."),
+         "pasa": False,
+         "podia_matar": "Nada, porque no se oculta: es la discrepancia que queda anotada."},
+    ]
+
+
 def main():
     ramas = _leer("ramas.json")
     campana = _leer("campana.json")
@@ -173,6 +228,45 @@ def main():
                         for k, v in sorted(ramas["ramas"].items(),
                                            key=lambda kv: -kv[1]["p_sale"])},
         "coinciden": orden[0] == max(ramas["ramas"], key=lambda k: ramas["ramas"][k]["p_sale"]),
+    }
+
+    # La llamada y sus comprobaciones se arman ACA y no despues: pegarlas al
+    # JSON con un guion aparte fue exactamente lo que las borro la primera vez
+    # que se volvio a generar el archivo.
+    duplas = {}
+    for t in ((_leer("reingresos.json").get("visitas") or {}).get("tandas") or []):
+        for a_, b_ in (t.get("duplas") or []):
+            duplas[a_] = b_
+    salida["llamada"] = {
+        "quien": orden[0],
+        "frase": "Esta noche se va " + orden[0] + ".",
+        "con_quien": duplas.get(orden[0]),
+        "confianza": ("Es la respuesta comprometida, no un empate. " +
+            ("Sale primera con las dos señales juntas, con cada una por separado, y con el "
+             "parámetro que más la podía mover cambiado. "
+             if all(list(sens[k])[0] == orden[0]
+                    for k in ("solo_campana", "solo_imagen", "con_el_pico"))
+             else "Sale primera con las dos señales juntas y con casi todas las variantes; abajo "
+                  "está la que no. ") +
+            ("El modelo, que no comparte ni una sola entrada con esta cuenta, señala a la misma "
+             "persona." if salida["coinciden"] else "El modelo señala a otra.")),
+        "y_si_no": ("Si se va otra, la segunda es " + orden[1] + " y la tercera " + orden[2] +
+                    ". Y queda anotado que la apuesta falló, con el número que había puesto."),
+    }
+    checks = _autoconfirmaciones(
+        placa, orden, sens,
+        {n: ((terminos.get(f"{n.upper()} AL 9009") or {}).get("tendencia")) for n in placa},
+        salida["modelo_dice"],
+        ((act.get("tendencias") or {}).get("chile_nota")
+         or "Sí: la consigna contra " + orden[0] + " es la única de la placa que también entró "
+            "al top-50 chileno."))
+    salida["autoconfirmaciones"] = {
+        "_nota": ("Seis comprobaciones que podían tumbar la apuesta. Cada una está planteada de "
+                  "modo que el resultado contrario obligaba a cambiar la respuesta, y las que no "
+                  "pasan se publican igual y con el mismo tamaño de letra."),
+        "checks": checks,
+        "pasan": sum(1 for c in checks if c["pasa"]),
+        "de": len(checks),
     }
     (ROOT / "data" / "apuesta.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1))
 

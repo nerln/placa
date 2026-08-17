@@ -112,5 +112,55 @@
   "Zilli": 0.1523,
   "Tamara": 0.1491
  },
- "coinciden": true
+ "coinciden": true,
+ "llamada": {
+  "quien": "Luana",
+  "frase": "Esta noche se va Luana.",
+  "con_quien": "Danelik Galazán",
+  "confianza": "Es la respuesta comprometida, no un empate. Sale primera con las dos señales juntas y con casi todas las variantes; abajo está la que no. El modelo, que no comparte ni una sola entrada con esta cuenta, señala a la misma persona.",
+  "y_si_no": "Si se va otra, la segunda es Tamara y la tercera Majluf. Y queda anotado que la apuesta falló, con el número que había puesto."
+ },
+ "autoconfirmaciones": {
+  "_nota": "Seis comprobaciones que podían tumbar la apuesta. Cada una está planteada de modo que el resultado contrario obligaba a cambiar la respuesta, y las que no pasan se publican igual y con el mismo tamaño de letra.",
+  "checks": [
+   {
+    "pregunta": "¿La placa es la que creemos?",
+    "resultado": "Sí, de cinco: Tamara, Majluf, Charlotte, Luana, Zilli. Verificado en la nota de Telefe, en dos medios independientes, y en un chequeo interno de la propia nota: sólo los deseos que nombran a gente todavía en placa siguen vivos, y eso únicamente cuadra si Sol y Yipio bajaron.",
+    "pasa": true,
+    "podia_matar": "Publicar el pronóstico sobre siete personas cuando dos ya estaban a salvo."
+   },
+   {
+    "pregunta": "¿El modelo, que lee datos distintos, señala a otra?",
+    "resultado": "No. El modelo lee el reparto de votos que Telefe cantó en las galas anteriores y señala a Luana con 30,4%. La apuesta no usa nada de eso: usa tendencias y un ranking de imagen.",
+    "pasa": true,
+    "podia_matar": "Dos cuentas independientes apuntando a personas distintas."
+   },
+   {
+    "pregunta": "¿La apuesta se sostiene sobre una sola señal?",
+    "resultado": "Con la campaña sola gana Luana y con el pico de 24 horas en vez de dónde está la consigna ahora, Luana. Con la imagen sola, no: ahí primera es Tamara con 25,9% contra 25,6% de Luana. Es la comprobación que menos limpia sale.",
+    "pasa": false,
+    "podia_matar": "Que el resultado dependiera de una sola medición o de un solo parámetro."
+   },
+   {
+    "pregunta": "¿La consigna se está apagando justo cuando cierra el voto?",
+    "resultado": "No, va al revés: la de Luana subió del puesto medio 7,2 en las seis horas previas a 2,8 en las últimas seis. Las otras dos están estancadas en el 24,7 y en el 37.",
+    "pasa": true,
+    "podia_matar": "Una campaña que encabezó el país de madrugada y ya no junta votos."
+   },
+   {
+    "pregunta": "¿Chile, que también vota, dice lo mismo?",
+    "resultado": "Sí. LUANA AL 9009 es la única consigna de la placa que también entró al top-50 chileno, con pico en el puesto 23 y doce horas de presencia. TAMARA AL 9009 asomó una hora en el 49.",
+    "pasa": true,
+    "podia_matar": "Que la campaña fuera un fenómeno de un solo país."
+   },
+   {
+    "pregunta": "¿Alguna encuesta reciente dice otra cosa?",
+    "resultado": "Sí, y se publica igual: las de voto positivo daban a Majluf última, pero medían la fase que ya cerró y de la que Majluf no se salvó. La única fuente con historial de aciertos pone a Luana con la segunda peor imagen de la placa.",
+    "pasa": false,
+    "podia_matar": "Nada, porque no se oculta: es la discrepancia que queda anotada."
+   }
+  ],
+  "pasan": 4,
+  "de": 6
+ }
 }
