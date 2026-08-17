@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Pincoya 21,8% · Charlotte 18,7% · Tamara 18,3%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-16T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Pincoya 21,8% · Charlotte 18,7% · Tamara 18,3%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-16","version":"e40474bec3a41ddc","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=e40474bec3a41ddc"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Pincoya 21,8% · Charlotte 18,7% · Tamara 18,3%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-16T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Pincoya 21,8% · Charlotte 18,7% · Tamara 18,3%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-16","version":"260fc654035f8da7","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=260fc654035f8da7"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -117,6 +117,23 @@
   --oro-1:#6E5411;
   --oro-2:#A8842A;
   --oro-3:#B08F3E;
+
+
+/* ---------- el final de los párrafos ----------
+   Medido: la bajada de «Quién se va» terminaba con una última línea del 19% de
+   la medida, y la de «Quién puede volver» con una del 5%. Una línea suelta con
+   dos palabras hace que el párrafo parezca cortado antes de tiempo, sobre todo
+   al lado de un bloque ancho como la placa.
+
+   `balance` reparte las líneas parejas y sirve para las bajadas, que son
+   cortas; los navegadores lo ignoran solos cuando el bloque pasa de unas pocas
+   líneas. `pretty` no reparte pero evita que la última quede huérfana, y es lo
+   que corresponde para la prosa larga. Si el navegador no conoce ninguna de las
+   dos, no pasa nada: cae en el ajuste de siempre. */
+.sub, .h1-sub, .tit, h3{text-wrap:balance}
+section > p, .tarjeta > p, .respuesta, .camino-pie, .thist-pie, .tw-nota,
+.ultimo-item .det, .ap-sup div, .cotejo-pies div, .fase .det,
+.limpia li, .puerta p{text-wrap:pretty}
 
 /* La medida del texto. Dos anchos y no diez: uno para la lectura corrida y uno
    para las notas. Elegirlos bloque a bloque daba un borde derecho dentado, con
@@ -3450,8 +3467,16 @@ function contar(nodo){
   const usos = R.mecanismos.reduce((a, m) => a + m.veces, 0);
   const quienes = R.mecanismos.flatMap(m => m.quien).filter(n => D.jugadores.includes(n));
 
+  // Los días que faltan se cuentan, no se escriben: escritos a mano envejecen
+  // en silencio y esta frase ya se había quedado vieja una vez.
+  const HIST = R.historia;
+  const actualT = HIST && HIST.temporadas.find(t => t.actual);
+  const faltan = actualT ? actualT.dias - HIST.hoy.dia : null;
   $("#v-sub").textContent =
-    "Quedan veinticinco días y la pregunta es si el plantel de nueve puede cambiar de tamaño. " +
+    (faltan && faltan > 0
+      ? "Quedan unos " + faltan + " días de temporada y la pregunta es si el plantel de " +
+        D.jugadores.length + " puede cambiar de tamaño. "
+      : "La pregunta es si el plantel de " + D.jugadores.length + " puede cambiar de tamaño. ") +
     "Las dos vías por las que alguien vuelve a competir tienen fechas, dueños y un historial de " +
     "tres temporadas que dice cuándo se usan.";
 
