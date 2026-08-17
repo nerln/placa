@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Pincoya 21,8% · Charlotte 18,7% · Tamara 18,3%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-16T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Pincoya 21,8% · Charlotte 18,7% · Tamara 18,3%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-16","version":"befbe1a954d393f6","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=befbe1a954d393f6"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Pincoya 21,8% · Charlotte 18,7% · Tamara 18,3%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-16T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 9 galas con el reparto de votos publicado. Hoy: Pincoya 21,8% · Charlotte 18,7% · Tamara 18,3%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-16","version":"f190130cec3970b5","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=f190130cec3970b5"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -672,6 +672,32 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    Las cinco salidas posibles con lo que cada una le hace a la carrera por el
    premio, y aparte los canales que el modelo no simula. Que algo no se simule
    no es motivo para no nombrarlo: es motivo para nombrarlo mejor. */
+
+/* ---------- lo que se escribe, no lo que se grita ----------
+   El termometro cuenta consignas; esto lee comentarios. Las barras van a los
+   dos lados desde el centro porque un saldo tiene signo, y quien no se pudo
+   clasificar se muestra aparte en vez de sumarse al medio. */
+.sen-fila{display:grid; grid-template-columns:7rem 1fr 1fr auto; align-items:center;
+  gap:6px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
+.sen-fila:first-of-type{border-top:0}
+.sen-fila .n{font-family:"Archivo",sans-serif; font-weight:700}
+.sen-fila .izq, .sen-fila .der{height:9px; background:var(--sup3); border-radius:5px;
+  position:relative; overflow:hidden}
+.sen-fila .izq i{position:absolute; right:0; top:0; bottom:0; background:var(--apoyo);
+  border-radius:5px}
+.sen-fila .der i{position:absolute; left:0; top:0; bottom:0; background:var(--rechazo);
+  border-radius:5px}
+.sen-fila .c{font-variant-numeric:tabular-nums; color:var(--tinta2); font-size:var(--t-xs);
+  white-space:nowrap; min-width:8.5rem; text-align:right}
+.sen-cab{display:grid; grid-template-columns:7rem 1fr 1fr auto; gap:6px;
+  font-size:var(--t-xs); color:var(--tinta3); font-family:"Archivo",sans-serif;
+  font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px}
+.sen-cab .a{text-align:right}
+.sen-cab .b{text-align:left}
+.sen-cab .z{min-width:8.5rem}
+.sen-ej{font-size:var(--t-xs); color:var(--tinta2); margin:3px 0 0; line-height:1.5;
+  padding-left:10px; border-left:2px solid var(--linea)}
+#sentimiento{max-width:calc(var(--medida) + 32px)}
 .esc-salida{display:grid; grid-template-columns:8rem 1fr; gap:12px; padding:10px 0;
   border-top:1px solid var(--linea2)}
 .esc-salida:first-of-type{border-top:0}
@@ -785,6 +811,32 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    Las cinco salidas posibles con lo que cada una le hace a la carrera por el
    premio, y aparte los canales que el modelo no simula. Que algo no se simule
    no es motivo para no nombrarlo: es motivo para nombrarlo mejor. */
+
+/* ---------- lo que se escribe, no lo que se grita ----------
+   El termometro cuenta consignas; esto lee comentarios. Las barras van a los
+   dos lados desde el centro porque un saldo tiene signo, y quien no se pudo
+   clasificar se muestra aparte en vez de sumarse al medio. */
+.sen-fila{display:grid; grid-template-columns:7rem 1fr 1fr auto; align-items:center;
+  gap:6px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
+.sen-fila:first-of-type{border-top:0}
+.sen-fila .n{font-family:"Archivo",sans-serif; font-weight:700}
+.sen-fila .izq, .sen-fila .der{height:9px; background:var(--sup3); border-radius:5px;
+  position:relative; overflow:hidden}
+.sen-fila .izq i{position:absolute; right:0; top:0; bottom:0; background:var(--apoyo);
+  border-radius:5px}
+.sen-fila .der i{position:absolute; left:0; top:0; bottom:0; background:var(--rechazo);
+  border-radius:5px}
+.sen-fila .c{font-variant-numeric:tabular-nums; color:var(--tinta2); font-size:var(--t-xs);
+  white-space:nowrap; min-width:8.5rem; text-align:right}
+.sen-cab{display:grid; grid-template-columns:7rem 1fr 1fr auto; gap:6px;
+  font-size:var(--t-xs); color:var(--tinta3); font-family:"Archivo",sans-serif;
+  font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px}
+.sen-cab .a{text-align:right}
+.sen-cab .b{text-align:left}
+.sen-cab .z{min-width:8.5rem}
+.sen-ej{font-size:var(--t-xs); color:var(--tinta2); margin:3px 0 0; line-height:1.5;
+  padding-left:10px; border-left:2px solid var(--linea)}
+#sentimiento{max-width:calc(var(--medida) + 32px)}
 .esc-salida{display:grid; grid-template-columns:8rem 1fr; gap:12px; padding:10px 0;
   border-top:1px solid var(--linea2)}
 .esc-salida:first-of-type{border-top:0}
@@ -1532,6 +1584,8 @@ footer p{max-width:var(--medida)}
 
   <section id="apuesta"></section>
   <div class="tw-hueco" data-post="apuesta" style="margin-top:16px"></div>
+
+  <div class="tarjeta" id="sentimiento" style="margin-top:16px"></div>
 
   <div class="tarjeta" id="escenarios" style="margin-top:16px"></div>
 
@@ -3192,6 +3246,65 @@ function contar(nodo){
       pct(Object.values(A.modelo_dice)[0]) + "</b>. Las dos quedan anotadas en " +
       "<a href='datos.json'>datos.json</a> y en el registro de predicciones, y las dos se " +
       "puntúan cuando se sepa el resultado.</div>";
+})();
+
+/* ---------- lo que se escribe, no lo que se grita ----------
+   El termometro de mas arriba cuenta consignas en tendencias: mide cuanto se
+   grita un nombre. Esto lee lo que la gente escribe debajo de los videos del
+   propio programa, que es el unico corpus de reacciones al que se puede llegar
+   sin credenciales. Se probaron y se descartaron las respuestas del posteo
+   oficial, los comentarios de Instagram y Reddit; los tres estan nombrados en
+   los datos con el motivo.
+
+   No entra a la apuesta, y no por prudencia: con treinta y un comentarios con
+   signo, ponderarlo seria inventar precision. Se publica al lado, con su n y
+   con lo que no cuadra. */
+(function(){
+  const S = D.sentimiento, caja = $("#sentimiento");
+  if(!caja) return;
+  const placa = (D.placa_vigente && D.placa_vigente.integrantes) || [];
+  if(!S || !S.por_jugadora || !placa.length){ caja.remove(); return; }
+
+  const filas = placa.map(n => ({n, ...S.por_jugadora[n]}))
+    .map(f => ({...f, saldo: f.contra - f.favor}));
+  const tope = Math.max(1, ...filas.map(f => Math.max(f.contra, f.favor)));
+  filas.sort((a, b) => b.saldo - a.saldo);
+
+  const mas = filas[0], menos = filas[filas.length - 1];
+
+  caja.innerHTML =
+    "<div class='eyebrow'>Lo que se escribe</div>" +
+    "<h3 style='margin:0 0 6px'>El sentimiento en los comentarios, y en qué no coincide</h3>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 12px'>" +
+      "De <b>" + S.total + "</b> comentarios recogidos, <b>" + S.nombran_a_alguien +
+      "</b> nombran a alguna de la placa y <b>" + S.con_signo + "</b> traen además una marca de " +
+      "signo. Los otros quedan sin clasificar, que no es lo mismo que indiferentes." +
+    "</p>" +
+    "<div class='sen-cab'><span></span><span class='a'>a favor</span>" +
+      "<span class='b'>en contra</span><span class='z'></span></div>" +
+    filas.map(f =>
+      "<div class='sen-fila'>" +
+        "<span class='n'>" + f.n + "</span>" +
+        "<span class='izq'><i style='width:" + (100 * f.favor / tope) + "%'></i></span>" +
+        "<span class='der'><i style='width:" + (100 * f.contra / tope) + "%'></i></span>" +
+        "<span class='c'>" + f.contra + " contra · " + f.favor + " a favor" +
+          (f.sin_signo ? " · " + f.sin_signo + " sin signo" : "") + "</span>" +
+      "</div>").join("") +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" +
+      "El saldo más cargado en contra es el de <b>" + mas.n + "</b>, y el más a favor el de <b>" +
+      menos.n + "</b>. En volumen crudo, la que más comentarios en contra junta es <b>" +
+      filas.slice().sort((a, b) => b.contra - a.contra)[0].n + "</b>." +
+    "</p>" +
+    ((S.ejemplos && (S.ejemplos[mas.n] || []).length)
+      ? "<p class='sen-ej'>" + S.ejemplos[mas.n].slice(0, 2)
+          .map(e => "«" + e.texto + "»").join(" · ") + "</p>"
+      : "") +
+    "<p class='tw-nota' style='margin:12px 0 0'><b>Cómo se clasifica.</b> " + S.metodo +
+      " <b>Qué mide y qué no.</b> " + S.limites +
+      " No entra a la apuesta: con " + S.con_signo + " comentarios con signo, ponderarlo sería " +
+      "inventar precisión.</p>" +
+    "<p class='tw-nota' style='margin:8px 0 0'><b>Lo que no se pudo leer:</b> " +
+      (S.no_alcanzables || []).join("; ") + ".</p>";
 })();
 
 /* ---------- todo lo que puede pasar esta noche ----------
