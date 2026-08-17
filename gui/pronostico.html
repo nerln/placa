@@ -615,6 +615,26 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
   background:var(--sup2)}
 .ap-sup div{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
 .ap-sup b{font-family:"Archivo",sans-serif; color:var(--tinta)}
+
+/* ---------- la llamada y sus comprobaciones ----------
+   Una frase comprometida arriba, y debajo las seis preguntas que podían
+   tumbarla. Las que no pasan se publican igual y con el mismo tamaño: una lista
+   de comprobaciones que siempre da que sí no comprueba nada. */
+.ap-llamada{margin:14px 0 0; padding:14px 15px; border-radius:var(--r-sm);
+  background:var(--sup2); border-left:3px solid var(--oro-3)}
+.ap-llamada .frase{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg);
+  line-height:1.2; margin:0 0 6px}
+.ap-llamada p{font-size:var(--t-sm); color:var(--tinta2); margin:6px 0 0; line-height:1.55}
+.ac{margin:14px 0 0}
+.ac-item{padding:10px 0; border-top:1px solid var(--linea2)}
+.ac-item:first-of-type{border-top:0}
+.ac-item .p{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.ac-item .marca{display:inline-block; font-size:var(--t-xs); font-weight:700; margin-right:8px;
+  padding:1px 7px; border-radius:var(--r-sm); border:1px solid var(--linea)}
+.ac-item.si .marca{color:var(--apoyo-txt); border-color:var(--apoyo)}
+.ac-item.no .marca{color:var(--rechazo-txt); border-color:var(--rechazo)}
+.ac-item .r{font-size:var(--t-sm); color:var(--tinta2); margin:5px 0 0; line-height:1.55}
+.ac-item .m{font-size:var(--t-xs); color:var(--tinta3); margin:4px 0 0}
 .ap-sello{margin:14px 0 0; padding:10px 12px; border:1px dashed var(--linea);
   border-radius:var(--r-sm); font-size:var(--t-xs); color:var(--tinta2); line-height:1.6}
 .ap-sello code{font-size:.95em}
@@ -708,6 +728,26 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
   background:var(--sup2)}
 .ap-sup div{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
 .ap-sup b{font-family:"Archivo",sans-serif; color:var(--tinta)}
+
+/* ---------- la llamada y sus comprobaciones ----------
+   Una frase comprometida arriba, y debajo las seis preguntas que podían
+   tumbarla. Las que no pasan se publican igual y con el mismo tamaño: una lista
+   de comprobaciones que siempre da que sí no comprueba nada. */
+.ap-llamada{margin:14px 0 0; padding:14px 15px; border-radius:var(--r-sm);
+  background:var(--sup2); border-left:3px solid var(--oro-3)}
+.ap-llamada .frase{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg);
+  line-height:1.2; margin:0 0 6px}
+.ap-llamada p{font-size:var(--t-sm); color:var(--tinta2); margin:6px 0 0; line-height:1.55}
+.ac{margin:14px 0 0}
+.ac-item{padding:10px 0; border-top:1px solid var(--linea2)}
+.ac-item:first-of-type{border-top:0}
+.ac-item .p{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.ac-item .marca{display:inline-block; font-size:var(--t-xs); font-weight:700; margin-right:8px;
+  padding:1px 7px; border-radius:var(--r-sm); border:1px solid var(--linea)}
+.ac-item.si .marca{color:var(--apoyo-txt); border-color:var(--apoyo)}
+.ac-item.no .marca{color:var(--rechazo-txt); border-color:var(--rechazo)}
+.ac-item .r{font-size:var(--t-sm); color:var(--tinta2); margin:5px 0 0; line-height:1.55}
+.ac-item .m{font-size:var(--t-xs); color:var(--tinta3); margin:4px 0 0}
 .ap-sello{margin:14px 0 0; padding:10px 12px; border:1px dashed var(--linea);
   border-radius:var(--r-sm); font-size:var(--t-xs); color:var(--tinta2); line-height:1.6}
 .ap-sello code{font-size:.95em}
@@ -3095,6 +3135,25 @@ function contar(nodo){
         A.placa.length + " y no de " + (A.placa.length + B.quienes.length) + ".</div>" : "") +
     "</div>" +
 
+    (A.llamada
+      ? "<div class='ap-llamada'><p class='frase'>" + A.llamada.frase + "</p>" +
+        "<p>" + A.llamada.confianza +
+        (A.llamada.con_quien ? " Y se lleva a <b>" + A.llamada.con_quien +
+          "</b>, porque la eliminación es en dupla." : "") + "</p>" +
+        "<p>" + A.llamada.y_si_no + "</p></div>"
+      : "") +
+    (A.autoconfirmaciones
+      ? "<div class='ac'><h3 style='margin:18px 0 4px'>Seis preguntas que podían tumbarla</h3>" +
+        "<p class='tw-nota' style='margin:0 0 8px'>" + A.autoconfirmaciones._nota +
+        " Pasan " + A.autoconfirmaciones.pasan + " de " + A.autoconfirmaciones.de + ".</p>" +
+        A.autoconfirmaciones.checks.map(c =>
+          "<div class='ac-item " + (c.pasa ? "si" : "no") + "'>" +
+            "<span class='marca'>" + (c.pasa ? "pasa" : "no pasa") + "</span>" +
+            "<span class='p'>" + c.pregunta + "</span>" +
+            "<p class='r'>" + c.resultado + "</p>" +
+            "<p class='m'>Si hubiera salido al revés: " + c.podia_matar.toLowerCase() + "</p>" +
+          "</div>").join("") + "</div>"
+      : "") +
     "<div class='ap-sello'>Escrito el <b>17 de agosto de 2026</b> antes de la gala de las 22.15, " +
       "sobre la corrida <code>" + (D.corrida || "") + "</code>. El modelo de esta página dice " +
       "para la misma pregunta: <b>" + modeloTop + " " +
