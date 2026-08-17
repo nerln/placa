@@ -596,6 +596,27 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .ap-sello{margin:14px 0 0; padding:10px 12px; border:1px dashed var(--linea);
   border-radius:var(--r-sm); font-size:var(--t-xs); color:var(--tinta2); line-height:1.6}
 .ap-sello code{font-size:.95em}
+
+/* ---------- todo lo que puede pasar ----------
+   Las cinco salidas posibles con lo que cada una le hace a la carrera por el
+   premio, y aparte los canales que el modelo no simula. Que algo no se simule
+   no es motivo para no nombrarlo: es motivo para nombrarlo mejor. */
+.esc-salida{display:grid; grid-template-columns:8rem 1fr; gap:12px; padding:10px 0;
+  border-top:1px solid var(--linea2)}
+.esc-salida:first-of-type{border-top:0}
+.esc-salida .quien{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.esc-salida .quien small{display:block; font-weight:400; color:var(--tinta3);
+  font-size:var(--t-xs); margin-top:2px; font-family:inherit}
+.esc-salida .pas{font-size:var(--t-sm); color:var(--tinta2); line-height:1.55; margin:0}
+.esc-salida .pas b{color:var(--tinta)}
+.esc-fuera{padding:9px 0; border-top:1px solid var(--linea2)}
+.esc-fuera:first-of-type{border-top:0}
+.esc-fuera .q{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.esc-fuera .e{font-size:var(--t-xs); font-weight:700; margin-left:7px; padding:2px 7px;
+  border-radius:var(--r-sm); border:1px solid var(--linea); color:var(--tinta3);
+  white-space:nowrap}
+.esc-fuera p{font-size:var(--t-sm); color:var(--tinta2); margin:4px 0 0; line-height:1.55}
+#escenarios{max-width:calc(var(--medida) + 32px)}
 .cotejo{width:100%; border-collapse:collapse; font-size:var(--t-sm)}
 .cotejo th{font-family:"Archivo",sans-serif; font-size:var(--t-xs); text-transform:uppercase;
   letter-spacing:.06em; color:var(--tinta3); text-align:right; padding:0 0 8px; font-weight:700;
@@ -668,6 +689,27 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .ap-sello{margin:14px 0 0; padding:10px 12px; border:1px dashed var(--linea);
   border-radius:var(--r-sm); font-size:var(--t-xs); color:var(--tinta2); line-height:1.6}
 .ap-sello code{font-size:.95em}
+
+/* ---------- todo lo que puede pasar ----------
+   Las cinco salidas posibles con lo que cada una le hace a la carrera por el
+   premio, y aparte los canales que el modelo no simula. Que algo no se simule
+   no es motivo para no nombrarlo: es motivo para nombrarlo mejor. */
+.esc-salida{display:grid; grid-template-columns:8rem 1fr; gap:12px; padding:10px 0;
+  border-top:1px solid var(--linea2)}
+.esc-salida:first-of-type{border-top:0}
+.esc-salida .quien{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.esc-salida .quien small{display:block; font-weight:400; color:var(--tinta3);
+  font-size:var(--t-xs); margin-top:2px; font-family:inherit}
+.esc-salida .pas{font-size:var(--t-sm); color:var(--tinta2); line-height:1.55; margin:0}
+.esc-salida .pas b{color:var(--tinta)}
+.esc-fuera{padding:9px 0; border-top:1px solid var(--linea2)}
+.esc-fuera:first-of-type{border-top:0}
+.esc-fuera .q{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.esc-fuera .e{font-size:var(--t-xs); font-weight:700; margin-left:7px; padding:2px 7px;
+  border-radius:var(--r-sm); border:1px solid var(--linea); color:var(--tinta3);
+  white-space:nowrap}
+.esc-fuera p{font-size:var(--t-sm); color:var(--tinta2); margin:4px 0 0; line-height:1.55}
+#escenarios{max-width:calc(var(--medida) + 32px)}
 .cotejo{width:100%; border-collapse:collapse; font-size:var(--t-sm)}
 .cotejo th{font-family:"Archivo",sans-serif; font-size:var(--t-xs); text-transform:uppercase;
   letter-spacing:.06em; color:var(--tinta3); text-align:right; padding:0 0 8px; font-weight:700;
@@ -1370,6 +1412,8 @@ footer p{max-width:var(--medida)}
 
   <section id="apuesta"></section>
   <div class="tw-hueco" data-post="apuesta" style="margin-top:16px"></div>
+
+  <div class="tarjeta" id="escenarios" style="margin-top:16px"></div>
 
   <div class="tarjeta" id="cotejo" style="margin-top:16px"></div>
   <div class="tw-hueco" data-post="cotejo" style="margin-top:16px; max-width:550px"></div>
@@ -2978,18 +3022,21 @@ function contar(nodo){
 
     "<div class='ap-sup'>" +
       "<div><b>De dónde sale.</b> " + A.que_es + "</div>" +
-      "<div><b>La campaña.</b> Consignas con signo en las tendencias de la Argentina, ventana " +
-        (E.ventana_campana || "") + ". " +
-        orden.filter(n => E.campana_medida[n] != null)
-             .map(n => n + " " + E.campana_medida[n].toFixed(2).replace(".", ",")).join(", ") +
+      "<div><b>La campaña, y dónde está ahora.</b> " + (E.momento_nota || "") + " " +
+        orden.filter(n => E.campana_ahora[n] != null)
+             .map(n => "<b>" + n + "</b> está en el puesto " +
+                  String(E.campana_ahora[n]).replace(".", ",") +
+                  (E.campana_tendencia[n] ? " y " + E.campana_tendencia[n] : "")).join("; ") +
         ". Quien no tiene consigna no vale cero sino " +
         String(S.piso_sin_consigna).replace(".", ",") + ", porque no tener consigna es no haber " +
         "sido medida.</div>" +
       "<div><b>La imagen.</b> El ranking de " + (E.imagen_quien || "") + " del " +
         FECHA_LARGA(E.imagen_fecha) + ". " + (E.imagen_historial || "") + ". Entra dada vuelta: " +
         "caer mal es lo que hace que a una la voten para afuera.</div>" +
-      "<div><b>Si se usa una sola.</b> Solo campaña: " + solo("solo_campana") +
-        ". Solo imagen: " + solo("solo_imagen") + ". " +
+      "<div><b>Si se usa una sola, o el pico en vez del momento.</b> Solo campaña: " +
+        solo("solo_campana") + ". Solo imagen: " + solo("solo_imagen") +
+        (A.sensibilidad.con_el_pico ? ". Con el pico de 24 horas en vez de dónde está ahora: " +
+          solo("con_el_pico") : "") + ". " +
         (Object.keys(A.sensibilidad.solo_campana)[0] === primera &&
          Object.keys(A.sensibilidad.solo_imagen)[0] === primera
           ? "Con cualquiera de las dos sola, " + primera + " sigue primera."
@@ -3006,6 +3053,63 @@ function contar(nodo){
       pct(Object.values(A.modelo_dice)[0]) + "</b>. Las dos quedan anotadas en " +
       "<a href='datos.json'>datos.json</a> y en el registro de predicciones, y las dos se " +
       "puntúan cuando se sepa el resultado.</div>";
+})();
+
+/* ---------- todo lo que puede pasar esta noche ----------
+   La pagina contesta "quien se va" y deja afuera el resto de la noche. Aca va
+   el resto: que le hace cada salida a la carrera por el premio, con quien se va
+   cada una -- la eliminacion es en dupla y eso no lo dice ninguna otra parte --
+   y los canales por los que se va gente sin votacion, que esta edicion uso
+   trece veces y el modelo no simula ninguno. Que algo no se simule no es motivo
+   para callarlo. */
+(function(){
+  const E = D.actualidad && D.actualidad.escenarios_gala, caja = $("#escenarios");
+  if(!caja) return;
+  const R = D.ramas && D.ramas.ramas, A = D.apuesta;
+  if(!E || !R){ caja.remove(); return; }
+
+  // Con quien se va cada una: sale de las duplas de la ultima tanda de visitas.
+  const tandas = ((D.reingresos || {}).visitas || {}).tandas || [];
+  const duplas = {};
+  ((tandas[tandas.length - 1] || {}).duplas || []).forEach(d => (duplas[d[0]] = d[1]));
+
+  const pct = v => (100 * v).toFixed(1).replace(".", ",") + "%";
+  const orden = Object.keys(R).sort((a, b) =>
+    ((A && A.p_sale[b]) || R[b].p_sale) - ((A && A.p_sale[a]) || R[a].p_sale));
+
+  const salidas = orden.map(n => {
+    const r = R[n], g = r.mas_gana || [];
+    const conQuien = duplas[n];
+    return "<div class='esc-salida'>" +
+      "<div class='quien'>Si se va " + n +
+        (conQuien ? "<small>se lleva a " + conQuien + "</small>" : "") + "</div>" +
+      "<p class='pas'>" +
+        (A ? "La apuesta le da <b>" + pct(A.p_sale[n]) + "</b> y el modelo <b>" +
+             pct(r.p_sale) + "</b>. " : "El modelo le da <b>" + pct(r.p_sale) + "</b>. ") +
+        (g.length
+          ? "Quien más gana con esa salida es <b>" + g[0].quien + "</b>, que pasa a " +
+            pct(r.p_gana[g[0].quien]) + " de ganar la edición" +
+            (g[1] ? ", seguida por " + g[1].quien + " con " + pct(r.p_gana[g[1].quien]) : "") + "."
+          : "") +
+      "</p></div>";
+  }).join("");
+
+  const fuera = (E.fuera_del_voto || []).map(f =>
+    "<div class='esc-fuera'><span class='q'>" + f.que + "</span>" +
+    "<span class='e'>" + f.estado + "</span>" +
+    "<p>" + f.detalle +
+      (f.fuente ? " <a href='" + f.fuente + "' target='_blank' rel='noopener nofollow'>fuente</a>."
+                : "") + "</p></div>").join("");
+
+  caja.innerHTML =
+    "<div class='eyebrow'>Todo lo que puede pasar</div>" +
+    "<h3 style='margin:0 0 10px'>Las cinco salidas, y qué le hace cada una a la carrera</h3>" +
+    salidas +
+    "<h3 style='margin:18px 0 8px'>Y lo que el modelo no simula</h3>" +
+    fuera +
+    (E.lo_que_no_sabe_la_casa
+      ? "<p class='tw-nota' style='margin:12px 0 0'>" + E.lo_que_no_sabe_la_casa + "</p>"
+      : "");
 })();
 
 /* ---------- el modelo contra las encuestas ----------

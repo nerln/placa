@@ -28,11 +28,11 @@
  },
  "entradas": {
   "campana": {
-   "Luana": 1.0,
-   "Majluf": 0.94,
+   "Luana": 0.964,
    "Tamara": 0.52,
+   "Majluf": 0.526,
    "Charlotte": 0.52,
-   "Zilli": 0.84
+   "Zilli": 0.28
   },
   "campana_medida": {
    "Tamara": null,
@@ -41,11 +41,26 @@
    "Luana": -1.0,
    "Zilli": -0.84
   },
+  "campana_ahora": {
+   "Luana": 2.8,
+   "Tamara": null,
+   "Majluf": 24.7,
+   "Charlotte": null,
+   "Zilli": 37.0
+  },
+  "campana_tendencia": {
+   "Luana": "sube",
+   "Tamara": null,
+   "Majluf": "estable",
+   "Charlotte": null,
+   "Zilli": "sube"
+  },
+  "momento_nota": "El pico dice cuál fue el momento más alto de una consigna en las 24 horas. El puesto medio de las últimas seis dice dónde está ahora, que es lo que importa con la votación cerrando esta noche. No es lo mismo: una consigna puede haber encabezado el país a la madrugada y estar en el puesto 40 cuando la gente vota.",
   "ventana_campana": "16/08 20:40 → 17/08 20:36 UTC",
   "imagen": {
    "Luana": 18,
-   "Majluf": 20,
    "Tamara": 17,
+   "Majluf": 20,
    "Charlotte": null,
    "Zilli": 74
   },
@@ -54,26 +69,26 @@
   "imagen_historial": "Es el único agregador de la temporada con historial: acertó el eliminado en 5 de 5 galas documentadas"
  },
  "p_sale": {
-  "Luana": 0.3304,
-  "Majluf": 0.303,
-  "Tamara": 0.1739,
-  "Charlotte": 0.1048,
-  "Zilli": 0.088
+  "Luana": 0.4001,
+  "Tamara": 0.2185,
+  "Majluf": 0.213,
+  "Charlotte": 0.1316,
+  "Zilli": 0.0368
  },
  "sensibilidad": {
   "las_dos": {
-   "Luana": 0.3304,
-   "Majluf": 0.303,
-   "Tamara": 0.1739,
-   "Charlotte": 0.1048,
-   "Zilli": 0.088
+   "Luana": 0.4001,
+   "Tamara": 0.2185,
+   "Majluf": 0.213,
+   "Charlotte": 0.1316,
+   "Zilli": 0.0368
   },
   "solo_campana": {
-   "Luana": 0.2618,
-   "Majluf": 0.2461,
-   "Zilli": 0.2199,
-   "Tamara": 0.1361,
-   "Charlotte": 0.1361
+   "Luana": 0.3431,
+   "Majluf": 0.1872,
+   "Tamara": 0.1851,
+   "Charlotte": 0.1851,
+   "Zilli": 0.0996
   },
   "solo_imagen": {
    "Tamara": 0.2586,
@@ -81,6 +96,13 @@
    "Majluf": 0.2492,
    "Charlotte": 0.1558,
    "Zilli": 0.081
+  },
+  "con_el_pico": {
+   "Luana": 0.3304,
+   "Majluf": 0.303,
+   "Tamara": 0.1739,
+   "Charlotte": 0.1048,
+   "Zilli": 0.088
   }
  },
  "modelo_dice": {

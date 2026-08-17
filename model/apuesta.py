@@ -76,14 +76,26 @@ def main():
         print("sin placa vigente: no hay apuesta que declarar")
         return
 
-    # --- senal 1: la campana, con signo -------------------------------------
+    # --- senal 1: la campana, con signo y con el momento en que esta ---------
+    # El indice de campana pesa por el PICO de la consigna en 24 horas. Para una
+    # votacion que cierra esta noche importa mas donde esta AHORA: una consigna
+    # que encabezo el pais a la madrugada y a la tarde cayo al puesto 40 ya no
+    # esta juntando votos. Cuando hay medicion reciente se usa esa, y el pico
+    # queda como variante en la sensibilidad.
     idx = campana["indice"]
-    camp = {}
+    terminos = {t["txt"]: t for t in (act.get("tendencias") or {}).get("terminos", [])}
+
+    def peso_puesto(p):
+        return max(0.02, (51 - min(float(p), 50.0)) / 50.0)
+
+    camp_pico, camp_ahora = {}, {}
     for n in placa:
         v = idx.get(n, {}).get("icd")
-        # Una campana a favor no vuelve a nadie inmune: tampoco se midio cuanta
-        # gente la quiere afuera, asi que vuelve al piso.
-        camp[n] = PISO_SIN_CONSIGNA if v is None or v >= 0 else -v
+        camp_pico[n] = PISO_SIN_CONSIGNA if v is None or v >= 0 else -v
+        t = terminos.get(f"{n.upper()} AL 9009")
+        rec = (t or {}).get("reciente")
+        camp_ahora[n] = peso_puesto(rec) if rec is not None else PISO_SIN_CONSIGNA
+    camp = camp_ahora
 
     # --- senal 2: la imagen, dada vuelta ------------------------------------
     fuentes = (act.get("medidas_sociales") or {}).get("fuentes", [])
@@ -95,8 +107,9 @@ def main():
         # imagen entra invertida: 100 menos el porcentaje, sobre 100.
         img[n] = PISO_SIN_IMAGEN if v is None else max(0.02, (100.0 - float(v)) / 100.0)
 
-    def repartir(pc, pi):
-        w = {n: (camp[n] ** pc) * (img[n] ** pi) for n in placa}
+    def repartir(pc, pi, cual=None):
+        c = cual or camp
+        w = {n: (c[n] ** pc) * (img[n] ** pi) for n in placa}
         t = sum(w.values())
         return {n: w[n] / t for n in placa}
 
@@ -109,6 +122,9 @@ def main():
                          sorted(repartir(1.0, 0.0).items(), key=lambda kv: -kv[1])},
         "solo_imagen": {n: round(v, 4) for n, v in
                         sorted(repartir(0.0, 1.0).items(), key=lambda kv: -kv[1])},
+        "con_el_pico": {n: round(v, 4) for n, v in
+                        sorted(repartir(PESO_CAMPANA, PESO_IMAGEN, camp_pico).items(),
+                               key=lambda kv: -kv[1])},
     }
 
     pv = galas.get("placa_vigente") or {}
@@ -140,6 +156,11 @@ def main():
         "entradas": {
             "campana": {n: round(camp[n], 3) for n in orden},
             "campana_medida": {n: idx.get(n, {}).get("icd") for n in placa},
+            "campana_ahora": {n: ((terminos.get(f"{n.upper()} AL 9009") or {}).get("reciente"))
+                              for n in orden},
+            "campana_tendencia": {n: ((terminos.get(f"{n.upper()} AL 9009") or {}).get("tendencia"))
+                                  for n in orden},
+            "momento_nota": (act.get("tendencias") or {}).get("_nota_momento"),
             "ventana_campana": (act.get("tendencias") or {}).get("ventana"),
             "imagen": {n: (img_f or {}).get("valores", {}).get(n) for n in orden},
             "imagen_quien": (img_f or {}).get("quien"),
@@ -163,8 +184,8 @@ def main():
         print(f"{n:<12} {100*p[n]:7.1f}% {camp[n]:9.2f} "
               f"{(str(iv) + '%') if iv is not None else '—':>8}   "
               f"{100*ramas['ramas'][n]['p_sale']:9.1f}%")
-    print("\ncon una sola senal:")
-    for k in ("solo_campana", "solo_imagen"):
+    print("\ncon una sola senal, o con el pico en vez del momento:")
+    for k in ("solo_campana", "solo_imagen", "con_el_pico"):
         top = list(sens[k].items())[:3]
         print(f"  {k:14} " + " · ".join(f"{n} {100*v:.0f}%" for n, v in top))
     print(f"\nla apuesta y el modelo {'COINCIDEN' if salida['coinciden'] else 'no coinciden'}")

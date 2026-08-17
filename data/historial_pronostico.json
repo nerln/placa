@@ -136,6 +136,40 @@
     "Zilli": 0.1523,
     "Tamara": 0.1491
    }
+  },
+  {
+   "gala": 29,
+   "fecha_gala": "2026-08-17",
+   "corrida": "2026-08-16",
+   "escrita": "2026-08-17T20:05-03:00",
+   "placa": [
+    "Tamara",
+    "Majluf",
+    "Charlotte",
+    "Luana",
+    "Zilli"
+   ],
+   "p_sale": {
+    "Luana": 0.4001,
+    "Tamara": 0.2185,
+    "Majluf": 0.213,
+    "Charlotte": 0.1316,
+    "Zilli": 0.0368
+   },
+   "supuestos": {
+    "peso_campana": 1.0,
+    "peso_imagen": 1.0,
+    "piso_sin_consigna": 0.52,
+    "piso_sin_imagen": 0.5
+   },
+   "modelo_decia": {
+    "Luana": 0.3042,
+    "Charlotte": 0.2378,
+    "Majluf": 0.1566,
+    "Zilli": 0.1523,
+    "Tamara": 0.1491
+   },
+   "_cambio": "Se rehizo pesando la campaña por dónde está en las últimas seis horas en vez de por su pico de 24. La consigna contra Luana venía subiendo y las otras dos estaban cayendo, y eso es lo que decide una votación que cierra esta noche."
   }
  ],
  "_nota_apuestas": "La prediccion declarada, que no es la del modelo. Se escribe antes de cada gala y no se reescribe nunca: la gracia es poder puntuar despues las dos por separado, la del modelo y esta. Cada entrada lleva la hora en que se escribio y los supuestos con que se armo."

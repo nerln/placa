@@ -173,7 +173,9 @@
     "mejor": 1,
     "horas": 24,
     "tipo": "campaña de voto",
-    "nota": "Estuvo las veinticuatro horas de la ventana dentro del top-50 y llegó al primer puesto del país."
+    "nota": "Estuvo las veinticuatro horas de la ventana dentro del top-50 y llegó al primer puesto del país.",
+    "reciente": 2.8,
+    "tendencia": "sube"
    },
    {
     "txt": "MIÉRCOLES BODA SOLZIA",
@@ -194,14 +196,18 @@
     "mejor": 4,
     "horas": 23,
     "tipo": "campaña de voto",
-    "nota": "Casi tan longeva como la de Luana, pero se quedó cuatro puestos abajo en su pico."
+    "nota": "Casi tan longeva como la de Luana, pero se quedó cuatro puestos abajo en su pico.",
+    "reciente": 24.7,
+    "tendencia": "estable"
    },
    {
     "txt": "ZILLI AL 9009",
     "mejor": 9,
     "horas": 17,
     "tipo": "campaña de voto",
-    "nota": "La tercera y la más floja de las tres."
+    "nota": "La tercera y la más floja de las tres.",
+    "reciente": 37.0,
+    "tendencia": "sube"
    },
    {
     "txt": "#GranHermano",
@@ -255,7 +261,39 @@
    "txt": "#GeneraciónDorada",
    "apariciones": 0,
    "nota": "El hashtag que Telefe pone en todos sus posts no entró ni una vez al top-50 en los 21 snapshots de la ventana. Lo que trendea son las campañas del fandom."
-  }
+  },
+  "momento": {
+   "ventana": "16/08 23:31 → 17/08 17:36 ART",
+   "consignas": {
+    "Luana": {
+     "termino": "LUANA AL 9009",
+     "pico": 1,
+     "horas": 24,
+     "puesto_medio_6h": 2.8,
+     "puesto_medio_6h_previas": 7.2,
+     "tendencia": "sube"
+    },
+    "Majluf": {
+     "termino": "MAJLUF AL 9009",
+     "pico": 4,
+     "horas": 23,
+     "puesto_medio_6h": 24.7,
+     "puesto_medio_6h_previas": 24.8,
+     "tendencia": "estable"
+    },
+    "Zilli": {
+     "termino": "ZILLI AL 9009",
+     "pico": 9,
+     "horas": 17,
+     "puesto_medio_6h": 37.0,
+     "puesto_medio_6h_previas": 47.5,
+     "tendencia": "sube"
+    },
+    "Tamara": null,
+    "Charlotte": null
+   }
+  },
+  "_nota_momento": "El pico dice cuál fue el momento más alto de una consigna en las 24 horas. El puesto medio de las últimas seis dice dónde está ahora, que es lo que importa con la votación cerrando esta noche. No es lo mismo: una consigna puede haber encabezado el país a la madrugada y estar en el puesto 40 cuando la gente vota."
  },
  "bandos": {
   "_nota": "En la gala Del Moro les pidió ponerse del lado de quien querían que siguiera. Es el mapa de alianzas más medible que hay, y anticipa la placa de la nominación de mitad de semana.",
@@ -615,5 +653,37 @@
   "lectura": "Las tres coinciden en que la que menos apoyo junta es Majluf, y dos de las tres ponen a Tamara entre las últimas. El modelo dice otra cosa: pone a Sol primera con diferencia, y Bongiorno la tiene segunda en imagen de toda la casa.",
   "por_que_difieren": "Miden cosas distintas. El modelo lee el reparto de votos que Telefe cantó en las galas anteriores, que es dinero gastado en votar. Bongiorno mide si caés bien. Poggi y GH Encuestas miden qué contesta quien está despierto y con ganas. Y ninguna de las tres mide lo que decide: el voto es pago, sin tope, y desde esta noche cambia de signo.",
   "se_resuelve": "El lunes 17 se sabe. Queda anotado antes: el modelo dice Sol, las encuestas dicen Majluf. Las dos cosas están publicadas con fecha y las dos entran al puntaje."
+ },
+ "escenarios_gala": {
+  "_nota": "Todo lo que puede pasar esta noche, separado en dos: lo que el modelo simula y lo que no. Lo primero son las cinco salidas posibles, cada una con lo que le hace a la carrera por el premio. Lo segundo son los canales por los que se va gente sin votación, que esta edición usó trece veces y el modelo no simula ninguna.",
+  "fuera_del_voto": [
+   {
+    "que": "Una sanción por el cruce del sábado",
+    "estado": "descartado por ahora",
+    "detalle": "Del Moro pasó el video el domingo y aclaró que fue un intercambio de escupitajos y no un golpe. No hubo comunicado ni medida, pese a los pedidos de expulsión en redes.",
+    "fuente": "https://www.mitelefe.com/gran-hermano/noticias/escupitajos-no-golpes-tamara-paganini-contra-solange-abraham-y-las-acusaciones-cruzadas-pid2562968"
+   },
+   {
+    "que": "Un abandono o una expulsión antes de la gala",
+    "estado": "no simulado",
+    "detalle": "Es el canal por el que esta edición perdió trece personas: diez abandonos y tres expulsiones. El modelo no lo simula y es, por lejos, la forma más probable de que este pronóstico termine equivocado."
+   },
+   {
+    "que": "Una salida médica",
+    "estado": "no simulado",
+    "detalle": "Ya pasó tres veces esta temporada. Tamara salió al hospital en junio por un sangrado de oído y volvió a los dos días; Sol se abrió la cabeza contra una puerta el 9 de agosto y siguió jugando."
+   },
+   {
+    "que": "Que no se elimine a nadie",
+    "estado": "sin precedente esta edición",
+    "detalle": "Las veintiséis galas de eliminación anunciadas se jugaron. Nada sugiere que ésta no, pero el formato ya cambió de reglas varias veces sobre la marcha."
+   },
+   {
+    "que": "Que se vayan dos",
+    "estado": "cierto, y ya está decidido",
+    "detalle": "La eliminación es en dupla: quien se va se lleva a la visita que había elegido. No es un escenario, es la regla de esta semana."
+   }
+  ],
+  "lo_que_no_sabe_la_casa": "Adentro nadie sabe que la placa bajó a cinco. Del Moro anunció las dos salvadas para afuera y no para la casa, así que las cinco que quedan siguen jugando como si fueran siete, y Sol y Yipio también."
  }
 }
