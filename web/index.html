@@ -622,6 +622,28 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    La prediccion declarada, separada del pronostico del modelo y dicho por que.
    Va con los supuestos a la vista: son cinco numeros que no salen de ningun
    dato, y esconderlos seria vender como calculo lo que es un juicio. */
+
+/* ---------- el puntaje ----------
+   Cuando la gala se juega, esto se enciende solo y la apuesta de arriba pasa a
+   ser lo que se dijo antes. Va arriba de la apuesta a proposito: quien entra
+   despues de la gala quiere el resultado, no el pronostico. */
+#puntaje{margin:22px 0 0; border:1px solid var(--linea); border-left:3px solid var(--tinta);
+  border-radius:var(--r-md); background:var(--sup); padding:18px 16px;
+  max-width:calc(var(--medida) + 32px)}
+.pun-quien{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl);
+  line-height:1; margin:6px 0 4px}
+.pun-rej{display:grid; gap:10px; margin:14px 0 0}
+@media(min-width:640px){.pun-rej{grid-template-columns:1fr 1fr}}
+.pun-caja{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px}
+.pun-caja.acierta{border-color:var(--apoyo)}
+.pun-caja .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--tinta3); font-weight:700}
+.pun-caja .v{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg);
+  margin:4px 0 2px}
+.pun-caja .d{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
+.pun-caja .sello{display:inline-block; font-size:var(--t-xs); font-weight:700; margin-top:6px;
+  padding:2px 8px; border-radius:var(--r-sm); border:1px solid var(--linea); color:var(--tinta3)}
+.pun-caja.acierta .sello{color:var(--apoyo-txt); border-color:var(--apoyo)}
 #apuesta{margin:22px 0 0; border:1px solid var(--linea); border-left:3px solid var(--oro-2);
   border-radius:var(--r-md); background:var(--sup); padding:18px 16px;
   max-width:calc(var(--medida) + 32px)}
@@ -761,6 +783,28 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    La prediccion declarada, separada del pronostico del modelo y dicho por que.
    Va con los supuestos a la vista: son cinco numeros que no salen de ningun
    dato, y esconderlos seria vender como calculo lo que es un juicio. */
+
+/* ---------- el puntaje ----------
+   Cuando la gala se juega, esto se enciende solo y la apuesta de arriba pasa a
+   ser lo que se dijo antes. Va arriba de la apuesta a proposito: quien entra
+   despues de la gala quiere el resultado, no el pronostico. */
+#puntaje{margin:22px 0 0; border:1px solid var(--linea); border-left:3px solid var(--tinta);
+  border-radius:var(--r-md); background:var(--sup); padding:18px 16px;
+  max-width:calc(var(--medida) + 32px)}
+.pun-quien{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl);
+  line-height:1; margin:6px 0 4px}
+.pun-rej{display:grid; gap:10px; margin:14px 0 0}
+@media(min-width:640px){.pun-rej{grid-template-columns:1fr 1fr}}
+.pun-caja{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px}
+.pun-caja.acierta{border-color:var(--apoyo)}
+.pun-caja .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--tinta3); font-weight:700}
+.pun-caja .v{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg);
+  margin:4px 0 2px}
+.pun-caja .d{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
+.pun-caja .sello{display:inline-block; font-size:var(--t-xs); font-weight:700; margin-top:6px;
+  padding:2px 8px; border-radius:var(--r-sm); border:1px solid var(--linea); color:var(--tinta3)}
+.pun-caja.acierta .sello{color:var(--apoyo-txt); border-color:var(--apoyo)}
 #apuesta{margin:22px 0 0; border:1px solid var(--linea); border-left:3px solid var(--oro-2);
   border-radius:var(--r-md); background:var(--sup); padding:18px 16px;
   max-width:calc(var(--medida) + 32px)}
@@ -1581,6 +1625,8 @@ footer p{max-width:var(--medida)}
     </div>
   </div>
   <div class="tarjeta" id="prox" style="margin-top:20px"></div>
+
+  <section id="puntaje"></section>
 
   <section id="apuesta"></section>
   <div class="tw-hueco" data-post="apuesta" style="margin-top:16px"></div>
@@ -3146,6 +3192,46 @@ function contar(nodo){
     "<b>" + T.oficial.txt + "</b> aparece en todos los posts de Telefe y en <b>ninguno</b> de los 21 " +
     "cortes del top-50 de la ventana. Lo que trendea no es lo que pone la producción: son las " +
     "campañas que arma el fandom, con el número de teléfono adentro.";
+})();
+
+/* ---------- el puntaje ----------
+   Se enciende solo cuando data/puntaje.json existe, o sea despues de la gala.
+   Antes de eso la seccion no esta. Puntua por separado las dos afirmaciones que
+   la pagina hizo sobre la misma pregunta, con la regla que estaba escrita
+   desde antes, y no esconde la que salio mal. */
+(function(){
+  const P = D.puntaje, sec = $("#puntaje");
+  if(!sec) return;
+  if(!P || !P.eliminado){ sec.remove(); return; }
+  const pct = v => (100 * v).toFixed(1).replace(".", ",") + "%";
+  const num = v => String(v).replace(".", ",");
+
+  const caja = (titulo, r, nota) => {
+    if(!r) return "<div class='pun-caja'><div class='k'>" + titulo +
+      "</div><div class='d'>No había predicción congelada.</div></div>";
+    const mejor = r.brier < r.brier_uniforme;
+    return "<div class='pun-caja" + (r.acerto ? " acierta" : "") + "'>" +
+      "<div class='k'>" + titulo + "</div>" +
+      "<div class='v'>" + pct(r.p_del_eliminado) + "</div>" +
+      "<div class='d'>Le daba eso a " + P.eliminado + ", y la dejaba en el puesto <b>" +
+        r.puesto + " de " + r.de + "</b>. Brier " + num(r.brier) + " contra " +
+        num(r.brier_uniforme) + " de repartir parejo, o sea que " +
+        (mejor ? "aportó" : "no aportó") + " sobre el azar. " + (nota || "") + "</div>" +
+      "<span class='sello'>" + (r.acerto ? "acertó el nombre" : "no acertó el nombre") +
+      "</span></div>";
+  };
+
+  sec.innerHTML =
+    "<div class='eyebrow'>El resultado, contra lo que se había dicho</div>" +
+    "<div class='pun-quien'>Se fue " + P.eliminado + "</div>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
+      "La placa era de " + P.placa.length + ": " + P.placa.join(", ") + ". Las dos predicciones " +
+      "de abajo estaban publicadas y fechadas antes de la gala, y se puntúan con " + P.regla + "." +
+    "</p>" +
+    "<div class='pun-rej'>" +
+      caja("El modelo", P.modelo, "Es la cuenta que la prueba hacia atrás daba por debajo del azar.") +
+      caja("La apuesta declarada", P.apuesta, "Es la que se armó con tendencias e imagen.") +
+    "</div>";
 })();
 
 /* ---------- la apuesta ----------

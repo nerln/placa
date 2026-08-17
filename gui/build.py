@@ -243,6 +243,8 @@ def main():
     ramas = json.loads(ramas_p.read_text()) if ramas_p.exists() else None
     evo_p = ROOT / "data" / "evolucion.json"
     evo = json.loads(evo_p.read_text()) if evo_p.exists() else None
+    pun_p = ROOT / "data" / "puntaje.json"
+    puntaje = json.loads(pun_p.read_text()) if pun_p.exists() else None
     sen_p = ROOT / "data" / "sentimiento.json"
     sentimiento = json.loads(sen_p.read_text()) if sen_p.exists() else None
     ap_p = ROOT / "data" / "apuesta.json"
@@ -291,6 +293,7 @@ def main():
         "ultimo": ultimo,
         "apuesta": apuesta,
         "sentimiento": sentimiento,
+        "puntaje": puntaje,
         "actualidad": act,
         "historial_pronostico": corridas,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},
