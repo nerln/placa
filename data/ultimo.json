@@ -2,6 +2,14 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-08-17",
+   "titulo": "Se fue Majluf con el 57,1%, y se llevó a Mavinga",
+   "detalle": "El versus final fue entre Luana y Majluf, que era el que nadie esperaba. Antes se habían salvado Charlotte con el 0,8% de votos en contra, Tamara con el 1,2% y Zilli con el 11,5%. Como la eliminación era en dupla, Jenny Mavinga se fue con ella. Quedan ocho.",
+   "afecta": "El pronóstico ya está recalculado con las ocho. Y las dos predicciones que esta página había publicado antes de la gala fallaron: las dos dejaban a Majluf tercera de cinco.",
+   "impacto": "recalculado",
+   "fuente": "https://www.infobae.com/teleshow/2026/08/18/quien-fue-la-ultima-eliminada-de-la-casa-de-gran-hermano/"
+  },
+  {
    "fecha": "2026-08-16",
    "titulo": "Bajaron dos de placa: Sol y Yipio se salvaron",
    "detalle": "Cerró la ventana de voto positivo y del Moro anunció al aire quiénes se salvaron. Lo hizo para afuera: adentro no se los dijeron, así que las cinco que quedan creen que siguen siendo siete. Desde esa misma noche el voto es negativo. Quedan en placa Tamara, Majluf, Charlotte, Luana y Zilli, cada una con su visita.",

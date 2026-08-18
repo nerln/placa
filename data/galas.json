@@ -262,22 +262,43 @@
    "completa": true,
    "eliminado": "Hanssen",
    "_fuente_versus": "Telefe publicó 52% y 42% en pantalla, que suman 94 y por lo tanto no son ambos del mano a mano. La identidad aritmética de la edición (la suma de lo publicado menos 100 tiene que dar la suma de las cuotas de los salvados, 7,1) admite solo dos lecturas: (58, 42) o (52, 48). Infobae publicó 58 para Hanssen y ningún medio publicó 48 para Sol, así que se carga (58, 42). Las cuentas oficiales de X anunciaron el resultado sin porcentajes."
+  },
+  {
+   "gala": 29,
+   "fecha": "2026-08-17",
+   "tipo": "negativo",
+   "placa": [
+    "Tamara",
+    "Majluf",
+    "Charlotte",
+    "Luana",
+    "Zilli"
+   ],
+   "salvados_cuota": {
+    "Charlotte": 0.8,
+    "Tamara": 1.2,
+    "Zilli": 11.5
+   },
+   "versus": {
+    "Luana": 42.9,
+    "Majluf": 57.1
+   },
+   "completa": true,
+   "eliminado": "Majluf"
   }
  ],
  "placa_vigente": {
   "gala": 29,
-  "fecha": "2026-08-17",
-  "fecha_nominacion": "2026-08-16",
-  "integrantes": [
-   "Tamara",
-   "Majluf",
-   "Charlotte",
-   "Luana",
-   "Zilli"
-  ],
+  "fecha": "",
+  "fecha_nominacion": "2026-08-17",
+  "integrantes": [],
   "inmune_lider": "",
   "libres": [
+   "Tamara",
    "Pincoya",
+   "Charlotte",
+   "Zilli",
+   "Luana",
    "Yipio",
    "Mariela",
    "Sol"

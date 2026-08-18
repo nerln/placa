@@ -1,0 +1,51 @@
+{
+ "gala": 29,
+ "fecha": "2026-08-17",
+ "eliminado": "Majluf",
+ "placa": [
+  "Tamara",
+  "Majluf",
+  "Charlotte",
+  "Luana",
+  "Zilli"
+ ],
+ "regla": "EVALUACION.md, escrita antes de que terminara la temporada",
+ "modelo": {
+  "p_del_eliminado": 0.1566,
+  "puesto": 3,
+  "de": 5,
+  "acerto": false,
+  "brier": 0.9059,
+  "brier_uniforme": 0.8,
+  "log_verosimilitud": -1.8543,
+  "log_verosimilitud_uniforme": -1.6094,
+  "orden": [
+   "Luana",
+   "Charlotte",
+   "Majluf",
+   "Zilli",
+   "Tamara"
+  ]
+ },
+ "apuesta": {
+  "p_del_eliminado": 0.213,
+  "puesto": 3,
+  "de": 5,
+  "acerto": false,
+  "brier": 0.8459,
+  "brier_uniforme": 0.8,
+  "log_verosimilitud": -1.5465,
+  "log_verosimilitud_uniforme": -1.6094,
+  "orden": [
+   "Luana",
+   "Tamara",
+   "Majluf",
+   "Charlotte",
+   "Zilli"
+  ]
+ },
+ "congeladas": {
+  "modelo": "2026-08-16",
+  "apuesta": "2026-08-17T20:05-03:00"
+ }
+}

@@ -56,15 +56,8 @@
   "fuente": "",
   "fecha": "",
   "n_nominal": 0,
-  "gala": 28,
-  "placa": [
-   "Charlotte",
-   "Majluf",
-   "Sol",
-   "Hanssen",
-   "Pincoya",
-   "Zilli"
-  ],
+  "gala": 29,
+  "placa": [],
   "cuota": {},
   "resto_agregado": 0.0,
   "resto_miembros": []

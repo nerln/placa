@@ -63,19 +63,6 @@
    "estado": "sin_observacion",
    "terminos": []
   },
-  "Majluf": {
-   "icd": -0.94,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "MAJLUF AL 9009",
-     "signo": -1,
-     "mejor": 4,
-     "peso": 0.94
-    }
-   ]
-  },
   "Sol": {
    "icd": null,
    "n_terminos": 0,
@@ -83,6 +70,6 @@
    "terminos": []
   }
  },
- "observados": 3,
- "de": 9
+ "observados": 2,
+ "de": 8
 }

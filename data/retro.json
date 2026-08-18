@@ -1,14 +1,14 @@
 {
- "generado": "2026-08-10",
- "p_valor": 0.0201,
- "aciertos_esperados_azar": 1.01,
+ "generado": "2026-08-17",
+ "p_valor": 0.0266,
+ "aciertos_esperados_azar": 1.21,
  "min_galas": 3,
- "n": 6,
+ "n": 7,
  "aciertos": 0,
- "puesto_medio": 5.0,
- "puesto_medio_azar": 3.5,
- "log_verosimilitud": -4.083,
- "log_verosimilitud_azar": -1.787,
+ "puesto_medio": 4.71,
+ "puesto_medio_azar": 3.43,
+ "log_verosimilitud": -3.776,
+ "log_verosimilitud_azar": -1.762,
  "filas": [
   {
    "gala": 22,
@@ -229,6 +229,39 @@
     {
      "quien": "Hanssen",
      "p": 0.0092
+    }
+   ]
+  },
+  {
+   "gala": 29,
+   "fecha": "2026-08-17",
+   "n_placa": 5,
+   "galas_previas": 9,
+   "eliminado": "Majluf",
+   "puesto_del_modelo": 3,
+   "acierto": false,
+   "p_modelo": 0.1441,
+   "p_azar": 0.2,
+   "orden": [
+    {
+     "quien": "Luana",
+     "p": 0.3467
+    },
+    {
+     "quien": "Charlotte",
+     "p": 0.2465
+    },
+    {
+     "quien": "Majluf",
+     "p": 0.1441
+    },
+    {
+     "quien": "Zilli",
+     "p": 0.1339
+    },
+    {
+     "quien": "Tamara",
+     "p": 0.1289
     }
    ]
   }

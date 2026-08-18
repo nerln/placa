@@ -1,6 +1,6 @@
 {
  "_nota": "Plantel vigente y atributos que consume el modelo. Este archivo es el que edita model/actualizar.py despues de cada gala: saca a quien fue eliminado, recalcula las propensiones de nominacion y deja el resto intacto. Nada de esto vive ya dentro del codigo.",
- "actualizado": "2026-08-16",
+ "actualizado": "2026-08-17",
  "edicion": "Gran Hermano Argentina: Generación Dorada",
  "temporada": 13,
  "estreno": "2026-02-23",
@@ -150,25 +150,6 @@
    }
   },
   {
-   "apodo": "Majluf",
-   "nombre": "Alejandra Majluf",
-   "edad": 63,
-   "ciudad": "Buenos Aires",
-   "provincia": "Buenos Aires",
-   "pais": "AR",
-   "ingreso": "2026-06-02",
-   "previa": "Sin ediciones previas · ícono de la TV de los 90",
-   "papel": "Carne de placa máxima: 24 puntos de nominación en las últimas 4 galas.",
-   "placas_recientes": 7,
-   "votos_recientes": 24,
-   "bono_fulminante": 0.0,
-   "genero": "f",
-   "redes": {
-    "conf": "baja",
-    "nota": "no se encontró ninguna cuenta que se pueda dar por suya"
-   }
-  },
-  {
    "apodo": "Sol",
    "nombre": "Solange «Sol» Abraham",
    "edad": 37,
@@ -191,6 +172,31 @@
   }
  ],
  "eliminados_recientes": [
+  {
+   "apodo": "Majluf",
+   "fecha": "2026-08-17",
+   "modo": "eliminado",
+   "detalle": "eliminado en la gala 29",
+   "ficha": {
+    "apodo": "Majluf",
+    "nombre": "Alejandra Majluf",
+    "edad": 63,
+    "ciudad": "Buenos Aires",
+    "provincia": "Buenos Aires",
+    "pais": "AR",
+    "ingreso": "2026-06-02",
+    "previa": "Sin ediciones previas · ícono de la TV de los 90",
+    "papel": "Carne de placa máxima: 24 puntos de nominación en las últimas 4 galas.",
+    "placas_recientes": 7,
+    "votos_recientes": 24,
+    "bono_fulminante": 0.0,
+    "genero": "f",
+    "redes": {
+     "conf": "baja",
+     "nota": "no se encontró ninguna cuenta que se pueda dar por suya"
+    }
+   }
+  },
   {
    "apodo": "Hanssen",
    "fecha": "2026-08-10",

@@ -3166,6 +3166,10 @@ function contar(nodo){
   const A = D.apuesta, sec = $("#apuesta");
   if(!sec) return;
   if(!A || !A.p_sale){ sec.remove(); return; }
+  // Si la gala de esta apuesta ya se jugo, la tarjeta del puntaje de arriba
+  // cuenta lo mismo y ademas dice como salio. Dejar las dos seria mostrar un
+  // pronostico de algo que ya paso.
+  if(D.puntaje && D.puntaje.gala === A.gala){ sec.remove(); return; }
 
   const orden = Object.keys(A.p_sale);
   const pct = v => (100 * v).toFixed(1).replace(".", ",") + "%";
