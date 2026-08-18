@@ -103,3 +103,36 @@ La prosa de la página tiene reglas y conviene respetarlas.
 - Los números en castellano rioplatense: coma decimal y punto de miles.
 - Ningún número escrito a mano en la prosa si sale de `data/`: se lee de ahí.
 - No inventes una cifra para redondear una frase. El fandom comprueba.
+
+---
+
+## Si esto lo corre un agente en la nube
+
+Comprobado el 17 de agosto de 2026 en el entorno «Default» de las routines.
+
+**Puede empujar a `main`.** Las credenciales viajan en el proxy del entorno y
+`git push` anda. O sea que `bin/publicar.sh` funciona de punta a punta sin la
+máquina de nadie.
+
+**Pero no tiene salida a internet.** Todos los dominios probados dieron
+`EGRESS_BLOCKED`, y no es cosa de `WebFetch`: `curl` devuelve código `000`
+contra mitelefe, Infobae, La Nación y publish.twitter.com. Lo único abierto es
+PyPI. Quiere decir que **no puede abrir ni una nota**.
+
+Lo que sí funciona es **`WebSearch`**, que sale por el servicio de Anthropic y no
+por la red de la caja. Devuelve títulos, enlaces y fragmentos. Alcanza para saber
+un nombre, no para leer un reparto de votos.
+
+Así que desde la nube la rutina se corre recortada, y se dice que está recortada:
+
+- El nombre de quien salió se toma sólo si **dos medios distintos** coinciden en
+  los resultados de la búsqueda. Un solo titular no alcanza, y un fragmento
+  ambiguo tampoco.
+- La gala se carga **sin `--salvados` ni `--versus`**, que es un caso que
+  `actualizar.py` ya contempla: queda anotada como incompleta.
+- En la novedad se escribe que el reparto de votos todavía no está cargado.
+- El resto de la rutina es igual, y `model/puntaje.py` sólo necesita el nombre.
+
+**Falta numpy y falta Pillow.** Empezá con `pip install numpy pillow`, que anda.
+Sin Pillow, `verificar.py` se cae al comprobar la tarjeta. Node sí está.
+`gh` no está instalado.
