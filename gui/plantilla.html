@@ -330,6 +330,35 @@ section > p, header > p, .sub, .paso p, .tarjeta > p, .respuesta,
 
 /* ---------- secciones ---------- */
 section{margin-top:52px}
+
+/* ---------- la columna de lectura, y lo que se sale de ella ----------
+   Medido: la sección ocupaba 1132px y la prosa 832, así que quedaban 300px
+   muertos a la derecha de cada párrafo. No era un margen, era un hueco.
+
+   Ahora cada sección es una rejilla de tres columnas y el texto vive en la del
+   medio, centrado. Lo que necesita aire -tablas, gráficos, la placa, las
+   rejillas de tarjetas- pisa las tres. Así el hueco deja de ser hueco y pasa a
+   ser lo que separa la lectura de los datos. */
+section, header, .veredicto, footer > .firma{
+  display:grid;
+  grid-template-columns:1fr min(var(--medida), 100%) 1fr;
+  column-gap:0;
+}
+section > *, header > *, .veredicto > *{grid-column:2}
+section > .g2, section > .scroll-x, section > figure, section > .placa,
+section > .rein-cifras, section > #hist-evo, section > .tarjeta,
+section > .evo, section > .thist, section > .muro, section > .tw-hueco,
+.veredicto > .vtop, .veredicto > .vbar, header > .ultimo, header > .respuesta{
+  grid-column:1 / -1; margin-inline:auto; width:100%
+}
+/* Las tarjetas ya traían su propio tope de ancho: al pasar a las tres columnas
+   hay que volver a centrarlas o quedan pegadas a la izquierda. */
+#apuesta, #puntaje, #sentimiento, #cotejo, #prox, #term-placa, #v-caso,
+#v-pronostico, #v-tendencias, #v-grafico, #escenarios{margin-inline:auto}
+@media(max-width:900px){
+  section, header, .veredicto, footer > .firma{display:block}
+}
+
 h2{font-family:"Archivo",sans-serif; font-size:var(--t-h2); font-weight:700; margin:0;
   letter-spacing:-.022em; line-height:1.1; text-wrap:balance}
 .eyebrow{font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.1em;
@@ -482,7 +511,41 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    cuando se publicó ya no se puede reconstruir: si una corrida no se guardó cuando se publicó, ya no
    existe. Por eso el registro es append-only y las dos primeras entradas
    dicen que se recuperaron a mano. */
-.thist{border-collapse:collapse; width:100%; font-size:var(--t-sm); min-width:520px}
+
+/* ---------- la evolución del pronóstico ----------
+   El registro es append-only desde que existe, así que se puede dibujar cómo
+   se movió cada una corrida a corrida. Los botones no filtran: acumulan. Al
+   elegir una fecha se sigue viendo todo el recorrido y se lee esa columna, que
+   es lo que deja comparar en vez de mirar una foto suelta. */
+.hist-botones{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 12px}
+.hist-botones button{font-family:"Archivo",sans-serif; font-weight:700;
+  font-size:var(--t-xs); padding:6px 11px; border-radius:var(--r-sm);
+  border:1px solid var(--linea); background:var(--sup); color:var(--tinta2);
+  cursor:pointer; transition:border-color .15s, color .15s, background .15s}
+.hist-botones button:hover{border-color:var(--tinta3); color:var(--tinta)}
+.hist-botones button[aria-pressed="true"]{background:var(--tinta); color:var(--sup);
+  border-color:var(--tinta)}
+.hist-botones button .rama{opacity:.65; font-weight:400}
+#hist-svg svg{width:100%; height:auto; display:block; overflow:visible}
+.he-linea{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;
+  transition:opacity .2s, stroke-width .2s}
+.he-punto{transition:opacity .2s, r .2s}
+.he-eje{stroke:var(--linea); stroke-width:1}
+.he-guia{stroke:var(--linea2); stroke-width:1; stroke-dasharray:2 3}
+.he-txt{font-family:"Archivo",sans-serif; font-size:11px; fill:var(--tinta3)}
+.he-txt.nom{font-weight:700; font-size:11.5px}
+.he-marca{stroke:var(--rechazo); stroke-width:2}
+.he-apagado{opacity:.18}
+@media(prefers-reduced-motion:no-preference){
+  .he-linea{stroke-dasharray:1000; stroke-dashoffset:1000;
+    animation:he-traza 1.1s ease-out forwards}
+  @keyframes he-traza{to{stroke-dashoffset:0}}
+}
+.thist{border-collapse:collapse; width:100%; font-size:var(--t-sm); min-width:520px;
+  max-width:var(--tabla-ancho, 860px); margin-inline:auto}
+/* La del backtest tiene siete columnas y sí necesita todo el ancho. */
+#t-retro{--tabla-ancho:100%}
+.evo{max-width:860px; margin-inline:auto}
 .thist th, .thist td{padding:9px 10px; border-bottom:1px solid var(--linea2); text-align:right;
   white-space:nowrap; font-variant-numeric:tabular-nums}
 .thist th{font-family:"Archivo",sans-serif; font-size:var(--t-etq); font-weight:700;
@@ -685,6 +748,30 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
   white-space:nowrap}
 .esc-fuera p{font-size:var(--t-sm); color:var(--tinta2); margin:4px 0 0; line-height:1.55}
 #escenarios{max-width:calc(var(--medida) + 32px)}
+
+/* ---------- el mano a mano como partido aparte ----------
+   Una tabla de dos columnas comparando el modelo con la variante, y una fila
+   por gala. Lo que importa se ve en el pie: mejora una cosa y no la otra. */
+.dt-rej{display:grid; gap:10px; margin:14px 0 0}
+@media(min-width:640px){.dt-rej{grid-template-columns:repeat(3,1fr)}}
+.dt-caja{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px;
+  background:var(--sup)}
+.dt-caja .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--tinta3); font-weight:700}
+.dt-caja .v{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg); margin:4px 0 2px}
+.dt-caja .d{font-size:var(--t-xs); color:var(--tinta2); line-height:1.5}
+.dt-caja.mejor{border-color:var(--apoyo)}
+.dt-caja.mejor .v{color:var(--apoyo-txt)}
+.dt-theta{display:grid; grid-template-columns:6.5rem 1fr auto; gap:8px; align-items:center;
+  padding:6px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
+.dt-theta:first-of-type{border-top:0}
+.dt-theta .n{font-family:"Archivo",sans-serif; font-weight:700}
+.dt-theta .b{height:8px; background:var(--sup3); border-radius:4px; position:relative}
+.dt-theta .b i{position:absolute; top:0; bottom:0; border-radius:4px; background:var(--apoyo)}
+.dt-theta .b i.neg{background:var(--rechazo)}
+.dt-theta .c{font-size:var(--t-xs); color:var(--tinta2); font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+#dostiempos{max-width:calc(var(--medida) + 32px); margin-inline:auto}
 .cotejo{width:100%; border-collapse:collapse; font-size:var(--t-sm)}
 .cotejo th{font-family:"Archivo",sans-serif; font-size:var(--t-xs); text-transform:uppercase;
   letter-spacing:.06em; color:var(--tinta3); text-align:right; padding:0 0 8px; font-weight:700;
@@ -846,6 +933,30 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
   white-space:nowrap}
 .esc-fuera p{font-size:var(--t-sm); color:var(--tinta2); margin:4px 0 0; line-height:1.55}
 #escenarios{max-width:calc(var(--medida) + 32px)}
+
+/* ---------- el mano a mano como partido aparte ----------
+   Una tabla de dos columnas comparando el modelo con la variante, y una fila
+   por gala. Lo que importa se ve en el pie: mejora una cosa y no la otra. */
+.dt-rej{display:grid; gap:10px; margin:14px 0 0}
+@media(min-width:640px){.dt-rej{grid-template-columns:repeat(3,1fr)}}
+.dt-caja{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px;
+  background:var(--sup)}
+.dt-caja .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--tinta3); font-weight:700}
+.dt-caja .v{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg); margin:4px 0 2px}
+.dt-caja .d{font-size:var(--t-xs); color:var(--tinta2); line-height:1.5}
+.dt-caja.mejor{border-color:var(--apoyo)}
+.dt-caja.mejor .v{color:var(--apoyo-txt)}
+.dt-theta{display:grid; grid-template-columns:6.5rem 1fr auto; gap:8px; align-items:center;
+  padding:6px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
+.dt-theta:first-of-type{border-top:0}
+.dt-theta .n{font-family:"Archivo",sans-serif; font-weight:700}
+.dt-theta .b{height:8px; background:var(--sup3); border-radius:4px; position:relative}
+.dt-theta .b i{position:absolute; top:0; bottom:0; border-radius:4px; background:var(--apoyo)}
+.dt-theta .b i.neg{background:var(--rechazo)}
+.dt-theta .c{font-size:var(--t-xs); color:var(--tinta2); font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+#dostiempos{max-width:calc(var(--medida) + 32px); margin-inline:auto}
 .cotejo{width:100%; border-collapse:collapse; font-size:var(--t-sm)}
 .cotejo th{font-family:"Archivo",sans-serif; font-size:var(--t-xs); text-transform:uppercase;
   letter-spacing:.06em; color:var(--tinta3); text-align:right; padding:0 0 8px; font-weight:700;
@@ -894,6 +1005,22 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .fase .aqui{position:absolute; top:8px; right:10px; font-size:var(--t-xs); font-weight:700;
   font-family:"Archivo",sans-serif; color:var(--tinta3)}
 #prox{max-width:calc(var(--medida) + 32px)}
+
+/* ---------- el movimiento ----------
+   El programa es un ojo que mira, y la pagina puede moverse como eso sin
+   convertirse en una feria. Tres cosas, y ninguna decorativa:
+
+     * lo que entra en pantalla aparece, para que se note donde empieza cada
+       bloque al bajar;
+     * los numeros cuentan hasta su valor, porque un porcentaje que sube es mas
+       facil de comparar con el de al lado que uno que ya esta puesto;
+     * las barras crecen desde cero, que es literalmente lo que representan.
+
+   Todo respeta prefers-reduced-motion, y todo queda en su sitio final si el
+   guion no corre: son estados de llegada, no de partida. */
+.aparece{opacity:0; transform:translateY(14px)}
+@media(prefers-reduced-motion:reduce){.aparece{opacity:1; transform:none}}
+.ojo-marca svg, .ojo-h1 svg{transform-origin:50% 50%}
 .rein-cifras{display:grid; gap:1px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   margin-top:4px}
 .rein-cifras > div{background:var(--sup2); padding:11px 12px}
@@ -1820,9 +1947,16 @@ footer p{max-width:var(--medida)}
   <div class="eyebrow">El registro</div>
   <div class="titulo"><h2 class="tit" id="tit-hist"></h2></div>
   <p class="sub" id="sub-hist"></p>
+  <div id="hist-evo">
+    <div class="hist-botones" id="hist-botones"></div>
+    <div id="hist-svg"></div>
+    <p class="thist-pie" id="hist-lectura"></p>
+  </div>
   <div class="scroll-x"><table class="thist" id="t-hist"></table></div>
   <p class="thist-pie" id="pie-hist"></p>
 </section>
+
+<section id="dostiempos"></section>
 
 <section id="limites">
   <div class="eyebrow">Límites</div>
@@ -3337,7 +3471,8 @@ function contar(nodo){
 
   const pct = v => (100 * v).toFixed(1).replace(".", ",") + "%";
   const orden = Object.keys(R).sort((a, b) =>
-    ((A && A.p_sale[b]) || R[b].p_sale) - ((A && A.p_sale[a]) || R[a].p_sale));
+    ((A && A.p_sale[b] != null ? A.p_sale[b] : R[b].p_sale)) -
+    ((A && A.p_sale[a] != null ? A.p_sale[a] : R[a].p_sale)));
 
   const salidas = orden.map(n => {
     const r = R[n], g = r.mas_gana || [];
@@ -3346,7 +3481,8 @@ function contar(nodo){
       "<div class='quien'>Si se va " + n +
         (conQuien ? "<small>se lleva a " + conQuien + "</small>" : "") + "</div>" +
       "<p class='pas'>" +
-        (A ? "La apuesta le da <b>" + pct(A.p_sale[n]) + "</b> y el modelo <b>" +
+        (A && A.p_sale[n] != null
+           ? "La apuesta le da <b>" + pct(A.p_sale[n]) + "</b> y el modelo <b>" +
              pct(r.p_sale) + "</b>. " : "El modelo le da <b>" + pct(r.p_sale) + "</b>. ") +
         (g.length
           ? "Quien más gana con esa salida es <b>" + g[0].quien + "</b>, que pasa a " +
@@ -3996,6 +4132,112 @@ function contar(nodo){
     "anota igual en vez de taparlo con un supuesto.";
 })();
 
+/* ---------- el movimiento ----------
+   GSAP ya estaba cargado para reordenar una tabla. Esto lo usa para tres cosas
+   mas, y ninguna es decorativa:
+
+     * lo que entra en pantalla APARECE, para que se note donde empieza cada
+       bloque cuando uno baja rapido;
+     * los numeros CUENTAN hasta su valor, porque un porcentaje que sube se
+       compara mejor con el de al lado que uno que ya estaba puesto;
+     * las barras CRECEN desde cero, que es lo que representan.
+
+   Tres cuidados. El primero: si alguien pidio menos movimiento, no se anima
+   nada y se quita la clase de entrada, porque si no la pagina se queda en
+   blanco. El segundo: si GSAP no cargo -va con defer y se sirve de este mismo
+   dominio, pero puede fallar- pasa lo mismo. El tercero: se anima una sola vez
+   por elemento; volver a subir y bajar no reproduce nada, que es lo que
+   convierte una pagina en una feria. */
+(function(){
+  // GSAP va con defer, y los guiones diferidos corren DESPUES de este bloque
+  // en linea. Preguntando aca por gsap siempre daba undefined y el movimiento
+  // quedaba apagado sin que nada fallara. Se espera a que el documento este
+  // parseado, que es justo cuando los diferidos ya corrieron.
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", arrancar, {once: true});
+  } else {
+    arrancar();
+  }
+
+  function arrancar(){
+  const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hayGsap = typeof gsap !== "undefined";
+  const bloques = [...document.querySelectorAll(
+    "section > .titulo, section > .sub, section > .tarjeta, section > .g2, " +
+    "section > figure, section > .scroll-x, section > .rein-cifras, " +
+    "#apuesta, #puntaje, #sentimiento, #hist-evo, .veredicto")];
+
+  if(quieto || !hayGsap){
+    bloques.forEach(b => b.classList.remove("aparece"));
+    return;
+  }
+  bloques.forEach(b => b.classList.add("aparece"));
+
+  const num = el => {
+    const t = el.textContent.trim();
+    const m = t.match(/^(-?[\d.]+),?(\d*)\s*%$/);
+    if(!m) return null;
+    return {valor: parseFloat(m[1].replace(".", "") + "." + (m[2] || "0")),
+            dec: (m[2] || "").length, txt: t};
+  };
+
+  // Los porcentajes grandes cuentan; los de dentro de una tabla no, porque
+  // veinte numeros contando a la vez no se lee, se sufre.
+  const contadores = el => [...el.querySelectorAll(".v, .ap-pct, .big, .pun-caja .v")]
+    .map(e => [e, num(e)]).filter(([, n]) => n && n.valor > 0);
+
+  const barras = el => [...el.querySelectorAll(
+    ".term-fila .barra i, .ap-fila .b i, .sen-fila .izq i, .sen-fila .der i, .vbar > *")];
+
+  const animar = el => {
+    gsap.to(el, {opacity: 1, y: 0, duration: .55, ease: "power2.out"});
+    contadores(el).forEach(([e, n], i) => {
+      const o = {v: 0};
+      gsap.to(o, {v: n.valor, duration: .9, delay: .12 + i * .05, ease: "power1.out",
+        onUpdate(){ e.textContent = o.v.toFixed(n.dec).replace(".", ",") + "%"; },
+        onComplete(){ e.textContent = n.txt; }});
+    });
+    const bs = barras(el);
+    if(bs.length){
+      bs.forEach(b => { b.dataset.w = b.style.width || getComputedStyle(b).width; });
+      gsap.fromTo(bs, {width: 0},
+        {width: (i, t) => t.dataset.w, duration: .8, stagger: .05, ease: "power2.out"});
+    }
+  };
+
+  // Dos redes, porque una animacion de entrada que no se dispara deja el bloque
+  // INVISIBLE, que es mucho peor que no animar nada. Pasa de verdad: si se
+  // entra con un ancla, o se baja de golpe, los bloques que quedaron arriba no
+  // llegan a intersecar nunca.
+  const mostrar = el => { obs.unobserve(el); el.style.opacity = "1"; el.style.transform = "none"; };
+  const obs = new IntersectionObserver((es) => {
+    es.forEach(e => {
+      if(e.isIntersecting){ obs.unobserve(e.target); animar(e.target); }
+      // ya quedo por encima del pliegue sin haberse animado: se muestra y listo
+      else if(e.boundingClientRect.top < 0) mostrar(e.target);
+    });
+  }, {rootMargin: "0px 0px -12% 0px", threshold: .12});
+  bloques.forEach(b => obs.observe(b));
+  // Y una red final por si algo se escapa igual.
+  setTimeout(() => bloques.forEach(b => {
+    if(getComputedStyle(b).opacity !== "1") mostrar(b);
+  }), 9000);
+
+  // El ojo parpadea. Es la marca del programa y es lo unico que se mueve solo:
+  // cada seis a once segundos, y nunca dos veces seguidas igual.
+  const ojos = [...document.querySelectorAll(".ojo-marca svg, .ojo-h1 svg")];
+  if(ojos.length){
+    const parpadear = () => {
+      gsap.timeline()
+        .to(ojos, {scaleY: .08, duration: .07, ease: "power2.in"})
+        .to(ojos, {scaleY: 1, duration: .16, ease: "power2.out"});
+      setTimeout(parpadear, 6000 + Math.random() * 5000);
+    };
+    setTimeout(parpadear, 2500);
+  }
+  }
+})();
+
 /* ---------- el contador de visitas, y su aviso ----------
    GoatCounter: código abierto (EUPL-1.2), alojado en la Unión Europea, y
    guarda agregados por página y hora en vez de eventos por persona. No escribe
@@ -4222,6 +4464,190 @@ function contar(nodo){
       "</div>").join("");
 })();
 
+/* ---------- el mano a mano como partido aparte ----------
+   El modelo falla en la pregunta de quien se va, y falla en un sitio concreto
+   que se puede senalar con el dedo: su favorito llego al mano a mano cuatro de
+   siete veces y lo gano las cuatro. Acumular rechazo es lo que te LLEVA al
+   versus; ganarlo es otra cosa.
+
+   Esta seccion publica la variante con un segundo parametro para el segundo
+   tiempo, y publica que la variante arregla una cosa y no la otra. Poner solo
+   la mitad buena seria hacer justo lo que EVALUACION.md dice que no se hace. */
+(function(){
+  const V = D.versus, sec = $("#dostiempos");
+  if(!sec) return;
+  if(!V || !V.backtest){ sec.remove(); return; }
+  const R = V.backtest.resumen, F = V.backtest.filas;
+  const n2 = v => String(v).replace(".", ",");
+
+  const mejorLog = R.dos_tiempos_logver > R.modelo_logver;
+  const mejorPuesto = R.dos_tiempos_puesto_medio < R.modelo_puesto_medio;
+
+  const thetas = Object.entries(V.theta).filter(([n]) => V.registro[n]);
+  const maxT = Math.max(...thetas.map(([, v]) => Math.abs(v)), .5);
+
+  sec.innerHTML =
+    "<div class='eyebrow'>Una corrección al modelo</div>" +
+    "<div class='titulo'><h2 class='tit'>El mano a mano es otro partido, " +
+      "y el modelo lo juega con el número equivocado</h2></div>" +
+    "<p class='sub'>Sobre las siete galas de la prueba hacia atrás, el favorito del modelo " +
+      "llegó al mano a mano <b>cuatro veces</b> y lo <b>ganó las cuatro</b>. Acumular rechazo " +
+      "es lo que lleva al versus. Ganarlo es otra cosa, y en los datos va al revés: de las " +
+      "cinco personas que llegaron a más de un mano a mano, ganaron diez de trece.</p>" +
+
+    "<div class='tarjeta' style='margin-top:16px'>" +
+      "<div class='eyebrow'>La fuerza en el mano a mano</div>" +
+      "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 10px'>" +
+        "Un parámetro por persona, ajustado sobre los <b>" + V.n_versus + "</b> mano a mano " +
+        "publicados, con un prior que lo tira a cero cuando no hay datos. Positivo quiere decir " +
+        "difícil de sacar en un versus.</p>" +
+      thetas.map(([n, v]) => {
+        const w = 50 * Math.abs(v) / maxT;
+        const r = V.registro[n];
+        return "<div class='dt-theta'><span class='n'>" + n + "</span>" +
+          "<span class='b'><i class='" + (v < 0 ? "neg" : "") + "' style='" +
+            (v >= 0 ? "left:50%;width:" + w + "%" : "right:50%;width:" + w + "%") + "'></i></span>" +
+          "<span class='c'>" + (v >= 0 ? "+" : "\u2212") +
+            n2(Math.abs(v).toFixed(2)) + " · " +
+            r[0] + "-" + r[1] + "</span></div>";
+      }).join("") +
+    "</div>" +
+
+    "<div class='dt-rej'>" +
+      "<div class='dt-caja" + (mejorLog ? " mejor" : "") + "'><div class='k'>Log-verosimilitud</div>" +
+        "<div class='v'>" + n2(R.dos_tiempos_logver) + "</div>" +
+        "<div class='d'>contra " + n2(R.modelo_logver) + " del modelo y " + n2(R.azar_logver) +
+        " del azar. Más cerca de cero es mejor. Acá está la mejora: desaparecen las galas en " +
+        "que el modelo le daba 0,0% a quien salió.</div></div>" +
+      "<div class='dt-caja" + (mejorPuesto ? " mejor" : "") + "'><div class='k'>Puesto medio</div>" +
+        "<div class='v'>" + n2(R.dos_tiempos_puesto_medio) + "</div>" +
+        "<div class='d'>contra " + n2(R.modelo_puesto_medio) + " del modelo y " +
+        n2(R.azar_puesto_medio) + " del azar. Acá no mejora: sigue poniendo abajo a quien " +
+        "se va.</div></div>" +
+      "<div class='dt-caja'><div class='k'>Aciertos</div>" +
+        "<div class='v'>" + R.dos_tiempos_aciertos + " de " + R.n + "</div>" +
+        "<div class='d'>los mismos que el modelo, que acierta " + R.modelo_aciertos + ". " +
+        "Corrige la confianza, no la puntería.</div></div>" +
+    "</div>" +
+
+    "<p class='camino-pie'>" + V.que_es + " El resultado honesto es a medias: la variante deja " +
+      "de estar catastróficamente segura en la dirección equivocada, y no acierta ni una más. " +
+      V.aviso + " Las dos quedan congeladas antes de cada gala en <a href='datos.json'>el " +
+      "registro</a>, y el martes se puntúan las dos.</p>";
+})();
+
+/* ---------- la evolución del pronóstico ----------
+   El registro es append-only desde que existe, asi que se puede dibujar como se
+   movio cada una corrida a corrida en vez de mostrar solo la foto de hoy.
+
+   Los botones ACUMULAN en vez de filtrar: elegir una fecha no esconde el resto
+   del recorrido, marca esa columna y la lee en palabras. Filtrar daria cuatro
+   fotos sueltas; lo que interesa es el movimiento entre ellas.
+
+   Una de las corridas guardadas no es el caso base sino una rama condicionada.
+   Se dibuja igual porque es lo que la pagina publicaba esa manana, y se marca,
+   porque compararla con las otras sin decirlo seria comparar dos cosas
+   distintas. */
+(function(){
+  const H = D.historial_pronostico, caja = $("#hist-evo");
+  if(!caja) return;
+  // build.py entrega el historial ya aplanado como lista de corridas. Se
+  // aceptan las dos formas porque el archivo en data/ tiene la envoltura.
+  const cs = (Array.isArray(H) ? H : ((H && H.corridas) || []))
+    .filter(c => c && c.p_gana);
+  if(cs.length < 2){ caja.remove(); return; }
+
+  const AN = 720, AL = 300, IZQ = 44, DER = 96, ARR = 22, ABA = 44;
+  const ancho = AN - IZQ - DER, alto = AL - ARR - ABA;
+  const x = i => IZQ + (cs.length === 1 ? ancho / 2 : ancho * i / (cs.length - 1));
+  const maxP = Math.max(0.35, ...cs.flatMap(c => Object.values(c.p_gana)));
+  const y = v => ARR + alto * (1 - v / maxP);
+  const pc = v => (100 * v).toFixed(1).replace(".", ",") + "%";
+
+  // Quien se dibuja: las que siguen en juego hoy, para que el grafico no se
+  // llene de lineas que se cortan. Las que se fueron aparecen en el texto.
+  const vivas = D.jugadores.slice();
+  const COL = ["--oro-2", "--apoyo", "--rechazo", "--oro-3", "--tinta2", "--oro-1",
+               "--apoyo-txt", "--rechazo-txt"];
+  const color = n => "var(" + COL[vivas.indexOf(n) % COL.length] + ")";
+
+  let sel = cs.length - 1;
+
+  function dibujar(){
+    let g = "<svg viewBox='0 0 " + AN + " " + AL + "' role='img' aria-label='" +
+      "Cómo se movió la probabilidad de ganar de cada jugadora entre las " +
+      cs.length + " corridas registradas'>";
+    // guias horizontales
+    for(let v = 0; v <= maxP + 1e-9; v += 0.1){
+      g += "<line class='he-guia' x1='" + IZQ + "' y1='" + y(v).toFixed(1) +
+           "' x2='" + (AN - DER) + "' y2='" + y(v).toFixed(1) + "'/>";
+      g += "<text class='he-txt' x='" + (IZQ - 8) + "' y='" + (y(v) + 4).toFixed(1) +
+           "' text-anchor='end'>" + Math.round(100 * v) + "%</text>";
+    }
+    // la columna elegida
+    g += "<line class='he-marca' x1='" + x(sel) + "' y1='" + (ARR - 6) +
+         "' x2='" + x(sel) + "' y2='" + (ARR + alto + 6) + "'/>";
+    // una linea por jugadora
+    vivas.forEach(n => {
+      const pts = cs.map((c, i) => [x(i), y(c.p_gana[n] != null ? c.p_gana[n] : 0)]);
+      const d = pts.map((q, i) => (i ? "L" : "M") + q[0].toFixed(1) + " " + q[1].toFixed(1)).join(" ");
+      g += "<path class='he-linea' d='" + d + "' stroke='" + color(n) + "'/>";
+      pts.forEach((q, i) => {
+        g += "<circle class='he-punto" + (i === sel ? "" : " he-apagado") + "' cx='" +
+             q[0].toFixed(1) + "' cy='" + q[1].toFixed(1) + "' r='" + (i === sel ? 4 : 2.5) +
+             "' fill='" + color(n) + "'><title>" + n + " · " + FECHA_LARGA(cs[i].fecha) +
+             " · " + pc(cs[i].p_gana[n] || 0) + "</title></circle>";
+      });
+      const ult = cs[cs.length - 1].p_gana[n];
+      if(ult != null)
+        g += "<text class='he-txt nom' x='" + (AN - DER + 8) + "' y='" + (y(ult) + 4).toFixed(1) +
+             "' fill='" + color(n) + "'>" + n + "</text>";
+    });
+    // eje de fechas
+    g += "<line class='he-eje' x1='" + IZQ + "' y1='" + (ARR + alto) + "' x2='" +
+         (AN - DER) + "' y2='" + (ARR + alto) + "'/>";
+    cs.forEach((c, i) => {
+      g += "<text class='he-txt' x='" + x(i) + "' y='" + (ARR + alto + 18) +
+           "' text-anchor='middle'>" + c.fecha.slice(8) + "/" + c.fecha.slice(5, 7) + "</text>";
+    });
+    g += "</svg>";
+    $("#hist-svg").innerHTML = g;
+
+    // los botones
+    $("#hist-botones").innerHTML = cs.map((c, i) =>
+      "<button type='button' data-i='" + i + "' aria-pressed='" + (i === sel) + "'>" +
+        FECHA_LARGA(c.fecha).replace(" de ", " ") +
+        (c.rama_de ? " <span class='rama'>· rama</span>" : "") + "</button>").join("");
+
+    // la lectura de la columna elegida, comparada con la anterior
+    const c = cs[sel], prev = sel > 0 ? cs[sel - 1] : null;
+    const orden = Object.keys(c.p_gana).sort((a, b) => c.p_gana[b] - c.p_gana[a]);
+    const top = orden.slice(0, 3).map(n => {
+      const d = prev && prev.p_gana[n] != null
+        ? (100 * (c.p_gana[n] - prev.p_gana[n])) : null;
+      const flecha = d == null ? "" :
+        " (" + (d >= 0 ? "+" : "\u2212") + Math.abs(d).toFixed(1).replace(".", ",") +
+        " desde la anterior)";
+      return "<b>" + n + "</b> " + pc(c.p_gana[n]) + flecha;
+    }).join(", ");
+    const fuera = prev ? Object.keys(prev.p_gana).filter(n => !(n in c.p_gana)) : [];
+    $("#hist-lectura").innerHTML =
+      "El " + FECHA_LARGA(c.fecha) + ", con " + c.en_juego + " en juego, la página decía: " +
+      top + "." +
+      (c.rama_de ? " Ojo: esa corrida no era el caso base sino la rama condicionada a que " +
+        "saliera " + c.rama_de + ", que es lo que se publicaba esa mañana." : "") +
+      (fuera.length ? " Entre esta corrida y la anterior se fue " + fuera.join(" y ") + "." : "");
+  }
+
+  $("#hist-botones").addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if(!b) return;
+    sel = +b.dataset.i;
+    dibujar();
+  });
+  dibujar();
+})();
+
 /* ---------- el registro de pronósticos ----------
    Un pronóstico que solo muestra el número de hoy no se puede juzgar. Acá está
    cada corrida que la página publicó, en orden, incluida la rama condicionada
@@ -4381,11 +4807,17 @@ function contar(nodo){
   if(!A || !A.zodiaco){ $("#zodiaco").remove(); return; }
   const Z = A.zodiaco, base = D.escenarios.base;
 
+  // Los signos se cargaron una vez y el archivo conserva a las que ya se
+  // fueron. Sumar su probabilidad de ganar da NaN, porque ya no la tienen.
+  // Se filtra por quien sigue jugando, que es lo que la frase dice igual.
+  const enJuego = new Set(D.jugadores);
+  const signos = Object.fromEntries(
+    Object.entries(Z.signos).filter(([q]) => enJuego.has(q)));
   const porSigno = {};
-  Object.entries(Z.signos).forEach(([q,v]) => {
+  Object.entries(signos).forEach(([q,v]) => {
     (porSigno[v.signo] = porSigno[v.signo] || []).push(q);
   });
-  const conocidas = Object.keys(Z.signos).length;
+  const conocidas = Object.keys(signos).length;
   const faltan = Object.keys(Z.sin_fecha || {}).length;
 
   // El titular sale de los datos y habla de LAS QUE QUEDAN, no de los campeones
@@ -4489,11 +4921,11 @@ function contar(nodo){
       "<span class='v'>" + nf(v,1) + "%</span></div>").join("") + "</div>";
 
   // el mecanismo, con los dos casos que más se movieron
-  const porMu = [...E.filas].filter(f => f.cuota_g28 != null).sort((a,b) => a.d_mu - b.d_mu);
+  const porMu = [...E.filas].filter(f => f.cuota_gala != null).sort((a,b) => a.d_mu - b.d_mu);
   const baja = porMu[0], sube = [...E.filas].sort((a,b) => b.d_mu - a.d_mu)[0];
   $("#evo-explica").innerHTML =
     "El rechazo μ se estima <b>dentro de cada gala</b>, comparando a quienes estuvieron en la " +
-    "misma placa. <b>" + baja.quien + "</b> se salvó con " + nf(baja.cuota_g28,1) + "% cuando el " +
+    "misma placa. <b>" + baja.quien + "</b> se salvó con " + nf(baja.cuota_gala,1) + "% cuando el " +
     "modelo la esperaba peor: su μ baja " + nf(Math.abs(baja.d_mu),2) + " y con eso mejora su " +
     "chance de sobrevivir cada semana que falta. Como la escala es relativa, las que no " +
     "estuvieron en placa suben sin haber hecho nada: <b>" + sube.quien + "</b> gana " +

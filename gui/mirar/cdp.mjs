@@ -1,5 +1,5 @@
 // Lo mínimo del protocolo de Chrome que hace falta acá.
-export async function abrir({ancho = 1280, alto = 900, escala = 2, tema}) {
+export async function abrir({ancho = 1280, alto = 900, escala = 2, tema, movimiento}) {
   const vs = await (await fetch("http://127.0.0.1:9333/json/new?about:blank",
                                 {method: "PUT"})).json();
   const ws = new WebSocket(vs.webSocketDebuggerUrl);
@@ -21,8 +21,13 @@ export async function abrir({ancho = 1280, alto = 900, escala = 2, tema}) {
   await cmd("Network.setCacheDisabled", {cacheDisabled: true});
   await cmd("Emulation.setDeviceMetricsOverride",
             {width: ancho, height: alto, deviceScaleFactor: escala, mobile: ancho < 600});
-  if (tema) await cmd("Emulation.setEmulatedMedia",
-                      {features: [{name: "prefers-color-scheme", value: tema}]});
+  // Chrome sin ventana dice "reduce" por defecto, asi que cualquier animacion
+  // condicionada a prefers-reduced-motion queda apagada y no se puede mirar.
+  // Se emula explicitamente lo que haga falta.
+  const feats = [];
+  if (tema) feats.push({name: "prefers-color-scheme", value: tema});
+  if (movimiento) feats.push({name: "prefers-reduced-motion", value: "no-preference"});
+  if (feats.length) await cmd("Emulation.setEmulatedMedia", {features: feats});
   const ir = async url => {
     await cmd("Page.navigate", {url});
     await new Promise(r => setTimeout(r, 6500));

@@ -34,6 +34,10 @@ if [ "$SOLO_WEB" -eq 0 ]; then
   done
 fi
 
+# El mano a mano se reajusta con cada versus nuevo, así que va después de que
+# la gala esté cargada. No depende de la placa vigente: es historia.
+corre python3 model/versus.py >/dev/null
+
 # La apuesta va después de ramas y de campana: usa las dos.
 [ -f data/campana.json ] && corre python3 model/apuesta.py >/dev/null
 

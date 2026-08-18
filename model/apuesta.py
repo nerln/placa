@@ -128,7 +128,15 @@ def main():
 
     placa = list(ramas["placa"])
     if not placa:
-        print("sin placa vigente: no hay apuesta que declarar")
+        # Sin placa no hay apuesta, y dejar la anterior en su sitio es peor que
+        # no tener ninguna: la pagina la lee como si fuera de esta semana y
+        # muestra NaN para quien no estaba en aquella placa. Se borra.
+        viejo = ROOT / "data" / "apuesta.json"
+        if viejo.exists():
+            viejo.unlink()
+            print("sin placa vigente: se borro la apuesta de la gala anterior")
+        else:
+            print("sin placa vigente: no hay apuesta que declarar")
         return
 
     # --- senal 1: la campana, con signo y con el momento en que esta ---------

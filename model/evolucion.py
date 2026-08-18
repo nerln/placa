@@ -3,31 +3,30 @@
 """
 POR QUE CAMBIO LA FAVORITA - la anatomia de una gala.
 
-Antes de la gala 28 esta pagina publicaba una rama que decia: "si sale Hanssen,
-gana Tamara con 22,2%, Pincoya 21,6%, Charlotte 17,3%". Salio Hanssen. Y al dia
-siguiente el modelo puso a Charlotte primera con 22,2% y a Tamara segunda. Da la
-sensacion de que algo no cierra, y conviene explicarlo con numeros y no con
-palabras, porque la explicacion es justamente lo interesante del modelo.
+Una gala contesta DOS preguntas y la pagina solo anticipaba una. Antes de cada
+eliminacion se publica una rama que dice "si sale fulana, queda asi". Sale
+fulana, y al dia siguiente el pronostico no coincide con esa rama. Da la
+sensacion de que algo no cierra, y la explicacion es lo interesante del modelo.
 
-La rama respondia a UNA sola pregunta: quien se va. La gala respondio a dos.
-Ademas de quien, dijo POR CUANTO, y ese segundo dato es informacion nueva sobre
-el rechazo de las seis que estaban en placa:
-
-    Majluf 0,2%   Zilli 0,5%   Charlotte 1,9%   Pincoya 4,5%
-    Hanssen 53,9%   Sol 39,0%          (cuotas sobre el total de la placa)
-
-Charlotte se salvo con la cuarta parte de los votos que recibio Pincoya. Eso
-mueve el rasgo mu de las dos en direcciones opuestas, y mu es lo que decide
-quien sobrevive semana a semana. La rama no podia anticiparlo: fue calculada
-antes de que existieran esos porcentajes.
+La rama contestaba QUIEN se va. La gala ademas dice POR CUANTO, y ese segundo
+dato es informacion nueva sobre el rechazo de todas las que estaban en placa.
+Salvarse con el 1,9% no es lo mismo que salvarse con el 4,5%: mueve el rasgo mu
+en direcciones opuestas, y mu es lo que decide quien sobrevive semana a semana.
+La rama no podia anticiparlo, porque se calculo antes de que esos porcentajes
+existieran.
 
 Este script separa las dos cosas corriendo el modelo de hoy dos veces:
 
-    CON     la gala 28 informando mu (el pronostico vigente)
-    SIN     la gala 28 informando mu, pero con Hanssen ya fuera del plantel
+    CON  los porcentajes de la ultima gala informando mu
+    SIN  esos porcentajes, pero con el eliminado ya fuera del plantel
 
-La diferencia entre las dos es, exactamente, lo que dijeron los porcentajes.
-Todo lo demas -codigo, plantel, semillas- es identico entre las dos corridas.
+La diferencia entre las dos es, exactamente, lo que dijeron esos numeros. Todo
+lo demas -codigo, plantel, psi, propensiones, semilla- es identico.
+
+La gala que se explica se elige sola: la ultima resuelta que tenga el reparto
+completo. Estuvo escrita a mano un tiempo, apuntando siempre a la misma noche,
+y la seccion siguio explicando una gala vieja durante una semana sin que
+ninguna comprobacion lo notara.
 
     python3 model/evolucion.py      ->  data/evolucion.json
 """
@@ -49,7 +48,13 @@ import fit_psi                                               # noqa: E402
 from variance_components import ajustar as vc_ajustar        # noqa: E402
 
 N_SIMS = 150_000
-GALA = 28
+def _ultima_gala_completa(cfg):
+    """La ultima gala resuelta con reparto completo, que es la unica que informa mu."""
+    utiles = [g for g in cfg["galas"]
+              if g.get("completa") and g.get("eliminado") and g.get("salvados_cuota")]
+    if not utiles:
+        return None
+    return max(utiles, key=lambda g: (g["fecha"], g.get("gala") or 0))["gala"]
 
 
 def escala_con(cfg):
@@ -94,6 +99,10 @@ def _fecha_corrida():
 
 def main():
     cfg = json.loads((ROOT / "data" / "galas.json").read_text())
+    GALA = _ultima_gala_completa(cfg)
+    if GALA is None:
+        print("sin ninguna gala con reparto completo: no hay nada que explicar")
+        return
     rp = fit_psi.ajustar()
     psi = {n: float(rp["psi"][rp["ix"][n]]) for n in fm.VIG}
     se_psi = {n: float(rp["se"][rp["ix"][n]]) for n in fm.VIG}
@@ -103,25 +112,25 @@ def main():
     # no el ruido de Monte Carlo.
     SEMILLA = 20260811
 
-    print("corriendo CON la gala 28…", flush=True)
+    print(f"corriendo CON la gala {GALA}…", flush=True)
     mu_con, con = correr(cfg, psi, se_psi, prop, SEMILLA)
 
     # "completa: false" saca la gala del ajuste de mu sin tocar nada mas: el
-    # plantel ya no tiene a Hanssen en las dos corridas, asi que lo unico que
-    # cambia es si los porcentajes de esa noche informan el rasgo.
+    # eliminado ya esta fuera del plantel en las dos corridas, asi que lo unico
+    # que cambia es si los porcentajes de esa noche informan el rasgo.
     cfg_sin = copy.deepcopy(cfg)
     for g in cfg_sin["galas"]:
         if g["gala"] == GALA:
             g["completa"] = False
-    print("corriendo SIN los porcentajes de la gala 28…", flush=True)
+    print(f"corriendo SIN los porcentajes de la gala {GALA}…", flush=True)
     mu_sin, sin = correr(cfg_sin, psi, se_psi, prop, SEMILLA)
 
     VIG = fm.VIG
     ix = {v: i for i, v in enumerate(VIG)}
-    g28 = next(g for g in cfg["galas"] if g["gala"] == GALA)
-    resto = 1 - sum(g28["salvados_cuota"].values()) / 100
-    cuota = dict(g28["salvados_cuota"])
-    for k, v in g28["versus"].items():
+    gala_ = next(g for g in cfg["galas"] if g["gala"] == GALA)
+    resto = 1 - sum(gala_["salvados_cuota"].values()) / 100
+    cuota = dict(gala_["salvados_cuota"])
+    for k, v in gala_["versus"].items():
         cuota[k] = round(v * resto, 2)
 
     filas = []
@@ -135,7 +144,7 @@ def main():
             "mu_sin": round(mu_sin[v], 3),
             "mu_con": round(mu_con[v], 3),
             "d_mu": round(mu_con[v] - mu_sin[v], 3),
-            "cuota_g28": cuota.get(v),               # None si no estaba en placa
+            "cuota_gala": cuota.get(v),               # None si no estaba en placa
         })
     filas.sort(key=lambda f: -f["con_pct"])
 
@@ -145,10 +154,10 @@ def main():
         "n_sims": N_SIMS,
         "semilla": SEMILLA,
         "cuotas": cuota,
-        "eliminado": g28["eliminado"],
+        "eliminado": gala_["eliminado"],
         "filas": filas,
         "nota": ("Las dos corridas comparten codigo, plantel, psi, propensiones y "
-                 "semilla. La unica diferencia es si los porcentajes de la gala 28 "
+                 "semilla. La unica diferencia es si los porcentajes de esa gala "
                  "entran al ajuste del rechazo mu. Lo que separa a las dos columnas "
                  "es, por construccion, la informacion que aportaron esos numeros."),
     }
@@ -157,7 +166,7 @@ def main():
     print(f"\n{'quien':<11} {'solo salio':>11} {'con las cifras':>15} {'Δ':>7} "
           f"{'Δμ':>7} {'cuota':>7}")
     for f in filas:
-        c = f"{f['cuota_g28']:.1f}%" if f["cuota_g28"] is not None else "—"
+        c = f"{f['cuota_gala']:.1f}%" if f["cuota_gala"] is not None else "—"
         print(f"{f['quien']:<11} {100*f['sin_pct']:10.1f}% {100*f['con_pct']:14.1f}% "
               f"{f['delta_pp']:+6.1f} {f['d_mu']:+7.2f} {c:>7}")
     print("\nescrito data/evolucion.json")
