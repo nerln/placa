@@ -3675,8 +3675,20 @@ function contar(nodo){
     lim(f, "desde") <= ahora && ahora < lim(f, "hasta"));
   if(fase) caja.classList.add(fase.signo);
 
+  // Una medicion de tendencias envejece con la gala siguiente: lo que "pide la
+   // calle" pasa a ser lo que pedia. Si la ventana es anterior a la ultima gala
+   // resuelta, la tarjeta lo dice arriba en vez de presentarse como el estado
+   // de ahora. Es el mismo fallo que puso un titular de la noche de Hanssen
+   // sobre la campana de Luana.
+  const medido = (T.medido || "").slice(0, 10);
+  const jugada = D.puntaje && D.puntaje.fecha;
+  const vieja = medido && jugada && medido <= jugada;
+
   caja.innerHTML =
-    "<div class='eyebrow'>Lo que pide la calle</div>" +
+    "<div class='eyebrow'>" + (vieja ? "Lo que pidió la calle" : "Lo que pide la calle") + "</div>" +
+    (vieja ? "<p class='tw-nota' style='margin:0 0 8px'>Medido el " + FECHA_LARGA(medido) +
+      ", <b>antes</b> de la gala del " + FECHA_LARGA(jugada) + ". Es lo que se pedía mientras la " +
+      "votación estaba abierta, no lo que se pide ahora.</p>" : "") +
     "<h3 style='margin:0 0 6px'>La misma consigna pide lo contrario según el día</h3>" +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 12px'>" +
       T.significado + "</p>" +

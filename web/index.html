@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 29,3% · Tamara 21,7% · Pincoya 16,8%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-17T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 29,3% · Tamara 21,7% · Pincoya 16,8%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-17","version":"bd417de7e6f0dbc7","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=bd417de7e6f0dbc7"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 29,3% · Tamara 21,7% · Pincoya 16,8%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-17T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 29,3% · Tamara 21,7% · Pincoya 16,8%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-17","version":"650b36a68b83fc85","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=650b36a68b83fc85"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -3751,8 +3751,20 @@ function contar(nodo){
     lim(f, "desde") <= ahora && ahora < lim(f, "hasta"));
   if(fase) caja.classList.add(fase.signo);
 
+  // Una medicion de tendencias envejece con la gala siguiente: lo que "pide la
+   // calle" pasa a ser lo que pedia. Si la ventana es anterior a la ultima gala
+   // resuelta, la tarjeta lo dice arriba en vez de presentarse como el estado
+   // de ahora. Es el mismo fallo que puso un titular de la noche de Hanssen
+   // sobre la campana de Luana.
+  const medido = (T.medido || "").slice(0, 10);
+  const jugada = D.puntaje && D.puntaje.fecha;
+  const vieja = medido && jugada && medido <= jugada;
+
   caja.innerHTML =
-    "<div class='eyebrow'>Lo que pide la calle</div>" +
+    "<div class='eyebrow'>" + (vieja ? "Lo que pidió la calle" : "Lo que pide la calle") + "</div>" +
+    (vieja ? "<p class='tw-nota' style='margin:0 0 8px'>Medido el " + FECHA_LARGA(medido) +
+      ", <b>antes</b> de la gala del " + FECHA_LARGA(jugada) + ". Es lo que se pedía mientras la " +
+      "votación estaba abierta, no lo que se pide ahora.</p>" : "") +
     "<h3 style='margin:0 0 6px'>La misma consigna pide lo contrario según el día</h3>" +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 12px'>" +
       T.significado + "</p>" +
