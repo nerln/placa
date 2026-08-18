@@ -3197,33 +3197,79 @@ function contar(nodo){
 
 /* ---------- el termómetro de X ----------
    Posiciones medidas en el top-50 de tendencias de Argentina, no impresiones.
-   El dato que vale: la tendencia más longeva de la jornada era una campaña para
-   echar a alguien, y esa persona salió. */
+
+   Este bloque decia, con el titulo escrito a mano, que lo mas pedido en X fue
+   exactamente lo que paso, y remataba con "salio con el 58%". Las dos cosas
+   eran ciertas la noche de Hanssen y se quedaron ahi. Una semana despues la
+   consigna mas fuerte era otra, la persona que nombraba NO salio, y el 58% era
+   el porcentaje de otro. La pagina afirmaba lo contrario de lo que habia
+   pasado, con el numero de otra gala.
+
+   Ahora la comparacion se hace: se busca la consigna mas fuerte de la ventana,
+   se mira a quien nombra, y se contrasta con quien salio de verdad en la ultima
+   gala resuelta. El titular sale de esa comparacion, gane o pierda. Que la
+   calle se equivoque es tan publicable como que acierte, y esta semana es
+   ademas la misma historia que cuenta la seccion del mano a mano. */
 (function(){
   const A = D.actualidad;
   if(!A || !A.tendencias){ $("#tendencias").remove(); return; }
   const T = A.tendencias, campanas = T.terminos.filter(t => t.tipo === "campaña de voto");
-  const larga = T.terminos.reduce((a,b) => (b.horas||0) > (a.horas||0) ? b : a);
 
   const ICONO_X = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
     '<path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84' +
     'L1.24 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.11z"/></svg>';
 
-  $("#tit-trend").textContent = "Lo que más se pidió en X fue exactamente lo que pasó";
-  $("#sub-trend").innerHTML =
-    "<b>" + larga.txt + "</b> estuvo entre las cuatro primeras tendencias de Argentina durante <b>" +
-    larga.horas + " horas</b>, y era una campaña para que lo echaran. Salió con el 58%. " +
-    "Abajo, la mejor posición que alcanzó cada término en la ventana de " + T.ventana + ".";
+  // A quien nombra una consigna. Se compara sin tildes contra los nombres que
+  // usa el resto de la pagina, para no depender de como se escriba el termino.
+  const plano = t => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase();
+  const nombres = (D.jugadores || []).concat(
+    (D.eliminados || []).map(e => e && (e.apodo || e.quien)).filter(Boolean));
+  const aQuien = txt => nombres.find(n => plano(txt).includes(plano(n)));
+
+  // La consigna mas fuerte: primero por puesto, y a igual puesto la que duro mas.
+  const fuerte = campanas.slice().sort((a, b) =>
+    (a.mejor - b.mejor) || ((b.horas || 0) - (a.horas || 0)))[0];
+  const pedida = fuerte ? aQuien(fuerte.txt) : null;
+
+  // Quien salio de verdad, y con cuanto, de la ultima gala resuelta.
+  const P = D.puntaje;
+  const salio = P && P.eliminado;
+  const cuota = (() => {
+    const g = D.actualidad && D.actualidad.proxima_gala;
+    const v = (D.evolucion && D.evolucion.cuotas) || {};
+    return v[salio] != null ? v[salio] : null;
+  })();
+
+  if(fuerte && pedida && salio){
+    const acerto = pedida === salio;
+    $("#tit-trend").textContent = acerto
+      ? "Lo que más se pidió en X fue lo que pasó"
+      : "Lo que más se pidió en X no fue lo que pasó";
+    const segunda = campanas.filter(t => aQuien(t.txt) === salio)
+      .sort((a, b) => a.mejor - b.mejor)[0];
+    $("#sub-trend").innerHTML =
+      "<b>" + fuerte.txt + "</b> fue la consigna más fuerte de la ventana: llegó al puesto <b>" +
+      fuerte.mejor + "</b> y estuvo <b>" + fuerte.horas + " horas</b> en el top-50. Pedía que " +
+      "echaran a " + pedida + ". " +
+      (acerto
+        ? "Y " + salio + " salió."
+        : "Salió <b>" + salio + "</b>, que tenía " +
+          (segunda ? "una consigna más floja, en el puesto " + segunda.mejor + "" :
+                     "ninguna consigna propia") + ". " +
+          pedida + " se quedó.") +
+      " Abajo, la mejor posición que alcanzó cada término en la ventana de " + T.ventana + ".";
+  } else {
+    $("#tit-trend").textContent = "Lo que se pidió en X, y hasta dónde llegó";
+    $("#sub-trend").innerHTML = "La mejor posición que alcanzó cada término en la ventana de " +
+      T.ventana + ". Son posiciones en el top-50 del país, no cantidad de gente.";
+  }
 
   // Cada término lleva a su búsqueda en X. Es la diferencia entre leer que algo
-  // fue tendencia y poder ir a ver quién lo escribía: la lista deja de ser una
-  // captura del pasado y pasa a ser una puerta a lo que está pasando ahora, que
-  // en un programa que se emite cada noche cambia entre que uno abre la página
-  // y baja hasta acá. Es un enlace, no una petición: la página no consulta a X.
+  // fue tendencia y poder ir a ver quién lo escribía.
   const buscar = q => "https://x.com/search?q=" + encodeURIComponent(q) + "&f=live";
   $("#trend").innerHTML = T.terminos.map(t =>
     "<a class='trend-fila" + (t.mejor <= 3 ? " top" : "") + "' href='" + buscar(t.txt) +
-    "' target='_blank' rel='noopener nofollow' title='Ver \u201C" + t.txt + "\u201D en X, ahora'>" +
+    "' target='_blank' rel='noopener nofollow' title='Ver “" + t.txt + "” en X, ahora'>" +
     "<span class='pos'>#" + t.mejor + "</span>" +
     "<span class='txt'>" + t.txt + (t.nota ? "<small>" + t.nota + "</small>" : "") + "</span>" +
     "<span class='dur'>" + (t.horas ? t.horas + " h" : t.tipo) + "</span>" +
@@ -3233,13 +3279,15 @@ function contar(nodo){
     "trends24 archiva el top-50 por país y no publica cuántos tuits hay detrás de cada término. " +
     "De ahí sale cuánto duró y qué tan arriba llegó. Cuánta gente lo escribió, no.";
 
-  const luana = T.terminos.find(t => /LUANA/.test(t.txt));
+  // El mapa de bandos se midió una noche concreta y envejece con la siguiente
+  // gala. Si no trae fecha, o si ya pasó una gala desde entonces, se calla en
+  // vez de presentarse como el estado de hoy.
   const B = A.bandos;
-  $("#bandos").innerHTML = B
-    ? "Del Moro les pidió que se pararan del lado de quien querían que siguiera. Con <b>Hanssen</b> se " +
-      "pusieron " + B.con_hanssen.join(", ") + ". Con <b>Sol</b>, " + B.con_sol.join(", ") + ". " +
-      "Es el mapa de alianzas más medible que hay hoy y es lo que va a armar la placa del miércoles." +
-      (luana ? " Mientras tanto ya sube <b>" + luana.txt + "</b>: la próxima campaña." : "")
+  const vigente = B && B.fecha && (!D.puntaje || B.fecha > D.puntaje.fecha);
+  $("#bandos").innerHTML = vigente
+    ? "Del Moro les pidió que se pararan del lado de quien querían que siguiera. Con <b>" +
+      B.sobre[0] + "</b> se pusieron " + B.grupos[B.sobre[0]].join(", ") + ". Con <b>" +
+      B.sobre[1] + "</b>, " + B.grupos[B.sobre[1]].join(", ") + "."
     : "";
 
   $("#oficial-trend").innerHTML =
@@ -4517,8 +4565,11 @@ function contar(nodo){
       "<div class='dt-caja" + (mejorLog ? " mejor" : "") + "'><div class='k'>Log-verosimilitud</div>" +
         "<div class='v'>" + n2(R.dos_tiempos_logver) + "</div>" +
         "<div class='d'>contra " + n2(R.modelo_logver) + " del modelo y " + n2(R.azar_logver) +
-        " del azar. Más cerca de cero es mejor. Acá está la mejora: desaparecen las galas en " +
-        "que el modelo le daba 0,0% a quien salió.</div></div>" +
+        " del azar. Más cerca de cero es mejor. Acá está la mejora: la peor noche del modelo le " +
+        "daba " + (100 * Math.min(...F.map(f => f.modelo_p))).toFixed(1).replace(".", ",") +
+        "% a quien salió, y la variante le da " +
+        (100 * F.reduce((a, b) => a.modelo_p <= b.modelo_p ? a : b).dos_tiempos_p)
+          .toFixed(1).replace(".", ",") + "%.</div></div>" +
       "<div class='dt-caja" + (mejorPuesto ? " mejor" : "") + "'><div class='k'>Puesto medio</div>" +
         "<div class='v'>" + n2(R.dos_tiempos_puesto_medio) + "</div>" +
         "<div class='d'>contra " + n2(R.modelo_puesto_medio) + " del modelo y " +
