@@ -3792,7 +3792,7 @@ function contar(nodo){
       "votación estaba abierta, no lo que se pide ahora.</p>" : "") +
     "<h3 style='margin:0 0 6px'>La misma consigna pide lo contrario según el día</h3>" +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 12px'>" +
-      T.significado + "</p>" +
+      (T.significado || "") + "</p>" +
     filas.map(f => "<div class='term-fila" + (f.c ? "" : " muda") + "'>" +
         "<span class='t'>" + f.n + "</span>" +
         "<span class='barra'><i style='width:" + (f.c ? largo(f.c.pico) : 0) + "%'></i></span>" +
@@ -3815,7 +3815,8 @@ function contar(nodo){
         : "";
     })() +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" +
-      "<b>" + T.el_detalle + "</b> " + (T.prueba || "") + "</p>" +
+      "<b>" + (T.el_detalle || "") + "</b>" +
+      (T.prueba ? " " + T.prueba : "") + "</p>" +
     "<p class='tw-nota' style='margin:10px 0 0'>" + T._nota +
       " <a href='" + T.fuente + "' target='_blank' rel='noopener nofollow'>trends24</a>.</p>";
 })();

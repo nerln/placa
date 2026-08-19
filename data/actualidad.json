@@ -369,89 +369,49 @@
   ]
  },
  "termometro_placa": {
-  "_nota": "Barrido de las 24 tarjetas horarias de trends24.in de Argentina y de Chile, tomado el 17 de agosto de 2026 a las 17.40 de la Argentina, unas cuatro horas y media antes de la gala. Archivo de terceros, no una medición propia. Mide cuánta gente escribe, que no es cuánta gente vota: el voto es pago y sin tope.",
-  "medido": "2026-08-17T17:40-03:00",
+  "_nota": "Barrido de las 24 tarjetas horarias de trends24.in/argentina, tomado el 19 de agosto de 2026 a las 08.15 de la Argentina, tras la gala de nominación del martes. Archivo de terceros, no una medición propia. Mide cuánta gente escribe, que no es cuánta gente vota: el voto es pago y sin tope.",
+  "medido": "2026-08-19T08:15-03:00",
   "fase": "negativo",
   "consignas": [
    {
-    "termino": "LUANA AL 9009",
+    "termino": "TAMARA AL 9009",
     "pico": 1,
-    "horas": 24,
+    "horas": 10,
     "ahora": {
-     "cuando": "17/08 17:36",
+     "cuando": "19/08 08:15",
      "puesto": 2
     }
    },
    {
-    "termino": "MAJLUF AL 9009",
-    "pico": 4,
-    "horas": 23,
+    "termino": "YIPIO AL 9009",
+    "pico": 1,
+    "horas": 9,
     "ahora": {
-     "cuando": "17/08 17:36",
-     "puesto": 17
+     "cuando": "19/08 08:15",
+     "puesto": 3
     }
    },
-   {
-    "termino": "ZILLI AL 9009",
-    "pico": 9,
-    "horas": 17,
-    "ahora": {
-     "cuando": "17/08 13:16",
-     "puesto": 37
-    }
-   }
-  ],
-  "chile": [
    {
     "termino": "LUANA AL 9009",
-    "pico": 23,
-    "horas": 12,
-    "ahora": {
-     "cuando": "17/08 17:48",
-     "puesto": 25
-    }
-   },
-   {
-    "termino": "TAMARA AL 9009",
-    "pico": 49,
-    "horas": 1,
-    "ahora": {
-     "cuando": "17/08 14:21",
-     "puesto": 49
-    }
-   }
-  ],
-  "otros": [
-   {
-    "termino": "Tamara",
     "pico": 3,
-    "horas": 18,
+    "horas": 5,
     "ahora": {
-     "cuando": "17/08 13:16",
-     "puesto": 4
+     "cuando": "18/08 17:39",
+     "puesto": 6
     }
    },
    {
-    "termino": "MIÉRCOLES BODA SOLZIA",
-    "pico": 2,
-    "horas": 20,
+    "termino": "SOL AL 9009",
+    "pico": 5,
+    "horas": 4,
     "ahora": {
-     "cuando": "17/08 17:36",
-     "puesto": 4
-    }
-   },
-   {
-    "termino": "#GranHermano",
-    "pico": 14,
-    "horas": 2,
-    "ahora": {
-     "cuando": "17/08 03:48",
-     "puesto": 14
+     "cuando": "19/08 08:15",
+     "puesto": 21
     }
    }
   ],
-  "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona». Desde el domingo la placa es negativa, así que ahora pide que la echen. El jueves, con la placa todavía positiva, la misma fórmula pedía lo contrario.",
-  "el_vuelco": "Cuatro días antes, con la placa todavía en voto positivo, la consigna número uno del país era «SOL AL 9009» y pedía salvarla. En esta ventana «SOL AL 9009» ya no aparece: en su lugar hay una tendencia a favor de Sol en el segundo puesto, y la que encabeza es «LUANA AL 9009», que pide lo contrario que la de su nombre cuatro días antes.",
+  "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». Esta placa es negativa de punta a punta, así que estas consignas piden eliminar y el signo no va a cambiar antes de la gala del lunes.",
+  "el_detalle": "Dos consignas llegaron al primer puesto del país la misma noche de la nominación, y ninguna de las dos nombra a quien el modelo pone primera.",
   "fuente": "https://trends24.in/argentina/"
  },
  "medidas_sociales": {

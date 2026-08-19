@@ -51,6 +51,19 @@ if ! python3 gui/verificar.py; then
   exit 1
 fi
 
+# La comprobación del RENDER: la página armada, mirada en un Chrome sin
+# ventana. Es la única que ve un texto mal ensamblado o un desborde en el
+# teléfono, porque en esos fallos ningún dato está mal. Sin Chrome se salta y
+# se dice, igual que verificar.py salta la sintaxis cuando no hay node.
+if sh gui/mirar/arrancar.sh >/dev/null 2>&1; then
+  if ! node gui/mirar/comprobar.mjs; then
+    echo "no se publica: el render está roto" >&2
+    exit 1
+  fi
+else
+  echo "(sin Chrome: no se comprueba el render)"
+fi
+
 if git diff --quiet && git diff --cached --quiet && [ -z "$(git status --porcelain)" ]; then
   echo "nada que publicar: el árbol está limpio"
   exit 0
