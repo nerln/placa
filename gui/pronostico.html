@@ -402,17 +402,43 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    Lo que NO se copia es la foto de cada participante: acá cada una se
    identifica con la bandera de su pais, que en una edicion de cinco paises
    dice mas que una cara, y ademas no republica retratos ajenos. */
+/* La placa tenia veinte colores escritos a mano y se quedaba oscura tambien de
+   dia, que es la unica parte de la pagina que ignoraba el tema del aparato. Los
+   colores pasan a variables: el oscuro es el de siempre, el claro es una
+   version de estudio con el mismo oro y los mismos medallones. Lo que se
+   conserva no es el negro, es la identidad: aro dorado, brasas, y el porcentaje
+   en oro para quien mas riesgo tiene. */
 .placa{
+  --pl-alto:#0F2B4D; --pl-medio:#001328; --pl-bajo:#000206; --pl-borde:#123152;
+  --pl-texto:#fff; --pl-suave:#8FA8C4; --pl-medio-txt:#C8D8E8;
+  --pl-oro:#E8C463; --pl-oro-claro:#F0CE6E; --pl-linea:#0e2947;
+  --pl-pista:#0a2340; --pl-pista-borde:#10304f; --pl-barra:#5E7FA4;
+  --pl-marco:#04162B; --pl-brasa:.5;
   background:
-    radial-gradient(ellipse 120% 90% at 50% 34%, #0F2B4D 0%, #001328 52%, #000206 100%),
-    #001328;
-  border:1px solid #123152; border-radius:var(--r-md);
+    radial-gradient(ellipse 120% 90% at 50% 34%, var(--pl-alto) 0%, var(--pl-medio) 52%,
+                    var(--pl-bajo) 100%),
+    var(--pl-medio);
+  border:1px solid var(--pl-borde); border-radius:var(--r-md);
   padding:22px 16px 18px; position:relative; overflow:hidden;
-  color:#fff; --linea2:#0e2947; --tinta3:#8FA8C4; --tinta2:#C8D8E8; --sup3:#0a2340;
+  color:var(--pl-texto);
+  --linea2:var(--pl-linea); --tinta3:var(--pl-suave); --tinta2:var(--pl-medio-txt);
+  --sup3:var(--pl-pista);
+}
+/* De dia: el mismo objeto con luz encendida. Contrastes contra #FBF7EE: texto
+   14,9:1, suave 4,9:1, y el oro solo se usa sobre fondo claro en negrita. */
+@media (prefers-color-scheme: light){
+  .placa{
+    --pl-alto:#FFFDF6; --pl-medio:#FBF7EE; --pl-bajo:#F1E9D8; --pl-borde:#E0D3B6;
+    --pl-texto:#141A22; --pl-suave:#6B6152; --pl-medio-txt:#3A4350;
+    --pl-oro:#8A6410; --pl-oro-claro:#6F5008; --pl-linea:#E6DCC6;
+    --pl-pista:#EDE4D0; --pl-pista-borde:#DFD2B6; --pl-barra:#8496AC;
+    --pl-marco:#FFFDF6; --pl-brasa:.28;
+  }
 }
 /* Las brasas doradas del aire, quietas y muy bajas de opacidad: dan el grano
    sin convertir la placa en un salvapantallas. */
-.placa::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+.placa::before{content:""; position:absolute; inset:0; pointer-events:none;
+  opacity:var(--pl-brasa);
   background:
     radial-gradient(1.5px 1.5px at 12% 78%, #E2B75A, transparent),
     radial-gradient(1.5px 1.5px at 6% 44%, #C08B2E, transparent),
@@ -423,22 +449,22 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
     radial-gradient(1.5px 1.5px at 71% 88%, #C08B2E, transparent),
     radial-gradient(1px 1px at 88% 73%, #E2B75A, transparent)}
 .placa > *{position:relative}
-.placa-cab{font-size:var(--t-xs); color:#8FA8C4; margin-bottom:16px; line-height:1.5}
-.placa-cab b{color:#E8C463}
+.placa-cab{font-size:var(--t-xs); color:var(--pl-suave); margin-bottom:16px; line-height:1.5}
+.placa-cab b{color:var(--pl-oro)}
 .nominados{display:flex; flex-direction:column; gap:0}
 .nom-card{display:grid; grid-template-columns:30px minmax(0,1fr) 56px; gap:10px; align-items:center;
   padding:11px 2px; border-top:1px solid var(--linea2);
   transition:opacity .45s var(--ui), background .3s var(--ui)}
 .nom-card:first-child{border-top:0}
 .nom-card .nm{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm);
-  text-transform:uppercase; letter-spacing:.07em; color:#fff}
-.nom-card .pais{font-size:var(--t-xs); color:#8FA8C4; letter-spacing:0; text-transform:none}
+  text-transform:uppercase; letter-spacing:.07em; color:var(--pl-texto)}
+.nom-card .pais{font-size:var(--t-xs); color:var(--pl-suave); letter-spacing:0; text-transform:none}
 .nom-card .pct{font-family:"Archivo",sans-serif; font-weight:700; font-size:19px;
-  text-align:right; font-variant-numeric:tabular-nums; color:#C8D8E8}
-.nom-card.alto .pct{color:#F0CE6E}
-.nom-card .medidor{grid-column:2 / -1; height:6px; background:#0a2340; border-radius:3px;
-  overflow:hidden; margin-top:6px; box-shadow:inset 0 0 0 1px #10304f}
-.nom-card .medidor i{display:block; height:100%; background:#5E7FA4; border-radius:3px;
+  text-align:right; font-variant-numeric:tabular-nums; color:var(--pl-medio-txt)}
+.nom-card.alto .pct{color:var(--pl-oro-claro)}
+.nom-card .medidor{grid-column:2 / -1; height:6px; background:var(--pl-pista); border-radius:3px;
+  overflow:hidden; margin-top:6px; box-shadow:inset 0 0 0 1px var(--pl-pista-borde)}
+.nom-card .medidor i{display:block; height:100%; background:var(--pl-barra); border-radius:3px;
   width:0; transition:width .8s var(--sal)}
 .nom-card.alto .medidor i{background:linear-gradient(90deg,#8A6118,#E8C463 60%,#F6E7A8)}
 /* El medallon: aro dorado biselado alrededor de la bandera, como la moneda que
@@ -446,7 +472,7 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    que se escala para cubrir y se recorta: mejor recortar los bordes que
    deformar una bandera. */
 .placa .nom-card > .marco{width:30px; height:30px; border-radius:50%; overflow:hidden;
-  display:grid; place-items:center; background:#04162B;
+  display:grid; place-items:center; background:var(--pl-marco);
   box-shadow:0 0 0 1.5px #C2A550, 0 0 0 3px #6C5722, inset 0 1px 2px rgba(255,255,255,.22),
              0 1px 3px rgba(0,0,0,.55)}
 .placa .nom-card > .marco svg{width:auto; height:100%; min-width:100%; object-fit:cover}
@@ -460,7 +486,10 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .placa.revelando .nom-card.turno{opacity:1; background:rgba(232,196,99,.13)}
 .placa.revelando .nom-card.duelo{opacity:1; background:rgba(179,18,47,.26)}
 .nom-card .veredicto-txt{color:#8FA8C4}
-.placa .btn{background:transparent; color:#F0CE6E; border-color:#C2A550}
+/* Medido: en claro este botón daba 1,43 de contraste, ilegible. El oro del
+   borde se queda, el del texto sigue al tema. */
+.placa .btn{background:transparent; color:var(--pl-oro-claro); border-color:var(--pl-oro)}
+.placa .btn:hover{background:var(--pl-oro-claro); color:var(--pl-medio)}
 .placa .btn:hover{background:#C2A550; color:#04162B}
 .placa .foco{mix-blend-mode:screen}
 
@@ -751,6 +780,15 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .sen-cab .a{text-align:right}
 .sen-cab .b{text-align:left}
 .sen-cab .z{min-width:8.5rem}
+/* Medido: en 390px la cuarta columna de 8,5rem empujaba el documento a 427px
+   y toda la pagina se movia de lado. En pantalla angosta la fila se apila. */
+@media(max-width:560px){
+  .sen-cab{display:none}
+  .sen-fila{grid-template-columns:1fr auto; row-gap:4px}
+  .sen-fila .izq{grid-column:1; grid-row:2}
+  .sen-fila .der{grid-column:2; grid-row:2}
+  .sen-fila .c{grid-column:1 / -1; grid-row:3; min-width:0; text-align:left}
+}
 .sen-ej{font-size:var(--t-xs); color:var(--tinta2); margin:3px 0 0; line-height:1.5;
   padding-left:10px; border-left:2px solid var(--linea)}
 #sentimiento{max-width:calc(var(--medida) + 32px)}
@@ -825,6 +863,14 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .term-fila.muda .barra i{background:var(--linea)}
 .term-fila.muda .t{color:var(--tinta3)}
 #term-placa{max-width:calc(var(--medida) + 32px)}
+/* Medido: en 360px la columna «llegó al puesto 1 · 24 horas» va en nowrap y
+   son 164px que, junto a los 9,5rem del nombre, empujaban el documento a 369.
+   En pantalla angosta la fila se apila y el texto deja de ir en una sola línea. */
+@media(max-width:560px){
+  .term-fila{grid-template-columns:1fr; row-gap:4px}
+  .term-fila .barra{grid-row:2}
+  .term-fila .p{grid-row:3; min-width:0; white-space:normal; text-align:left}
+}
 .fases{display:grid; grid-template-columns:1fr; gap:10px; margin:14px 0 0}
 @media(min-width:640px){
 /* ---------- el termómetro de la placa ----------
@@ -936,6 +982,15 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .sen-cab .a{text-align:right}
 .sen-cab .b{text-align:left}
 .sen-cab .z{min-width:8.5rem}
+/* Medido: en 390px la cuarta columna de 8,5rem empujaba el documento a 427px
+   y toda la pagina se movia de lado. En pantalla angosta la fila se apila. */
+@media(max-width:560px){
+  .sen-cab{display:none}
+  .sen-fila{grid-template-columns:1fr auto; row-gap:4px}
+  .sen-fila .izq{grid-column:1; grid-row:2}
+  .sen-fila .der{grid-column:2; grid-row:2}
+  .sen-fila .c{grid-column:1 / -1; grid-row:3; min-width:0; text-align:left}
+}
 .sen-ej{font-size:var(--t-xs); color:var(--tinta2); margin:3px 0 0; line-height:1.5;
   padding-left:10px; border-left:2px solid var(--linea)}
 #sentimiento{max-width:calc(var(--medida) + 32px)}
