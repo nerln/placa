@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-18T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-18","version":"52d3ee588b87379c","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=52d3ee588b87379c"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-18T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-18","version":"c91e0422060b761c","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=c91e0422060b761c"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -3316,7 +3316,15 @@ function contar(nodo){
     return v[salio] != null ? v[salio] : null;
   })();
 
-  if(fuerte && pedida && salio){
+  // La comparacion solo vale si la ventana de tendencias es ANTERIOR a la gala.
+  // Con una ventana posterior se estaria midiendo la campana de esta semana
+  // contra el resultado de la anterior, que es comparar dos cosas que no se
+  // tocan. Es el mismo error que puso un titular de la noche de Hanssen sobre
+  // la campana de Luana, y por eso se comprueba en vez de suponerse.
+  const hasta = T.hasta || "";
+  const comparable = salio && hasta && D.puntaje && hasta <= D.puntaje.fecha;
+
+  if(fuerte && pedida && salio && comparable){
     const acerto = pedida === salio;
     $("#tit-trend").textContent = acerto
       ? "Lo que más se pidió en X fue lo que pasó"
@@ -3334,6 +3342,18 @@ function contar(nodo){
                      "ninguna consigna propia") + ". " +
           pedida + " se quedó.") +
       " Abajo, la mejor posición que alcanzó cada término en la ventana de " + T.ventana + ".";
+  } else if(fuerte && pedida){
+    // Ventana posterior a la ultima gala: esto ya no describe lo que paso sino
+    // lo que se esta pidiendo para la que viene.
+    const G = D.actualidad.proxima_gala;
+    $("#tit-trend").textContent = "Lo que se está pidiendo para la gala que viene";
+    $("#sub-trend").innerHTML =
+      "<b>" + fuerte.txt + "</b> es la consigna más fuerte de la ventana: llegó al puesto <b>" +
+      fuerte.mejor + "</b> y estuvo <b>" + fuerte.horas + " horas</b> en el top-50. Pide que " +
+      "echen a " + pedida + (G && G.fecha ? " el " + FECHA_LARGA(G.fecha) : "") + ". " +
+      "La semana pasada la más fuerte fue la de " +
+      (D.puntaje ? "otra jugadora y no se cumplió: salió " + D.puntaje.eliminado : "otra") + ". " +
+      "Abajo, la mejor posición que alcanzó cada término en la ventana de " + T.ventana + ".";
   } else {
     $("#tit-trend").textContent = "Lo que se pidió en X, y hasta dónde llegó";
     $("#sub-trend").innerHTML = "La mejor posición que alcanzó cada término en la ventana de " +
