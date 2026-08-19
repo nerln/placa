@@ -9,123 +9,123 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 408,
- "nombran_a_alguien": 213,
- "con_signo": 52,
+ "total": 394,
+ "nombran_a_alguien": 199,
+ "con_signo": 59,
  "por_jugadora": {
   "Sol": {
-   "contra": 14,
-   "favor": 6,
-   "sin_signo": 77
+   "contra": 19,
+   "favor": 5,
+   "sin_signo": 57
   },
   "Mariela": {
    "contra": 4,
    "favor": 0,
-   "sin_signo": 8
+   "sin_signo": 10
   },
   "Pincoya": {
-   "contra": 2,
-   "favor": 4,
-   "sin_signo": 14
+   "contra": 6,
+   "favor": 3,
+   "sin_signo": 19
   },
   "Yipio": {
-   "contra": 4,
-   "favor": 11,
-   "sin_signo": 53
+   "contra": 12,
+   "favor": 8,
+   "sin_signo": 47
   },
   "Tamara": {
-   "contra": 1,
+   "contra": 4,
    "favor": 3,
-   "sin_signo": 15
+   "sin_signo": 13
   },
   "Luana": {
-   "contra": 10,
-   "favor": 5,
+   "contra": 7,
+   "favor": 7,
    "sin_signo": 19
   }
  },
  "ejemplos": {
   "Sol": [
    {
-    "texto": "SOL AL 9009",
+    "texto": "En el momento que Sol fue al CONFESIONARIO a VOTAR el día de hoy, el BIG anunció EL NOMBRE DE YIPIO antes que Votara Solange.  SANCIÓN PARA EL BIG, una Vergüenza y mucha importanci",
     "signo": "contra"
    },
    {
-    "texto": "Que ridicula la panqueque numero 1 de Zilli estas de panqueque amiga de la insoportable de Sol que querias que no Te nominaran 😅😅😅😅😅😅😅eso te pasa por ser panqueque numero 1v😅😅😅😅😅",
+    "texto": "Cómo es de falsa Zilly: x un lado dice q la unica con la fuerza de sacar a Sol es Yipio, y para votar a Yipio dice q Yipio se debilitó...",
     "signo": "contra"
    },
    {
-    "texto": "Re injusto que se vaya Luana en esta instancia, sol y Luana eran mis favoritas, pero ahorita estoy bancando solo a Luana…",
+    "texto": "Hasta los panelistas entendieron! Pero los de afuera no entienden q todavía no es el momento de Yipio y Sol así fue con Ulises y Tato",
     "signo": "contra"
    }
   ],
   "Mariela": [
    {
-    "texto": "Q horror Mariela",
+    "texto": "Chau yipio o Mariela",
     "signo": "contra"
    },
    {
-    "texto": "Mariela y Zilli chau la próxima",
+    "texto": "Mariela dio su motivo a lo último .. su motivo MALA gente y la afuera se ve todo",
     "signo": "contra"
    },
    {
-    "texto": "Basta gente es hora de que se vaya magluf o Mariela ya no merecen seguir ahí.",
+    "texto": "Las que tienen que salir una atrás de la otra, majluf, Mariela y la refea charlotte. \nLuana aunque es un caso, merece más estar allí. Aunque está perdida en el juego desde el día u",
     "signo": "contra"
    }
   ],
   "Pincoya": [
    {
-    "texto": "Y obvio que es la hija de Caniggia, y vos hija de Gómez! Todos somos hijos/as de …, y a parte ni que fueran perros los/as Solangistas para que diga ATAQUEN, se las da de superada y",
+    "texto": "Vamos pincoya,  a la final, te lo mereces, llegaste de otro país, sin q nadie te conociera, y lograste un puesto , re ,merecido, vamos pincoya, a la final🎉🎉",
     "signo": "favor"
    },
    {
-    "texto": "Pincoya, luana y ripio a la final",
-    "signo": "favor"
+    "texto": "Fuera pincoya 🙏✈️",
+    "signo": "contra"
    },
    {
-    "texto": "De que pincoya !! Lapsus ... sabes muy bien que pincoya es ratamente Falsa",
+    "texto": "Tiene que salir YIPIO AL 9009, la casa necesita una renovación, es un bucle de no acabar con esa mujer, si se va los enfrentamientos y bandos van a cambiar, y es necesario por que ",
     "signo": "contra"
    }
   ],
   "Yipio": [
    {
-    "texto": "Vamos adelante yipio",
-    "signo": "favor"
-   },
-   {
-    "texto": "Yipio al 9009 positiva a fondo!!!",
+    "texto": "En el momento que Sol fue al CONFESIONARIO a VOTAR el día de hoy, el BIG anunció EL NOMBRE DE YIPIO antes que Votara Solange.  SANCIÓN PARA EL BIG, una Vergüenza y mucha importanci",
     "signo": "contra"
    },
    {
-    "texto": "Que bolonki.!!!!!. Vamos YIPIOOOOO!!!!!!!!!!! Gênia!!!!!! ❤❤❤❤❤❤❤❤❤❤❤❤❤❤",
-    "signo": "favor"
+    "texto": "Cómo es de falsa Zilly: x un lado dice q la unica con la fuerza de sacar a Sol es Yipio, y para votar a Yipio dice q Yipio se debilitó...",
+    "signo": "contra"
+   },
+   {
+    "texto": "Hasta los panelistas entendieron! Pero los de afuera no entienden q todavía no es el momento de Yipio y Sol así fue con Ulises y Tato",
+    "signo": "contra"
    }
   ],
   "Tamara": [
    {
-    "texto": "SOL TIENE RAZON  TAMARA ES ASQUEROSA....FUERA TAMARA....",
+    "texto": "Tamara al 9009. Planta agresiva afuera.",
     "signo": "contra"
    },
    {
-    "texto": "Tamara y Charlotte pidiendo que baje Hanssen jejeje no saben ni dónde están paradas por Dios! Sol a la final!",
-    "signo": "favor"
+    "texto": "Tiene que salir YIPIO AL 9009, la casa necesita una renovación, es un bucle de no acabar con esa mujer, si se va los enfrentamientos y bandos van a cambiar, y es necesario por que ",
+    "signo": "contra"
    },
    {
-    "texto": "Yipio,  Charlotte,  tamara a la final",
-    "signo": "favor"
+    "texto": "tamara al 9009 afuera merquera violenta",
+    "signo": "contra"
    }
   ],
   "Luana": [
    {
-    "texto": "Si Danelik no soporta a Luana, no hubiera aceptado la invitación. Es un sorete, ni hablar de llamar a otra mujer “rápidita”. Horrible 😤",
+    "texto": "QUE SE VAYA DANELIK NO LE APORTA NADA A LUANA LA QUE MAS COMPAÑÍA LE HACE A LU Y LA AYUDA ES CAMPANITA MEJOR SERÍA QUE CAMPANITA Y LUANA JUEGUEN JUNTAS ❤❤",
     "signo": "contra"
    },
    {
-    "texto": "Se ve hermosa Luana con ese look 🫶",
-    "signo": "favor"
+    "texto": "QUE SE VAYA DANELIK ES MALA AMIGA NO LE AYUDA A LUANA Y QUE CAMPANITA JUEGUE CON LUANA LAS DOS SE LLEVAN MEJOR ADEMÁS CAMPANITA LA AYUDA A LU",
+    "signo": "contra"
    },
    {
-    "texto": "Y obvio que es la hija de Caniggia, y vos hija de Gómez! Todos somos hijos/as de …, y a parte ni que fueran perros los/as Solangistas para que diga ATAQUEN, se las da de superada y",
+    "texto": "Que hermosa se veia Luana con ese look....que bueno que se haya quedado no merecia irse esta desde el dia 1 🫶❤️",
     "signo": "favor"
    }
   ]

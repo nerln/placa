@@ -262,5 +262,31 @@
     "apuesta": "2026-08-17T20:05-03:00"
    }
   }
- ]
+ ],
+ "predicciones_dos_tiempos": [
+  {
+   "gala": 30,
+   "fecha_gala": "2026-08-24",
+   "corrida": "2026-08-18",
+   "placa": [
+    "Sol",
+    "Mariela",
+    "Pincoya",
+    "Yipio",
+    "Tamara",
+    "Luana"
+   ],
+   "p_sale": {
+    "Sol": 0.2597,
+    "Pincoya": 0.2179,
+    "Yipio": 0.1944,
+    "Luana": 0.1619,
+    "Mariela": 0.1117,
+    "Tamara": 0.0544
+   },
+   "sigma_prior": 1.0,
+   "n_versus": 11
+  }
+ ],
+ "_nota_dos_tiempos": "La variante del mano a mano, congelada antes de cada gala como las otras dos. Cada entrada lleva el prior y cuantos versus habia."
 }

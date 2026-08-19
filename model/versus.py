@@ -245,6 +245,26 @@ def main():
             vigente = {"placa": placa, "p_sale": {n: round(v, 4) for n, v in
                        sorted(p2.items(), key=lambda kv: -kv[1])}}
 
+    # La prediccion vigente queda congelada ANTES de la gala, igual que la del
+    # modelo y la apuesta: es la unica forma de que el puntaje del martes
+    # signifique algo. Una entrada por corrida, sin reescribir nunca.
+    if vigente:
+        ph = ROOT / "data" / "historial_pronostico.json"
+        H = json.loads(ph.read_text())
+        reg = H.setdefault("predicciones_dos_tiempos", [])
+        pv = galas.get("placa_vigente") or {}
+        entrada = {"gala": pv.get("gala"), "fecha_gala": pv.get("fecha"),
+                   "corrida": _leer("ramas.json")["generado"],
+                   "placa": vigente["placa"], "p_sale": vigente["p_sale"],
+                   "sigma_prior": SIGMA, "n_versus": len(vs)}
+        if not reg or reg[-1].get("p_sale") != entrada["p_sale"]:
+            reg.append(entrada)
+            H.setdefault("_nota_dos_tiempos", (
+                "La variante del mano a mano, congelada antes de cada gala como las "
+                "otras dos. Cada entrada lleva el prior y cuantos versus habia."))
+            ph.write_text(json.dumps(H, ensure_ascii=False, indent=1))
+            print(f"congelada la prediccion de dos tiempos de la gala {entrada['gala']}")
+
     salida = {
         "generado": _leer("ramas.json")["generado"],
         "que_es": ("Un segundo parámetro para el segundo tiempo de la placa. El modelo usa el "

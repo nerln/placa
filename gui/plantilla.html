@@ -563,6 +563,7 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .he-guia{stroke:var(--linea2); stroke-width:1; stroke-dasharray:2 3}
 .he-txt{font-family:"Archivo",sans-serif; font-size:11px; fill:var(--tinta3)}
 .he-txt.nom{font-weight:700; font-size:11.5px}
+.he-txt.fuera{fill:var(--rechazo-txt); font-weight:700; font-size:10.5px}
 .he-marca{stroke:var(--rechazo); stroke-width:2}
 .he-apagado{opacity:.18}
 @media(prefers-reduced-motion:no-preference){
@@ -674,7 +675,7 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .pun-quien{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl);
   line-height:1; margin:6px 0 4px}
 .pun-rej{display:grid; gap:10px; margin:14px 0 0}
-@media(min-width:640px){.pun-rej{grid-template-columns:1fr 1fr}}
+@media(min-width:640px){.pun-rej{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}}
 .pun-caja{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px}
 .pun-caja.acierta{border-color:var(--apoyo)}
 .pun-caja .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
@@ -876,7 +877,7 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .pun-quien{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl);
   line-height:1; margin:6px 0 4px}
 .pun-rej{display:grid; gap:10px; margin:14px 0 0}
-@media(min-width:640px){.pun-rej{grid-template-columns:1fr 1fr}}
+@media(min-width:640px){.pun-rej{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}}
 .pun-caja{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px}
 .pun-caja.acierta{border-color:var(--apoyo)}
 .pun-caja .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
@@ -3407,6 +3408,10 @@ function contar(nodo){
     "</p>" +
     "<div class='pun-rej'>" +
       caja("El modelo", P.modelo, "Es la cuenta que la prueba hacia atrás daba por debajo del azar.") +
+      (P.dos_tiempos !== undefined
+        ? caja("La variante del mano a mano", P.dos_tiempos,
+               "Es el modelo con el segundo tiempo jugado con su propio parámetro.")
+        : "") +
       caja("La apuesta declarada", P.apuesta, "Es la que se armó con tendencias e imagen.") +
     "</div>";
 })();
@@ -4774,6 +4779,17 @@ function contar(nodo){
     cs.forEach((c, i) => {
       g += "<text class='he-txt' x='" + x(i) + "' y='" + (ARR + alto + 18) +
            "' text-anchor='middle'>" + c.fecha.slice(8) + "/" + c.fecha.slice(5, 7) + "</text>";
+      // Quien se fue entre esta corrida y la anterior de caso base. Las ramas
+      // condicionadas se saltan como referencia: comparar contra una rama diria
+      // que alguien se fue cuando en realidad la rama lo suponia afuera.
+      if(i > 0 && !c.rama_de){
+        let base = i - 1;
+        while(base > 0 && cs[base].rama_de) base--;
+        const fuera = Object.keys(cs[base].p_gana).filter(n => !(n in c.p_gana));
+        if(fuera.length)
+          g += "<text class='he-txt fuera' x='" + x(i) + "' y='" + (ARR + alto + 32) +
+               "' text-anchor='middle'>se fue " + fuera.join(" y ") + "</text>";
+      }
     });
     g += "</svg>";
     $("#hist-svg").innerHTML = g;
