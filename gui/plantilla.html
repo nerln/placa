@@ -3433,7 +3433,7 @@ function contar(nodo){
   const max = Math.max(...orden.map(n => A.p_sale[n]));
   const primera = orden[0], segunda = orden[1];
   const S = A.supuestos, E = A.entradas, B = A.bajaron_de_placa;
-  const dif = Math.round(100 * (A.p_sale[primera] - A.p_sale[segunda]));
+  const difPuntos = 100 * (A.p_sale[primera] - A.p_sale[segunda]);
 
   const filas = orden.map((n, i) =>
     "<div class='ap-fila" + (i === 0 ? " primera" : "") + "'>" +
@@ -3452,8 +3452,11 @@ function contar(nodo){
       "<span class='ap-pct'>" + pct(A.p_sale[primera]) + "</span></div>" +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 14px'>" +
       "Es la que más chances tiene de irse esta noche según esta cuenta, que no es la del modelo. " +
-      "Segunda, <b>" + segunda + "</b> con " + pct(A.p_sale[segunda]) + ". Son " + dif +
-      " puntos de diferencia: una apuesta, no una certeza." +
+      "Segunda, <b>" + segunda + "</b> con " + pct(A.p_sale[segunda]) + ". " +
+      (difPuntos < 1
+        ? "Las separan " + difPuntos.toFixed(1).replace(".", ",") + " puntos: un empate " +
+          "práctico, no una elección."
+        : "Son " + Math.round(difPuntos) + " puntos de diferencia: una apuesta, no una certeza.") +
       (A.coinciden
         ? " Lo que sí llama la atención es que el modelo, que lee otra cosa completamente " +
           "distinta, señala a la misma persona."
@@ -3463,14 +3466,33 @@ function contar(nodo){
 
     "<div class='ap-sup'>" +
       "<div><b>De dónde sale.</b> " + A.que_es + "</div>" +
-      "<div><b>La campaña, y dónde está ahora.</b> " + (E.momento_nota || "") + " " +
-        orden.filter(n => E.campana_ahora[n] != null)
-             .map(n => "<b>" + n + "</b> está en el puesto " +
-                  String(E.campana_ahora[n]).replace(".", ",") +
-                  (E.campana_tendencia[n] ? " y " + E.campana_tendencia[n] : "")).join("; ") +
-        ". Quien no tiene consigna no vale cero sino " +
-        String(S.piso_sin_consigna).replace(".", ",") + ", porque no tener consigna es no haber " +
-        "sido medida.</div>" +
+      (() => {
+        // La frase se arma con lo que hay. Con la posicion de ahora si se midio;
+        // si no, con el indice de la ventana; y si no hay nada, se dice que no
+        // hay nada. La version anterior enumeraba un campo que podia venir
+        // vacio y dejaba en pantalla un «. .» donde iba la lista.
+        const ahora = orden.filter(n => E.campana_ahora && E.campana_ahora[n] != null);
+        const medidas = orden.filter(n => E.campana_medida && E.campana_medida[n] != null);
+        let cuerpo;
+        if(ahora.length){
+          cuerpo = (E.momento_nota ? E.momento_nota + " " : "") +
+            ahora.map(n => "<b>" + n + "</b> está en el puesto " +
+              String(E.campana_ahora[n]).replace(".", ",") +
+              (E.campana_tendencia && E.campana_tendencia[n]
+                ? " y " + E.campana_tendencia[n] : "")).join("; ") + ".";
+        } else if(medidas.length){
+          cuerpo = "Consignas con signo en las tendencias de la Argentina, ventana " +
+            (E.ventana_campana || "") + ": " +
+            medidas.map(n => n + " −" +
+              Math.abs(E.campana_medida[n]).toFixed(2).replace(".", ",")).join(", ") + ".";
+        } else {
+          cuerpo = "En esta ventana no se midió ninguna consigna.";
+        }
+        return "<div><b>La campaña.</b> " + cuerpo +
+          " Quien no tiene consigna no vale cero sino " +
+          String(S.piso_sin_consigna).replace(".", ",") +
+          ", porque no tener consigna es no haber sido medida.</div>";
+      })() +
       "<div><b>La imagen.</b> El ranking de " + (E.imagen_quien || "") + " del " +
         FECHA_LARGA(E.imagen_fecha) + ". " + (E.imagen_historial || "") + ". Entra dada vuelta: " +
         "caer mal es lo que hace que a una la voten para afuera.</div>" +
@@ -3532,8 +3554,12 @@ function contar(nodo){
   const placa = (D.placa_vigente && D.placa_vigente.integrantes) || [];
   if(!S || !S.por_jugadora || !placa.length){ caja.remove(); return; }
 
-  const filas = placa.map(n => ({n, ...S.por_jugadora[n]}))
+  // Solo quien fue medida: el corpus puede ser anterior a esta placa, y
+  // enumerar a alguien que no estaba dejaba «undefined contra» en pantalla.
+  const filas = placa.filter(n => S.por_jugadora[n])
+    .map(n => ({n, ...S.por_jugadora[n]}))
     .map(f => ({...f, saldo: f.contra - f.favor}));
+  if(filas.length < Math.ceil(placa.length / 2)){ caja.remove(); return; }
   const tope = Math.max(1, ...filas.map(f => Math.max(f.contra, f.favor)));
   filas.sort((a, b) => b.saldo - a.saldo);
 

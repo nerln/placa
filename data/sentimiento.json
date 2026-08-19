@@ -9,37 +9,98 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 377,
- "nombran_a_alguien": 101,
- "con_signo": 31,
+ "total": 408,
+ "nombran_a_alguien": 213,
+ "con_signo": 52,
  "por_jugadora": {
+  "Sol": {
+   "contra": 14,
+   "favor": 6,
+   "sin_signo": 77
+  },
+  "Mariela": {
+   "contra": 4,
+   "favor": 0,
+   "sin_signo": 8
+  },
+  "Pincoya": {
+   "contra": 2,
+   "favor": 4,
+   "sin_signo": 14
+  },
+  "Yipio": {
+   "contra": 4,
+   "favor": 11,
+   "sin_signo": 53
+  },
   "Tamara": {
    "contra": 1,
-   "favor": 2,
-   "sin_signo": 13
-  },
-  "Majluf": {
-   "contra": 4,
-   "favor": 1,
-   "sin_signo": 14
-  },
-  "Charlotte": {
-   "contra": 0,
-   "favor": 6,
-   "sin_signo": 14
+   "favor": 3,
+   "sin_signo": 15
   },
   "Luana": {
    "contra": 10,
    "favor": 5,
    "sin_signo": 19
-  },
-  "Zilli": {
-   "contra": 6,
-   "favor": 0,
-   "sin_signo": 19
   }
  },
  "ejemplos": {
+  "Sol": [
+   {
+    "texto": "SOL AL 9009",
+    "signo": "contra"
+   },
+   {
+    "texto": "Que ridicula la panqueque numero 1 de Zilli estas de panqueque amiga de la insoportable de Sol que querias que no Te nominaran 😅😅😅😅😅😅😅eso te pasa por ser panqueque numero 1v😅😅😅😅😅",
+    "signo": "contra"
+   },
+   {
+    "texto": "Re injusto que se vaya Luana en esta instancia, sol y Luana eran mis favoritas, pero ahorita estoy bancando solo a Luana…",
+    "signo": "contra"
+   }
+  ],
+  "Mariela": [
+   {
+    "texto": "Q horror Mariela",
+    "signo": "contra"
+   },
+   {
+    "texto": "Mariela y Zilli chau la próxima",
+    "signo": "contra"
+   },
+   {
+    "texto": "Basta gente es hora de que se vaya magluf o Mariela ya no merecen seguir ahí.",
+    "signo": "contra"
+   }
+  ],
+  "Pincoya": [
+   {
+    "texto": "Y obvio que es la hija de Caniggia, y vos hija de Gómez! Todos somos hijos/as de …, y a parte ni que fueran perros los/as Solangistas para que diga ATAQUEN, se las da de superada y",
+    "signo": "favor"
+   },
+   {
+    "texto": "Pincoya, luana y ripio a la final",
+    "signo": "favor"
+   },
+   {
+    "texto": "De que pincoya !! Lapsus ... sabes muy bien que pincoya es ratamente Falsa",
+    "signo": "contra"
+   }
+  ],
+  "Yipio": [
+   {
+    "texto": "Vamos adelante yipio",
+    "signo": "favor"
+   },
+   {
+    "texto": "Yipio al 9009 positiva a fondo!!!",
+    "signo": "contra"
+   },
+   {
+    "texto": "Que bolonki.!!!!!. Vamos YIPIOOOOO!!!!!!!!!!! Gênia!!!!!! ❤❤❤❤❤❤❤❤❤❤❤❤❤❤",
+    "signo": "favor"
+   }
+  ],
   "Tamara": [
    {
     "texto": "SOL TIENE RAZON  TAMARA ES ASQUEROSA....FUERA TAMARA....",
@@ -50,64 +111,22 @@
     "signo": "favor"
    },
    {
-    "texto": "YIPIO CHARLOTTE Y TAMARA A LA FINAL",
-    "signo": "favor"
-   }
-  ],
-  "Majluf": [
-   {
-    "texto": "MAJLUF AL 9009 EN PLACA NEGATIVA EL DOMINGO 😭🙏",
-    "signo": "contra"
-   },
-   {
-    "texto": "Votar por cualquiera de las otras que no sea MAJLUF seria anti-juego......una planta de esa magnitud que siga en la casa seria una pelotudez tan grande como la de Dario en la versi",
-    "signo": "favor"
-   },
-   {
-    "texto": "Votemos bien y justo Majluf al 9009",
-    "signo": "contra"
-   }
-  ],
-  "Charlotte": [
-   {
-    "texto": "Y obvio que es la hija de Caniggia, y vos hija de Gómez! Todos somos hijos/as de …, y a parte ni que fueran perros los/as Solangistas para que diga ATAQUEN, se las da de superada y",
-    "signo": "favor"
-   },
-   {
-    "texto": "Vamos Charlotte ❤",
-    "signo": "favor"
-   },
-   {
-    "texto": "Vamos Charlotte!!!!",
+    "texto": "Yipio,  Charlotte,  tamara a la final",
     "signo": "favor"
    }
   ],
   "Luana": [
    {
-    "texto": "Se ve hermosa Luana con ese look 🫶",
-    "signo": "favor"
-   },
-   {
     "texto": "Si Danelik no soporta a Luana, no hubiera aceptado la invitación. Es un sorete, ni hablar de llamar a otra mujer “rápidita”. Horrible 😤",
     "signo": "contra"
    },
    {
+    "texto": "Se ve hermosa Luana con ese look 🫶",
+    "signo": "favor"
+   },
+   {
     "texto": "Y obvio que es la hija de Caniggia, y vos hija de Gómez! Todos somos hijos/as de …, y a parte ni que fueran perros los/as Solangistas para que diga ATAQUEN, se las da de superada y",
     "signo": "favor"
-   }
-  ],
-  "Zilli": [
-   {
-    "texto": "Mavinga si vos pensas que es placa positiva como votas a zilli??....que no viste afuera que zilli en placa positiva siempre zafaba? Jajajajajajajajaja 😅",
-    "signo": "contra"
-   },
-   {
-    "texto": "Que ridicula la panqueque numero 1 de Zilli estas de panqueque amiga de la insoportable de Sol que querias que no Te nominaran 😅😅😅😅😅😅😅eso te pasa por ser panqueque numero 1v😅😅😅😅😅",
-    "signo": "contra"
-   },
-   {
-    "texto": "Vamos todos por Zilli al 9009",
-    "signo": "contra"
    }
   ]
  }
