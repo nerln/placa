@@ -55,18 +55,18 @@
    }
   },
   {
-   "fecha": "2026-08-17",
+   "fecha": "2026-08-18",
    "galas_hasta": 29,
    "en_juego": 8,
    "p_gana": {
-    "Tamara": 0.217,
-    "Pincoya": 0.1685,
-    "Charlotte": 0.2931,
-    "Zilli": 0.1191,
-    "Luana": 0.1003,
-    "Yipio": 0.061,
-    "Mariela": 0.0341,
-    "Sol": 0.0069
+    "Tamara": 0.22,
+    "Pincoya": 0.1524,
+    "Charlotte": 0.3061,
+    "Zilli": 0.1276,
+    "Luana": 0.0927,
+    "Yipio": 0.0606,
+    "Mariela": 0.0348,
+    "Sol": 0.0057
    }
   }
  ],
@@ -113,6 +113,28 @@
     "Charlotte": 0.237817,
     "Luana": 0.304225,
     "Zilli": 0.15234
+   },
+   "n_sims": 400000
+  },
+  {
+   "gala": 30,
+   "fecha_gala": "2026-08-24",
+   "corrida": "2026-08-18",
+   "placa": [
+    "Sol",
+    "Mariela",
+    "Pincoya",
+    "Yipio",
+    "Tamara",
+    "Luana"
+   ],
+   "p_sale": {
+    "Sol": 0.523467,
+    "Mariela": 0.064275,
+    "Pincoya": 0.128068,
+    "Yipio": 0.11339,
+    "Tamara": 0.031258,
+    "Luana": 0.139543
    },
    "n_sims": 400000
   }

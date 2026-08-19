@@ -1,0 +1,178 @@
+{
+ "generado": "2026-08-18",
+ "gala": 30,
+ "fecha_gala": "2026-08-24",
+ "placa": [
+  "Sol",
+  "Mariela",
+  "Pincoya",
+  "Yipio",
+  "Tamara",
+  "Luana"
+ ],
+ "bajaron_de_placa": {
+  "quienes": [
+   "Sol",
+   "Yipio"
+  ],
+  "cuando": "2026-08-16",
+  "como": "Los sacó la fase de voto positivo. Del Moro lo anunció al aire el domingo, para afuera: a las jugadoras no se les dijo.",
+  "fuente": "https://www.mitelefe.com/gran-hermano/noticias/cruces-en-la-cena-de-nominadas-y-dos-jugadoras-salvadas-de-la-eliminacion-pid2562969"
+ },
+ "es_del_modelo": false,
+ "que_es": "Predicción declarada para esta gala. No sale del modelo de la página: el modelo contesta la misma pregunta, y su prueba hacia atrás dice que en esa pregunta anda peor que el azar. Ésta se arma con las dos señales que se pueden observar desde afuera antes de que cierre la votación.",
+ "supuestos": {
+  "peso_campana": 1.0,
+  "peso_imagen": 1.0,
+  "piso_sin_consigna": 0.52,
+  "piso_sin_imagen": 0.5
+ },
+ "entradas": {
+  "campana": {
+   "Tamara": 1.0,
+   "Yipio": 1.0,
+   "Luana": 0.96,
+   "Mariela": 0.52,
+   "Sol": 0.92,
+   "Pincoya": 0.52
+  },
+  "campana_medida": {
+   "Sol": -0.92,
+   "Mariela": null,
+   "Pincoya": null,
+   "Yipio": -1.0,
+   "Tamara": -1.0,
+   "Luana": -0.96
+  },
+  "campana_ahora": {
+   "Tamara": null,
+   "Yipio": null,
+   "Luana": null,
+   "Mariela": null,
+   "Sol": null,
+   "Pincoya": null
+  },
+  "campana_tendencia": {
+   "Tamara": null,
+   "Yipio": null,
+   "Luana": null,
+   "Mariela": null,
+   "Sol": null,
+   "Pincoya": null
+  },
+  "momento_nota": null,
+  "ventana_campana": "18/08 11:15 → 19/08 11:15 UTC",
+  "imagen": {
+   "Tamara": 17,
+   "Yipio": 18,
+   "Luana": 18,
+   "Mariela": 43,
+   "Sol": 76,
+   "Pincoya": 81
+  },
+  "imagen_quien": "Fefe Bongiorno",
+  "imagen_fecha": "2026-08-12",
+  "imagen_historial": "Es el único agregador de la temporada con historial: acertó el eliminado en 5 de 5 galas documentadas"
+ },
+ "p_sale": {
+  "Tamara": 0.2718,
+  "Yipio": 0.2686,
+  "Luana": 0.2578,
+  "Mariela": 0.0971,
+  "Sol": 0.0723,
+  "Pincoya": 0.0324
+ },
+ "sensibilidad": {
+  "las_dos": {
+   "Tamara": 0.2718,
+   "Yipio": 0.2686,
+   "Luana": 0.2578,
+   "Mariela": 0.0971,
+   "Sol": 0.0723,
+   "Pincoya": 0.0324
+  },
+  "solo_campana": {
+   "Yipio": 0.2033,
+   "Tamara": 0.2033,
+   "Luana": 0.1951,
+   "Sol": 0.187,
+   "Mariela": 0.1057,
+   "Pincoya": 0.1057
+  },
+  "solo_imagen": {
+   "Tamara": 0.2392,
+   "Yipio": 0.2363,
+   "Luana": 0.2363,
+   "Mariela": 0.1643,
+   "Sol": 0.0692,
+   "Pincoya": 0.0548
+  },
+  "con_el_pico": {
+   "Tamara": 0.2718,
+   "Yipio": 0.2686,
+   "Luana": 0.2578,
+   "Mariela": 0.0971,
+   "Sol": 0.0723,
+   "Pincoya": 0.0324
+  }
+ },
+ "modelo_dice": {
+  "Sol": 0.5235,
+  "Luana": 0.1395,
+  "Pincoya": 0.1281,
+  "Yipio": 0.1134,
+  "Mariela": 0.0643,
+  "Tamara": 0.0313
+ },
+ "coinciden": false,
+ "llamada": {
+  "quien": "Tamara",
+  "frase": "Esta noche se va Tamara.",
+  "con_quien": "Nazareno Pompei",
+  "confianza": "Es la respuesta comprometida, no un empate. Sale primera con las dos señales juntas y con casi todas las variantes; abajo está la que no. El modelo señala a otra.",
+  "y_si_no": "Si se va otra, la segunda es Yipio y la tercera Luana. Y queda anotado que la apuesta falló, con el número que había puesto."
+ },
+ "autoconfirmaciones": {
+  "_nota": "Seis comprobaciones que podían tumbar la apuesta. Cada una está planteada de modo que el resultado contrario obligaba a cambiar la respuesta, y las que no pasan se publican igual y con el mismo tamaño de letra.",
+  "checks": [
+   {
+    "pregunta": "¿La placa es la que creemos?",
+    "resultado": "Sí, de cinco: Sol, Mariela, Pincoya, Yipio, Tamara, Luana. Verificado en la nota de Telefe, en dos medios independientes, y en un chequeo interno de la propia nota: sólo los deseos que nombran a gente todavía en placa siguen vivos, y eso únicamente cuadra si Sol y Yipio bajaron.",
+    "pasa": true,
+    "podia_matar": "Publicar el pronóstico sobre siete personas cuando dos ya estaban a salvo."
+   },
+   {
+    "pregunta": "¿El modelo, que lee datos distintos, señala a otra?",
+    "resultado": "No. El modelo lee el reparto de votos que Telefe cantó en las galas anteriores y señala a Sol con 52,3%. La apuesta no usa nada de eso: usa tendencias y un ranking de imagen.",
+    "pasa": false,
+    "podia_matar": "Dos cuentas independientes apuntando a personas distintas."
+   },
+   {
+    "pregunta": "¿La apuesta se sostiene sobre una sola señal?",
+    "resultado": "Con la campaña sola gana Yipio y con el pico de 24 horas en vez de dónde está la consigna ahora, Tamara. Con la imagen sola, no: ahí primera es Tamara con 23,9% contra 23,6% de Yipio. Es la comprobación que menos limpia sale.",
+    "pasa": false,
+    "podia_matar": "Que el resultado dependiera de una sola medición o de un solo parámetro."
+   },
+   {
+    "pregunta": "¿La consigna se está apagando justo cuando cierra el voto?",
+    "resultado": "No, va al revés: la de Tamara subió del puesto medio 7,2 en las seis horas previas a 2,8 en las últimas seis. Las otras dos están estancadas en el 24,7 y en el 37.",
+    "pasa": false,
+    "podia_matar": "Una campaña que encabezó el país de madrugada y ya no junta votos."
+   },
+   {
+    "pregunta": "¿Chile, que también vota, dice lo mismo?",
+    "resultado": "Sí: la consigna contra Tamara es la única de la placa que también entró al top-50 chileno.",
+    "pasa": true,
+    "podia_matar": "Que la campaña fuera un fenómeno de un solo país."
+   },
+   {
+    "pregunta": "¿Alguna encuesta reciente dice otra cosa?",
+    "resultado": "Sí, y se publica igual: las de voto positivo daban a Majluf última, pero medían la fase que ya cerró y de la que Majluf no se salvó. La única fuente con historial de aciertos pone a Tamara con la segunda peor imagen de la placa.",
+    "pasa": false,
+    "podia_matar": "Nada, porque no se oculta: es la discrepancia que queda anotada."
+   }
+  ],
+  "pasan": 2,
+  "de": 6
+ }
+}

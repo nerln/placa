@@ -288,20 +288,21 @@
   }
  ],
  "placa_vigente": {
-  "gala": 29,
-  "fecha": "",
-  "fecha_nominacion": "2026-08-17",
-  "integrantes": [],
+  "gala": 30,
+  "fecha": "2026-08-24",
+  "fecha_nominacion": "2026-08-18",
+  "integrantes": [
+   "Sol",
+   "Mariela",
+   "Pincoya",
+   "Yipio",
+   "Tamara",
+   "Luana"
+  ],
   "inmune_lider": "",
   "libres": [
-   "Tamara",
-   "Pincoya",
    "Charlotte",
-   "Zilli",
-   "Luana",
-   "Yipio",
-   "Mariela",
-   "Sol"
+   "Zilli"
   ]
  }
 }

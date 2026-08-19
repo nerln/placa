@@ -2,6 +2,14 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-08-18",
+   "titulo": "Placa de seis sobre ocho, y la visita que votó contra quien la eligió",
+   "detalle": "La gala se adelantó al martes por la Copa Libertadores. Quedaron nominadas Sol, Mariela, Pincoya, Yipio, Tamara y Luana; se salvaron Charlotte y Zilli. Luana era la líder y usó sus cuatro puntos contra Mariela, pero terminó en placa igual por el voto de Danelik, que es la visita que ella misma había elegido para que volviera. Los dos votos de Tamara contra Luana fueron anulados por Majluf, que se llevó ese poder al irse.",
+   "afecta": "El pronóstico ya está recalculado con la placa de seis. Esta vez es negativa de punta a punta: no hay fase de voto positivo que baje gente antes del lunes.",
+   "impacto": "recalculado",
+   "fuente": "https://www.infobae.com/teleshow/2026/08/19/los-exjugadores-de-gran-hermano-generacion-dorada-tuvieron-que-votar-quienes-son-los-nominados-de-la-semana/"
+  },
+  {
    "fecha": "2026-08-17",
    "titulo": "Se fue Majluf con el 57,1%, y se llevó a Mavinga",
    "detalle": "El versus final fue entre Luana y Majluf, que era el que nadie esperaba. Antes se habían salvado Charlotte con el 0,8% de votos en contra, Tamara con el 1,2% y Zilli con el 11,5%. Como la eliminación era en dupla, Jenny Mavinga se fue con ella. Quedan ocho.",

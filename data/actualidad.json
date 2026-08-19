@@ -164,90 +164,75 @@
   }
  },
  "tendencias": {
-  "_nota": "Posiciones del top-50 de X en Argentina archivadas por trends24, barrido de las 24 tarjetas horarias. «mejor» es el puesto más alto que alcanzó el término en la ventana y «horas» cuántas de las 24 estuvo dentro del top-50. Esta ventana cae entera dentro de la fase de voto NEGATIVO, así que las consignas piden eliminar.",
-  "ventana": "16/08 20:40 → 17/08 20:36 UTC",
+  "_nota": "Posiciones del top-50 de X en Argentina archivadas por trends24, barrido de las 24 tarjetas horarias. «mejor» es el puesto más alto que alcanzó el término y «horas» cuántas de las 24 estuvo dentro del top-50. Esta ventana cae entera después de la gala de nominación del martes, así que las consignas piden eliminar: la placa es negativa de punta a punta.",
+  "ventana": "18/08 11:15 → 19/08 11:15 UTC",
   "fase": "negativo",
   "terminos": [
    {
-    "txt": "LUANA AL 9009",
+    "txt": "TAMARA AL 9009",
     "mejor": 1,
-    "horas": 24,
+    "horas": 10,
     "tipo": "campaña de voto",
-    "nota": "Estuvo las veinticuatro horas de la ventana dentro del top-50 y llegó al primer puesto del país.",
-    "reciente": 2.8,
-    "tendencia": "sube"
+    "nota": "Llegó al primer puesto del país la misma noche de la nominación."
    },
    {
-    "txt": "MIÉRCOLES BODA SOLZIA",
-    "mejor": 2,
-    "horas": 20,
-    "tipo": "genérico",
-    "nota": "No es una campaña de voto: es una consigna de fandom sobre Sol y Zilli. No lleva signo y no entra al índice."
+    "txt": "YIPIO AL 9009",
+    "mejor": 1,
+    "horas": 9,
+    "tipo": "campaña de voto",
+    "nota": "También llegó al primero, y es la primera vez que su nombre encabeza una consigna."
    },
    {
-    "txt": "Tamara",
+    "txt": "LUANA AL 9009",
     "mejor": 3,
-    "horas": 18,
+    "horas": 5,
+    "tipo": "campaña de voto",
+    "nota": "La que encabezó el país la semana pasada y no se cumplió: Luana ganó su tercer versus. Ahora aparece tercera."
+   },
+   {
+    "txt": "#sinfraudesevaluana",
+    "mejor": 8,
+    "horas": 1,
+    "tipo": "campaña de voto",
+    "nota": "Otra consigna contra Luana, con una acusación de fraude adentro del propio hashtag."
+   },
+   {
+    "txt": "SOL AL 9009",
+    "mejor": 5,
+    "horas": 4,
+    "tipo": "campaña de voto",
+    "nota": "Quinta, y en la última tarjeta ya había caído al puesto 21."
+   },
+   {
+    "txt": "Mariela",
+    "mejor": 5,
+    "horas": 12,
     "tipo": "genérico",
-    "nota": "El nombre suelto, sin consigna. Viene de su salida al hospital de la madrugada del domingo."
+    "nota": "El nombre suelto, sin consigna, y el que más horas estuvo arriba."
    },
    {
-    "txt": "MAJLUF AL 9009",
-    "mejor": 4,
-    "horas": 23,
-    "tipo": "campaña de voto",
-    "nota": "Casi tan longeva como la de Luana, pero se quedó cuatro puestos abajo en su pico.",
-    "reciente": 24.7,
-    "tendencia": "estable"
-   },
-   {
-    "txt": "ZILLI AL 9009",
-    "mejor": 9,
-    "horas": 17,
-    "tipo": "campaña de voto",
-    "nota": "La tercera y la más floja de las tres.",
-    "reciente": 37.0,
-    "tendencia": "sube"
+    "txt": "Sol y Pincoya",
+    "mejor": 20,
+    "horas": 5,
+    "tipo": "genérico",
+    "nota": "Las dos juntas: una consigna de fandom, no de voto."
    },
    {
     "txt": "#GranHermano",
-    "mejor": 14,
-    "horas": 2,
-    "tipo": "genérico",
-    "nota": "El hashtag oficial del programa, que casi no entra."
-   },
-   {
-    "txt": "Nazareno",
-    "mejor": 28,
-    "horas": 1,
-    "tipo": "genérico",
-    "nota": "La visita de Tamara."
-   },
-   {
-    "txt": "Cola",
-    "mejor": 39,
+    "mejor": 8,
     "horas": 5,
     "tipo": "genérico",
-    "nota": "La visita de Charlotte."
+    "nota": "El hashtag oficial del programa."
    }
   ],
-  "chile": [
+  "excluidos": [
    {
-    "txt": "LUANA AL 9009",
-    "mejor": 23,
-    "horas": 12
-   },
-   {
-    "txt": "Tamara",
-    "mejor": 20,
-    "horas": 18
-   },
-   {
-    "txt": "TAMARA AL 9009",
-    "mejor": 49,
-    "horas": 1
+    "txt": "majluf al 9009",
+    "mejor": 7,
+    "por_que": "Quedó girando después de su eliminación del lunes. No entra: ya no está en juego."
    }
   ],
+  "variantes": "«LUANA AL 9009» apareció también en minúsculas como término aparte. trends24 los cuenta separados; acá se toma el más alto de los dos y no se suman, que sería contar dos veces la misma campaña.",
   "precedente": [
    {
     "txt": "HANSSEN AL 9009",
@@ -261,40 +246,7 @@
    "txt": "#GeneraciónDorada",
    "apariciones": 0,
    "nota": "El hashtag que Telefe pone en todos sus posts no entró ni una vez al top-50 en los 21 snapshots de la ventana. Lo que trendea son las campañas del fandom."
-  },
-  "momento": {
-   "ventana": "16/08 23:31 → 17/08 17:36 ART",
-   "consignas": {
-    "Luana": {
-     "termino": "LUANA AL 9009",
-     "pico": 1,
-     "horas": 24,
-     "puesto_medio_6h": 2.8,
-     "puesto_medio_6h_previas": 7.2,
-     "tendencia": "sube"
-    },
-    "Majluf": {
-     "termino": "MAJLUF AL 9009",
-     "pico": 4,
-     "horas": 23,
-     "puesto_medio_6h": 24.7,
-     "puesto_medio_6h_previas": 24.8,
-     "tendencia": "estable"
-    },
-    "Zilli": {
-     "termino": "ZILLI AL 9009",
-     "pico": 9,
-     "horas": 17,
-     "puesto_medio_6h": 37.0,
-     "puesto_medio_6h_previas": 47.5,
-     "tendencia": "sube"
-    },
-    "Tamara": null,
-    "Charlotte": null
-   }
-  },
-  "_nota_momento": "El pico dice cuál fue el momento más alto de una consigna en las 24 horas. El puesto medio de las últimas seis dice dónde está ahora, que es lo que importa con la votación cerrando esta noche. No es lo mismo: una consigna puede haber encabezado el país a la madrugada y estar en el puesto 40 cuando la gente vota.",
-  "chile_nota": "Sí. LUANA AL 9009 es la única consigna de la placa que también entró al top-50 chileno, con pico en el puesto 23 y doce horas de presencia. TAMARA AL 9009 asomó una hora en el 49."
+  }
  },
  "bandos": {
   "_nota": "En la gala Del Moro les pidió ponerse del lado de quien querían que siguiera. Es el mapa de alianzas más medible que hay, y anticipa la placa de la nominación de mitad de semana.",
@@ -327,40 +279,8 @@
   "gala": 28,
   "items": [
    {
-    "url": "https://x.com/fedeebongiorno/status/2085548917098213421",
-    "lectura": "La del 7 de agosto dio a Hanssen primero con 50,8% sobre 30.695 votos y salió con 58,0%: acertó el nombre y se quedó corta por siete puntos, que es el sesgo que el modelo le corrige.",
-    "autor": "Fefe",
-    "handle": "@fedeebongiorno",
-    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">👁️ ENCUESTA FINAL: Quién querés que sea ELIMINADO de <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a>?</p>&mdash; Fefe (@fedeebongiorno) <a href=\"https://x.com/fedeebongiorno/status/2085548917098213421?ref_src=twsrc%5Etfw\">7 de agosto de 2026</a></blockquote>",
-    "donde": "encuesta"
-   },
-   {
-    "url": "https://x.com/gh_trivia/status/2086632168709644385",
-    "lectura": "La otra cara del termómetro: un sondeo publicado con la votación todavía abierta, que daba a Sol primera con 60%. Terminó segunda con 42%. Mide a quien está despierto y con ganas de contestar, que no es lo mismo que quien paga por votar, y por eso no entra al modelo.",
-    "autor": "GH ENCUESTAS 🇦🇷",
-    "handle": "@gh_trivia",
-    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">POR AHORA:<br><br>60% Sol<br>35% Hanssen<br>3% Majluf<br><br>2% Otro/a<a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://t.co/hIVtIS6fvP\">https://t.co/hIVtIS6fvP</a></p>&mdash; GH ENCUESTAS 🇦🇷 (@gh_trivia) <a href=\"https://x.com/gh_trivia/status/2086632168709644385?ref_src=twsrc%5Etfw\">10 de agosto de 2026</a></blockquote>",
-    "donde": "tendencias"
-   },
-   {
-    "url": "https://x.com/GranHermanoAr/status/2087009639426674990",
-    "donde": "evolucion",
-    "lectura": "El anuncio, de la cuenta que emite el programa. Salió el último varón, así que a la final llegan solo mujeres: cambia el plantel que se simula de acá al final, y ninguna de las regularidades históricas que usa el modelo distingue por género.",
-    "autor": "Gran Hermano",
-    "handle": "@GranHermanoAr",
-    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\"><a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a>: Matías Hanssen fue eliminado y habrá una final inédita con solo mujeres<a href=\"https://t.co/glWDd8hi8R\">https://t.co/glWDd8hi8R</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087009639426674990?ref_src=twsrc%5Etfw\">11 de agosto de 2026</a></blockquote>"
-   },
-   {
-    "url": "https://x.com/solqueengh/status/2085558349001544097",
-    "donde": "campania",
-    "lectura": "Cuatro días antes de la gala, la campaña. HANSSEN AL 9009 estuvo veintitrés horas entre las cuatro primeras tendencias del país y terminó con Hanssen afuera. Es el caso más limpio de la temporada de fandom organizado que se convierte en resultado, y es lo que el modelo intenta capturar con el rasgo de rechazo.",
-    "autor": "TEAM SOL☀️",
-    "handle": "@solqueengh",
-    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">del moro diciendo que los votos que ya estan siguen que no se reinicia la placa, la detestan a sol y la gente sigue diciendo que es acomodada vayanse a cagar<br><br>HANSSEN AL 9009<a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a></p>&mdash; TEAM SOL☀️ (@solqueengh) <a href=\"https://x.com/solqueengh/status/2085558349001544097?ref_src=twsrc%5Etfw\">7 de agosto de 2026</a></blockquote>"
-   },
-   {
     "url": "https://x.com/GranHermanoAr/status/2087362816818708752",
-    "lectura": "Mariela la eligió a ella. Los corazones que se ven acá los sirve X en el momento en que se abre esta página, así que la comparación con el de al lado es de ahora y no de cuando se escribió esto.",
+    "lectura": "Mariela eligió a Campanita. Las visitas entraron por unos días y siguen adentro una semana después, votando en las nominaciones con un punto cada una.",
     "autor": "Gran Hermano",
     "handle": "@GranHermanoAr",
     "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">Campanita vuelve al juego de la mano de Mariela 🪄🧚<br><br>👁️ Mirá <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> en <a href=\"https://t.co/Ppl6ji2TwC\">https://t.co/Ppl6ji2TwC</a> y espiá la casa GRATIS las 24 horas por <a href=\"https://x.com/DGO_Latam?ref_src=twsrc%5Etfw\">@dgo_latam</a> y reviví los vivos por <a href=\"https://x.com/PrimeVideoLat?ref_src=twsrc%5Etfw\">@PrimeVideoLat</a> 🎬 <a href=\"https://t.co/5Fb2Xgw1wD\">pic.twitter.com/5Fb2Xgw1wD</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087362816818708752?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
@@ -368,7 +288,7 @@
    },
    {
     "url": "https://x.com/GranHermanoAr/status/2087361225990472184",
-    "lectura": "La misma cuenta, el mismo formato, seis minutos antes. Es la comparación más limpia que da la noche: nueve regresos anunciados igual, y el reparto de atención entre ellos resultó muy desigual.",
+    "lectura": "La misma cuenta, seis minutos antes, con el regreso que más celebraron de los nueve. Compará los corazones con el de al lado: los sirve X en el momento en que se abre esta página.",
     "autor": "Gran Hermano",
     "handle": "@GranHermanoAr",
     "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">Tommy vuelve a la casa unos días para jugar junto a Sol 🌞<br><br>👁️ Mirá <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> en <a href=\"https://t.co/Ppl6ji2TwC\">https://t.co/Ppl6ji2TwC</a> con la conducción de <a href=\"https://x.com/SANTIAGODELMORO?ref_src=twsrc%5Etfw\">@santiagodelmoro</a> <a href=\"https://t.co/oQ2iLhF4x1\">pic.twitter.com/oQ2iLhF4x1</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087361225990472184?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
@@ -376,7 +296,7 @@
    },
    {
     "url": "https://x.com/GranHermanoAr/status/2087355586941722716",
-    "lectura": "El mecanismo contado por la cuenta que emite el programa: diecisiete esperando afuera y nueve lugares, uno por cada jugadora.",
+    "lectura": "El mecanismo contado por la cuenta que emite el programa: diecisiete esperando afuera y nueve lugares. Los nueve que entraron votan en las nominaciones.",
     "autor": "Gran Hermano",
     "handle": "@GranHermanoAr",
     "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">17 exjugadores están listos para volver a la casa y ahora ellas tienen que elegir quién entra 🏠🔥<br><br>👁️ Mirá <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> en <a href=\"https://t.co/Ppl6ji2TwC\">https://t.co/Ppl6ji2TwC</a> con la conducción de <a href=\"https://x.com/SANTIAGODELMORO?ref_src=twsrc%5Etfw\">@santiagodelmoro</a> <a href=\"https://t.co/4zhm1v8lNi\">pic.twitter.com/4zhm1v8lNi</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2087355586941722716?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
@@ -384,39 +304,11 @@
    },
    {
     "url": "https://x.com/streamstelefe/status/2087357070643188114",
-    "lectura": "Que a alguien la elijan para volver no significa que le guste. Es la única pieza verificada de la noche que documenta el rechazo a un regreso.",
+    "lectura": "Acá se ve el gesto que ayer se dio vuelta: Luana eligió a Danelik para que volviera a la casa. En la nominación del martes 18, Danelik usó su único voto contra Luana y la metió en placa.",
     "autor": "Streams Telefe",
     "handle": "@streamstelefe",
     "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">🤨Polémica reacción de Danelik al enterarse que Luana la eligió para entrar nuevamente a la casa 😵<br><br>Sumate ahora a <a href=\"https://x.com/hashtag/GHxTorayFefe?src=hash&amp;ref_src=twsrc%5Etfw\">#GHxTorayFefe</a> por <a href=\"https://x.com/hashtag/StreamsTelefe?src=hash&amp;ref_src=twsrc%5Etfw\">#StreamsTelefe</a> en <a href=\"https://t.co/sPOpUDZjzE\">https://t.co/sPOpUDZjzE</a> <a href=\"https://t.co/sd65x6go3S\">pic.twitter.com/sd65x6go3S</a></p>&mdash; Streams Telefe (@streamstelefe) <a href=\"https://x.com/streamstelefe/status/2087357070643188114?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
     "donde": "vuelven"
-   },
-   {
-    "donde": "termometro",
-    "red": "ig",
-    "tipo": "p",
-    "codigo": "Db9rTd6PHuk",
-    "autor": "Gran Hermano Encuestas",
-    "handle": "ghtrivia_arg",
-    "lectura": "La placa y sus dos fases, contadas por una cuenta de encuestas del fandom el mismo día de la nominación.",
-    "url": "https://www.instagram.com/p/Db9rTd6PHuk/"
-   },
-   {
-    "donde": "termometro",
-    "url": "https://x.com/melanierocknr/status/2087722292050542752",
-    "autor": "Melanie",
-    "handle": "@melanierocknr",
-    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">Bueno ahora es SOL AL 9009 (Pincoya no creo q caiga en placa) sino si es PINCOYA AL 9009 tmb placa positiva. cuando apenas arranquen los votos. Y en la negativa por quien vamos? Fandom de Pincoya, Sol y Zilly.  <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a></p>&mdash; Melanie (@melanierocknr) <a href=\"https://x.com/melanierocknr/status/2087722292050542752?ref_src=twsrc%5Etfw\">13 de agosto de 2026</a></blockquote>\n\n",
-    "lectura": "Acá se ve el mecanismo por dentro: la consigna se arma para la fase positiva y la misma persona pregunta por quién van a ir cuando el voto cambie de signo."
-   },
-   {
-    "donde": "termometro",
-    "red": "ig",
-    "tipo": "p",
-    "codigo": "Db9sLe7tcQP",
-    "autor": "Sol",
-    "handle": "solupdate_",
-    "lectura": "La cuenta de Sol usa la fórmula «AL 9009» aclarando entre paréntesis que la placa es positiva. Es la misma frase que en otras galas pedía lo contrario.",
-    "url": "https://www.instagram.com/p/Db9sLe7tcQP/"
    },
    {
     "donde": "cotejo",
@@ -425,89 +317,54 @@
     "handle": "@fedeebongiorno",
     "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">📈 Así dio el ranking de imagen positiva para los participantes de <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> en Twitter, en la semana 25:<br><br>— Pincoya sigue primera, seguida por Sol y Zilli<br><br>— Solo 4 de 9 con imagen positiva <br><br>— Tamara pasa al último puesto<br><br>*Los colores representan la opinión mayoritaria del… <a href=\"https://t.co/splcRGpAYc\">pic.twitter.com/splcRGpAYc</a></p>&mdash; Fefe (@fedeebongiorno) <a href=\"https://x.com/fedeebongiorno/status/2087586759383073119?ref_src=twsrc%5Etfw\">12 de agosto de 2026</a></blockquote>\n\n",
     "lectura": "El ranking que da la fila de Bongiorno en la tabla de arriba. Dice tres cosas que conviene leer juntas: Pincoya sigue primera, solo cuatro de las nueve tienen imagen positiva, y Tamara pasó al último puesto."
-   },
-   {
-    "donde": "apuesta",
-    "url": "https://x.com/GranHermanoAr/status/2089179424444878991",
-    "autor": "Gran Hermano",
-    "handle": "@GranHermanoAr",
-    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">¿QUIÉN QUERÉS QUE ABANDONE EN LA CASA? 🤔🔥<br><br>Enviá GH al 9009 o ingresá a <a href=\"https://t.co/yjfLeu7uep\">https://t.co/yjfLeu7uep</a><a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/Generaci%C3%B3nDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneraciónDorada</a> <a href=\"https://t.co/JnooYWAZ8D\">pic.twitter.com/JnooYWAZ8D</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2089179424444878991?ref_src=twsrc%5Etfw\">17 de agosto de 2026</a></blockquote>\n\n",
-    "lectura": "La cuenta oficial abriendo la fase negativa a las 23.36 del domingo, apenas terminada la emisión. El mensaje es literal: «¿Quién querés que abandone la casa?». Cuatro días antes, la misma cuenta pedía lo contrario."
-   },
-   {
-    "donde": "apuesta",
-    "url": "https://x.com/GranHermanoAr/status/2089377082367168763",
-    "autor": "Gran Hermano",
-    "handle": "@GranHermanoAr",
-    "html": "<blockquote class=\"twitter-tweet\" data-lang=\"es\" data-dnt=\"true\"><p lang=\"es\" dir=\"ltr\">La tensión crece en la recta final y esta noche se viene una gala de eliminación imperdible  👋🏻​🔥​<br><br>🫵​ HOY a las 22.15hs <a href=\"https://x.com/hashtag/GranHermano?src=hash&amp;ref_src=twsrc%5Etfw\">#GranHermano</a> <a href=\"https://x.com/hashtag/GeneracionDorada?src=hash&amp;ref_src=twsrc%5Etfw\">#GeneracionDorada</a> con <a href=\"https://x.com/SANTIAGODELMORO?ref_src=twsrc%5Etfw\">@SANTIAGODELMORO</a> por Telefe <a href=\"https://t.co/wLITTBg08n\">pic.twitter.com/wLITTBg08n</a></p>&mdash; Gran Hermano (@GranHermanoAr) <a href=\"https://x.com/GranHermanoAr/status/2089377082367168763?ref_src=twsrc%5Etfw\">17 de agosto de 2026</a></blockquote>\n\n",
-    "lectura": "El anuncio de la gala de esta noche, a las 22.15. Es la que cierra la votación."
    }
   ],
   "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
  },
  "proxima_gala": {
-  "_nota": "Cómo se resuelve esta placa. Se anota aparte porque no es el mecanismo de siempre: hay dos fases con signos opuestos y una regla de eliminación que arrastra a una segunda persona. Verificado en Infobae y en A24/PrimiciasYa, que coinciden en las dos fechas y en el reparto de votos.",
-  "gala": 29,
+  "_nota": "Cómo se resuelve esta placa. A diferencia de la anterior, esta es negativa de punta a punta: no hay fase positiva que baje gente antes de la gala.",
+  "gala": 30,
   "tipo": "eliminación",
-  "fecha": "2026-08-17",
+  "fecha": "2026-08-24",
   "placa": [
+   "Sol",
+   "Mariela",
+   "Pincoya",
+   "Yipio",
    "Tamara",
-   "Majluf",
-   "Charlotte",
-   "Luana",
-   "Zilli"
+   "Luana"
   ],
   "libres": [
-   "Mariela",
-   "Pincoya"
+   "Charlotte",
+   "Zilli"
   ],
   "lider": {
-   "quien": "Yipio",
-   "semana": 25,
-   "fulmino": "Sol",
+   "quien": "Luana",
+   "semana": 26,
    "en_placa": true,
-   "detalle": "La fulminó antes de que empezara la votación. Zilli le contestó con la espontánea y la líder terminó nominada."
+   "detalle": "Le ganó el liderazgo a Sol y eso le dio votos duplicados, no inmunidad. Puso sus cuatro puntos contra Mariela y terminó nominada igual."
   },
   "fases": [
    {
-    "desde": "2026-08-12",
-    "hasta": "2026-08-16",
-    "signo": "positivo",
-    "que": "Se vota a quien se quiere salvar.",
-    "detalle": "Es una placa del tipo «Generación Dorada». Cerró con la emisión del domingo y bajó a dos: Sol y Yipio. Es el rescate más chico de la temporada, dos de siete.",
-    "desde_hora": "2026-08-12T23:59-03:00",
-    "hasta_hora": "2026-08-16T23:00-03:00"
-   },
-   {
-    "desde": "2026-08-16",
-    "hasta": "2026-08-17",
+    "desde": "2026-08-18",
+    "hasta": "2026-08-24",
     "signo": "negativo",
+    "desde_hora": "2026-08-19T00:30-03:00",
+    "hasta_hora": "2026-08-24T22:15-03:00",
     "que": "Se vota a quien se quiere eliminar.",
-    "detalle": "Se abrió a las 23.36 del domingo, apenas terminada la emisión, con el mensaje «¿Quién querés que abandone la casa?». Cierra en la gala de esta noche.",
-    "desde_hora": "2026-08-16T23:00-03:00",
-    "hasta_hora": "2026-08-17T22:15-03:00"
+    "detalle": "Sin fase positiva: la placa es negativa desde que se armó hasta la gala del lunes."
    }
   ],
-  "regla": "La eliminación es en dupla: quien abandone la casa el lunes se lleva consigo a la visita que había elegido.",
+  "regla": "La eliminación sigue siendo en dupla: quien se va se lleva a la visita que había elegido.",
   "pesos_nominacion": {
    "jugadora": 2,
    "visita": 1,
-   "extra": "Además hubo dos beneficios en juego: los votos de Luana contra Zilli se duplicaron por un beneficio de Hanssen, y Yipio repartió cinco puntos por el beneficio de sponsor."
+   "extra": "Luana tenía votos duplicados por el liderazgo, los dos votos de Tamara contra Luana fueron anulados por un poder que Majluf conservó al ser eliminada, y esta semana nadie hizo nominación espontánea."
   },
   "fuentes": [
-   "https://www.infobae.com/teleshow/2026/08/13/asi-quedo-la-placa-de-nominados-de-gran-hermano-despues-del-reingreso-de-los-exjugadores/",
-   "https://www.a24.com/primiciasya/una-fulminada-dos-finalistas-y-una-placa-explosiva-asi-quedo-la-placa-nominados-gran-hermano-n1585108"
-  ],
-  "_aviso_hora": "Las horas de corte salen de que el cambio de signo ocurre «después de la emisión del programa del domingo», según La Nación e Infobae. Telefe no publicó un horario exacto, así que se toma el fin de la emisión, cerca de las 23. La página marca la fase con la hora de quien lee.",
-  "salvadas": {
-   "quienes": [
-    "Sol",
-    "Yipio"
-   ],
-   "cuando": "2026-08-16",
-   "como": "Las sacó la fase de voto positivo. Del Moro lo anunció al aire el domingo y lo hizo para afuera: a las jugadoras no se les dijo, así que adentro siguen creyendo que la placa es de siete.",
-   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/cruces-en-la-cena-de-nominadas-y-dos-jugadoras-salvadas-de-la-eliminacion-pid2562969"
-  }
+   "https://www.infobae.com/teleshow/2026/08/19/los-exjugadores-de-gran-hermano-generacion-dorada-tuvieron-que-votar-quienes-son-los-nominados-de-la-semana/",
+   "https://www.pronto.com.ar/television/2026/8/19/asi-quedo-la-placa-de-nominados-de-gran-hermano-generacion-dorada-se-va-una-jugadora-fuerte-262456.html"
+  ]
  },
  "termometro_placa": {
   "_nota": "Barrido de las 24 tarjetas horarias de trends24.in de Argentina y de Chile, tomado el 17 de agosto de 2026 a las 17.40 de la Argentina, unas cuatro horas y media antes de la gala. Archivo de terceros, no una medición propia. Mide cuánta gente escribe, que no es cuánta gente vota: el voto es pago y sin tope.",
@@ -606,7 +463,7 @@
     "mide": "imagen positiva",
     "unidad": "%",
     "historial": "Es el único agregador de la temporada con historial: acertó el eliminado en 5 de 5 galas documentadas",
-    "aviso": "Mide imagen de las nueve, no intención de voto sobre esta placa, y se publicó antes de la nominación.",
+    "aviso": "Mide imagen de la casa, no intención de voto sobre esta placa, y se publicó el 12 de agosto: una semana y dos galas antes de la que viene. Es la medición con historial, y también la más vieja de las tres.",
     "url": "https://x.com/fedeebongiorno/status/2087586759383073119",
     "valores": {
      "Sol": 76,
@@ -614,7 +471,9 @@
      "Majluf": 20,
      "Luana": 18,
      "Yipio": 18,
-     "Tamara": 17
+     "Tamara": 17,
+     "Pincoya": 81,
+     "Mariela": 43
     }
    },
    {

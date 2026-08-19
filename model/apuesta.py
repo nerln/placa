@@ -157,7 +157,10 @@ def main():
         camp_pico[n] = PISO_SIN_CONSIGNA if v is None or v >= 0 else -v
         t = terminos.get(f"{n.upper()} AL 9009")
         rec = (t or {}).get("reciente")
-        camp_ahora[n] = peso_puesto(rec) if rec is not None else PISO_SIN_CONSIGNA
+        # Sin medicion reciente NO se cae al piso: eso tiraria una medicion que
+        # si existe. Se cae al pico, que es la senal que hay. El piso queda solo
+        # para quien no tiene ninguna consigna, que es no haber sido medida.
+        camp_ahora[n] = peso_puesto(rec) if rec is not None else camp_pico[n]
     camp = camp_ahora
 
     # --- senal 2: la imagen, dada vuelta ------------------------------------
