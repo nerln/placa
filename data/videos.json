@@ -1,11 +1,13 @@
 {
  "_nota": "Videos oficiales del programa de los que se recogen comentarios. Se eligen los de esta semana y de esta placa: los de semanas anteriores hablan de otra gente. Ampliar la lista amplía el corpus, y conviene decirlo cuando se amplía.",
- "recogido": "2026-08-19",
+ "recogido": "2026-08-23",
  "videos": [
-  {"id": "vhWzp9t3r7M", "que": "Gala de nominación, programa 151 del 18-08-26: la placa vigente"},
-  {"id": "e-91tQcVli0", "que": "26.ª gala de eliminación, programa 150 del 17-08-26"},
-  {"id": "4mXjwYfzlSw", "que": "Majluf vs. Luana: el mano a mano de la semana 25"},
-  {"id": "QFuwMXbPbug", "que": "Peleas y emoción en el día del niño, programa 149 del 16-08-26"},
-  {"id": "et2MhV3k0Os", "que": "Preocupa la placa: Campanita aconseja a Luana"}
+  {"id": "SwU2iYj6E4k", "que": "La noche de los ex, programa 153 del 21-08-26"},
+  {"id": "AZLpBK2P1w4", "que": "Noche de bodas y teléfono dorado, programa 152 del 19-08-26"},
+  {"id": "hKxVQZa0jWQ", "que": "23.ª gala de nominación, programa 151 del 18-08-26: la placa vigente"},
+  {"id": "sCApqYHuTB4", "que": "Tamara contra Pincoya: presunto escupitajo y amenazas"},
+  {"id": "_h_h5-8isH0", "que": "Todos acusaron a Luana por un nuevo robo de cigarrillos"},
+  {"id": "O3kQJSYJ0pg", "que": "Tamara al combate: ahora es el turno de enfrentar a Sol"},
+  {"id": "e-91tQcVli0", "que": "26.ª gala de eliminación, programa 150 del 17-08-26"}
  ]
 }

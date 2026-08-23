@@ -164,72 +164,32 @@
   }
  },
  "tendencias": {
-  "_nota": "Posiciones del top-50 de X en Argentina archivadas por trends24, barrido de las 24 tarjetas horarias. «mejor» es el puesto más alto que alcanzó el término y «horas» cuántas de las 24 estuvo dentro del top-50. Esta ventana cae entera después de la gala de nominación del martes, así que las consignas piden eliminar: la placa es negativa de punta a punta.",
-  "ventana": "18/08 11:15 → 19/08 11:15 UTC",
+  "_nota": "Posiciones del top-50 de X en Argentina archivadas por trends24, barrido de las 24 tarjetas horarias. «mejor» es el puesto más alto que alcanzó el término y «horas» cuántas de las 24 estuvo dentro del top-50. La ventana cae entera en los dos días previos a la gala.",
+  "ventana": "22/08 12:20 → 23/08 07:21 UTC",
+  "desde": "2026-08-22",
+  "hasta": "2026-08-23",
   "fase": "negativo",
   "terminos": [
    {
     "txt": "TAMARA AL 9009",
     "mejor": 1,
-    "horas": 10,
+    "horas": 20,
     "tipo": "campaña de voto",
-    "nota": "Llegó al primer puesto del país la misma noche de la nominación."
-   },
-   {
-    "txt": "YIPIO AL 9009",
-    "mejor": 1,
-    "horas": 9,
-    "tipo": "campaña de voto",
-    "nota": "También llegó al primero, y es la primera vez que su nombre encabeza una consigna."
-   },
-   {
-    "txt": "LUANA AL 9009",
-    "mejor": 3,
-    "horas": 5,
-    "tipo": "campaña de voto",
-    "nota": "La que encabezó el país la semana pasada y no se cumplió: Luana ganó su tercer versus. Ahora aparece tercera."
-   },
-   {
-    "txt": "#sinfraudesevaluana",
-    "mejor": 8,
-    "horas": 1,
-    "tipo": "campaña de voto",
-    "nota": "Otra consigna contra Luana, con una acusación de fraude adentro del propio hashtag."
+    "nota": "Veinte de las veinticuatro horas dentro del top-50, y el primer puesto del país. Es la campaña más sostenida desde la de Hanssen, que se cumplió."
    },
    {
     "txt": "SOL AL 9009",
-    "mejor": 5,
-    "horas": 4,
+    "mejor": 30,
+    "horas": 13,
     "tipo": "campaña de voto",
-    "nota": "Quinta, y en la última tarjeta ya había caído al puesto 21."
+    "nota": "Trece horas arriba pero sin pasar nunca del puesto 30. La semana pasada llegó al quinto."
    },
    {
-    "txt": "Mariela",
-    "mejor": 5,
-    "horas": 12,
-    "tipo": "genérico",
-    "nota": "El nombre suelto, sin consigna, y el que más horas estuvo arriba."
-   },
-   {
-    "txt": "Sol y Pincoya",
-    "mejor": 20,
+    "txt": "Pincoya",
+    "mejor": 33,
     "horas": 5,
     "tipo": "genérico",
-    "nota": "Las dos juntas: una consigna de fandom, no de voto."
-   },
-   {
-    "txt": "#GranHermano",
-    "mejor": 8,
-    "horas": 5,
-    "tipo": "genérico",
-    "nota": "El hashtag oficial del programa."
-   }
-  ],
-  "excluidos": [
-   {
-    "txt": "majluf al 9009",
-    "mejor": 7,
-    "por_que": "Quedó girando después de su eliminación del lunes. No entra: ya no está en juego."
+    "nota": "El nombre suelto, después del cruce con Tamara."
    }
   ],
   "variantes": "«LUANA AL 9009» apareció también en minúsculas como término aparte. trends24 los cuenta separados; acá se toma el más alto de los dos y no se suman, que sería contar dos veces la misma campaña.",
@@ -246,9 +206,7 @@
    "txt": "#GeneraciónDorada",
    "apariciones": 0,
    "nota": "El hashtag que Telefe pone en todos sus posts no entró ni una vez al top-50 en los 21 snapshots de la ventana. Lo que trendea son las campañas del fandom."
-  },
-  "hasta": "2026-08-19",
-  "desde": "2026-08-18"
+  }
  },
  "bandos": {
   "_nota": "En la gala Del Moro les pidió ponerse del lado de quien querían que siguiera. Es el mapa de alianzas más medible que hay, y anticipa la placa de la nominación de mitad de semana.",
@@ -369,112 +327,91 @@
   ]
  },
  "termometro_placa": {
-  "_nota": "Barrido de las 24 tarjetas horarias de trends24.in/argentina, tomado el 19 de agosto de 2026 a las 08.15 de la Argentina, tras la gala de nominación del martes. Archivo de terceros, no una medición propia. Mide cuánta gente escribe, que no es cuánta gente vota: el voto es pago y sin tope.",
-  "medido": "2026-08-19T08:15-03:00",
+  "_nota": "Barrido de las 24 tarjetas horarias de trends24.in/argentina, tomado el 23 de agosto de 2026 a las 04.21 de la Argentina, un día antes de la gala. Archivo de terceros, no una medición propia. Mide cuánta gente escribe, que no es cuánta gente vota.",
+  "medido": "2026-08-23T04:21-03:00",
   "fase": "negativo",
   "consignas": [
    {
     "termino": "TAMARA AL 9009",
     "pico": 1,
-    "horas": 10,
+    "horas": 20,
     "ahora": {
-     "cuando": "19/08 08:15",
+     "cuando": "23/08 04:21",
      "puesto": 2
     }
    },
    {
-    "termino": "YIPIO AL 9009",
-    "pico": 1,
-    "horas": 9,
-    "ahora": {
-     "cuando": "19/08 08:15",
-     "puesto": 3
-    }
-   },
-   {
-    "termino": "LUANA AL 9009",
-    "pico": 3,
-    "horas": 5,
-    "ahora": {
-     "cuando": "18/08 17:39",
-     "puesto": 6
-    }
-   },
-   {
     "termino": "SOL AL 9009",
-    "pico": 5,
-    "horas": 4,
+    "pico": 30,
+    "horas": 13,
     "ahora": {
-     "cuando": "19/08 08:15",
-     "puesto": 21
+     "cuando": "23/08 04:21",
+     "puesto": 30
     }
    }
   ],
-  "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». Esta placa es negativa de punta a punta, así que estas consignas piden eliminar y el signo no va a cambiar antes de la gala del lunes.",
-  "el_detalle": "Dos consignas llegaron al primer puesto del país la misma noche de la nominación, y ninguna de las dos nombra a quien el modelo pone primera.",
+  "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». Esta placa es negativa de punta a punta, así que estas consignas piden eliminar.",
+  "el_detalle": "Una sola consigna domina la ventana, y con la misma forma que tuvo la de Hanssen: primer puesto del país y veinte horas arriba. Aquella se cumplió.",
   "fuente": "https://trends24.in/argentina/"
  },
  "medidas_sociales": {
-  "_nota": "Tres mediciones publicadas para esta placa. Ninguna entra al modelo, y no es por desconfianza: el modelo calibró sus encuestas contra galas de voto negativo, y estas son de voto positivo o de imagen. Meterlas sin recalibrar sería cambiar la regla en la mitad del partido. Se publican al lado del pronóstico para que se vean las dos cosas.",
+  "_nota": "Tres mediciones publicadas para esta placa, las tres de esta semana. Ninguna entra al modelo: dos son encuestas de X sin ficha técnica y la tercera mide imagen, no intención de voto. Se publican al lado del pronóstico, con lo que acertó cada una.",
   "fuentes": [
    {
     "id": "bongiorno",
     "quien": "Fefe Bongiorno",
     "donde": "X",
-    "fecha": "2026-08-12",
+    "fecha": "2026-08-21",
     "mide": "imagen positiva",
     "unidad": "%",
     "historial": "Es el único agregador de la temporada con historial: acertó el eliminado en 5 de 5 galas documentadas",
-    "aviso": "Mide imagen de la casa, no intención de voto sobre esta placa, y se publicó el 12 de agosto: una semana y dos galas antes de la que viene. Es la medición con historial, y también la más vieja de las tres.",
-    "url": "https://x.com/fedeebongiorno/status/2087586759383073119",
+    "aviso": "Mide imagen de la casa, no intención de voto sobre esta placa. Sólo tres de las ocho tienen imagen positiva.",
     "valores": {
-     "Sol": 76,
-     "Zilli": 74,
-     "Majluf": 20,
-     "Luana": 18,
-     "Yipio": 18,
-     "Tamara": 17,
-     "Pincoya": 81,
-     "Mariela": 43
+     "Pincoya": 78,
+     "Sol": 74,
+     "Luana": 23,
+     "Mariela": 22,
+     "Yipio": 20,
+     "Tamara": 15
     }
    },
    {
-    "id": "poggi",
-    "quien": "Diego Poggi",
-    "donde": "streaming",
-    "fecha": "2026-08-14",
-    "mide": "voto positivo",
-    "unidad": "votos",
-    "historial": "Erró la única gala documentada en que se lo pudo comparar",
-    "aviso": "Son votos crudos de su propia audiencia, sin ficha técnica.",
+    "id": "trezeguet",
+    "quien": "Gastón Trezeguet",
+    "donde": "X",
+    "fecha": "2026-08-21",
+    "mide": "voto negativo",
+    "unidad": "%",
+    "historial": "Sin historial documentado en esta página",
+    "aviso": "Ofrecía sólo tres nombres más «otra», así que reparte entre menos opciones que las demás. 18.400 votos.",
     "valores": {
-     "Yipio": 7600,
-     "Charlotte": 4400,
-     "Sol": 3300,
-     "Tamara": 2300,
-     "Luana": 1900,
-     "Zilli": 1500,
-     "Majluf": 319
+     "Tamara": 53.7,
+     "Sol": 39.7,
+     "Yipio": 4.6
     }
    },
    {
     "id": "ghencuestas",
     "quien": "GH Encuestas",
     "donde": "X",
-    "fecha": "2026-08-14",
-    "mide": "voto positivo",
+    "fecha": "2026-08-21",
+    "mide": "voto negativo",
     "unidad": "%",
     "historial": "Erró las dos galas documentadas, las dos veces poniendo a Sol primera",
-    "aviso": "Solo publicó las dos últimas de la lista.",
+    "aviso": "Vuelve a poner a Sol primera, que es exactamente lo que hizo las dos veces que falló.",
     "valores": {
-     "Majluf": 1,
-     "Zilli": 1.9
+     "Sol": 43.5,
+     "Tamara": 15.2,
+     "Mariela": 14.2,
+     "Yipio": 13.9,
+     "Pincoya": 10.3,
+     "Luana": 2.7
     }
    }
   ],
-  "lectura": "Las tres coinciden en que la que menos apoyo junta es Majluf, y dos de las tres ponen a Tamara entre las últimas. El modelo dice otra cosa: pone a Sol primera con diferencia, y Bongiorno la tiene segunda en imagen de toda la casa.",
-  "por_que_difieren": "Miden cosas distintas. El modelo lee el reparto de votos que Telefe cantó en las galas anteriores, que es dinero gastado en votar. Bongiorno mide si caés bien. Poggi y GH Encuestas miden qué contesta quien está despierto y con ganas. Y ninguna de las tres mide lo que decide: el voto es pago, sin tope, y desde esta noche cambia de signo.",
-  "se_resuelve": "El lunes 17 se sabe. Queda anotado antes: el modelo dice Sol, las encuestas dicen Majluf. Las dos cosas están publicadas con fecha y las dos entran al puntaje."
+  "lectura": "Las dos encuestas de voto negativo se contradicen: Trezeguet pone a Tamara con el 53,7% y GH Encuestas pone a Sol con el 43,5%. La que tiene historial de aciertos no es ninguna de las dos: es la de imagen, y deja a Tamara última de la casa con el 15%.",
+  "por_que_difieren": "Miden cosas distintas y sobre poblaciones distintas. El modelo lee el reparto de votos que Telefe cantó en las galas anteriores, que es dinero gastado en votar. Bongiorno mide si alguien cae bien. Las otras dos miden qué contesta quien está despierto y con ganas, y una de ellas ofrecía sólo tres nombres.",
+  "se_resuelve": "El lunes 24 se sabe. Queda anotado antes: el modelo dice Sol, las tendencias y la imagen dicen Tamara, y las tres predicciones de esta página están congeladas con fecha."
  },
  "escenarios_gala": {
   "_nota": "Todo lo que puede pasar esta noche, separado en dos: lo que el modelo simula y lo que no. Lo primero son las cinco salidas posibles, cada una con lo que le hace a la carrera por el premio. Lo segundo son los canales por los que se va gente sin votación, que esta edición usó trece veces y el modelo no simula ninguna.",

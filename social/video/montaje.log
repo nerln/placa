@@ -1,0 +1,109 @@
+[rada] waiting 0s, position 1 of 1: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by WhatsApp (454.9MB)
+[rada]     memory held by claude (271.5MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (269.6MB)
+[rada] waiting 21s, position 1 of 1: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (473.7MB)
+[rada]     memory held by WhatsApp (397.0MB)
+[rada]     memory held by claude (385.0MB)
+[rada] waiting 44s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by claude (389.0MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (307.5MB)
+[rada]     memory held by WhatsApp (275.2MB)
+[rada] waiting 65s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by claude (442.9MB)
+[rada]     memory held by WhatsApp (440.7MB)
+[rada]     memory held by Spotify Helper (Renderer) (370.8MB)
+[rada] waiting 87s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (783.3MB)
+[rada]     memory held by claude (349.8MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (347.7MB)
+[rada] waiting 108s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (779.4MB)
+[rada]     memory held by claude (376.6MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (345.0MB)
+[rada] waiting 130s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Google Chrome Helper (Renderer) (387.1MB)
+[rada]     memory held by Spotify Helper (Renderer) (369.8MB)
+[rada]     memory held by Claude Helper (Renderer) (301.3MB)
+[rada] waiting 151s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by claude (460.8MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (388.2MB)
+[rada]     memory held by Claude Helper (Renderer) (372.9MB)
+[rada] waiting 173s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Google Chrome Helper (Renderer) (334.6MB)
+[rada]     memory held by WhatsApp (280.3MB)
+[rada]     memory held by claude (270.6MB)
+[rada] waiting 195s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Google Chrome Helper (Renderer) (413.2MB)
+[rada]     memory held by claude (379.5MB)
+[rada]     memory held by claude (353.3MB)
+[rada] waiting 216s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Google Chrome Helper (Renderer) (421.4MB)
+[rada]     memory held by Spotify Helper (Renderer) (392.3MB)
+[rada]     memory held by WhatsApp (328.2MB)
+[rada] waiting 238s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (784.2MB)
+[rada]     memory held by claude (392.1MB)
+[rada]     memory held by claude (302.5MB)
+[rada] waiting 260s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Google Chrome Helper (Renderer) (356.7MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (313.8MB)
+[rada]     memory held by claude (269.0MB)
+[rada] waiting 281s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (593.1MB)
+[rada]     memory held by claude (326.2MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (314.1MB)
+[rada] this job cannot fit while other programs hold the memory.
+[rada]     to start it anyway:  rada force 73815600
+[rada]     Claude Helper (Renderer) is holding 637.3MB
+[rada]     Google Chrome Helper (Renderer) is holding 372.0MB
+[rada]     claude is holding 277.5MB
+[rada] waiting 303s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Google Chrome Helper (Renderer) (273.0MB)
+[rada]     memory held by claude (217.4MB)
+[rada]     memory held by WhatsApp (204.6MB)
+[rada] waiting 325s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (428.3MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (350.3MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (271.3MB)
+[rada] waiting 346s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (413.5MB)
+[rada]     memory held by claude (368.7MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (338.4MB)
+[rada] waiting 367s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (730.7MB)
+[rada]     memory held by claude (395.5MB)
+[rada]     memory held by Claude (300.8MB)
+[rada] waiting 389s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (520.7MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (373.0MB)
+[rada]     memory held by claude (303.0MB)
+[rada] waiting 410s, position 1 of 2: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (484.9MB)
+[rada]     memory held by claude (310.5MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (294.5MB)
+[rada] waiting 454s, position 1 of 3: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (847.2MB)
+[rada]     memory held by claude (311.3MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (285.0MB)
+[rada] waiting 476s, position 1 of 3: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Spotify Helper (Renderer) (424.5MB)
+[rada]     memory held by Claude Helper (Renderer) (424.3MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (365.0MB)
+[rada] waiting 497s, position 1 of 3: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (525.0MB)
+[rada]     memory held by Spotify Helper (Renderer) (363.0MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (348.5MB)
+[rada] waiting 519s, position 1 of 3: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (549.9MB)
+[rada]     memory held by claude (338.5MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (327.4MB)
+[rada] waiting 540s, position 1 of 3: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (604.4MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (369.7MB)
+[rada]     memory held by Spotify Helper (Renderer) (365.9MB)
+[rada] waiting 562s, position 1 of 3: needs 500.0MB and at most 0B could be freed by waiting for other queued jobs, so the rest is held by programs outside the queue; waiting without holding anyone else back
+[rada]     memory held by Claude Helper (Renderer) (757.5MB)
+[rada]     memory held by Google Chrome Helper (Renderer) (336.8MB)
+[rada]     memory held by claude (326.5MB)

@@ -2,6 +2,30 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-08-22",
+   "titulo": "La semana de Tamara, y la campaña que la sigue",
+   "detalle": "El canal del programa subió estos días «Tamara vs. Pincoya: presunto escupitajo y amenazas de golpes» y «Tamara al combate: ahora es el turno de enfrentar a Sol». En las mismas horas «TAMARA AL 9009» estuvo veinte de las últimas veinticuatro dentro del top-50 argentino y llegó al primer puesto del país. La última consigna con esa forma fue la de Hanssen, y se cumplió.",
+   "afecta": "El modelo no lee tendencias y sigue señalando a Sol. La apuesta declarada sí las lee y pasó a dar Tamara con el 37,0%. Las dos están congeladas para el lunes.",
+   "impacto": "parcial",
+   "fuente": "https://www.youtube.com/watch?v=sCApqYHuTB4"
+  },
+  {
+   "fecha": "2026-08-21",
+   "titulo": "Noche de bodas, teléfono dorado y otra noche de los ex",
+   "detalle": "El miércoles hubo boda en la casa y el Turco García dejó plantada a Mariela en el altar. El viernes volvió «La noche de los ex». También se acusó a Luana de un nuevo robo de cigarrillos. Nada de esto cambió la placa: siguen las mismas seis.",
+   "afecta": "Ninguno sobre el pronóstico: la placa no se tocó y no hubo salidas fuera del voto.",
+   "impacto": "sin_efecto",
+   "fuente": "https://www.youtube.com/watch?v=SwU2iYj6E4k"
+  },
+  {
+   "fecha": "2026-08-21",
+   "titulo": "Tres encuestas nuevas, y las dos negativas se contradicen",
+   "detalle": "Trezeguet publicó una con más de 18.400 votos que da Tamara 53,7% y Sol 39,7%. GH Encuestas publicó otra que da Sol 43,5% y Tamara 15,2%. Y Bongiorno actualizó su ranking de imagen: Pincoya 78%, Sol 74%, y Tamara última de la casa con 15%.",
+   "afecta": "Ninguna entra al modelo, que está calibrado sobre otras fuentes. Se publican al lado, con lo que acertó cada una: GH Encuestas vuelve a poner a Sol primera, que es lo que hizo las dos veces que falló.",
+   "impacto": "sin_efecto",
+   "fuente": "https://www.ciudad.com.ar/espectaculos/2026/08/21/quien-se-va-de-gran-hermano-este-lunes-24-de-agosto-segun-las-encuestas/"
+  },
+  {
    "fecha": "2026-08-18",
    "titulo": "Placa de seis sobre ocho, y la visita que votó contra quien la eligió",
    "detalle": "La gala se adelantó al martes por la Copa Libertadores. Quedaron nominadas Sol, Mariela, Pincoya, Yipio, Tamara y Luana; se salvaron Charlotte y Zilli. Luana era la líder y usó sus cuatro puntos contra Mariela, pero terminó en placa igual por el voto de Danelik, que es la visita que ella misma había elegido para que volviera. Los dos votos de Tamara contra Luana fueron anulados por Majluf, que se llevó ese poder al irse.",

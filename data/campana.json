@@ -1,6 +1,6 @@
 {
  "generado": "2026-08-11",
- "ventana": "18/08 11:15 → 19/08 11:15 UTC",
+ "ventana": "22/08 12:20 → 23/08 07:21 UTC",
  "fuente": "posiciones del top-50 de X en Argentina archivadas por trends24",
  "formula": "ICD(i) = Σ signo(t) · (51 − mejor_posición(t)) / 50, sobre los términos que nombran a i y llevan consigna. Una sola consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82; al 50, 0,02. Dos consignas suman.",
  "entra_al_modelo": false,
@@ -39,30 +39,16 @@
    "terminos": []
   },
   "Luana": {
-   "icd": -0.96,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "LUANA AL 9009",
-     "signo": -1,
-     "mejor": 3,
-     "peso": 0.96
-    }
-   ]
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
   },
   "Yipio": {
-   "icd": -1.0,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "YIPIO AL 9009",
-     "signo": -1,
-     "mejor": 1,
-     "peso": 1.0
-    }
-   ]
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
   },
   "Mariela": {
    "icd": null,
@@ -71,19 +57,19 @@
    "terminos": []
   },
   "Sol": {
-   "icd": -0.92,
+   "icd": -0.42,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "SOL AL 9009",
      "signo": -1,
-     "mejor": 5,
-     "peso": 0.92
+     "mejor": 30,
+     "peso": 0.42
     }
    ]
   }
  },
- "observados": 4,
+ "observados": 2,
  "de": 8
 }

@@ -30,90 +30,90 @@
  "entradas": {
   "campana": {
    "Tamara": 1.0,
-   "Yipio": 1.0,
-   "Luana": 0.96,
+   "Yipio": 0.52,
    "Mariela": 0.52,
-   "Sol": 0.92,
-   "Pincoya": 0.52
+   "Luana": 0.52,
+   "Pincoya": 0.52,
+   "Sol": 0.42
   },
   "campana_medida": {
-   "Sol": -0.92,
+   "Sol": -0.42,
    "Mariela": null,
    "Pincoya": null,
-   "Yipio": -1.0,
+   "Yipio": null,
    "Tamara": -1.0,
-   "Luana": -0.96
+   "Luana": null
   },
   "campana_ahora": {
    "Tamara": null,
    "Yipio": null,
-   "Luana": null,
    "Mariela": null,
-   "Sol": null,
-   "Pincoya": null
+   "Luana": null,
+   "Pincoya": null,
+   "Sol": null
   },
   "campana_tendencia": {
    "Tamara": null,
    "Yipio": null,
-   "Luana": null,
    "Mariela": null,
-   "Sol": null,
-   "Pincoya": null
+   "Luana": null,
+   "Pincoya": null,
+   "Sol": null
   },
   "momento_nota": null,
-  "ventana_campana": "18/08 11:15 → 19/08 11:15 UTC",
+  "ventana_campana": "22/08 12:20 → 23/08 07:21 UTC",
   "imagen": {
-   "Tamara": 17,
-   "Yipio": 18,
-   "Luana": 18,
-   "Mariela": 43,
-   "Sol": 76,
-   "Pincoya": 81
+   "Tamara": 15,
+   "Yipio": 20,
+   "Mariela": 22,
+   "Luana": 23,
+   "Pincoya": 78,
+   "Sol": 74
   },
   "imagen_quien": "Fefe Bongiorno",
-  "imagen_fecha": "2026-08-12",
+  "imagen_fecha": "2026-08-21",
   "imagen_historial": "Es el único agregador de la temporada con historial: acertó el eliminado en 5 de 5 galas documentadas"
  },
  "p_sale": {
-  "Tamara": 0.2718,
-  "Yipio": 0.2686,
-  "Luana": 0.2578,
-  "Mariela": 0.0971,
-  "Sol": 0.0723,
-  "Pincoya": 0.0324
+  "Tamara": 0.3703,
+  "Yipio": 0.1812,
+  "Mariela": 0.1767,
+  "Luana": 0.1744,
+  "Pincoya": 0.0498,
+  "Sol": 0.0476
  },
  "sensibilidad": {
   "las_dos": {
-   "Tamara": 0.2718,
-   "Yipio": 0.2686,
-   "Luana": 0.2578,
-   "Mariela": 0.0971,
-   "Sol": 0.0723,
-   "Pincoya": 0.0324
+   "Tamara": 0.3703,
+   "Yipio": 0.1812,
+   "Mariela": 0.1767,
+   "Luana": 0.1744,
+   "Pincoya": 0.0498,
+   "Sol": 0.0476
   },
   "solo_campana": {
-   "Yipio": 0.2033,
-   "Tamara": 0.2033,
-   "Luana": 0.1951,
-   "Sol": 0.187,
-   "Mariela": 0.1057,
-   "Pincoya": 0.1057
+   "Tamara": 0.2857,
+   "Mariela": 0.1486,
+   "Pincoya": 0.1486,
+   "Yipio": 0.1486,
+   "Luana": 0.1486,
+   "Sol": 0.12
   },
   "solo_imagen": {
-   "Tamara": 0.2392,
-   "Yipio": 0.2363,
-   "Luana": 0.2363,
-   "Mariela": 0.1643,
-   "Sol": 0.0692,
-   "Pincoya": 0.0548
+   "Tamara": 0.231,
+   "Yipio": 0.2174,
+   "Mariela": 0.212,
+   "Luana": 0.2092,
+   "Sol": 0.0707,
+   "Pincoya": 0.0598
   },
   "con_el_pico": {
-   "Tamara": 0.2718,
-   "Yipio": 0.2686,
-   "Luana": 0.2578,
-   "Mariela": 0.0971,
-   "Sol": 0.0723,
-   "Pincoya": 0.0324
+   "Tamara": 0.3703,
+   "Yipio": 0.1812,
+   "Mariela": 0.1767,
+   "Luana": 0.1744,
+   "Pincoya": 0.0498,
+   "Sol": 0.0476
   }
  },
  "modelo_dice": {
@@ -129,8 +129,8 @@
   "quien": "Tamara",
   "frase": "Esta noche se va Tamara.",
   "con_quien": "Nazareno Pompei",
-  "confianza": "Es la respuesta comprometida, no un empate. Sale primera con las dos señales juntas y con casi todas las variantes; abajo está la que no. El modelo señala a otra.",
-  "y_si_no": "Si se va otra, la segunda es Yipio y la tercera Luana. Y queda anotado que la apuesta falló, con el número que había puesto."
+  "confianza": "Es la respuesta comprometida, no un empate. Sale primera con las dos señales juntas, con cada una por separado, y con el parámetro que más la podía mover cambiado. El modelo señala a otra.",
+  "y_si_no": "Si se va otra, la segunda es Yipio y la tercera Mariela. Y queda anotado que la apuesta falló, con el número que había puesto."
  },
  "autoconfirmaciones": {
   "_nota": "Seis comprobaciones que podían tumbar la apuesta. Cada una está planteada de modo que el resultado contrario obligaba a cambiar la respuesta, y las que no pasan se publican igual y con el mismo tamaño de letra.",
@@ -149,8 +149,8 @@
    },
    {
     "pregunta": "¿La apuesta se sostiene sobre una sola señal?",
-    "resultado": "Con la campaña sola gana Yipio y con el pico de 24 horas en vez de dónde está la consigna ahora, Tamara. Con la imagen sola, no: ahí primera es Tamara con 23,9% contra 23,6% de Yipio. Es la comprobación que menos limpia sale.",
-    "pasa": false,
+    "resultado": "Con la campaña sola gana Tamara y con el pico de 24 horas en vez de dónde está la consigna ahora, Tamara. Con la imagen sola, no: ahí primera es Tamara con 23,1% contra 21,7% de Yipio. Es la comprobación que menos limpia sale.",
+    "pasa": true,
     "podia_matar": "Que el resultado dependiera de una sola medición o de un solo parámetro."
    },
    {
@@ -172,7 +172,7 @@
     "podia_matar": "Nada, porque no se oculta: es la discrepancia que queda anotada."
    }
   ],
-  "pasan": 2,
+  "pasan": 3,
   "de": 6
  }
 }

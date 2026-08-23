@@ -9,123 +9,123 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 394,
- "nombran_a_alguien": 199,
- "con_signo": 59,
+ "total": 490,
+ "nombran_a_alguien": 160,
+ "con_signo": 56,
  "por_jugadora": {
   "Sol": {
-   "contra": 19,
-   "favor": 5,
-   "sin_signo": 57
+   "contra": 17,
+   "favor": 9,
+   "sin_signo": 36
   },
   "Mariela": {
-   "contra": 4,
+   "contra": 5,
    "favor": 0,
-   "sin_signo": 10
+   "sin_signo": 20
   },
   "Pincoya": {
-   "contra": 6,
-   "favor": 3,
-   "sin_signo": 19
+   "contra": 13,
+   "favor": 6,
+   "sin_signo": 25
   },
   "Yipio": {
-   "contra": 12,
-   "favor": 8,
-   "sin_signo": 47
+   "contra": 5,
+   "favor": 4,
+   "sin_signo": 18
   },
   "Tamara": {
    "contra": 4,
-   "favor": 3,
-   "sin_signo": 13
+   "favor": 0,
+   "sin_signo": 7
   },
   "Luana": {
-   "contra": 7,
-   "favor": 7,
+   "contra": 5,
+   "favor": 9,
    "sin_signo": 19
   }
  },
  "ejemplos": {
   "Sol": [
    {
-    "texto": "En el momento que Sol fue al CONFESIONARIO a VOTAR el día de hoy, el BIG anunció EL NOMBRE DE YIPIO antes que Votara Solange.  SANCIÓN PARA EL BIG, una Vergüenza y mucha importanci",
+    "texto": "La mayoría de los q entran apoyan a solange al 9009",
     "signo": "contra"
    },
    {
-    "texto": "Cómo es de falsa Zilly: x un lado dice q la unica con la fuerza de sacar a Sol es Yipio, y para votar a Yipio dice q Yipio se debilitó...",
+    "texto": "Pincoya vs Sol al 9009 afuera las dos aburren",
     "signo": "contra"
    },
    {
-    "texto": "Hasta los panelistas entendieron! Pero los de afuera no entienden q todavía no es el momento de Yipio y Sol así fue con Ulises y Tato",
-    "signo": "contra"
+    "texto": "Vamos Franco..... AGUANTE  SOL 🇦🇷 THE QUEEN 👑",
+    "signo": "favor"
    }
   ],
   "Mariela": [
    {
-    "texto": "Chau yipio o Mariela",
+    "texto": "Lo que le hicieron a Mariela un horror, me dió pena.\nLa llaman y le dicen que está de viaje, cualquier boludez pero no hacerla esperar. \nPatético lo que han hecho.",
     "signo": "contra"
    },
    {
-    "texto": "Mariela dio su motivo a lo último .. su motivo MALA gente y la afuera se ve todo",
+    "texto": "ES HORRIBLE LO QUE LE HICIERON A MARIELA Y A PINCOYA 🚫‼️🚫‼️🚫‼️🚫‼️🚫‼️ HO RRI BLE",
     "signo": "contra"
    },
    {
-    "texto": "Las que tienen que salir una atrás de la otra, majluf, Mariela y la refea charlotte. \nLuana aunque es un caso, merece más estar allí. Aunque está perdida en el juego desde el día u",
+    "texto": "yo creo que lo de Mariela tiene su que. No lo veo mal intencionado solo que quizás como Mariela quería “casarse” con él Turco y ya sabemos que ha estado haciendo afuera con otras m",
     "signo": "contra"
    }
   ],
   "Pincoya": [
    {
-    "texto": "Vamos pincoya,  a la final, te lo mereces, llegaste de otro país, sin q nadie te conociera, y lograste un puesto , re ,merecido, vamos pincoya, a la final🎉🎉",
-    "signo": "favor"
-   },
-   {
-    "texto": "Fuera pincoya 🙏✈️",
+    "texto": "Pincoya y su Acompañante al 9009 afuera",
     "signo": "contra"
    },
    {
-    "texto": "Tiene que salir YIPIO AL 9009, la casa necesita una renovación, es un bucle de no acabar con esa mujer, si se va los enfrentamientos y bandos van a cambiar, y es necesario por que ",
+    "texto": "Pincoya vs Sol al 9009 afuera las dos aburren",
+    "signo": "contra"
+   },
+   {
+    "texto": "FUERA SOL PINCOYA ZILLY!!! ESTE LUNES SE VA SOL A GRABARSE COMO EN MUNDIAL!!!!! VAMOSSSSSSS!!!!!!!",
     "signo": "contra"
    }
   ],
   "Yipio": [
    {
-    "texto": "En el momento que Sol fue al CONFESIONARIO a VOTAR el día de hoy, el BIG anunció EL NOMBRE DE YIPIO antes que Votara Solange.  SANCIÓN PARA EL BIG, una Vergüenza y mucha importanci",
+    "texto": "Lo que si se Lee es la info que le pasó CINCIA a Solange que bajo el perfil.\nSe mando a guardar y desaparece.\nMando a sus caniches a desgastar a YiPIO y Tamara. Demasiado obvio.\nSe",
     "signo": "contra"
    },
    {
-    "texto": "Cómo es de falsa Zilly: x un lado dice q la unica con la fuerza de sacar a Sol es Yipio, y para votar a Yipio dice q Yipio se debilitó...",
-    "signo": "contra"
+    "texto": "Vamos yipio a la final.versus, pincoya.VERSUS",
+    "signo": "favor"
    },
    {
-    "texto": "Hasta los panelistas entendieron! Pero los de afuera no entienden q todavía no es el momento de Yipio y Sol así fue con Ulises y Tato",
-    "signo": "contra"
+    "texto": "Saquen a Yipio es una Patotera y no merece estar en gran hermano",
+    "signo": "favor"
    }
   ],
   "Tamara": [
    {
-    "texto": "Tamara al 9009. Planta agresiva afuera.",
+    "texto": "Lo que si se Lee es la info que le pasó CINCIA a Solange que bajo el perfil.\nSe mando a guardar y desaparece.\nMando a sus caniches a desgastar a YiPIO y Tamara. Demasiado obvio.\nSe",
     "signo": "contra"
    },
    {
-    "texto": "Tiene que salir YIPIO AL 9009, la casa necesita una renovación, es un bucle de no acabar con esa mujer, si se va los enfrentamientos y bandos van a cambiar, y es necesario por que ",
+    "texto": "Tamara fue re falsa ,Pincoya fue la única que le hablaba los demás pasaban de ella por qué es una mina odiosa ,complicada hasta dopada la tienen y pincoyo la cuido ,la levanto y qu",
     "signo": "contra"
    },
    {
-    "texto": "tamara al 9009 afuera merquera violenta",
+    "texto": "se supone  que la boda debe ser para los finalistas, no este desfile de plantas innecesario. Pincoya merece más. TAMARA AL 9009",
     "signo": "contra"
    }
   ],
   "Luana": [
    {
-    "texto": "QUE SE VAYA DANELIK NO LE APORTA NADA A LUANA LA QUE MAS COMPAÑÍA LE HACE A LU Y LA AYUDA ES CAMPANITA MEJOR SERÍA QUE CAMPANITA Y LUANA JUEGUEN JUNTAS ❤❤",
+    "texto": "Pincoya se dió cuenta que sol está al límite..Luana quiere que se vaya yipio y sol...",
     "signo": "contra"
    },
    {
-    "texto": "QUE SE VAYA DANELIK ES MALA AMIGA NO LE AYUDA A LUANA Y QUE CAMPANITA JUEGUE CON LUANA LAS DOS SE LLEVAN MEJOR ADEMÁS CAMPANITA LA AYUDA A LU",
+    "texto": "Falsa Pincoya, le quiere lavar la cabeza a Luana, le molesta estar en placa, aunque diga q no le molesta, después se da vuelta y le clava con la serpiente un cuchillo a Luana",
     "signo": "contra"
    },
    {
-    "texto": "Que hermosa se veia Luana con ese look....que bueno que se haya quedado no merecia irse esta desde el dia 1 🫶❤️",
+    "texto": "conoce muy bién a Luana,genia Pincoya",
     "signo": "favor"
    }
   ]
