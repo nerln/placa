@@ -350,6 +350,13 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
 .mn-chip.mal{border-color:var(--rechazo); color:var(--rechazo-txt)}
 .mn-chip.bien{border-color:var(--apoyo); color:var(--apoyo-txt)}
 .mn-leyenda{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:16px 0 0}
+.mn-ir{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 0}
+.mn-ir a{font-size:var(--t-xs); padding:5px 10px; border-radius:var(--r-sm);
+  border:1px solid var(--linea); color:var(--tinta2); text-decoration:none;
+  background:var(--sup2)}
+.mn-ir a:hover{border-color:var(--oro-2); color:var(--tinta)}
+/* Sin esto el ancla deja el titulo de la seccion pegado al borde de arriba. */
+section[id], div[id]{scroll-margin-top:18px}
 .mn-pie{font-size:var(--t-xs); color:var(--tinta3); line-height:1.6; margin:14px 0 0;
   padding-top:12px; border-top:1px solid var(--linea2)}
 @media(max-width:560px){
@@ -4834,6 +4841,26 @@ function contar(nodo){
       "al último cara a cara viene ganándolo casi siempre. <b>Apuesta</b>: no usa nada del " +
       "modelo, sólo lo que se puede medir afuera —campañas e imagen— antes de que cierre la " +
       "votación. El martes se publica cuánto se acercó cada una.</p>" +
+    (() => {
+      // Un indice, no una navegacion. La pagina mide 55.000 px en el telefono
+      // y no tenia ni un enlace interno: el bloque de manana era un resumen
+      // sin salidas, se leia el numero y no habia como ir a ver de donde sale.
+      // Solo se enlaza lo que existe en esta corrida.
+      const ir = [
+        ["#placa", "el modelo, en detalle"],
+        ["#dostiempos", "la corrección del mano a mano"],
+        ["#apuesta", "la apuesta y sus autoconfirmaciones"],
+        ["#term-placa", "lo que pide la calle"],
+        ["#sentimiento", "lo que se escribe"],
+        ["#cotejo", "las encuestas, comparadas"],
+        ["#escenarios", "qué pasa con cada salida"],
+        ["#retro", "cuánto se equivocó el modelo antes"],
+      ].filter(([h]) => document.querySelector(h));
+      return ir.length
+        ? "<div class='mn-ir'>" + ir.map(([h, t]) =>
+            "<a href='" + h + "'>" + t + "</a>").join("") + "</div>"
+        : "";
+    })() +
     "<div class='mn-senales'>" +
       placa.slice().sort((a, b) => (mod[b] || 0) - (mod[a] || 0)).map(n => {
         const chips = [];
