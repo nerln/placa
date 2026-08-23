@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-18T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-18","version":"c2c663df01f8a6a0","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=c2c663df01f8a6a0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-18T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-18","version":"63522e401fc3a3df","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=63522e401fc3a3df"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -1953,7 +1953,7 @@ footer p{max-width:var(--medida)}
     <div class="tarjeta">
       <div class="eyebrow">Salidas</div>
       <div id="eliminados"></div>
-      <p style="font-size:13.2px; color:var(--tinta3); margin:16px 0 0">Ya hubo 13 salidas que no pasaron por el voto: abandonos, expulsiones y evacuaciones médicas. El modelo no simula ese canal, y es por lejos la forma más probable de que este pronóstico termine equivocado.</p>
+      <p id="p-fuera-voto" style="font-size:13.2px; color:var(--tinta3); margin:16px 0 0">El modelo no simula ese canal, y es por lejos la forma más probable de que este pronóstico termine equivocado.</p>
     </div>
   </div>
 
@@ -2232,7 +2232,7 @@ footer p{max-width:var(--medida)}
         <li><b>Votar cuesta plata y no hay tope.</b> Las bases de TELINFOR dicen textual que se puede participar «sin límite alguno». Un SMS son 8 votos por $429,55 y los paquetes web llegan a 140. O sea que el resultado mide cuánto gasta un fandom, no cuánta gente hay. Ninguna encuesta de intención puede captar eso, y el rating tampoco sirve de proxy.</li>
         <li><b>Votan cinco países.</b> Argentina, Uruguay, Chile, Brasil y Paraguay. Chile, Brasil y Paraguay entraron recién esta edición; Uruguay ya votaba desde 2022.</li>
         <li><b>Los dos últimos campeones fueron uruguayos.</b> Bautista Mascia con 56,2% y Tato Algorta con 62,8%, los dos de Montevideo, después de once campeones argentinos seguidos. Son dos casos y comparten el mismo arquetipo de outsider simpático, así que la nacionalidad bien podría ser un proxy y no la causa. Por eso va como escenario aparte y no dentro del caso base.</li>
-        <li><b>Las salidas por afuera del voto pesan más que las eliminaciones.</b> Esta edición lleva 7 abandonos, 3 expulsiones y 3 evacuaciones médicas. El modelo no simula ese canal.</li>
+        <li id="li-fuera-voto"><b>Las salidas por afuera del voto pesan más que las eliminaciones.</b> El modelo no simula ese canal.</li>
       </ul>
     </div>
   </div>
@@ -2407,6 +2407,17 @@ function ULTIMA_MEDIDA(){
   if((A.tendencias || {}).medido) f.push(A.tendencias.medido.slice(0, 10));
   if(A.videos_recogido) f.push(A.videos_recogido);
   return f.length ? f.sort().pop() : null;
+}
+
+// Las salidas que no pasaron por el voto. Estaba escrito a mano en tres
+// lugares distintos y en los tres decia cosas distintas — «7 abandonos, 3
+// expulsiones y 3 evacuaciones medicas» en uno, «13 salidas ... y evacuaciones
+// medicas» en otro — cuando los datos dicen trece por abandono o expulsion, y
+// que las tres salidas medicas no sacaron a nadie. Una sola fuente.
+function FUERA_DEL_VOTO(){
+  const l = ((D.actualidad || {}).escenarios_gala || {}).fuera_del_voto || [];
+  const e = l.find(x => (x.cuenta || {}).total != null);
+  return e ? e.cuenta : null;
 }
 
 function CUANDO_GALA(){
@@ -2623,7 +2634,7 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
         (soloMujeres ? ", el último varón: la casa queda con " + D.jugadores.length +
                        " mujeres y la final será la primera de esta edición sin ningún hombre. " : ". ")
        : "")
-      + "Hasta la gala de nominación, a mitad de semana, no hay nadie en placa. El modelo "
+      + "Hasta la gala de nominación no hay nadie en placa. El modelo "
       + "sortea la placa por propensión, como hace con todas las "
       + "semanas futuras, y de ahí sale el riesgo de ser la próxima en irse."
     : D.encuesta && D.encuesta.cuota && Object.keys(D.encuesta.cuota).length
@@ -4060,7 +4071,7 @@ function contar(nodo){
   caja.innerHTML =
     "<div class='eyebrow'>Las dos respuestas</div>" +
     "<h3 style='margin:0 0 6px'>El modelo dice " + peorModelo + ". Las encuestas dicen " +
-      (peores.poggi || peores.bongiorno) + ".</h3>" +
+      (Object.values(peores)[0] || "") + ".</h3>" +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 14px'>" + M.lectura + "</p>" +
     "<div class='scroll-x'><table class='cotejo'>" +
     "<tr><th></th><th>Modelo<span class='q'>riesgo de salir</span></th>" +
@@ -4882,8 +4893,8 @@ function contar(nodo){
     "casa de la placa positiva del 16 de julio de 2026. No entran encuestas de intención ni " +
     "cuotas de apuestas: para esta edición no existe ningún mercado real.</p>" +
     "<p>El error más probable de este pronóstico está en el canal que el modelo no simula: " +
-    (D.eliminados ? "13" : "varias") + " de las salidas de esta edición fueron abandonos, " +
-    "expulsiones o evacuaciones médicas, sin voto de por medio.</p>";
+    ((FUERA_DEL_VOTO() || {}).total || "varias") + " de las salidas de esta edición fueron " +
+    "abandonos o expulsiones, sin voto de por medio.</p>";
 
   const a = $("#actualizado");
   if(a) a.innerHTML =
@@ -5173,6 +5184,19 @@ function contar(nodo){
    Aparece cuando el encabezado sale de pantalla. Con IntersectionObserver y no
    con un listener de scroll: un scroll listener en una pagina de veintiseis
    bloques se paga en cada cuadro. */
+(function(){
+  // El desglose de salidas fuera del voto, desde el campo.
+  const li = $("#li-fuera-voto"), F = FUERA_DEL_VOTO();
+  const pf = $("#p-fuera-voto");
+  if(pf && F) pf.insertAdjacentHTML("afterbegin",
+    "Ya hubo <b>" + F.total + "</b> salidas que no pasaron por el voto, entre abandonos y " +
+    "expulsiones. ");
+  if(li && F) li.insertAdjacentHTML("beforeend",
+    " Esta edición perdió <b>" + F.total + "</b> personas por ahí: " + F.abandonos +
+    " abandonos y " + F.expulsiones + " expulsiones.");
+  else if(li) li.remove();
+})();
+
 (function(){
   const b = $("#volver");
   if(!b) return;
@@ -5867,7 +5891,7 @@ function contar(nodo){
   $("#pie-camino").innerHTML =
     "Todo junto pasa <b>una vez cada " + C.una_de_cada.toLocaleString("es-AR") + " temporadas</b>. " +
     "Para que pase tienen que salir bien seis cosas seguidas, y una de ellas es que el modelo " +
-    "esté equivocado. Si el miércoles no queda en placa, este cuadro " +
+    "esté equivocado. Si no queda en la placa siguiente, este cuadro " +
     "cambia entero, y ésa es la primera de las seis.";
 })();
 
@@ -6112,7 +6136,7 @@ function contar(nodo){
     // parecen una contradicción, así que se dicen los dos.
     const vs = ultima && ultima.publicado ? ultima.publicado.versus : null;
     $("#intro-medicion").innerHTML = elim
-      ? "Hasta el miércoles no hay placa nueva, así que tampoco hay encuesta que enfrentar: " +
+      ? "Hasta la nominación no hay placa nueva, así que tampoco hay encuesta que enfrentar: " +
         "lo último que se midió fue la gala de " + CUANDO_FUE(D.generado) + ". <b>" + elim + "</b> salió con " +
         pc(g[0][1]/100, 1) + " del total de la placa" +
         (vs && vs[elim] ? " (" + nf(vs[elim],0) + "% en el mano a mano final, que es el número " +
@@ -6149,7 +6173,11 @@ function contar(nodo){
   };
   const ETIQUETA = {post:"ver el post ↗", cuenta:"ver la cuenta ↗", nota:"ver la nota ↗"};
   const iniciales = n => n.split(/\s+/).slice(0,2).map(x => x[0]).join("").toUpperCase();
-  const DIA = f => { if(!f) return ""; const [,,d] = f.split("-"); return (+d) + " ago"; };
+  // Decia « ago» fijo. En septiembre habria fechado en agosto todo lo que
+  // mostrara, adentro de una tarjeta chica: la clase de error que no se ve.
+  const MES3 = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  const DIA = f => { if(!f) return ""; const [, m, d] = f.split("-");
+    return (+d) + " " + (MES3[(+m) - 1] || ""); };
 
   function barras(o){
     // Poggi publicó votos brutos y parciales, no porcentajes. Convertirlos sería
@@ -6196,7 +6224,8 @@ function contar(nodo){
       ord.map(k => "<div><i style='width:" + (100*base.p_sale28[k]/base.p_sale28[ord[0]]) + "%'></i>" +
         "<span>" + k + "</span><span class='v'>" + pc(base.p_sale28[k],1) + "</span></div>").join("") +
     "</div>" +
-    "<div class='post-pie'><span>preferencia revelada de 8 galas + la encuesta calibrada</span></div></div>";
+    "<div class='post-pie'><span>preferencia revelada de " +
+    ((D.galas || []).length || "varias") + " galas + la encuesta calibrada</span></div></div>";
 
   cont.innerHTML = tarjeta(E) + (E.otras||[]).map(tarjeta).join("") + propio;
 })();

@@ -42,6 +42,10 @@ from variance_components import ajustar as vc_ajustar        # noqa: E402
 MIN_GALAS = 3          # con menos de tres galas previas el ajuste no dice nada
 
 
+# Piso para una probabilidad cero antes del logaritmo. Compartido con
+# model/versus.py y fijado en EVALUACION.md.
+PISO_CERO = 1e-4
+
 def escala_con(cfg, vig):
     """final_model.escala_rechazo sobre un cfg recortado y un plantel dado."""
     r = vc_ajustar(cfg)
@@ -109,7 +113,9 @@ def main():
     puesto_medio = float(np.mean([f["puesto_del_modelo"] for f in utiles])) if utiles else None
     azar_medio = float(np.mean([(f["n_placa"] + 1) / 2 for f in utiles])) if utiles else None
     # log-verosimilitud media: cuanta probabilidad le dio al que de verdad salio
-    ll = float(np.mean([np.log(max(f["p_modelo"], 1e-4)) for f in utiles])) if utiles else None
+    # El mismo piso que model/versus.py, declarado en EVALUACION.md. Dos pisos
+    # distintos publicaban dos log-verosimilitudes del mismo modelo.
+    ll = float(np.mean([np.log(max(f["p_modelo"], PISO_CERO)) for f in utiles])) if utiles else None
     ll_azar = float(np.mean([np.log(f["p_azar"]) for f in utiles])) if utiles else None
 
     # Con seis galas hay que decir si esto se distingue del azar. Test de

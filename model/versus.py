@@ -60,6 +60,9 @@ ROOT = Path(__file__).resolve().parent.parent
 # (73% contra 27%) es una desviacion tipica: generosa pero no infinita. Bajarlo
 # acerca todo a la moneda; subirlo deja que cuatro victorias valgan una certeza.
 SIGMA = 1.0
+# El piso que se le pone a una probabilidad cero antes de tomarle el logaritmo.
+# Tiene que ser el mismo que usa model/retro.py: ver el comentario de abajo.
+PISO_CERO = 1e-4
 
 N_SIMS = 200_000
 SEMILLA = 20260818
@@ -187,8 +190,15 @@ def _resumen(filas):
         "modelo_puesto_medio": round(st.mean(f["modelo_puesto"] for f in filas), 2),
         "dos_tiempos_puesto_medio": round(st.mean(f["dos_tiempos_puesto"] for f in filas), 2),
         "azar_puesto_medio": round(st.mean((f["n_placa"] + 1) / 2 for f in filas), 2),
-        "modelo_logver": round(st.mean(math.log(max(f["modelo_p"], 1e-6)) for f in filas), 3),
-        "dos_tiempos_logver": round(st.mean(math.log(max(f["dos_tiempos_p"], 1e-6)) for f in filas), 3),
+        # PISO_CERO y no 1e-6: en la gala 23 el modelo le dio probabilidad cero
+        # al que salio, y el piso que se le ponga a ese cero decide el numero.
+        # Con 1e-6 aca y 1e-4 en model/retro.py, el MISMO modelo sobre la MISMA
+        # serie publicaba dos log-verosimilitudes distintas —4,434 y 3,776— y
+        # con tres series publicadas eso es la puerta abierta a citar el piso
+        # que convenga. Un solo piso, fijado en EVALUACION.md.
+        "modelo_logver": round(st.mean(math.log(max(f["modelo_p"], PISO_CERO)) for f in filas), 3),
+        "dos_tiempos_logver": round(
+            st.mean(math.log(max(f["dos_tiempos_p"], PISO_CERO)) for f in filas), 3),
         "azar_logver": round(st.mean(math.log(1 / f["n_placa"]) for f in filas), 3),
     }
     return m

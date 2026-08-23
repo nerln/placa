@@ -425,12 +425,23 @@
    {
     "que": "Un abandono o una expulsión antes de la gala",
     "estado": "no simulado",
-    "detalle": "Es el canal por el que esta edición perdió trece personas: diez abandonos y tres expulsiones. El modelo no lo simula y es, por lejos, la forma más probable de que este pronóstico termine equivocado."
+    "detalle": "Es el canal por el que esta edición perdió trece personas: diez abandonos y tres expulsiones. El modelo no lo simula y es, por lejos, la forma más probable de que este pronóstico termine equivocado.",
+    "cuenta": {
+     "_nota": "El desglose, en un campo, porque la pagina lo tenia escrito a mano y decia «7 abandonos, 3 expulsiones y 3 evacuaciones medicas»: el total daba trece igual, asi que el numero grande tapaba un desglose equivocado. Las salidas medicas van aparte y no suman: pasaron tres veces y no sacaron a nadie.",
+     "total": 13,
+     "abandonos": 10,
+     "expulsiones": 3
+    }
    },
    {
     "que": "Una salida médica",
     "estado": "no simulado",
-    "detalle": "Ya pasó tres veces esta temporada. Tamara salió al hospital en junio por un sangrado de oído y volvió a los dos días; Sol se abrió la cabeza contra una puerta el 9 de agosto y siguió jugando."
+    "detalle": "Ya pasó tres veces esta temporada. Tamara salió al hospital en junio por un sangrado de oído y volvió a los dos días; Sol se abrió la cabeza contra una puerta el 9 de agosto y siguió jugando.",
+    "cuenta": {
+     "_nota": "Episodios, no salidas: nadie se fue por esto.",
+     "episodios": 3,
+     "salidas": 0
+    }
    },
    {
     "que": "Que no se elimine a nadie",
