@@ -59,6 +59,19 @@ SAL = b"placa|nerln|"
 # gala NUEVA sigue moviendo la corrida, que es lo correcto; rehacer la misma no.
 IGNORAR = {"archivo.json": ("congelado",)}
 
+# Y un archivo entero, que es lo que el parrafo de arriba dice que no hay que
+# hacer. Vale para este y solo para este, porque el agujero que abre sacar un
+# archivo del hash es que su contenido llegue a `web/datos.json` sin mover la
+# corrida, y `data/textos.json` no llega: `build.py` lee data/ por una lista
+# explicita de archivos y este no esta. No es un dato del pronostico, es el
+# inventario de la prosa escrita a mano que comprueba `verificar.py`, y se
+# reescribe cada vez que se reescribe un parrafo. Dentro del hash, corregir una
+# frase cambiaria la corrida sin mover un solo numero: habria que redibujar
+# og.png y mover la etiqueta de git para nombrar una corrida que nadie corrio.
+# Ya paso al crearlo: el archivo aparecio entre `tarjeta.py` y `build.py`, y
+# `verificar.py` fallo pidiendo redibujar una tarjeta que estaba bien.
+FUERA = {"textos.json"}
+
 
 def _sin_volatiles(nombre, dato):
     campos = IGNORAR.get(nombre)
@@ -74,7 +87,7 @@ def _sin_volatiles(nombre, dato):
 
 
 def firma_corrida() -> str:
-    """Hash de data/*.json, normalizado, ignorando los campos de IGNORAR.
+    """Hash de data/*.json, normalizado, sin FUERA ni los campos de IGNORAR.
 
     Se reserializa cada archivo con las claves ordenadas antes de digerirlo:
     asi la firma depende del contenido y no de como quedo indentado el JSON,
@@ -83,6 +96,8 @@ def firma_corrida() -> str:
     h = hashlib.sha256()
     h.update(SAL)
     for p in sorted((ROOT / "data").glob("*.json")):
+        if p.name in FUERA:
+            continue
         h.update(p.name.encode())
         h.update(json.dumps(_sin_volatiles(p.name, json.loads(p.read_text())),
                             sort_keys=True, ensure_ascii=False,

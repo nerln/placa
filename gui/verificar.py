@@ -17,6 +17,7 @@ Ademas comprueba lo que haria falso el resultado sin romper nada visible:
   * cada gala declarada completa cumple la identidad aritmetica de Telefe
   * la tarjeta de previsualizacion es de esta corrida y no de la anterior
   * la firma de la corrida coincide en todos los canales donde viaja
+  * la prosa escrita a mano es de la gala que viene y no de la anterior
   * el guion de la pagina parsea
   * el <style> no tiene JavaScript dentro
 
@@ -148,6 +149,53 @@ def tarjeta_al_dia():
                      f"    espera:  {esperada}\n"
                      "    Correr gui/tarjeta.py.")
     print("  ok · web/og.png es de esta corrida")
+    return 0
+
+
+def textos_al_dia():
+    """La prosa escrita a mano tiene que ser de la gala que viene.
+
+    Es el unico agujero que reconstruible() no puede ver, y no lo ve por como
+    esta hecha: compara la pagina contra lo que produce build.py, o sea contra
+    si misma, asi que un parrafo de la gala anterior se reproduce byte a byte
+    con total fidelidad. La semana del 17 de agosto salieron cuatro textos de la
+    gala 29 describiendo la placa de la 30 -«la placa de esta noche es de 6»
+    arriba de seis nominadas nuevas, «las cinco salidas» arriba de una lista de
+    seis- y las diez comprobaciones de este archivo dijeron que todo cerraba.
+
+    data/textos.json anota para que gala se escribio cada bloque a mano. Aca se
+    compara con la gala vigente y nada mas. No prohibe prosa, que rechazaria la
+    plantilla entera: prohibe prosa vencida.
+    """
+    p = ROOT / "data" / "textos.json"
+    if not p.exists():
+        print("  (sin data/textos.json: no hay prosa inventariada)")
+        return 0
+    bloques = json.loads(p.read_text())["bloques"]
+    act = json.loads((ROOT / "data" / "actualidad.json").read_text())
+    vigente = (act.get("proxima_gala") or {}).get("gala")
+    if not vigente:
+        # De respaldo galas.json, que es de donde sale la placa que se dibuja.
+        # Entre una gala y la nominacion siguiente, actualidad.json puede
+        # quedarse sin proxima_gala y la lista no se puede comprobar contra nada.
+        G = json.loads((ROOT / "data" / "galas.json").read_text())
+        vigente = (G.get("placa_vigente") or {}).get("gala")
+    if not vigente:
+        return fallo("no hay gala vigente en actualidad.json ni en galas.json: "
+                     "sin ella no se puede saber que prosa vencio.")
+    a_mano = [b for b in bloques if b.get("estado") == "a mano"]
+    viejos = sorted((b for b in a_mano if b.get("gala", 0) < vigente),
+                    key=lambda b: (b["gala"], b["id"]))
+    if viejos:
+        det = "".join(f"\n    · {b['id']} · escrito para la gala {b['gala']} · {b['donde']}"
+                      f"\n      «{b['recorte']}»" for b in viejos)
+        return fallo(f"{len(viejos)} bloque(s) de prosa quedaron en una gala anterior "
+                     f"a la {vigente}:" + det +
+                     "\n    Para cada uno, una de dos: reescribirlo para la gala "
+                     f"{vigente} y subirle «gala» en data/textos.json, o derivarlo del "
+                     "campo que ya tiene el dato y borrarle el renglon de la lista. "
+                     "Subir el numero sin tocar el texto no arregla nada.")
+    print(f"  ok · {len(a_mano)} bloques de prosa a mano, todos de la gala {vigente}")
     return 0
 
 
@@ -291,7 +339,7 @@ def main():
     print("verificando lo que se va a publicar")
     err = (reconstruible() + probabilidades() + ramas_cierran() +
            identidad_telefe() + tarjeta_al_dia() + firma_coherente() +
-           riesgo_coherente() + datos_sin_cache() +
+           riesgo_coherente() + datos_sin_cache() + textos_al_dia() +
            javascript_valido() + css_sin_javascript())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")

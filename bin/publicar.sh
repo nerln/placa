@@ -3,8 +3,9 @@
 #
 # Es el camino entero en un comando: recalcular el pronóstico con los datos que
 # haya en data/, rearmar la apuesta, reconstruir web/, pasar las diez
-# comprobaciones, archivar la gala y empujar. Si alguna comprobación falla NO publica y sale con
-# error, que es la única forma de que esto pueda correr solo sin vigilancia.
+# comprobaciones, congelar el archivo de la gala y empujar. Si alguna
+# comprobación falla NO publica y sale con error, que es la única forma de que
+# esto pueda correr solo sin vigilancia.
 #
 #   bin/publicar.sh                      recalcula todo y publica
 #   bin/publicar.sh --solo-web           no recalcula el modelo, sólo rearma la página
@@ -42,6 +43,37 @@ corre python3 model/versus.py >/dev/null
 [ -f data/campana.json ] && corre python3 model/apuesta.py >/dev/null
 
 corre python3 gui/build.py   >/dev/null
+
+# El archivo de la gala: la copia congelada de gui/pronostico.html, que es lo
+# unico que un lector puede auditar cuando ya se sabe el resultado.
+#
+# Va aca, entre el build y las puertas, y el orden no es libre. Archivar
+# escribe data/archivo.json, y ese archivo pesa en dos lados: gui/build.py lo
+# mete adentro de datos.json -de ahi sale la tabla del archivo- y gui/firma.py
+# lo firma, asi que archivar una gala nueva MUEVE la corrida. Por eso se
+# reconstruye y se redibuja la tarjeta despues, y recien entonces se abren las
+# puertas. Archivando al final se commitearian un index.html y un og.png que
+# ninguna comprobacion vio, y verificar.py los rechazaria en la CI con un
+# mensaje que no señala a la causa.
+#
+# Es idempotente: archivar.py se niega a reescribir una gala ya archivada, asi
+# que correr esto cinco veces en la semana la archiva una sola vez. Rehacerla a
+# proposito es --forzar, y no mueve la corrida porque la firma ya ignora la
+# hora del congelamiento.
+#
+# No corta la publicacion cuando se niega, y eso es deliberado. El lunes a la
+# noche, entre la gala y la nominacion del miercoles, no hay placa:
+# model/ramas.py no congela ninguna prediccion y archivar.py sale con error
+# porque archivar una pagina sin prediccion congelada es archivar nada. Esa
+# noche hay que publicar el resultado igual. Cuando se niega no escribe nada,
+# asi que lo peor que pasa es que esa semana no haya archivo, nunca que haya
+# uno que miente.
+if corre python3 gui/archivar.py; then
+  corre python3 gui/build.py >/dev/null
+else
+  echo "(no se archivó esta gala: se publica igual, el motivo está arriba)"
+fi
+
 corre python3 gui/tarjeta.py >/dev/null
 
 # El portero. Si esto falla no se publica, y el guion termina en error para que
@@ -62,35 +94,6 @@ if sh gui/mirar/arrancar.sh >/dev/null 2>&1; then
   fi
 else
   echo "(sin Chrome: no se comprueba el render)"
-fi
-
-# El archivo de la gala: la copia congelada de gui/pronostico.html, que es lo
-# unico que un lector puede auditar cuando ya se sabe el resultado.
-#
-# Va DESPUES de las dos puertas y no antes. archivar.py se niega a reescribir
-# una gala ya archivada, asi que congelar antes de que la pagina pase las
-# comprobaciones dejaria congelada para siempre una pagina que el portero
-# rechazo: el arreglo se publicaria el mismo dia con el archivo roto al lado, y
-# nadie lo volveria a mirar.
-#
-# Y hay que RECONSTRUIR despues, porque gui/build.py mete data/archivo.json
-# adentro de datos.json (la tabla del archivo sale de ahi). Sin este segundo
-# build, verificar.py falla en la CI con «web/ no coincide con lo que produce
-# gui/build.py: datos.js, datos.json», que es un mensaje que no senala a la
-# causa. web/index.html no cambia -los datos viajan aparte, en datos.js- asi
-# que lo que miraron las dos puertas se commitea byte a byte.
-#
-# No corta la publicacion si se niega, y eso es deliberado. El lunes a la
-# noche, entre la gala y la nominacion del miercoles, no hay placa:
-# model/ramas.py no congela ninguna prediccion y archivar.py sale con error
-# porque archivar una pagina sin prediccion congelada es archivar nada. Esa
-# noche hay que publicar el resultado igual. Cuando se niega no escribe nada,
-# asi que lo peor que pasa es que esa semana no haya archivo, nunca que haya
-# uno que miente.
-if corre python3 gui/archivar.py; then
-  corre python3 gui/build.py >/dev/null
-else
-  echo "(no se archivó esta gala: se publica igual, el motivo está arriba)"
 fi
 
 if git diff --quiet && git diff --cached --quiet && [ -z "$(git status --porcelain)" ]; then

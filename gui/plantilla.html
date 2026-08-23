@@ -529,6 +529,9 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
 .mn-chip b{font-family:"Archivo",sans-serif}
 .mn-chip.mal{border-color:var(--rechazo); color:var(--rechazo-txt)}
 .mn-chip.bien{border-color:var(--apoyo); color:var(--apoyo-txt)}
+.mn-caliente{font-size:var(--t-sm); color:var(--tinta2); line-height:1.6; margin:10px 0 0;
+  padding:11px 13px; border-radius:var(--r-sm); background:var(--sup2);
+  border-left:3px solid var(--oro-2)}
 .mn-leyenda{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:16px 0 0}
 .mn-ir{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 0}
 .mn-ir a{font-size:var(--t-xs); padding:5px 10px; border-radius:var(--r-sm);
@@ -2323,8 +2326,20 @@ function CUANDO_GALA(){
   const G = D.actualidad && D.actualidad.proxima_gala;
   if(!G || !G.fecha) return {dias: null, corto: "", cuando: "", esta_noche: ""};
   const d = Math.round((new Date(G.fecha + "T00:00:00") - HOY_ARG()) / 86400000);
+  // El cuarto estado. El ciclo parecia tener tres — preparacion, prediccion,
+  // validacion — y le faltaba el que trae mas gente: entre las 22.15 del lunes
+  // y el momento en que se carga el resultado, ya se sabe quien salio y la
+  // pagina todavia anuncia «quien se va manana». Es cuando mas se comparte el
+  // enlace y es cuando peor quedaba.
+  const empezo = new Date(G.fecha + "T22:15:00-03:00") <= new Date();
+  const P = D.puntaje;
+  const resuelta = !!(P && P.gala === G.gala);
   return {
     dias: d,
+    empezo: empezo,
+    resuelta: resuelta,
+    // «en caliente»: la gala ya empezo y el resultado todavia no esta cargado
+    caliente: empezo && !resuelta,
     corto: d < 0 ? "el " + FECHA_LARGA(G.fecha) : d === 0 ? "hoy" : d === 1 ? "mañana"
          : "en " + d + " días",
     cuando: d === 0 ? "esta noche" : d === 1 ? "mañana a la noche"
@@ -5200,9 +5215,27 @@ function contar(nodo){
     if(destino && destino.parentElement) destino.parentElement.insertBefore(sec, destino);
   }
 
+  const RELOJ = CUANDO_GALA();
+  const arch = (D.congeladas || []).find(x => x.gala === G.gala);
+
   sec.innerHTML =
     "<div class='mn-cab'><span class='pulso'></span>" +
-      "<span class='mn-cuando'>Gala de eliminación · " + cuando + " a las 22.15</span></div>" +
+      "<span class='mn-cuando'>" + (RELOJ.caliente
+        ? "La gala ya empezó · el resultado todavía no está cargado"
+        : "Gala de eliminación · " + cuando + " a las 22.15") + "</span></div>" +
+    // En caliente la pagina no sabe quien salio y no puede fingir que si. Lo
+    // que si tiene, y es lo unico que importa en ese momento, es lo que quedo
+    // escrito ANTES: se dice eso y se enlaza la copia congelada.
+    (RELOJ.caliente
+      ? "<p class='mn-caliente'>Esta página se actualiza a mano, así que durante la gala " +
+        "todavía dice lo que decía antes. <b>No se toca nada hasta que se confirme quién " +
+        "salió</b>, y entonces se publica el resultado junto al puntaje de las tres " +
+        "predicciones, con la regla que está escrita desde antes." +
+        (arch && arch.archivo
+          ? " Mientras tanto, lo que se predijo está congelado acá: <a href='" + arch.archivo +
+            "'>la página tal como se publicó antes de la gala</a>."
+          : "") + "</p>"
+      : "") +
     "<div class='mn-tit'>" +
       (chocan
         ? "El modelo dice " + modTop + ". Todo lo que se puede mirar desde afuera dice " +
