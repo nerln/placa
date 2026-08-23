@@ -10,15 +10,6 @@
   "Tamara",
   "Luana"
  ],
- "bajaron_de_placa": {
-  "quienes": [
-   "Sol",
-   "Yipio"
-  ],
-  "cuando": "2026-08-16",
-  "como": "Los sacó la fase de voto positivo. Del Moro lo anunció al aire el domingo, para afuera: a las jugadoras no se les dijo.",
-  "fuente": "https://www.mitelefe.com/gran-hermano/noticias/cruces-en-la-cena-de-nominadas-y-dos-jugadoras-salvadas-de-la-eliminacion-pid2562969"
- },
  "es_del_modelo": false,
  "que_es": "Predicción declarada para esta gala. No sale del modelo de la página: el modelo contesta la misma pregunta, y su prueba hacia atrás dice que en esa pregunta anda peor que el azar. Ésta se arma con las dos señales que se pueden observar desde afuera antes de que cierre la votación.",
  "supuestos": {
@@ -174,5 +165,6 @@
   ],
   "pasan": 3,
   "de": 6
- }
+ },
+ "escrita": "2026-08-23T05:51-0300"
 }

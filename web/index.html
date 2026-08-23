@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-18T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-18","version":"c299e0feb4035ffe","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=c299e0feb4035ffe"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-18T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 10 galas con el reparto de votos publicado. Hoy: Charlotte 30,6% · Tamara 22,0% · Pincoya 15,2%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-18","version":"fc730299fb19055c","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=fc730299fb19055c"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -309,6 +309,58 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
 /* La respuesta corta: cada frase tiene que poder leerse sola, fuera de la
    página, con nombre, número y fecha adentro. Es lo que un buscador o un
    asistente puede levantar textualmente sin que quede colgando. */
+
+
+/* ---------- mañana ----------
+   La página mide treinta y cinco mil píxeles y la respuesta a «qué pasa
+   mañana» estaba repartida entre el píxel 4.622 y el 24.329. Esto la junta
+   arriba: cuándo es, quién está en riesgo, qué dice cada cuenta y dónde se
+   contradicen. Todo se lee de los mismos datos que alimentan las secciones de
+   abajo, así que no puede quedarse viejo por su cuenta. */
+#manana{margin:26px 0 0; border:1px solid var(--linea); border-left:3px solid var(--rechazo);
+  border-radius:var(--r-md); background:var(--sup); padding:20px 18px;
+  max-width:calc(var(--medida) + 36px); margin-inline:auto}
+.mn-cab{display:flex; align-items:center; gap:9px; flex-wrap:wrap}
+.mn-cab .pulso{width:8px; height:8px; border-radius:50%; background:var(--rechazo); flex:none;
+  animation:pulso 2.6s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.mn-cab .pulso{animation:none}}
+.mn-cuando{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-etq);
+  letter-spacing:.08em; text-transform:uppercase; color:var(--rechazo-txt)}
+.mn-tit{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg);
+  line-height:1.15; letter-spacing:-.01em; margin:8px 0 6px; text-wrap:balance}
+.mn-choque{display:grid; gap:10px; margin:14px 0 0}
+@media(min-width:560px){.mn-choque{grid-template-columns:1fr 1fr}}
+.mn-lado{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px}
+.mn-lado .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--tinta3); font-weight:700}
+.mn-lado .q{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl);
+  line-height:1.05; margin:5px 0 3px}
+.mn-lado .d{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
+.mn-lado.modelo{border-left:3px solid var(--tinta3)}
+.mn-lado.calle{border-left:3px solid var(--oro-2)}
+.mn-senales{margin:16px 0 0}
+.mn-fila{display:grid; grid-template-columns:6.5rem 1fr; gap:10px; align-items:start;
+  padding:9px 0; border-top:1px solid var(--linea2)}
+.mn-fila:first-of-type{border-top:0}
+.mn-fila .n{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.mn-chips{display:flex; flex-wrap:wrap; gap:5px}
+.mn-chip{font-size:var(--t-xs); padding:3px 8px; border-radius:var(--r-sm);
+  border:1px solid var(--linea); color:var(--tinta2); white-space:nowrap}
+.mn-chip b{font-family:"Archivo",sans-serif}
+.mn-chip.mal{border-color:var(--rechazo); color:var(--rechazo-txt)}
+.mn-chip.bien{border-color:var(--apoyo); color:var(--apoyo-txt)}
+.mn-leyenda{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:16px 0 0}
+.mn-pie{font-size:var(--t-xs); color:var(--tinta3); line-height:1.6; margin:14px 0 0;
+  padding-top:12px; border-top:1px solid var(--linea2)}
+@media(max-width:560px){
+  .mn-fila{grid-template-columns:1fr; gap:5px}
+  /* Los chips no parten linea, y «la piden afuera fuerte: consigna #1 del
+     pais, 20 h» mide 258px dentro de una fila de 248 a 320px de ancho. En
+     pantalla angosta parten. */
+  .mn-chip{white-space:normal}
+}
+.mn-chips{min-width:0}
+.mn-fila > *{min-width:0}
 
 /* ---------- lo último ----------
    Arriba de todo, antes del pronóstico. Quien entra a esta página quiere saber
@@ -802,8 +854,15 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
   border-radius:5px}
 .sen-fila .der i{position:absolute; left:0; top:0; bottom:0; background:var(--rechazo);
   border-radius:5px}
+.sen-fila .c b.mal{color:var(--rechazo-txt)}
+.sen-fila .c b.bien{color:var(--apoyo-txt)}
+/* Sin `nowrap`: la celda decia «17 contra · 9 a favor», y al cambiarla por la
+   direccion en palabras («la quieren afuera, y no la defiende nadie: 5
+   comentarios en contra») la misma regla que antes cabia empujo el documento a
+   539px en el telefono. Una celda que no parte lineas es una celda que crece
+   con el texto que le toque. */
 .sen-fila .c{font-variant-numeric:tabular-nums; color:var(--tinta2); font-size:var(--t-xs);
-  white-space:nowrap; min-width:8.5rem; text-align:right}
+  white-space:normal; min-width:10rem; max-width:17rem; text-align:right; line-height:1.5}
 .sen-cab{display:grid; grid-template-columns:7rem 1fr 1fr auto; gap:6px;
   font-size:var(--t-xs); color:var(--tinta3); font-family:"Archivo",sans-serif;
   font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px}
@@ -813,11 +872,17 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 /* Medido: en 390px la cuarta columna de 8,5rem empujaba el documento a 427px
    y toda la pagina se movia de lado. En pantalla angosta la fila se apila. */
 @media(max-width:560px){
-  .sen-cab{display:none}
-  .sen-fila{grid-template-columns:1fr auto; row-gap:4px}
+  /* `auto` en la columna 2 dejaba la pista de «en contra» en 0px, porque su
+     unico hijo es un <i> absoluto y no da ancho intrinseco: en el telefono se
+     dibujaban solo las barras a favor, con las filas ordenadas por rechazo.
+     Dos columnas iguales, y la cabecera se queda para decir cual es cual. */
+  .sen-cab{grid-template-columns:1fr 1fr; gap:6px}
+  .sen-cab > span:first-child, .sen-cab .z{display:none}
+  .sen-fila{grid-template-columns:1fr 1fr; row-gap:4px}
+  .sen-fila .n{grid-column:1 / -1; grid-row:1}
   .sen-fila .izq{grid-column:1; grid-row:2}
   .sen-fila .der{grid-column:2; grid-row:2}
-  .sen-fila .c{grid-column:1 / -1; grid-row:3; min-width:0; text-align:left}
+  .sen-fila .c{grid-column:1 / -1; grid-row:3; min-width:0; max-width:none; text-align:left}
 }
 .sen-ej{font-size:var(--t-xs); color:var(--tinta2); margin:3px 0 0; line-height:1.5;
   padding-left:10px; border-left:2px solid var(--linea)}
@@ -903,198 +968,6 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 }
 .fases{display:grid; grid-template-columns:1fr; gap:10px; margin:14px 0 0}
 @media(min-width:640px){
-/* ---------- el termómetro de la placa ----------
-   Cuánta gente escribe el nombre de cada nominada, que no es cuánta gente vota.
-   Se dibuja al lado del riesgo del modelo para que la diferencia entre las dos
-   listas se vea sin tener que compararlas de memoria. */
-
-/* ---------- el modelo contra las encuestas ----------
-   Cuatro columnas que contestan la misma pregunta y no coinciden. Se ponen una
-   al lado de la otra, cada una con lo que mide y con lo que acertó antes, en
-   vez de elegir la que da la razón. */
-
-/* ---------- la apuesta ----------
-   La prediccion declarada, separada del pronostico del modelo y dicho por que.
-   Va con los supuestos a la vista: son cinco numeros que no salen de ningun
-   dato, y esconderlos seria vender como calculo lo que es un juicio. */
-
-/* ---------- el puntaje ----------
-   Cuando la gala se juega, esto se enciende solo y la apuesta de arriba pasa a
-   ser lo que se dijo antes. Va arriba de la apuesta a proposito: quien entra
-   despues de la gala quiere el resultado, no el pronostico. */
-#puntaje{margin:22px 0 0; border:1px solid var(--linea); border-left:3px solid var(--tinta);
-  border-radius:var(--r-md); background:var(--sup); padding:18px 16px;
-  max-width:calc(var(--medida) + 32px)}
-.pun-quien{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl);
-  line-height:1; margin:6px 0 4px}
-.pun-rej{display:grid; gap:10px; margin:14px 0 0}
-@media(min-width:640px){.pun-rej{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}}
-.pun-caja{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px}
-.pun-caja.acierta{border-color:var(--apoyo)}
-.pun-caja .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
-  letter-spacing:.06em; color:var(--tinta3); font-weight:700}
-.pun-caja .v{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg);
-  margin:4px 0 2px}
-.pun-caja .d{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
-.pun-caja .sello{display:inline-block; font-size:var(--t-xs); font-weight:700; margin-top:6px;
-  padding:2px 8px; border-radius:var(--r-sm); border:1px solid var(--linea); color:var(--tinta3)}
-.pun-caja.acierta .sello{color:var(--apoyo-txt); border-color:var(--apoyo)}
-#apuesta{margin:22px 0 0; border:1px solid var(--linea); border-left:3px solid var(--oro-2);
-  border-radius:var(--r-md); background:var(--sup); padding:18px 16px;
-  max-width:calc(var(--medida) + 32px)}
-.ap-cab{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin:6px 0 4px}
-.ap-quien{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl);
-  letter-spacing:-.01em; line-height:1}
-.ap-pct{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl);
-  color:var(--oro-3); font-variant-numeric:tabular-nums; line-height:1}
-.ap-fila{display:grid; grid-template-columns:7.5rem 1fr auto; align-items:center; gap:10px;
-  padding:6px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
-.ap-fila:first-of-type{border-top:0}
-.ap-fila .n{font-family:"Archivo",sans-serif; font-weight:700}
-.ap-fila .b{height:9px; border-radius:5px; background:var(--sup3); overflow:hidden}
-.ap-fila .b i{display:block; height:100%; border-radius:5px; background:var(--oro-2)}
-.ap-fila.primera .b i{background:var(--oro-3)}
-.ap-fila .v{font-variant-numeric:tabular-nums; color:var(--tinta2); min-width:3.4rem;
-  text-align:right}
-.ap-fila.primera .v{color:var(--tinta); font-weight:700}
-.ap-sup{display:grid; gap:6px; margin:14px 0 0; padding:12px 13px; border-radius:var(--r-sm);
-  background:var(--sup2)}
-.ap-sup div{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
-.ap-sup b{font-family:"Archivo",sans-serif; color:var(--tinta)}
-
-/* ---------- la llamada y sus comprobaciones ----------
-   Una frase comprometida arriba, y debajo las seis preguntas que podían
-   tumbarla. Las que no pasan se publican igual y con el mismo tamaño: una lista
-   de comprobaciones que siempre da que sí no comprueba nada. */
-.ap-llamada{margin:14px 0 0; padding:14px 15px; border-radius:var(--r-sm);
-  background:var(--sup2); border-left:3px solid var(--oro-3)}
-.ap-llamada .frase{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg);
-  line-height:1.2; margin:0 0 6px}
-.ap-llamada p{font-size:var(--t-sm); color:var(--tinta2); margin:6px 0 0; line-height:1.55}
-.ac{margin:14px 0 0}
-.ac-item{padding:10px 0; border-top:1px solid var(--linea2)}
-.ac-item:first-of-type{border-top:0}
-.ac-item .p{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
-.ac-item .marca{display:inline-block; font-size:var(--t-xs); font-weight:700; margin-right:8px;
-  padding:1px 7px; border-radius:var(--r-sm); border:1px solid var(--linea)}
-.ac-item.si .marca{color:var(--apoyo-txt); border-color:var(--apoyo)}
-.ac-item.no .marca{color:var(--rechazo-txt); border-color:var(--rechazo)}
-.ac-item .r{font-size:var(--t-sm); color:var(--tinta2); margin:5px 0 0; line-height:1.55}
-.ac-item .m{font-size:var(--t-xs); color:var(--tinta3); margin:4px 0 0}
-.ap-sello{margin:14px 0 0; padding:10px 12px; border:1px dashed var(--linea);
-  border-radius:var(--r-sm); font-size:var(--t-xs); color:var(--tinta2); line-height:1.6}
-.ap-sello code{font-size:.95em}
-
-/* ---------- todo lo que puede pasar ----------
-   Las cinco salidas posibles con lo que cada una le hace a la carrera por el
-   premio, y aparte los canales que el modelo no simula. Que algo no se simule
-   no es motivo para no nombrarlo: es motivo para nombrarlo mejor. */
-
-/* ---------- lo que se escribe, no lo que se grita ----------
-   El termometro cuenta consignas; esto lee comentarios. Las barras van a los
-   dos lados desde el centro porque un saldo tiene signo, y quien no se pudo
-   clasificar se muestra aparte en vez de sumarse al medio. */
-.sen-fila{display:grid; grid-template-columns:7rem 1fr 1fr auto; align-items:center;
-  gap:6px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
-.sen-fila:first-of-type{border-top:0}
-.sen-fila .n{font-family:"Archivo",sans-serif; font-weight:700}
-.sen-fila .izq, .sen-fila .der{height:9px; background:var(--sup3); border-radius:5px;
-  position:relative; overflow:hidden}
-.sen-fila .izq i{position:absolute; right:0; top:0; bottom:0; background:var(--apoyo);
-  border-radius:5px}
-.sen-fila .der i{position:absolute; left:0; top:0; bottom:0; background:var(--rechazo);
-  border-radius:5px}
-.sen-fila .c{font-variant-numeric:tabular-nums; color:var(--tinta2); font-size:var(--t-xs);
-  white-space:nowrap; min-width:8.5rem; text-align:right}
-.sen-cab{display:grid; grid-template-columns:7rem 1fr 1fr auto; gap:6px;
-  font-size:var(--t-xs); color:var(--tinta3); font-family:"Archivo",sans-serif;
-  font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px}
-.sen-cab .a{text-align:right}
-.sen-cab .b{text-align:left}
-.sen-cab .z{min-width:8.5rem}
-/* Medido: en 390px la cuarta columna de 8,5rem empujaba el documento a 427px
-   y toda la pagina se movia de lado. En pantalla angosta la fila se apila. */
-@media(max-width:560px){
-  .sen-cab{display:none}
-  .sen-fila{grid-template-columns:1fr auto; row-gap:4px}
-  .sen-fila .izq{grid-column:1; grid-row:2}
-  .sen-fila .der{grid-column:2; grid-row:2}
-  .sen-fila .c{grid-column:1 / -1; grid-row:3; min-width:0; text-align:left}
-}
-.sen-ej{font-size:var(--t-xs); color:var(--tinta2); margin:3px 0 0; line-height:1.5;
-  padding-left:10px; border-left:2px solid var(--linea)}
-#sentimiento{max-width:calc(var(--medida) + 32px)}
-.esc-salida{display:grid; grid-template-columns:8rem 1fr; gap:12px; padding:10px 0;
-  border-top:1px solid var(--linea2)}
-.esc-salida:first-of-type{border-top:0}
-.esc-salida .quien{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
-.esc-salida .quien small{display:block; font-weight:400; color:var(--tinta3);
-  font-size:var(--t-xs); margin-top:2px; font-family:inherit}
-.esc-salida .pas{font-size:var(--t-sm); color:var(--tinta2); line-height:1.55; margin:0}
-.esc-salida .pas b{color:var(--tinta)}
-.esc-fuera{padding:9px 0; border-top:1px solid var(--linea2)}
-.esc-fuera:first-of-type{border-top:0}
-.esc-fuera .q{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
-.esc-fuera .e{font-size:var(--t-xs); font-weight:700; margin-left:7px; padding:2px 7px;
-  border-radius:var(--r-sm); border:1px solid var(--linea); color:var(--tinta3);
-  white-space:nowrap}
-.esc-fuera p{font-size:var(--t-sm); color:var(--tinta2); margin:4px 0 0; line-height:1.55}
-#escenarios{max-width:calc(var(--medida) + 32px)}
-
-/* ---------- el mano a mano como partido aparte ----------
-   Una tabla de dos columnas comparando el modelo con la variante, y una fila
-   por gala. Lo que importa se ve en el pie: mejora una cosa y no la otra. */
-.dt-rej{display:grid; gap:10px; margin:14px 0 0}
-@media(min-width:640px){.dt-rej{grid-template-columns:repeat(3,1fr)}}
-.dt-caja{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px;
-  background:var(--sup)}
-.dt-caja .k{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
-  letter-spacing:.06em; color:var(--tinta3); font-weight:700}
-.dt-caja .v{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg); margin:4px 0 2px}
-.dt-caja .d{font-size:var(--t-xs); color:var(--tinta2); line-height:1.5}
-.dt-caja.mejor{border-color:var(--apoyo)}
-.dt-caja.mejor .v{color:var(--apoyo-txt)}
-.dt-theta{display:grid; grid-template-columns:6.5rem 1fr auto; gap:8px; align-items:center;
-  padding:6px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
-.dt-theta:first-of-type{border-top:0}
-.dt-theta .n{font-family:"Archivo",sans-serif; font-weight:700}
-.dt-theta .b{height:8px; background:var(--sup3); border-radius:4px; position:relative}
-.dt-theta .b i{position:absolute; top:0; bottom:0; border-radius:4px; background:var(--apoyo)}
-.dt-theta .b i.neg{background:var(--rechazo)}
-.dt-theta .c{font-size:var(--t-xs); color:var(--tinta2); font-variant-numeric:tabular-nums;
-  white-space:nowrap}
-#dostiempos{max-width:calc(var(--medida) + 32px); margin-inline:auto}
-.cotejo{width:100%; border-collapse:collapse; font-size:var(--t-sm)}
-.cotejo th{font-family:"Archivo",sans-serif; font-size:var(--t-xs); text-transform:uppercase;
-  letter-spacing:.06em; color:var(--tinta3); text-align:right; padding:0 0 8px; font-weight:700;
-  vertical-align:bottom}
-.cotejo th:first-child{text-align:left}
-.cotejo td{padding:8px 0; border-top:1px solid var(--linea2); text-align:right;
-  font-variant-numeric:tabular-nums; color:var(--tinta2)}
-.cotejo td:first-child{text-align:left; font-family:"Archivo",sans-serif; font-weight:700;
-  color:var(--tinta)}
-.cotejo td.peor{color:var(--rechazo-txt); font-weight:700}
-.cotejo td.na{color:var(--linea)}
-.cotejo th .q{display:block; font-weight:400; text-transform:none; letter-spacing:0;
-  color:var(--tinta3); font-size:var(--t-xs)}
-.cotejo-pies{display:grid; gap:8px; margin:14px 0 0}
-.cotejo-pies div{font-size:var(--t-xs); color:var(--tinta2); line-height:1.55}
-.cotejo-pies b{font-family:"Archivo",sans-serif}
-#cotejo{max-width:calc(var(--medida) + 32px)}
-.term-fila{display:grid; grid-template-columns:9.5rem 1fr auto; align-items:center;
-  gap:10px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
-.term-fila:first-of-type{border-top:0}
-.term-fila .t{font-family:"Archivo",sans-serif; font-weight:700; letter-spacing:.02em}
-.term-fila .barra{height:8px; border-radius:4px; background:var(--sup3); overflow:hidden}
-.term-fila .barra i{display:block; height:100%; border-radius:4px; background:var(--rechazo)}
-/* El color sigue al signo de la fase: mientras se vota para salvar, una barra
-   roja diria lo contrario de lo que mide. */
-#term-placa.positivo .term-fila .barra i{background:var(--apoyo)}
-.term-fila .p{font-variant-numeric:tabular-nums; color:var(--tinta2); font-size:var(--t-xs);
-  white-space:nowrap}
-.term-fila.muda .barra i{background:var(--linea)}
-.term-fila.muda .t{color:var(--tinta3)}
-#term-placa{max-width:calc(var(--medida) + 32px)}
 .fases{grid-template-columns:1fr 1fr}}
 .fase{border:1px solid var(--linea); border-radius:var(--r-sm); padding:12px 13px;
   position:relative; overflow:hidden}
@@ -1141,6 +1014,11 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 /* El índice de campaña, pegado al termómetro porque sale de él. Quien no tiene
    consigna aparece igual, con una raya: la fila vacía es el dato. */
 .campana{margin-top:20px; border-top:1px solid var(--linea); padding-top:16px}
+.camp-clave{display:flex; justify-content:space-between; gap:8px; margin:0 0 6px;
+  font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.05em;
+  text-transform:uppercase; font-weight:700}
+.camp-clave span:first-child{color:var(--rechazo-txt)}
+.camp-clave span:last-child{color:var(--apoyo-txt)}
 .camp-fila{display:grid; grid-template-columns:96px 1fr 62px; gap:12px; align-items:center;
   padding:8px 0; border-bottom:1px solid var(--linea2)}
 .camp-fila .q{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
@@ -1739,6 +1617,8 @@ footer p{max-width:var(--medida)}
   <p class="bajada">Todo sale de dos cosas que publica Telefe: el reparto de votos que canta en cada gala de eliminación, y el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio. Nada de encuestas de intención ni de cuotas de apuestas: para esta edición no existe ningún mercado real.</p>
 </header>
 
+<section id="manana"></section>
+
 <div class="veredicto">
   <div class="vtop">
     <div id="vretrato"></div>
@@ -2241,6 +2121,38 @@ const FECHA_LARGA = f => { if(!f) return "";
    todavia es el 17 y faltan tres horas para la gala. Se corrige tomando la
    fecha en el huso de Buenos Aires y armando con ella una medianoche local.
    No se usa la zona horaria del navegador ni se le pide permiso a nada. */
+// Cuando cae la proxima gala, en dias de calendario argentino. Estaba escrito
+// a mano en tres lugares: la tarjeta de la apuesta decia «esta noche» un
+// domingo, mientras la cinta de arriba decia «manana». Dos partes de la misma
+// pagina discrepaban sobre cuando es la gala. Ahora sale de un solo lado.
+// La medicion mas reciente que la pagina muestra, que casi nunca es la fecha
+// de la corrida: el modelo se recalcula despues de cada gala, pero las
+// encuestas y las tendencias entran todos los dias. Decir una sola fecha
+// arriba hacia parecer vieja una pagina que no lo estaba.
+function ULTIMA_MEDIDA(){
+  const f = [];
+  const A = D.actualidad || {};
+  ((A.medidas_sociales || {}).fuentes || []).forEach(x => x.fecha && f.push(x.fecha));
+  if(A.termometro_placa && A.termometro_placa.medido) f.push(A.termometro_placa.medido.slice(0, 10));
+  if((A.tendencias || {}).medido) f.push(A.tendencias.medido.slice(0, 10));
+  if(A.videos_recogido) f.push(A.videos_recogido);
+  return f.length ? f.sort().pop() : null;
+}
+
+function CUANDO_GALA(){
+  const G = D.actualidad && D.actualidad.proxima_gala;
+  if(!G || !G.fecha) return {dias: null, corto: "", cuando: "", esta_noche: ""};
+  const d = Math.round((new Date(G.fecha + "T00:00:00") - HOY_ARG()) / 86400000);
+  return {
+    dias: d,
+    corto: d < 0 ? "el " + FECHA_LARGA(G.fecha) : d === 0 ? "hoy" : d === 1 ? "mañana"
+         : "en " + d + " días",
+    cuando: d === 0 ? "esta noche" : d === 1 ? "mañana a la noche"
+         : d > 1 ? "el " + FECHA_LARGA(G.fecha) : "el " + FECHA_LARGA(G.fecha),
+    esta_noche: d === 0 ? "esta noche" : d === 1 ? "mañana" : "el " + FECHA_LARGA(G.fecha),
+  };
+}
+
 function HOY_ARG(){
   const f = new Intl.DateTimeFormat("en-CA", {timeZone: "America/Argentina/Buenos_Aires",
     year: "numeric", month: "2-digit", day: "2-digit"}).format(new Date());
@@ -2312,7 +2224,10 @@ $("#sub-marca").innerHTML =
 if($("#corrida")) $("#corrida").textContent = D.corrida || "—";
 
 $("#pie").innerHTML = "Modelo y visualización generados el " + FECHA_LARGA(D.generado) + " de 2026. " +
-  "El pronóstico refleja el estado del juego a esa fecha e ignora, por construcción, cualquier hecho posterior. " +
+  "El modelo refleja el estado del juego a la fecha de su corrida e ignora, por construcción, " +
+  "cualquier hecho posterior: se recalcula después de cada gala. Las encuestas, las tendencias y " +
+  "los comentarios que la página muestra sí se actualizan entre gala y gala, y cada uno lleva al " +
+  "lado el día en que se midió. " +
   "Se recalcula solo después de cada gala.";
 
 /* ---------- compartir el pronóstico ----------
@@ -2382,10 +2297,27 @@ orden.forEach((n,i) => {
     : (i<4 ? "color-mix(in srgb, var(--apoyo) "+(64-i*15)+"%, var(--sup3))" : "var(--sup3)");
   vbar.appendChild(s);
 });
-$("#vaviso").innerHTML = "<b>La ventaja es menor que la incertidumbre.</b> " + g2 + " queda a " +
-  nf(100*(base.p_gana[g1]-base.p_gana[g2]),1) + " puntos (" + pc(base.p_gana[g2]) +
-  ") y encabeza el modelo en el " + Math.round(100*D.bootstrap.p_favorito[g2]) +
-  "% de los remuestreos. Con " + D.jugadores.length + " personas todavía en juego, el pronóstico reparte: ni la favorita llega a una de cada cuatro.";
+// El cierre decia, fijo, «ni la favorita llega a una de cada cuatro». Con la
+// favorita en 30,6% eso es falso, y lo dice la misma linea que acaba de
+// imprimir el numero. Ahora se calcula, y el titular tambien: «la ventaja es
+// menor que la incertidumbre» solo se afirma cuando el segundo encabeza los
+// remuestreos bastante seguido.
+(function(){
+  const dif = 100 * (base.p_gana[g1] - base.p_gana[g2]);
+  const pf2 = D.bootstrap.p_favorito[g2] || 0;
+  const cabeza = base.p_gana[g1];
+  $("#vaviso").innerHTML =
+    "<b>" + (pf2 >= .2
+      ? "La ventaja es menor que la incertidumbre."
+      : "La ventaja es chica, pero se sostiene en los remuestreos.") + "</b> " +
+    g2 + " queda a " + nf(dif, 1) + " puntos (" + pc(base.p_gana[g2]) + ") y encabeza el modelo " +
+    "en el " + Math.round(100 * pf2) + "% de los remuestreos. Con " + D.jugadores.length +
+    " personas todavía en juego, el pronóstico reparte: " +
+    (cabeza < .25 ? "ni la favorita llega a una de cada cuatro."
+     : cabeza < .34 ? "la favorita no llega a una de cada tres."
+     : cabeza < .51 ? "ni la favorita llega a una de cada dos."
+     : "la favorita se lleva más de la mitad de las simulaciones.");
+})();
 $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,2);
 
 /* ---------- placa de nominados ---------- */
@@ -3532,7 +3464,8 @@ function contar(nodo){
     "<div class='ap-cab'><span class='ap-quien'>" + primera + "</span>" +
       "<span class='ap-pct'>" + pct(A.p_sale[primera]) + "</span></div>" +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0 0 14px'>" +
-      "Es la que más chances tiene de irse esta noche según esta cuenta, que no es la del modelo. " +
+      "Es la que más chances tiene de irse " + CUANDO_GALA().esta_noche + " según esta " +
+      "cuenta, que no es la del modelo. " +
       "Segunda, <b>" + segunda + "</b> con " + pct(A.p_sale[segunda]) + ". " +
       (difPuntos < 1
         ? "Las separan " + difPuntos.toFixed(1).replace(".", ",") + " puntos: un empate " +
@@ -3587,7 +3520,8 @@ function contar(nodo){
           : primera + " es primera con las dos juntas; con una sola, el orden se mueve.") +
       "</div>" +
       (B ? "<div><b>Lo que ya no hay que adivinar.</b> " + B.como + " Bajaron <b>" +
-        B.quienes.join("</b> y <b>") + "</b>, así que la placa de esta noche es de " +
+        B.quienes.join("</b> y <b>") + "</b>, así que la placa de " +
+        CUANDO_GALA().esta_noche + " es de " +
         A.placa.length + " y no de " + (A.placa.length + B.quienes.length) + ".</div>" : "") +
     "</div>" +
 
@@ -3610,7 +3544,15 @@ function contar(nodo){
             "<p class='m'>Si hubiera salido al revés: " + c.podia_matar.toLowerCase() + "</p>" +
           "</div>").join("") + "</div>"
       : "") +
-    "<div class='ap-sello'>Escrito el <b>17 de agosto de 2026</b> antes de la gala de las 22.15, " +
+    // La fecha estaba escrita a mano y era la de la gala ANTERIOR. Sale del
+    // momento en que la apuesta quedo congelada en el registro, que es el que
+    // vale: una apuesta fechada despues no seria una apuesta.
+    "<div class='ap-sello'>Escrito el <b>" +
+    (A.escrita ? FECHA_LARGA(A.escrita.slice(0, 10)) + " de 2026" +
+       (A.escrita.length > 10 ? " a las " + A.escrita.slice(11, 16) : "")
+     : FECHA_LARGA(D.generado) + " de 2026") +
+    "</b> antes de la gala del " + FECHA_LARGA((D.actualidad.proxima_gala || {}).fecha ||
+      D.placa_vigente.fecha) + " a las 22.15, " +
       "sobre la corrida <code>" + (D.corrida || "") + "</code>. El modelo de esta página dice " +
       "para la misma pregunta: <b>" + modeloTop + " " +
       pct(Object.values(A.modelo_dice)[0]) + "</b>. Las dos quedan anotadas en " +
@@ -3661,14 +3603,53 @@ function contar(nodo){
         "<span class='n'>" + f.n + "</span>" +
         "<span class='izq'><i style='width:" + (100 * f.favor / tope) + "%'></i></span>" +
         "<span class='der'><i style='width:" + (100 * f.contra / tope) + "%'></i></span>" +
-        "<span class='c'>" + f.contra + " contra · " + f.favor + " a favor" +
-          (f.sin_signo ? " · " + f.sin_signo + " sin signo" : "") + "</span>" +
+        // La direccion, dicha. Un par de numeros y una barra que crece para los
+        // dos lados obligan al lector a deducir el signo, y era justo lo que no
+        // se entendia: si «Tamara 4 y 0» significaba que la quieren afuera o
+        // que la bancan. Los numeros se quedan al lado, que son la prueba.
+        "<span class='c'>" + (() => {
+          const n = f.contra + f.favor;
+          if(!n) return "nadie con signo";
+          if(f.favor === 0) return "<b class='mal'>la quieren afuera</b>, y no la defiende " +
+            "nadie: " + f.contra + (f.contra === 1 ? " comentario" : " comentarios") + " en contra";
+          if(f.contra === 0) return "<b class='bien'>la bancan</b>, y no la ataca nadie: " +
+            f.favor + (f.favor === 1 ? " comentario" : " comentarios") + " a favor";
+          if(f.contra === f.favor) return "empatada: " + f.contra + " y " + f.favor;
+          return (f.contra > f.favor
+            ? "<b class='mal'>la quieren afuera</b>: " + f.contra + " de " + n
+            : "<b class='bien'>la bancan</b>: " + f.favor + " de " + n) + " con signo";
+        })() + (f.sin_signo ? " · " + f.sin_signo + " sin clasificar" : "") + "</span>" +
       "</div>").join("") +
-    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" +
-      "El saldo más cargado en contra es el de <b>" + mas.n + "</b>, y el más a favor el de <b>" +
-      menos.n + "</b>. En volumen crudo, la que más comentarios en contra junta es <b>" +
-      filas.slice().sort((a, b) => b.contra - a.contra)[0].n + "</b>." +
-    "</p>" +
+    (() => {
+      // El cierre decia «el saldo mas cargado en contra es el de Sol» y despues
+      // «la que mas comentarios en contra junta es Sol», como si fueran dos
+      // cosas distintas. Y el titulo promete decir en que NO coincide, que es
+      // lo unico que aca no se estaba diciendo: la comparacion contra las
+      // tendencias, que es la otra medida de la misma semana.
+      const cruda = filas.slice().sort((a, b) => b.contra - a.contra)[0];
+      const T = D.actualidad && D.actualidad.termometro_placa;
+      const cons = ((T && T.consignas) || []).slice().sort((a, b) => a.pico - b.pico)[0];
+      const gritada = cons && filas.find(f => cons.termino.toUpperCase().startsWith(f.n.toUpperCase()));
+      let txt = "Quien más rechazo junta acá es <b>" + mas.n + "</b>" +
+        (cruda.n !== mas.n ? ", aunque en volumen crudo de comentarios en contra la primera es <b>" +
+          cruda.n + "</b>" : "") + ". " +
+        (menos.favor > menos.contra
+          ? "La única con más gente a favor que en contra es <b>" + menos.n + "</b>. "
+          : "Ninguna junta más apoyo que rechazo. ");
+      if(gritada){
+        const n = gritada.contra + gritada.favor;
+        txt += "<b>Y acá está el desacuerdo:</b> la consigna número " + cons.pico + " del país " +
+          "es la que pide echar a <b>" + gritada.n + "</b>, pero en los comentarios es de las " +
+          "menos nombradas: " + (gritada.contra + gritada.favor + gritada.sin_signo) +
+          " menciones y " + n + " con signo" +
+          (gritada.favor === 0
+            ? ", las " + n + " en contra. Nadie la defiende, pero tampoco la discute mucha gente: "
+              + "lo que la señala es la campaña, no la conversación."
+            : ". Lo que la señala es la campaña más que la conversación.");
+      }
+      return "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" + txt +
+             "</p>";
+    })() +
     ((S.ejemplos && (S.ejemplos[mas.n] || []).length)
       ? "<p class='sen-ej'>" + S.ejemplos[mas.n].slice(0, 2)
           .map(e => "«" + e.texto + "»").join(" · ") + "</p>"
@@ -3731,7 +3712,12 @@ function contar(nodo){
 
   caja.innerHTML =
     "<div class='eyebrow'>Todo lo que puede pasar</div>" +
-    "<h3 style='margin:0 0 10px'>Las cinco salidas, y qué le hace cada una a la carrera</h3>" +
+    // El numero estaba escrito a mano y decia cinco mientras abajo se listaban
+    // seis. Sale de las ramas, que son las que se dibujan.
+    "<h3 style='margin:0 0 10px'>" + (n => n === 1 ? "La única salida posible, y qué le hace a la " +
+      "carrera" : "Las " + (["", "una", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho",
+      "nueve"][n] || n) + " salidas, y qué le hace cada una a la carrera")(Object.keys(R).length) +
+    "</h3>" +
     salidas +
     "<h3 style='margin:18px 0 8px'>Y lo que el modelo no simula</h3>" +
     fuera +
@@ -3763,12 +3749,19 @@ function contar(nodo){
     ? v.toLocaleString("es-AR")
     : String(v).replace(".", ",") + "%";
 
-  // En una fase de voto positivo el riesgo esta abajo: la que menos apoyo junta
-  // es la que peor esta. Por eso «peor» es el minimo y no el maximo.
+  // «Peor» no es el minimo en todas las columnas: depende de que mida la
+  // fuente. En imagen positiva la peor es la que menos junta; en voto negativo
+  // es la que MAS junta, porque ahi el numero es gente pidiendo que se vaya.
+  // Estaba tomado el minimo siempre, y por eso la columna de Trezeguet marcaba
+  // en rojo a Yipio con 4,6% en vez de a Tamara con 53,7%: justo al reves.
+  const masEsPeor = f => /voto negativo|rechazo|negativa/i.test(f.mide || "");
   const peores = {};
   M.fuentes.forEach(f => {
     const vs = placa.filter(n => f.valores[n] != null);
-    if(vs.length) peores[f.id] = vs.reduce((a, b) => f.valores[a] <= f.valores[b] ? a : b);
+    if(!vs.length) return;
+    peores[f.id] = masEsPeor(f)
+      ? vs.reduce((a, b) => f.valores[a] >= f.valores[b] ? a : b)
+      : vs.reduce((a, b) => f.valores[a] <= f.valores[b] ? a : b);
   });
   const peorModelo = placa.reduce((a, b) => R[a] >= R[b] ? a : b);
 
@@ -3791,9 +3784,25 @@ function contar(nodo){
     "<tr><th></th><th>Modelo<span class='q'>riesgo de salir</span></th>" +
       M.fuentes.map(f => "<th>" + f.quien + "<span class='q'>" + f.mide + "</span></th>").join("") +
     "</tr>" + filas + "</table></div>" +
-    "<p class='tw-nota' style='margin:10px 0 0'>En rojo, la peor de cada columna. En las tres " +
-    "encuestas el riesgo está abajo: son de voto positivo o de imagen, así que la que menos " +
-    "junta es la que peor está.</p>" +
+    // El pie afirmaba que las tres encuestas van para el mismo lado. No van:
+    // hoy dos miden voto negativo y una imagen, y en cada una «peor» es un
+    // extremo distinto de la columna. Decirlo mal era pedirle al lector que
+    // leyera dos columnas al reves.
+    (() => {
+      const neg = M.fuentes.filter(masEsPeor), pos = M.fuentes.filter(f => !masEsPeor(f));
+      let t = "En rojo, la peor de cada columna. ";
+      if(neg.length && pos.length)
+        t += "No todas se leen igual: en <b>" + neg.map(f => f.quien).join("</b> y <b>") +
+             "</b> el número es gente pidiendo que se vaya, así que la peor es la que <b>más</b> " +
+             "junta; en <b>" + pos.map(f => f.quien).join("</b> y <b>") + "</b> mide imagen o " +
+             "apoyo, así que la peor es la que <b>menos</b> junta.";
+      else if(neg.length)
+        t += "Todas miden voto negativo: el número es gente pidiendo que se vaya, así que la " +
+             "peor es la que más junta.";
+      else
+        t += "Todas miden apoyo o imagen: la que menos junta es la que peor está.";
+      return "<p class='tw-nota' style='margin:10px 0 0'>" + t + "</p>";
+    })() +
     "<div class='cotejo-pies'>" +
       M.fuentes.map(f => "<div><b>" + f.quien + "</b> · " + f.donde + " · " +
         FECHA_LARGA(f.fecha) + ". " + f.historial + ". " + f.aviso +
@@ -3855,7 +3864,13 @@ function contar(nodo){
   const lim = (f, cual) => new Date(f[cual + "_hora"] || (f[cual] + "T23:00:00-03:00"));
   const fase = G && G.fases && G.fases.find(f =>
     lim(f, "desde") <= ahora && ahora < lim(f, "hasta"));
-  if(fase) caja.classList.add(fase.signo);
+  // Un solo signo para el color y para la frase. Estaban separados: el color
+  // salia de la fase y la frase estaba escrita a mano, y por eso pudieron
+  // quedar diciendo cosas opuestas en la misma tarjeta. Se cae a
+  // termometro_placa.fase para que despues de la gala, cuando ya no hay fase
+  // vigente, la tarjeta no vuelva al rojo por defecto sin decir por que.
+  const signo = (fase && fase.signo) || T.fase || "";
+  if(signo) caja.classList.add(signo);
 
   // Una medicion de tendencias envejece con la gala siguiente: lo que "pide la
    // calle" pasa a ser lo que pedia. Si la ventana es anterior a la ultima gala
@@ -3881,8 +3896,18 @@ function contar(nodo){
           ? "llegó al puesto " + f.c.pico + " · " + f.c.horas +
             (f.c.horas === 1 ? " hora" : " horas")
           : "sin consigna") + "</span></div>").join("") +
+    // El pie decia «Hoy eso significa apoyo», fijo, sobrevivido de la placa
+    // anterior, que si tenia fase positiva. Con esta placa negativa de punta a
+    // punta, y debajo de la barra llena de la consigna numero uno del pais, le
+    // decia al lector lo contrario de lo que mide y lo contrario del color de
+    // la propia barra. Ahora sale del mismo `signo` que elige el color.
     "<p class='tw-nota' style='margin:10px 0 0'>Cuanto más llena la barra, más arriba llegó la " +
-    "consigna en el top-50 argentino. Hoy eso significa apoyo.</p>" +
+    "consigna en el top-50 argentino." +
+    (signo === "negativo" ? " Todas piden <b>eliminar</b> a esa persona: cuanto más llena está, " +
+       "más gente pidiendo que se vaya."
+     : signo === "positivo" ? " En esta fase se vota para <b>salvar</b>: cuanto más llena está, " +
+       "más gente pidiendo que se quede."
+     : "") + "</p>" +
     (() => {
       // La que mas se nombra sin que nadie pida que se vaya. Es la unica de las
       // dos listas que se contradice, y por eso se dice en vez de dejarla ahi.
@@ -3937,12 +3962,32 @@ function contar(nodo){
   const L = P.lider;
   caja.innerHTML =
     "<div class='eyebrow'>Cómo se resuelve</div>" +
-    "<h3 style='margin:0 0 6px'>La misma placa se vota con dos signos opuestos</h3>" +
-    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
-      "Durante los primeros días votar sirve para <b>salvar</b>, y desde el domingo sirve para " +
-      "<b>eliminar</b>. Un mismo mensaje que diga «votá a fulana» pide lo contrario según el día " +
-      "en que se lea." +
-    "</p>" +
+    // El titular y el parrafo estaban escritos a mano para la placa anterior,
+    // que si tenia dos fases. Esta es negativa de punta a punta, y el texto
+    // fijo le explicaba al lector que hasta el domingo votar sirve para
+    // salvar: exactamente al reves de como se vota esta semana. Ahora salen
+    // de P.fases, que es el dato que la propia tarjeta dibuja abajo.
+    (() => {
+      const sg = [...new Set((P.fases || []).map(f => f.signo))];
+      if(sg.length > 1)
+        return "<h3 style='margin:0 0 6px'>La misma placa se vota con dos signos opuestos</h3>" +
+          "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
+          "Durante los primeros días votar sirve para <b>salvar</b>, y después sirve para " +
+          "<b>eliminar</b>. Un mismo mensaje que diga «votá a fulana» pide lo contrario según " +
+          "el día en que se lea.</p>";
+      if(sg[0] === "negativo")
+        return "<h3 style='margin:0 0 6px'>Esta placa se vota con un solo signo</h3>" +
+          "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
+          "No hay fase para salvar: desde que se armó la placa hasta la gala, <b>votar sirve " +
+          "para eliminar</b>. Un mensaje que diga «votá a fulana» pide que se vaya, cualquier " +
+          "día que se lea.</p>";
+      if(sg[0] === "positivo")
+        return "<h3 style='margin:0 0 6px'>Esta placa se vota con un solo signo</h3>" +
+          "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
+          "Mientras esté abierta, <b>votar sirve para salvar</b>. Un mensaje que diga «votá a " +
+          "fulana» pide que se quede.</p>";
+      return "<h3 style='margin:0 0 6px'>Cómo se vota esta placa</h3>";
+    })() +
     "<div class='fases'>" + fases + "</div>" +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:14px 0 0'>" +
       "<b>" + P.regla + "</b>" +
@@ -3951,8 +3996,9 @@ function contar(nodo){
       "visita " + P.pesos_nominacion.visita + ". " + P.pesos_nominacion.extra +
     "</p>" +
     "<p class='tw-nota' style='margin:10px 0 0'>El modelo trata la placa como un solo suceso: " +
-    "da la probabilidad de que cada una sea la que se va el " + FECHA_LARGA(P.fecha) + ", sin " +
-    "separar quién se salva el domingo. Reglas confirmadas por " +
+    "da la probabilidad de que cada una sea la que se va el " + FECHA_LARGA(P.fecha) +
+    ([...new Set((P.fases || []).map(f => f.signo))].length > 1
+      ? ", sin separar quién se salva antes" : "") + ". Reglas confirmadas por " +
     P.fuentes.map((u, i) => "<a href='" + u + "' target='_blank' rel='noopener nofollow'>" +
       (i ? "A24" : "Infobae") + "</a>").join(" y ") + ".</p>";
 })();
@@ -4559,8 +4605,10 @@ function contar(nodo){
 
   const a = $("#actualizado");
   if(a) a.innerHTML =
-    "Última actualización: <time datetime='" + D.generado + "T23:00:00-03:00'>" + FECHA +
-    "</time> · corrida <code>" + (D.corrida || "") + "</code> · por " +
+    "Modelo recalculado el <time datetime='" + D.generado + "T23:00:00-03:00'>" + FECHA +
+    "</time>" + (ULTIMA_MEDIDA() && ULTIMA_MEDIDA() > D.generado
+      ? " · señales medidas hasta el " + FECHA_LARGA(ULTIMA_MEDIDA()) : "") +
+    " · corrida <code>" + (D.corrida || "") + "</code> · por " +
     "<a rel='author' href='https://github.com/nerln'>nerln</a> · " +
     "<a href='https://github.com/nerln/placa/blob/main/METODOLOGIA.md'>método</a> · " +
     "<a href='datos.json'>datos crudos</a>";
@@ -4594,9 +4642,17 @@ function contar(nodo){
     "<p style='font-size:14.2px; color:var(--tinta2); margin:0 0 14px; max-width:var(--medida)'>" +
     "De los " + (C.indice ? Object.keys(C.indice).length : 0) + " nombres que quedan, <b>" +
     C.observados + "</b> tuvieron una consigna en tendencias durante la ventana. " +
-    "Una consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82. " +
+    "El signo dice qué pide la consigna y el número cuánto llegó a pesar: una que pide " +
+    "<b>eliminar</b> y llega al puesto 1 vale −1,00, y al puesto 10, −0,82; una que pide " +
+    "<b>salvar</b> vale lo mismo en positivo. Por eso el puesto 1 puede aparecer como −1,00: " +
+    "el 1 es el puesto y el menos es el pedido. " +
     "<b>Esto no entra al modelo</b>: para que entrara habría que medir cuánto pesa contra las " +
     "galas ya jugadas, y con una sola ventana de tendencias no hay con qué.</p>" +
+    // La clave de los dos lados, arriba de las barras. Sin ella el lector ve
+    // «−1,00» al lado de «#1» y tiene que adivinar cual de los dos numeros
+    // manda.
+    "<div class='camp-clave'><span>← piden que se vaya</span>" +
+      "<span>piden que se quede →</span></div>" +
     ord.map(n => {
       const v = C.indice[n], x = v.icd;
       const sin = x === null;
@@ -4675,6 +4731,165 @@ function contar(nodo){
     "tuvo una mala noche. Por eso el riesgo de la próxima gala es la parte más floja de esta " +
     "página, y por eso está medido acá en vez de quedar como impresión. " +
     R.por_que_no_hay_ediciones_anteriores;
+})();
+
+/* ---------- mañana ----------
+   El resumen de la gala que viene, arriba de todo. Nace de un problema medido:
+   la pagina mide treinta y cinco mil pixeles y las senales sobre la proxima
+   gala estaban repartidas entre el pixel 4.622 y el 24.329, asi que para saber
+   que pasa manana habia que recorrerla entera.
+
+   Todo lo de aca se LEE de los mismos datos que alimentan las secciones de
+   abajo. No hay ni un numero propio, asi que este bloque no puede quedarse
+   viejo por su cuenta ni contradecir a lo de abajo.
+
+   Y dice el signo con palabras, no con un saldo: «la quieren afuera» y «la
+   bancan» no se deducen de un numero con signo, y era justo lo que no se
+   entendia. */
+(function(){
+  const sec = $("#manana");
+  if(!sec) return;
+  const G = D.actualidad && D.actualidad.proxima_gala;
+  const placa = (D.placa_vigente && D.placa_vigente.integrantes) || [];
+  if(!G || !placa.length){ sec.remove(); return; }
+
+  const pc = v => (100 * v).toFixed(1).replace(".", ",") + "%";
+  const top = o => o ? Object.keys(o).sort((a, b) => o[b] - o[a])[0] : null;
+
+  // --- las cuentas, todas leidas de donde ya viven ---------------------------
+  const mod = (D.escenarios && D.escenarios.base && D.escenarios.base.p_sale28) || {};
+  const modPlaca = Object.fromEntries(placa.filter(n => mod[n] != null).map(n => [n, mod[n]]));
+  const dos = D.versus && D.versus.vigente && D.versus.vigente.p_sale;
+  const ap = D.apuesta && D.apuesta.p_sale;
+  const T = D.actualidad.termometro_placa;
+  const camp = {};
+  (T && T.consignas || []).forEach(c => { camp[c.termino.split(" ")[0]] = c; });
+  const campDe = n => camp[n.toUpperCase()] || camp[n];
+  const img = ((D.actualidad.medidas_sociales || {}).fuentes || [])
+    .find(f => f.mide === "imagen positiva");
+  const S = D.sentimiento && D.sentimiento.por_jugadora;
+
+  const modTop = top(modPlaca), apTop = top(ap);
+  const campTop = Object.keys(camp).length
+    ? placa.filter(campDe).sort((a, b) => campDe(a).pico - campDe(b).pico)[0] : null;
+  const imgPeor = img ? placa.filter(n => img.valores[n] != null)
+    .sort((a, b) => img.valores[a] - img.valores[b])[0] : null;
+
+  // --- el choque, dicho como lo que es --------------------------------------
+  const cuando = CUANDO_GALA().corto;
+
+  const deAfuera = [campTop, apTop, imgPeor].filter(Boolean);
+  const coincidenAfuera = deAfuera.length && deAfuera.every(n => n === deAfuera[0]);
+  const senalado = coincidenAfuera ? deAfuera[0] : null;
+  const chocan = senalado && modTop && senalado !== modTop;
+
+  sec.innerHTML =
+    "<div class='mn-cab'><span class='pulso'></span>" +
+      "<span class='mn-cuando'>Gala de eliminación · " + cuando + " a las 22.15</span></div>" +
+    "<div class='mn-tit'>" +
+      (chocan
+        ? "El modelo dice " + modTop + ". Todo lo que se puede mirar desde afuera dice " +
+          senalado + "."
+        : "Se va una de " + placa.length + " el " + FECHA_LARGA(G.fecha) + ".") +
+    "</div>" +
+    "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
+      "Se va una de <b>" + placa.length + "</b>: " + placa.join(", ") + ". " +
+      (chocan
+        ? "El modelo pone a <b>" + senalado + "</b> " +
+          (modPlaca[senalado] != null
+            ? "en el último puesto de riesgo, con " + pc(modPlaca[senalado]) + ". "
+            : "abajo de todo. ") +
+          "Las tendencias, la imagen y la apuesta la ponen primera. Una de las dos cosas se " +
+          "rompe " + cuando + "."
+        : "") +
+    "</p>" +
+
+    (chocan
+      ? "<div class='mn-choque'>" +
+          "<div class='mn-lado modelo'><div class='k'>El modelo</div>" +
+            "<div class='q'>" + modTop + "</div>" +
+            "<div class='d'>" + pc(modPlaca[modTop]) + " de irse. Lee el reparto de votos que " +
+            "Telefe cantó en las galas anteriores. Su prueba hacia atrás dice que en esta " +
+            "pregunta anda peor que el azar.</div></div>" +
+          "<div class='mn-lado calle'><div class='k'>Lo que se ve desde afuera</div>" +
+            "<div class='q'>" + senalado + "</div>" +
+            "<div class='d'>" +
+              (campDe(senalado) ? "Consigna número " + campDe(senalado).pico + " del país, " +
+                campDe(senalado).horas + " horas arriba. " : "") +
+              (img && img.valores[senalado] != null
+                ? "Última en imagen con " + img.valores[senalado] + "%. " : "") +
+              (ap && ap[senalado] != null ? "La apuesta le da " + pc(ap[senalado]) + "." : "") +
+            "</div></div>" +
+        "</div>"
+      : "") +
+
+    // «modelo 52,4%» y «dos tiempos 26,0%» uno al lado del otro, sin decir que
+    // son, parecen la pagina contradiciendose sola. Y la seccion de abajo
+    // promete tres predicciones congeladas: hasta ahora se podian encontrar
+    // dos, porque la del versus se calculaba y no se publicaba en ningun lado.
+    "<p class='mn-leyenda'><b>Por qué hay tres números por persona.</b> " +
+      "Son tres cuentas distintas sobre la misma pregunta, publicadas por separado para no " +
+      "elegir después cuál defender. <b>Modelo</b>: el reparto de votos de las galas anteriores. " +
+      "<b>Dos tiempos</b>: el mismo modelo, corrigiendo el mano a mano final, porque quien llega " +
+      "al último cara a cara viene ganándolo casi siempre. <b>Apuesta</b>: no usa nada del " +
+      "modelo, sólo lo que se puede medir afuera —campañas e imagen— antes de que cierre la " +
+      "votación. El martes se publica cuánto se acercó cada una.</p>" +
+    "<div class='mn-senales'>" +
+      placa.slice().sort((a, b) => (mod[b] || 0) - (mod[a] || 0)).map(n => {
+        const chips = [];
+        if(modPlaca[n] != null)
+          chips.push("<span class='mn-chip'>modelo <b>" + pc(modPlaca[n]) + "</b></span>");
+        if(dos && dos[n] != null)
+          chips.push("<span class='mn-chip'>dos tiempos <b>" + pc(dos[n]) + "</b></span>");
+        if(ap && ap[n] != null)
+          chips.push("<span class='mn-chip'>apuesta <b>" + pc(ap[n]) + "</b></span>");
+        // Una consigna que llegó al puesto 1 y otra que llegó al 30 no son la
+        // misma señal, y con el mismo rótulo rojo se leían igual.
+        const c = campDe(n);
+        if(c) chips.push(c.pico <= 10
+          ? "<span class='mn-chip mal'>la piden afuera fuerte: consigna #" + c.pico +
+            " del país, " + c.horas + " h</span>"
+          : "<span class='mn-chip'>consigna floja: sólo llegó al #" + c.pico + "</span>");
+        if(img && img.valores[n] != null)
+          chips.push("<span class='mn-chip" + (img.valores[n] < 40 ? " mal" : " bien") +
+            "'>imagen <b>" + img.valores[n] + "%</b></span>");
+        // El signo con palabras. Un saldo no dice si la quieren afuera o adentro.
+        if(S && S[n] && (S[n].contra + S[n].favor) > 0){
+          const k = S[n], tot = k.contra + k.favor;
+          const dir = k.contra > k.favor ? "mal" : k.favor > k.contra ? "bien" : "";
+          // Decía «5 de 14 piden que se vaya» para quien tiene 5 en contra y 9
+          // a favor: cierto y al revés de lo que pasa. Se dice la dirección
+          // que manda, que es la misma regla de la tarjeta de sentimiento.
+          const txt = k.favor === 0
+            ? "comentarios: " + k.contra + " en contra, ninguno a favor"
+            : k.contra === 0
+              ? "comentarios: " + k.favor + " a favor, ninguno en contra"
+              : k.contra > k.favor
+                ? "comentarios: " + k.contra + " de " + tot + " piden que se vaya"
+                : k.favor > k.contra
+                  ? "comentarios: " + k.favor + " de " + tot + " la bancan"
+                  : "comentarios: empatados, " + k.contra + " y " + k.favor;
+          chips.push("<span class='mn-chip " + dir + "'>" + txt + "</span>");
+        }
+        return "<div class='mn-fila'><span class='n'>" + n + "</span>" +
+               "<span class='mn-chips'>" + chips.join("") + "</span></div>";
+      }).join("") +
+    "</div>" +
+
+    "<p class='mn-pie'>" +
+      "<b>Cuándo se sabe.</b> " + (cuando === "mañana" ? "Mañana" : "El " + FECHA_LARGA(G.fecha)) +
+      " a las 22.15 de la Argentina, y el resultado suele cantarse pasadas las 23.30. " +
+      "Las tres predicciones ya están congeladas con fecha en " +
+      "<a href='datos.json'>el registro</a>, y el martes esta página publica el puntaje de las " +
+      "tres con la regla que está escrita desde antes." +
+      "<br><b>De cuándo es cada cosa.</b> " +
+      "Modelo y dos tiempos, corrida del " + FECHA_LARGA(D.generado) + ". " +
+      (T && T.medido ? "Tendencias, medidas el " + FECHA_LARGA(T.medido.slice(0, 10)) +
+        " a las " + T.medido.slice(11, 16) + ". " : "") +
+      (img ? "Imagen de " + img.quien + ", del " + FECHA_LARGA(img.fecha) + ". " : "") +
+      (D.sentimiento ? "Comentarios, " + D.sentimiento.total + " recogidos el " +
+        FECHA_LARGA((D.actualidad.videos_recogido || D.generado)) + "." : "") +
+    "</p>";
 })();
 
 /* ---------- lo último ----------

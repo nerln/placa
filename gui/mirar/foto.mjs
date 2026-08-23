@@ -10,4 +10,4 @@ if (sel !== "-") {
 await p.foto(salida);
 console.log(salida, "· scrollY", await p.ev("Math.round(scrollY)"),
             p.errores.length ? "· ERRORES: " + p.errores.join(" | ") : "· sin errores");
-p.cerrar(); process.exit(0);
+await p.cerrar(); process.exit(0);

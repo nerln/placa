@@ -39,6 +39,13 @@ export async function abrir({ancho = 1280, alto = 900, escala = 2, tema, movimie
     const fs = await import("node:fs");
     fs.writeFileSync(ruta, Buffer.from(s.result.data, "base64"));
   };
-  const cerrar = () => { ws.close(); };
+  // Cerrar el WebSocket dejaba la pestaña abierta: cada sonda se llevaba un
+  // proceso de render de unos 130 MB que no volvía. Cincuenta sondas en una
+  // tarde son 6 GB, y en una máquina de 16 GB eso es swap. Se cierra la
+  // pestaña, no solo la conexión.
+  const cerrar = async () => {
+    ws.close();
+    try { await fetch("http://127.0.0.1:9333/json/close/" + vs.id); } catch {}
+  };
   return {cmd, ir, ev, foto, cerrar, errores};
 }

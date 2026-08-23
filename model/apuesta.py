@@ -37,6 +37,7 @@ esto con la fase positiva todavia abierta, hay que volver a simular quien baja.
 
 from __future__ import annotations
 
+import datetime as dt
 import json
 from pathlib import Path
 
@@ -120,6 +121,77 @@ def _autoconfirmaciones(placa, orden, sens, camp_tend, modelo, tend_chile):
     ]
 
 
+# Quienes salieron de placa por una fase de voto positivo. Solo se publica
+# mientras siga describiendo la placa vigente: ver donde se usa.
+_BAJARON = {
+    "quienes": ["Sol", "Yipio"],
+    "cuando": "2026-08-16",
+    "como": ("Los sacó la fase de voto positivo. Del Moro lo anunció al aire el domingo, "
+             "para afuera: a las jugadoras no se les dijo."),
+    "fuente": ("https://www.mitelefe.com/gran-hermano/noticias/"
+               "cruces-en-la-cena-de-nominadas-y-dos-jugadoras-salvadas-de-la-"
+               "eliminacion-pid2562969"),
+}
+
+
+def _sellar(salida, escrita):
+    """Deja en apuesta.json la fecha real en que se escribio la apuesta.
+
+    El sello de la pagina decia «Escrito el 17 de agosto», a mano, que era la
+    fecha de la gala anterior. Cae de aca, del registro, para que no pueda
+    volver a discutir con el.
+    """
+    salida["escrita"] = escrita
+    (ROOT / "data" / "apuesta.json").write_text(
+        json.dumps(salida, ensure_ascii=False, indent=1))
+
+
+def _congelar(salida, pv):
+    """Deja la apuesta escrita en el registro, con fecha, ANTES de la gala.
+
+    Sin esto la apuesta se publicaba en la pagina pero no existia en
+    historial_pronostico.json, y el martes model/puntaje.py decia «sin
+    prediccion congelada» justo para la unica de las tres predicciones que no
+    sale del modelo. Una prediccion que no queda escrita antes no se puede
+    puntuar despues: es la regla que sostiene todo lo demas de esta pagina.
+
+    Se guarda cada version con su hora, porque la apuesta se mueve durante la
+    semana y esconder las versiones anteriores seria elegir despues cual
+    defender. puntuar toma la ultima, que es la ultima escrita antes de la
+    gala. Y no se escribe nada una vez jugada la gala.
+    """
+    hoy = dt.datetime.now(dt.timezone(dt.timedelta(hours=-3)))
+    fecha_gala = pv.get("fecha")
+    if fecha_gala and hoy.date() > dt.date.fromisoformat(fecha_gala):
+        print("la gala ya se jugo: no se escribe una apuesta con fecha de despues")
+        return
+
+    ruta = ROOT / "data" / "historial_pronostico.json"
+    H = json.loads(ruta.read_text())
+    reg = H.setdefault("apuestas", [])
+    entrada = {
+        "gala": pv.get("gala"),
+        "fecha_gala": fecha_gala,
+        "escrita": hoy.strftime("%Y-%m-%dT%H:%M%z"),
+        "placa": list(salida["placa"]),
+        "p_sale": dict(salida["p_sale"]),
+        "llamada": salida["llamada"]["quien"],
+        "coincide_con_el_modelo": salida["coinciden"],
+    }
+    previas = [e for e in reg if e.get("gala") == pv.get("gala")]
+    if previas and previas[-1].get("p_sale") == entrada["p_sale"]:
+        # La misma apuesta ya escrita: no se duplica por volver a correr, pero
+        # la fecha que la pagina muestra sigue siendo la de la PRIMERA vez que
+        # se escribieron estos numeros, no la de la ultima corrida.
+        _sellar(salida, previas[-1]["escrita"])
+        return
+    reg.append(entrada)
+    ruta.write_text(json.dumps(H, ensure_ascii=False, indent=1))
+    _sellar(salida, entrada["escrita"])
+    print(f"apuesta congelada en el registro: {entrada['llamada']} · "
+          f"version {len(previas) + 1} de la gala {pv.get('gala')}")
+
+
 def main():
     ramas = _leer("ramas.json")
     campana = _leer("campana.json")
@@ -199,15 +271,15 @@ def main():
         "gala": pv.get("gala"),
         "fecha_gala": pv.get("fecha"),
         "placa": placa,
-        "bajaron_de_placa": {
-            "quienes": ["Sol", "Yipio"],
-            "cuando": "2026-08-16",
-            "como": ("Los sacó la fase de voto positivo. Del Moro lo anunció al aire el domingo, "
-                     "para afuera: a las jugadoras no se les dijo."),
-            "fuente": ("https://www.mitelefe.com/gran-hermano/noticias/"
-                       "cruces-en-la-cena-de-nominadas-y-dos-jugadoras-salvadas-de-la-"
-                       "eliminacion-pid2562969"),
-        },
+        # Quienes bajaron de la placa por la fase positiva. Esto vale para la
+        # placa que tuvo fase positiva y para ninguna otra: escrito fijo, la
+        # pagina siguio diciendo «bajaron Sol y Yipio, asi que la placa de esta
+        # noche es de 6» una semana despues, con Sol y Yipio nominadas otra
+        # vez. Se publica solo si sigue siendo cierto de ESTA placa.
+        **({"bajaron_de_placa": _BAJARON}
+           if not (set(_BAJARON["quienes"]) & set(placa)) and _BAJARON["cuando"] >= str(
+               (pv.get("fecha_nominacion") or "0000-00-00"))
+           else {}),
         "es_del_modelo": False,
         "que_es": ("Predicción declarada para esta gala. No sale del modelo de la página: el "
                    "modelo contesta la misma pregunta, y su prueba hacia atrás dice que en esa "
@@ -280,6 +352,7 @@ def main():
         "de": len(checks),
     }
     (ROOT / "data" / "apuesta.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1))
+    _congelar(salida, pv)
 
     print(f"placa de {len(placa)} · gala {pv.get('gala')} del {pv.get('fecha')}")
     print(f"\n{'quien se va':<12} {'apuesta':>8} {'campana':>9} {'imagen':>8}   "

@@ -62,7 +62,7 @@ const fallo = m => { console.log("  FALLA · " + m); fallos += 1; };
   if (p.errores.length)
     fallo("errores de JavaScript al cargar:\n    " + p.errores[0].split("\n")[0]);
   if (!fallos) console.log("  ok · el texto visible no tiene restos de armado");
-  p.cerrar();
+  await p.cerrar();
 }
 
 // --- el desborde, a cada ancho ---------------------------------------------
@@ -94,7 +94,7 @@ for (const w of ANCHOS) {
   } else {
     console.log("  ok · sin desborde a " + w + "px");
   }
-  p.cerrar();
+  await p.cerrar();
 }
 
 if (fallos) {

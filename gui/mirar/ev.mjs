@@ -5,4 +5,4 @@ const p = await abrir({ancho: +ancho, escala: 1, movimiento: true});
 await p.ir(url);
 console.log(await p.ev(expr));
 if (p.errores.length) console.log("ERRORES:\n" + p.errores.join("\n---\n"));
-p.cerrar(); process.exit(0);
+await p.cerrar(); process.exit(0);

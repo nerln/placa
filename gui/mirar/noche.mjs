@@ -12,6 +12,6 @@ for (const tema of ["light", "dark"]) {
   const ruta = salida.replace(/\.png$/, "-" + tema + ".png");
   await p.foto(ruta);
   console.log(ruta, "· fondo", await p.ev("getComputedStyle(document.body).backgroundColor"));
-  p.cerrar();
+  await p.cerrar();
 }
 process.exit(0);

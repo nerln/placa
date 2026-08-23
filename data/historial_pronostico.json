@@ -207,6 +207,29 @@
     "Tamara": 0.1491
    },
    "_cambio": "Se rehizo pesando la campaña por dónde está en las últimas seis horas en vez de por su pico de 24. La consigna contra Luana venía subiendo y las otras dos estaban cayendo, y eso es lo que decide una votación que cierra esta noche."
+  },
+  {
+   "gala": 30,
+   "fecha_gala": "2026-08-24",
+   "escrita": "2026-08-23T05:51-0300",
+   "placa": [
+    "Sol",
+    "Mariela",
+    "Pincoya",
+    "Yipio",
+    "Tamara",
+    "Luana"
+   ],
+   "p_sale": {
+    "Tamara": 0.3703,
+    "Yipio": 0.1812,
+    "Mariela": 0.1767,
+    "Luana": 0.1744,
+    "Pincoya": 0.0498,
+    "Sol": 0.0476
+   },
+   "llamada": "Tamara",
+   "coincide_con_el_modelo": false
   }
  ],
  "_nota_apuestas": "La prediccion declarada, que no es la del modelo. Se escribe antes de cada gala y no se reescribe nunca: la gracia es poder puntuar despues las dos por separado, la del modelo y esta. Cada entrada lleva la hora en que se escribio y los supuestos con que se armo.",

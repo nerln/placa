@@ -3,7 +3,7 @@
  "fase": "negativo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
- "limites": "Son los comentarios de los videos del propio programa, o sea de un público que ya entró a mirarlo. No es una muestra de nada y no se pondera. Y quien nombra a alguien sin marca de signo queda sin clasificar, que no es lo mismo que indiferente.",
+ "limites": "Son los comentarios de los videos del propio programa, o sea de un público que ya entró a mirarlo. No es una muestra de nada y no se pondera. Y quien nombra a alguien sin marca de signo queda sin clasificar, que no es lo mismo que indiferente. El léxico no entiende la negación ni a quién apunta cada frase: de los comentarios con signo, casi tres de cada diez nombran a más de una persona y les reparten el mismo signo a todas, y uno que defiende a alguien con palabras duras cae del lado equivocado. Por eso los números están acá y no dentro de ninguna predicción.",
  "no_alcanzables": [
   "las respuestas al posteo oficial de X, que son 372 y no publican texto",
   "los comentarios de Instagram, que el marco de incrustación no trae",
