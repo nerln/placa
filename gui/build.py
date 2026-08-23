@@ -232,6 +232,59 @@ def _dataset(datos, desc):
     }
 
 
+def _congeladas(hp, archivo):
+    """Una fila por gala con prediccion escrita ANTES, y su puntaje si ya se jugo.
+
+    Existe porque la pagina necesitaba distinguir dos cosas que hasta ahora se
+    dibujaban iguales: una prediccion RECONSTRUIDA (la prueba hacia atras, que
+    se calcula despues con solo las galas anteriores) y una CONGELADA (escrita
+    antes de la gala y guardada con fecha). No es lo mismo una prueba que una
+    promesa cumplida, y mezclarlas seria cobrarse un credito que no se gano.
+
+    El marcador dibujado y la tabla del archivo leen las dos de aca, asi que no
+    pueden contarse distinto entre si.
+    """
+    etiqueta = {"predicciones_gala": "modelo",
+                "predicciones_dos_tiempos": "dos_tiempos",
+                "apuestas": "apuesta"}
+    por_gala = {}
+    for clave, nombre in etiqueta.items():
+        for e in hp.get(clave) or []:
+            g = e.get("gala")
+            if g is None:
+                continue
+            fila = por_gala.setdefault(g, {"gala": g, "fecha_gala": e.get("fecha_gala"),
+                                           "placa": e.get("placa") or [], "series": {}})
+            p = e.get("p_sale") or {}
+            if not p:
+                continue
+            quien = max(p, key=p.get)
+            # La ultima version escrita antes de la gala es la que vale: la
+            # apuesta se mueve durante la semana y se guardan todas.
+            fila["series"][nombre] = {
+                "llama_a": quien, "p": round(p[quien], 4), "p_sale": p,
+                "sello": e.get("escrita") or e.get("corrida"),
+            }
+    for pj in hp.get("puntajes") or []:
+        f = por_gala.get(pj.get("gala"))
+        if not f:
+            continue
+        f["eliminado"] = pj.get("eliminado")
+        for nombre in etiqueta.values():
+            r = pj.get(nombre)
+            if r and f["series"].get(nombre):
+                f["series"][nombre]["puntaje"] = {
+                    k: r.get(k) for k in ("puesto", "de", "acerto", "brier",
+                                          "brier_uniforme", "p_del_eliminado")}
+    for g in (archivo or {}).get("galas") or []:
+        f = por_gala.get(g.get("gala"))
+        if f:
+            f["archivo"] = g.get("archivo")
+            f["congelado"] = g.get("congelado")
+            f["historial_url"] = g.get("historial")
+    return [por_gala[g] for g in sorted(por_gala)]
+
+
 def main():
     res = json.loads((ROOT / "data" / "resultados.json").read_text())
     boot = json.loads((ROOT / "data" / "bootstrap.json").read_text())
@@ -266,7 +319,11 @@ def main():
     act_p = ROOT / "data" / "actualidad.json"
     act = json.loads(act_p.read_text()) if act_p.exists() else None
     hp_p = ROOT / "data" / "historial_pronostico.json"
-    corridas = json.loads(hp_p.read_text())["corridas"] if hp_p.exists() else []
+    _hp = json.loads(hp_p.read_text()) if hp_p.exists() else {}
+    corridas = _hp.get("corridas") or []
+    arch_p = ROOT / "data" / "archivo.json"
+    archivo = json.loads(arch_p.read_text()) if arch_p.exists() else None
+    congeladas = _congeladas(_hp, archivo)
 
     perfil = {j["apodo"]: j for j in plantel["jugadores"]}
     galas_completas = [
@@ -299,6 +356,8 @@ def main():
         "versus": versus,
         "actualidad": act,
         "historial_pronostico": corridas,
+        "congeladas": congeladas,
+        "archivo": archivo,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},
         "eliminados": plantel["eliminados_recientes"],
         "mu": res["mu"], "se_mu": res["se_mu"], "psi": res["psi"], "se_psi": res["se_psi"],

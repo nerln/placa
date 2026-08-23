@@ -260,6 +260,237 @@ header{padding:28px 0 24px; border-bottom:2px solid var(--tinta)}
    asistente puede levantar textualmente sin que quede colgando. */
 
 
+
+
+
+
+
+/* ---------- los bloques que se abren ----------
+   La pagina llego a cincuenta y siete mil pixeles de alto en un telefono, unas
+   setenta pantallas. La mayor parte no es la respuesta: es la maquinaria — el
+   metodo, los limites, el remuestreo, la sensibilidad, los datos crudos. Todo
+   eso tiene que seguir estando, porque es lo que hace que los numeros se
+   puedan discutir; lo que no tiene que hacer es separar al lector de la
+   respuesta con veinte mil pixeles de scroll.
+
+   Se pliegan, no se borran. Y el resumen dice lo que hay adentro y cuanto
+   ocupa, para que plegar no sea esconder. Si el lector llega por un enlace o
+   por un ancla a un bloque plegado, se abre solo: un ancla que no muestra nada
+   es un enlace roto que no parece roto. */
+details.plegable{border-top:1px solid var(--linea); margin:0}
+details.plegable > summary{list-style:none; cursor:pointer; padding:16px 0;
+  display:flex; align-items:baseline; gap:10px}
+details.plegable > summary::-webkit-details-marker{display:none}
+details.plegable > summary .pl-t{font-family:"Archivo",sans-serif; font-weight:700;
+  font-size:var(--t-md); line-height:1.25; flex:1; min-width:0}
+details.plegable > summary .pl-q{font-size:var(--t-xs); color:var(--tinta3); flex:none;
+  white-space:nowrap}
+details.plegable > summary .pl-x{flex:none; width:19px; height:19px; color:var(--tinta3);
+  transition:transform .2s ease}
+details.plegable[open] > summary .pl-x{transform:rotate(180deg)}
+details.plegable > summary:hover .pl-t{color:var(--oro-2)}
+details.plegable > summary:focus-visible{outline:2px solid var(--oro-2); outline-offset:3px}
+details.plegable > .pl-cuerpo{padding:0 0 8px}
+@media (prefers-reduced-motion:reduce){details.plegable > summary .pl-x{transition:none}}
+
+/* ---------- el archivo de galas ----------
+   Una fila por gala con prediccion escrita antes, y el enlace a la pagina tal
+   como se publico esa semana. Es la parte del proyecto que no se puede
+   fabricar despues: cualquiera puede decir que acerto, y muy poca gente deja
+   escrito de antemano en que se equivoco.
+
+   Las tres cuentas se muestran SIEMPRE las tres, tambien hacia atras. Mostrar
+   solo la que quedo mejor seria elegir despues, que es exactamente lo que esta
+   tabla existe para hacer imposible. */
+#archivo{max-width:calc(var(--medida) + 32px); margin-inline:auto}
+.arch{width:100%; border-collapse:collapse; font-size:var(--t-sm)}
+.arch th{font-family:"Archivo",sans-serif; font-size:var(--t-etq); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--tinta3); text-align:left; padding:0 10px 8px 0;
+  font-weight:700; vertical-align:bottom; white-space:nowrap}
+.arch td{padding:9px 10px 9px 0; border-top:1px solid var(--linea2); vertical-align:top}
+.arch tr.pend td{opacity:.85}
+.arch .g{font-family:"Archivo",sans-serif; font-weight:700; white-space:nowrap}
+.arch .g small{display:block; font-weight:400; color:var(--tinta3); font-size:var(--t-xs)}
+.arch .llama{white-space:nowrap}
+.arch .llama b{font-variant-numeric:tabular-nums}
+.arch .ok{color:var(--apoyo-txt); font-weight:700}
+.arch .no{color:var(--tinta2)}
+.arch .sello{font-size:var(--t-xs); color:var(--tinta3); white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.arch a.ver{white-space:nowrap; font-size:var(--t-xs)}
+@media(max-width:700px){
+  .arch, .arch thead, .arch tbody, .arch tr, .arch td{display:block; width:100%}
+  .arch thead{display:none}
+  .arch tr{border-top:1px solid var(--linea); padding:10px 0}
+  .arch td{border:0; padding:2px 0; display:flex; gap:8px; justify-content:space-between}
+  .arch td::before{content:attr(data-r); font-family:"Archivo",sans-serif;
+    font-size:var(--t-etq); text-transform:uppercase; letter-spacing:.05em;
+    color:var(--tinta3); font-weight:700; flex:none}
+  .arch td.g{display:block; font-size:var(--t-md)}
+  .arch td.g::before{content:none}
+}
+
+/* ---------- el marcador dibujado ----------
+   El mismo resultado que ya estaba en la tabla de abajo, en imagen. Una
+   columna por gala, y el punto marca en que puesto de riesgo habia quedado
+   quien de verdad salio: arriba del todo si el modelo le habia acertado,
+   abajo si lo tenia por el mas a salvo. La banda gris es donde caeria el azar.
+
+   Existe porque «0 de 7, puesto medio 4,71 contra 3,43 del azar» es una frase
+   que se lee y no se ve, y este resultado es lo que sostiene el proyecto: es
+   la prueba de que los numeros no se acomodan despues. Una prueba que no se
+   mira no prueba nada.
+
+   Y separa lo RECONSTRUIDO (calculado despues, con solo las galas anteriores)
+   de lo CONGELADO (escrito antes de la gala, en el registro). No es lo mismo
+   una prueba hacia atras que una promesa cumplida, y dibujarlas iguales seria
+   cobrarse un credito que no se gano. */
+.mrc{margin:14px 0 18px}
+.mrc-caja{display:flex; align-items:stretch; gap:0; position:relative;
+  border:1px solid var(--linea); border-radius:var(--r-sm); background:var(--sup2);
+  padding:12px 10px 8px; overflow-x:auto}
+.mrc-ejeY{flex:none; width:4.6rem; position:relative; font-size:10px; color:var(--tinta3);
+  font-family:"Archivo",sans-serif; letter-spacing:.04em; text-transform:uppercase}
+.mrc-ejeY span{position:absolute; right:6px; transform:translateY(-50%); white-space:nowrap}
+.mrc-pista{flex:1; display:flex; gap:2px; min-width:14rem; position:relative}
+.mrc-banda{position:absolute; left:0; right:0; background:var(--sup3); opacity:.55;
+  border-top:1px dashed var(--tinta3); border-bottom:1px dashed var(--tinta3)}
+.mrc-col{flex:1; position:relative; min-width:26px; display:flex; flex-direction:column;
+  justify-content:flex-end; align-items:center}
+.mrc-col .g{font-size:10px; color:var(--tinta3); font-variant-numeric:tabular-nums;
+  padding:4px 0 0; border-top:1px solid var(--linea2); width:100%; text-align:center}
+.mrc-pt{position:absolute; width:11px; height:11px; margin:-5.5px 0 0 -5.5px; left:50%;
+  border-radius:50%; box-sizing:border-box}
+.mrc-pt.recon{background:var(--sup); border:2px solid var(--tinta3)}
+.mrc-pt.congelado{background:var(--rechazo); border:2px solid var(--sup);
+  box-shadow:0 0 0 2px var(--rechazo)}
+.mrc-pt.pendiente{background:transparent; border:2px dashed var(--oro-2)}
+.mrc-leyenda{display:flex; flex-wrap:wrap; gap:11px; margin:9px 0 0; font-size:var(--t-xs);
+  color:var(--tinta2); align-items:center}
+.mrc-leyenda span{display:inline-flex; align-items:center; gap:5px}
+.mrc-leyenda em{width:11px; height:11px; flex:none; border-radius:50%; font-style:normal}
+.mrc-leyenda em.recon{background:var(--sup); border:2px solid var(--tinta3)}
+.mrc-leyenda em.congelado{background:var(--rechazo)}
+.mrc-leyenda em.banda{border-radius:2px; background:var(--sup3);
+  border-top:1px dashed var(--tinta3); border-bottom:1px dashed var(--tinta3)}
+
+/* ---------- el grafico de manana ----------
+   Una fila por nominada y tres marcas por fila, sobre un eje comun: el modelo,
+   la correccion del mano a mano y la apuesta. La barra que las une es el
+   DESACUERDO, y es lo que hay que ver primero: cuando las tres marcas caen
+   juntas hay senal, y cuando se abren, esa apertura es la noticia de la
+   semana. La linea punteada es el azar (uno partido las que quedan): a la
+   derecha de esa linea, mas riesgo que echar a suertes.
+
+   Reemplazo a una lista de fichas de texto donde los mismos tres numeros
+   estaban uno al lado del otro y parecian una contradiccion en vez de una
+   medida. */
+.mn-g{margin:16px 0 0}
+/* El eje comparte la rejilla de las filas: si se alinea con un calc a mano, se
+   desalinea el dia que cambie el ancho de la columna de los nombres. */
+.mn-g-eje{display:grid; grid-template-columns:7.2rem 1fr; gap:9px; height:15px; margin:0 0 2px}
+.mn-g-eje .pista{position:relative; min-width:0}
+.mn-g-eje .azar{position:absolute; top:11px; bottom:-4px; width:0;
+  border-left:1px dashed var(--tinta3)}
+.mn-g-eje .azar span{position:absolute; left:50%; transform:translateX(-50%); top:0;
+  font-size:10px; color:var(--tinta3); white-space:nowrap;
+  font-family:"Archivo",sans-serif; letter-spacing:.04em; text-transform:uppercase}
+.mn-g-fila{display:grid; grid-template-columns:7.2rem 1fr; gap:9px; align-items:center;
+  padding:7px 0; border-top:1px solid var(--linea2)}
+.mn-g-fila .q{display:flex; align-items:center; gap:6px; min-width:0}
+.mn-g-fila .q b{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm);
+  overflow:hidden; text-overflow:ellipsis}
+.mn-g-fila .q svg{flex:none; border-radius:2px}
+.mn-g-pista{position:relative; height:26px; min-width:0}
+.mn-g-pista .riel{position:absolute; left:0; right:0; top:12px; height:2px;
+  background:var(--sup3); border-radius:2px}
+.mn-g-pista .azar{position:absolute; top:-3px; bottom:6px; width:0;
+  border-left:1px dashed var(--tinta3); opacity:.55}
+.mn-g-pista .tramo{position:absolute; top:11px; height:4px; border-radius:3px;
+  background:linear-gradient(90deg, var(--sup3), var(--rechazo)); opacity:.55}
+.mn-g-pista i{position:absolute; top:6px; width:13px; height:13px; margin-left:-6.5px;
+  border-radius:50%; box-sizing:border-box}
+.mn-g-pista i.modelo{background:var(--rechazo); border:2px solid var(--sup)}
+.mn-g-pista i.dos{background:var(--sup); border:2.5px solid var(--rechazo)}
+.mn-g-pista i.ap{background:var(--oro-2); border:2px solid var(--sup);
+  border-radius:2px; transform:rotate(45deg); width:11px; height:11px; margin-left:-5.5px;
+  top:7px}
+.mn-g-fila .razon{grid-column:2; font-size:var(--t-xs); color:var(--tinta2);
+  line-height:1.45; margin:-2px 0 0}
+.mn-g-leyenda{display:flex; flex-wrap:wrap; gap:12px; margin:12px 0 0;
+  font-size:var(--t-xs); color:var(--tinta2); align-items:center}
+.mn-g-leyenda span{display:inline-flex; align-items:center; gap:5px}
+.mn-g-leyenda em{width:11px; height:11px; flex:none; border-radius:50%; font-style:normal}
+.mn-g-leyenda em.modelo{background:var(--rechazo)}
+.mn-g-leyenda em.dos{background:var(--sup); border:2.5px solid var(--rechazo)}
+.mn-g-leyenda em.ap{background:var(--oro-2); border-radius:2px; transform:rotate(45deg)}
+@media(max-width:520px){
+  .mn-g-fila{grid-template-columns:1fr; gap:3px}
+  .mn-g-fila .razon{grid-column:1}
+  .mn-g-eje{grid-template-columns:1fr; gap:0}
+  .mn-g-eje .hueco{display:none}
+}
+
+/* ---------- el control de volver ----------
+   Aparece cuando el encabezado sale de pantalla y hace dos cosas distintas
+   segun como llegaste: si viniste de un salto por ancla te devuelve AL LUGAR
+   DONDE ESTABAS, y si bajaste vos te lleva arriba. El pedido original era «un
+   boton de volver arriba», pero el dolor descrito era otro: «e difficile
+   tornare indietro dopo che si preme un link che porta a un'ancora». Volver
+   arriba no es volver atras en una pagina de cincuenta mil pixeles.
+
+   El ojo es el que genera gui/marca.py, con el iris de esta corrida. No se
+   dibuja un ojo aparte: uno solo, y cambia despues de cada gala. */
+#volver{position:fixed; right:14px; bottom:14px; z-index:60;
+  display:flex; align-items:center; gap:7px;
+  padding:8px 12px 8px 9px; border-radius:999px;
+  border:1px solid var(--linea); background:var(--sup);
+  box-shadow:0 6px 22px rgba(0,0,0,.16), 0 1px 3px rgba(0,0,0,.10);
+  color:var(--tinta); cursor:pointer; font:inherit;
+  opacity:0; transform:translateY(10px) scale(.96);
+  transition:opacity .28s ease, transform .28s cubic-bezier(.2,.9,.3,1.2),
+             border-color .2s ease}
+#volver[hidden]{display:none}
+#volver.se-ve{opacity:1; transform:none}
+#volver:hover, #volver:focus-visible{border-color:var(--oro-2)}
+#volver:focus-visible{outline:2px solid var(--oro-2); outline-offset:2px}
+#volver .v-ojo{display:block; width:30px; flex:none; line-height:0}
+#volver .v-ojo svg{width:100%; height:auto; display:block}
+#volver .v-flecha{width:17px; height:17px; flex:none; color:var(--oro-2)}
+#volver .v-texto{font-family:"Archivo",sans-serif; font-size:var(--t-xs);
+  font-weight:700; white-space:nowrap; letter-spacing:.01em}
+
+/* Una flecha por modo, y sólo una a la vez. */
+#volver .v-atras{display:none}
+#volver.atras .v-arriba{display:none}
+#volver.atras .v-atras{display:inline}
+
+/* La flecha late hacia donde va a llevarte: arriba, o hacia atras. Es la unica
+   animacion del control y se apaga entera con prefers-reduced-motion. */
+@keyframes v-sube{0%,100%{transform:translateY(0)} 45%{transform:translateY(-3.5px)}}
+@keyframes v-vuelve{0%,100%{transform:translateX(0)} 45%{transform:translateX(-3.5px)}}
+#volver .v-flecha{animation:v-sube 2.4s ease-in-out infinite}
+#volver.atras .v-flecha{animation:v-vuelve 2.4s ease-in-out infinite}
+#volver:hover .v-flecha{animation-duration:1.1s}
+
+/* El iris respira despacio, como el de la cabecera. */
+@keyframes v-iris{0%,100%{opacity:.92} 50%{opacity:1}}
+#volver .v-ojo svg{animation:v-iris 4.2s ease-in-out infinite}
+
+@media (prefers-reduced-motion:reduce){
+  #volver{transition:opacity .01s}
+  #volver .v-flecha, #volver.atras .v-flecha, #volver .v-ojo svg{animation:none}
+}
+
+/* En pantalla angosta el control no puede taparle texto a nadie: se queda solo
+   con el ojo y la flecha, sin la palabra, y se pega mas al borde. */
+@media(max-width:420px){
+  #volver{right:10px; bottom:10px; padding:7px 9px; gap:5px}
+  #volver .v-texto{display:none}
+  #volver .v-ojo{width:26px}
+}
+@media print{#volver{display:none}}
+
 /* ---------- mañana ----------
    La página mide treinta y cinco mil píxeles y la respuesta a «qué pasa
    mañana» estaba repartida entre el píxel 4.622 y el 24.329. Esto la junta
@@ -1576,6 +1807,8 @@ footer p{max-width:var(--medida)}
   <p class="thist-pie" id="pie-retro"></p>
 </section>
 
+<section id="archivo"></section>
+
 <section id="evolucion">
   <div class="eyebrow">Qué movió la gala</div>
   <div class="titulo"><h2 class="tit" id="tit-evo"></h2></div>
@@ -1925,6 +2158,22 @@ footer p{max-width:var(--medida)}
     </div>
   </div>
 </section>
+
+<!-- El control de volver. No es sólo «arriba»: después de un salto por ancla,
+     lo que se quiere es volver AL LUGAR DONDE SE ESTABA, que casi nunca es el
+     principio de una página de cincuenta mil píxeles. Ver el bloque «volver»
+     abajo, en el guion. El ojo es el mismo que genera gui/marca.py, no otro
+     dibujo: el iris son los arcos del pronóstico de esta corrida. -->
+<button type="button" id="volver" hidden aria-label="Volver arriba">
+  <span class="v-ojo"><!--__MARCA__--></span>
+  <svg class="v-flecha" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path class="v-arriba" d="M12 19V6M12 6l-6 6M12 6l6 6" fill="none" stroke="currentColor"
+      stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="v-atras" d="M15 18l-6-6 6-6" fill="none" stroke="currentColor"
+      stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span class="v-texto"></span>
+</button>
 
 <footer>
   <div class="firma">
@@ -4642,6 +4891,66 @@ function contar(nodo){
     "Acertó el nombre <b>" + R.aciertos + " de " + R.n + "</b>; el azar habría acertado " +
     nf(R.aciertos_esperados_azar,1) + ".";
 
+  // El marcador dibujado, delante de la tabla. Misma medicion, en imagen.
+  (function(){
+    const caja = document.createElement("div");
+    caja.className = "mrc";
+    const ALTO = 132;
+
+    // Cada gala aporta: en que puesto quedo quien salio, sobre cuantas. Se
+    // normaliza porque las placas no tienen todas el mismo tamano y comparar
+    // «3.º de 5» con «3.º de 7» sin normalizar seria hacer trampa a favor.
+    const pts = f.map(x => ({
+      gala: x.gala, quien: x.eliminado, puesto: x.puesto_del_modelo, de: x.n_placa,
+      frac: (x.puesto_del_modelo - 1) / Math.max(1, x.n_placa - 1),
+      clase: "recon",
+    }));
+    // La gala que viene, todavia sin resultado: se dibuja hueca para que se
+    // vea que el marcador sigue abierto y que la proxima cuenta.
+    const P = D.actualidad && D.actualidad.proxima_gala;
+    if(P && P.gala) pts.push({gala: P.gala, quien: null, frac: null, clase: "pendiente"});
+
+    // Lo congelado se marca como congelado: D.congeladas trae una fila por
+    // gala con prediccion escrita ANTES, y esas valen distinto que las
+    // reconstruidas. (D.historial_pronostico es otra cosa: son las corridas
+    // del pronostico de temporada, y usarlo aca daba cero congeladas.)
+    const cong = new Set((D.congeladas || []).map(e => e.gala));
+    pts.forEach(p => { if(cong.has(p.gala) && p.clase === "recon") p.clase = "congelado"; });
+
+    const y = fr => (ALTO - 14) * fr + 7;
+    // Donde caeria el azar: el puesto medio esperado, normalizado, con media
+    // banda a cada lado para que se lea como zona y no como raya.
+    const azarFr = .5, banda = .17;
+
+    caja.innerHTML =
+      "<div class='mrc-caja' style='height:" + (ALTO + 22) + "px'>" +
+        "<div class='mrc-ejeY' style='height:" + ALTO + "px'>" +
+          "<span style='top:" + y(0) + "px'>le acertó</span>" +
+          "<span style='top:" + y(.5) + "px'>el azar</span>" +
+          "<span style='top:" + y(1) + "px'>la tenía a salvo</span>" +
+        "</div>" +
+        "<div class='mrc-pista' style='height:" + ALTO + "px'>" +
+          "<div class='mrc-banda' style='top:" + y(azarFr - banda) + "px;height:" +
+            (y(azarFr + banda) - y(azarFr - banda)) + "px'></div>" +
+          pts.map(p => "<div class='mrc-col'>" +
+            (p.frac === null
+              ? "<span class='mrc-pt pendiente' style='top:" + y(.5) + "px' " +
+                "title='gala " + p.gala + ": todavía no se jugó'></span>"
+              : "<span class='mrc-pt " + p.clase + "' style='top:" + y(p.frac) + "px' " +
+                "title='gala " + p.gala + ": salió " + p.quien + " · quedaba en el puesto " +
+                p.puesto + " de " + p.de + " del riesgo del modelo'></span>") +
+            "<span class='g'>" + p.gala + "</span></div>").join("") +
+        "</div>" +
+      "</div>" +
+      "<div class='mrc-leyenda'>" +
+        "<span><em class='recon'></em>reconstruida: calculada después, con sólo las galas " +
+          "anteriores</span>" +
+        "<span><em class='congelado'></em>congelada: escrita antes de la gala, en el registro</span>" +
+        "<span><em class='banda'></em>donde caería el azar</span>" +
+      "</div>";
+    t.parentElement.insertBefore(caja, t);
+  })();
+
   t.innerHTML = "<thead><tr><th>Gala</th><th>Salió</th><th>Placa</th>" +
     "<th>Puesto de riesgo</th><th>Probabilidad</th></tr></thead><tbody>" +
     f.map(x => "<tr><td>" + x.gala + "<span class='d'>" + x.fecha.slice(8) + "/" +
@@ -4662,6 +4971,170 @@ function contar(nodo){
     "tuvo una mala noche. Por eso el riesgo de la próxima gala es la parte más floja de esta " +
     "página, y por eso está medido acá en vez de quedar como impresión. " +
     R.por_que_no_hay_ediciones_anteriores;
+})();
+
+/* ---------- el archivo de galas ----------
+   La linea de tiempo que pedia el proyecto: volver a ver lo que se habia
+   predicho ANTES de cada gala, sin que la pagina de esta semana tape a las
+   anteriores. No se construyo como un acordeon dentro del scroll: cada gala se
+   archiva entera en web/galas/NN.html — una copia de gui/pronostico.html, que
+   lleva los datos adentro y no se reescribe sola — y esto es el indice.
+
+   Se muestran SIEMPRE las tres cuentas, tambien hacia atras y tambien las que
+   fallaron. Una tabla que dejara de mostrar la que quedo mal seria peor que no
+   tener tabla. */
+(function(){
+  const sec = $("#archivo");
+  if(!sec) return;
+  const C = (D.congeladas || []).slice().sort((a, b) => b.gala - a.gala);
+  if(!C.length){ sec.remove(); return; }
+
+  const NOM = {modelo: "Modelo", dos_tiempos: "Dos tiempos", apuesta: "Apuesta"};
+  const ORD = ["modelo", "dos_tiempos", "apuesta"];
+  const hora = t => {
+    if(!t) return "";
+    return t.length > 10
+      ? FECHA_LARGA(t.slice(0, 10)) + ", " + t.slice(11, 16)
+      : FECHA_LARGA(t.slice(0, 10));
+  };
+
+  const jugadas = C.filter(f => f.eliminado);
+  const aciertos = jugadas.reduce((n, f) =>
+    n + ORD.filter(k => (f.series[k] || {}).puntaje && f.series[k].puntaje.acerto).length, 0);
+  const intentos = jugadas.reduce((n, f) =>
+    n + ORD.filter(k => (f.series[k] || {}).puntaje).length, 0);
+
+  const celda = (f, k) => {
+    const v = f.series[k];
+    if(!v) return "<span class='no'>—</span>";
+    const pj = v.puntaje;
+    return "<span class='llama'>" + v.llama_a + " <b>" + pc(v.p) + "</b></span>" +
+      (pj ? "<br><span class='sello " + (pj.acerto ? "ok" : "") + "'>" +
+        (pj.acerto ? "acertó" : "quedaba " + pj.puesto + ".º de " + pj.de) +
+        (pj.brier != null ? " · Brier " + nf(pj.brier, 2) : "") + "</span>" : "");
+  };
+
+  sec.innerHTML =
+    "<div class='eyebrow'>El archivo</div>" +
+    "<div class='titulo'><h2 class='tit'>Lo que esta página dijo antes de cada gala, " +
+      "sin editar</h2></div>" +
+    "<p class='sub'>Cada gala queda archivada con su fecha antes de que se juegue, y desde " +
+      "acá se puede abrir la página tal como estaba esa semana. Se muestran las tres cuentas " +
+      "siempre, también las que fallaron: una tabla que escondiera la que quedó mal no serviría " +
+      "para nada." +
+      (intentos ? " Hasta ahora, <b>" + aciertos + " de " + intentos + "</b> predicciones " +
+        "congeladas le acertaron el nombre a quien salió." : "") +
+    "</p>" +
+    "<div class='scroll-x'><table class='arch'><thead><tr><th>Gala</th>" +
+      ORD.map(k => "<th>" + NOM[k] + "</th>").join("") +
+      "<th>Salió</th><th>Congelado</th><th></th></tr></thead><tbody>" +
+    C.map(f => {
+      const pend = !f.eliminado;
+      return "<tr" + (pend ? " class='pend'" : "") + ">" +
+        "<td class='g'>Gala " + f.gala + "<small>" +
+          (f.fecha_gala ? FECHA_LARGA(f.fecha_gala) : "") + "</small></td>" +
+        ORD.map(k => "<td data-r='" + NOM[k] + "'>" + celda(f, k) + "</td>").join("") +
+        "<td data-r='Salió'>" + (f.eliminado
+          ? "<b>" + f.eliminado + "</b>"
+          : "<span class='no'>todavía no se jugó</span>") + "</td>" +
+        "<td data-r='Congelado' class='sello'>" + (hora(f.congelado) ||
+          hora((f.series[ORD.find(k => f.series[k])] || {}).sello) || "—") + "</td>" +
+        "<td data-r='Archivo'>" + (f.archivo
+          ? "<a class='ver' href='" + f.archivo + "'>ver la página de esa semana</a>" +
+            (f.historial_url ? " · <a class='ver' href='" + f.historial_url +
+              "' target='_blank' rel='noopener'>cuándo se subió</a>" : "")
+          : "<span class='no'>sin archivo</span>") + "</td>" +
+      "</tr>";
+    }).join("") + "</tbody></table></div>" +
+    "<p class='thist-pie'>El archivo empezó en la gala 30: las galas anteriores tienen su " +
+    "predicción congelada en <a href='datos.json'>el registro</a>, pero no una copia de la " +
+    "página. Lo que se archiva es <code>gui/pronostico.html</code>, que lleva los datos " +
+    "adentro; una copia de la página normal se reescribiría sola en la corrida siguiente y " +
+    "mostraría los números nuevos con la fecha vieja, que es el peor fallo posible en un " +
+    "archivo porque no se ve.</p>";
+})();
+
+/* ---------- volver ----------
+   Dos comportamientos en un control, porque el lector tiene dos problemas
+   distintos y los confunde uno solo.
+
+   Si bajo leyendo, quiere volver arriba. Si apreto un enlace del indice y
+   aterrizo en la seccion #cotejo, lo que quiere no es el principio de la
+   pagina: quiere volver a donde estaba. Con cincuenta mil pixeles de alto,
+   mandarlo arriba es perderlo dos veces.
+
+   El salto por ancla se detecta en el click, no en el scroll: se guarda la
+   posicion de antes y se marca el control. Despues de usarlo, o si el lector
+   vuelve por su cuenta cerca de donde estaba, la marca se limpia y el control
+   vuelve a ser «arriba».
+
+   Aparece cuando el encabezado sale de pantalla. Con IntersectionObserver y no
+   con un listener de scroll: un scroll listener en una pagina de veintiseis
+   bloques se paga en cada cuadro. */
+(function(){
+  const b = $("#volver");
+  if(!b) return;
+  const txt = b.querySelector(".v-texto");
+  const ancla = $("header") || document.body.firstElementChild;
+
+  let vuelta = null;              // desde donde se salto, si se salto
+  const ARRIBA = "Arriba", ATRAS = "Volver";
+
+  function pinta(){
+    const atras = vuelta !== null;
+    b.classList.toggle("atras", atras);
+    txt.textContent = atras ? ATRAS : ARRIBA;
+    b.setAttribute("aria-label", atras
+      ? "Volver a donde estabas antes de seguir el enlace"
+      : "Volver al principio de la página");
+    b.title = txt.textContent;
+  }
+  pinta();
+
+  // El salto: se anota de donde se venia. `closest` porque el click puede caer
+  // en un <b> adentro del enlace.
+  document.addEventListener("click", e => {
+    const a = e.target.closest && e.target.closest('a[href^="#"]');
+    if(!a) return;
+    const id = a.getAttribute("href");
+    if(id.length < 2 || !document.querySelector(id)) return;
+    vuelta = window.scrollY;
+    pinta();
+  }, true);
+
+  b.addEventListener("click", () => {
+    const y = vuelta;
+    vuelta = null;
+    pinta();
+    // scrollTo con behavior:smooth respeta prefers-reduced-motion en los
+    // navegadores actuales; y si no lo respeta, el salto instantaneo tampoco
+    // molesta a nadie.
+    window.scrollTo({top: y === null ? 0 : y, behavior: "smooth"});
+    if(y === null && location.hash) history.replaceState(null, "", location.pathname);
+  });
+
+  // Si el lector volvio solo hasta cerca de donde habia saltado, la vuelta ya
+  // no tiene sentido y el control deja de prometerla.
+  let ultimo = window.scrollY;
+  addEventListener("scroll", () => {
+    const y = window.scrollY;
+    if(vuelta !== null && Math.abs(y - vuelta) < 400){ vuelta = null; pinta(); }
+    if(y < 200 && vuelta === null) b.classList.remove("se-ve");
+    ultimo = y;
+  }, {passive: true});
+
+  // Aparece cuando el encabezado se fue de pantalla.
+  const muestra = v => {
+    if(v){ b.hidden = false; requestAnimationFrame(() => b.classList.add("se-ve")); }
+    else b.classList.remove("se-ve");
+  };
+  if("IntersectionObserver" in window && ancla){
+    new IntersectionObserver(es => muestra(!es[0].isIntersecting),
+      {rootMargin: "0px 0px -75% 0px"}).observe(ancla);
+  } else {
+    addEventListener("scroll", () => muestra(window.scrollY > 800), {passive: true});
+    muestra(window.scrollY > 800);
+  }
 })();
 
 /* ---------- mañana ----------
@@ -4798,48 +5271,93 @@ function contar(nodo){
             "<a href='" + h + "'>" + t + "</a>").join("") + "</div>"
         : "";
     })() +
-    "<div class='mn-senales'>" +
-      placa.slice().sort((a, b) => (mod[b] || 0) - (mod[a] || 0)).map(n => {
-        const chips = [];
-        if(modPlaca[n] != null)
-          chips.push("<span class='mn-chip'>modelo <b>" + pc(modPlaca[n]) + "</b></span>");
-        if(dos && dos[n] != null)
-          chips.push("<span class='mn-chip'>dos tiempos <b>" + pc(dos[n]) + "</b></span>");
-        if(ap && ap[n] != null)
-          chips.push("<span class='mn-chip'>apuesta <b>" + pc(ap[n]) + "</b></span>");
-        // Una consigna que llegó al puesto 1 y otra que llegó al 30 no son la
-        // misma señal, y con el mismo rótulo rojo se leían igual.
-        const c = campDe(n);
-        if(c) chips.push(c.pico <= 10
-          ? "<span class='mn-chip mal'>la piden afuera fuerte: consigna #" + c.pico +
-            " del país, " + c.horas + " h</span>"
-          : "<span class='mn-chip'>consigna floja: sólo llegó al #" + c.pico + "</span>");
-        if(img && img.valores[n] != null)
-          chips.push("<span class='mn-chip" + (img.valores[n] < 40 ? " mal" : " bien") +
-            "'>imagen <b>" + img.valores[n] + "%</b></span>");
-        // El signo con palabras. Un saldo no dice si la quieren afuera o adentro.
-        if(S && S[n] && (S[n].contra + S[n].favor) > 0){
-          const k = S[n], tot = k.contra + k.favor;
-          const dir = k.contra > k.favor ? "mal" : k.favor > k.contra ? "bien" : "";
-          // Decía «5 de 14 piden que se vaya» para quien tiene 5 en contra y 9
-          // a favor: cierto y al revés de lo que pasa. Se dice la dirección
-          // que manda, que es la misma regla de la tarjeta de sentimiento.
-          const txt = k.favor === 0
-            ? "comentarios: " + k.contra + " en contra, ninguno a favor"
-            : k.contra === 0
-              ? "comentarios: " + k.favor + " a favor, ninguno en contra"
-              : k.contra > k.favor
-                ? "comentarios: " + k.contra + " de " + tot + " piden que se vaya"
-                : k.favor > k.contra
-                  ? "comentarios: " + k.favor + " de " + tot + " la bancan"
-                  : "comentarios: empatados, " + k.contra + " y " + k.favor;
-          chips.push("<span class='mn-chip " + dir + "'>" + txt + "</span>");
-        }
-        return "<div class='mn-fila'><span class='n'>" + n + "</span>" +
-               "<span class='mn-chips'>" + chips.join("") + "</span></div>";
-      }).join("") +
-    "</div>" +
+    (() => {
+      // El grafico: tres marcas por persona sobre un eje comun, y la barra que
+      // las une es el desacuerdo. Antes esto eran fichas de texto — «modelo
+      // 52,4% · dos tiempos 26,0% · apuesta 4,8%» — que puestas en fila se
+      // leian como si la pagina se contradijera sola en vez de como tres
+      // medidas de la misma cosa.
+      const cuentas = [
+        {k: "modelo", n: "el modelo", d: modPlaca},
+        {k: "dos", n: "dos tiempos", d: dos || {}},
+        {k: "ap", n: "la apuesta", d: ap || {}},
+      ].filter(c => placa.some(n => c.d[n] != null));
+      if(cuentas.length < 2) return "";
 
+      const vals = placa.flatMap(n => cuentas.map(c => c.d[n]).filter(v => v != null));
+      const tope = Math.max(.2, Math.ceil(Math.max(...vals) * 20) / 20);   // a 5 puntos
+      const x = v => (100 * v / tope);
+      const azar = 1 / placa.length;
+
+      // La razon en pocas palabras. Se ELIGE, no se escribe: cada persona se
+      // queda con la senal mas distintiva que tenga, en un orden fijo. Una
+      // frase escrita a mano acá es una frase que la semana que viene miente.
+      const razon = n => {
+        const c = campDe(n), k = S && S[n];
+        const im = img && img.valores[n];
+        const peorIm = imgPeor === n, mejorIm = img && placa.filter(z => img.valores[z] != null)
+          .sort((a, b) => img.valores[b] - img.valores[a])[0] === n;
+        if(c && c.pico <= 10 && peorIm)
+          return "La consigna número " + c.pico + " del país pide echarla, y tiene la peor " +
+                 "imagen de la placa.";
+        if(c && c.pico <= 10)
+          return "La consigna número " + c.pico + " del país, " + c.horas + " horas arriba, pide " +
+                 "echarla.";
+        if(peorIm && im != null)
+          return "La peor imagen de la placa: " + im + "%.";
+        if(k && k.favor === 0 && k.contra >= 3)
+          return "En los comentarios nadie la defiende: " + k.contra + " en contra, ninguno a favor.";
+        if(mejorIm && im != null)
+          return "La mejor imagen de la placa: " + im + "%. Cuesta que la voten.";
+        if(k && k.favor > k.contra)
+          return "La única con más gente a favor que en contra en los comentarios.";
+        if(modPlaca[n] != null && modTop === n)
+          return "El modelo la pone primera por el rechazo acumulado en galas anteriores.";
+        // Que ninguna senal la destaque tambien es una lectura, y dejar la fila
+        // muda hacia parecer un hueco de datos en vez de lo que es.
+        return "Ninguna señal la destaca: las tres cuentas la dejan en el medio de la placa.";
+      };
+
+      const filas = placa.slice()
+        .sort((a, b) => Math.max(...cuentas.map(c => c.d[b] || 0)) -
+                        Math.max(...cuentas.map(c => c.d[a] || 0)))
+        .map(n => {
+          const ms = cuentas.filter(c => c.d[n] != null);
+          const xs = ms.map(c => x(c.d[n]));
+          const a0 = Math.min(...xs), a1 = Math.max(...xs);
+          const r = razon(n);
+          return "<div class='mn-g-fila'>" +
+            "<span class='q'>" + bandera((D.perfil[n] || {}).pais, 18) +
+              "<b>" + n + "</b></span>" +
+            "<span class='mn-g-pista'>" +
+              "<span class='riel'></span>" +
+              "<span class='azar' style='left:" + x(azar).toFixed(1) + "%'></span>" +
+              (a1 - a0 > .5 ? "<span class='tramo' style='left:" + a0.toFixed(1) + "%;width:" +
+                (a1 - a0).toFixed(1) + "%'></span>" : "") +
+              ms.map(c => "<i class='" + c.k + "' style='left:" + x(c.d[n]).toFixed(1) + "%' " +
+                "title='" + c.n + ": " + pc(c.d[n]) + "'></i>").join("") +
+            "</span>" +
+            (r ? "<span class='razon'>" + r + "</span>" : "") +
+          "</div>";
+        }).join("");
+
+      return "<div class='mn-g'>" +
+        "<div class='mn-g-eje'><span class='hueco'></span><span class='pista'>" +
+          "<span class='azar' style='left:" + x(azar).toFixed(1) + "%'>" +
+          "<span>el azar</span></span></span></div>" +
+        filas +
+        "<div class='mn-g-leyenda'>" +
+          cuentas.map(c => "<span><em class='" + c.k + "'></em>" + c.n + "</span>").join("") +
+          "<span style='color:var(--tinta3)'>línea punteada: el azar (" +
+            pc(azar) + ", una de " + placa.length + ")</span>" +
+        "</div>" +
+        "<p class='mn-leyenda'><b>Cómo se lee.</b> Cada fila es una nominada y cada marca es una " +
+        "de las tres cuentas: cuanto más a la derecha, más riesgo de irse. <b>La barra que une " +
+        "las marcas es el desacuerdo entre las tres</b>: donde caen juntas, las tres cuentas " +
+        "dicen lo mismo; donde se abren, se están contradiciendo, y ésa es la parte interesante " +
+        "de la semana. A la derecha de la línea punteada, más riesgo que echarlo a suertes.</p>" +
+      "</div>";
+    })() +
     "<p class='mn-pie'>" +
       "<b>Cuándo se sabe.</b> " + (cuando === "mañana" ? "Mañana" : "El " + FECHA_LARGA(G.fecha)) +
       " a las 22.15 de la Argentina, y el resultado suele cantarse pasadas las 23.30. " +
@@ -5735,4 +6253,86 @@ montarAnimaciones(document.getElementById("anim"), quieto, {
     return {gala: g.gala, fecha: FECHA_LARGA(g.fecha), filas: salv.concat(vs)};
   })()
 });
+
+/* ---------- plegar la maquinaria ----------
+   Va AL FINAL del guion a proposito: los bloques de arriba se arman con
+   innerHTML sobre esos mismos nodos, y plegarlos antes de que se armen
+   significa que el primer innerHTML se lleva puesto el envoltorio. Aca ya
+   estan todos escritos.
+
+   Lo que se pliega es maquinaria y curiosidad, nunca una prediccion ni un
+   resultado: la cadena prediccion → resultado → puntaje se lee sin abrir nada.
+
+   El zodiaco se pliega y se rotula por lo que es. Estaba pedido y se queda,
+   pero suelto en medio de la pagina le costaba al lector la sospecha de que
+   todo lo demas fuera de la misma clase. */
+(function(){
+  // El tercer campo fija el rotulo: cuando esta, manda sobre el titulo del
+  // bloque. Se usa para el zodiaco, que tiene que decir en el resumen que es
+  // una curiosidad — suelto en medio de la pagina, con el mismo aspecto que
+  // todo lo demas, le costaba al lector la sospecha de que el resto fuera de
+  // la misma clase.
+  const PLEGAR = [
+    ["vuelven",      "Quién puede volver al juego"],
+    ["motor",        "Cómo funciona el modelo por dentro"],
+    ["porque",       "Por qué cada una está donde está"],
+    ["animaciones",  "De dónde sale cada número"],
+    ["metodo",       "El método, paso por paso"],
+    ["bootstrap",    "El pronóstico, remuestreado"],
+    ["sensibilidad", "Sensibilidad a cada supuesto"],
+    ["datos",        "Los datos crudos de cada gala"],
+    ["limites",      "Límites, huecos y advertencias"],
+    ["zodiaco",      "El zodíaco: una curiosidad, medida con la misma vara — no entra al modelo",
+                     true],
+  ];
+  const FLECHA = "<svg class='pl-x' viewBox='0 0 24 24' aria-hidden='true' focusable='false'>" +
+    "<path d='M6 9l6 6 6-6' fill='none' stroke='currentColor' stroke-width='2.2' " +
+    "stroke-linecap='round' stroke-linejoin='round'/></svg>";
+
+  PLEGAR.forEach(([id, titulo, fijo]) => {
+    const sec = document.getElementById(id);
+    if(!sec || !sec.children.length) return;
+    const alto = Math.round(sec.getBoundingClientRect().height);
+    const d = document.createElement("details");
+    d.className = "plegable";
+    const cuerpo = document.createElement("div");
+    cuerpo.className = "pl-cuerpo";
+    while(sec.firstChild) cuerpo.appendChild(sec.firstChild);
+    // El titulo real del bloque manda sobre el de esta lista: si alguien lo
+    // reescribe arriba, el resumen no se queda diciendo el viejo.
+    const h = cuerpo.querySelector("h2, h3");
+    const t = fijo ? titulo : ((h && h.textContent.trim()) || titulo);
+    d.innerHTML = "<summary><span class='pl-t'>" + t + "</span>" +
+      (alto > 900 ? "<span class='pl-q'>" + (n =>
+        n + (n === 1 ? " pantalla" : " pantallas"))(Math.max(1, Math.round(alto / 700))) +
+        "</span>" : "") + FLECHA + "</summary>";
+    d.appendChild(cuerpo);
+    sec.appendChild(d);
+    sec.dataset.plegado = "1";
+  });
+
+  // Un ancla a un bloque plegado tiene que abrirlo. Vale para el enlace de
+  // arriba, para el hash de la URL al entrar, y para un enlace pegado en otro
+  // lado.
+  function abrirDestino(){
+    const h = location.hash;
+    if(h.length < 2) return;
+    let t;
+    try { t = document.querySelector(h); } catch(e) { return; }
+    if(!t) return;
+    // Hay que mirar en las DOS direcciones. Si el ancla apunta a algo que vive
+    // adentro de un bloque plegado, el <details> es un ANTEPASADO; si apunta a
+    // la seccion entera, el <details> es HIJO suyo, porque lo que se plego fue
+    // el contenido de la seccion y no la seccion. Buscar solo hacia arriba
+    // dejaba el enlace del indice sin abrir nada, que es un enlace roto que no
+    // parece roto.
+    for(let e = t; e; e = e.parentElement)
+      if(e.tagName === "DETAILS") e.open = true;
+    t.querySelectorAll && t.querySelectorAll("details").forEach(d => { d.open = true; });
+    requestAnimationFrame(() => t.scrollIntoView({block: "start"}));
+  }
+  addEventListener("hashchange", abrirDestino);
+  abrirDestino();
+})();
+
 </script>

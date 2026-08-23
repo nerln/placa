@@ -1,0 +1,25 @@
+{
+ "_nota": "Un renglón por gala archivada. Lo escribe gui/archivar.py en el momento del congelamiento y no se edita a mano: la fecha de este renglón y la fecha del commit que subió el archivo tienen que coincidir, y ésa es la prueba.",
+ "galas": [
+  {
+   "gala": 30,
+   "fecha_gala": "2026-08-24",
+   "congelado": "2026-08-23T07:11-0300",
+   "archivo": "galas/30.html",
+   "historial": "https://github.com/nerln/placa/commits/main/web/galas/30.html",
+   "llamadas": {
+    "modelo": "Sol 52,3%",
+    "dos tiempos": "Sol 26,0%",
+    "apuesta": "Tamara 37,0%"
+   },
+   "placa": [
+    "Sol",
+    "Mariela",
+    "Pincoya",
+    "Yipio",
+    "Tamara",
+    "Luana"
+   ]
+  }
+ ]
+}

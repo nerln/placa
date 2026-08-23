@@ -26,6 +26,8 @@ Viaja por cuatro canales, para que baste con uno:
     - la etiqueta de git de esa corrida
     - gui/verificar.py, que lo recalcula antes de publicar
 
+Queda fuera del hash `data/archivo.json`: ver el comentario de FUERA, abajo.
+
     python3 gui/firma.py        imprime la firma de los datos de ahora
 """
 
@@ -42,8 +44,37 @@ ROOT = Path(__file__).resolve().parent.parent
 SAL = b"placa|nerln|"
 
 
+# Campos que se ignoran al firmar, por archivo. `archivo.json` se escribe
+# DESPUES de construir la pagina y lleva la hora del congelamiento: si esa hora
+# entrara en la firma, archivar cambiaria la corrida — y la corrida que la
+# propia pagina archivada lleva adentro quedaria vieja en el momento mismo de
+# archivarla. Es una dependencia circular, no una preferencia: corriendo
+# `publicar.sh` justo en un cambio de minuto, `verificar.py` fallaba con un
+# mensaje que no señalaba a la causa.
+#
+# Se ignora la HORA, no el archivo entero. Sacar `archivo.json` completo del
+# hash abria el otro agujero, que este proyecto ya pago una vez: `datos.json`
+# cambiaria de contenido sin cambiar de firma, y un navegador con el
+# `datos.js?v=` viejo en cache lo emparejaria con el HTML nuevo. Archivar una
+# gala NUEVA sigue moviendo la corrida, que es lo correcto; rehacer la misma no.
+IGNORAR = {"archivo.json": ("congelado",)}
+
+
+def _sin_volatiles(nombre, dato):
+    campos = IGNORAR.get(nombre)
+    if not campos:
+        return dato
+    def limpia(x):
+        if isinstance(x, dict):
+            return {k: limpia(v) for k, v in x.items() if k not in campos}
+        if isinstance(x, list):
+            return [limpia(v) for v in x]
+        return x
+    return limpia(dato)
+
+
 def firma_corrida() -> str:
-    """Hash de todo data/*.json, normalizado.
+    """Hash de data/*.json, normalizado, ignorando los campos de IGNORAR.
 
     Se reserializa cada archivo con las claves ordenadas antes de digerirlo:
     asi la firma depende del contenido y no de como quedo indentado el JSON,
@@ -53,8 +84,9 @@ def firma_corrida() -> str:
     h.update(SAL)
     for p in sorted((ROOT / "data").glob("*.json")):
         h.update(p.name.encode())
-        h.update(json.dumps(json.loads(p.read_text()), sort_keys=True,
-                            ensure_ascii=False, separators=(",", ":")).encode())
+        h.update(json.dumps(_sin_volatiles(p.name, json.loads(p.read_text())),
+                            sort_keys=True, ensure_ascii=False,
+                            separators=(",", ":")).encode())
     return h.hexdigest()[:16]
 
 
