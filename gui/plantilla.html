@@ -4714,6 +4714,19 @@ function contar(nodo){
   const senalado = coincidenAfuera ? deAfuera[0] : null;
   const chocan = senalado && modTop && senalado !== modTop;
 
+  // En semana de gala este bloque va primero. El resto del tiempo la pagina
+  // contesta la pregunta de temporada — quien gana los 70 millones — y ese es
+  // su orden natural: es el titulo, la URL y la tarjeta que viaja al pegar el
+  // enlace. Pero la vispera, el lector que llega viene por manana, y tenerlo
+  // debajo del veredicto de la final son tres pantallas de telefono antes de
+  // la respuesta. Se mueve solo, y se vuelve solo cuando pasa la gala.
+  const dd = CUANDO_GALA().dias;
+  if(dd !== null && dd >= 0 && dd <= 2){
+    const primero = $("#ultimo") || $("#respuesta-corta");
+    const destino = primero && primero.closest("section, .veredicto") || primero;
+    if(destino && destino.parentElement) destino.parentElement.insertBefore(sec, destino);
+  }
+
   sec.innerHTML =
     "<div class='mn-cab'><span class='pulso'></span>" +
       "<span class='mn-cuando'>Gala de eliminación · " + cuando + " a las 22.15</span></div>" +
