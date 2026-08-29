@@ -67,7 +67,13 @@ BASES = {
     6: "reloj",     # explicación: quién va a placa
     7: "tension",   # explicación: la regla histórica
     8: "reloj",     # confesión: la campaña que se mide y no se usa
+    9: "tension",   # confesión: el modelo no está roto, está al revés
 }
+
+def coma(x, dec=1):
+    """Los decimales van con coma. En castellano el punto es de los miles."""
+    return f"{x:.{dec}f}".replace(".", ",")
+
 
 def datos():
     d = json.loads((RAIZ / "web" / "datos.json").read_text())
@@ -151,7 +157,10 @@ def montar(n, capas, segundos, base=None):
     actual = "[base]"
     for i, (_png, desde, hasta) in enumerate(capas, start=1):
         sig = f"[c{i}]" if i < len(capas) else "[v]"
-        filtros.append(f"{actual}[{i}:v]overlay=0:0:enable='between(t,{desde},{hasta})'{sig}")
+        # Medio abierto a la derecha: `between` incluye los dos extremos, así que
+        # en el cuadro exacto del cambio se dibujaban las dos capas encima.
+        filtros.append(f"{actual}[{i}:v]overlay=0:0:"
+                       f"enable='gte(t,{desde})*lt(t,{hasta})'{sig}")
         actual = sig
     cmd = ["ffmpeg", "-y", "-loglevel", "error", *entradas]
     if audio and audio.exists():
@@ -175,24 +184,50 @@ def montar(n, capas, segundos, base=None):
 
 
 def video1(d, a):
+    """El de la gala de hoy. Es el primero que va a ver alguien que no sabe nada.
+
+    ESTRUCTURA. Engancha con el titular de la simulación, que es un número
+    publicado y real, y a los tres segundos da la vuelta con las dos cosas que la
+    simulación no mira. No es el modelo contra su autor: son dos instrumentos
+    distintos sobre la misma pregunta, y los dos están publicados.
+
+    LO QUE NO SE ASUME. Que el que mira sepa qué es un modelo, qué es una placa o
+    qué es el 9009. Cada cosa se dice una vez, en cristiano, dentro del propio
+    video. Nada de «backtest», nada de «Brier», nada de «Monte Carlo».
+    """
+    e = a["entradas"]
     q = a["llamada"]["quien"]
-    p = a["p_sale"][q] * 100
-    seg = sorted(((k, v) for k, v in a["p_sale"].items() if k != q), key=lambda x: -x[1])[:2]
-    m = max(a["modelo_dice"], key=a["modelo_dice"].get)
-    pm = a["modelo_dice"][m] * 100
+    modelo = sorted(a["modelo_dice"].items(), key=lambda x: -x[1])[0]
+    # El término de campaña con el que la apuesta se apoya: el mejor puesto que
+    # alcanzó en las tendencias de Argentina, tal como lo archivó trends24.
+    camp = d["campana"]["indice"].get(q, {})
+    term = (camp.get("terminos") or [{}])[0]
+    sin_campana = [k for k, v in d["campana"]["indice"].items()
+                   if k in a["placa"] and v.get("estado") != "observado"]
+    img = e["imagen"]
+    peor = min(img, key=img.get)
+
     tmp = AQUI / "_tmp"; tmp.mkdir(exist_ok=True)
-    capas = []
-    def añadir(nombre, lineas, desde, hasta):
-        png = tmp / f"v1-{nombre}.png"; placa_texto(lineas, png); capas.append((png, desde, hasta))
-    añadir("a", [(f"ESTA NOCHE", 96, CREMA, 24), ("SE VA", 96, CREMA, 24), (q.upper(), 150, ORO_FUERTE, 0)], 0, 2.5)
-    añadir("b", [(f"{p:.1f}%".replace(".", ","), 210, ORO_FUERTE, 40),
-                 (f"{seg[0][0]} {seg[0][1]*100:.1f}".replace(".", ",") + f"   {seg[1][0]} {seg[1][1]*100:.1f}".replace(".", ","), 56, GRIS, 0)], 2.5, 6)
-    añadir("c", [("MI MODELO", 100, CREMA, 24), ("DICE OTRA COSA", 100, CREMA, 0)], 6, 9)
-    añadir("d", [(m.upper(), 150, ORO, 30), (f"{pm:.1f}%".replace(".", ","), 190, ORO_FUERTE, 0)], 9, 12)
-    añadir("e", [("NO LE HAGO CASO", 110, CREMA, 0)], 12, 14.5)
-    añadir("f", [("en esa pregunta", 72, GRIS, 20), ("anda peor", 88, CREMA, 20), ("que el azar", 88, CREMA, 0)], 14.5, 18)
-    añadir("g", [("si falla,", 76, GRIS, 20), ("queda escrito", 96, CREMA, 40), ("nerln.github.io/placa", 52, ORO, 0)], 18, 22)
-    return montar(1, capas, 22, BASES[1])
+    capas, añadir = _capas("v1", tmp)
+    añadir("a", [(f"SE VA {modelo[0].upper()}", 190, ORO_FUERTE, 22),
+                 ("dice la simulación", 58, GRIS, 0)], 0, 2.5)
+    añadir("b", [(f"{modelo[1]*100:.1f}%".replace(".", ","), 240, CREMA, 22),
+                 ("de que salga esta noche", 58, GRIS, 0)], 2.5, 6)
+    añadir("c", [("PERO", 150, ORO_FUERTE, 26), ("hay dos cosas que", 62, GRIS, 18),
+                 ("la simulación no mira", 80, CREMA, 0)], 6, 9.5)
+    añadir("d", [(f"«{term.get('txt', '')}»", 62, GRIS, 22),
+                 (f"PUESTO {term.get('mejor', '?')}", 170, ORO_FUERTE, 20),
+                 ("de las tendencias de Argentina", 54, GRIS, 20),
+                 (f"y {len(sin_campana)} de la placa no tienen ninguna", 56, CREMA, 0)],
+           9.5, 14.5)
+    añadir("e", [("la única encuesta con historial", 56, GRIS, 20),
+                 ("ACERTÓ 5 DE 5", 100, CREMA, 22),
+                 (f"y a {peor} la deja última", 72, ORO, 18),
+                 (f"imagen {img[peor]} sobre 100", 54, GRIS, 0)], 14.5, 19)
+    añadir("f", [("las dos señales dicen", 66, CREMA, 22),
+                 (peor.upper(), 150, ORO_FUERTE, 34),
+                 ("nerln.github.io/placa", 62, ORO, 0)], 19, 24)
+    return montar(1, capas, 24, BASES[1])
 
 
 def video2(d, a):
@@ -329,16 +364,52 @@ def video8(d, a):
     return montar(8, capas, 17.5, BASES[8])
 
 
+def video9(d, a):
+    """La hipótesis del signo. El mejor material que dio esta corrida.
+
+    Un modelo que anda *significativamente* peor que el azar no está roto: un
+    modelo roto da el azar. Está anticorrelado. El video declara eso como
+    apuesta, no como hallazgo, porque el signo se eligió después de ver los
+    datos. Esa distinción no es un tecnicismo: es lo único que separa este video
+    de un truco.
+    """
+    s = json.loads((RAIZ / "data" / "signo.json").read_text())
+    tmp = AQUI / "_tmp"; tmp.mkdir(exist_ok=True)
+    capas, añadir = _capas("v9", tmp)
+    # Dos líneas y no una: a 84 la primera se comía los bordes a 1080 de ancho.
+    añadir("a", [("MI MODELO", 96, CREMA, 18), ("NO ESTÁ ROTO", 96, CREMA, 24),
+                 ("ESTÁ AL REVÉS", 118, ORO_FUERTE, 0)], 0, 3)
+    añadir("b", [("un modelo roto", 68, GRIS, 20),
+                 ("da el azar", 100, CREMA, 20),
+                 (f"el mío da {s['aciertos_directo']} de {s['n']}", 88, ORO, 0)], 3, 7)
+    añadir("c", [("lo leí al revés", 68, GRIS, 24),
+                 (f"{s['aciertos_invertido']} DE {s['n']}", 200, ORO_FUERTE, 20),
+                 (f"el azar esperaba {coma(s['aciertos_esperados_azar'], 2)}", 58, GRIS, 0)],
+           7, 11.5)
+    añadir("d", [("el eliminado le cae", 62, GRIS, 20),
+                 (f"en el puesto {coma(s['puesto_invertido'], 2)}", 92, CREMA, 20),
+                 (f"antes {coma(s['puesto_directo'], 2)} · el azar {coma(s['puesto_azar'], 2)}",
+                  56, GRIS, 0)], 11.5, 16)
+    añadir("e", [("elegí el signo", 76, CREMA, 20),
+                 ("DESPUÉS de ver los datos", 66, ORO_FUERTE, 20),
+                 ("así que no vale como resultado", 58, GRIS, 0)], 16, 20.5)
+    añadir("f", [("vale como apuesta", 96, CREMA, 24),
+                 ("la puntúo hacia adelante", 66, GRIS, 20),
+                 ("y no toco el modelo", 76, ORO, 0)], 20.5, 25)
+    return montar(9, capas, 25, BASES[9])
+
+
 def main():
     if not FONDO.exists():
         raise SystemExit(f"falta el fondo: {FONDO}")
-    todos = [str(i) for i in range(1, 9)]
+    todos = [str(i) for i in range(1, 10)]
     quiere = [a for a in sys.argv[1:] if a in todos] or todos
     d, a = datos()
     print(f"corrida {d['generado']} · gala {a['gala']} del {a['fecha_gala']}")
     for n in quiere:
         {"1": video1, "2": video2, "3": video3, "4": video4,
-         "5": video5, "6": video6, "7": video7, "8": video8}[n](d, a)
+         "5": video5, "6": video6, "7": video7, "8": video8,
+         "9": video9}[n](d, a)
 
 
 if __name__ == "__main__":

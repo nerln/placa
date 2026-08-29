@@ -1,31 +1,32 @@
 {
- "generado": "2026-08-18",
+ "generado": "2026-08-24",
  "que_es": "Un segundo parámetro para el segundo tiempo de la placa. El modelo usa el rechazo para las dos preguntas que tiene una gala, y en la del mano a mano va al revés: sobre las siete galas del backtest, su favorito llegó al mano a mano cuatro veces y lo ganó las cuatro.",
  "supuestos": {
   "sigma_prior": 1.0,
   "n_sims": 200000,
   "semilla": 20260818
  },
- "n_versus": 11,
+ "n_versus": 12,
  "theta": {
-  "Sol": 1.018,
+  "Sol": 1.144,
   "Luana": 0.826,
   "Zunino": 0.337,
-  "Campanita": 0.097,
-  "Titi": 0.097,
+  "Campanita": 0.116,
+  "Titi": 0.116,
   "Majluf": 0.069,
-  "Emanuel": -0.224,
-  "Hanssen": -0.224,
+  "Emanuel": -0.206,
+  "Hanssen": -0.206,
+  "Tamara": -0.206,
   "Manu": -0.254,
   "Nigro": -0.254,
   "Brian": -0.337,
-  "Nenu": -0.382,
-  "Tatiluna": -0.382,
+  "Nenu": -0.379,
+  "Tatiluna": -0.379,
   "Cola": -0.388
  },
  "registro": {
   "Sol": [
-   4,
+   5,
    0
   ],
   "Luana": [
@@ -53,6 +54,10 @@
    1
   ],
   "Hanssen": [
+   0,
+   1
+  ],
+  "Tamara": [
    0,
    1
   ],
@@ -89,6 +94,9 @@
     "eliminado": "Nigro",
     "n_placa": 7,
     "versus_previos": 4,
+    "modelo_favorito": "Mariela",
+    "favorito_al_versus": false,
+    "favorito_gano_versus": false,
     "modelo_puesto": 6,
     "modelo_p": 0.1646,
     "dos_tiempos_puesto": 6,
@@ -101,6 +109,9 @@
     "eliminado": "Manu",
     "n_placa": 6,
     "versus_previos": 5,
+    "modelo_favorito": "Sol",
+    "favorito_al_versus": false,
+    "favorito_gano_versus": false,
     "modelo_puesto": 6,
     "modelo_p": 0.0,
     "dos_tiempos_puesto": 5,
@@ -116,6 +127,9 @@
     "eliminado": "Emanuel",
     "n_placa": 6,
     "versus_previos": 6,
+    "modelo_favorito": "Sol",
+    "favorito_al_versus": true,
+    "favorito_gano_versus": true,
     "modelo_puesto": 5,
     "modelo_p": 0.0125,
     "dos_tiempos_puesto": 5,
@@ -130,6 +144,9 @@
     "eliminado": "Cola",
     "n_placa": 5,
     "versus_previos": 7,
+    "modelo_favorito": "Tamara",
+    "favorito_al_versus": false,
+    "favorito_gano_versus": false,
     "modelo_puesto": 4,
     "modelo_p": 0.1119,
     "dos_tiempos_puesto": 4,
@@ -142,6 +159,9 @@
     "eliminado": "Campanita",
     "n_placa": 6,
     "versus_previos": 8,
+    "modelo_favorito": "Sol",
+    "favorito_al_versus": true,
+    "favorito_gano_versus": true,
     "modelo_puesto": 3,
     "modelo_p": 0.1085,
     "dos_tiempos_puesto": 3,
@@ -159,6 +179,9 @@
     "eliminado": "Hanssen",
     "n_placa": 6,
     "versus_previos": 9,
+    "modelo_favorito": "Sol",
+    "favorito_al_versus": true,
+    "favorito_gano_versus": true,
     "modelo_puesto": 6,
     "modelo_p": 0.0092,
     "dos_tiempos_puesto": 6,
@@ -174,6 +197,9 @@
     "eliminado": "Majluf",
     "n_placa": 5,
     "versus_previos": 10,
+    "modelo_favorito": "Luana",
+    "favorito_al_versus": true,
+    "favorito_gano_versus": true,
     "modelo_puesto": 3,
     "modelo_p": 0.1441,
     "dos_tiempos_puesto": 5,
@@ -182,36 +208,50 @@
      "Luana": 0.586,
      "Majluf": 0.337
     }
+   },
+   {
+    "gala": 30,
+    "fecha": "2026-08-24",
+    "eliminado": "Tamara",
+    "n_placa": 6,
+    "versus_previos": 11,
+    "modelo_favorito": "Sol",
+    "favorito_al_versus": true,
+    "favorito_gano_versus": true,
+    "modelo_puesto": 6,
+    "modelo_p": 0.012,
+    "dos_tiempos_puesto": 6,
+    "dos_tiempos_p": 0.0267,
+    "theta_usado": {
+     "Luana": 0.826,
+     "Sol": 1.018
+    }
    }
   ],
   "resumen": {
-   "n": 7,
+   "n": 8,
    "modelo_aciertos": 0,
    "dos_tiempos_aciertos": 0,
-   "modelo_puesto_medio": 4.71,
-   "dos_tiempos_puesto_medio": 4.86,
-   "azar_puesto_medio": 3.43,
-   "modelo_logver": -3.776,
-   "dos_tiempos_logver": -2.409,
-   "azar_logver": -1.762
+   "modelo_puesto_medio": 4.88,
+   "dos_tiempos_puesto_medio": 5,
+   "azar_puesto_medio": 3.44,
+   "modelo_logver": -3.857,
+   "dos_tiempos_logver": -2.561,
+   "azar_logver": -1.765
   }
  },
  "vigente": {
   "placa": [
-   "Sol",
-   "Mariela",
-   "Pincoya",
+   "Charlotte",
    "Yipio",
-   "Tamara",
-   "Luana"
+   "Pincoya",
+   "Mariela"
   ],
   "p_sale": {
-   "Sol": 0.2597,
-   "Pincoya": 0.2179,
-   "Yipio": 0.1944,
-   "Luana": 0.1619,
-   "Mariela": 0.1117,
-   "Tamara": 0.0544
+   "Yipio": 0.2891,
+   "Pincoya": 0.2856,
+   "Mariela": 0.2192,
+   "Charlotte": 0.206
   }
  },
  "aviso": "La regularidad tiene una parte que se muerde la cola: sólo se acumulan versus ganándolos. Y el n es minúsculo. Por eso esto se publica al lado del modelo y no en su lugar, y las dos quedan congeladas antes de cada gala."

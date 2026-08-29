@@ -4,165 +4,184 @@
  "bloques": [
   {
    "id": "sub-placa-dos-evidencias",
-   "gala": 30,
+   "gala": 31,
    "donde": "#sub-placa · gui/plantilla.html ~2528",
    "recorte": "Las dos fuentes de evidencia se contradicen y se cancelan casi exactamente…",
    "estado": "a mano",
    "campo": "data/actualidad.json → medidas_sociales.lectura y fuentes[].historial | data/encuestas.json → proxima",
-   "por_que": "Es la prosa más visible de la página después del titular. Afirma tres cosas de esta semana —que las dos evidencias se cancelan, que a quien la encuesta da eliminado se venía salvando con porcentajes ínfimos, y que un agregador con nombre y apellido es el único de la temporada que acierta— y ninguna tiene detrás un campo que la compruebe. Las tres dejan de ser verdad con la placa siguiente. Es el mismo patrón del texto de la gala 29 que decía «la placa de esta noche es de 6»."
+   "por_que": "Es la prosa más visible de la página después del titular. Afirma tres cosas de esta semana —que las dos evidencias se cancelan, que a quien la encuesta da eliminado se venía salvando con porcentajes ínfimos, y que un agregador con nombre y apellido es el único de la temporada que acierta— y ninguna tiene detrás un campo que la compruebe. Las tres dejan de ser verdad con la placa siguiente. Es el mismo patrón del texto de la gala 29 que decía «la placa de esta noche es de 6».",
+   "revisado": "2026-08-29"
   },
   {
    "id": "limites-salidas-fuera-del-voto",
-   "gala": 30,
+   "gala": 31,
    "donde": "«Huecos reales en los datos» / lista de límites · gui/plantilla.html ~2156",
    "recorte": "Esta edición lleva 7 abandonos, 3 expulsiones y 3 evacuaciones médicas.",
-   "estado": "a mano",
+   "estado": "derivado",
    "campo": "data/actualidad.json → escenarios_gala.fuera_del_voto[1].detalle",
-   "por_que": "Ya no coincide con el dato, sin esperar a la gala 31: el campo dice «diez abandonos y tres expulsiones», o sea trece, y acá se leen 7+3+3. Encima las tres salidas médicas que el mismo archivo describe no sacaron a nadie —Tamara volvió a los dos días, Sol siguió jugando—, así que la enumeración inventa un canal de salida que no existió. Reescribir el texto contra el campo antes de subirle el número."
+   "por_que": "Ya no coincide con el dato, sin esperar a la gala 31: el campo dice «diez abandonos y tres expulsiones», o sea trece, y acá se leen 7+3+3. Encima las tres salidas médicas que el mismo archivo describe no sacaron a nadie —Tamara volvió a los dos días, Sol siguió jugando—, así que la enumeración inventa un canal de salida que no existió. Reescribir el texto contra el campo antes de subirle el número.",
+   "migrado": "2026-08-29: pasó a derivarse del campo que ya tenía el dato, así que no puede volver a quedar viejo."
   },
   {
    "id": "metodo-salidas-fuera-del-voto",
-   "gala": 30,
+   "gala": 31,
    "donde": "pie del método, debajo del tablero · gui/plantilla.html ~1877",
    "recorte": "Ya hubo 13 salidas que no pasaron por el voto: abandonos, expulsiones y evacuaciones médicas.",
-   "estado": "a mano",
+   "estado": "derivado",
    "campo": "data/actualidad.json → escenarios_gala.fuera_del_voto[1].detalle",
-   "por_que": "El 13 coincide hoy con el dato por casualidad. Está escrito a mano, sube con el primer abandono nuevo, y arrastra la misma enumeración equivocada que el bloque de límites: cuenta evacuaciones médicas entre las salidas. Nada lo comprueba, porque reconstruible() sólo compara la página contra sí misma."
+   "por_que": "El 13 coincide hoy con el dato por casualidad. Está escrito a mano, sube con el primer abandono nuevo, y arrastra la misma enumeración equivocada que el bloque de límites: cuenta evacuaciones médicas entre las salidas. Nada lo comprueba, porque reconstruible() sólo compara la página contra sí misma.",
+   "migrado": "2026-08-29: pasó a derivarse del campo que ya tenía el dato, así que no puede volver a quedar viejo."
   },
   {
    "id": "respuesta-corta-salidas",
-   "gala": 30,
+   "gala": 31,
    "donde": "#respuesta-corta · gui/plantilla.html ~4783",
    "recorte": "(D.eliminados ? \"13\" : \"varias\") + \" de las salidas de esta edición fueron abandonos, expulsiones o evacuaciones médicas\"",
-   "estado": "a mano",
+   "estado": "derivado",
    "campo": "data/actualidad.json → escenarios_gala.fuera_del_voto[1].detalle",
-   "por_que": "El ternario finge que el número sale de los datos y no sale: la condición sólo comprueba que D.eliminados exista, y el 13 es un literal. Está dentro del pasaje escrito a propósito para que lo levante un buscador o un asistente, así que es el número mal que más lejos viaja."
+   "por_que": "El ternario finge que el número sale de los datos y no sale: la condición sólo comprueba que D.eliminados exista, y el 13 es un literal. Está dentro del pasaje escrito a propósito para que lo levante un buscador o un asistente, así que es el número mal que más lejos viaja.",
+   "migrado": "2026-08-29: pasó a derivarse del campo que ya tenía el dato, así que no puede volver a quedar viejo."
   },
   {
    "id": "tarjeta-modelo-galas",
-   "gala": 30,
+   "gala": 31,
    "donde": "pie de la tarjeta del modelo, entre las encuestas ajenas · gui/plantilla.html ~6079",
    "recorte": "preferencia revelada de 8 galas + la encuesta calibrada",
-   "estado": "a mano",
+   "estado": "derivado",
    "campo": "data/galas.json → galas (hoy 12) · en la página, D.galas.length",
-   "por_que": "Ya está viejo: hay doce galas con reparto completo y la tarjeta del propio modelo, la que se pone al lado de las ajenas justamente para compararse con ellas, dice ocho. El mismo número se deriva bien en #m1-tit y en #tit-galas desde D.galas.length; acá quedó una copia que envejeció sola. La migración es un renglón."
+   "por_que": "Ya está viejo: hay doce galas con reparto completo y la tarjeta del propio modelo, la que se pone al lado de las ajenas justamente para compararse con ellas, dice ocho. El mismo número se deriva bien en #m1-tit y en #tit-galas desde D.galas.length; acá quedó una copia que envejeció sola. La migración es un renglón.",
+   "migrado": "2026-08-29: pasó a derivarse del campo que ya tenía el dato, así que no puede volver a quedar viejo."
   },
   {
    "id": "pie-encuesta-faltan-nominados",
-   "gala": 30,
+   "gala": 31,
    "donde": "#pie-medicion, pie de una fuente · gui/plantilla.html ~6050",
    "recorte": "votos brutos · faltan tres nominados",
    "estado": "a mano",
    "campo": "data/galas.json → placa_vigente.integrantes | data/encuestas.json → proxima.otras[].cuota",
-   "por_que": "«Faltan tres» es una resta contra la placa de esta semana, que es de seis. Con una placa de cuatro o de ocho el pie sigue diciendo tres, debajo de una lista de barras de otro largo que el lector puede contar."
+   "por_que": "«Faltan tres» es una resta contra la placa de esta semana, que es de seis. Con una placa de cuatro o de ocho el pie sigue diciendo tres, debajo de una lista de barras de otro largo que el lector puede contar.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "pie-medicion-encuestas-que-circulan",
-   "gala": 30,
+   "gala": 31,
    "donde": "#pie-medicion · gui/plantilla.html ~6005",
    "recorte": "Por eso de las cuatro que circulan cada semana solo entra una al modelo",
    "estado": "a mano",
    "campo": "data/actualidad.json → medidas_sociales.fuentes (longitud) | data/encuestas.json → proxima.otras",
-   "por_que": "El «cuatro» es el recuento de una semana concreta. La lista de fuentes se dibuja desde los datos unos renglones más abajo, en la misma tarjeta, así que la prosa y la tabla pueden decir números distintos uno al lado del otro sin que nada chille."
+   "por_que": "El «cuatro» es el recuento de una semana concreta. La lista de fuentes se dibuja desde los datos unos renglones más abajo, en la misma tarjeta, así que la prosa y la tabla pueden decir números distintos uno al lado del otro sin que nada chille.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "intro-medicion-encuestadora",
-   "gala": 30,
+   "gala": 31,
    "donde": "#intro-medicion, rama sin placa · gui/plantilla.html ~5995",
    "recorte": "y la única encuestadora con historial lo había puesto primero. Cuando el miércoles se arme la placa…",
    "estado": "a mano",
    "campo": "data/puntaje.json → eliminado | data/encuestas.json → historial | data/galas.json → placa_vigente.fecha_nominacion",
-   "por_que": "Afirma que la encuestadora acertó la última gala. Es exactamente la afirmación que el termómetro de X ya sabe calcular —compara «pedida» contra «salio» antes de titular—; acá quedó a mano y sobrevive intacta a la gala siguiente diciendo lo contrario de lo que pasó. Encima el «miércoles» contradice a galas.json, que fecha la nominación el martes 18."
+   "por_que": "Afirma que la encuestadora acertó la última gala. Es exactamente la afirmación que el termómetro de X ya sabe calcular —compara «pedida» contra «salio» antes de titular—; acá quedó a mano y sobrevive intacta a la gala siguiente diciendo lo contrario de lo que pasó. Encima el «miércoles» contradice a galas.json, que fecha la nominación el martes 18.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "paso4-fases-positivas",
-   "gala": 30,
+   "gala": 31,
    "donde": "paso 4 del método · gui/plantilla.html ~2087",
    "recorte": "Hay doce de esas instancias. El ancla es la gala del 16 de julio… con una correlación de rangos de 0,87",
    "estado": "a mano",
    "campo": "data/resultados.json → fases_psi (en la página, D.fases_psi); el 0,87 no tiene campo",
-   "por_que": "«Doce» crece con cada fase positiva nueva y el 0,87 se recalcula en cada corrida. Los dos están a mano en la sección que dos párrafos antes promete que cada número de ahí abajo es un resultado oficial de votación o una calibración medida."
+   "por_que": "«Doce» crece con cada fase positiva nueva y el 0,87 se recalcula en cada corrida. Los dos están a mano en la sección que dos párrafos antes promete que cada número de ahí abajo es un resultado oficial de votación o una calibración medida.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "bootstrap-remuestreos",
-   "gala": 30,
+   "gala": 31,
    "donde": "subtítulo del bloque del bootstrap · gui/plantilla.html ~2101",
    "recorte": "se vuelve a estimar todo y se simula de nuevo, sesenta veces… cuántas de esas sesenta veces",
    "estado": "a mano",
    "campo": "data/bootstrap.json → B (hoy 60)",
-   "por_que": "El título de esa misma sección sí lo deriva: «El pronóstico, remuestreado B veces». El subtítulo dice «sesenta» dos veces a mano, así que en cuanto B cambie el título y el subtítulo se contradicen dentro del mismo bloque, con los dos números a la vista."
+   "por_que": "El título de esa misma sección sí lo deriva: «El pronóstico, remuestreado B veces». El subtítulo dice «sesenta» dos veces a mano, así que en cuanto B cambie el título y el subtítulo se contradicen dentro del mismo bloque, con los dos números a la vista.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "versus-mano-a-mano",
-   "gala": 30,
+   "gala": 31,
    "donde": "#dostiempos, párrafo del versus · gui/plantilla.html ~5434",
    "recorte": "llegó al mano a mano <b>cuatro veces</b> y lo <b>ganó las cuatro</b>",
-   "estado": "a mano",
+   "estado": "derivado",
    "campo": "data/versus.json → backtest.resumen.n, versus.registro, versus.que_es",
-   "por_que": "Las cinco cifras del párrafo salen todas de V.registro y V.backtest.resumen, que se rehacen con cada gala. Y hay algo peor: V.que_es ya trae la primera mitad de la frase escrita por los datos, y la página la imprime más abajo en la misma sección. Son dos copias del mismo enunciado, una comprobada y otra no."
+   "por_que": "Las cinco cifras del párrafo salen todas de V.registro y V.backtest.resumen, que se rehacen con cada gala. Y hay algo peor: V.que_es ya trae la primera mitad de la frase escrita por los datos, y la página la imprime más abajo en la misma sección. Son dos copias del mismo enunciado, una comprobada y otra no.",
+   "migrado": "2026-08-29: pasó a derivarse del campo que ya tenía el dato, así que no puede volver a quedar viejo."
   },
   {
    "id": "tendencias-cortes-archivados",
-   "gala": 30,
+   "gala": 31,
    "donde": "#oficial-trend · gui/plantilla.html ~3559",
    "recorte": "aparece en todos los posts de Telefe y en <b>ninguno</b> de los 21 cortes del top-50 de la ventana",
-   "estado": "a mano",
+   "estado": "derivado",
    "campo": "data/actualidad.json → tendencias.ventana y tendencias.terminos",
-   "por_que": "El 21 cuenta los cortes horarios archivados de una ventana concreta. La ventana sí se imprime desde los datos dos párrafos antes, así que el número y la ventana que lo justifica ya viajan por caminos distintos: se puede actualizar una sin la otra y nadie lo ve."
+   "por_que": "El 21 cuenta los cortes horarios archivados de una ventana concreta. La ventana sí se imprime desde los datos dos párrafos antes, así que el número y la ventana que lo justifica ya viajan por caminos distintos: se puede actualizar una sin la otra y nadie lo ve.",
+   "migrado": "2026-08-29: pasó a derivarse del campo que ya tenía el dato, así que no puede volver a quedar viejo."
   },
   {
    "id": "reingresos-rotulo-puntos",
-   "gala": 30,
+   "gala": 31,
    "donde": "#v-puertas, rótulo del gráfico y su aria-label · gui/plantilla.html ~4428 y ~4434",
    "recorte": "los 21 reingresos caen acá, entre el … % y el … % / Los veintiún puntos caen entre…",
    "estado": "a mano",
    "campo": "data/reingresos.json → historia.temporadas[].reingresos (hoy suman 21)",
-   "por_que": "El propio gráfico calcula el mínimo y el máximo desde los datos y deja el conteo escrito a mano, dos veces: en el rótulo y en el aria-label. Un reingreso más y el rótulo cuenta puntos que el lector no encuentra en el dibujo, y el lector de pantalla dicta un número que tampoco está."
+   "por_que": "El propio gráfico calcula el mínimo y el máximo desde los datos y deja el conteo escrito a mano, dos veces: en el rótulo y en el aria-label. Un reingreso más y el rótulo cuenta puntos que el lector no encuentra en el dibujo, y el lector de pantalla dicta un número que tampoco está.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "reingresos-tres-puertas",
-   "gala": 30,
+   "gala": 31,
    "donde": "#v-puertas, encabezado · gui/plantilla.html ~4404",
    "recorte": "Las tres puertas, y cuál sigue abierta",
    "estado": "a mano",
    "campo": "data/reingresos.json → mecanismos (hoy 2, más la puerta fija de visitas)",
-   "por_que": "El título cuenta las puertas que el bloque de abajo dibuja recorriendo R.mecanismos más una escrita a mano. Si aparece o se retira un mecanismo, el encabezado cuenta mal lo que el lector tiene delante en la misma tarjeta."
+   "por_que": "El título cuenta las puertas que el bloque de abajo dibuja recorriendo R.mecanismos más una escrita a mano. Si aparece o se retira un mecanismo, el encabezado cuenta mal lo que el lector tiene delante en la misma tarjeta.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "reingresos-estado-mecanismos",
-   "gala": 30,
+   "gala": 31,
    "donde": "#v-puertas, estado de cada mecanismo · gui/plantilla.html ~4390",
    "recorte": "<span class='e cerrada'>cerrada</span>",
    "estado": "a mano",
    "campo": "data/reingresos.json → abiertos (hoy false); no hay campo por mecanismo",
-   "por_que": "Cada mecanismo se dibuja desde R.mecanismos y se lo etiqueta «cerrada» a mano, igual para todos. El día que el reglamento reabra uno, la tarjeta va a decir que está cerrado mientras la casa recibe a alguien por ahí. La migración pide un campo de estado por mecanismo, que hoy no existe."
+   "por_que": "Cada mecanismo se dibuja desde R.mecanismos y se lo etiqueta «cerrada» a mano, igual para todos. El día que el reglamento reabra uno, la tarjeta va a decir que está cerrado mientras la casa recibe a alguien por ahí. La migración pide un campo de estado por mecanismo, que hoy no existe.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "huecos-fecha-de-la-final",
-   "gala": 30,
+   "gala": 31,
    "donde": "«Huecos reales en los datos», primer ítem · gui/plantilla.html ~2144",
    "recorte": "Circulan el 6 de septiembre… y el 31 de agosto, que es hasta cuándo tienen vigencia las bases",
    "estado": "a mano",
    "campo": "ninguno; hoy no hay campo para la fecha de la final ni para los rumores que circulan",
-   "por_que": "Son dos fechas concretas y un estado de rumor de esta semana. Se vuelven falsas solas: el 31 de agosto pasa, Telefe saca el comunicado, o cambia la versión más repetida. Es prosa fechada sin fecha a la vista, que es la peor clase: el lector no tiene cómo darse cuenta de que la está leyendo tarde."
+   "por_que": "Son dos fechas concretas y un estado de rumor de esta semana. Se vuelven falsas solas: el 31 de agosto pasa, Telefe saca el comunicado, o cambia la versión más repetida. Es prosa fechada sin fecha a la vista, que es la peor clase: el lector no tiene cómo darse cuenta de que la está leyendo tarde.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "puerta-visitas-fechas",
-   "gala": 30,
+   "gala": 31,
    "donde": "#v-puertas, puerta de visitas · gui/plantilla.html ~4399",
    "recorte": "las nueve del martes y los ocho ex de temporadas anteriores… que ya estaban afuera el 6 de agosto",
    "estado": "a mano",
    "campo": "data/reingresos.json → historia y mecanismos; el «martes» y el 6 de agosto no salen de ningún campo",
-   "por_que": "«Las nueve del martes» es un martes concreto que deja de ser el último martes en cuanto pasa una semana, y el 6 de agosto es un corte que se escribió una vez. La fecha de al lado sí se imprime con FECHA_LARGA desde los datos, así que en el mismo párrafo conviven una fecha comprobada y dos escritas a mano."
+   "por_que": "«Las nueve del martes» es un martes concreto que deja de ser el último martes en cuanto pasa una semana, y el 6 de agosto es un corte que se escribió una vez. La fecha de al lado sí se imprime con FECHA_LARGA desde los datos, así que en el mismo párrafo conviven una fecha comprobada y dos escritas a mano.",
+   "revisado": "2026-08-29"
   },
   {
    "id": "pie-camino-dia-de-placa",
-   "gala": 30,
+   "gala": 31,
    "donde": "#pie-camino · gui/plantilla.html ~5750",
    "recorte": "Si el miércoles no queda en placa, este cuadro cambia entero",
-   "estado": "a mano",
+   "estado": "derivado",
    "campo": "data/galas.json → placa_vigente.fecha_nominacion (martes 18) | data/actualidad.json → proxima_gala.fases",
-   "por_que": "El día de la nominación está escrito a mano y ya contradice a galas.json, que la fecha el martes 18. Además el cuadro cuenta seis pasos y el pie dice que éste es el primero de los seis, o sea que si el camino cambia de largo el pie también miente. Una de las dos cosas se deriva; la otra hay que reescribirla."
+   "por_que": "El día de la nominación está escrito a mano y ya contradice a galas.json, que la fecha el martes 18. Además el cuadro cuenta seis pasos y el pie dice que éste es el primero de los seis, o sea que si el camino cambia de largo el pie también miente. Una de las dos cosas se deriva; la otra hay que reescribirla.",
+   "migrado": "2026-08-29: pasó a derivarse del campo que ya tenía el dato, así que no puede volver a quedar viejo."
   }
- ]
+ ],
+ "_nota_revision": "Revisión del 29/08/2026, al cargar la gala 30 y armar la 31. Siete bloques pasaron a derivarse de datos y salen de la comprobación para siempre; el resto se releyó contra la placa nueva."
 }

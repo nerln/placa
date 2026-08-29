@@ -2,6 +2,30 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-08-27",
+   "titulo": "Expulsaron a Campanita y a Danelik, y Mariela se quedó sin dupla",
+   "detalle": "Gran Hermano expulsó a las dos visitas tras la pelea de la noche anterior, que empezó cuando Campanita sacó de la habitación las fotos de los hijos de Sol y de Pincoya. Danelik aceptó y salió por la puerta giratoria; Campanita se negó, entró personal de seguridad y terminó saliendo por la puerta de atrás, fuera del aire.",
+   "afecta": "Cambia la regla de la dupla para el lunes. Campanita era la visita de Mariela, que está en placa: si Mariela se va, ya no se lleva a nadie. Ninguna de las dos competía por el premio, así que el plantel no cambia y el modelo no se mueve por esto.",
+   "impacto": "parcial",
+   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/gran-hermano-expulso-a-campanita-y-danelik-la-paraguaya-se-resistio-y-acudio-personal-de-seguridad-pid2564332"
+  },
+  {
+   "fecha": "2026-08-26",
+   "titulo": "La última nominación dejó tres finalistas y una placa de cuatro",
+   "detalle": "Pincoya ganó el liderazgo y usó el beneficio de bajar a dos de la placa: bajó a Sol y a Luana, y eso las confirmó finalistas junto a Zilli. A sí misma no podía bajarse, así que la líder de la semana quedó nominada. Martín Rodríguez atendió el teléfono dorado y con Zilli pudieron ver todas las nominaciones; el voto de Sol lo anuló Tamara.",
+   "afecta": "La placa del lunes 31 es Charlotte, Yipio, Pincoya y Mariela, negativa de punta a punta. Y la pregunta de la temporada se achicó: tres de las siete que quedan ya no pueden ser eliminadas por voto.",
+   "impacto": "alto",
+   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/gran-hermano-generacion-dorada-tuvo-su-ultima-gala-de-nominacion-asi-quedo-la-placa-pid2564180"
+  },
+  {
+   "fecha": "2026-08-24",
+   "titulo": "Se fue Tamara, y por primera vez la apuesta le ganó al modelo",
+   "detalle": "Salió con el 51,1% contra el 48,9% de Sol en el mano a mano, y se llevó a Nazareno Pompei, su visita. Antes se habían salvado Luana con 0,1%, Mariela con 0,3%, Pincoya con 0,7% y Yipio con 1,3%: entre las cuatro no juntaron dos puntos y medio.",
+   "afecta": "El modelo le daba a Tamara el 3,1% y la dejaba última de seis. La variante de dos tiempos, el 5,4%, también última. La apuesta declarada —que no usa el modelo, sólo campañas e imagen— le daba 37,0% y la ponía primera: acertó. Brier 0,50 contra 0,83 del azar, mientras el modelo quedó en 1,27, peor que el azar.",
+   "impacto": "alto",
+   "fuente": "https://www.lanacion.com.ar/espectaculos/quien-se-fue-de-gran-hermano-este-lunes-24-de-agosto-nid25082026/"
+  },
+  {
    "fecha": "2026-08-22",
    "titulo": "La semana de Tamara, y la campaña que la sigue",
    "detalle": "El canal del programa subió estos días «Tamara vs. Pincoya: presunto escupitajo y amenazas de golpes» y «Tamara al combate: ahora es el turno de enfrentar a Sol». En las mismas horas «TAMARA AL 9009» estuvo veinte de las últimas veinticuatro dentro del top-50 argentino y llegó al primer puesto del país. La última consigna con esa forma fue la de Hanssen, y se cumplió.",

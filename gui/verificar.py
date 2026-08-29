@@ -152,6 +152,43 @@ def tarjeta_al_dia():
     return 0
 
 
+def apuesta_de_esta_placa():
+    """La apuesta publicada tiene que ser sobre la placa vigente.
+
+    El 29 de agosto de 2026 la pagina llego a decir «La apuesta dice Tamara»
+    cinco dias despues de que Tamara saliera: data/apuesta.json era el de la
+    placa anterior y nadie lo miraba, porque ninguna comprobacion cruzaba las
+    dos listas. Un pronostico sobre gente que ya no esta no es un pronostico
+    viejo, es un pronostico falso, y encima es el que la pagina muestra primero.
+    """
+    ap = ROOT / "data" / "apuesta.json"
+    if not ap.exists():
+        print("  (sin data/apuesta.json: no hay apuesta que comprobar)")
+        return 0
+    A = json.loads(ap.read_text())
+    G = json.loads((ROOT / "data" / "galas.json").read_text())
+    pv = G.get("placa_vigente") or {}
+    vigente = set(pv.get("integrantes") or [])
+    if not vigente:
+        print("  (sin placa vigente: no se comprueba la apuesta)")
+        return 0
+    dentro = set(A.get("placa") or [])
+    sobra = sorted(dentro - vigente)
+    falta = sorted(vigente - dentro)
+    if sobra or falta:
+        return fallo(
+            "data/apuesta.json es de otra placa. "
+            + (f"Nombra a {', '.join(sobra)}, que no esta(n) en la placa vigente. " if sobra else "")
+            + (f"No nombra a {', '.join(falta)}, que si esta(n). " if falta else "")
+            + f"Placa vigente (gala {pv.get('gala')}): {', '.join(sorted(vigente))}. "
+              "Correr model/apuesta.py, o borrar data/apuesta.json si esta placa no tiene apuesta.")
+    if A.get("gala") is not None and pv.get("gala") is not None and A["gala"] != pv["gala"]:
+        return fallo(f"data/apuesta.json dice gala {A['gala']} y la placa vigente es la "
+                     f"{pv['gala']}. Correr model/apuesta.py.")
+    print(f"  ok · la apuesta es de la placa vigente ({len(dentro)} nominadas)")
+    return 0
+
+
 def textos_al_dia():
     """La prosa escrita a mano tiene que ser de la gala que viene.
 
@@ -339,7 +376,8 @@ def main():
     print("verificando lo que se va a publicar")
     err = (reconstruible() + probabilidades() + ramas_cierran() +
            identidad_telefe() + tarjeta_al_dia() + firma_coherente() +
-           riesgo_coherente() + datos_sin_cache() + textos_al_dia() +
+           riesgo_coherente() + datos_sin_cache() + apuesta_de_esta_placa() +
+           textos_al_dia() +
            javascript_valido() + css_sin_javascript())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")

@@ -68,6 +68,20 @@
     "Mariela": 0.0348,
     "Sol": 0.0057
    }
+  },
+  {
+   "fecha": "2026-08-24",
+   "galas_hasta": 30,
+   "en_juego": 7,
+   "p_gana": {
+    "Pincoya": 0.1766,
+    "Charlotte": 0.2731,
+    "Zilli": 0.1689,
+    "Luana": 0.1997,
+    "Yipio": 0.0917,
+    "Mariela": 0.0418,
+    "Sol": 0.0482
+   }
   }
  ],
  "predicciones_gala": [
@@ -137,6 +151,25 @@
     "Luana": 0.139543
    },
    "n_sims": 400000
+  },
+  {
+   "gala": 31,
+   "fecha_gala": "2026-08-31",
+   "corrida": "2026-08-24",
+   "placa": [
+    "Charlotte",
+    "Yipio",
+    "Pincoya",
+    "Mariela"
+   ],
+   "p_sale": {
+    "Charlotte": 0.194305,
+    "Yipio": 0.304827,
+    "Pincoya": 0.29291,
+    "Mariela": 0.207957
+   },
+   "n_sims": 400000,
+   "_nota": "Rotulada «gala 30» por un fallo de model/actualizar.py el 29/08/2026 y corregida a 31 el mismo dia, antes de que se jugara. La predicción y su placa no se tocaron."
   }
  ],
  "_nota_predicciones": "Append-only, y a proposito: es la promesa que despues hay que puntuar. Cada entrada es la distribucion de quien se va que la pagina publicaba antes de esa gala. No se reescribe ninguna aunque la corrida siguiente diga otra cosa.",
@@ -230,6 +263,25 @@
    },
    "llamada": "Tamara",
    "coincide_con_el_modelo": false
+  },
+  {
+   "gala": 31,
+   "fecha_gala": "2026-08-31",
+   "escrita": "2026-08-29T09:08-0300",
+   "placa": [
+    "Charlotte",
+    "Yipio",
+    "Pincoya",
+    "Mariela"
+   ],
+   "p_sale": {
+    "Yipio": 0.3425,
+    "Pincoya": 0.3356,
+    "Charlotte": 0.1781,
+    "Mariela": 0.1438
+   },
+   "llamada": "Yipio",
+   "coincide_con_el_modelo": true
   }
  ],
  "_nota_apuestas": "La prediccion declarada, que no es la del modelo. Se escribe antes de cada gala y no se reescribe nunca: la gracia es poder puntuar despues las dos por separado, la del modelo y esta. Cada entrada lleva la hora en que se escribio y los supuestos con que se armo.",
@@ -284,6 +336,79 @@
     "modelo": "2026-08-16",
     "apuesta": "2026-08-17T20:05-03:00"
    }
+  },
+  {
+   "gala": 30,
+   "fecha": "2026-08-24",
+   "eliminado": "Tamara",
+   "placa": [
+    "Sol",
+    "Mariela",
+    "Pincoya",
+    "Yipio",
+    "Tamara",
+    "Luana"
+   ],
+   "regla": "EVALUACION.md, escrita antes de que terminara la temporada",
+   "modelo": {
+    "p_del_eliminado": 0.0313,
+    "puesto": 6,
+    "de": 6,
+    "acerto": false,
+    "brier": 1.2653,
+    "brier_uniforme": 0.8333,
+    "log_verosimilitud": -3.4655,
+    "log_verosimilitud_uniforme": -1.7918,
+    "orden": [
+     "Sol",
+     "Luana",
+     "Pincoya",
+     "Yipio",
+     "Mariela",
+     "Tamara"
+    ]
+   },
+   "dos_tiempos": {
+    "p_del_eliminado": 0.0544,
+    "puesto": 6,
+    "de": 6,
+    "acerto": false,
+    "brier": 1.0856,
+    "brier_uniforme": 0.8333,
+    "log_verosimilitud": -2.9114,
+    "log_verosimilitud_uniforme": -1.7918,
+    "orden": [
+     "Sol",
+     "Pincoya",
+     "Yipio",
+     "Luana",
+     "Mariela",
+     "Tamara"
+    ]
+   },
+   "apuesta": {
+    "p_del_eliminado": 0.3703,
+    "puesto": 1,
+    "de": 6,
+    "acerto": true,
+    "brier": 0.4957,
+    "brier_uniforme": 0.8333,
+    "log_verosimilitud": -0.9934,
+    "log_verosimilitud_uniforme": -1.7918,
+    "orden": [
+     "Tamara",
+     "Yipio",
+     "Mariela",
+     "Luana",
+     "Pincoya",
+     "Sol"
+    ]
+   },
+   "congeladas": {
+    "modelo": "2026-08-18",
+    "dos_tiempos": "2026-08-18",
+    "apuesta": "2026-08-23T05:51-0300"
+   }
   }
  ],
  "predicciones_dos_tiempos": [
@@ -309,7 +434,37 @@
    },
    "sigma_prior": 1.0,
    "n_versus": 11
+  },
+  {
+   "gala": 31,
+   "fecha_gala": "2026-08-31",
+   "corrida": "2026-08-24",
+   "placa": [
+    "Charlotte",
+    "Yipio",
+    "Pincoya",
+    "Mariela"
+   ],
+   "p_sale": {
+    "Yipio": 0.2891,
+    "Pincoya": 0.2856,
+    "Mariela": 0.2192,
+    "Charlotte": 0.206
+   },
+   "sigma_prior": 1.0,
+   "n_versus": 12
   }
  ],
- "_nota_dos_tiempos": "La variante del mano a mano, congelada antes de cada gala como las otras dos. Cada entrada lleva el prior y cuantos versus habia."
+ "_nota_dos_tiempos": "La variante del mano a mano, congelada antes de cada gala como las otras dos. Cada entrada lleva el prior y cuantos versus habia.",
+ "_nota_declaraciones": "Decisiones sobre CÓMO se presentan las predicciones, con la fecha en que se tomaron. Viven acá y no en el guion de la página por un motivo: una decisión de presentación tomada DESPUÉS de ver un resultado es acomodar; tomada antes, y anotada, es una predicción sobre qué señal va a andar mejor. La diferencia es la fecha, así que la fecha tiene que quedar escrita donde no se pueda mover.",
+ "declaraciones": [
+  {
+   "fecha": "2026-08-29",
+   "vigente_desde_gala": 31,
+   "que": "La apuesta declarada pasa a mostrarse primero, arriba del modelo, en el bloque de la gala que viene.",
+   "por_que": "Es lo único de las tres que acertó alguna vez. En la gala 30 la apuesta puso a Tamara primera con 37,0% y Tamara salió; el modelo la puso ÚLTIMA de seis con 3,1% y la variante de dos tiempos también última con 5,4%. Sumado a la prueba hacia atrás, el modelo va 0 de 8 reconstruidas y 0 de 2 congeladas, y la apuesta 1 de 2.",
+   "lo_que_esto_no_es": "No es elegir cuál se puntúa. Se siguen puntuando las tres, siempre, y también las que fallen. Cambia el orden en que se muestran, nada más. Y queda escrito ANTES de la gala 31: si la apuesta falla el lunes, esta declaración queda igual, con esta fecha.",
+   "de_que_tamano_es_la_evidencia": "Dos galas congeladas. No alcanza para saber, y decir lo contrario sería inventar precisión. Es la evidencia que hay."
+  }
+ ]
 }

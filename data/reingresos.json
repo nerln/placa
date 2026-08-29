@@ -114,7 +114,39 @@
       "Jenny Mavinga"
      ]
     ],
-    "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487"
+    "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487",
+    "salidas": {
+     "_nota": "Quienes de esta tanda ya no están. Importa para la regla de la dupla: quien se va se lleva a la visita que había elegido, y si esa visita ya no está, no se lleva a nadie.",
+     "expulsadas": [
+      {
+       "quien": "Steffany «Campanita» Pereira",
+       "dupla_de": "Mariela",
+       "fecha": "2026-08-27",
+       "motivo": "Gran Hermano la expulsó junto a Danelik Galazán tras la pelea de la noche anterior, que empezó cuando sacó de la habitación las fotos de los hijos de Sol y de Pincoya y casi termina en agresión física. Se negó a salir y tuvo que entrar personal de seguridad; se fue por la puerta de atrás, fuera del aire.",
+       "fuentes": [
+        "https://www.mitelefe.com/gran-hermano/noticias/gran-hermano-expulso-a-campanita-y-danelik-la-paraguaya-se-resistio-y-acudio-personal-de-seguridad-pid2564332",
+        "https://www.infobae.com/teleshow/2026/08/28/una-participante-de-gran-hermano-fue-expulsada-del-reality-se-resistio-a-dejar-la-casa-y-tuvo-que-intervenir-la-seguridad/"
+       ]
+      },
+      {
+       "quien": "Danelik Galazán",
+       "dupla_de": "Luana",
+       "fecha": "2026-08-27",
+       "motivo": "Expulsada en la misma medida. Aceptó y se retiró por la puerta giratoria.",
+       "fuentes": [
+        "https://www.mitelefe.com/gran-hermano/noticias/gran-hermano-expulso-a-campanita-y-danelik-la-paraguaya-se-resistio-y-acudio-personal-de-seguridad-pid2564332"
+       ]
+      }
+     ],
+     "con_la_eliminada": [
+      {
+       "quien": "Nazareno Pompei",
+       "dupla_de": "Tamara",
+       "fecha": "2026-08-24",
+       "motivo": "Se fue con Tamara, que era su dupla, por la regla de la eliminación en dupla."
+      }
+     ]
+    }
    }
   ]
  },

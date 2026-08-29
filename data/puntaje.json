@@ -1,51 +1,73 @@
 {
- "gala": 29,
- "fecha": "2026-08-17",
- "eliminado": "Majluf",
+ "gala": 30,
+ "fecha": "2026-08-24",
+ "eliminado": "Tamara",
  "placa": [
+  "Sol",
+  "Mariela",
+  "Pincoya",
+  "Yipio",
   "Tamara",
-  "Majluf",
-  "Charlotte",
-  "Luana",
-  "Zilli"
+  "Luana"
  ],
  "regla": "EVALUACION.md, escrita antes de que terminara la temporada",
  "modelo": {
-  "p_del_eliminado": 0.1566,
-  "puesto": 3,
-  "de": 5,
+  "p_del_eliminado": 0.0313,
+  "puesto": 6,
+  "de": 6,
   "acerto": false,
-  "brier": 0.9059,
-  "brier_uniforme": 0.8,
-  "log_verosimilitud": -1.8543,
-  "log_verosimilitud_uniforme": -1.6094,
+  "brier": 1.2653,
+  "brier_uniforme": 0.8333,
+  "log_verosimilitud": -3.4655,
+  "log_verosimilitud_uniforme": -1.7918,
   "orden": [
+   "Sol",
    "Luana",
-   "Charlotte",
-   "Majluf",
-   "Zilli",
+   "Pincoya",
+   "Yipio",
+   "Mariela",
+   "Tamara"
+  ]
+ },
+ "dos_tiempos": {
+  "p_del_eliminado": 0.0544,
+  "puesto": 6,
+  "de": 6,
+  "acerto": false,
+  "brier": 1.0856,
+  "brier_uniforme": 0.8333,
+  "log_verosimilitud": -2.9114,
+  "log_verosimilitud_uniforme": -1.7918,
+  "orden": [
+   "Sol",
+   "Pincoya",
+   "Yipio",
+   "Luana",
+   "Mariela",
    "Tamara"
   ]
  },
  "apuesta": {
-  "p_del_eliminado": 0.213,
-  "puesto": 3,
-  "de": 5,
-  "acerto": false,
-  "brier": 0.8459,
-  "brier_uniforme": 0.8,
-  "log_verosimilitud": -1.5465,
-  "log_verosimilitud_uniforme": -1.6094,
+  "p_del_eliminado": 0.3703,
+  "puesto": 1,
+  "de": 6,
+  "acerto": true,
+  "brier": 0.4957,
+  "brier_uniforme": 0.8333,
+  "log_verosimilitud": -0.9934,
+  "log_verosimilitud_uniforme": -1.7918,
   "orden": [
-   "Luana",
    "Tamara",
-   "Majluf",
-   "Charlotte",
-   "Zilli"
+   "Yipio",
+   "Mariela",
+   "Luana",
+   "Pincoya",
+   "Sol"
   ]
  },
  "congeladas": {
-  "modelo": "2026-08-16",
-  "apuesta": "2026-08-17T20:05-03:00"
+  "modelo": "2026-08-18",
+  "dos_tiempos": "2026-08-18",
+  "apuesta": "2026-08-23T05:51-0300"
  }
 }

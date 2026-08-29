@@ -1,132 +1,70 @@
 {
- "generado": "2026-08-11",
+ "generado": "2026-08-29",
  "fase": "negativo",
- "fuente": "comentarios de los videos oficiales del programa en YouTube",
- "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
- "limites": "Son los comentarios de los videos del propio programa, o sea de un público que ya entró a mirarlo. No es una muestra de nada y no se pondera. Y quien nombra a alguien sin marca de signo queda sin clasificar, que no es lo mismo que indiferente. El léxico no entiende la negación ni a quién apunta cada frase: de los comentarios con signo, casi tres de cada diez nombran a más de una persona y les reparten el mismo signo a todas, y uno que defiende a alguien con palabras duras cae del lado equivocado. Por eso los números están acá y no dentro de ninguna predicción.",
+ "fuente": "Nueve videos del canal oficial de Gran Hermano Argentina subidos entre el 26 y el 29 de agosto: la última gala de nominación, la expulsión de Campanita, la noche de los ex y los cortes de la semana.",
+ "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» cambia de signo con la fase de la placa, y esta semana es negativa, así que «Pincoya al 9009» cuenta en contra de Pincoya.",
+ "limites": "Son los comentarios de los videos del programa, no del país: quien comenta ahí no es una muestra de quien vota. El léxico no entiende la negación ni a quién apunta cada frase, y uno que defiende a alguien con palabras duras cae del lado equivocado. Los volúmenes NO se comparen entre jugadoras: Pincoya y Yipio están en el título de varios de estos videos y Charlotte y Mariela casi no aparecen, así que la diferencia de menciones mide de qué habla el canal tanto como de qué habla la gente. Y una advertencia sobre la reproducibilidad: se guardó el texto de cada comentario pero no la etiqueta de signo que se le puso, así que estos números no se pueden rehacer desde los archivos publicados. Es un agujero declarado, y se tapa la semana que viene.",
  "no_alcanzables": [
-  "las respuestas al posteo oficial de X, que son 372 y no publican texto",
-  "los comentarios de Instagram, que el marco de incrustación no trae",
-  "Reddit, que responde 403 a cualquier petición anónima"
+  "Las respuestas al posteo oficial que pregunta quién debe irse: ninguna vía pública devuelve su texto",
+  "Los comentarios de Instagram: el marco de incrustación no los trae",
+  "Reddit: devuelve 403 a cualquier petición anónima"
  ],
- "total": 490,
- "nombran_a_alguien": 160,
- "con_signo": 56,
+ "total": 2062,
+ "nombran_a_alguien": 1200,
+ "con_signo": 982,
  "por_jugadora": {
-  "Sol": {
-   "contra": 17,
-   "favor": 9,
-   "sin_signo": 36
-  },
-  "Mariela": {
-   "contra": 5,
-   "favor": 0,
-   "sin_signo": 20
-  },
   "Pincoya": {
-   "contra": 13,
-   "favor": 6,
-   "sin_signo": 25
+   "contra": 494,
+   "favor": 102,
+   "sin_signo": 93
   },
   "Yipio": {
-   "contra": 5,
-   "favor": 4,
-   "sin_signo": 18
+   "contra": 190,
+   "favor": 145,
+   "sin_signo": 74
   },
-  "Tamara": {
-   "contra": 4,
-   "favor": 0,
-   "sin_signo": 7
+  "Mariela": {
+   "contra": 12,
+   "favor": 2,
+   "sin_signo": 20
   },
-  "Luana": {
-   "contra": 5,
-   "favor": 9,
-   "sin_signo": 19
+  "Charlotte": {
+   "contra": 10,
+   "favor": 27,
+   "sin_signo": 31
   }
  },
  "ejemplos": {
-  "Sol": [
-   {
-    "texto": "La mayoría de los q entran apoyan a solange al 9009",
-    "signo": "contra"
-   },
-   {
-    "texto": "Pincoya vs Sol al 9009 afuera las dos aburren",
-    "signo": "contra"
-   },
-   {
-    "texto": "Vamos Franco..... AGUANTE  SOL 🇦🇷 THE QUEEN 👑",
-    "signo": "favor"
-   }
-  ],
-  "Mariela": [
-   {
-    "texto": "Lo que le hicieron a Mariela un horror, me dió pena.\nLa llaman y le dicen que está de viaje, cualquier boludez pero no hacerla esperar. \nPatético lo que han hecho.",
-    "signo": "contra"
-   },
-   {
-    "texto": "ES HORRIBLE LO QUE LE HICIERON A MARIELA Y A PINCOYA 🚫‼️🚫‼️🚫‼️🚫‼️🚫‼️ HO RRI BLE",
-    "signo": "contra"
-   },
-   {
-    "texto": "yo creo que lo de Mariela tiene su que. No lo veo mal intencionado solo que quizás como Mariela quería “casarse” con él Turco y ya sabemos que ha estado haciendo afuera con otras m",
-    "signo": "contra"
-   }
-  ],
   "Pincoya": [
    {
-    "texto": "Pincoya y su Acompañante al 9009 afuera",
-    "signo": "contra"
+    "texto": "Pincoya al 9009 por agresiva justicia por Campanita"
    },
    {
-    "texto": "Pincoya vs Sol al 9009 afuera las dos aburren",
-    "signo": "contra"
-   },
-   {
-    "texto": "FUERA SOL PINCOYA ZILLY!!! ESTE LUNES SE VA SOL A GRABARSE COMO EN MUNDIAL!!!!! VAMOSSSSSSS!!!!!!!",
-    "signo": "contra"
+    "texto": "AGUANTE PINCOYA, MIENTRAS MÁS TE MALTRATAN, MÁS TE APOYAREMOS."
    }
   ],
   "Yipio": [
    {
-    "texto": "Lo que si se Lee es la info que le pasó CINCIA a Solange que bajo el perfil.\nSe mando a guardar y desaparece.\nMando a sus caniches a desgastar a YiPIO y Tamara. Demasiado obvio.\nSe",
-    "signo": "contra"
+    "texto": "Yipio al 9009! No merece estar en la final!"
    },
    {
-    "texto": "Vamos yipio a la final.versus, pincoya.VERSUS",
-    "signo": "favor"
-   },
-   {
-    "texto": "Saquen a Yipio es una Patotera y no merece estar en gran hermano",
-    "signo": "favor"
+    "texto": "Yipio es la mejor"
    }
   ],
-  "Tamara": [
+  "Charlotte": [
    {
-    "texto": "Lo que si se Lee es la info que le pasó CINCIA a Solange que bajo el perfil.\nSe mando a guardar y desaparece.\nMando a sus caniches a desgastar a YiPIO y Tamara. Demasiado obvio.\nSe",
-    "signo": "contra"
+    "texto": "Charlotte es un encanto de mujer, se hace querer"
    },
    {
-    "texto": "Tamara fue re falsa ,Pincoya fue la única que le hablaba los demás pasaban de ella por qué es una mina odiosa ,complicada hasta dopada la tienen y pincoyo la cuido ,la levanto y qu",
-    "signo": "contra"
-   },
-   {
-    "texto": "se supone  que la boda debe ser para los finalistas, no este desfile de plantas innecesario. Pincoya merece más. TAMARA AL 9009",
-    "signo": "contra"
+    "texto": "Fuera Charlotte"
    }
   ],
-  "Luana": [
+  "Mariela": [
    {
-    "texto": "Pincoya se dió cuenta que sol está al límite..Luana quiere que se vaya yipio y sol...",
-    "signo": "contra"
+    "texto": "MARIELA AL 9009"
    },
    {
-    "texto": "Falsa Pincoya, le quiere lavar la cabeza a Luana, le molesta estar en placa, aunque diga q no le molesta, después se da vuelta y le clava con la serpiente un cuchillo a Luana",
-    "signo": "contra"
-   },
-   {
-    "texto": "conoce muy bién a Luana,genia Pincoya",
-    "signo": "favor"
+    "texto": "CHAU MARIELA"
    }
   ]
  }

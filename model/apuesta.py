@@ -316,10 +316,18 @@ def main():
     # La llamada y sus comprobaciones se arman ACA y no despues: pegarlas al
     # JSON con un guion aparte fue exactamente lo que las borro la primera vez
     # que se volvio a generar el archivo.
+    # Las visitas que ya salieron no cuentan: quien no tiene visita no se lleva
+    # a nadie. Sin este filtro la llamada decia «y se lleva a Campanita» dos
+    # dias despues de que la expulsaran.
     duplas = {}
     for t in ((_leer("reingresos.json").get("visitas") or {}).get("tandas") or []):
+        idas = {x["quien"] for x in ((t.get("salidas") or {}).get("expulsadas") or [])}
+        idas |= {x["quien"] for x in ((t.get("salidas") or {}).get("con_la_eliminada") or [])}
         for a_, b_ in (t.get("duplas") or []):
-            duplas[a_] = b_
+            if b_ in idas:
+                duplas.pop(a_, None)
+            else:
+                duplas[a_] = b_
     salida["llamada"] = {
         "quien": orden[0],
         "frase": "Esta noche se va " + orden[0] + ".",

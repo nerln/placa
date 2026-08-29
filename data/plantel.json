@@ -1,31 +1,11 @@
 {
  "_nota": "Plantel vigente y atributos que consume el modelo. Este archivo es el que edita model/actualizar.py despues de cada gala: saca a quien fue eliminado, recalcula las propensiones de nominacion y deja el resto intacto. Nada de esto vive ya dentro del codigo.",
- "actualizado": "2026-08-18",
+ "actualizado": "2026-08-24",
  "edicion": "Gran Hermano Argentina: Generación Dorada",
  "temporada": 13,
  "estreno": "2026-02-23",
  "premio": "AR$ 70.000.000 en Mercado Pago + vivienda + moto Motomel + un año de cerveza Amstel",
  "jugadores": [
-  {
-   "apodo": "Tamara",
-   "nombre": "Tamara Paganini",
-   "edad": 52,
-   "ciudad": "Buenos Aires",
-   "provincia": "Buenos Aires",
-   "pais": "AR",
-   "ingreso": "2026-03-30",
-   "previa": "GH Argentina 1 (2001) · subcampeona, 112 días",
-   "papel": "La leyenda. Emblema de la edición que celebra los 25 años del formato.",
-   "placas_recientes": 3,
-   "votos_recientes": 14,
-   "bono_fulminante": 0.0,
-   "genero": "f",
-   "redes": {
-    "ig": "tamarapaganini",
-    "conf": "alta",
-    "verificado": "2026-08-11"
-   }
-  },
   {
    "apodo": "Pincoya",
    "nombre": "Jennifer «Pincoya» Galvarini",
@@ -36,7 +16,7 @@
    "ingreso": "2026-02-23",
    "previa": "GH Chile 1 (2023) · finalista, 25,4%",
    "papel": "Primera chilena en el formato argentino. Récord de permanencia de la edición.",
-   "placas_recientes": 3,
+   "placas_recientes": 4,
    "votos_recientes": 5,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -56,7 +36,7 @@
    "ingreso": "2026-05-20",
    "previa": "GH VIP España 4 (2016) · 9.ª",
    "papel": "La mediática. Fandom propio heredado, socialmente aislada dentro de la casa.",
-   "placas_recientes": 3,
+   "placas_recientes": 4,
    "votos_recientes": 1,
    "bono_fulminante": 0.45,
    "genero": "f",
@@ -118,7 +98,7 @@
    "ingreso": "2026-05-20",
    "previa": "Sin ediciones previas · volvió por repechaje con 35,6%",
    "papel": "Comediante uruguaya. Líder e inmune de la semana 24.",
-   "placas_recientes": 6,
+   "placas_recientes": 7,
    "votos_recientes": 11,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -139,7 +119,7 @@
    "ingreso": "2026-05-20",
    "previa": "Sin ediciones previas",
    "papel": "Perfil bajo en el voto. Nunca fue candidata seria a eliminación.",
-   "placas_recientes": 4,
+   "placas_recientes": 5,
    "votos_recientes": 12,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -172,6 +152,32 @@
   }
  ],
  "eliminados_recientes": [
+  {
+   "apodo": "Tamara",
+   "fecha": "2026-08-24",
+   "modo": "eliminado",
+   "detalle": "eliminado en la gala 30",
+   "ficha": {
+    "apodo": "Tamara",
+    "nombre": "Tamara Paganini",
+    "edad": 52,
+    "ciudad": "Buenos Aires",
+    "provincia": "Buenos Aires",
+    "pais": "AR",
+    "ingreso": "2026-03-30",
+    "previa": "GH Argentina 1 (2001) · subcampeona, 112 días",
+    "papel": "La leyenda. Emblema de la edición que celebra los 25 años del formato.",
+    "placas_recientes": 3,
+    "votos_recientes": 14,
+    "bono_fulminante": 0.0,
+    "genero": "f",
+    "redes": {
+     "ig": "tamarapaganini",
+     "conf": "alta",
+     "verificado": "2026-08-11"
+    }
+   }
+  },
   {
    "apodo": "Majluf",
    "fecha": "2026-08-17",

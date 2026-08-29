@@ -1,13 +1,51 @@
 {
  "_nota": "Videos oficiales del programa de los que se recogen comentarios. Se eligen los de esta semana y de esta placa: los de semanas anteriores hablan de otra gente. Ampliar la lista amplía el corpus, y conviene decirlo cuando se amplía.",
- "recogido": "2026-08-23",
+ "recogido": "2026-08-29",
  "videos": [
-  {"id": "SwU2iYj6E4k", "que": "La noche de los ex, programa 153 del 21-08-26"},
-  {"id": "AZLpBK2P1w4", "que": "Noche de bodas y teléfono dorado, programa 152 del 19-08-26"},
-  {"id": "hKxVQZa0jWQ", "que": "23.ª gala de nominación, programa 151 del 18-08-26: la placa vigente"},
-  {"id": "sCApqYHuTB4", "que": "Tamara contra Pincoya: presunto escupitajo y amenazas"},
-  {"id": "_h_h5-8isH0", "que": "Todos acusaron a Luana por un nuevo robo de cigarrillos"},
-  {"id": "O3kQJSYJ0pg", "que": "Tamara al combate: ahora es el turno de enfrentar a Sol"},
-  {"id": "e-91tQcVli0", "que": "26.ª gala de eliminación, programa 150 del 17-08-26"}
+  {
+   "id": "IhA92DtCcr8",
+   "titulo": "LA ÚLTIMA GALA DE NOMINACIÓN · programa 157",
+   "fecha": "2026-08-26"
+  },
+  {
+   "id": "qiwru7DLihk",
+   "titulo": "Así quedó la placa tras la última gala de nominación",
+   "fecha": "2026-08-27"
+  },
+  {
+   "id": "f2fS7CIIiRs",
+   "titulo": "Sol pide apoyo para Pincoya y sacar a Yipio",
+   "fecha": "2026-08-27"
+  },
+  {
+   "id": "RUncI_Ma5HI",
+   "titulo": "Tamara Paganini en el debate y la previa de la nominación",
+   "fecha": "2026-08-26"
+  },
+  {
+   "id": "fTAfGDQDA9M",
+   "titulo": "CAMPANITA ATRINCHERADA · programa 158",
+   "fecha": "2026-08-27"
+  },
+  {
+   "id": "WF9pbJOVeGM",
+   "titulo": "Gran Hermano expulsó a Campanita y Danelik",
+   "fecha": "2026-08-28"
+  },
+  {
+   "id": "JS9o4Rc1aJM",
+   "titulo": "Pincoya se la juega en el versus con Yipio",
+   "fecha": "2026-08-28"
+  },
+  {
+   "id": "nUQt94L0RiU",
+   "titulo": "Pincoya reafirma que es la única que merece ganar",
+   "fecha": "2026-08-28"
+  },
+  {
+   "id": "wJna5VuyEPc",
+   "titulo": "LA NOCHE DE LOS EX · programa 159",
+   "fecha": "2026-08-28"
+  }
  ]
 }

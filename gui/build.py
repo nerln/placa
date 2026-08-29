@@ -357,6 +357,7 @@ def main():
         "actualidad": act,
         "historial_pronostico": corridas,
         "congeladas": congeladas,
+        "declaraciones": _hp.get("declaraciones") or [],
         "archivo": archivo,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},
         "eliminados": plantel["eliminados_recientes"],

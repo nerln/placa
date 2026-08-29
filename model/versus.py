@@ -151,6 +151,14 @@ def dos_tiempos(pesos, theta, n_sims=N_SIMS, semilla=SEMILLA):
     return {n: float(cuenta[i] / cuenta.sum()) for i, n in enumerate(nombres)}
 
 
+def _versus_de(gala):
+    """Los dos nombres del mano a mano de esa gala, si lo hubo."""
+    for g in _leer("galas.json").get("galas", []):
+        if g.get("gala") == gala:
+            return list((g.get("versus") or {}).keys())
+    return []
+
+
 def backtest():
     """Las mismas siete galas del backtest del modelo, con los dos tiempos.
 
@@ -168,9 +176,20 @@ def backtest():
         p2 = dos_tiempos(pesos, theta)
         orden2 = sorted(p2, key=lambda n: -p2[n])
         salio = f["eliminado"]
+        # A quien senalaba el modelo, y que le paso en el mano a mano de esa
+        # noche. Se guarda porque la pagina lo afirmaba en una frase escrita a
+        # mano — «llego al mano a mano cuatro veces y lo gano las cuatro» — que
+        # dejaba de ser cierta cada vez que se jugaba una gala mas, sin que
+        # nada se enterara. Es el hallazgo central de la variante de dos
+        # tiempos: si tiene que salir de algun lado, que salga de los datos.
+        favorito = max(pesos, key=pesos.get) if pesos else None
+        par = _versus_de(f["gala"])
         filas.append({
             "gala": f["gala"], "fecha": f["fecha"], "eliminado": salio,
             "n_placa": f["n_placa"], "versus_previos": len(vs_previos),
+            "modelo_favorito": favorito,
+            "favorito_al_versus": bool(par and favorito in par),
+            "favorito_gano_versus": bool(par and favorito in par and favorito != salio),
             "modelo_puesto": f["puesto_del_modelo"], "modelo_p": f["p_modelo"],
             "dos_tiempos_puesto": orden2.index(salio) + 1,
             "dos_tiempos_p": round(p2[salio], 4),

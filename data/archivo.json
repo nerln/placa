@@ -20,6 +20,24 @@
     "Tamara",
     "Luana"
    ]
+  },
+  {
+   "gala": 31,
+   "fecha_gala": "2026-08-31",
+   "congelado": "2026-08-29T09:18-0300",
+   "archivo": "galas/31.html",
+   "historial": "https://github.com/nerln/placa/commits/main/web/galas/31.html",
+   "llamadas": {
+    "modelo": "Yipio 30,5%",
+    "dos tiempos": "Yipio 28,9%",
+    "apuesta": "Yipio 34,2%"
+   },
+   "placa": [
+    "Charlotte",
+    "Yipio",
+    "Pincoya",
+    "Mariela"
+   ]
   }
  ]
 }

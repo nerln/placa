@@ -56,8 +56,13 @@
   "fuente": "",
   "fecha": "",
   "n_nominal": 0,
-  "gala": 29,
-  "placa": [],
+  "gala": 30,
+  "placa": [
+   "Charlotte",
+   "Yipio",
+   "Pincoya",
+   "Mariela"
+  ],
   "cuota": {},
   "resto_agregado": 0.0,
   "resto_miembros": []

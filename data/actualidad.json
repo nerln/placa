@@ -164,35 +164,43 @@
   }
  },
  "tendencias": {
-  "_nota": "Posiciones del top-50 de X en Argentina archivadas por trends24, barrido de las 24 tarjetas horarias. «mejor» es el puesto más alto que alcanzó el término y «horas» cuántas de las 24 estuvo dentro del top-50. La ventana cae entera en los dos días previos a la gala.",
-  "ventana": "22/08 12:20 → 23/08 07:21 UTC",
-  "desde": "2026-08-22",
-  "hasta": "2026-08-23",
+  "_nota": "Los términos de la placa vigente que estuvieron en el top-50 argentino durante la ventana observada. Es la misma medición que dibuja el termómetro: vive acá porque model/campana.py lee de este campo.",
+  "ventana": "28/08 16:28 → 29/08 11:06 UTC",
+  "desde": "2026-08-28T13:28-03:00",
+  "hasta": "2026-08-29T08:06-03:00",
   "fase": "negativo",
+  "_nota_ventana": "La ventana REALMENTE observada, 18 horas y media, no la que va desde la nominación. trends24 publica sólo las últimas 24 horas y su archivo es de suscripción: los días 26 y 27 no se pudieron leer. Declarar una ventana más ancha sería afirmar haber mirado dos días que nadie miró.",
   "terminos": [
    {
-    "txt": "TAMARA AL 9009",
-    "mejor": 1,
+    "txt": "PINCOYA AL 9009",
+    "mejor": 2,
     "horas": 20,
     "tipo": "campaña de voto",
-    "nota": "Veinte de las veinticuatro horas dentro del top-50, y el primer puesto del país. Es la campaña más sostenida desde la de Hanssen, que se cumplió."
+    "nota": "Veinte horas dentro del top-50 y segundo puesto del país. Es la consigna con más horas de la placa, y arrancó después de la expulsión de Campanita."
    },
    {
-    "txt": "SOL AL 9009",
-    "mejor": 30,
-    "horas": 13,
+    "txt": "YIPIO AL 9009",
+    "mejor": 1,
+    "horas": 17,
     "tipo": "campaña de voto",
-    "nota": "Trece horas arriba pero sin pasar nunca del puesto 30. La semana pasada llegó al quinto."
+    "nota": "Llegó al primer puesto del país. Ya estaba activa la noche del 26, antes de la ventana que se pudo leer, así que sus horas reales son más de 17."
    },
    {
-    "txt": "Pincoya",
-    "mejor": 33,
-    "horas": 5,
-    "tipo": "genérico",
-    "nota": "El nombre suelto, después del cruce con Tamara."
+    "txt": "mariela al 9009",
+    "mejor": 30,
+    "horas": 9,
+    "tipo": "campaña de voto",
+    "nota": "Marginal y de fuente única: nunca pasó del puesto 30 y no la registra ningún otro rastreador."
    }
   ],
-  "variantes": "«LUANA AL 9009» apareció también en minúsculas como término aparte. trends24 los cuenta separados; acá se toma el más alto de los dos y no se suman, que sería contar dos veces la misma campaña.",
+  "variantes": [],
+  "oficial": {
+   "txt": "#GeneraciónDorada",
+   "apariciones": 0,
+   "nota": "El hashtag que Telefe pone en todos sus posts no entró ni una vez al top-50 en los 24 cortes de la ventana. Lo que trendea son las campañas del fandom.",
+   "cortes": 24,
+   "_nota_cortes": "Cuántas tarjetas horarias del top-50 se miraron en la ventana. Estaba escrito a mano en la página («21 cortes») y quedó viejo en cuanto cambió la ventana."
+  },
   "precedente": [
    {
     "txt": "HANSSEN AL 9009",
@@ -202,10 +210,12 @@
     "nota": "Fue la tendencia más longeva de la jornada y pedía su eliminación. Salió con el 58%."
    }
   ],
-  "oficial": {
-   "txt": "#GeneraciónDorada",
-   "apariciones": 0,
-   "nota": "El hashtag que Telefe pone en todos sus posts no entró ni una vez al top-50 en los 21 snapshots de la ventana. Lo que trendea son las campañas del fandom."
+  "_nota_momento": "Las horas son un piso: trends24 publica gratis sólo las últimas 24 horas y su archivo es de suscripción, así que los días 26 y 27 no se pudieron leer.",
+  "sin_consigna": {
+   "quienes": [
+    "Charlotte"
+   ],
+   "_nota": "«CHARLOTTE AL 9009» no aparece en ninguna de las 24 tarjetas horarias de la ventana ni en el segundo rastreador. Lo que devuelven las búsquedas con ese texto es de la placa anterior, fechado el 6 y el 7 de agosto: se descartó por fecha leída, no por criterio. Que no haya campaña es un dato, no un hueco."
   }
  },
  "bandos": {
@@ -282,136 +292,163 @@
   "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
  },
  "proxima_gala": {
-  "_nota": "Cómo se resuelve esta placa. A diferencia de la anterior, esta es negativa de punta a punta: no hay fase positiva que baje gente antes de la gala.",
-  "gala": 30,
+  "_nota": "La última placa de la edición. Es negativa de punta a punta y tiene una particularidad: la líder de la semana está adentro. Pincoya usó su beneficio para bajar a otras dos, no a sí misma.",
+  "gala": 31,
   "tipo": "eliminación",
-  "fecha": "2026-08-24",
+  "fecha": "2026-08-31",
+  "fecha_nominacion": "2026-08-26",
   "placa": [
-   "Sol",
-   "Mariela",
-   "Pincoya",
+   "Charlotte",
    "Yipio",
-   "Tamara",
-   "Luana"
+   "Pincoya",
+   "Mariela"
   ],
   "libres": [
-   "Charlotte",
+   "Sol",
+   "Luana",
    "Zilli"
   ],
+  "finalistas": {
+   "_nota": "Tres ya no pueden ser eliminadas por voto. No es inmunidad de una semana: es la final.",
+   "quienes": [
+    "Zilli",
+    "Sol",
+    "Luana"
+   ],
+   "como": "Pincoya, líder de la semana, usó el beneficio de bajar a dos de la placa y bajó a Sol y a Luana; eso las confirmó finalistas junto a Zilli, que ya estaba fuera de riesgo.",
+   "fuente": "https://www.infobae.com/teleshow/2026/08/27/gran-hermano-generacion-dorada-definio-a-sus-tres-finalistas-quienes-lucharan-por-el-premio-mayor-y-las-ultimas-nominadas/"
+  },
   "lider": {
-   "quien": "Luana",
-   "semana": 26,
+   "quien": "Pincoya",
+   "semana": 27,
    "en_placa": true,
-   "detalle": "Le ganó el liderazgo a Sol y eso le dio votos duplicados, no inmunidad. Puso sus cuatro puntos contra Mariela y terminó nominada igual."
+   "detalle": "Bajó de la placa a Sol y a Luana, y con eso las hizo finalistas. A sí misma no podía bajarse: quedó nominada."
   },
   "fases": [
    {
-    "desde": "2026-08-18",
-    "hasta": "2026-08-24",
+    "desde": "2026-08-26",
+    "hasta": "2026-08-31",
     "signo": "negativo",
-    "desde_hora": "2026-08-19T00:30-03:00",
-    "hasta_hora": "2026-08-24T22:15-03:00",
+    "desde_hora": "2026-08-27T00:30-03:00",
+    "hasta_hora": "2026-08-31T22:15-03:00",
     "que": "Se vota a quien se quiere eliminar.",
-    "detalle": "Sin fase positiva: la placa es negativa desde que se armó hasta la gala del lunes."
+    "detalle": "Sin fase positiva: la placa es negativa desde que se armó hasta la gala."
    }
   ],
-  "regla": "La eliminación sigue siendo en dupla: quien se va se lleva a la visita que había elegido.",
+  "regla": "La eliminación seguía siendo en dupla, pero de las cuatro de esta placa sólo dos conservan visita: a Mariela le expulsaron la suya el 27 de agosto.",
   "pesos_nominacion": {
    "jugadora": 2,
    "visita": 1,
-   "extra": "Luana tenía votos duplicados por el liderazgo, los dos votos de Tamara contra Luana fueron anulados por un poder que Majluf conservó al ser eliminada, y esta semana nadie hizo nominación espontánea."
+   "extra": "Martín Rodríguez atendió el teléfono dorado y con su dupla Zilli pudieron ver todas las nominaciones. El voto de Sol fue anulado por Tamara."
   },
   "fuentes": [
-   "https://www.infobae.com/teleshow/2026/08/19/los-exjugadores-de-gran-hermano-generacion-dorada-tuvieron-que-votar-quienes-son-los-nominados-de-la-semana/",
-   "https://www.pronto.com.ar/television/2026/8/19/asi-quedo-la-placa-de-nominados-de-gran-hermano-generacion-dorada-se-va-una-jugadora-fuerte-262456.html"
+   "https://www.mitelefe.com/gran-hermano/noticias/gran-hermano-generacion-dorada-tuvo-su-ultima-gala-de-nominacion-asi-quedo-la-placa-pid2564180",
+   "https://www.infobae.com/teleshow/2026/08/27/gran-hermano-generacion-dorada-definio-a-sus-tres-finalistas-quienes-lucharan-por-el-premio-mayor-y-las-ultimas-nominadas/"
   ]
  },
  "termometro_placa": {
-  "_nota": "Barrido de las 24 tarjetas horarias de trends24.in/argentina, tomado el 23 de agosto de 2026 a las 04.21 de la Argentina, un día antes de la gala. Archivo de terceros, no una medición propia. Mide cuánta gente escribe, que no es cuánta gente vota.",
-  "medido": "2026-08-23T04:21-03:00",
+  "_nota": "Las consignas «X AL 9009» que circularon para esta placa. El signo NO está en la consigna: lo pone la placa. Ésta es negativa, así que hoy piden eliminar.",
   "fase": "negativo",
+  "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». Esta placa es negativa de punta a punta, así que estas consignas piden eliminar.",
+  "medido": "2026-08-29T08:06-03:00",
+  "ventana": {
+   "desde": "2026-08-28T13:28-03:00",
+   "hasta": "2026-08-29T08:06-03:00",
+   "_nota": "La ventana REALMENTE observada, 18 horas y media, no la que va desde la nominación. trends24 publica sólo las últimas 24 horas y su archivo es de suscripción: los días 26 y 27 no se pudieron leer. Declarar una ventana más ancha sería afirmar haber mirado dos días que nadie miró."
+  },
+  "horas_son_piso": true,
+  "_nota_horas": "Las horas son un PISO y no un total: sólo cuentan las tarjetas dentro de la ventana de 24 horas que el sitio publica gratis. La consigna de Yipio ya estaba activa la noche del 26, así que sus horas reales son más.",
   "consignas": [
    {
-    "termino": "TAMARA AL 9009",
-    "pico": 1,
+    "termino": "PINCOYA AL 9009",
+    "quien": "Pincoya",
+    "pico": 2,
     "horas": 20,
-    "ahora": {
-     "cuando": "23/08 04:21",
-     "puesto": 2
-    }
+    "fuentes": 2,
+    "fuente": "trends24.in/argentina, bloque de estadísticas del propio sitio: «PINCOYA AL 9009 for 20 hrs». Segundo rastreador: twitter-trending.com/argentina."
    },
    {
-    "termino": "SOL AL 9009",
+    "termino": "YIPIO AL 9009",
+    "quien": "Yipio",
+    "pico": 1,
+    "horas": 17,
+    "fuentes": 2,
+    "fuente": "trends24.in/argentina, bloque de estadísticas del propio sitio: «YIPIO AL 9009 for 17 hrs». Segundo rastreador: twitter-trending.com/argentina."
+   },
+   {
+    "termino": "mariela al 9009",
+    "quien": "Mariela",
     "pico": 30,
-    "horas": 13,
-    "ahora": {
-     "cuando": "23/08 04:21",
-     "puesto": 30
-    }
+    "horas": 9,
+    "fuentes": 1,
+    "marginal": true,
+    "fuente": "trends24.in/argentina, nueve tarjetas horarias; mejor puesto 30. FUENTE ÚNICA y consigna marginal: no la registra ningún otro rastreador, y según cómo se cuenten las tarjetas duplicadas del sitio son 9 o 10 horas."
    }
   ],
-  "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». Esta placa es negativa de punta a punta, así que estas consignas piden eliminar.",
-  "el_detalle": "Una sola consigna domina la ventana, y con la misma forma que tuvo la de Hanssen: primer puesto del país y veinte horas arriba. Aquella se cumplió.",
-  "fuente": "https://trends24.in/argentina/"
+  "sin_consigna": {
+   "quienes": [
+    "Charlotte"
+   ],
+   "_nota": "«CHARLOTTE AL 9009» no aparece en ninguna de las 24 tarjetas horarias de la ventana ni en el segundo rastreador. Lo que devuelven las búsquedas con ese texto es de la placa anterior, fechado el 6 y el 7 de agosto: se descartó por fecha leída, no por criterio. Que no haya campaña es un dato, no un hueco."
+  },
+  "aviso": "Los dos rastreadores son espejos de la misma fuente, que es X: contar dos no es tener dos mediciones independientes del mundo."
  },
  "medidas_sociales": {
-  "_nota": "Tres mediciones publicadas para esta placa, las tres de esta semana. Ninguna entra al modelo: dos son encuestas de X sin ficha técnica y la tercera mide imagen, no intención de voto. Se publican al lado del pronóstico, con lo que acertó cada una.",
+  "_nota": "Encuestas publicadas sobre esta placa. Las cinco que se encontraron preguntan lo mismo —a quién eliminar— así que en todas el peor es el que MÁS junta.",
+  "lectura": "Las mediciones no coinciden y no es un error de signo: GH Encuestas pone a Pincoya primera y Trezeguet pone a Yipio. Son muestras distintas de la misma pregunta.",
   "fuentes": [
    {
-    "id": "bongiorno",
-    "quien": "Fefe Bongiorno",
-    "donde": "X",
-    "fecha": "2026-08-21",
-    "mide": "imagen positiva",
-    "unidad": "%",
-    "historial": "Es el único agregador de la temporada con historial: acertó el eliminado en 5 de 5 galas documentadas",
-    "aviso": "Mide imagen de la casa, no intención de voto sobre esta placa. Sólo tres de las ocho tienen imagen positiva.",
+    "id": "ghencuestas",
+    "quien": "GH Encuestas",
+    "donde": "X · @gh_trivia",
+    "fecha": "2026-08-27",
+    "mide": "voto negativo",
+    "n": "más de 35.000 votos",
     "valores": {
-     "Pincoya": 78,
-     "Sol": 74,
-     "Luana": 23,
-     "Mariela": 22,
-     "Yipio": 20,
-     "Tamara": 15
-    }
+     "Pincoya": 53,
+     "Mariela": 23,
+     "Yipio": 21,
+     "Charlotte": 3
+    },
+    "url": "https://x.com/gh_trivia/status/2093155390523376048",
+    "historial": "Es la que más volumen declara de las tres, y la única cuyos porcentajes se leyeron en la publicación original y no en una nota que la cita",
+    "aviso": "Encuesta abierta en redes: la vota quien quiere y no es una muestra."
    },
    {
     "id": "trezeguet",
     "quien": "Gastón Trezeguet",
-    "donde": "X",
-    "fecha": "2026-08-21",
+    "donde": "X · @GastonTrezeguet",
+    "fecha": "2026-08-27",
     "mide": "voto negativo",
-    "unidad": "%",
-    "historial": "Sin historial documentado en esta página",
-    "aviso": "Ofrecía sólo tres nombres más «otra», así que reparte entre menos opciones que las demás. 18.400 votos.",
+    "n": "",
     "valores": {
-     "Tamara": 53.7,
-     "Sol": 39.7,
-     "Yipio": 4.6
-    }
-   },
-   {
-    "id": "ghencuestas",
-    "quien": "GH Encuestas",
-    "donde": "X",
-    "fecha": "2026-08-21",
-    "mide": "voto negativo",
-    "unidad": "%",
-    "historial": "Erró las dos galas documentadas, las dos veces poniendo a Sol primera",
-    "aviso": "Vuelve a poner a Sol primera, que es exactamente lo que hizo las dos veces que falló.",
-    "valores": {
-     "Sol": 43.5,
-     "Tamara": 15.2,
-     "Mariela": 14.2,
-     "Yipio": 13.9,
-     "Pincoya": 10.3,
-     "Luana": 2.7
-    }
+     "Yipio": 52.9,
+     "Pincoya": 27.4,
+     "Mariela": 18.9,
+     "Charlotte": 0.9
+    },
+    "url": "https://la100.cienradios.com/espectaculos/quien-sera-el-proximo-eliminado-de-gran-hermano-segun-las-encuestas-3/",
+    "historial": "Panelista del debate del programa; publica su encuesta cada semana",
+    "aviso": "Los porcentajes no se pudieron leer en la publicación original: los reproduce una sola nota, La 100, del 28 de agosto. La encuesta es del 27."
    }
   ],
-  "lectura": "Las dos encuestas de voto negativo se contradicen: Trezeguet pone a Tamara con el 53,7% y GH Encuestas pone a Sol con el 43,5%. La que tiene historial de aciertos no es ninguna de las dos: es la de imagen, y deja a Tamara última de la casa con el 15%.",
-  "por_que_difieren": "Miden cosas distintas y sobre poblaciones distintas. El modelo lee el reparto de votos que Telefe cantó en las galas anteriores, que es dinero gastado en votar. Bongiorno mide si alguien cae bien. Las otras dos miden qué contesta quien está despierto y con ganas, y una de ellas ofrecía sólo tres nombres.",
-  "se_resuelve": "El lunes 24 se sabe. Queda anotado antes: el modelo dice Sol, las tendencias y la imagen dicen Tamara, y las tres predicciones de esta página están congeladas con fecha."
+  "descartadas": [
+   {
+    "quien": "Fefe Bongiorno",
+    "fecha": "2026-08-26",
+    "mide": "voto negativo",
+    "valores_publicados": {
+     "Yipio": 52,
+     "Charlotte": 31,
+     "Pincoya": 23.8,
+     "Mariela": 21
+    },
+    "por_que": "Los cuatro valores suman 127,8%, y en una pregunta de una sola respuesta eso no puede ser. Con Charlotte en 3,1% en vez de 31% suman 99,9 y encajaría con las otras dos mediciones, que la ponen en 3% y 0,9%: parece un punto decimal caído en el medio que la reproduce. No se publica como medición hasta ver la captura original.",
+    "url": "https://la100.cienradios.com/espectaculos/quien-sera-el-proximo-eliminado-de-gran-hermano-segun-las-encuestas-3/"
+   }
+  ],
+  "por_que_difieren": "Las dos encuestas preguntan lo mismo y contestan distinto, y no hay forma de saber cuál tiene razón antes del lunes. Son encuestas abiertas en redes: las vota quien quiere, cada cuenta llega a un público distinto, y una campaña organizada puede moverlas sin mover un solo voto real al 9009. La de GH Encuestas declara más de 35.000 votos y es la única cuyos porcentajes se leyeron en la publicación original; la de Trezeguet la reproduce una sola nota. Ninguna de las dos es una muestra de la Argentina.",
+  "se_resuelve": "El lunes a las 22.15 se sabe cuál de las dos estaba mirando bien, y el martes esta página publica el puntaje de las tres predicciones con la regla que está escrita desde antes."
  },
  "escenarios_gala": {
   "_nota": "Todo lo que puede pasar esta noche, separado en dos: lo que el modelo simula y lo que no. Lo primero son las cinco salidas posibles, cada una con lo que le hace a la carrera por el premio. Lo segundo son los canales por los que se va gente sin votación, que esta edición usó trece veces y el modelo no simula ninguna.",
@@ -455,5 +492,5 @@
    }
   ]
  },
- "videos_recogido": "2026-08-23"
+ "videos_recogido": "2026-08-29"
 }

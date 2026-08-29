@@ -105,8 +105,16 @@ def _proxima_gala(galas, a):
     inventaba una gala que no existio, y el registro de predicciones quedaba con
     dos numeros distintos para la misma noche.
     """
-    if a.gala:
-        return a.gala
+    # OJO: no se usa `a.gala`. `--gala` es el numero de la gala que se esta
+    # CARGANDO, o sea la que se acaba de jugar, y devolverla aca le ponia a la
+    # placa nueva el numero de la noche anterior. El 29 de agosto de 2026 eso
+    # dejo la placa del 31 rotulada «gala 30» y metio en el registro una
+    # prediccion congelada con el numero de una gala ya jugada, encima de la
+    # que de verdad se habia escrito antes. El registro es lo unico que
+    # sostiene el puntaje: una colision ahi no es un detalle.
+    #
+    # La gala que se acaba de cargar ya esta en `galas` cuando esto corre, asi
+    # que el maximo mas uno es la que viene.
     jugadas = [g.get("gala") or 0 for g in galas.get("galas", [])]
     return (max(jugadas) if jugadas else 0) + 1
 

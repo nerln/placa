@@ -23,23 +23,36 @@ No conviene guardarlas para el final.
 
 ---
 
-## Video 1 · «Le voy en contra a mi propio modelo»
+## Video 1 · «Se va Sol»
 
-El más fuerte de todos. Nadie publica que su modelo se equivoca antes de que se sepa.
+El de la gala de hoy, y el primero que ve alguien que no sabe nada. Engancha con
+el titular de la simulación y a los tres segundos lo da vuelta con las dos cosas
+que la simulación no mira.
 
-**Duración:** 22 s. **Gancho:** los primeros 2 s. **Base:** `tension`.
+**No es el modelo contra su autor.** Son dos instrumentos distintos sobre la
+misma pregunta, los dos publicados: la simulación mira los votos que ya se
+cantaron, y las dos señales miran lo que se ve desde afuera antes de que cierre
+la votación. Dicen cosas distintas y se muestran las dos.
+
+**Duración:** 24 s. **Gancho:** un nombre en los primeros dos segundos.
+**Base:** `tension`.
 
 | t | En pantalla | Voz en off / texto |
 | --- | --- | --- |
-| 0,0 | `ESTA NOCHE SE VA TAMARA` | Esta noche se va Tamara. |
-| 2,5 | `27,2%` grande, y debajo `Yipio 26,9 · Luana 25,8` | Veintisiete coma dos. Atrás Yipio con 26,9 y Luana con 25,8. |
-| 6,0 | `MI MODELO DICE OTRA COSA` | Mi propio modelo dice otra cosa. |
-| 9,0 | `SOL · 52,4%` | Dice Sol, con 52,4. |
-| 12,0 | `NO LE HAGO CASO` | No le hago caso. |
-| 14,5 | `en esa pregunta anda peor que el azar` | En esa pregunta su prueba hacia atrás anda peor que tirar una moneda. |
-| 18,0 | `si falla queda escrito` + url | Si falla queda escrito, con el número que puse. |
+| 0,0 | `SE VA SOL` grande, `dice la simulación` debajo | Se va Sol. |
+| 2,5 | `52,3%` / `de que salga esta noche` | Cincuenta y dos coma tres por ciento de que salga esta noche. |
+| 6,0 | `PERO` / `hay dos cosas que la simulación no mira` | Pero hay dos cosas que la simulación no mira. |
+| 9,5 | `«TAMARA AL 9009»` / `PUESTO 1` / `de las tendencias de Argentina` / `y 4 de la placa no tienen ninguna` | «Tamara al 9009» llegó al puesto uno de las tendencias de Argentina. Las otras cuatro de la placa no tienen ninguna campaña. |
+| 14,5 | `la única encuesta con historial` / `ACERTÓ 5 DE 5` / `y a Tamara la deja última` / `imagen 15 sobre 100` | El único encuestador con historial, que va cinco de cinco, la deja última: quince de imagen sobre cien. |
+| 19,0 | `las dos señales dicen` / `TAMARA` / url | Las dos señales dicen Tamara. |
 
-Números: `data/apuesta.json` · `llamada.quien`, `p_sale`, `modelo_dice`, `coinciden: false`.
+Números: `data/apuesta.json` · `modelo_dice` (el titular), `entradas.campana` y
+`entradas.imagen` (las dos señales) · `campana.indice` para el término exacto y
+el puesto que alcanzó, con su ventana horaria · `imagen_historial` para el 5 de 5.
+
+**Las dos frases que tienen que salir netas** son «puesto uno» y «cinco de
+cinco». Son las únicas dos cosas que alguien que no sabe nada puede verificar
+solo, en diez segundos.
 
 ---
 
@@ -185,6 +198,33 @@ no usar un dato que sí se tiene.
 | 14,0 | `meterla sin medirla sería inventar` | Meterla sin medirla sería inventar. |
 
 Números: `data/campana.json` · `entra_al_modelo`, `por_que_no`, `null_no_es_cero`.
+
+---
+
+## Video 9 · «Mi modelo no está roto, está al revés»
+
+El mejor material que dio esta corrida, y el que no puede publicar nadie más
+porque hace falta tener un backtest perdedor publicado para tenerlo.
+
+**Duración:** 25 s. **Base:** `tension`.
+
+| t | En pantalla | Voz en off / texto |
+| --- | --- | --- |
+| 0,0 | `MI MODELO NO ESTÁ ROTO` / `ESTÁ AL REVÉS` | Mi modelo no está roto. Está al revés. |
+| 3,0 | `un modelo roto da el azar` / `el mío da 0 de 7` | Un modelo roto da el azar. El mío da cero de siete. |
+| 7,0 | `2 DE 7` / `el azar esperaba 1,21` | Leído al revés habría acertado dos. El azar esperaba 1,21. |
+| 11,5 | `en el puesto 2,14` / `antes 4,71 · el azar 3,43` | Y el eliminado le cae en el puesto 2,14 en vez de 4,71. |
+| 16,0 | `elegí el signo DESPUÉS de ver los datos` | Elegí el signo después de ver los datos, así que no vale como resultado. |
+| 20,5 | `vale como apuesta` / `y no toco el modelo` | Vale como apuesta. La puntúo hacia adelante y no toco el modelo. |
+
+Números: `data/signo.json`, que produce `model/signo.py` a partir de
+`data/retro.json`. Nada escrito a mano.
+
+**El renglón que no se saca nunca.** «Elegí el signo después de ver los datos.»
+Sin eso el video es un truco: la permutación de la versión invertida es la misma
+prueba que condena al modelo al derecho, leída de la otra cola, así que no es
+evidencia nueva. Con ese renglón el video es una apuesta declarada, que es
+exactamente lo que esta cuenta vende.
 
 ---
 

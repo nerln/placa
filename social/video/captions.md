@@ -6,7 +6,7 @@ Uno por video, en el mismo orden. Van tal cual, sin hashtags de relleno.
 
 ## 1
 
-Le voy en contra a mi propio modelo. Él dice Sol con 52,4. Yo digo Tamara con 27,2. Los dos números están publicados desde antes de la gala.
+Se va Sol, dice la simulación: 52,3%. Hay dos señales que no mira. «TAMARA AL 9009» llegó al puesto 1 de tendencias en Argentina, y las otras cuatro de la placa no tienen ninguna. El encuestador que va 5 de 5 la deja última. Las dos dicen Tamara.
 
 ---
 
@@ -49,3 +49,9 @@ Seis casos documentados con rechazo bajo. Dos ganaron. Cuatro terminaron entre 0
 ## 8
 
 Mido las campañas de X: posiciones en el top 50 de tendencias de Argentina. Y no las meto en el modelo. Con una sola ventana no hay con qué estimar cuánto pesan.
+
+---
+
+## 9
+
+Mi modelo lleva 0 aciertos de 7. Un modelo roto da el azar. Para andar por debajo hace falta señal con el signo al revés. Leído al revés habría acertado 2. El azar esperaba 1,21. Elegí el signo después de ver los datos, así que va como apuesta.

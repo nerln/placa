@@ -1,0 +1,14 @@
+{
+  "generado_por": "model/signo.py",
+  "n": 7,
+  "aciertos_directo": 0,
+  "aciertos_invertido": 2,
+  "aciertos_esperados_azar": 1.2095,
+  "puesto_directo": 4.7143,
+  "puesto_invertido": 2.1429,
+  "puesto_azar": 3.4286,
+  "p_permutacion_invertido": 0.0266,
+  "semilla": 20260824,
+  "barajadas": 200000,
+  "advertencia": "El signo se eligió después de ver los datos, sobre siete galas. Es una hipótesis declarada, no un resultado. Se puntúa hacia adelante con la regla de EVALUACION.md."
+}

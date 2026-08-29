@@ -285,24 +285,48 @@
    },
    "completa": true,
    "eliminado": "Majluf"
+  },
+  {
+   "gala": 30,
+   "fecha": "2026-08-24",
+   "tipo": "negativo",
+   "placa": [
+    "Sol",
+    "Mariela",
+    "Pincoya",
+    "Yipio",
+    "Tamara",
+    "Luana"
+   ],
+   "salvados_cuota": {
+    "Luana": 0.1,
+    "Mariela": 0.3,
+    "Pincoya": 0.7,
+    "Yipio": 1.3
+   },
+   "versus": {
+    "Tamara": 51.1,
+    "Sol": 48.9
+   },
+   "completa": true,
+   "eliminado": "Tamara"
   }
  ],
  "placa_vigente": {
-  "gala": 30,
-  "fecha": "2026-08-24",
-  "fecha_nominacion": "2026-08-18",
+  "gala": 31,
+  "fecha": "2026-08-31",
+  "fecha_nominacion": "2026-08-24",
   "integrantes": [
-   "Sol",
-   "Mariela",
-   "Pincoya",
-   "Yipio",
-   "Tamara",
-   "Luana"
-  ],
-  "inmune_lider": "",
-  "libres": [
    "Charlotte",
-   "Zilli"
+   "Yipio",
+   "Pincoya",
+   "Mariela"
+  ],
+  "inmune_lider": "Pincoya",
+  "libres": [
+   "Zilli",
+   "Luana",
+   "Sol"
   ]
  }
 }

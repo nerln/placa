@@ -1,14 +1,14 @@
 {
- "generado": "2026-08-17",
- "p_valor": 0.0266,
- "aciertos_esperados_azar": 1.21,
+ "generado": "2026-08-24",
+ "p_valor": 0.0091,
+ "aciertos_esperados_azar": 1.38,
  "min_galas": 3,
- "n": 7,
+ "n": 8,
  "aciertos": 0,
- "puesto_medio": 4.71,
- "puesto_medio_azar": 3.43,
- "log_verosimilitud": -3.776,
- "log_verosimilitud_azar": -1.762,
+ "puesto_medio": 4.88,
+ "puesto_medio_azar": 3.44,
+ "log_verosimilitud": -3.857,
+ "log_verosimilitud_azar": -1.765,
  "filas": [
   {
    "gala": 22,
@@ -262,6 +262,43 @@
     {
      "quien": "Tamara",
      "p": 0.1289
+    }
+   ]
+  },
+  {
+   "gala": 30,
+   "fecha": "2026-08-24",
+   "n_placa": 6,
+   "galas_previas": 10,
+   "eliminado": "Tamara",
+   "puesto_del_modelo": 6,
+   "acierto": false,
+   "p_modelo": 0.012,
+   "p_azar": 0.1667,
+   "orden": [
+    {
+     "quien": "Sol",
+     "p": 0.6554
+    },
+    {
+     "quien": "Luana",
+     "p": 0.1168
+    },
+    {
+     "quien": "Pincoya",
+     "p": 0.0911
+    },
+    {
+     "quien": "Yipio",
+     "p": 0.0897
+    },
+    {
+     "quien": "Mariela",
+     "p": 0.035
+    },
+    {
+     "quien": "Tamara",
+     "p": 0.012
     }
    ]
   }

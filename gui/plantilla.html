@@ -532,6 +532,9 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
 .mn-caliente{font-size:var(--t-sm); color:var(--tinta2); line-height:1.6; margin:10px 0 0;
   padding:11px 13px; border-radius:var(--r-sm); background:var(--sup2);
   border-left:3px solid var(--oro-2)}
+.mn-marcador{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:14px 0 0;
+  padding:10px 12px; border-radius:var(--r-sm); background:var(--sup2);
+  border-left:3px solid var(--oro-2)}
 .mn-leyenda{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:16px 0 0}
 .mn-ir{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 0}
 .mn-ir a{font-size:var(--t-xs); padding:5px 10px; border-radius:var(--r-sm);
@@ -924,6 +927,12 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .duplas .j{font-weight:700; min-width:5.5rem; flex:none}
 .duplas .flecha{color:var(--tinta3); flex:none}
 .duplas .v{color:var(--tinta2)}
+.duplas li.ida{opacity:.62}
+.duplas li.ida .j{text-decoration:none}
+.duplas li.ida .v{text-decoration:line-through;
+  text-decoration-color:var(--tinta3)}
+.duplas li.ida .v em{font-style:normal; font-size:var(--t-xs); color:var(--tinta3);
+  text-decoration:none; display:inline-block}
 .puerta{padding:9px 0; border-top:1px solid var(--linea2)}
 .puerta:first-of-type{border-top:0}
 .puerta .n{font-weight:700; font-family:"Archivo",sans-serif; font-size:var(--t-sm)}
@@ -2333,6 +2342,25 @@ function FUERA_DEL_VOTO(){
   return e ? e.cuenta : null;
 }
 
+// Cuantas veces le acerto cada una de las tres cuentas, contado desde el
+// registro de predicciones congeladas y no de una frase escrita a mano. Se
+// cuentan SOLO las que ya se jugaron: una prediccion sin resultado no suma ni
+// resta, y meterla en el denominador seria hacerse el favor de bajarse el
+// porcentaje de error.
+function MARCADOR(){
+  const r = {};
+  (D.congeladas || []).forEach(f => {
+    if(!f.eliminado) return;
+    Object.entries(f.series || {}).forEach(([k, v]) => {
+      if(!v.puntaje) return;
+      const m = r[k] || (r[k] = {de: 0, acertadas: 0});
+      m.de += 1;
+      if(v.puntaje.acerto) m.acertadas += 1;
+    });
+  });
+  return r;
+}
+
 function CUANDO_GALA(){
   const G = D.actualidad && D.actualidad.proxima_gala;
   if(!G || !G.fecha) return {dias: null, corto: "", cuando: "", esta_noche: ""};
@@ -3581,8 +3609,11 @@ function contar(nodo){
     : "";
 
   $("#oficial-trend").innerHTML =
-    "<b>" + T.oficial.txt + "</b> aparece en todos los posts de Telefe y en <b>ninguno</b> de los 21 " +
-    "cortes del top-50 de la ventana. Lo que trendea no es lo que pone la producción: son las " +
+    // El numero de cortes sale del campo. Escrito a mano quedaba viejo en
+    // cuanto cambiaba la ventana, que es todas las semanas.
+    "<b>" + T.oficial.txt + "</b> aparece en todos los posts de Telefe y en <b>ninguno</b> de " +
+    "los " + (T.oficial.cortes || "") + " cortes del top-50 de la ventana. Lo que trendea no " +
+    "es lo que pone la producción: son las " +
     "campañas que arma el fandom, con el número de teléfono adentro.";
 })();
 
@@ -3713,9 +3744,25 @@ function contar(nodo){
           String(S.piso_sin_consigna).replace(".", ",") +
           ", porque no tener consigna es no haber sido medida.</div>";
       })() +
-      "<div><b>La imagen.</b> El ranking de " + (E.imagen_quien || "") + " del " +
-        FECHA_LARGA(E.imagen_fecha) + ". " + (E.imagen_historial || "") + ". Entra dada vuelta: " +
-        "caer mal es lo que hace que a una la voten para afuera.</div>" +
+      // Esta semana puede no haber medicion de imagen, y la hubo que no se
+      // publico: el ranking de Fefe Bongiorno sumaba 127,8% entre cuatro
+      // nominadas, que en una pregunta de una sola respuesta no puede ser. Con
+      // el campo vacio esta linea quedaba en «El ranking de del . .», que es
+      // exactamente lo que la comprobacion de render existe para cazar. Si no
+      // hay imagen se dice que no la hay, y con que se quedo la cuenta.
+      (E.imagen_quien
+        ? "<div><b>La imagen.</b> El ranking de " + E.imagen_quien +
+          (E.imagen_fecha ? " del " + FECHA_LARGA(E.imagen_fecha) : "") + ". " +
+          (E.imagen_historial ? E.imagen_historial + ". " : "") + "Entra dada vuelta: " +
+          "caer mal es lo que hace que a una la voten para afuera.</div>"
+        : "<div><b>La imagen, esta semana, no entra.</b> No hubo ningún ranking de imagen " +
+          "publicado sobre esta placa que se pudiera usar" +
+          (((D.actualidad.medidas_sociales || {}).descartadas || []).length
+            ? ", y el único que apareció quedó descartado: " +
+              D.actualidad.medidas_sociales.descartadas[0].por_que
+            : ".") +
+          " Así que la apuesta de esta semana se apoya sólo en las campañas, y eso la hace más " +
+          "frágil que la de la semana pasada.</div>") +
       "<div><b>Si se usa una sola, o el pico en vez del momento.</b> Solo campaña: " +
         solo("solo_campana") + ". Solo imagen: " + solo("solo_imagen") +
         (A.sensibilidad.con_el_pico ? ". Con el pico de 24 horas en vez de dónde está ahora: " +
@@ -3881,10 +3928,20 @@ function contar(nodo){
   const R = D.ramas && D.ramas.ramas, A = D.apuesta;
   if(!E || !R){ caja.remove(); return; }
 
-  // Con quien se va cada una: sale de las duplas de la ultima tanda de visitas.
+  // Con quien se va cada una: sale de las duplas de la ultima tanda de visitas,
+  // MENOS las visitas que ya no estan. El 27 de agosto expulsaron a dos y esta
+  // tarjeta siguio diciendo «si se va Mariela se lleva a Campanita» dos dias
+  // despues de que a Campanita la sacaran de la casa con seguridad. Quien no
+  // tiene visita no se lleva a nadie, y eso es parte de lo que pasa esa noche.
   const tandas = ((D.reingresos || {}).visitas || {}).tandas || [];
+  const ultTanda = tandas[tandas.length - 1] || {};
+  const idas = new Set([].concat(
+    ((ultTanda.salidas || {}).expulsadas || []).map(x => x.quien),
+    ((ultTanda.salidas || {}).con_la_eliminada || []).map(x => x.quien)));
   const duplas = {};
-  ((tandas[tandas.length - 1] || {}).duplas || []).forEach(d => (duplas[d[0]] = d[1]));
+  (ultTanda.duplas || []).forEach(d => { if(!idas.has(d[1])) duplas[d[0]] = d[1]; });
+  const sinDupla = {};
+  (ultTanda.duplas || []).forEach(d => { if(idas.has(d[1])) sinDupla[d[0]] = d[1]; });
 
   const pct = v => (100 * v).toFixed(1).replace(".", ",") + "%";
   const orden = Object.keys(R).sort((a, b) =>
@@ -3896,7 +3953,9 @@ function contar(nodo){
     const conQuien = duplas[n];
     return "<div class='esc-salida'>" +
       "<div class='quien'>Si se va " + n +
-        (conQuien ? "<small>se lleva a " + conQuien + "</small>" : "") + "</div>" +
+        (conQuien ? "<small>se lleva a " + conQuien + "</small>"
+         : sinDupla[n] ? "<small>no se lleva a nadie: a " + sinDupla[n].split(" ")[0] +
+             " ya la sacaron</small>" : "") + "</div>" +
       "<p class='pas'>" +
         (A && A.p_sale[n] != null
            ? "La apuesta le da <b>" + pct(A.p_sale[n]) + "</b> y el modelo <b>" +
@@ -4402,13 +4461,46 @@ function contar(nodo){
     $("#v-duplas").innerHTML =
       "<h3 style='margin-top:0'>Quién está adentro sin jugar</h3>" +
       "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" + ult.detalle + "</p>" +
-      "<ul class='duplas'>" + ult.duplas.map(d =>
-        "<li>" +
-          "<span class='j'>" + d[0] + "</span>" +
-          "<span class='flecha'>eligió a</span>" +
-          "<span class='v'>" + d[1] + "</span></li>").join("") + "</ul>" +
-      "<p class='tw-nota' style='margin-top:10px'>Las de la derecha entraron el " +
-      FECHA_LARGA(ult.fecha) + " y se van en unos días.</p>";
+      // Quien de esta tanda ya no esta, y por que. La lista se dibujaba entera,
+      // como si las nueve siguieran adentro, con un pie que decia «se van en
+      // unos dias»: el 29 de agosto eso era falso de tres de ellas. Y no es un
+      // detalle de color, porque la eliminacion es en dupla — quien se va se
+      // lleva a su visita — y a Mariela, que esta en placa, ya no le queda
+      // ninguna que llevarse.
+      (() => {
+        const sal = ult.salidas || {};
+        const fuera = {};
+        (sal.expulsadas || []).forEach(x => { fuera[x.quien] = {que: "expulsada", d: x}; });
+        (sal.con_la_eliminada || []).forEach(x => {
+          fuera[x.quien] = {que: "se fue con su dupla", d: x}; });
+        const enJuego = ult.duplas.filter(d => (D.jugadores || []).indexOf(d[0]) >= 0);
+        const quedan = enJuego.filter(d => !fuera[d[1]]).length;
+        // Dos estados distintos: la visita se fue, o se fue la jugadora que la
+        // habia elegido. Decir «Tamara se quedo sin su visita» cuando la que
+        // salio fue Tamara lee al reves de lo que paso.
+        const juega = n => (D.jugadores || []).indexOf(n) >= 0;
+        return "<ul class='duplas'>" + ult.duplas.map(d => {
+          const f = fuera[d[1]], dentro = juega(d[0]);
+          if(!dentro)
+            return "<li class='ida'><span class='j'>" + d[0] + "</span>" +
+              "<span class='flecha'>había elegido a</span>" +
+              "<span class='v'>" + d[1] + " <em>· ya no juega ninguna de las dos</em>" +
+              "</span></li>";
+          return "<li" + (f ? " class='ida'" : "") + ">" +
+            "<span class='j'>" + d[0] + "</span>" +
+            "<span class='flecha'>" + (f ? "se quedó sin" : "eligió a") + "</span>" +
+            "<span class='v'>" + d[1] +
+            (f ? " <em>· " + f.que + " el " + FECHA_LARGA(f.d.fecha) + "</em>" : "") +
+            "</span></li>";
+        }).join("") + "</ul>" +
+        "<p class='tw-nota' style='margin-top:10px'>Las de la derecha entraron el " +
+        FECHA_LARGA(ult.fecha) + ". " +
+        (Object.keys(fuera).length
+          ? "De las que siguen jugando, <b>" + quedan + " de " + enJuego.length +
+            "</b> conservan su visita, y eso cambia la regla de la eliminación en dupla: quien " +
+            "se va se lleva a su visita, y quien no tiene visita no se lleva a nadie."
+          : "Se van en unos días.") + "</p>";
+      })();
   } else { $("#v-duplas").remove(); }
 
   const puertas = R.mecanismos.map(m =>
@@ -5205,14 +5297,32 @@ function contar(nodo){
   const dos = D.versus && D.versus.vigente && D.versus.vigente.p_sale;
   const ap = D.apuesta && D.apuesta.p_sale;
   const T = D.actualidad.termometro_placa;
+  // La busqueda va en mayusculas de los dos lados. Las consignas se guardan
+  // como circulan, y «mariela al 9009» circulo en minuscula: con la clave sin
+  // normalizar, la pagina decia de Mariela «nadie esta haciendo campana para
+  // echarla» mientras su consigna estaba en el termometro, dos secciones mas
+  // abajo, con nueve horas.
   const camp = {};
-  (T && T.consignas || []).forEach(c => { camp[c.termino.split(" ")[0]] = c; });
-  const campDe = n => camp[n.toUpperCase()] || camp[n];
+  (T && T.consignas || []).forEach(c => {
+    camp[String(c.termino).split(" ")[0].toUpperCase()] = c;
+  });
+  const campDe = n => camp[String(n).toUpperCase()];
   const img = ((D.actualidad.medidas_sociales || {}).fuentes || [])
     .find(f => f.mide === "imagen positiva");
   const S = D.sentimiento && D.sentimiento.por_jugadora;
 
   const modTop = top(modPlaca), apTop = top(ap);
+
+  // Que cuenta se muestra primero. No esta escrito aca: sale de la declaracion
+  // fechada del registro. Reordenarlas a mano despues de ver un resultado
+  // seria acomodar; hacerlo por una declaracion escrita ANTES de la gala
+  // siguiente es una apuesta sobre que senal va a andar mejor, y se puede
+  // juzgar despues. Por eso la fecha vive en data/historial_pronostico.json,
+  // donde no se puede mover sin que se vea.
+  const decl = (D.declaraciones || [])
+    .filter(x => (x.vigente_desde_gala || 0) <= (G.gala || 0)).slice(-1)[0];
+  const apPrimero = !!(decl && /apuesta/i.test(decl.que || ""));
+  const MRC = MARCADOR();
   const campTop = Object.keys(camp).length
     ? placa.filter(campDe).sort((a, b) => campDe(a).pico - campDe(b).pico)[0] : null;
   const imgPeor = img ? placa.filter(n => img.valores[n] != null)
@@ -5260,12 +5370,29 @@ function contar(nodo){
             "'>la página tal como se publicó antes de la gala</a>."
           : "") + "</p>"
       : "") +
-    "<div class='mn-tit'>" +
-      (chocan
-        ? "El modelo dice " + modTop + ". Todo lo que se puede mirar desde afuera dice " +
-          senalado + "."
-        : "Se va una de " + placa.length + " el " + FECHA_LARGA(G.fecha) + ".") +
-    "</div>" +
+    (() => {
+      // El titular. Hasta la gala 30 encabezaba el modelo; desde la 31 encabeza
+      // la apuesta, por la declaracion fechada del registro. No es un cambio de
+      // opinion escrito a mano: es lo que dice el marcador, y el marcador se
+      // cuenta solo.
+      // Cuando las dos primeras estan pegadas, decir «la apuesta dice X» es
+      // decir mas de lo que la apuesta dice. Medio punto entre dos no es una
+      // respuesta, es un empate, y la pagina tiene que llamarlo asi.
+      const ord = ap ? placa.filter(n => ap[n] != null).sort((x, y) => ap[y] - ap[x]) : [];
+      const dif = ord.length > 1 ? 100 * (ap[ord[0]] - ap[ord[1]]) : null;
+      const empate = dif !== null && dif < 2;
+      const t = apPrimero && apTop
+        ? (empate
+            ? "La apuesta no se decide entre " + ord[0] + " y " + ord[1] + ": las separan " +
+              nf(dif, 1) + " puntos."
+            : "La apuesta dice " + apTop + ".") +
+          (modTop && modTop !== apTop ? " El modelo dice " + modTop + "." : "")
+        : chocan
+          ? "El modelo dice " + modTop + ". Todo lo que se puede mirar desde afuera dice " +
+            senalado + "."
+          : "Se va una de " + placa.length + " el " + FECHA_LARGA(G.fecha) + ".";
+      return "<div class='mn-tit'>" + t + "</div>";
+    })() +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
       "Se va una de <b>" + placa.length + "</b>: " + placa.join(", ") + ". " +
       (chocan
@@ -5301,6 +5428,24 @@ function contar(nodo){
     // son, parecen la pagina contradiciendose sola. Y la seccion de abajo
     // promete tres predicciones congeladas: hasta ahora se podian encontrar
     // dos, porque la del versus se calculaba y no se publicaba en ningun lado.
+    (() => {
+      // Por que esta primera la que esta primera. No es una opinion escrita a
+      // mano: es el marcador, contado desde el registro, y la declaracion que
+      // lo puso ahi tiene fecha anterior a esta gala.
+      if(!apPrimero || !decl) return "";
+      const d = (k, n) => {
+        const m = MRC[k];
+        return m ? n + " " + m.acertadas + " de " + m.de : null;
+      };
+      const partes = [d("apuesta", "la apuesta acertó"), d("modelo", "el modelo"),
+                      d("dos_tiempos", "dos tiempos")].filter(Boolean);
+      return "<p class='mn-marcador'><b>Por qué la apuesta va primero.</b> Es la única de las " +
+        "tres que acertó alguna vez: " + partes.join(", ") + " en las galas ya jugadas con la " +
+        "predicción congelada de antes. La semana pasada puso a Tamara primera y el modelo la " +
+        "puso última de seis. <b>Con dos galas no alcanza para saber</b>, y decir lo contrario " +
+        "sería inventar precisión: es la evidencia que hay, y el orden quedó declarado el " +
+        FECHA_LARGA(decl.fecha) + ", antes de esta gala. Se siguen puntuando las tres.</p>";
+    })() +
     "<p class='mn-leyenda'><b>Por qué hay tres números por persona.</b> " +
       "Son tres cuentas distintas sobre la misma pregunta, publicadas por separado para no " +
       "elegir después cuál defender. <b>Modelo</b>: el reparto de votos de las galas anteriores. " +
@@ -5334,11 +5479,14 @@ function contar(nodo){
       // 52,4% · dos tiempos 26,0% · apuesta 4,8%» — que puestas en fila se
       // leian como si la pagina se contradijera sola en vez de como tres
       // medidas de la misma cosa.
-      const cuentas = [
-        {k: "modelo", n: "el modelo", d: modPlaca},
-        {k: "dos", n: "dos tiempos", d: dos || {}},
-        {k: "ap", n: "la apuesta", d: ap || {}},
-      ].filter(c => placa.some(n => c.d[n] != null));
+      const cuentas = (apPrimero
+        ? [{k: "ap", n: "la apuesta", d: ap || {}},
+           {k: "modelo", n: "el modelo", d: modPlaca},
+           {k: "dos", n: "dos tiempos", d: dos || {}}]
+        : [{k: "modelo", n: "el modelo", d: modPlaca},
+           {k: "dos", n: "dos tiempos", d: dos || {}},
+           {k: "ap", n: "la apuesta", d: ap || {}}]
+      ).filter(c => placa.some(n => c.d[n] != null));
       if(cuentas.length < 2) return "";
 
       const vals = placa.flatMap(n => cuentas.map(c => c.d[n]).filter(v => v != null));
@@ -5349,30 +5497,51 @@ function contar(nodo){
       // La razon en pocas palabras. Se ELIGE, no se escribe: cada persona se
       // queda con la senal mas distintiva que tenga, en un orden fijo. Una
       // frase escrita a mano acá es una frase que la semana que viene miente.
+      // La razon se ELIGE entre las que aplican, y gana la mas distintiva: no la
+      // primera de una lista fija. Con una lista fija, la semana del 29 de
+      // agosto Pincoya salia con «la consigna numero 2 del pais» mientras el
+      // hecho de la semana era que en los comentarios juntaba 494 en contra y
+      // 102 a favor. La senal mas rara es la que hay que decir.
       const razon = n => {
         const c = campDe(n), k = S && S[n];
         const im = img && img.valores[n];
-        const peorIm = imgPeor === n, mejorIm = img && placa.filter(z => img.valores[z] != null)
+        const peorIm = imgPeor === n;
+        const mejorIm = img && placa.filter(z => img.valores[z] != null)
           .sort((a, b) => img.valores[b] - img.valores[a])[0] === n;
-        if(c && c.pico <= 10 && peorIm)
-          return "La consigna número " + c.pico + " del país pide echarla, y tiene la peor " +
-                 "imagen de la placa.";
+        const cand = [];
+        if(k && (k.contra + k.favor) >= 25){
+          const tot = k.contra + k.favor, prop = k.contra / tot;
+          // Cuanto mas se despega del medio, mas dice. Y el volumen entra
+          // aparte, porque 490 comentarios pesan distinto que 30.
+          const fuerza = Math.abs(prop - .5) * 2 * (1 + Math.min(1, tot / 400));
+          cand.push({f: 1.6 + fuerza, t: prop > .5
+            ? "En los comentarios la quieren afuera y por lejos: <b>" + k.contra + "</b> en " +
+              "contra contra " + k.favor + " a favor."
+            : "En los comentarios la bancan: <b>" + k.favor + "</b> a favor contra " + k.contra +
+              " en contra."});
+        }
         if(c && c.pico <= 10)
-          return "La consigna número " + c.pico + " del país, " + c.horas + " horas arriba, pide " +
-                 "echarla.";
-        if(peorIm && im != null)
-          return "La peor imagen de la placa: " + im + "%.";
+          cand.push({f: 1.5 + (11 - c.pico) / 10, t: "La consigna número " + c.pico + " del " +
+            "país, " + c.horas + " horas arriba, pide echarla." +
+            (peorIm && im != null ? " Y tiene la peor imagen de la placa." : "")});
+        if(peorIm && im != null) cand.push({f: 1.4, t: "La peor imagen de la placa: " + im + "%."});
         if(k && k.favor === 0 && k.contra >= 3)
-          return "En los comentarios nadie la defiende: " + k.contra + " en contra, ninguno a favor.";
+          cand.push({f: 1.3, t: "En los comentarios nadie la defiende: " + k.contra + " en " +
+            "contra, ninguno a favor."});
         if(mejorIm && im != null)
-          return "La mejor imagen de la placa: " + im + "%. Cuesta que la voten.";
-        if(k && k.favor > k.contra)
-          return "La única con más gente a favor que en contra en los comentarios.";
+          cand.push({f: 1.2, t: "La mejor imagen de la placa: " + im + "%. Cuesta que la voten."});
+        if(c) cand.push({f: .9, t: "Hay una consigna pidiendo que se vaya, pero floja: nunca " +
+          "pasó del puesto " + c.pico + "."});
+        if(!c && camp && Object.keys(camp).length)
+          cand.push({f: .8, t: "Nadie está haciendo campaña para echarla."});
         if(modPlaca[n] != null && modTop === n)
-          return "El modelo la pone primera por el rechazo acumulado en galas anteriores.";
-        // Que ninguna senal la destaque tambien es una lectura, y dejar la fila
-        // muda hacia parecer un hueco de datos en vez de lo que es.
-        return "Ninguna señal la destaca: las tres cuentas la dejan en el medio de la placa.";
+          cand.push({f: .7, t: "El modelo la pone primera por el rechazo acumulado en galas " +
+            "anteriores."});
+        if(!cand.length)
+          // Que ninguna senal la destaque tambien es una lectura, y dejar la
+          // fila muda hace parecer un hueco de datos en vez de lo que es.
+          return "Ninguna señal la destaca: las cuentas la dejan en el medio de la placa.";
+        return cand.sort((a, b) => b.f - a.f)[0].t;
       };
 
       const filas = placa.slice()
@@ -5487,10 +5656,35 @@ function contar(nodo){
     "<div class='eyebrow'>Una corrección al modelo</div>" +
     "<div class='titulo'><h2 class='tit'>El mano a mano es otro partido, " +
       "y el modelo lo juega con el número equivocado</h2></div>" +
-    "<p class='sub'>Sobre las siete galas de la prueba hacia atrás, el favorito del modelo " +
-      "llegó al mano a mano <b>cuatro veces</b> y lo <b>ganó las cuatro</b>. Acumular rechazo " +
-      "es lo que lleva al versus. Ganarlo es otra cosa, y en los datos va al revés: de las " +
-      "cinco personas que llegaron a más de un mano a mano, ganaron diez de trece.</p>" +
+    // Los dos numeros salen de los datos. Estaban escritos a mano — «cuatro
+    // veces», «diez de trece» — y dejaban de ser ciertos con cada gala nueva
+    // sin que nada se enterara: el lunes 24 el favorito llego a un quinto mano
+    // a mano y lo gano, y la frase seguia diciendo cuatro.
+    (() => {
+      const N = w => ["cero", "una", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho",
+        "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis"][w] || w;
+      const llego = F.filter(x => x.favorito_al_versus);
+      const gano = llego.filter(x => x.favorito_gano_versus);
+      // Los repetidores salen de V.registro, que es el que lleva versus.py, y
+      // NO de D.galas. Contandolos de D.galas daban «cuatro personas, diez de
+      // doce» mientras la misma seccion decia doce mano a mano: D.galas trae
+      // solo las galas con reparto completo publicado y se comia la 17. Dos
+      // subconjuntos distintos para el mismo hecho, en el mismo parrafo.
+      const rep = Object.values(V.registro || {})
+        .map(([g, pd]) => ({n: g + pd, ganados: g}))
+        .filter(r => r.n > 1);
+      const repN = rep.reduce((a, r) => a + r.n, 0);
+      const repG = rep.reduce((a, r) => a + r.ganados, 0);
+      return "<p class='sub'>Sobre las " + N(F.length) + " galas de la prueba hacia atrás, el " +
+        "favorito del modelo llegó al mano a mano <b>" + N(llego.length) +
+        (llego.length === 1 ? " vez</b>" : " veces</b>") +
+        (gano.length === llego.length
+          ? " y lo <b>ganó " + (llego.length === 1 ? "esa vez" : "las " + N(llego.length)) + "</b>"
+          : " y lo ganó <b>" + N(gano.length) + " de " + N(llego.length) + "</b>") +
+        ". Acumular rechazo es lo que lleva al versus. Ganarlo es otra cosa, y en los datos va " +
+        "al revés: de las " + N(rep.length) + " personas que llegaron a más de un mano a mano, " +
+        "ganaron <b>" + N(repG) + " de " + N(repN) + "</b>.</p>";
+    })() +
 
     "<div class='tarjeta' style='margin-top:16px'>" +
       "<div class='eyebrow'>La fuerza en el mano a mano</div>" +
