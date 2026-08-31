@@ -1,51 +1,73 @@
 {
  "_nota": "Videos oficiales del programa de los que se recogen comentarios. Se eligen los de esta semana y de esta placa: los de semanas anteriores hablan de otra gente. Ampliar la lista amplía el corpus, y conviene decirlo cuando se amplía.",
- "recogido": "2026-08-29",
+ "recogido": "2026-08-31",
  "videos": [
   {
-   "id": "IhA92DtCcr8",
-   "titulo": "LA ÚLTIMA GALA DE NOMINACIÓN · programa 157",
-   "fecha": "2026-08-26"
+   "id": "y7_qmKeVvI8",
+   "titulo": "Tomy explica por qué se siente representado por Sol",
+   "fecha": "2026-08-31",
+   "que": "Tomy explica por qué se siente representado por Sol"
   },
   {
-   "id": "qiwru7DLihk",
-   "titulo": "Así quedó la placa tras la última gala de nominación",
-   "fecha": "2026-08-27"
+   "id": "5z3LvqeAhWY",
+   "titulo": "Almuerzo tranquilo después de una mañana cargada",
+   "fecha": "2026-08-31",
+   "que": "Almuerzo tranquilo después de una mañana cargada"
   },
   {
-   "id": "f2fS7CIIiRs",
-   "titulo": "Sol pide apoyo para Pincoya y sacar a Yipio",
-   "fecha": "2026-08-27"
+   "id": "rXyM2XXK6GA",
+   "titulo": "El mensaje de Luana para Hanssen sobre su relación",
+   "fecha": "2026-08-31",
+   "que": "El mensaje de Luana para Hanssen sobre su relación"
   },
   {
-   "id": "RUncI_Ma5HI",
-   "titulo": "Tamara Paganini en el debate y la previa de la nominación",
-   "fecha": "2026-08-26"
+   "id": "goZkc6_Haqc",
+   "titulo": "Sol irrumpió en el desfile y las indirectas cruzadas",
+   "fecha": "2026-08-31",
+   "que": "Sol irrumpió en el desfile y las indirectas cruzadas"
   },
   {
-   "id": "fTAfGDQDA9M",
-   "titulo": "CAMPANITA ATRINCHERADA · programa 158",
-   "fecha": "2026-08-27"
+   "id": "GhwmRrVIyc4",
+   "titulo": "Charlotte, Yipio, Cola y Titi lo dieron todo en un desfile",
+   "fecha": "2026-08-31",
+   "que": "Charlotte, Yipio, Cola y Titi lo dieron todo en un desfile"
   },
   {
-   "id": "WF9pbJOVeGM",
-   "titulo": "Gran Hermano expulsó a Campanita y Danelik",
-   "fecha": "2026-08-28"
+   "id": "Uvi2JkKEOQg",
+   "titulo": "«Pelotud...»: las peleas siguen y no aflojan",
+   "fecha": "2026-08-31",
+   "que": "«Pelotud...»: las peleas siguen y no aflojan"
   },
   {
-   "id": "JS9o4Rc1aJM",
-   "titulo": "Pincoya se la juega en el versus con Yipio",
-   "fecha": "2026-08-28"
+   "id": "Ey6L9OKQQQ4",
+   "titulo": "Nueva pelea en la casa: Sol y Pincoya contra Yipio y Charlotte",
+   "fecha": "2026-08-31",
+   "que": "Nueva pelea en la casa: Sol y Pincoya contra Yipio y Charlotte"
   },
   {
-   "id": "nUQt94L0RiU",
-   "titulo": "Pincoya reafirma que es la única que merece ganar",
-   "fecha": "2026-08-28"
+   "id": "u1O3rHgFa50",
+   "titulo": "Mates, charla y análisis de las peleas",
+   "fecha": "2026-08-31",
+   "que": "Mates, charla y análisis de las peleas"
   },
   {
-   "id": "wJna5VuyEPc",
-   "titulo": "LA NOCHE DE LOS EX · programa 159",
-   "fecha": "2026-08-28"
+   "id": "EWrMmDjx_U0",
+   "titulo": "Yipio comenzó el día con todo",
+   "fecha": "2026-08-31",
+   "que": "Yipio comenzó el día con todo"
+  },
+  {
+   "id": "Iwxnl_apvwE",
+   "titulo": "Charlotte se siente subestimada y Yipio está cansada de Sol",
+   "fecha": "2026-08-31",
+   "que": "Charlotte se siente subestimada y Yipio está cansada de Sol"
+  },
+  {
+   "id": "o6gZSY3OzF8",
+   "titulo": "PROGRAMA 159 [29-08-26]",
+   "fecha": "2026-08-29",
+   "que": "PROGRAMA 159 [29-08-26]"
   }
- ]
+ ],
+ "_nota_corrida": "Corpus del día de la gala: los videos que el canal subió el mismo lunes 31, más el programa del sábado. Es la lectura más cercana al cierre de la votación que se puede tomar sin credenciales."
 }

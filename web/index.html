@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 27,3% · Luana 20,0% · Pincoya 17,7%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-24T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 27,3% · Luana 20,0% · Pincoya 17,7%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-24","version":"49982b4a7da1c81b","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=49982b4a7da1c81b"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 27,3% · Luana 20,0% · Pincoya 17,7%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-08-24T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 27,3% · Luana 20,0% · Pincoya 17,7%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-08-24","version":"558344bf26089abb","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=558344bf26089abb"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -5607,10 +5607,21 @@ function contar(nodo){
             : "En los comentarios la bancan: <b>" + k.favor + "</b> a favor contra " + k.contra +
               " en contra."});
         }
-        if(c && c.pico <= 10)
-          cand.push({f: 1.5 + (11 - c.pico) / 10, t: "La consigna número " + c.pico + " del " +
-            "país, " + c.horas + " horas arriba, pide echarla." +
-            (peorIm && im != null ? " Y tiene la peor imagen de la placa." : "")});
+        if(c && c.pico <= 10){
+          // Cuando la campana y los comentarios apuntan al reves, esa
+          // contradiccion es lo mas informativo que tiene la fila, y decir
+          // solo una de las dos la esconde. Es el caso de Yipio el 31 de
+          // agosto: consigna numero 1 del pais y, en los comentarios del
+          // mismo dia, dos de cada tres defendiendola.
+          const k2 = k && (k.contra + k.favor) >= 25 ? k : null;
+          const bancan = k2 && k2.favor > k2.contra;
+          cand.push({f: 1.5 + (11 - c.pico) / 10 + (bancan ? .6 : 0),
+            t: "La consigna número " + c.pico + " del país, " + c.horas + " horas arriba, pide " +
+               "echarla." +
+               (bancan ? " Pero en los comentarios la bancan: <b>" + k2.favor + "</b> a favor " +
+                  "contra " + k2.contra + " en contra. Las dos señales se contradicen."
+                : peorIm && im != null ? " Y tiene la peor imagen de la placa." : "")});
+        }
         if(peorIm && im != null) cand.push({f: 1.4, t: "La peor imagen de la placa: " + im + "%."});
         if(k && k.favor === 0 && k.contra >= 3)
           cand.push({f: 1.3, t: "En los comentarios nadie la defiende: " + k.contra + " en " +

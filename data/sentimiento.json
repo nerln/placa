@@ -1,71 +1,115 @@
 {
- "generado": "2026-08-29",
+ "generado": "2026-08-31",
  "fase": "negativo",
- "fuente": "Nueve videos del canal oficial de Gran Hermano Argentina subidos entre el 26 y el 29 de agosto: la última gala de nominación, la expulsión de Campanita, la noche de los ex y los cortes de la semana.",
- "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» cambia de signo con la fase de la placa, y esta semana es negativa, así que «Pincoya al 9009» cuenta en contra de Pincoya.",
- "limites": "Son los comentarios de los videos del programa, no del país: quien comenta ahí no es una muestra de quien vota. El léxico no entiende la negación ni a quién apunta cada frase, y uno que defiende a alguien con palabras duras cae del lado equivocado. Los volúmenes NO se comparen entre jugadoras: Pincoya y Yipio están en el título de varios de estos videos y Charlotte y Mariela casi no aparecen, así que la diferencia de menciones mide de qué habla el canal tanto como de qué habla la gente. Y una advertencia sobre la reproducibilidad: se guardó el texto de cada comentario pero no la etiqueta de signo que se le puso, así que estos números no se pueden rehacer desde los archivos publicados. Es un agujero declarado, y se tapa la semana que viene.",
+ "fuente": "Once videos del canal oficial: los diez que subió el propio lunes 31, día de la gala, más el programa del sábado. Es la lectura más cercana al cierre de la votación que se puede tomar sin credenciales.",
+ "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
+ "limites": "Son los comentarios de los videos del programa, no del país: quien comenta ahí no es una muestra de quien vota. El léxico no entiende la negación ni a quién apunta cada frase, y uno que defiende a alguien con palabras duras cae del lado equivocado. Los volúmenes NO se comparan entre jugadoras, y hoy menos que nunca: de los once videos, seis son sobre las peleas de la casa y ponen a Yipio, Charlotte, Sol y Pincoya en el título. Mariela casi no aparece, y por eso tiene doce menciones y dos con signo: eso mide de qué habla el canal, no qué piensa la gente de ella. Lo que sí se puede leer es la PROPORCIÓN dentro de cada jugadora, que no depende de cuántas veces la nombren. Y una advertencia sobre la reproducibilidad: se guarda el texto de cada comentario pero no la etiqueta de signo que se le puso, así que estos números no se pueden rehacer desde los archivos publicados. Es un agujero declarado.",
  "no_alcanzables": [
-  "Las respuestas al posteo oficial que pregunta quién debe irse: ninguna vía pública devuelve su texto",
-  "Los comentarios de Instagram: el marco de incrustación no los trae",
-  "Reddit: devuelve 403 a cualquier petición anónima"
+  "las respuestas al posteo oficial de X, que son 372 y no publican texto",
+  "los comentarios de Instagram, que el marco de incrustación no trae",
+  "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 2062,
- "nombran_a_alguien": 1200,
- "con_signo": 982,
+ "total": 819,
+ "nombran_a_alguien": 480,
+ "con_signo": 251,
  "por_jugadora": {
-  "Pincoya": {
-   "contra": 494,
-   "favor": 102,
-   "sin_signo": 93
+  "Charlotte": {
+   "contra": 13,
+   "favor": 38,
+   "sin_signo": 50
   },
   "Yipio": {
-   "contra": 190,
-   "favor": 145,
-   "sin_signo": 74
+   "contra": 38,
+   "favor": 84,
+   "sin_signo": 116
+  },
+  "Pincoya": {
+   "contra": 126,
+   "favor": 13,
+   "sin_signo": 95
   },
   "Mariela": {
-   "contra": 12,
+   "contra": 0,
    "favor": 2,
-   "sin_signo": 20
-  },
-  "Charlotte": {
-   "contra": 10,
-   "favor": 27,
-   "sin_signo": 31
+   "sin_signo": 12
   }
  },
  "ejemplos": {
-  "Pincoya": [
+  "Charlotte": [
    {
-    "texto": "Pincoya al 9009 por agresiva justicia por Campanita"
+    "texto": "VAMIS  YIPIO  Y  CHARLOT  SON  LAS  GANADORAS  DE  LA  COPA   DE GH  DORADA  FUERZAS TE  BANCAMOS CIEN  PORCIENTOS   HASTA  LA  FINAAAALLL  SON LAS  MEJORES  DE  PERSONA  AMABLES  ",
+    "signo": "favor"
    },
    {
-    "texto": "AGUANTE PINCOYA, MIENTRAS MÁS TE MALTRATAN, MÁS TE APOYAREMOS."
+    "texto": "Yipio y Charlotte a la final 🏆 👏👏👏👏👏👏",
+    "signo": "favor"
+   },
+   {
+    "texto": "No puede ser que gh haga ganar a una uruguaya falsa y la otra planta de charlotte",
+    "signo": "contra"
    }
   ],
   "Yipio": [
    {
-    "texto": "Yipio al 9009! No merece estar en la final!"
+    "texto": "Yipio al 9009! Aguante pincoya!",
+    "signo": "contra"
    },
    {
-    "texto": "Yipio es la mejor"
+    "texto": "Yipio al 9009",
+    "signo": "contra"
+   },
+   {
+    "texto": "CHAU YIPIO IMPRESENTABLE 😂😂😂😂",
+    "signo": "contra"
    }
   ],
-  "Charlotte": [
+  "Pincoya": [
    {
-    "texto": "Charlotte es un encanto de mujer, se hace querer"
+    "texto": "Hay que votar.\nPINCOYA AL 9009",
+    "signo": "contra"
    },
    {
-    "texto": "Fuera Charlotte"
+    "texto": "Yipio al 9009! Aguante pincoya!",
+    "signo": "contra"
+   },
+   {
+    "texto": "Pincoya al 9009",
+    "signo": "contra"
    }
   ],
   "Mariela": [
    {
-    "texto": "MARIELA AL 9009"
+    "texto": "Sol sabe que Mariela no tiene fandom, y que se ha salvado muchas veces por el simple hecho de no estar en foco..Y ya es la 2da vez que se le caga de risa como lo burlista que es, d",
+    "signo": "favor"
    },
    {
-    "texto": "CHAU MARIELA"
+    "texto": "No soporto más 1 exposicion de Mariela . Nose como la soportan con sus largas exposiciones sin redondear,vamos Char ❤",
+    "signo": "favor"
    }
   ]
+ },
+ "momento": "2026-08-31T19:30-03:00",
+ "comparacion": {
+  "_nota": "La misma medición, cuatro días antes, sobre los videos de la semana. Se guarda para que se vea el movimiento y no sólo el número de hoy.",
+  "fecha_anterior": "2026-08-29",
+  "total_anterior": 2062,
+  "por_jugadora_anterior": {
+   "Pincoya": {
+    "contra": 494,
+    "favor": 102
+   },
+   "Yipio": {
+    "contra": 190,
+    "favor": 145
+   },
+   "Charlotte": {
+    "contra": 10,
+    "favor": 27
+   },
+   "Mariela": {
+    "contra": 12,
+    "favor": 2
+   }
+  }
  }
 }
