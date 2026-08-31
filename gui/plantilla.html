@@ -532,6 +532,16 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
 .mn-caliente{font-size:var(--t-sm); color:var(--tinta2); line-height:1.6; margin:10px 0 0;
   padding:11px 13px; border-radius:var(--r-sm); background:var(--sup2);
   border-left:3px solid var(--oro-2)}
+.mn-porque{margin:14px 0 0; border-top:1px solid var(--linea2)}
+.mn-porque > summary{list-style:none; cursor:pointer; padding:11px 0 3px;
+  font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
+  color:var(--tinta2); display:flex; align-items:center; gap:7px}
+.mn-porque > summary::-webkit-details-marker{display:none}
+.mn-porque > summary::after{content:"+"; color:var(--oro-2); font-size:15px; line-height:1}
+.mn-porque[open] > summary::after{content:"−"}
+.mn-porque > summary:hover{color:var(--oro-2)}
+.mn-porque > summary:focus-visible{outline:2px solid var(--oro-2); outline-offset:3px}
+.mn-porque .mn-marcador:first-child, .mn-porque .mn-leyenda:first-child{margin-top:8px}
 .mn-marcador{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:14px 0 0;
   padding:10px 12px; border-radius:var(--r-sm); background:var(--sup2);
   border-left:3px solid var(--oro-2)}
@@ -5323,6 +5333,14 @@ function contar(nodo){
     .filter(x => (x.vigente_desde_gala || 0) <= (G.gala || 0)).slice(-1)[0];
   const apPrimero = !!(decl && /apuesta/i.test(decl.que || ""));
   const MRC = MARCADOR();
+
+  // Cuando las dos primeras de la apuesta estan pegadas, decir «la apuesta dice
+  // X» es decir mas de lo que la apuesta dice: medio punto entre dos no es una
+  // respuesta, es un empate. Vive aca arriba porque lo usan el titular y las
+  // dos tarjetas de lectura.
+  const ord = ap ? placa.filter(n => ap[n] != null).sort((x, y) => ap[y] - ap[x]) : [];
+  const dif = ord.length > 1 ? 100 * (ap[ord[0]] - ap[ord[1]]) : null;
+  const empate = dif !== null && dif < 2;
   const campTop = Object.keys(camp).length
     ? placa.filter(campDe).sort((a, b) => campDe(a).pico - campDe(b).pico)[0] : null;
   const imgPeor = img ? placa.filter(n => img.valores[n] != null)
@@ -5375,18 +5393,32 @@ function contar(nodo){
       // la apuesta, por la declaracion fechada del registro. No es un cambio de
       // opinion escrito a mano: es lo que dice el marcador, y el marcador se
       // cuenta solo.
-      // Cuando las dos primeras estan pegadas, decir «la apuesta dice X» es
-      // decir mas de lo que la apuesta dice. Medio punto entre dos no es una
-      // respuesta, es un empate, y la pagina tiene que llamarlo asi.
-      const ord = ap ? placa.filter(n => ap[n] != null).sort((x, y) => ap[y] - ap[x]) : [];
-      const dif = ord.length > 1 ? 100 * (ap[ord[0]] - ap[ord[1]]) : null;
-      const empate = dif !== null && dif < 2;
+      // El titular dice la TENSION, no repite la tarjeta. Las dos tarjetas de
+      // abajo ya dan los nombres y los numeros: si el titular los repetia, el
+      // lector leia dos veces lo mismo antes de llegar al grafico, que es
+      // parte de por que la pagina se sentia un ping-pong.
+      const cs2 = S ? placa.filter(n => S[n] && (S[n].contra + S[n].favor) >= 20) : [];
+      const cTop = cs2.length ? cs2.slice().sort((a, b) =>
+        (S[b].contra / (S[b].contra + S[b].favor)) -
+        (S[a].contra / (S[a].contra + S[a].favor)))[0] : null;
+      // Tres casos, y confundirlos era decir mal la unica frase que importa.
+      // Si la apuesta empata y los comentarios eligen a una de las dos
+      // empatadas, no es que «no coincidan»: es que los comentarios DESEMPATAN,
+      // y eso es mas informativo que cualquiera de las dos por separado.
+      const enEmpate = empate && cTop && ord.slice(0, 2).indexOf(cTop) >= 0;
+      const enfrentadas = cTop && ord.length && !enEmpate &&
+        (empate ? ord.slice(0, 2).indexOf(cTop) < 0 : cTop !== ord[0]);
       const t = apPrimero && apTop
-        ? (empate
-            ? "La apuesta no se decide entre " + ord[0] + " y " + ord[1] + ": las separan " +
-              nf(dif, 1) + " puntos."
-            : "La apuesta dice " + apTop + ".") +
-          (modTop && modTop !== apTop ? " El modelo dice " + modTop + "." : "")
+        ? (enEmpate
+            ? "La apuesta no se decide entre " + ord[0] + " y " + ord[1] + ", y los comentarios " +
+              "desempatan hacia " + cTop + "."
+            : enfrentadas
+              ? "Las dos señales apuntan a personas distintas: la que acertó la última vez a " +
+                (empate ? ord[0] + " o " + ord[1] : ord[0]) + ", y los comentarios a " + cTop + "."
+              : empate
+                ? "La apuesta no se decide entre " + ord[0] + " y " + ord[1] + ": las separan " +
+                  nf(dif, 1) + " puntos."
+                : "La apuesta dice " + apTop + ", y los comentarios también.")
         : chocan
           ? "El modelo dice " + modTop + ". Todo lo que se puede mirar desde afuera dice " +
             senalado + "."
@@ -5405,29 +5437,40 @@ function contar(nodo){
         : "") +
     "</p>" +
 
-    (chocan
-      ? "<div class='mn-choque'>" +
-          "<div class='mn-lado modelo'><div class='k'>El modelo</div>" +
-            "<div class='q'>" + modTop + "</div>" +
-            "<div class='d'>" + pc(modPlaca[modTop]) + " de irse. Lee el reparto de votos que " +
-            "Telefe cantó en las galas anteriores. Su prueba hacia atrás dice que en esta " +
-            "pregunta anda peor que el azar.</div></div>" +
-          "<div class='mn-lado calle'><div class='k'>Lo que se ve desde afuera</div>" +
-            "<div class='q'>" + senalado + "</div>" +
-            "<div class='d'>" +
-              (campDe(senalado) ? "Consigna número " + campDe(senalado).pico + " del país, " +
-                campDe(senalado).horas + " horas arriba. " : "") +
-              (img && img.valores[senalado] != null
-                ? "Última en imagen con " + img.valores[senalado] + "%. " : "") +
-              (ap && ap[senalado] != null ? "La apuesta le da " + pc(ap[senalado]) + "." : "") +
-            "</div></div>" +
-        "</div>"
-      : "") +
+    (() => {
+      // Las dos lecturas, una al lado de la otra y siempre visibles. Es la
+      // respuesta, y hasta ahora habia que deducirla leyendo cuatro parrafos
+      // que se pasaban la pelota. Cada tarjeta dice QUIEN y de que sale.
+      const cs = S ? placa.filter(n => S[n] && (S[n].contra + S[n].favor) >= 20) : [];
+      const comTop = cs.length
+        ? cs.slice().sort((a, b) =>
+            (S[b].contra / (S[b].contra + S[b].favor)) -
+            (S[a].contra / (S[a].contra + S[a].favor)))[0]
+        : null;
+      if(!apTop && !comTop) return "";
+      const k = comTop && S[comTop], kt = k ? k.contra + k.favor : 0;
+      return "<div class='mn-choque'>" +
+        (apTop ? "<div class='mn-lado calle'><div class='k'>Lo que se pide afuera</div>" +
+          "<div class='q'>" + (empate ? ord[0] + " o " + ord[1] : apTop) + "</div>" +
+          "<div class='d'>" + (empate
+            ? "La apuesta las deja empatadas, " + pc(ap[ord[0]]) + " contra " + pc(ap[ord[1]]) +
+              ". Sale de las campañas en tendencias."
+            : "La apuesta le da " + pc(ap[apTop]) + ", por las campañas en tendencias.") +
+          " <b>Es la cuenta que acertó la gala pasada.</b></div></div>" : "") +
+        (comTop ? "<div class='mn-lado modelo'><div class='k'>Lo que se escribe</div>" +
+          "<div class='q'>" + comTop + "</div>" +
+          "<div class='d'>" + Math.round(100 * k.contra / kt) + "% de los comentarios que la " +
+          "nombran con signo piden que se vaya: " + k.contra + " contra " + k.favor +
+          ". <b>Esta cuenta todavía no acertó ninguna.</b></div></div>" : "") +
+      "</div>";
+    })() +
 
     // «modelo 52,4%» y «dos tiempos 26,0%» uno al lado del otro, sin decir que
     // son, parecen la pagina contradiciendose sola. Y la seccion de abajo
     // promete tres predicciones congeladas: hasta ahora se podian encontrar
     // dos, porque la del versus se calculaba y no se publicaba en ningun lado.
+    "<details class='mn-porque'><summary>Por qué hay varios números, y cuál acertó " +
+      "la vez que acertó</summary><div class='mn-porque-c'>" +
     (() => {
       // Por que esta primera la que esta primera. No es una opinion escrita a
       // mano: es el marcador, contado desde el registro, y la declaracion que
@@ -5466,6 +5509,8 @@ function contar(nodo){
       "al último cara a cara viene ganándolo casi siempre. <b>Apuesta</b>: no usa nada del " +
       "modelo, sólo lo que se puede medir afuera —campañas e imagen— antes de que cierre la " +
       "votación. El martes se publica cuánto se acercó cada una.</p>" +
+    "</div></details>" +
+
     (() => {
       // Un indice, no una navegacion. La pagina mide 55.000 px en el telefono
       // y no tenia ni un enlace interno: el bloque de manana era un resumen
