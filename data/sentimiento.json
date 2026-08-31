@@ -111,5 +111,40 @@
     "favor": 2
    }
   }
+ },
+ "antes_de_la_30": {
+  "_nota": "Lo que decían los comentarios antes de la gala que la apuesta acertó. Se guarda porque es la única forma de saber si esta señal sirve, y la respuesta de esa noche fue que no: la apuesta no usa comentarios.",
+  "gala": 30,
+  "salio": "Tamara",
+  "total": 490,
+  "con_signo": 56,
+  "por_jugadora": {
+   "Sol": {
+    "contra": 17,
+    "favor": 9
+   },
+   "Pincoya": {
+    "contra": 13,
+    "favor": 6
+   },
+   "Mariela": {
+    "contra": 5,
+    "favor": 0
+   },
+   "Tamara": {
+    "contra": 4,
+    "favor": 0
+   },
+   "Yipio": {
+    "contra": 5,
+    "favor": 4
+   },
+   "Luana": {
+    "contra": 5,
+    "favor": 9
+   }
+  },
+  "lectura": "Por volumen los comentarios señalaban a Sol, que se salvó. Tamara tenía cuatro comentarios con signo en total: era de las menos nombradas. Lo que sí la señaló fue la campaña en tendencias, primera del país, y el ranking de imagen, donde quedaba última.",
+  "fuente": "galas/30.html"
  }
 }

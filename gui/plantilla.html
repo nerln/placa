@@ -5444,7 +5444,20 @@ function contar(nodo){
         "predicción congelada de antes. La semana pasada puso a Tamara primera y el modelo la " +
         "puso última de seis. <b>Con dos galas no alcanza para saber</b>, y decir lo contrario " +
         "sería inventar precisión: es la evidencia que hay, y el orden quedó declarado el " +
-        FECHA_LARGA(decl.fecha) + ", antes de esta gala. Se siguen puntuando las tres.</p>";
+        FECHA_LARGA(decl.fecha) + ", antes de esta gala. Se siguen puntuando las tres.</p>" +
+      // De que esta hecha la apuesta que acerto, y de que NO. Es la pregunta
+      // que la pagina no contestaba: quien lee «la apuesta acerto» al lado de
+      // una seccion de sentimiento supone que fue el sentimiento, y esa noche
+      // los comentarios apuntaban a otra persona.
+      ((D.sentimiento && D.sentimiento.antes_de_la_30)
+        ? "<p class='mn-marcador'><b>Cuidado con qué señal fue.</b> La apuesta se arma con dos " +
+          "cosas y ninguna es esta sección: la <b>campaña en tendencias</b> y el <b>ranking de " +
+          "imagen</b>. Los comentarios no entran. Antes de la gala " + D.sentimiento.antes_de_la_30.gala +
+          ", que es la que acertó, " + (t => t.charAt(0).toLowerCase() + t.slice(1))(
+            D.sentimiento.antes_de_la_30.lectura) + " Así que el sentimiento de " +
+          "los comentarios no tiene ningún acierto a su favor todavía: es una medición que se " +
+          "publica y se mira, no una que haya demostrado nada.</p>"
+        : "");
     })() +
     "<p class='mn-leyenda'><b>Por qué hay tres números por persona.</b> " +
       "Son tres cuentas distintas sobre la misma pregunta, publicadas por separado para no " +
