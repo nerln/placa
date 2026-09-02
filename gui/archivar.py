@@ -156,7 +156,8 @@ def main():
     H = _leer("historial_pronostico.json")
     etiqueta = {"predicciones_gala": "modelo",
                 "predicciones_dos_tiempos": "dos tiempos",
-                "apuestas": "apuesta"}
+                "apuestas": "apuesta",
+                "cruces": "cruce"}
     llamadas = []
     for k, q in etiqueta.items():
         e = [x for x in (H.get(k) or []) if x.get("gala") == gala]
