@@ -69,14 +69,31 @@ def lista(s):
     return [x.strip() for x in s.split(",") if x.strip()] if s else []
 
 
-def verificar_identidad(salvados, versus):
-    """Devuelve (completa, suma_publicada, exceso, suma_no_versus)."""
+def verificar_identidad(salvados, versus, placa=None):
+    """Devuelve (completa, suma_publicada, exceso, suma_no_versus).
+
+    «Completa» quiere decir que se conoce el reparto de TODA la placa, y por eso
+    hace falta el tercer argumento. Sin el, la gala 31 del 31 de agosto de 2026
+    pasaba como completa: Telefe publico el mano a mano —Pincoya 58,1 contra
+    Yipio 41,9— y no publico cuanto habian sacado Charlotte y Mariela al
+    salvarse. La identidad cerraba sola, porque sin salvados no hay nada que
+    sumar, y el reparto quedaba con DOS entradas para una placa de CUATRO.
+
+    Eso no es un dato incompleto: es un dato falso. gui/build.py reparte el
+    resto entre los del versus, asi que las dos que faltan entran al modelo
+    valiendo cero, cuando lo que pasa es que no se sabe cuanto sacaron. Una
+    gala asi se registra igual —quien salio y el mano a mano son ciertos— pero
+    no alimenta la estimacion del reparto.
+    """
     if not versus or len(versus) != 2:
         return False, None, None, None
     total = sum(salvados.values()) + sum(versus.values())
     exceso = round(total - 100, 2)
     no_versus = round(sum(salvados.values()), 2)
-    return abs(exceso - no_versus) < 0.35, round(total, 2), exceso, no_versus
+    cierra = abs(exceso - no_versus) < 0.35
+    if placa is not None and len(set(salvados) | set(versus)) < len(set(placa)):
+        return False, round(total, 2), exceso, no_versus
+    return cierra, round(total, 2), exceso, no_versus
 
 
 def sacar_jugador(plantel, apodo, fecha, modo, detalle):
@@ -164,7 +181,7 @@ def main():
     if a.eliminado:
         salvados, versus = pares(a.salvados), pares(a.versus)
         placa = lista(a.placa) or list(salvados) + list(versus)
-        completa, total, exceso, no_versus = verificar_identidad(salvados, versus)
+        completa, total, exceso, no_versus = verificar_identidad(salvados, versus, placa)
         print(f"· Gala {a.gala} · {a.fecha} · sale {a.eliminado}")
         if total is not None:
             estado = "CUADRA, placa completa" if completa else "NO CUADRA, placa parcial"

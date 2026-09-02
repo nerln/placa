@@ -89,6 +89,7 @@ def main():
 
     pm, pa = ultima("predicciones_gala"), ultima("apuestas")
     pd = ultima("predicciones_dos_tiempos")
+    pc = ultima("cruces")
     if not (pm or pa):
         print(f"no hay ninguna predicción congelada para la gala {gala}: no se puntúa")
         return
@@ -106,9 +107,11 @@ def main():
         "modelo": puntuar((pm or {}).get("p_sale"), quien, universo) if pm else None,
         "dos_tiempos": puntuar((pd or {}).get("p_sale"), quien, universo) if pd else None,
         "apuesta": puntuar((pa or {}).get("p_sale"), quien, universo) if pa else None,
+        "cruce": puntuar((pc or {}).get("p_sale"), quien, universo) if pc else None,
         "congeladas": {"modelo": (pm or {}).get("corrida"),
                        "dos_tiempos": (pd or {}).get("corrida"),
-                       "apuesta": (pa or {}).get("escrita")},
+                       "apuesta": (pa or {}).get("escrita"),
+                       "cruce": (pc or {}).get("escrita")},
     }
 
     reg = H.setdefault("puntajes", [])
@@ -118,7 +121,7 @@ def main():
             json.dumps(H, ensure_ascii=False, indent=1))
     (ROOT / "data" / "puntaje.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1))
 
-    for cual in ("modelo", "dos_tiempos", "apuesta"):
+    for cual in ("modelo", "dos_tiempos", "apuesta", "cruce"):
         r = salida[cual]
         if not r:
             print(f"  {cual}: sin predicción congelada")

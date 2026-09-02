@@ -82,6 +82,19 @@
     "Mariela": 0.0418,
     "Sol": 0.0482
    }
+  },
+  {
+   "fecha": "2026-08-31",
+   "galas_hasta": 31,
+   "en_juego": 6,
+   "p_gana": {
+    "Charlotte": 0.3605,
+    "Zilli": 0.1806,
+    "Luana": 0.2009,
+    "Yipio": 0.1453,
+    "Mariela": 0.0571,
+    "Sol": 0.0557
+   }
   }
  ],
  "predicciones_gala": [
@@ -170,6 +183,28 @@
    },
    "n_sims": 400000,
    "_nota": "Rotulada «gala 30» por un fallo de model/actualizar.py el 29/08/2026 y corregida a 31 el mismo dia, antes de que se jugara. La predicción y su placa no se tocaron."
+  },
+  {
+   "gala": 32,
+   "fecha_gala": "2026-09-02",
+   "corrida": "2026-08-31",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio",
+    "Mariela"
+   ],
+   "p_sale": {
+    "Sol": 0.50343,
+    "Luana": 0.12228,
+    "Zilli": 0.085375,
+    "Charlotte": 0.077385,
+    "Yipio": 0.128555,
+    "Mariela": 0.082975
+   },
+   "n_sims": 400000
   }
  ],
  "_nota_predicciones": "Append-only, y a proposito: es la promesa que despues hay que puntuar. Cada entrada es la distribucion de quien se va que la pagina publicaba antes de esa gala. No se reescribe ninguna aunque la corrida siguiente diga otra cosa.",
@@ -409,6 +444,71 @@
     "dos_tiempos": "2026-08-18",
     "apuesta": "2026-08-23T05:51-0300"
    }
+  },
+  {
+   "gala": 31,
+   "fecha": "2026-08-31",
+   "eliminado": "Pincoya",
+   "placa": [
+    "Charlotte",
+    "Yipio",
+    "Pincoya",
+    "Mariela"
+   ],
+   "regla": "EVALUACION.md, escrita antes de que terminara la temporada",
+   "modelo": {
+    "p_del_eliminado": 0.2929,
+    "puesto": 2,
+    "de": 4,
+    "acerto": false,
+    "brier": 0.6739,
+    "brier_uniforme": 0.75,
+    "log_verosimilitud": -1.2279,
+    "log_verosimilitud_uniforme": -1.3863,
+    "orden": [
+     "Yipio",
+     "Pincoya",
+     "Mariela",
+     "Charlotte"
+    ]
+   },
+   "dos_tiempos": {
+    "p_del_eliminado": 0.2856,
+    "puesto": 2,
+    "de": 4,
+    "acerto": false,
+    "brier": 0.6844,
+    "brier_uniforme": 0.75,
+    "log_verosimilitud": -1.2532,
+    "log_verosimilitud_uniforme": -1.3863,
+    "orden": [
+     "Yipio",
+     "Pincoya",
+     "Mariela",
+     "Charlotte"
+    ]
+   },
+   "apuesta": {
+    "p_del_eliminado": 0.3356,
+    "puesto": 2,
+    "de": 4,
+    "acerto": false,
+    "brier": 0.6111,
+    "brier_uniforme": 0.75,
+    "log_verosimilitud": -1.0918,
+    "log_verosimilitud_uniforme": -1.3863,
+    "orden": [
+     "Yipio",
+     "Pincoya",
+     "Charlotte",
+     "Mariela"
+    ]
+   },
+   "congeladas": {
+    "modelo": "2026-08-24",
+    "dos_tiempos": "2026-08-24",
+    "apuesta": "2026-08-29T09:08-0300"
+   }
   }
  ],
  "predicciones_dos_tiempos": [
@@ -453,6 +553,29 @@
    },
    "sigma_prior": 1.0,
    "n_versus": 12
+  },
+  {
+   "gala": 32,
+   "fecha_gala": "2026-09-02",
+   "corrida": "2026-08-31",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio",
+    "Mariela"
+   ],
+   "p_sale": {
+    "Sol": 0.2466,
+    "Yipio": 0.1797,
+    "Luana": 0.1486,
+    "Zilli": 0.1479,
+    "Mariela": 0.1419,
+    "Charlotte": 0.1353
+   },
+   "sigma_prior": 1.0,
+   "n_versus": 14
   }
  ],
  "_nota_dos_tiempos": "La variante del mano a mano, congelada antes de cada gala como las otras dos. Cada entrada lleva el prior y cuantos versus habia.",
@@ -465,6 +588,74 @@
    "por_que": "Es lo único de las tres que acertó alguna vez. En la gala 30 la apuesta puso a Tamara primera con 37,0% y Tamara salió; el modelo la puso ÚLTIMA de seis con 3,1% y la variante de dos tiempos también última con 5,4%. Sumado a la prueba hacia atrás, el modelo va 0 de 8 reconstruidas y 0 de 2 congeladas, y la apuesta 1 de 2.",
    "lo_que_esto_no_es": "No es elegir cuál se puntúa. Se siguen puntuando las tres, siempre, y también las que fallen. Cambia el orden en que se muestran, nada más. Y queda escrito ANTES de la gala 31: si la apuesta falla el lunes, esta declaración queda igual, con esta fecha.",
    "de_que_tamano_es_la_evidencia": "Dos galas congeladas. No alcanza para saber, y decir lo contrario sería inventar precisión. Es la evidencia que hay."
+  },
+  {
+   "fecha": "2026-09-02",
+   "vigente_desde_gala": 32,
+   "que": "Se estrena una cuarta predicción, el cruce (model/cruce.py): mezcla el sentimiento de los comentarios con la campaña en tendencias, pesando más el sentimiento cuanto menos falta para la gala.",
+   "por_que": "En la gala 31 las tres predicciones pusieron a Pincoya segunda de cuatro y salió Pincoya. Los comentarios la ponían primera con el 91% en contra, y no entraban en ninguna cuenta. El cruce existe para que esa señal tenga que comprometerse con un número y pueda equivocarse en público.",
+   "los_pesos": "A una semana de la gala el sentimiento pesa 20% y la campaña 80%; en la noche de la gala, 65% y 35%. La razón es que la campaña se organiza con días de anticipación y aguanta, y el sentimiento se mueve en horas y responde a lo último que pasó — y el voto que decide se manda esa noche.",
+   "lo_que_esto_no_es": "No reemplaza a ninguna. Se puntúan las cuatro, siempre, también las que fallen. El cruce no tiene ni un acierto todavía y esta declaración queda con esta fecha aunque falle esta noche.",
+   "la_apuesta_esta_semana": "No se publica: está definida para placa negativa y ésta es positiva. Publicar una versión invertida improvisada la tarde de la gala sería peor que declarar que no aplica."
   }
- ]
+ ],
+ "cruces": [
+  {
+   "gala": 32,
+   "fecha_gala": "2026-09-02",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio",
+    "Mariela"
+   ],
+   "p_sale": {
+    "Sol": 0.1732,
+    "Luana": 0.2078,
+    "Zilli": 0.2541,
+    "Charlotte": 0.0601,
+    "Yipio": 0.1002,
+    "Mariela": 0.2047
+   },
+   "escrita": "2026-09-02T05:25-0300",
+   "llamada": "Zilli",
+   "pesos": {
+    "sentimiento": 0.605,
+    "campana": 0.395,
+    "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
+   },
+   "fase": "positivo"
+  },
+  {
+   "gala": 32,
+   "fecha_gala": "2026-09-02",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio",
+    "Mariela"
+   ],
+   "p_sale": {
+    "Sol": 0.1734,
+    "Luana": 0.2077,
+    "Zilli": 0.2541,
+    "Charlotte": 0.0599,
+    "Yipio": 0.1002,
+    "Mariela": 0.2046
+   },
+   "escrita": "2026-09-02T06:08-0300",
+   "llamada": "Zilli",
+   "pesos": {
+    "sentimiento": 0.607,
+    "campana": 0.393,
+    "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
+   },
+   "fase": "positivo"
+  }
+ ],
+ "_nota_cruces": "El cruce entre sentimiento y campaña, congelado antes de cada gala como las otras tres. Cada entrada lleva los pesos que tenía el reloj en ese momento."
 }

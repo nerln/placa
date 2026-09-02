@@ -374,3 +374,45 @@ la congelada.
 de los datos. Eso es lo que lo hace un test y no una pesca entre tres. Si alguna
 vez hace falta un disparador para D o para A, cada uno se declara por separado,
 antes de sus datos y con su propia barra.
+
+---
+
+# Apéndice del 2 de septiembre de 2026: la cuarta serie
+
+## Serie C — el cruce
+
+Se estrena en la gala 32 y **no tiene ni una gala jugada**. Mezcla dos señales que
+ya se median y que no entraban en ninguna predicción de la misma forma: el
+sentimiento de los comentarios y la campaña en tendencias. La mezcla no es fija:
+el peso del sentimiento **crece a medida que se acerca la gala**, de 20% a una
+semana hasta 65% la noche misma, y el de la campaña baja de 80% a 35%.
+
+El motivo está medido, no supuesto. La campaña se organiza con días de
+anticipación y aguanta; el sentimiento se mueve en horas y responde a lo último
+que pasó en la casa. Y el voto que decide la gala se manda esa noche.
+
+**Por qué existe.** En la gala 31 las tres predicciones publicadas pusieron a
+Pincoya **segunda de cuatro** —modelo 29,3%, dos tiempos 28,6%, apuesta 33,6%— y
+salió Pincoya. Los comentarios la ponían **primera, con el 91% en contra**, y esa
+señal se mostraba al costado sin comprometerse con ningún número. El cruce existe
+para obligarla a comprometerse y a poder fallar en público.
+
+**Parte reconstruida: no hay.** Se podría calcular hacia atrás para las galas 30 y
+31, pero el peso depende de cuántas horas faltaban en el momento de la medición, y
+esas mediciones se tomaron en momentos distintos de la semana. Reconstruirlo
+obligaría a elegir hoy qué reloj usar para cada una, y elegir un parámetro después
+de ver el resultado es exactamente lo que este documento existe para impedir. Se
+declara que no hay serie reconstruida en vez de fabricarla.
+
+## La apuesta, en placa positiva
+
+La serie A (la apuesta declarada) **no se publica para la gala 32**, y la razón es
+de definición y no de conveniencia: se arma leyendo la campaña y la imagen como
+**riesgo** —más consigna, más peligro— y desde el 31 de agosto la placa es
+positiva, o sea que la misma cuenta sale al revés. Una versión invertida
+improvisada la tarde de una gala no es la misma predicción, y publicarla bajo el
+mismo nombre rompería la serie.
+
+Queda anotado que la serie A se interrumpe con **1 acierto de 3**, que es el único
+acierto de toda la página, y que la interrupción es por cambio de reglas del
+programa y no por su resultado.

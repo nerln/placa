@@ -1,0 +1,54 @@
+{
+ "generado": "2026-09-02T06:08-0300",
+ "gala": 32,
+ "fecha_gala": "2026-09-02",
+ "placa": [
+  "Sol",
+  "Luana",
+  "Zilli",
+  "Charlotte",
+  "Yipio",
+  "Mariela"
+ ],
+ "fase": "positivo",
+ "que_es": "El cruce entre lo que la gente escribe y lo que se pide afuera, pesado por lo cerca que está la gala: cuanto menos falta, más pesa el sentimiento.",
+ "reloj": {
+  "faltan_horas": 16.1,
+  "cercania": 0.904,
+  "horizonte_horas": 168.0
+ },
+ "pesos": {
+  "sentimiento": 0.607,
+  "campana": 0.393,
+  "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
+ },
+ "entradas": {
+  "sentimiento": {
+   "Zilli": 0.2608,
+   "Luana": 0.1993,
+   "Mariela": 0.1793,
+   "Sol": 0.2282,
+   "Yipio": 0.1076,
+   "Charlotte": 0.0247
+  },
+  "campana": {
+   "Zilli": 0.2437,
+   "Luana": 0.2208,
+   "Mariela": 0.2437,
+   "Sol": 0.0888,
+   "Yipio": 0.0888,
+   "Charlotte": 0.1142
+  }
+ },
+ "p_sale": {
+  "Sol": 0.1734,
+  "Luana": 0.2077,
+  "Zilli": 0.2541,
+  "Charlotte": 0.0599,
+  "Yipio": 0.1002,
+  "Mariela": 0.2046
+ },
+ "llama_a": "Zilli",
+ "coinciden": null,
+ "aviso": "Declarado antes de la gala 32 y sin ningún acierto todavía. Se puntúa como las otras tres, también cuando falle."
+}

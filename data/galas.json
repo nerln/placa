@@ -310,23 +310,58 @@
    },
    "completa": true,
    "eliminado": "Tamara"
+  },
+  {
+   "gala": 31,
+   "fecha": "2026-08-31",
+   "tipo": "negativo",
+   "placa": [
+    "Charlotte",
+    "Yipio",
+    "Pincoya",
+    "Mariela"
+   ],
+   "salvados_cuota": {},
+   "versus": {
+    "Pincoya": 58.1,
+    "Yipio": 41.9
+   },
+   "completa": false,
+   "eliminado": "Pincoya"
+  },
+  {
+   "gala": 31,
+   "fecha": "2026-08-31",
+   "tipo": "negativo",
+   "placa": [
+    "Charlotte",
+    "Yipio",
+    "Pincoya",
+    "Mariela"
+   ],
+   "salvados_cuota": {},
+   "versus": {
+    "Pincoya": 58.1,
+    "Yipio": 41.9
+   },
+   "completa": false,
+   "eliminado": "Pincoya"
   }
  ],
  "placa_vigente": {
-  "gala": 31,
-  "fecha": "2026-08-31",
-  "fecha_nominacion": "2026-08-24",
+  "gala": 32,
+  "fecha": "2026-09-02",
   "integrantes": [
+   "Sol",
+   "Luana",
+   "Zilli",
    "Charlotte",
    "Yipio",
-   "Pincoya",
    "Mariela"
   ],
-  "inmune_lider": "Pincoya",
-  "libres": [
-   "Zilli",
-   "Luana",
-   "Sol"
-  ]
+  "libres": [],
+  "inmune_lider": "",
+  "signo": "positivo",
+  "_nota": "Placa positiva final: se va la que menos votos positivos junte."
  }
 }

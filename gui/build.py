@@ -246,7 +246,8 @@ def _congeladas(hp, archivo):
     """
     etiqueta = {"predicciones_gala": "modelo",
                 "predicciones_dos_tiempos": "dos_tiempos",
-                "apuestas": "apuesta"}
+                "apuestas": "apuesta",
+                "cruces": "cruce"}
     por_gala = {}
     for clave, nombre in etiqueta.items():
         for e in hp.get(clave) or []:
@@ -321,6 +322,8 @@ def main():
     hp_p = ROOT / "data" / "historial_pronostico.json"
     _hp = json.loads(hp_p.read_text()) if hp_p.exists() else {}
     corridas = _hp.get("corridas") or []
+    cru_p = ROOT / "data" / "cruce.json"
+    cruce = json.loads(cru_p.read_text()) if cru_p.exists() else None
     arch_p = ROOT / "data" / "archivo.json"
     archivo = json.loads(arch_p.read_text()) if arch_p.exists() else None
     congeladas = _congeladas(_hp, archivo)
@@ -358,6 +361,7 @@ def main():
         "historial_pronostico": corridas,
         "congeladas": congeladas,
         "declaraciones": _hp.get("declaraciones") or [],
+        "cruce": cruce,
         "archivo": archivo,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},
         "eliminados": plantel["eliminados_recientes"],

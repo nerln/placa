@@ -1,30 +1,24 @@
 {
  "generado": "2026-08-11",
- "ventana": "28/08 16:28 → 29/08 11:06 UTC",
+ "ventana": "24 tarjetas horarias de trends24.in/argentina",
  "fuente": "posiciones del top-50 de X en Argentina archivadas por trends24",
  "formula": "ICD(i) = Σ signo(t) · (51 − mejor_posición(t)) / 50, sobre los términos que nombran a i y llevan consigna. Una sola consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82; al 50, 0,02. Dos consignas suman.",
  "entra_al_modelo": false,
  "por_que_no": "Para que entrara habría que estimar cuánto pesa contra las galas ya jugadas, y con una sola ventana de tendencias no hay con qué. Se publica como descripción.",
  "null_no_es_cero": "Quien no tiene ningún término con consigna queda en null. Sin campaña no es lo mismo que con campaña neutra: es no medido.",
  "indice": {
-  "Pincoya": {
-   "icd": -0.98,
+  "Charlotte": {
+   "icd": 0.86,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
-     "txt": "PINCOYA AL 9009",
-     "signo": -1,
-     "mejor": 2,
-     "peso": 0.98
+     "txt": "CHARLOTTE AL 9009",
+     "signo": 1,
+     "mejor": 8,
+     "peso": 0.86
     }
    ]
-  },
-  "Charlotte": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
   },
   "Zilli": {
    "icd": null,
@@ -33,44 +27,51 @@
    "terminos": []
   },
   "Luana": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
+   "icd": 0.44,
+   "n_terminos": 1,
+   "estado": "observado",
+   "terminos": [
+    {
+     "txt": "LUANA AL 9009",
+     "signo": 1,
+     "mejor": 29,
+     "peso": 0.44
+    }
+   ]
   },
   "Yipio": {
-   "icd": -1.0,
+   "icd": 0.96,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "YIPIO AL 9009",
-     "signo": -1,
-     "mejor": 1,
-     "peso": 1.0
+     "signo": 1,
+     "mejor": 3,
+     "peso": 0.96
     }
    ]
   },
   "Mariela": {
-   "icd": -0.42,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "mariela al 9009",
-     "signo": -1,
-     "mejor": 30,
-     "peso": 0.42
-    }
-   ]
-  },
-  "Sol": {
    "icd": null,
    "n_terminos": 0,
    "estado": "sin_observacion",
    "terminos": []
+  },
+  "Sol": {
+   "icd": 0.96,
+   "n_terminos": 1,
+   "estado": "observado",
+   "terminos": [
+    {
+     "txt": "SOL AL 9009",
+     "signo": 1,
+     "mejor": 3,
+     "peso": 0.96
+    }
+   ]
   }
  },
- "observados": 3,
- "de": 7
+ "observados": 4,
+ "de": 6
 }

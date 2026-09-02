@@ -1,73 +1,61 @@
 {
  "_nota": "Videos oficiales del programa de los que se recogen comentarios. Se eligen los de esta semana y de esta placa: los de semanas anteriores hablan de otra gente. Ampliar la lista amplía el corpus, y conviene decirlo cuando se amplía.",
- "recogido": "2026-08-31",
+ "recogido": "2026-09-02",
  "videos": [
   {
-   "id": "y7_qmKeVvI8",
-   "titulo": "Tomy explica por qué se siente representado por Sol",
-   "fecha": "2026-08-31",
-   "que": "Tomy explica por qué se siente representado por Sol"
+   "id": "4akGUnE2JY8",
+   "titulo": "PROGRAMA 161 [01-09-26]",
+   "que": "PROGRAMA 161 [01-09-26]",
+   "fecha": "2026-09-01"
   },
   {
-   "id": "5z3LvqeAhWY",
-   "titulo": "Almuerzo tranquilo después de una mañana cargada",
-   "fecha": "2026-08-31",
-   "que": "Almuerzo tranquilo después de una mañana cargada"
+   "id": "xspp3wS2Qiw",
+   "titulo": "El debate con Pincoya",
+   "que": "El debate con Pincoya",
+   "fecha": "2026-09-02"
   },
   {
-   "id": "rXyM2XXK6GA",
-   "titulo": "El mensaje de Luana para Hanssen sobre su relación",
-   "fecha": "2026-08-31",
-   "que": "El mensaje de Luana para Hanssen sobre su relación"
+   "id": "UKSBJP-s2_Q",
+   "titulo": "Zilli se reencontró con su amiga Gladys",
+   "que": "Zilli se reencontró con su amiga Gladys",
+   "fecha": "2026-09-02"
   },
   {
-   "id": "goZkc6_Haqc",
-   "titulo": "Sol irrumpió en el desfile y las indirectas cruzadas",
-   "fecha": "2026-08-31",
-   "que": "Sol irrumpió en el desfile y las indirectas cruzadas"
+   "id": "wnJb-Wa21a4",
+   "titulo": "Mariana Nannis y Alex Caniggia en el «derecho a réplica»",
+   "que": "Mariana Nannis y Alex Caniggia en el «derecho a réplica»",
+   "fecha": "2026-09-02"
   },
   {
-   "id": "GhwmRrVIyc4",
-   "titulo": "Charlotte, Yipio, Cola y Titi lo dieron todo en un desfile",
-   "fecha": "2026-08-31",
-   "que": "Charlotte, Yipio, Cola y Titi lo dieron todo en un desfile"
+   "id": "KV8GQ8OaiD4",
+   "titulo": "Sol llora y le dice «te amo» a Pincoya",
+   "que": "Sol llora y le dice «te amo» a Pincoya",
+   "fecha": "2026-09-01"
   },
   {
-   "id": "Uvi2JkKEOQg",
-   "titulo": "«Pelotud...»: las peleas siguen y no aflojan",
-   "fecha": "2026-08-31",
-   "que": "«Pelotud...»: las peleas siguen y no aflojan"
+   "id": "nCoxpyC8cLM",
+   "titulo": "El primer almuerzo sin Pincoya",
+   "que": "El primer almuerzo sin Pincoya",
+   "fecha": "2026-09-01"
   },
   {
-   "id": "Ey6L9OKQQQ4",
-   "titulo": "Nueva pelea en la casa: Sol y Pincoya contra Yipio y Charlotte",
-   "fecha": "2026-08-31",
-   "que": "Nueva pelea en la casa: Sol y Pincoya contra Yipio y Charlotte"
+   "id": "nurKDneP7Kk",
+   "titulo": "Charlotte y Cola no se separan",
+   "que": "Charlotte y Cola no se separan",
+   "fecha": "2026-09-01"
   },
   {
-   "id": "u1O3rHgFa50",
-   "titulo": "Mates, charla y análisis de las peleas",
-   "fecha": "2026-08-31",
-   "que": "Mates, charla y análisis de las peleas"
+   "id": "BaYdutHHvbk",
+   "titulo": "«Creo que nunca te nominé»: Sol y Zilli",
+   "que": "«Creo que nunca te nominé»: Sol y Zilli",
+   "fecha": "2026-09-01"
   },
   {
-   "id": "EWrMmDjx_U0",
-   "titulo": "Yipio comenzó el día con todo",
-   "fecha": "2026-08-31",
-   "que": "Yipio comenzó el día con todo"
-  },
-  {
-   "id": "Iwxnl_apvwE",
-   "titulo": "Charlotte se siente subestimada y Yipio está cansada de Sol",
-   "fecha": "2026-08-31",
-   "que": "Charlotte se siente subestimada y Yipio está cansada de Sol"
-  },
-  {
-   "id": "o6gZSY3OzF8",
-   "titulo": "PROGRAMA 159 [29-08-26]",
-   "fecha": "2026-08-29",
-   "que": "PROGRAMA 159 [29-08-26]"
+   "id": "03izaComqqk",
+   "titulo": "Cola agradeció el apoyo de los «charlotistas»",
+   "que": "Cola agradeció el apoyo de los «charlotistas»",
+   "fecha": "2026-09-01"
   }
  ],
- "_nota_corrida": "Corpus del día de la gala: los videos que el canal subió el mismo lunes 31, más el programa del sábado. Es la lectura más cercana al cierre de la votación que se puede tomar sin credenciales."
+ "_nota_corrida": "Corpus de la placa positiva final: los videos de los dos días desde que se abrió. El signo de «al 9009» va al revés que la semana pasada."
 }

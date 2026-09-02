@@ -2,6 +2,22 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-09-01",
+   "titulo": "Se abrió la placa positiva final: ahora se vota para salvar",
+   "detalle": "Del Moro lo anunció al cerrar la gala: «A partir de este momento se abre la placa positiva final… la que menos cantidad de votos positivos tenga se va». No hay más galas de nominación: las seis que quedan están en placa hasta el final, con eliminación los lunes y los miércoles, y la final el 14 de septiembre.",
+   "afecta": "Da vuelta el signo de casi todo lo que esta página mide. «X AL 9009» pedía que echaran a X y ahora pide que se quede, y quien no tiene consigna pasó a ser quien nadie está pidiendo salvar. Por eso la apuesta declarada no se publica esta vez: está definida para el voto negativo.",
+   "impacto": "alto",
+   "fuente": "https://www.infobae.com/teleshow/2026/09/01/yipio-versus-pincoya-en-gran-hermano-generacion-dorada-quien-fue-eliminada-y-quien-se-convirtio-en-finalista/"
+  },
+  {
+   "fecha": "2026-08-31",
+   "titulo": "Se fue Pincoya, y ninguna de las tres predicciones le acertó",
+   "detalle": "Salió con el 58,1% contra el 41,9% de Yipio, en una gala que superó los 13 millones de votos. Telefe no publicó cuánto sacaron Charlotte y Mariela al salvarse, así que el reparto de esa placa queda incompleto y no alimenta la estimación del modelo.",
+   "afecta": "Las tres cuentas la pusieron segunda de cuatro: el modelo con 29,3%, dos tiempos con 28,6% y la apuesta con 33,6%. Lo que sí la había puesto primera eran los comentarios, con el 91% en contra, y esa señal no entraba en ninguna predicción. De ahí sale el cruce, que se estrena esta gala.",
+   "impacto": "alto",
+   "fuente": "https://www.lanacion.com.ar/espectaculos/quien-se-fue-de-gran-hermano-este-lunes-31-de-agosto-nid01092026/"
+  },
+  {
    "fecha": "2026-08-27",
    "titulo": "Expulsaron a Campanita y a Danelik, y Mariela se quedó sin dupla",
    "detalle": "Gran Hermano expulsó a las dos visitas tras la pelea de la noche anterior, que empezó cuando Campanita sacó de la habitación las fotos de los hijos de Sol y de Pincoya. Danelik aceptó y salió por la puerta giratoria; Campanita se negó, entró personal de seguridad y terminó saliendo por la puerta de atrás, fuera del aire.",

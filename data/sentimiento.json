@@ -1,150 +1,130 @@
 {
- "generado": "2026-08-31",
- "fase": "negativo",
- "fuente": "Once videos del canal oficial: los diez que subió el propio lunes 31, día de la gala, más el programa del sábado. Es la lectura más cercana al cierre de la votación que se puede tomar sin credenciales.",
+ "generado": "2026-08-11",
+ "fase": "positivo",
+ "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
- "limites": "Son los comentarios de los videos del programa, no del país: quien comenta ahí no es una muestra de quien vota. El léxico no entiende la negación ni a quién apunta cada frase, y uno que defiende a alguien con palabras duras cae del lado equivocado. Los volúmenes NO se comparan entre jugadoras, y hoy menos que nunca: de los once videos, seis son sobre las peleas de la casa y ponen a Yipio, Charlotte, Sol y Pincoya en el título. Mariela casi no aparece, y por eso tiene doce menciones y dos con signo: eso mide de qué habla el canal, no qué piensa la gente de ella. Lo que sí se puede leer es la PROPORCIÓN dentro de cada jugadora, que no depende de cuántas veces la nombren. Y una advertencia sobre la reproducibilidad: se guarda el texto de cada comentario pero no la etiqueta de signo que se le puso, así que estos números no se pueden rehacer desde los archivos publicados. Es un agujero declarado.",
+ "limites": "Son los comentarios de los videos del propio programa, o sea de un público que ya entró a mirarlo. No es una muestra de nada y no se pondera. Y quien nombra a alguien sin marca de signo queda sin clasificar, que no es lo mismo que indiferente. Y una advertencia propia de esta semana: los videos de estos dos días hablan sobre todo de la salida de Pincoya y de Charlotte, así que Mariela y Luana casi no aparecen. Con una y dos menciones con signo no se puede leer nada de ellas, y el cruce lo corrige suavizando las proporciones con n chico en vez de dejarlas gritar.",
  "no_alcanzables": [
   "las respuestas al posteo oficial de X, que son 372 y no publican texto",
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 819,
- "nombran_a_alguien": 480,
- "con_signo": 251,
+ "total": 653,
+ "nombran_a_alguien": 334,
+ "con_signo": 105,
  "por_jugadora": {
-  "Charlotte": {
+  "Sol": {
    "contra": 13,
-   "favor": 38,
+   "favor": 7,
    "sin_signo": 50
   },
-  "Yipio": {
-   "contra": 38,
-   "favor": 84,
-   "sin_signo": 116
+  "Luana": {
+   "contra": 4,
+   "favor": 3,
+   "sin_signo": 15
   },
-  "Pincoya": {
-   "contra": 126,
-   "favor": 13,
-   "sin_signo": 95
+  "Zilli": {
+   "contra": 15,
+   "favor": 5,
+   "sin_signo": 26
+  },
+  "Charlotte": {
+   "contra": 3,
+   "favor": 53,
+   "sin_signo": 110
+  },
+  "Yipio": {
+   "contra": 11,
+   "favor": 27,
+   "sin_signo": 63
   },
   "Mariela": {
-   "contra": 0,
-   "favor": 2,
-   "sin_signo": 12
+   "contra": 1,
+   "favor": 1,
+   "sin_signo": 16
   }
  },
  "ejemplos": {
+  "Sol": [
+   {
+    "texto": "Sol y zilli afuera",
+    "signo": "contra"
+   },
+   {
+    "texto": "SOL sin dudas es la que merece ganar de las que están adentro, JUGÓ!!! Tuvo siempre toda la casa en contra, los que salían también, la odian, no pudieron y eso les duele!!!! SOL AL",
+    "signo": "favor"
+   },
+   {
+    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
+    "signo": "contra"
+   }
+  ],
+  "Luana": [
+   {
+    "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
+    "signo": "contra"
+   },
+   {
+    "texto": "GRACIAS A DIOS SALIÓ ESTA MUJER,MIS VIOLENCIA, YIPIO ,CHARLOT A LA FINAL, EL MIERCOLES SE VA MARIELA O LUANA",
+    "signo": "favor"
+   },
+   {
+    "texto": "Vamos Sol. Zilli y Luana🇦🇷",
+    "signo": "favor"
+   }
+  ],
+  "Zilli": [
+   {
+    "texto": "Mas falsa la Zilli,ojala sea la siguiente en irse.",
+    "signo": "contra"
+   },
+   {
+    "texto": "Sol y zilli afuera",
+    "signo": "contra"
+   },
+   {
+    "texto": "Espero que cada una de estas jugadoras que todavía quedan en esta casa puedan recuperar la salud mental después de que termine este programa. El resultado después de seis meses no ",
+    "signo": "contra"
+   }
+  ],
   "Charlotte": [
    {
-    "texto": "VAMIS  YIPIO  Y  CHARLOT  SON  LAS  GANADORAS  DE  LA  COPA   DE GH  DORADA  FUERZAS TE  BANCAMOS CIEN  PORCIENTOS   HASTA  LA  FINAAAALLL  SON LAS  MEJORES  DE  PERSONA  AMABLES  ",
-    "signo": "favor"
-   },
-   {
-    "texto": "Yipio y Charlotte a la final 🏆 👏👏👏👏👏👏",
-    "signo": "favor"
-   },
-   {
-    "texto": "No puede ser que gh haga ganar a una uruguaya falsa y la otra planta de charlotte",
+    "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
     "signo": "contra"
+   },
+   {
+    "texto": "Te amo charloteeeee🥹🥹🥹🥹🩷",
+    "signo": "favor"
+   },
+   {
+    "texto": "Vamos Charlotte❤ a la final ❤🎉",
+    "signo": "favor"
    }
   ],
   "Yipio": [
    {
-    "texto": "Yipio al 9009! Aguante pincoya!",
-    "signo": "contra"
+    "texto": "Gran momento Charlotte llorando nunca lo hizo en cámaras y lo hizo ,tuvo lo que tanto quiso escuchar a su mamá decir te quiero y justo el complemento de su hermano Vamos Charlotte ",
+    "signo": "favor"
    },
    {
-    "texto": "Yipio al 9009",
-    "signo": "contra"
+    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
+    "signo": "favor"
    },
    {
-    "texto": "CHAU YIPIO IMPRESENTABLE 😂😂😂😂",
-    "signo": "contra"
-   }
-  ],
-  "Pincoya": [
-   {
-    "texto": "Hay que votar.\nPINCOYA AL 9009",
-    "signo": "contra"
-   },
-   {
-    "texto": "Yipio al 9009! Aguante pincoya!",
-    "signo": "contra"
-   },
-   {
-    "texto": "Pincoya al 9009",
+    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
     "signo": "contra"
    }
   ],
   "Mariela": [
    {
-    "texto": "Sol sabe que Mariela no tiene fandom, y que se ha salvado muchas veces por el simple hecho de no estar en foco..Y ya es la 2da vez que se le caga de risa como lo burlista que es, d",
+    "texto": "GRACIAS A DIOS SALIÓ ESTA MUJER,MIS VIOLENCIA, YIPIO ,CHARLOT A LA FINAL, EL MIERCOLES SE VA MARIELA O LUANA",
     "signo": "favor"
    },
    {
-    "texto": "No soporto más 1 exposicion de Mariela . Nose como la soportan con sus largas exposiciones sin redondear,vamos Char ❤",
-    "signo": "favor"
+    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
+    "signo": "contra"
    }
   ]
  },
- "momento": "2026-08-31T19:30-03:00",
- "comparacion": {
-  "_nota": "La misma medición, cuatro días antes, sobre los videos de la semana. Se guarda para que se vea el movimiento y no sólo el número de hoy.",
-  "fecha_anterior": "2026-08-29",
-  "total_anterior": 2062,
-  "por_jugadora_anterior": {
-   "Pincoya": {
-    "contra": 494,
-    "favor": 102
-   },
-   "Yipio": {
-    "contra": 190,
-    "favor": 145
-   },
-   "Charlotte": {
-    "contra": 10,
-    "favor": 27
-   },
-   "Mariela": {
-    "contra": 12,
-    "favor": 2
-   }
-  }
- },
- "antes_de_la_30": {
-  "_nota": "Lo que decían los comentarios antes de la gala que la apuesta acertó. Se guarda porque es la única forma de saber si esta señal sirve, y la respuesta de esa noche fue que no: la apuesta no usa comentarios.",
-  "gala": 30,
-  "salio": "Tamara",
-  "total": 490,
-  "con_signo": 56,
-  "por_jugadora": {
-   "Sol": {
-    "contra": 17,
-    "favor": 9
-   },
-   "Pincoya": {
-    "contra": 13,
-    "favor": 6
-   },
-   "Mariela": {
-    "contra": 5,
-    "favor": 0
-   },
-   "Tamara": {
-    "contra": 4,
-    "favor": 0
-   },
-   "Yipio": {
-    "contra": 5,
-    "favor": 4
-   },
-   "Luana": {
-    "contra": 5,
-    "favor": 9
-   }
-  },
-  "lectura": "Por volumen los comentarios señalaban a Sol, que se salvó. Tamara tenía cuatro comentarios con signo en total: era de las menos nombradas. Lo que sí la señaló fue la campaña en tendencias, primera del país, y el ranking de imagen, donde quedaba última.",
-  "fuente": "galas/30.html"
- }
+ "_aviso_fase": "OJO CON EL SIGNO. Esta placa es POSITIVA: se vota por la favorita y se va la que menos votos junte. Así que «Zilli al 9009» cuenta A FAVOR de Zilli, al revés que la semana pasada, cuando la misma frase pedía que la echaran. «En contra» sigue queriendo decir lo mismo en las dos fases —que no la quieren adentro—, pero el camino para llegar ahí cambió: antes era un voto que le llegaba, ahora es un voto que no le llega."
 }

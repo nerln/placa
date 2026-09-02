@@ -1,31 +1,11 @@
 {
  "_nota": "Plantel vigente y atributos que consume el modelo. Este archivo es el que edita model/actualizar.py despues de cada gala: saca a quien fue eliminado, recalcula las propensiones de nominacion y deja el resto intacto. Nada de esto vive ya dentro del codigo.",
- "actualizado": "2026-08-24",
+ "actualizado": "2026-08-31",
  "edicion": "Gran Hermano Argentina: Generación Dorada",
  "temporada": 13,
  "estreno": "2026-02-23",
  "premio": "AR$ 70.000.000 en Mercado Pago + vivienda + moto Motomel + un año de cerveza Amstel",
  "jugadores": [
-  {
-   "apodo": "Pincoya",
-   "nombre": "Jennifer «Pincoya» Galvarini",
-   "edad": 50,
-   "ciudad": "Ancud, Chiloé",
-   "provincia": "Los Lagos",
-   "pais": "CL",
-   "ingreso": "2026-02-23",
-   "previa": "GH Chile 1 (2023) · finalista, 25,4%",
-   "papel": "Primera chilena en el formato argentino. Récord de permanencia de la edición.",
-   "placas_recientes": 4,
-   "votos_recientes": 5,
-   "bono_fulminante": 0.0,
-   "genero": "f",
-   "redes": {
-    "ig": "pincoyasinglamourrr",
-    "conf": "media",
-    "verificado": "2026-08-11"
-   }
-  },
   {
    "apodo": "Charlotte",
    "nombre": "Charlotte Caniggia",
@@ -152,6 +132,32 @@
   }
  ],
  "eliminados_recientes": [
+  {
+   "apodo": "Pincoya",
+   "fecha": "2026-08-31",
+   "modo": "eliminado",
+   "detalle": "eliminado en la gala 31",
+   "ficha": {
+    "apodo": "Pincoya",
+    "nombre": "Jennifer «Pincoya» Galvarini",
+    "edad": 50,
+    "ciudad": "Ancud, Chiloé",
+    "provincia": "Los Lagos",
+    "pais": "CL",
+    "ingreso": "2026-02-23",
+    "previa": "GH Chile 1 (2023) · finalista, 25,4%",
+    "papel": "Primera chilena en el formato argentino. Récord de permanencia de la edición.",
+    "placas_recientes": 4,
+    "votos_recientes": 5,
+    "bono_fulminante": 0.0,
+    "genero": "f",
+    "redes": {
+     "ig": "pincoyasinglamourrr",
+     "conf": "media",
+     "verificado": "2026-08-11"
+    }
+   }
+  },
   {
    "apodo": "Tamara",
    "fecha": "2026-08-24",

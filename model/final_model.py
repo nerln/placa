@@ -54,6 +54,7 @@ VIG = [j["apodo"] for j in PLANTEL["jugadores"]]
 PLACAS_DESDE_JUNIO = {j["apodo"]: j["placas_recientes"] for j in PLANTEL["jugadores"]}
 VOTOS_RECIENTES = {j["apodo"]: j["votos_recientes"] for j in PLANTEL["jugadores"]}
 BONO_FULMINANTE = {j["apodo"]: j.get("bono_fulminante", 0.0) for j in PLANTEL["jugadores"]}
+PAIS = {j["apodo"]: j.get("pais", "") for j in PLANTEL["jugadores"]}
 
 
 def z(d):
@@ -272,9 +273,21 @@ def main():
     # y no un bloque uruguayo cerrado. Se aplica como ajuste MODESTO y etiquetado,
     # no como parte del caso base. Chile entra por primera vez esta edicion y sin
     # historial, con senales de fandom dividido, asi que su ajuste es menor.
-    psi_nac = dict(psi); psi_nac["Yipio"] += 0.45; psi_nac["Pincoya"] += 0.25
-    se_nac = dict(se_psi); se_nac["Yipio"] = (se_psi["Yipio"] ** 2 + 0.35 ** 2) ** .5
-    se_nac["Pincoya"] = (se_psi["Pincoya"] ** 2 + 0.40 ** 2) ** .5
+    # El ajuste va por NACIONALIDAD y no por nombre. Estaba escrito «Yipio» y
+    # «Pincoya» a mano, y el 2 de septiembre de 2026 el modelo entero se cayo
+    # con un KeyError al recalcular: Pincoya habia salido la noche anterior. Un
+    # escenario que se apoya en de donde es alguien tiene que leer de donde es
+    # alguien; escrito con el nombre, se rompe o —peor— sigue funcionando y le
+    # aplica el ajuste a quien no corresponde cuando entra otra persona.
+    AJUSTE_PAIS = {"UY": (0.45, 0.35), "CL": (0.25, 0.40)}
+    psi_nac, se_nac = dict(psi), dict(se_psi)
+    for n in psi:
+        pais = (PAIS.get(n) or "").upper()
+        if pais not in AJUSTE_PAIS:
+            continue
+        d, extra = AJUSTE_PAIS[pais]
+        psi_nac[n] += d
+        se_nac[n] = (se_psi[n] ** 2 + extra ** 2) ** .5
     esc["base_rate_extranjeras"] = simular(mu, se, omega, psi_nac, se_nac,
                                            placa28, m28, s28, prop, usar_estado28=hay_placa)
 

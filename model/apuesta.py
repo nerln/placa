@@ -196,6 +196,28 @@ def main():
     ramas = _leer("ramas.json")
     campana = _leer("campana.json")
     act = _leer("actualidad.json")
+
+    # ESTA APUESTA SOLO VALE EN PLACA NEGATIVA, y hay que decirlo en voz alta
+    # porque el 1 de septiembre de 2026 dejo de valer. Se arma con la campana y
+    # la imagen leidas como RIESGO: mas consigna, mas peligro. En la placa
+    # positiva final se vota por la favorita y se va la que menos junta, asi
+    # que la misma cuenta sale exactamente al reves.
+    #
+    # No se publica una version invertida improvisada la tarde de una gala. Se
+    # declara que no aplica, se borra el archivo para que la pagina no muestre
+    # un pronostico viejo de otra placa, y la pregunta la contesta model/cruce.py,
+    # que si mira la fase.
+    _G = act.get("proxima_gala") or {}
+    _fase = ((act.get("tendencias") or {}).get("fase")
+             or (_G.get("fases") or [{}])[-1].get("signo"))
+    if _fase == "positivo":
+        ap_p = ROOT / "data" / "apuesta.json"
+        if ap_p.exists():
+            ap_p.unlink()
+        print("placa POSITIVA: la apuesta declarada no aplica y no se publica. "
+              "Se arma leyendo la campana como riesgo, y aca la campana es apoyo. "
+              "Para esta placa contesta model/cruce.py.")
+        return
     galas = _leer("galas.json")
 
     placa = list(ramas["placa"])

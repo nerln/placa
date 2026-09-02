@@ -36,8 +36,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-# Consignas: el signo esta en el propio texto del termino.
-NEGATIVO = re.compile(r"AL ?9009|AFUERA|\bFUERA\b|QUE SE VAYA|CHAU ", re.I)
+# Consignas cuyo signo esta en el texto y no cambia nunca.
+NEGATIVO = re.compile(r"AFUERA|\bFUERA\b|QUE SE VAYA|CHAU ", re.I)
+
+# «X AL 9009» NO lleva el signo adentro: dice a que numero mandar el mensaje, y
+# para que sirve ese mensaje lo decide la FASE de la placa. Estaba en la lista
+# de negativos, escrito a mano, y el 1 de septiembre de 2026 se abrio la placa
+# positiva final —«se va la que menos votos positivos tenga»— con lo cual la
+# misma consigna paso a pedir lo contrario. Publicarlo sin mirar la fase habria
+# dado vuelta la senal entera el dia de una gala. Es el mismo error de signo
+# que esta pagina ya cometio una vez en un pie de grafico.
+DEPENDE_DE_FASE = re.compile(r"AL ?9009", re.I)
 POSITIVO = re.compile(r"A LA FINAL|CAMPEONA|CAMPEON|GANADORA|SALVEN|LA MEJOR|"
                       r"VAMOS ", re.I)
 
@@ -53,8 +62,14 @@ def peso(rank):
     return (51 - rank) / 50
 
 
-def indice(terminos, jugadores, alias):
-    """Suma de consignas con signo, pesada por su mejor posicion."""
+def indice(terminos, jugadores, alias, fase=None):
+    """Suma de consignas con signo, pesada por su mejor posicion.
+
+    `fase` es «negativo» o «positivo» y decide que quiere decir «AL 9009». Si no
+    se pasa, esas consignas se ignoran en vez de suponerles un signo: suponer es
+    lo que rompe esto.
+    """
+    de_fase = {"negativo": -1, "positivo": 1}.get(fase, 0)
     out = {}
     for n in jugadores:
         claves = [_plano(x) for x in ([n] + alias.get(n, []))]
@@ -64,7 +79,10 @@ def indice(terminos, jugadores, alias):
             txt = _plano(t["txt"])
             if not any(k in txt for k in claves):
                 continue
-            s = -1 if NEGATIVO.search(t["txt"]) else (1 if POSITIVO.search(t["txt"]) else 0)
+            s = (-1 if NEGATIVO.search(t["txt"])
+                 else 1 if POSITIVO.search(t["txt"])
+                 else de_fase if DEPENDE_DE_FASE.search(t["txt"])
+                 else 0)
             if s == 0:
                 continue                       # el nombre suelto no lleva signo
             w = peso(t.get("mejor") or 50)
@@ -88,7 +106,15 @@ def main():
     alias_p = ROOT / "data" / "alias.json"
     alias = json.loads(alias_p.read_text()) if alias_p.exists() else {}
 
-    idx = indice(T.get("terminos", []), jug, alias)
+    # La fase sale del dato de la placa vigente, no de un valor por defecto:
+    # con la fase equivocada este indice dice exactamente lo contrario.
+    fase = (T.get("fase")
+            or ((act.get("proxima_gala") or {}).get("fases") or [{}])[-1].get("signo"))
+    if fase not in ("negativo", "positivo"):
+        raise SystemExit("no se sabe el signo de la placa: sin fase, «AL 9009» no significa "
+                         "nada y el indice saldria al reves. Poner tendencias.fase o "
+                         "proxima_gala.fases[].signo.")
+    idx = indice(T.get("terminos", []), jug, alias, fase)
     obs = [n for n in jug if idx[n]["estado"] == "observado"]
 
     salida = {
