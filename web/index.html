@@ -350,7 +350,7 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
    fabricar despues: cualquiera puede decir que acerto, y muy poca gente deja
    escrito de antemano en que se equivoco.
 
-   Las tres cuentas se muestran SIEMPRE las tres, tambien hacia atras. Mostrar
+   Las cuentas se muestran SIEMPRE todas, tambien hacia atras. Mostrar
    solo la que quedo mejor seria elegir despues, que es exactamente lo que esta
    tabla existe para hacer imposible. */
 #archivo{max-width:calc(var(--medida) + 32px); margin-inline:auto}
@@ -381,115 +381,53 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
   .arch td.g::before{content:none}
 }
 
-/* ---------- el marcador dibujado ----------
-   El mismo resultado que ya estaba en la tabla de abajo, en imagen. Una
-   columna por gala, y el punto marca en que puesto de riesgo habia quedado
-   quien de verdad salio: arriba del todo si el modelo le habia acertado,
-   abajo si lo tenia por el mas a salvo. La banda gris es donde caeria el azar.
-
-   Existe porque «0 de 7, puesto medio 4,71 contra 3,43 del azar» es una frase
-   que se lee y no se ve, y este resultado es lo que sostiene el proyecto: es
-   la prueba de que los numeros no se acomodan despues. Una prueba que no se
-   mira no prueba nada.
-
-   Y separa lo RECONSTRUIDO (calculado despues, con solo las galas anteriores)
-   de lo CONGELADO (escrito antes de la gala, en el registro). No es lo mismo
-   una prueba hacia atras que una promesa cumplida, y dibujarlas iguales seria
-   cobrarse un credito que no se gano. */
-.mrc{margin:14px 0 18px}
-.mrc-caja{display:flex; align-items:stretch; gap:0; position:relative;
-  border:1px solid var(--linea); border-radius:var(--r-sm); background:var(--sup2);
-  padding:12px 10px 8px; overflow-x:auto}
-.mrc-ejeY{flex:none; width:4.6rem; position:relative; font-size:10px; color:var(--tinta3);
-  font-family:"Archivo",sans-serif; letter-spacing:.04em; text-transform:uppercase}
-.mrc-ejeY span{position:absolute; right:6px; transform:translateY(-50%); white-space:nowrap}
-.mrc-pista{flex:1; display:flex; gap:2px; min-width:14rem; position:relative}
-.mrc-banda{position:absolute; left:0; right:0; background:var(--sup3); opacity:.55;
-  border-top:1px dashed var(--tinta3); border-bottom:1px dashed var(--tinta3)}
-.mrc-col{flex:1; position:relative; min-width:26px; display:flex; flex-direction:column;
-  justify-content:flex-end; align-items:center}
-.mrc-col .g{font-size:10px; color:var(--tinta3); font-variant-numeric:tabular-nums;
-  padding:4px 0 0; border-top:1px solid var(--linea2); width:100%; text-align:center}
-.mrc-pt{position:absolute; width:11px; height:11px; margin:-5.5px 0 0 -5.5px; left:50%;
-  border-radius:50%; box-sizing:border-box}
-.mrc-pt.recon{background:var(--sup); border:2px solid var(--tinta3)}
-.mrc-pt.congelado{background:var(--rechazo); border:2px solid var(--sup);
-  box-shadow:0 0 0 2px var(--rechazo)}
-.mrc-pt.pendiente{background:transparent; border:2px dashed var(--oro-2)}
-.mrc-leyenda{display:flex; flex-wrap:wrap; gap:11px; margin:9px 0 0; font-size:var(--t-xs);
-  color:var(--tinta2); align-items:center}
-.mrc-leyenda span{display:inline-flex; align-items:center; gap:5px}
-.mrc-leyenda em{width:11px; height:11px; flex:none; border-radius:50%; font-style:normal}
-.mrc-leyenda em.recon{background:var(--sup); border:2px solid var(--tinta3)}
-.mrc-leyenda em.congelado{background:var(--rechazo)}
-.mrc-leyenda em.banda{border-radius:2px; background:var(--sup3);
-  border-top:1px dashed var(--tinta3); border-bottom:1px dashed var(--tinta3)}
-
-/* ---------- el grafico de manana ----------
-   Una fila por nominada y una marca por cuenta viva, sobre un eje comun. La
-   barra que une las marcas es el DESACUERDO, y es lo que hay que ver primero:
-   cuando caen juntas hay senal, y cuando se abren, esa apertura es la noticia
-   de la semana. La linea punteada es el azar (uno partido las que quedan): a
-   la derecha de esa linea, mas riesgo que echar a suertes.
-
-   La leyenda del grafico es la franja de cuentas que va arriba, no una fila
-   de puntitos al pie: las marcas de la franja son las mismas de aca y estan
-   pegadas a la primera fila, que es donde el ojo las necesita. Al pie queda
-   una sola linea con el azar y la barra. */
-.mn-g{margin:6px 0 0}
-/* El eje comparte la rejilla de las filas: si se alinea con un calc a mano, se
-   desalinea el dia que cambie el ancho de la columna de los nombres. */
-.mn-g-eje{display:grid; grid-template-columns:7.2rem 1fr; gap:9px; height:15px; margin:0 0 2px}
-.mn-g-eje .pista{position:relative; min-width:0}
-.mn-g-eje .azar{position:absolute; top:11px; bottom:-4px; width:0;
-  border-left:1px dashed var(--tinta3)}
-.mn-g-eje .azar span{position:absolute; left:50%; transform:translateX(-50%); top:0;
-  font-size:10px; color:var(--tinta3); white-space:nowrap;
-  font-family:"Archivo",sans-serif; letter-spacing:.04em; text-transform:uppercase}
-.mn-g-fila{display:grid; grid-template-columns:7.2rem 1fr; gap:9px; align-items:center;
-  padding:5px 0 4px; border-top:1px solid var(--linea2)}
-.mn-g-fila .q{display:flex; align-items:center; gap:6px; min-width:0}
-.mn-g-fila .q b{font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm);
-  overflow:hidden; text-overflow:ellipsis}
-.mn-g-fila .q svg{flex:none; border-radius:2px}
-.mn-g-pista{position:relative; height:26px; min-width:0}
-.mn-g-pista .riel{position:absolute; left:0; right:0; top:12px; height:2px;
-  background:var(--sup3); border-radius:2px}
-.mn-g-pista .azar{position:absolute; top:-3px; bottom:6px; width:0;
-  border-left:1px dashed var(--tinta3); opacity:.55}
-.mn-g-pista .tramo{position:absolute; top:11px; height:4px; border-radius:3px;
-  background:linear-gradient(90deg, var(--sup3), var(--rechazo)); opacity:.55}
-.mn-g-pista i{position:absolute; top:6px; width:13px; height:13px; margin-left:-6.5px;
-  border-radius:50%; box-sizing:border-box}
-.mn-g-pista i.modelo{background:var(--rechazo); border:2px solid var(--sup)}
-.mn-g-pista i.dos{background:var(--sup); border:2.5px solid var(--rechazo)}
-.mn-g-pista i.ap{background:var(--oro-2); border:2px solid var(--sup);
-  border-radius:2px; transform:rotate(45deg); width:11px; height:11px; margin-left:-5.5px;
-  top:7px}
-/* Triangulo y no rombo: el rombo ya es la apuesta, y en una placa negativa
-   las dos cuentas pueden convivir en la misma fila. */
-.mn-g-pista i.cruce{background:var(--oro-2); border:0; border-radius:0;
-  clip-path:polygon(50% 0, 100% 100%, 0 100%); width:14px; height:12px;
-  margin-left:-7px; top:7px}
-.mn-g-fila .razon{grid-column:2; font-size:var(--t-xs); color:var(--tinta2);
-  line-height:1.45; margin:-2px 0 0}
-.mn-g-nota{font-size:var(--t-xs); color:var(--tinta3); line-height:1.5; margin:8px 0 0;
+/* ---------- el recuento de la gala ----------
+   Una fila por persona y una marca igual por cuenta viva: llena si esa
+   cuenta la pone primera para irse, vacia si no. Reemplaza a un eje de 0 al
+   maximo con cuatro formas distintas encima, la linea punteada del azar y
+   una barra de desacuerdo, que ni nerln ni sus amigos podian leer: era un
+   grafico para pensar el desacuerdo, publicado como si fuera para leerlo.
+   Aca cada fila se lee en voz alta como una frase verdadera («Sol: dos de
+   tres cuentas la ponen primera»), sin eje ni largo que interpretar. */
+.mn-dice{font-size:var(--t-sm); color:var(--tinta2); line-height:1.55; margin:10px 0 0;
   max-width:var(--medida)}
-/* Las marcas fuera del grafico: en la franja de cuentas, que hace de leyenda. */
-.mn-mrk{display:inline-block; width:11px; height:11px; flex:none; font-style:normal;
-  box-sizing:border-box; border-radius:50%}
-.mn-mrk.modelo{background:var(--rechazo)}
-.mn-mrk.dos{background:var(--sup); border:2.5px solid var(--rechazo)}
-.mn-mrk.ap{background:var(--oro-2); border-radius:2px; transform:rotate(45deg);
-  width:10px; height:10px}
-.mn-mrk.cruce{background:var(--oro-2); border-radius:0;
-  clip-path:polygon(50% 0, 100% 100%, 0 100%); width:12px; height:11px}
-@media(max-width:520px){
-  .mn-g-fila{grid-template-columns:1fr; gap:2px}
-  .mn-g-fila .razon{grid-column:1}
-  .mn-g-eje{grid-template-columns:1fr; gap:0}
-  .mn-g-eje .hueco{display:none}
-}
+.mn-dice b{color:var(--tinta)}
+.mn-dice a{color:inherit}
+.rec{margin:8px 0 0}
+.rec-fila{display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:12px;
+  align-items:center; padding:7px 0 6px; border-top:1px solid var(--linea2)}
+.rec-fila .q{display:flex; align-items:center; gap:6px; min-width:0; flex-wrap:wrap;
+  font-family:"Archivo",sans-serif; font-weight:700; font-size:var(--t-sm)}
+.rec-fila .q svg{flex:none; border-radius:2px}
+/* Las que ninguna cuenta pone primera van juntas, con los nombres debajo. */
+.rec-fila .q small{display:block; width:100%; font-weight:400; font-family:inherit;
+  font-size:var(--t-xs); color:var(--tinta2); line-height:1.4}
+.rec-marcas{display:inline-flex; gap:5px}
+.rec-marcas i{display:block; width:12px; height:12px; border-radius:50%; box-sizing:border-box;
+  border:2px solid var(--rechazo); background:transparent}
+.rec-marcas i.llena{background:var(--rechazo)}
+.rec-fila .n{font-size:var(--t-xs); color:var(--tinta2); white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.mn-num{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:6px 0 0;
+  font-variant-numeric:tabular-nums}
+.mn-porque .mn-num:first-child{margin-top:8px}
+
+/* ---------- dijimos y paso ----------
+   Un par por gala congelada, la mas reciente arriba, con la fecha de
+   congelamiento a la vista. El marcador no se declara: se cuenta leyendo
+   los pares, que es la unica prueba que no depende de que le crean a la
+   pagina. Solo parrafos y elementos de lista, sin desborde posible. */
+.dp{margin:14px 0 0; padding-top:10px; border-top:1px solid var(--linea2)}
+.dp-tit{font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
+  color:var(--tinta2); margin:0}
+.dp ul{list-style:none; margin:0; padding:0}
+.dp li{font-size:var(--t-sm); color:var(--tinta2); line-height:1.55; padding:7px 0 6px;
+  border-top:1px solid var(--linea2)}
+.dp li:first-child{border-top:0; padding-top:4px}
+.dp li b{color:var(--tinta)}
+.dp li a{color:inherit}
+.dp li .f{display:block; font-size:var(--t-xs); color:var(--tinta3);
+  font-variant-numeric:tabular-nums}
 
 /* ---------- el control de volver ----------
    Aparece cuando el encabezado sale de pantalla y hace dos cosas distintas
@@ -575,33 +513,6 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
   letter-spacing:.06em; text-transform:uppercase; color:var(--apoyo-txt);
   border:1px solid var(--apoyo); border-radius:999px; padding:2px 9px}
 .mn-quien{font-size:var(--t-sm); color:var(--tinta2); margin:0; max-width:var(--medida)}
-/* ---------- la franja de cuentas ----------
-   Una fila por cuenta viva: marca, nombre, marcador, a quien llama y con
-   cuanto. Reemplaza a dos tarjetas enfrentadas que eran el ping-pong en
-   persona: un nombre grande a cada lado y habia que leer los parrafos para
-   saber por que no coincidian. Aca el marcador va al lado del nombre, asi el
-   desacuerdo se lee como «cuentas distintas, historial distinto» y no como la
-   pagina contradiciendose. La franja hace ademas de leyenda del grafico de
-   abajo: mismas marcas, mismo orden. */
-.mn-cuentas{margin:10px 0 0}
-.mn-cta{display:grid; grid-template-columns:1fr auto; gap:1px 12px; align-items:baseline;
-  padding:6px 0 5px; border-top:1px solid var(--linea2); text-decoration:none; color:inherit}
-.mn-cta .c{display:inline-flex; align-items:center; gap:7px; min-width:0;
-  font-family:"Archivo",sans-serif; font-size:var(--t-xs); font-weight:700;
-  letter-spacing:.05em; text-transform:uppercase; color:var(--tinta2)}
-.mn-cta .r{font-size:10px; font-weight:700; letter-spacing:.02em; text-transform:none;
-  padding:1px 7px; border:1px solid var(--linea); border-radius:999px; color:var(--tinta3);
-  white-space:nowrap}
-.mn-cta .r.bien{border-color:var(--apoyo); color:var(--apoyo-txt)}
-.mn-cta .r.nueva{border-color:var(--oro-2); color:var(--tinta2)}
-.mn-cta .q{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-md);
-  justify-self:end; text-align:right}
-.mn-cta .q .pp{font-weight:600; font-size:var(--t-sm); color:var(--tinta2);
-  font-variant-numeric:tabular-nums; white-space:nowrap}
-.mn-cta .h{grid-column:1 / -1; font-size:var(--t-xs); color:var(--tinta3); line-height:1.4}
-a.mn-cta:hover .c, a.mn-cta:focus-visible .c{color:var(--oro-2)}
-a.mn-cta:focus-visible{outline:2px solid var(--oro-2); outline-offset:2px}
-.mn-cta.fuera .q{font-weight:600; font-size:var(--t-sm); color:var(--tinta3)}
 .mn-caliente{font-size:var(--t-sm); color:var(--tinta2); line-height:1.6; margin:10px 0 0;
   padding:11px 13px; border-radius:var(--r-sm); background:var(--sup2);
   border-left:3px solid var(--oro-2)}
@@ -629,13 +540,6 @@ a.mn-cta:focus-visible{outline:2px solid var(--oro-2); outline-offset:2px}
 section[id], div[id]{scroll-margin-top:18px}
 .mn-pie{font-size:var(--t-xs); color:var(--tinta3); line-height:1.6; margin:12px 0 0;
   padding-top:10px; border-top:1px solid var(--linea2)}
-@media(max-width:400px){
-  /* «Charlotte 13,5%» a la derecha de «dos tiempos · acertó 0 de 2» no entra
-     en 284px de contenido: la respuesta baja a su propia linea. */
-  .mn-cta{grid-template-columns:1fr}
-  .mn-cta .q{justify-self:start; text-align:left; white-space:normal}
-}
-
 /* ---------- lo último ----------
    Arriba de todo, antes del pronóstico. Quien entra a esta página quiere saber
    primero si cambió algo desde la última vez, y si el número que está por leer
@@ -1121,48 +1025,22 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
    no es motivo para no nombrarlo: es motivo para nombrarlo mejor. */
 
 /* ---------- lo que se escribe, no lo que se grita ----------
-   El termometro cuenta consignas; esto lee comentarios. Las barras van a los
-   dos lados desde el centro porque un saldo tiene signo, y quien no se pudo
-   clasificar se muestra aparte en vez de sumarse al medio. */
-.sen-fila{display:grid; grid-template-columns:7rem 1fr 1fr auto; align-items:center;
-  gap:6px; padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
+   El termometro cuenta consignas; esto lee comentarios. Cada fila llevaba
+   dos barras desde el centro, a favor y en contra, y no se leian: el signo
+   ya esta dicho en palabras en la misma fila («la quieren afuera: 13 de 20
+   con signo»), y una barra que repite en largo lo que la frase dice en
+   numeros es decoracion. Queda el nombre y la frase. */
+.sen-fila{display:grid; grid-template-columns:7rem 1fr; gap:4px 10px; align-items:baseline;
+  padding:7px 0; border-top:1px solid var(--linea2); font-size:var(--t-sm)}
 .sen-fila:first-of-type{border-top:0}
 .sen-fila .n{font-family:"Archivo",sans-serif; font-weight:700}
-.sen-fila .izq, .sen-fila .der{height:9px; background:var(--sup3); border-radius:5px;
-  position:relative; overflow:hidden}
-.sen-fila .izq i{position:absolute; right:0; top:0; bottom:0; background:var(--apoyo);
-  border-radius:5px}
-.sen-fila .der i{position:absolute; left:0; top:0; bottom:0; background:var(--rechazo);
-  border-radius:5px}
 .sen-fila .c b.mal{color:var(--rechazo-txt)}
 .sen-fila .c b.bien{color:var(--apoyo-txt)}
-/* Sin `nowrap`: la celda decia «17 contra · 9 a favor», y al cambiarla por la
-   direccion en palabras («la quieren afuera, y no la defiende nadie: 5
-   comentarios en contra») la misma regla que antes cabia empujo el documento a
-   539px en el telefono. Una celda que no parte lineas es una celda que crece
-   con el texto que le toque. */
 .sen-fila .c{font-variant-numeric:tabular-nums; color:var(--tinta2); font-size:var(--t-xs);
-  white-space:normal; min-width:10rem; max-width:17rem; text-align:right; line-height:1.5}
-.sen-cab{display:grid; grid-template-columns:7rem 1fr 1fr auto; gap:6px;
-  font-size:var(--t-xs); color:var(--tinta3); font-family:"Archivo",sans-serif;
-  font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px}
-.sen-cab .a{text-align:right}
-.sen-cab .b{text-align:left}
-.sen-cab .z{min-width:8.5rem}
-/* Medido: en 390px la cuarta columna de 8,5rem empujaba el documento a 427px
-   y toda la pagina se movia de lado. En pantalla angosta la fila se apila. */
-@media(max-width:560px){
-  /* `auto` en la columna 2 dejaba la pista de «en contra» en 0px, porque su
-     unico hijo es un <i> absoluto y no da ancho intrinseco: en el telefono se
-     dibujaban solo las barras a favor, con las filas ordenadas por rechazo.
-     Dos columnas iguales, y la cabecera se queda para decir cual es cual. */
-  .sen-cab{grid-template-columns:1fr 1fr; gap:6px}
-  .sen-cab > span:first-child, .sen-cab .z{display:none}
-  .sen-fila{grid-template-columns:1fr 1fr; row-gap:4px}
-  .sen-fila .n{grid-column:1 / -1; grid-row:1}
-  .sen-fila .izq{grid-column:1; grid-row:2}
-  .sen-fila .der{grid-column:2; grid-row:2}
-  .sen-fila .c{grid-column:1 / -1; grid-row:3; min-width:0; max-width:none; text-align:left}
+  white-space:normal; line-height:1.5}
+/* En 320px, 7rem de nombre mas la frase no entran de lado: se apilan. */
+@media(max-width:400px){
+  .sen-fila{grid-template-columns:1fr; row-gap:2px}
 }
 .sen-ej{font-size:var(--t-xs); color:var(--tinta2); margin:3px 0 0; line-height:1.5;
   padding-left:10px; border-left:2px solid var(--linea)}
@@ -3950,7 +3828,6 @@ function contar(nodo){
     .map(n => ({n, ...S.por_jugadora[n]}))
     .map(f => ({...f, saldo: f.contra - f.favor}));
   if(filas.length < Math.ceil(placa.length / 2)){ caja.remove(); return; }
-  const tope = Math.max(1, ...filas.map(f => Math.max(f.contra, f.favor)));
   filas.sort((a, b) => b.saldo - a.saldo);
 
   const mas = filas[0], menos = filas[filas.length - 1];
@@ -3963,17 +3840,14 @@ function contar(nodo){
       "</b> nombran a alguna de la placa y <b>" + S.con_signo + "</b> traen además una marca de " +
       "signo. Los otros quedan sin clasificar, que no es lo mismo que indiferentes." +
     "</p>" +
-    "<div class='sen-cab'><span></span><span class='a'>a favor</span>" +
-      "<span class='b'>en contra</span><span class='z'></span></div>" +
     filas.map(f =>
       "<div class='sen-fila'>" +
         "<span class='n'>" + f.n + "</span>" +
-        "<span class='izq'><i style='width:" + (100 * f.favor / tope) + "%'></i></span>" +
-        "<span class='der'><i style='width:" + (100 * f.contra / tope) + "%'></i></span>" +
-        // La direccion, dicha. Un par de numeros y una barra que crece para los
-        // dos lados obligan al lector a deducir el signo, y era justo lo que no
-        // se entendia: si «Tamara 4 y 0» significaba que la quieren afuera o
-        // que la bancan. Los numeros se quedan al lado, que son la prueba.
+        // La direccion, dicha. Un par de numeros obliga al lector a deducir
+        // el signo, y era justo lo que no se entendia: si «Tamara 4 y 0»
+        // significaba que la quieren afuera o que la bancan. Los numeros se
+        // quedan al lado, que son la prueba. Las dos barras que iban aca
+        // repetian en largo lo que la frase ya dice, y se fueron.
         "<span class='c'>" + (() => {
           const n = f.contra + f.favor;
           if(!n) return "nadie con signo";
@@ -4888,7 +4762,7 @@ function contar(nodo){
     .map(e => [e, num(e)]).filter(([, n]) => n && n.valor > 0);
 
   const barras = el => [...el.querySelectorAll(
-    ".term-fila .barra i, .ap-fila .b i, .sen-fila .izq i, .sen-fila .der i, .vbar > *")];
+    ".term-fila .barra i, .ap-fila .b i, .vbar > *")];
 
   const animar = el => {
     gsap.to(el, {opacity: 1, y: 0, duration: .55, ease: "power2.out"});
@@ -5123,66 +4997,10 @@ function contar(nodo){
     "Acertó el nombre <b>" + R.aciertos + " de " + R.n + "</b>; el azar habría acertado " +
     nf(R.aciertos_esperados_azar,1) + ".";
 
-  // El marcador dibujado, delante de la tabla. Misma medicion, en imagen.
-  (function(){
-    const caja = document.createElement("div");
-    caja.className = "mrc";
-    const ALTO = 132;
-
-    // Cada gala aporta: en que puesto quedo quien salio, sobre cuantas. Se
-    // normaliza porque las placas no tienen todas el mismo tamano y comparar
-    // «3.º de 5» con «3.º de 7» sin normalizar seria hacer trampa a favor.
-    const pts = f.map(x => ({
-      gala: x.gala, quien: x.eliminado, puesto: x.puesto_del_modelo, de: x.n_placa,
-      frac: (x.puesto_del_modelo - 1) / Math.max(1, x.n_placa - 1),
-      clase: "recon",
-    }));
-    // La gala que viene, todavia sin resultado: se dibuja hueca para que se
-    // vea que el marcador sigue abierto y que la proxima cuenta.
-    const P = D.actualidad && D.actualidad.proxima_gala;
-    if(P && P.gala) pts.push({gala: P.gala, quien: null, frac: null, clase: "pendiente"});
-
-    // Lo congelado se marca como congelado: D.congeladas trae una fila por
-    // gala con prediccion escrita ANTES, y esas valen distinto que las
-    // reconstruidas. (D.historial_pronostico es otra cosa: son las corridas
-    // del pronostico de temporada, y usarlo aca daba cero congeladas.)
-    const cong = new Set((D.congeladas || []).map(e => e.gala));
-    pts.forEach(p => { if(cong.has(p.gala) && p.clase === "recon") p.clase = "congelado"; });
-
-    const y = fr => (ALTO - 14) * fr + 7;
-    // Donde caeria el azar: el puesto medio esperado, normalizado, con media
-    // banda a cada lado para que se lea como zona y no como raya.
-    const azarFr = .5, banda = .17;
-
-    caja.innerHTML =
-      "<div class='mrc-caja' style='height:" + (ALTO + 22) + "px'>" +
-        "<div class='mrc-ejeY' style='height:" + ALTO + "px'>" +
-          "<span style='top:" + y(0) + "px'>le acertó</span>" +
-          "<span style='top:" + y(.5) + "px'>el azar</span>" +
-          "<span style='top:" + y(1) + "px'>la tenía a salvo</span>" +
-        "</div>" +
-        "<div class='mrc-pista' style='height:" + ALTO + "px'>" +
-          "<div class='mrc-banda' style='top:" + y(azarFr - banda) + "px;height:" +
-            (y(azarFr + banda) - y(azarFr - banda)) + "px'></div>" +
-          pts.map(p => "<div class='mrc-col'>" +
-            (p.frac === null
-              ? "<span class='mrc-pt pendiente' style='top:" + y(.5) + "px' " +
-                "title='gala " + p.gala + ": todavía no se jugó'></span>"
-              : "<span class='mrc-pt " + p.clase + "' style='top:" + y(p.frac) + "px' " +
-                "title='gala " + p.gala + ": salió " + p.quien + " · quedaba en el puesto " +
-                p.puesto + " de " + p.de + " del riesgo del modelo'></span>") +
-            "<span class='g'>" + p.gala + "</span></div>").join("") +
-        "</div>" +
-      "</div>" +
-      "<div class='mrc-leyenda'>" +
-        "<span><em class='recon'></em>reconstruida: calculada después, con sólo las galas " +
-          "anteriores</span>" +
-        "<span><em class='congelado'></em>congelada: escrita antes de la gala, en el registro</span>" +
-        "<span><em class='banda'></em>donde caería el azar</span>" +
-      "</div>";
-    t.parentElement.insertBefore(caja, t);
-  })();
-
+  // Sin marcador dibujado: la nube de puntos por gala con la banda del azar
+  // era una figura para pensar y no para leer, y nadie la leia. La misma
+  // medicion esta en la frase de arriba y en la tabla, y las congeladas se
+  // cuentan una por una en el par «dijimos / paso» de la cabecera.
   t.innerHTML = "<thead><tr><th>Gala</th><th>Salió</th><th>Placa</th>" +
     "<th>Puesto de riesgo</th><th>Probabilidad</th></tr></thead><tbody>" +
     f.map(x => "<tr><td>" + x.gala + "<span class='d'>" + x.fecha.slice(8) + "/" +
@@ -5190,7 +5008,7 @@ function contar(nodo){
       "<td>" + x.eliminado + "</td>" +
       "<td>" + x.n_placa + "</td>" +
       "<td class='hoy'>" + x.puesto_del_modelo + ".º de " + x.n_placa + "</td>" +
-      "<td>" + pc(x.p_modelo,1) + "</td></tr>").join("") + "</tbody>";
+      "<td>" + pc(x.p_modelo,0) + "</td></tr>").join("") + "</tbody>";
 
   $("#pie-retro").innerHTML =
     "Esto mide una cosa concreta: el rasgo de rechazo proyectado una semana hacia adelante, " +
@@ -5212,7 +5030,7 @@ function contar(nodo){
    archiva entera en web/galas/NN.html — una copia de gui/pronostico.html, que
    lleva los datos adentro y no se reescribe sola — y esto es el indice.
 
-   Se muestran SIEMPRE las tres cuentas, tambien hacia atras y tambien las que
+   Se muestran SIEMPRE todas las cuentas, tambien hacia atras y tambien las que
    fallaron. Una tabla que dejara de mostrar la que quedo mal seria peor que no
    tener tabla. */
 (function(){
@@ -5221,8 +5039,14 @@ function contar(nodo){
   const C = (D.congeladas || []).slice().sort((a, b) => b.gala - a.gala);
   if(!C.length){ sec.remove(); return; }
 
-  const NOM = {modelo: "Modelo", dos_tiempos: "Dos tiempos", apuesta: "Apuesta"};
-  const ORD = ["modelo", "dos_tiempos", "apuesta"];
+  const NOM = {modelo: "Modelo", dos_tiempos: "Dos tiempos", apuesta: "Apuesta",
+               cruce: "Cruce"};
+  // Escrita a mano, esta lista se comio el cruce en cuanto se estreno, mientras
+  // el texto de al lado seguia prometiendo que estaban «siempre las tres». Sale
+  // de los datos: entra sola la que aparezca, y la que no aplique una semana
+  // deja su celda vacia, que tambien es informacion.
+  const ORD = ["modelo", "dos_tiempos", "apuesta", "cruce"]
+    .filter(k => C.some(f => (f.series || {})[k]));
   const hora = t => {
     if(!t) return "";
     return t.length > 10
@@ -5251,7 +5075,10 @@ function contar(nodo){
     "<div class='titulo'><h2 class='tit'>Lo que esta página dijo antes de cada gala, " +
       "sin editar</h2></div>" +
     "<p class='sub'>Cada gala queda archivada con su fecha antes de que se juegue, y desde " +
-      "acá se puede abrir la página tal como estaba esa semana. Se muestran las tres cuentas " +
+      // «las tres» estaba escrito a mano y quedo viejo el dia que se estreno la
+      // cuarta, en la misma frase que promete mostrarlas todas.
+      "acá se puede abrir la página tal como estaba esa semana. Se muestran las " +
+      ({2: "dos", 3: "tres", 4: "cuatro", 5: "cinco"}[ORD.length] || ORD.length) + " cuentas " +
       "siempre, también las que fallaron: una tabla que escondiera la que quedó mal no serviría " +
       "para nada." +
       (intentos ? " Hasta ahora, <b>" + aciertos + " de " + intentos + "</b> predicciones " +
@@ -5393,11 +5220,15 @@ function contar(nodo){
    viejo por su cuenta ni contradecir a lo de abajo.
 
    El orden es una respuesta y despues sus pruebas: primero que dice cada
-   cuenta, con su marcador al lado para que el desacuerdo se lea como cuentas
-   distintas con historial distinto y no como la pagina contradiciendose;
-   despues el grafico con las mismas marcas; y el resto plegado. Antes era un
-   ping-pong: un nombre en el titular, otro en una tarjeta, otro en el
-   grafico, y habia que leerlo entero para saber por que no coincidian.
+   cuenta, en una frase con su marcador pegado («el modelo dice Sol y va 0
+   de 3 galas»); despues el recuento, una fila por persona con una marca por
+   cuenta, llena si esa cuenta la pone primera; los numeros crudos plegados
+   y enteros; y el par «dijimos / paso» de cada gala congelada, con su
+   fecha, que es donde el «0 de 3» se cuenta solo. Antes habia un eje de 0
+   al maximo con cuatro formas distintas encima, y ni nerln ni sus amigos lo
+   leian: era un grafico hecho para pensar el desacuerdo, publicado como si
+   fuera para leerlo. Y los decimales daban una precision que tres galas
+   puntuadas no tienen.
 
    Y dice el signo con palabras, no con un saldo: «la quieren afuera» y «la
    bancan» no se deducen de un numero con signo. Desde la placa positiva el
@@ -5413,22 +5244,12 @@ function contar(nodo){
   if(!G || !placa.length){ sec.remove(); return; }
 
   const T = D.actualidad.termometro_placa;
-  const S = D.sentimiento && D.sentimiento.por_jugadora;
   // La fase manda sobre cada frase de este bloque. Si ninguna medicion la
   // declara, se asume voto en contra, que es como funciono hasta la gala 31.
   const fase = (T && T.fase) || (D.cruce && D.cruce.fase) ||
                (D.sentimiento && D.sentimiento.fase) || "negativo";
   const positivo = fase === "positivo";
 
-  // La busqueda va en mayusculas de los dos lados. Las consignas se guardan
-  // como circulan, y «mariela al 9009» circulo en minuscula: con la clave sin
-  // normalizar, la pagina decia de Mariela que no tenia campana mientras su
-  // consigna estaba en el termometro, dos secciones mas abajo, con nueve horas.
-  const camp = {};
-  (T && T.consignas || []).forEach(c => {
-    camp[String(c.termino).split(" ")[0].toUpperCase()] = c;
-  });
-  const campDe = n => camp[String(n).toUpperCase()];
   const img = ((D.actualidad.medidas_sociales || {}).fuentes || [])
     .find(f => f.mide === "imagen positiva");
 
@@ -5462,15 +5283,11 @@ function contar(nodo){
     .filter(x => x.vigente_desde_gala === G.gala && x.la_apuesta_esta_semana).slice(-1)[0];
 
   const registro = [
-    {k: "ap", m: "apuesta", nombre: "la apuesta", d: ap, ancla: "#apuesta",
-     hecha: "campañas e imagen, medidas desde afuera"},
+    {k: "ap", m: "apuesta", nombre: "la apuesta", d: ap, ancla: "#apuesta"},
     {k: "modelo", m: "modelo", nombre: "el modelo", ancla: "#placa",
-     d: Object.keys(modPlaca).length ? modPlaca : null,
-     hecha: "el reparto de votos de las galas anteriores"},
-    {k: "dos", m: "dos_tiempos", nombre: "dos tiempos", d: dos, ancla: "#dostiempos",
-     hecha: "el modelo, corregido el mano a mano final"},
-    {k: "cruce", m: "cruce", nombre: "el cruce", d: cru, ancla: null,
-     hecha: "campañas y comentarios, pesados por lo que falta para la gala"},
+     d: Object.keys(modPlaca).length ? modPlaca : null},
+    {k: "dos", m: "dos_tiempos", nombre: "dos tiempos", d: dos, ancla: "#dostiempos"},
+    {k: "cruce", m: "cruce", nombre: "el cruce", d: cru, ancla: null},
   ];
   if(!apPrimero) registro.push(registro.shift());
   const cuentas = registro.filter(c => c.d && placa.some(n => c.d[n] != null));
@@ -5517,7 +5334,18 @@ function contar(nodo){
     // que si tiene, y es lo unico que importa en ese momento, es lo que quedo
     // escrito ANTES: se dice eso y se enlaza la copia congelada.
     (RELOJ.caliente
-      ? "<p class='mn-caliente'>Esta página se actualiza a mano, así que durante la gala " +
+      ? "<p class='mn-caliente'>" +
+        // Cuanto hace que paso, dicho. Sin esto el mismo aviso se lee igual
+        // veinte minutos despues de la gala que dia y medio despues, y son dos
+        // situaciones distintas: la segunda quiere decir que el resultado no
+        // aparecio publicado en ningun lado, y el lector merece saberlo en vez
+        // de suponer que la pagina se olvido.
+        ((h => h >= 20
+          ? "<b>Hace " + (h >= 40 ? Math.round(h / 24) + " días" : "más de un día") +
+            " que pasó la hora de la gala y todavía no hay un resultado publicado que se " +
+            "pueda citar.</b> Cuando aparezca, se carga con su fuente. "
+          : "")(Math.max(0, (new Date() - new Date(G.fecha + "T22:15:00-03:00")) / 3600000))) +
+        "Esta página se actualiza a mano, así que durante la gala " +
         "todavía dice lo que decía antes. <b>No se toca nada hasta que se confirme quién " +
         "salió</b>, y entonces se publica el resultado junto al puntaje de cada predicción, " +
         "con la regla que está escrita desde antes." +
@@ -5565,217 +5393,97 @@ function contar(nodo){
     "</p>" +
 
     (() => {
-      // La franja de cuentas: quien dice cada una, con cuanto, y como viene.
-      // Es tambien la leyenda del grafico de abajo — mismas marcas, mismo
-      // orden — puesta arriba de la primera fila y no al pie, que es donde el
-      // ojo llegaba tarde. Cada cuenta con seccion propia se enlaza desde su
-      // fila, y eso reemplaza a tres chips de la vieja lista de enlaces.
+      // Que dice cada cuenta, con su marcador pegado en la misma frase. Es
+      // la leyenda del recuento de abajo y reemplaza a la franja de cuatro
+      // filas con un porcentaje grande cada una: «Sol 50,2%» encima de «Sol
+      // 24,7%» se leia como la pagina contradiciendose, y el decimal
+      // prometia una precision que tres galas puntuadas no tienen. Los
+      // numeros van plegados mas abajo, enteros.
       if(!cuentas.length) return "";
-      const filas = cuentas.map(c => {
-        const chip = c.rec
-          ? "<span class='r" + (c.rec.acertadas ? " bien" : "") + "'>acertó " +
-            c.rec.acertadas + " de " + c.rec.de + "</span>"
-          : "<span class='r nueva'>se estrena</span>";
-        const linkea = c.ancla && document.querySelector(c.ancla);
-        const pcts = c.empate
-          ? pc(c.d[c.orden[0]]) + " y " + pc(c.d[c.orden[1]])
-          : pc(c.d[c.orden[0]]);
-        return (linkea ? "<a class='mn-cta' href='" + c.ancla + "'>" : "<div class='mn-cta'>") +
-          "<span class='c'><i class='mn-mrk " + c.k + "'></i>" + c.nombre + " " + chip +
-          "</span>" +
-          "<span class='q'>" + c.dice + " <span class='pp num'>" + pcts + "</span></span>" +
-          "<span class='h'>" + c.hecha + "</span>" +
-        (linkea ? "</a>" : "</div>");
-      }).join("");
+      const enlace = c => c.ancla && document.querySelector(c.ancla);
+      const galas = r => r.de + (r.de === 1 ? " gala" : " galas");
+      const frase = c => {
+        const nom = enlace(c) ? "<a href='" + c.ancla + "'>" + cap(c.nombre) + "</a>"
+                              : cap(c.nombre);
+        const rec = c.rec
+          ? "va " + c.rec.acertadas + " de " + galas(c.rec)
+          : "se estrena " + (cuando === "hoy" ? "hoy" : "esta gala");
+        return "<b>" + nom + "</b> dice " + c.dice + " y " + rec + ".";
+      };
       // La ausencia tambien es un dato: la unica cuenta que acerto alguna vez
       // no puede opinar sobre una placa positiva, y callarlo dejaria a quien
       // la busca cada semana sin saber por que no esta.
+      const minus = t => t.charAt(0).toLowerCase() + t.slice(1);
       const sinAp = (!ap && MRC.apuesta)
-        ? "<div class='mn-cta fuera'>" +
-            "<span class='c'><i class='mn-mrk ap'></i>la apuesta " +
-              "<span class='r" + (MRC.apuesta.acertadas ? " bien" : "") + "'>acertó " +
-              MRC.apuesta.acertadas + " de " + MRC.apuesta.de + "</span></span>" +
-            "<span class='h'>" + (apAusente
-              ? apAusente.la_apuesta_esta_semana.split(". ")[0] + "."
-              : positivo
-                ? "no juega esta gala: está declarada para el voto en contra, y esta placa " +
-                  "se vota a favor"
-                : "no juega esta gala: sin predicción congelada") + "</span>" +
-          "</div>"
+        ? " <b>La apuesta</b> va " + MRC.apuesta.acertadas + " de " + galas(MRC.apuesta) +
+          " y " + (apAusente
+            ? minus(apAusente.la_apuesta_esta_semana.split(". ")[0]).replace(/\.$/, "") + "."
+            : positivo
+              ? "no juega esta gala: está declarada para el voto en contra, y esta placa " +
+                "se vota a favor."
+              : "no juega esta gala: sin predicción congelada.")
         : "";
-      return "<div class='mn-cuentas'>" + filas + sinAp + "</div>";
+
+      // El recuento: una fila por persona con una marca por cuenta, llena si
+      // esa cuenta la pone primera para irse y vacia si no. Sin eje, sin
+      // barras de largo variable y sin porcentajes: cada fila se lee en voz
+      // alta como una frase verdadera. Un empate dentro de una cuenta (las
+      // dos primeras a menos de dos puntos) da la marca a las dos, y la
+      // frase de arriba ya dice «A o B». Las que ninguna cuenta pone primera
+      // van juntas en una fila con sus nombres: cuatro filas de marcas
+      // vacias no dicen mas que una, y asi no hay que desempatarlas.
+      const primeras = {};
+      cuentas.forEach((c, i) => {
+        c.orden.slice(0, c.empate ? 2 : 1)
+          .forEach(n => (primeras[n] || (primeras[n] = [])).push(i));
+      });
+      const cnt = n => (primeras[n] || []).length;
+      // El criterio de orden se declara abajo, y el desempate solo cuando
+      // hace falta: si no, la lista elige ganadora en silencio.
+      const conMarca = placa.filter(n => cnt(n))
+        .sort((a, b) => cnt(b) - cnt(a) || primeras[a][0] - primeras[b][0]);
+      const sinMarca = placa.filter(n => !cnt(n));
+      const empatan = conMarca.some((n, i) => i && cnt(n) === cnt(conMarca[i - 1]));
+      const quien = n => "<span class='q'>" + bandera((D.perfil[n] || {}).pais, 18) +
+        "<b>" + n + "</b></span>";
+      const marcas = n => "<span class='rec-marcas'>" + cuentas.map((c, i) => {
+        const si = n != null && (primeras[n] || []).indexOf(i) >= 0;
+        return "<i class='" + (si ? "llena" : "") + "' title='" + c.nombre + ": " +
+          (si ? "la pone primera" : "no") + "'></i>";
+      }).join("") + "</span>";
+      const fila = (q, n, txt) => "<div class='rec-fila'>" + q + marcas(n) +
+        "<span class='n'>" + txt + "</span></div>";
+      const NUM = k => NUMF[k] || k;
+      const filas = conMarca.map(n => fila(quien(n), n,
+          cnt(n) + " de " + cuentas.length + (cuentas.length === 1 ? " cuenta" : " cuentas")))
+        .concat(!sinMarca.length ? []
+          : sinMarca.length === 1 ? [fila(quien(sinMarca[0]), null, "ninguna")]
+          : [fila("<span class='q'><b>Las otras " + NUM(sinMarca.length) + "</b><small>" +
+              lista(sinMarca) + "</small></span>", null, "ninguna")])
+        .join("");
+
+      return "<p class='mn-dice'>" + cuentas.map(frase).join(" ") + sinAp + "</p>" +
+        "<p class='mn-dice'>Abajo, ordenadas por cuántas cuentas la ponen primera para irse" +
+          (empatan ? "; a igual recuento, manda la cuenta que va primera" : "") + ". " +
+          "Eligiendo al azar entre " + NUM(placa.length) + ", acertás una de cada " +
+          NUM(placa.length) + ".</p>" +
+        "<div class='rec'>" + filas + "</div>";
     })() +
 
-    (() => {
-      // El grafico: una marca por cuenta sobre un eje comun, y la barra que
-      // las une es el desacuerdo. Antes esto eran fichas de texto — «modelo
-      // 52,4% · dos tiempos 26,0%» — que puestas en fila se leian como si la
-      // pagina se contradijera sola en vez de como medidas de la misma cosa.
-      if(cuentas.length < 2) return "";
-      const vals = placa.flatMap(n => cuentas.map(c => c.d[n]).filter(v => v != null));
-      const tope = Math.max(.2, Math.ceil(Math.max(...vals) * 20) / 20);   // a 5 puntos
-      const x = v => (100 * v / tope);
-      const azar = 1 / placa.length;
-      const hayCamp = Object.keys(camp).length > 0;
-      const imgPeor = img ? placa.filter(n => img.valores[n] != null)
-        .sort((a, b) => img.valores[a] - img.valores[b])[0] : null;
-      const imgMejor = img ? placa.filter(n => img.valores[n] != null)
-        .sort((a, b) => img.valores[b] - img.valores[a])[0] : null;
-      const modTop = (cuentas.find(c => c.k === "modelo") || {orden: []}).orden[0];
-
-      // La razon en pocas palabras, UNA por fila. Se ELIGE entre las que
-      // aplican y gana la mas rara, no la primera de una lista fija: la
-      // semana del 29 de agosto Pincoya salia con «la consigna numero 2 del
-      // pais» mientras el hecho de la semana era que en los comentarios
-      // juntaba 494 en contra y 102 a favor. Y cada frase dice el signo de la
-      // fase vigente: con la placa positiva la misma campana que antes pedia
-      // echar ahora pide salvar, y no tener campana paso de dato neutro a
-      // senal de riesgo.
-      const razon = n => {
-        const c = campDe(n), k = S && S[n];
-        const tot = k ? k.contra + k.favor : 0;
-        const k2 = tot >= 20 ? k : null;
-        const im = img && img.valores[n];
-        const cand = [];
-        if(k2){
-          const prop = k2.contra / tot;
-          // Cuanto mas se despega del medio, mas dice. Y el volumen entra
-          // aparte, porque 490 comentarios pesan distinto que 30.
-          const fuerza = Math.abs(prop - .5) * 2 * (1 + Math.min(1, tot / 400));
-          cand.push({f: 1.6 + fuerza, t: prop > .5
-            ? (positivo
-              ? "En los comentarios pierde: <b>" + k2.contra + "</b> en contra y " + k2.favor +
-                " a favor, y con voto positivo eso es quedarse sin quien la vote."
-              : "En los comentarios la quieren afuera y por lejos: <b>" + k2.contra + "</b> en " +
-                "contra contra " + k2.favor + " a favor.")
-            : "En los comentarios la bancan: <b>" + k2.favor + "</b> a favor contra " + k2.contra +
-              " en contra."});
-        }
-        if(c && c.pico <= 10){
-          if(positivo){
-            // Con placa positiva la campana protege, y lo mas informativo de
-            // la fila es si los comentarios acompanan o contradicen: Sol
-            // llego a la gala 32 con la campana numero 3 del pais pidiendo
-            // salvarla y los comentarios en contra. Por eso la version
-            // combinada pesa mas que cualquiera de las dos senales sola.
-            const contra = k2 && k2.contra > k2.favor;
-            cand.push({f: k2 ? 2.5 + (11 - c.pico) / 20 : 1.5 + (11 - c.pico) / 10,
-              t: "La campaña por salvarla es la número " + c.pico + " del país, " + c.horas +
-                 (c.horas === 1 ? " hora" : " horas") + " arriba." +
-                 (k2 ? (contra
-                   ? " Pero en los comentarios pierde: <b>" + k2.contra + "</b> en contra y " +
-                     k2.favor + " a favor."
-                   : " Y en los comentarios la bancan: <b>" + k2.favor + "</b> a favor y " +
-                     k2.contra + " en contra.") : "")});
-          } else {
-            const bancan = k2 && k2.favor > k2.contra;
-            cand.push({f: 1.5 + (11 - c.pico) / 10 + (bancan ? .6 : 0),
-              t: "La consigna número " + c.pico + " del país, " + c.horas + " horas arriba, " +
-                 "pide echarla." +
-                 (bancan ? " Pero en los comentarios la bancan: <b>" + k2.favor + "</b> a favor " +
-                    "contra " + k2.contra + " en contra. Las dos señales se contradicen."
-                  : imgPeor === n && im != null ? " Y tiene la peor imagen de la placa." : "")});
-          }
-        }
-        if(!c && hayCamp){
-          if(positivo){
-            const contra = k2 && k2.contra > k2.favor;
-            cand.push({f: contra ? 2.4 : 1.4,
-              t: "Nadie está haciendo campaña para salvarla" +
-                 (contra
-                   ? ", y en los comentarios pierde: <b>" + k2.contra + "</b> en contra y " +
-                     k2.favor + " a favor. Ninguna señal la protege."
-                   : tot > 0 && tot < 10
-                     ? ", y en los comentarios casi no la nombran: " + k.favor + " a favor y " +
-                       k.contra + " en contra."
-                     : ".")});
-          } else {
-            cand.push({f: .8, t: "Nadie está haciendo campaña para echarla."});
-          }
-        }
-        if(imgPeor === n && im != null)
-          cand.push({f: 1.4, t: "La peor imagen de la placa: " + im + "%."});
-        if(k && k.favor === 0 && k.contra >= 3)
-          cand.push({f: 1.3, t: "En los comentarios nadie la defiende: " + k.contra + " en " +
-            "contra, ninguno a favor."});
-        if(imgMejor === n && im != null)
-          cand.push({f: 1.2, t: "La mejor imagen de la placa: " + im + "%." +
-            (positivo ? "" : " Cuesta que la voten.")});
-        if(c && c.pico > 10)
-          cand.push({f: .9, t: positivo
-            ? "Hay campaña por salvarla, pero floja: nunca pasó del puesto " + c.pico + "."
-            : "Hay una consigna pidiendo que se vaya, pero floja: nunca pasó del puesto " +
-              c.pico + "."});
-        if(modTop === n)
-          cand.push({f: .7, t: "El modelo la pone primera por el rechazo acumulado en galas " +
-            "anteriores."});
-        if(!cand.length)
-          // Que ninguna senal la destaque tambien es una lectura, y dejar la
-          // fila muda hace parecer un hueco de datos en vez de lo que es.
-          return "Ninguna señal la destaca: las cuentas la dejan en el medio de la placa.";
-        return cand.sort((a, b) => b.f - a.f)[0].t;
-      };
-
-      const filas = placa.slice()
-        .sort((a, b) => Math.max(...cuentas.map(c => c.d[b] || 0)) -
-                        Math.max(...cuentas.map(c => c.d[a] || 0)))
-        .map(n => {
-          const ms = cuentas.filter(c => c.d[n] != null);
-          const xs = ms.map(c => x(c.d[n]));
-          const a0 = Math.min(...xs), a1 = Math.max(...xs);
-          const r = razon(n);
-          return "<div class='mn-g-fila'>" +
-            "<span class='q'>" + bandera((D.perfil[n] || {}).pais, 18) +
-              "<b>" + n + "</b></span>" +
-            "<span class='mn-g-pista'>" +
-              "<span class='riel'></span>" +
-              "<span class='azar' style='left:" + x(azar).toFixed(1) + "%'></span>" +
-              (a1 - a0 > .5 ? "<span class='tramo' style='left:" + a0.toFixed(1) + "%;width:" +
-                (a1 - a0).toFixed(1) + "%'></span>" : "") +
-              ms.map(c => "<i class='" + c.k + "' style='left:" + x(c.d[n]).toFixed(1) + "%' " +
-                "title='" + c.nombre + ": " + pc(c.d[n]) + "'></i>").join("") +
-            "</span>" +
-            (r ? "<span class='razon'>" + r + "</span>" : "") +
-          "</div>";
-        }).join("");
-
-      return "<div class='mn-g'>" +
-        "<div class='mn-g-eje'><span class='hueco'></span><span class='pista'>" +
-          "<span class='azar' style='left:" + x(azar).toFixed(1) + "%'>" +
-          "<span>el azar</span></span></span></div>" +
-        filas +
-        "<p class='mn-g-nota'>Cuanto más a la derecha, más riesgo. La barra es el desacuerdo " +
-          "entre las cuentas; la línea punteada, el azar (" + pc(azar) + ").</p>" +
-      "</div>";
-    })() +
-
-    // «modelo 50,3%» y «cruce 25,4%» uno al lado del otro, sin decir que son,
-    // parecen la pagina contradiciendose sola. El detalle largo va plegado:
-    // el marcador contado del registro, de que esta hecha cada cuenta, por
-    // que puede faltar una, y como se lee el grafico.
-    "<details class='mn-porque'><summary>Por qué hay varias cuentas</summary>" +
+    // Los numeros crudos, plegados y enteros: abiertos, «modelo 50,3%» al
+    // lado de «cruce 25,4%» parecia la pagina contradiciendose sola, y el
+    // decimal era precision que no hay. Con ellos, de que esta hecha cada
+    // cuenta y por que puede faltar una.
+    (!cuentas.length ? "" :
+    "<details class='mn-porque'><summary>Ver las cuentas</summary>" +
       "<div class='mn-porque-c'>" +
-    (() => {
-      const nom = {modelo: "el modelo", dos_tiempos: "dos tiempos", apuesta: "la apuesta",
-                   cruce: "el cruce"};
-      const partes = ["modelo", "dos_tiempos", "cruce", "apuesta"]
-        .filter(k => MRC[k])
-        .map(k => nom[k] + " " + MRC[k].acertadas + " de " + MRC[k].de);
-      return partes.length
-        ? "<p class='mn-marcador'><b>El marcador, contado del registro.</b> En las galas ya " +
-          "jugadas con predicción congelada de antes: " + partes.join(", ") + ". Con tan " +
-          "pocas galas no alcanza para saber cuál es mejor, y decir lo contrario sería " +
-          "inventar precisión. Se puntúan todas, también las que fallan, y el puntaje se " +
-          "publica al día siguiente de cada gala.</p>"
-        : "";
-    })() +
+    cuentas.map(c => "<p class='mn-num'><b>" + cap(c.nombre) + "</b>: " +
+      c.orden.map(n => n + " " + Math.round(100 * c.d[n]) + "%").join(", ") + ".</p>").join("") +
     (() => {
       // Por que esta primera la que esta primera. No es una opinion escrita a
       // mano: es la declaracion fechada del registro, y solo se muestra
       // cuando esa cuenta esta jugando.
       if(!apPrimero || !decl) return "";
-      // Sin repetir el «no alcanza para saber»: ya lo dice el parrafo del
-      // marcador, que en estas semanas aparece justo arriba.
       return "<p class='mn-marcador'><b>Por qué la apuesta va primero.</b> Es la única de las " +
         "cuentas que acertó alguna vez, y el orden quedó declarado el " +
         FECHA_LARGA(decl.fecha) + ", antes de esta gala. Se siguen puntuando todas.</p>" +
@@ -5803,8 +5511,8 @@ function contar(nodo){
         ? (D.cruce.que_es.indexOf("El cruce") === 0
             ? "<b>El cruce</b>" + D.cruce.que_es.slice(8)
             : "<b>Cruce</b>: " + D.cruce.que_es) +
-          (D.cruce.pesos ? " Ahora mismo pesa " + pc(D.cruce.pesos.sentimiento) +
-            " lo que se escribe y " + pc(D.cruce.pesos.campana) + " la campaña." : "") +
+          (D.cruce.pesos ? " Ahora mismo pesa " + pc(D.cruce.pesos.sentimiento, 0) +
+            " lo que se escribe y " + pc(D.cruce.pesos.campana, 0) + " la campaña." : "") +
           (D.cruce.aviso ? " " + D.cruce.aviso : "") + " "
         : "") +
       (ap || MRC.apuesta
@@ -5818,12 +5526,60 @@ function contar(nodo){
               : "") + " "
         : "") +
       "Al día siguiente de la gala se publica cuánto se acercó cada una.</p>" +
-    "<p class='mn-leyenda'><b>Cómo se lee el gráfico.</b> Cada fila es una nominada y cada " +
-      "marca es una cuenta: cuanto más a la derecha, más riesgo de irse. Donde las marcas " +
-      "caen juntas, las cuentas dicen lo mismo; donde la barra que las une se abre, se están " +
-      "contradiciendo, y ésa es la parte interesante de la semana. A la derecha de la línea " +
-      "punteada, más riesgo que echarlo a suertes.</p>" +
-    "</div></details>" +
+    "</div></details>") +
+
+    (() => {
+      // El par «dijimos / paso»: uno por gala congelada, la mas reciente
+      // arriba, con la fecha de congelamiento a la vista. El «0 de 3» de
+      // arriba no se declara aca: se cuenta solo, leyendo los pares, y esa
+      // es la unica prueba de honestidad que no depende de que le crean a la
+      // pagina. Todo sale de D.congeladas, que ya trae quien salio de verdad
+      // y a quien llamo cada cuenta; no se rehace ninguna cuenta.
+      const C = (D.congeladas || []).slice().sort((a, b) => b.gala - a.gala);
+      if(!C.length) return "";
+      const NOM = {modelo: "el modelo", dos_tiempos: "dos tiempos", apuesta: "la apuesta",
+                   cruce: "el cruce"};
+      const DM = f => f ? (+f.slice(8, 10)) + "/" + (+f.slice(5, 7)) : "";
+      // «a las 6.12» y no «06.12»: la cabecera del bloque dice «22.15».
+      const HM = t => t && t.length > 15 ? String(+t.slice(11, 13)) + "." + t.slice(14, 16) : "";
+      const hoy = HOY_ARG();
+      const items = C.map(f => {
+        const ser = Object.entries(f.series || {}).filter(([, v]) => v && v.llama_a);
+        const g = {};
+        ser.forEach(([k, v]) => (g[v.llama_a] || (g[v.llama_a] = [])).push(NOM[k] || k));
+        const nombres = Object.keys(g);
+        // «Sol (el modelo y dos tiempos), Tamara (la apuesta)» cuando
+        // discrepan; «Yipio (las tres)» cuando no.
+        const dijimos = !nombres.length ? "nada quedó congelado"
+          : nombres.length === 1
+            ? nombres[0] + " (" + (ser.length === 1 ? g[nombres[0]][0]
+                : "las " + (NUMF[ser.length] || ser.length)) + ")"
+            : nombres.map(n => n + " (" + lista(g[n]) + ")").join(", ");
+        const dias = f.fecha_gala
+          ? Math.round((new Date(f.fecha_gala + "T00:00:00") - hoy) / 86400000) : null;
+        const paso = f.eliminado ? "se fue <b>" + f.eliminado + "</b>"
+          : dias > 0 ? "se juega el " + FECHA_LARGA(f.fecha_gala)
+          : dias === 0 && !(RELOJ.caliente && f.gala === G.gala) ? "se juega hoy"
+          : "todavía sin resultado cargado";
+        // La fecha de congelamiento: la del archivo cuando lo hay, y si no
+        // el sello de cada prediccion (la gala 29 es anterior al archivo).
+        const sellos = [...new Set(ser.map(([, v]) => (v.sello || "").slice(0, 10))
+          .filter(Boolean))].sort();
+        const cong = f.congelado
+          ? "congelado el " + DM(f.congelado) +
+            (HM(f.congelado) ? " a las " + HM(f.congelado) : "")
+          : sellos.length
+            ? (sellos.length === 1 ? "sello del " : "sellos del ") + sellos.map(DM).join(" y del ")
+            : "";
+        const gala = (f.archivo ? "<a href='" + f.archivo + "'>" : "") + "Gala " + f.gala +
+          (f.archivo ? "</a>" : "");
+        return "<li><b>" + gala + (f.fecha_gala ? " · " + DM(f.fecha_gala) : "") + ".</b> " +
+          "Dijimos: " + dijimos + ". Pasó: " + paso + "." +
+          (cong ? "<span class='f'>" + cong + "</span>" : "") + "</li>";
+      });
+      return "<div class='dp'><p class='dp-tit'>Lo que dijimos y lo que pasó</p><ul>" +
+        items.join("") + "</ul></div>";
+    })() +
 
     (() => {
       // Un indice, no una navegacion. La pagina mide 55.000 px en el telefono
