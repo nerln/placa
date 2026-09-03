@@ -3,56 +3,51 @@
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
- "limites": "Son los comentarios de los videos del propio programa, o sea de un público que ya entró a mirarlo. No es una muestra de nada y no se pondera. Y quien nombra a alguien sin marca de signo queda sin clasificar, que no es lo mismo que indiferente. Y una advertencia propia de esta semana: los videos de estos dos días hablan sobre todo de la salida de Pincoya y de Charlotte, así que Mariela y Luana casi no aparecen. Con una y dos menciones con signo no se puede leer nada de ellas, y el cruce lo corrige suavizando las proporciones con n chico en vez de dejarlas gritar.",
+ "limites": "Son los comentarios de los videos del propio programa, o sea de un público que ya entró a mirarlo. No es una muestra de nada y no se pondera. Y quien nombra a alguien sin marca de signo queda sin clasificar, que no es lo mismo que indiferente.",
  "no_alcanzables": [
   "las respuestas al posteo oficial de X, que son 372 y no publican texto",
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 653,
- "nombran_a_alguien": 334,
- "con_signo": 105,
+ "total": 525,
+ "nombran_a_alguien": 272,
+ "con_signo": 83,
  "por_jugadora": {
   "Sol": {
-   "contra": 13,
-   "favor": 7,
-   "sin_signo": 50
+   "contra": 8,
+   "favor": 2,
+   "sin_signo": 36
   },
   "Luana": {
    "contra": 4,
-   "favor": 3,
-   "sin_signo": 15
+   "favor": 2,
+   "sin_signo": 12
   },
   "Zilli": {
-   "contra": 15,
-   "favor": 5,
-   "sin_signo": 26
+   "contra": 10,
+   "favor": 1,
+   "sin_signo": 22
   },
   "Charlotte": {
-   "contra": 3,
-   "favor": 53,
-   "sin_signo": 110
+   "contra": 4,
+   "favor": 45,
+   "sin_signo": 101
   },
   "Yipio": {
    "contra": 11,
-   "favor": 27,
-   "sin_signo": 63
-  },
-  "Mariela": {
-   "contra": 1,
-   "favor": 1,
-   "sin_signo": 16
+   "favor": 24,
+   "sin_signo": 52
   }
  },
  "ejemplos": {
   "Sol": [
    {
-    "texto": "Sol y zilli afuera",
+    "texto": "Definitivamente Pincoya y su soberbia le restan … ahora si creo que siempre le cayó bien Sol . \nSon tal para cual",
     "signo": "contra"
    },
    {
-    "texto": "SOL sin dudas es la que merece ganar de las que están adentro, JUGÓ!!! Tuvo siempre toda la casa en contra, los que salían también, la odian, no pudieron y eso les duele!!!! SOL AL",
-    "signo": "favor"
+    "texto": "Sol y zilli afuera",
+    "signo": "contra"
    },
    {
     "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
@@ -69,7 +64,7 @@
     "signo": "favor"
    },
    {
-    "texto": "Vamos Sol. Zilli y Luana🇦🇷",
+    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
     "signo": "favor"
    }
   ],
@@ -83,7 +78,7 @@
     "signo": "contra"
    },
    {
-    "texto": "Espero que cada una de estas jugadoras que todavía quedan en esta casa puedan recuperar la salud mental después de que termine este programa. El resultado después de seis meses no ",
+    "texto": "NO ME GUSTA ESA MUJER ZILLI DEBERÍA IRSE YA ..ES MUY SOBERBIA. ALTANERA.  EGOCÉNTRICA",
     "signo": "contra"
    }
   ],
@@ -93,7 +88,7 @@
     "signo": "contra"
    },
    {
-    "texto": "Te amo charloteeeee🥹🥹🥹🥹🩷",
+    "texto": "Gran momento Charlotte llorando nunca lo hizo en cámaras y lo hizo ,tuvo lo que tanto quiso escuchar a su mamá decir te quiero y justo el complemento de su hermano Vamos Charlotte ",
     "signo": "favor"
    },
    {
@@ -114,17 +109,6 @@
     "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
     "signo": "contra"
    }
-  ],
-  "Mariela": [
-   {
-    "texto": "GRACIAS A DIOS SALIÓ ESTA MUJER,MIS VIOLENCIA, YIPIO ,CHARLOT A LA FINAL, EL MIERCOLES SE VA MARIELA O LUANA",
-    "signo": "favor"
-   },
-   {
-    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
-    "signo": "contra"
-   }
   ]
- },
- "_aviso_fase": "OJO CON EL SIGNO. Esta placa es POSITIVA: se vota por la favorita y se va la que menos votos junte. Así que «Zilli al 9009» cuenta A FAVOR de Zilli, al revés que la semana pasada, cuando la misma frase pedía que la echaran. «En contra» sigue queriendo decir lo mismo en las dos fases —que no la quieren adentro—, pero el camino para llegar ahí cambió: antes era un voto que le llegaba, ahora es un voto que no le llega."
+ }
 }
