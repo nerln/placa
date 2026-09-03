@@ -27,28 +27,21 @@
    "terminos": []
   },
   "Luana": {
-   "icd": 0.26,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "LUANA AL 9009",
-     "signo": 1,
-     "mejor": 38,
-     "peso": 0.26
-    }
-   ]
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
   },
   "Yipio": {
-   "icd": 0.8,
+   "icd": 0.74,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "YIPIO AL 9009",
      "signo": 1,
-     "mejor": 11,
-     "peso": 0.8
+     "mejor": 14,
+     "peso": 0.74
     }
    ]
   },
@@ -66,6 +59,6 @@
    ]
   }
  },
- "observados": 4,
+ "observados": 3,
  "de": 5
 }
