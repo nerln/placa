@@ -1,6 +1,6 @@
 {
  "_nota": "Plantel vigente y atributos que consume el modelo. Este archivo es el que edita model/actualizar.py despues de cada gala: saca a quien fue eliminado, recalcula las propensiones de nominacion y deja el resto intacto. Nada de esto vive ya dentro del codigo.",
- "actualizado": "2026-08-31",
+ "actualizado": "2026-09-02",
  "edicion": "Gran Hermano Argentina: Generación Dorada",
  "temporada": 13,
  "estreno": "2026-02-23",
@@ -16,7 +16,7 @@
    "ingreso": "2026-05-20",
    "previa": "GH VIP España 4 (2016) · 9.ª",
    "papel": "La mediática. Fandom propio heredado, socialmente aislada dentro de la casa.",
-   "placas_recientes": 4,
+   "placas_recientes": 5,
    "votos_recientes": 1,
    "bono_fulminante": 0.45,
    "genero": "f",
@@ -37,7 +37,7 @@
    "ingreso": "2026-02-24",
    "previa": "Sin ediciones previas · vedette y actriz de los 90",
    "papel": "Casi nadie la vota adentro; entró a placa por fulminante de una visitante.",
-   "placas_recientes": 4,
+   "placas_recientes": 5,
    "votos_recientes": 7,
    "bono_fulminante": 0.3,
    "genero": "f",
@@ -57,7 +57,7 @@
    "ingreso": "2026-02-24",
    "previa": "Combate (Argentina)",
    "papel": "Conflictiva y protagonista. La más votada del voto positivo del 16/07.",
-   "placas_recientes": 4,
+   "placas_recientes": 5,
    "votos_recientes": 5,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -78,7 +78,7 @@
    "ingreso": "2026-05-20",
    "previa": "Sin ediciones previas · volvió por repechaje con 35,6%",
    "papel": "Comediante uruguaya. Líder e inmune de la semana 24.",
-   "placas_recientes": 7,
+   "placas_recientes": 8,
    "votos_recientes": 11,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -86,26 +86,6 @@
     "ig": "yipio",
     "x": "yiselapintos",
     "conf": "alta",
-    "verificado": "2026-08-11"
-   }
-  },
-  {
-   "apodo": "Mariela",
-   "nombre": "Mariela Prieto",
-   "edad": 48,
-   "ciudad": "Buenos Aires",
-   "provincia": "Buenos Aires",
-   "pais": "AR",
-   "ingreso": "2026-05-20",
-   "previa": "Sin ediciones previas",
-   "papel": "Perfil bajo en el voto. Nunca fue candidata seria a eliminación.",
-   "placas_recientes": 5,
-   "votos_recientes": 12,
-   "bono_fulminante": 0.0,
-   "genero": "f",
-   "redes": {
-    "ig": "marielaaliciaprieto",
-    "conf": "media",
     "verificado": "2026-08-11"
    }
   },
@@ -119,7 +99,7 @@
    "ingreso": "2026-05-31",
    "previa": "GH Argentina 6 (2010-11) · volvió por Golden Ticket",
    "papel": "La villana. Ganó tres versus seguidos con 48,2%, 44,7% y 46,7%.",
-   "placas_recientes": 8,
+   "placas_recientes": 9,
    "votos_recientes": 17,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -132,6 +112,32 @@
   }
  ],
  "eliminados_recientes": [
+  {
+   "apodo": "Mariela",
+   "fecha": "2026-09-02",
+   "modo": "eliminado",
+   "detalle": "eliminado en la gala 32",
+   "ficha": {
+    "apodo": "Mariela",
+    "nombre": "Mariela Prieto",
+    "edad": 48,
+    "ciudad": "Buenos Aires",
+    "provincia": "Buenos Aires",
+    "pais": "AR",
+    "ingreso": "2026-05-20",
+    "previa": "Sin ediciones previas",
+    "papel": "Perfil bajo en el voto. Nunca fue candidata seria a eliminación.",
+    "placas_recientes": 5,
+    "votos_recientes": 12,
+    "bono_fulminante": 0.0,
+    "genero": "f",
+    "redes": {
+     "ig": "marielaaliciaprieto",
+     "conf": "media",
+     "verificado": "2026-08-11"
+    }
+   }
+  },
   {
    "apodo": "Pincoya",
    "fecha": "2026-08-31",
@@ -247,12 +253,6 @@
    "fecha": "2026-07-27",
    "modo": "eliminado",
    "detalle": "77,2% en el versus contra Majluf"
-  },
-  {
-   "apodo": "Emanuel",
-   "fecha": "2026-07-20",
-   "modo": "eliminado",
-   "detalle": "55,3% en el versus contra Sol"
   }
  ],
  "_nota_genero": "genero: 'f'/'m'. Al 10/08/2026 no queda ningun varon en juego, confirmado por Mi Telefe en la nota de la eliminacion de Hanssen.",

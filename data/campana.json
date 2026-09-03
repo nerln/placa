@@ -8,15 +8,15 @@
  "null_no_es_cero": "Quien no tiene ningún término con consigna queda en null. Sin campaña no es lo mismo que con campaña neutra: es no medido.",
  "indice": {
   "Charlotte": {
-   "icd": 0.86,
+   "icd": 0.84,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "CHARLOTTE AL 9009",
      "signo": 1,
-     "mejor": 8,
-     "peso": 0.86
+     "mejor": 9,
+     "peso": 0.84
     }
    ]
   },
@@ -27,51 +27,45 @@
    "terminos": []
   },
   "Luana": {
-   "icd": 0.44,
+   "icd": 0.26,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "LUANA AL 9009",
      "signo": 1,
-     "mejor": 29,
-     "peso": 0.44
+     "mejor": 38,
+     "peso": 0.26
     }
    ]
   },
   "Yipio": {
-   "icd": 0.96,
+   "icd": 0.8,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "YIPIO AL 9009",
      "signo": 1,
-     "mejor": 3,
-     "peso": 0.96
+     "mejor": 11,
+     "peso": 0.8
     }
    ]
   },
-  "Mariela": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
-  },
   "Sol": {
-   "icd": 0.96,
+   "icd": 1.0,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "SOL AL 9009",
      "signo": 1,
-     "mejor": 3,
-     "peso": 0.96
+     "mejor": 1,
+     "peso": 1.0
     }
    ]
   }
  },
  "observados": 4,
- "de": 6
+ "de": 5
 }

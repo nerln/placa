@@ -58,6 +58,24 @@
     "Yipio",
     "Mariela"
    ]
+  },
+  {
+   "gala": 33,
+   "fecha_gala": "2026-09-07",
+   "congelado": "2026-09-03T04:38-0300",
+   "archivo": "galas/33.html",
+   "historial": "https://github.com/nerln/placa/commits/main/web/galas/33.html",
+   "llamadas": {
+    "modelo": "Sol 54,0%",
+    "cruce": "Zilli 29,7%"
+   },
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio"
+   ]
   }
  ]
 }

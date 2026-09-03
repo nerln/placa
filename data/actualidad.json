@@ -167,46 +167,41 @@
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "ventana": "24 tarjetas horarias de trends24.in/argentina",
   "desde": null,
-  "hasta": "2026-09-02T05:22-0300",
-  "medido": "2026-09-02T05:22-0300",
+  "hasta": "2026-09-03T04:21-0300",
+  "medido": "2026-09-03T04:21-0300",
   "fase": "positivo",
   "terminos": [
    {
     "txt": "SOL AL 9009",
-    "mejor": 3,
-    "horas": 22,
-    "tipo": "campaña de voto",
-    "nota": "Veintidós de las veinticuatro tarjetas, y tercer puesto del país."
+    "mejor": 1,
+    "horas": 21,
+    "tipo": "campaña de voto"
    },
    {
     "txt": "CHARLOTTE AL 9009",
-    "mejor": 8,
-    "horas": 21,
-    "tipo": "campaña de voto",
-    "nota": "Veintiuna tarjetas, casi tantas como Sol, con un pico algo más bajo."
-   },
-   {
-    "txt": "LUANA AL 9009",
-    "mejor": 29,
-    "horas": 7,
-    "tipo": "campaña de voto",
-    "nota": "Siete tarjetas y sin pasar del puesto 29."
+    "mejor": 9,
+    "horas": 17,
+    "tipo": "campaña de voto"
    },
    {
     "txt": "YIPIO AL 9009",
-    "mejor": 3,
-    "horas": 5,
-    "tipo": "campaña de voto",
-    "nota": "Llegó al tercer puesto pero sólo en cinco tarjetas: pico alto, poca duración."
+    "mejor": 11,
+    "horas": 10,
+    "tipo": "campaña de voto"
+   },
+   {
+    "txt": "LUANA AL 9009",
+    "mejor": 38,
+    "horas": 7,
+    "tipo": "campaña de voto"
    }
   ],
   "variantes": [],
   "sin_consigna": {
    "quienes": [
-    "Zilli",
-    "Mariela"
+    "Zilli"
    ],
-   "_nota": "Ninguna de las dos aparece con consigna en las 24 tarjetas. En una placa positiva eso no es neutro: es que nadie está pidiendo que se queden."
+   "_nota": "No aparecen con consigna en las tarjetas de la ventana. En placa positiva eso quiere decir que nadie está pidiendo que se queden; en negativa, que nadie pide que se vayan."
   },
   "oficial": {
    "txt": "#GeneraciónDorada",
@@ -216,8 +211,9 @@
    "_nota_cortes": "Cuántas tarjetas horarias del top-50 se miraron en la ventana. Estaba escrito a mano en la página («21 cortes») y quedó viejo en cuanto cambió la ventana."
   },
   "_aviso_signo": "Las mediciones anteriores al 31 de agosto son de fase negativa y no se comparan con éstas sin darles vuelta el signo.",
-  "_nota_momento": "trends24 publica gratis sólo las últimas 24 horas: las horas son un piso.",
-  "_aviso_fuente": "Un solo rastreador sostiene estas cifras: trends24. Se consultó un segundo, twitter-trending.com, y NO coincide — registra la consigna de Yipio y no las de Sol ni Charlotte, que en trends24 aparecen en veintidós y veintiuna tarjetas. No sé cuál de los dos mira mejor, y por eso queda dicho: la parte de campaña de estas cuentas descansa en una sola fuente que otra no confirma."
+  "_nota_momento": "trends24 publica gratis sólo las últimas 24 horas, así que las horas son un piso y no un total.",
+  "_aviso_fuente": "Un solo rastreador sostiene estas cifras: trends24. Se consultó un segundo, twitter-trending.com, y NO coincide — registra la consigna de Yipio y no las de Sol ni Charlotte, que en trends24 aparecen en veintidós y veintiuna tarjetas. No sé cuál de los dos mira mejor, y por eso queda dicho: la parte de campaña de estas cuentas descansa en una sola fuente que otra no confirma.",
+  "_recogido_por": "model/tendencias.py, automático"
  },
  "bandos": {
   "_nota": "En la gala Del Moro les pidió ponerse del lado de quien querían que siguiera. Es el mapa de alianzas más medible que hay, y anticipa la placa de la nominación de mitad de semana.",
@@ -293,94 +289,91 @@
   "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
  },
  "proxima_gala": {
-  "_nota": "La placa positiva final. Cambia el signo de TODO lo que esta pagina mide: se vota por la favorita y se va la que menos votos junta, asi que «X AL 9009» ahora pide que X SE QUEDE. Hasta el lunes pedia lo contrario, con las mismas palabras.",
-  "gala": 32,
+  "_nota": "Sigue la placa positiva final: se vota por la favorita y se va la que menos junte. Quedan cinco.",
+  "gala": 33,
   "tipo": "eliminación",
-  "fecha": "2026-09-02",
+  "fecha": "2026-09-07",
   "fecha_nominacion": null,
   "placa": [
    "Sol",
    "Luana",
    "Zilli",
    "Charlotte",
-   "Yipio",
-   "Mariela"
+   "Yipio"
   ],
   "libres": [],
   "todas_finalistas": true,
   "fases": [
    {
-    "desde": "2026-08-31",
-    "hasta": "2026-09-02",
+    "desde": "2026-09-02",
+    "hasta": "2026-09-07",
     "signo": "positivo",
-    "desde_hora": "2026-08-31T23:30-03:00",
-    "hasta_hora": "2026-09-02T22:15-03:00",
+    "desde_hora": "2026-09-02T23:30-03:00",
+    "hasta_hora": "2026-09-07T22:15-03:00",
     "que": "Se vota por la favorita. Se va la que menos votos positivos junte.",
-    "detalle": "Del Moro lo abrió al aire: «A partir de este momento se abre la placa positiva final… la que menos cantidad de votos positivos tenga se va». No hay más galas de nominación: las seis están en placa hasta la final."
+    "detalle": "La placa positiva final sigue abierta hasta la final del 14 de septiembre."
    }
   ],
-  "regla": "De acá a la final hay eliminación los lunes y los miércoles, y todas las que quedan están en placa. La final es el 14 de septiembre.",
+  "regla": "Eliminación los lunes y los miércoles hasta la final del 14 de septiembre.",
   "pesos_nominacion": {
    "jugadora": 0,
    "visita": 0,
    "extra": "No hay nominación: la placa es fija hasta la final."
   },
   "fuentes": [
-   "https://www.infobae.com/teleshow/2026/09/01/yipio-versus-pincoya-en-gran-hermano-generacion-dorada-quien-fue-eliminada-y-quien-se-convirtio-en-finalista/",
-   "https://www.rionegro.com.ar/redes/cuando-sera-la-gran-final-de-gran-hermano-2026-asi-es-el-cronograma-de-galas-y-eliminaciones-4705144/"
+   "https://www.infobae.com/teleshow/2026/09/03/luana-versus-mariela-prieto-en-gran-hermano-generacion-dorada-cual-fue-la-finalista-que-quedo-eliminada/"
   ]
  },
  "termometro_placa": {
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "fase": "positivo",
-  "medido": "2026-09-02T05:22-0300",
+  "medido": "2026-09-03T04:21-0300",
   "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». La placa es positiva, así que estas consignas piden que se QUEDE.",
   "ventana": {
    "desde": null,
-   "hasta": "2026-09-02T05:22-0300",
-   "_nota": "24 tarjetas horarias, que es lo que el sitio publica sin suscripción."
+   "hasta": "2026-09-03T04:21-0300",
+   "_nota": "24 tarjetas horarias, que es lo que el sitio publica gratis."
   },
   "horas_son_piso": true,
   "consignas": [
    {
     "termino": "SOL AL 9009",
     "quien": "Sol",
-    "pico": 3,
-    "horas": 22,
+    "pico": 1,
+    "horas": 21,
     "fuentes": 1,
-    "fuente": "trends24.in/argentina, 24 tarjetas horarias leídas el 2 de septiembre"
+    "fuente": "trends24.in/argentina, 24 tarjetas horarias"
    },
    {
     "termino": "CHARLOTTE AL 9009",
     "quien": "Charlotte",
-    "pico": 8,
-    "horas": 21,
+    "pico": 9,
+    "horas": 17,
     "fuentes": 1,
-    "fuente": "trends24.in/argentina, 24 tarjetas horarias leídas el 2 de septiembre"
-   },
-   {
-    "termino": "LUANA AL 9009",
-    "quien": "Luana",
-    "pico": 29,
-    "horas": 7,
-    "fuentes": 1,
-    "fuente": "trends24.in/argentina, 24 tarjetas horarias leídas el 2 de septiembre"
+    "fuente": "trends24.in/argentina, 24 tarjetas horarias"
    },
    {
     "termino": "YIPIO AL 9009",
     "quien": "Yipio",
-    "pico": 3,
-    "horas": 5,
+    "pico": 11,
+    "horas": 10,
     "fuentes": 1,
-    "fuente": "trends24.in/argentina, 24 tarjetas horarias leídas el 2 de septiembre"
+    "fuente": "trends24.in/argentina, 24 tarjetas horarias"
+   },
+   {
+    "termino": "LUANA AL 9009",
+    "quien": "Luana",
+    "pico": 38,
+    "horas": 7,
+    "fuentes": 1,
+    "fuente": "trends24.in/argentina, 24 tarjetas horarias"
    }
   ],
   "sin_consigna": {
    "quienes": [
-    "Zilli",
-    "Mariela"
+    "Zilli"
    ],
-   "_nota": "Ninguna de las dos aparece con consigna en las 24 tarjetas. En una placa positiva eso no es neutro: es que nadie está pidiendo que se queden."
+   "_nota": "No aparecen con consigna en las tarjetas de la ventana. En placa positiva eso quiere decir que nadie está pidiendo que se queden; en negativa, que nadie pide que se vayan."
   },
   "aviso": "Un solo rastreador sostiene estas cifras: trends24. Se consultó un segundo, twitter-trending.com, y NO coincide — registra la consigna de Yipio y no las de Sol ni Charlotte, que en trends24 aparecen en veintidós y veintiuna tarjetas. No sé cuál de los dos mira mejor, y por eso queda dicho: la parte de campaña de estas cuentas descansa en una sola fuente que otra no confirma."
  },

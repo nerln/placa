@@ -95,6 +95,18 @@
     "Mariela": 0.0571,
     "Sol": 0.0557
    }
+  },
+  {
+   "fecha": "2026-09-02",
+   "galas_hasta": 32,
+   "en_juego": 5,
+   "p_gana": {
+    "Charlotte": 0.3659,
+    "Zilli": 0.1735,
+    "Luana": 0.1993,
+    "Yipio": 0.163,
+    "Sol": 0.0983
+   }
   }
  ],
  "predicciones_gala": [
@@ -203,6 +215,26 @@
     "Charlotte": 0.077385,
     "Yipio": 0.128555,
     "Mariela": 0.082975
+   },
+   "n_sims": 400000
+  },
+  {
+   "gala": 33,
+   "fecha_gala": "2026-09-07",
+   "corrida": "2026-09-02",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Sol": 0.539547,
+    "Luana": 0.13621,
+    "Zilli": 0.094768,
+    "Charlotte": 0.087413,
+    "Yipio": 0.142063
    },
    "n_sims": 400000
   }
@@ -509,6 +541,81 @@
     "dos_tiempos": "2026-08-24",
     "apuesta": "2026-08-29T09:08-0300"
    }
+  },
+  {
+   "gala": 32,
+   "fecha": "2026-09-02",
+   "eliminado": "Mariela",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio",
+    "Mariela"
+   ],
+   "regla": "EVALUACION.md, escrita antes de que terminara la temporada",
+   "modelo": {
+    "p_del_eliminado": 0.083,
+    "puesto": 5,
+    "de": 6,
+    "acerto": false,
+    "brier": 1.1391,
+    "brier_uniforme": 0.8333,
+    "log_verosimilitud": -2.4892,
+    "log_verosimilitud_uniforme": -1.7918,
+    "orden": [
+     "Sol",
+     "Yipio",
+     "Luana",
+     "Zilli",
+     "Mariela",
+     "Charlotte"
+    ]
+   },
+   "dos_tiempos": {
+    "p_del_eliminado": 0.1419,
+    "puesto": 5,
+    "de": 6,
+    "acerto": false,
+    "brier": 0.8917,
+    "brier_uniforme": 0.8333,
+    "log_verosimilitud": -1.9526,
+    "log_verosimilitud_uniforme": -1.7918,
+    "orden": [
+     "Sol",
+     "Yipio",
+     "Luana",
+     "Zilli",
+     "Mariela",
+     "Charlotte"
+    ]
+   },
+   "apuesta": null,
+   "cruce": {
+    "p_del_eliminado": 0.2046,
+    "puesto": 3,
+    "de": 6,
+    "acerto": false,
+    "brier": 0.7841,
+    "brier_uniforme": 0.8333,
+    "log_verosimilitud": -1.5867,
+    "log_verosimilitud_uniforme": -1.7918,
+    "orden": [
+     "Zilli",
+     "Luana",
+     "Mariela",
+     "Sol",
+     "Yipio",
+     "Charlotte"
+    ]
+   },
+   "congeladas": {
+    "modelo": "2026-08-31",
+    "dos_tiempos": "2026-08-31",
+    "apuesta": null,
+    "cruce": "2026-09-02T06:08-0300"
+   }
   }
  ],
  "predicciones_dos_tiempos": [
@@ -652,6 +759,32 @@
    "pesos": {
     "sentimiento": 0.607,
     "campana": 0.393,
+    "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
+   },
+   "fase": "positivo"
+  },
+  {
+   "gala": 33,
+   "fecha_gala": "2026-09-07",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Sol": 0.1615,
+    "Luana": 0.2877,
+    "Zilli": 0.2968,
+    "Charlotte": 0.1058,
+    "Yipio": 0.1481
+   },
+   "escrita": "2026-09-03T04:33-0300",
+   "llamada": "Zilli",
+   "pesos": {
+    "sentimiento": 0.345,
+    "campana": 0.655,
     "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
    },
    "fase": "positivo"

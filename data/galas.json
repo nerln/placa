@@ -346,22 +346,37 @@
    },
    "completa": false,
    "eliminado": "Pincoya"
+  },
+  {
+   "gala": 32,
+   "fecha": "2026-09-02",
+   "tipo": "negativo",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio",
+    "Mariela"
+   ],
+   "salvados_cuota": {},
+   "versus": {},
+   "completa": false,
+   "eliminado": "Mariela"
   }
  ],
  "placa_vigente": {
-  "gala": 32,
-  "fecha": "2026-09-02",
+  "gala": 33,
+  "fecha": "2026-09-07",
+  "fecha_nominacion": "2026-09-02",
   "integrantes": [
    "Sol",
    "Luana",
    "Zilli",
    "Charlotte",
-   "Yipio",
-   "Mariela"
+   "Yipio"
   ],
-  "libres": [],
   "inmune_lider": "",
-  "signo": "positivo",
-  "_nota": "Placa positiva final: se va la que menos votos positivos junte."
+  "libres": []
  }
 }

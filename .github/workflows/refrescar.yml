@@ -1,0 +1,120 @@
+name: refrescar
+
+# Lo que cambia solo, se actualiza solo.
+#
+# Esta pagina tiene dos clases de dato y hasta ahora las dos se actualizaban a
+# mano. Una no lo necesita: las consignas en tendencias, los comentarios del
+# canal y el cruce cambian entre gala y gala sin que pase nada nuevo, y el
+# cruce ademas cambia POR CONSTRUCCION cada hora, porque su peso depende de
+# cuanto falta para la gala. Que eso dependa de que alguien se acuerde es la
+# forma mas segura de publicar una medicion de hace tres dias con cara de
+# medicion de hoy.
+#
+# LO QUE ESTA TAREA NO HACE, Y ES DELIBERADO: no carga el resultado de una
+# gala. Saber quien salio pide leer dos fuentes, comprobar que el nombre este
+# en la placa cargada y no fechar por deduccion — las tres reglas de
+# docs/tras-la-gala.md. Un guion que adivinara eso publicaria una falsedad a
+# las cuatro de la manana sin que nadie mirara. El resultado lo carga una
+# persona con model/actualizar.py, como hasta ahora.
+#
+# Tampoco recalcula el modelo: mu y psi solo cambian cuando entra una gala
+# nueva, y esa entrada ya es manual.
+
+on:
+  schedule:
+    # Cada hora en punto. El cron de GitHub es UTC y puede atrasarse unos
+    # minutos cuando hay cola; no importa, porque cada corrida es completa y no
+    # depende de la anterior.
+    - cron: "7 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  # El mismo grupo que pages.yml: dos despliegues a la vez se pisan.
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refrescar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Pillow es lo unico que hace falta: tendencias, campana, comentarios y
+      # cruce son de biblioteca estandar. El modelo pesado no corre aca.
+      - run: pip install --quiet pillow
+
+      # Las consignas del top-50 argentino. Si trends24 no responde o cambia de
+      # forma, el guion sale con error y no escribe: se prefiere la medicion
+      # anterior, fechada, a una vacia sin avisar. Por eso continue-on-error:
+      # que falle la lectura no tiene que impedir que se refresque el resto.
+      - name: consignas en tendencias
+        continue-on-error: true
+        run: python3 model/tendencias.py
+
+      - name: indice de campana
+        continue-on-error: true
+        run: python3 model/campana.py
+
+      # Los comentarios del canal del programa. Tarda y a veces YouTube corta:
+      # tambien puede fallar sin arrastrar al resto.
+      - name: sentimiento en los comentarios
+        continue-on-error: true
+        run: python3 model/comentarios.py --paginas 3
+
+      # El cruce SIEMPRE se recalcula, aunque las dos lecturas de arriba hayan
+      # fallado: su peso depende del reloj y a las 21.00 dice algo distinto que
+      # a las 09.00 con los mismos datos.
+      - name: el cruce
+        run: python3 model/cruce.py
+
+      - name: reconstruir la pagina
+        run: |
+          python3 gui/build.py
+          python3 gui/tarjeta.py
+
+      # La misma puerta que usa una persona. Si algo no cuadra, no se commitea
+      # nada y la pagina en vivo se queda como estaba, que es lo correcto.
+      - name: las comprobaciones
+        run: python3 gui/verificar.py
+
+      - name: publicar si cambio algo
+        run: |
+          if git diff --quiet; then
+            echo "nada que refrescar: los datos son los mismos"
+            exit 0
+          fi
+          git config user.name  "refrescar (automatico)"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          CORRIDA=$(python3 -c 'import sys;sys.path.insert(0,"gui");from firma import firma_corrida;print(firma_corrida())')
+          git add -A
+          git commit -m "refresco automatico · corrida $CORRIDA" \
+            -m "Consignas, comentarios y cruce, releidos por .github/workflows/refrescar.yml. El resultado de las galas no lo carga esta tarea: lo carga una persona."
+          git push
+          echo "cambio=si" >> "$GITHUB_OUTPUT"
+        id: publicar
+
+      # OJO: un push hecho con GITHUB_TOKEN NO dispara otros workflows — GitHub
+      # lo impide a proposito para que un workflow no se llame a si mismo en
+      # bucle. O sea que pages.yml NO se entera de este commit, y sin estos tres
+      # pasos el refresco se commitearia y la pagina en vivo no cambiaria nunca.
+      # Por eso esta tarea despliega ella misma, con el mismo grupo de
+      # concurrencia que pages.yml para que no se pisen.
+      - uses: actions/configure-pages@v5
+        if: steps.publicar.outputs.cambio == 'si'
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.publicar.outputs.cambio == 'si'
+        with:
+          path: web
+      - uses: actions/deploy-pages@v4
+        if: steps.publicar.outputs.cambio == 'si'

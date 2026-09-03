@@ -177,8 +177,20 @@ def main():
     entrada = {"gala": G.get("gala"), "fecha_gala": G.get("fecha"), "placa": placa,
                "p_sale": p, "escrita": salida["generado"], "llamada": orden[0],
                "pesos": salida["pesos"], "fase": fase}
+    # Cuando esto corre solo cada hora, guardar cada version llenaria el
+    # registro de veinticuatro renglones por gala que dicen casi lo mismo: el
+    # peso del reloj se mueve un poco cada hora y el numero con el. Se guarda
+    # cuando cambia algo que un lector notaria — a quien senala, o mas de un
+    # punto en alguien — y se descarta el resto. Asi el registro sigue contando
+    # como se movio la cuenta durante la semana, que es lo interesante, sin
+    # convertirse en un log.
     previas = [e for e in reg if e.get("gala") == G.get("gala")]
-    if not previas or previas[-1].get("p_sale") != p:
+    def vale_la_pena(ant):
+        if ant.get("llamada") != orden[0]:
+            return True
+        vieja = ant.get("p_sale") or {}
+        return any(abs(p.get(n, 0) - vieja.get(n, 0)) > 0.01 for n in set(p) | set(vieja))
+    if not previas or vale_la_pena(previas[-1]):
         reg.append(entrada)
         H.setdefault("_nota_cruces", (
             "El cruce entre sentimiento y campaña, congelado antes de cada gala como las otras "
