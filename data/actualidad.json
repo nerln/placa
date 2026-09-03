@@ -167,8 +167,8 @@
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "ventana": "24 tarjetas horarias de trends24.in/argentina",
   "desde": null,
-  "hasta": "2026-09-03T14:01-0300",
-  "medido": "2026-09-03T14:01-0300",
+  "hasta": "2026-09-03T16:44-0300",
+  "medido": "2026-09-03T16:44-0300",
   "fase": "positivo",
   "terminos": [
    {
@@ -179,7 +179,7 @@
    },
    {
     "txt": "CHARLOTTE AL 9009",
-    "mejor": 10,
+    "mejor": 13,
     "horas": 17,
     "tipo": "campaña de voto"
    }
@@ -317,11 +317,11 @@
  "termometro_placa": {
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "fase": "positivo",
-  "medido": "2026-09-03T14:01-0300",
+  "medido": "2026-09-03T16:44-0300",
   "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». La placa es positiva, así que estas consignas piden que se QUEDE.",
   "ventana": {
    "desde": null,
-   "hasta": "2026-09-03T14:01-0300",
+   "hasta": "2026-09-03T16:44-0300",
    "_nota": "24 tarjetas horarias, que es lo que el sitio publica gratis."
   },
   "horas_son_piso": true,
@@ -337,7 +337,7 @@
    {
     "termino": "CHARLOTTE AL 9009",
     "quien": "Charlotte",
-    "pico": 10,
+    "pico": 13,
     "horas": 17,
     "fuentes": 1,
     "fuente": "trends24.in/argentina, 24 tarjetas horarias"

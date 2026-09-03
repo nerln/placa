@@ -10,13 +10,13 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 275,
- "con_signo": 81,
+ "nombran_a_alguien": 282,
+ "con_signo": 86,
  "por_jugadora": {
   "Sol": {
-   "contra": 8,
-   "favor": 3,
-   "sin_signo": 36
+   "contra": 10,
+   "favor": 2,
+   "sin_signo": 37
   },
   "Luana": {
    "contra": 4,
@@ -24,19 +24,19 @@
    "sin_signo": 11
   },
   "Zilli": {
-   "contra": 10,
+   "contra": 11,
    "favor": 1,
-   "sin_signo": 23
+   "sin_signo": 24
   },
   "Charlotte": {
    "contra": 4,
    "favor": 46,
-   "sin_signo": 102
+   "sin_signo": 103
   },
   "Yipio": {
-   "contra": 9,
-   "favor": 25,
-   "sin_signo": 56
+   "contra": 10,
+   "favor": 26,
+   "sin_signo": 54
   }
  },
  "ejemplos": {
@@ -50,7 +50,7 @@
     "signo": "contra"
    },
    {
-    "texto": "Bueno. Conclusion. Me di cuenta que como virginiana qué soy no me equivoque. Pincoya no es un personaje es así ella y tiene maldad. Al punto de cuestionar porque tuvo que elejir a ",
+    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
     "signo": "contra"
    }
   ],
@@ -78,8 +78,8 @@
     "signo": "contra"
    },
    {
-    "texto": "Espero que cada una de estas jugadoras que todavía quedan en esta casa puedan recuperar la salud mental después de que termine este programa. El resultado después de seis meses no ",
-    "signo": "contra"
+    "texto": "HERMOSA YANINA. que porte tiene al caminar. Que energía y ganas de vivir. . Está mucho más linda y joven de cuando entró. ❤❤",
+    "signo": "favor"
    }
   ],
   "Charlotte": [
@@ -106,8 +106,8 @@
     "signo": "favor"
    },
    {
-    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
-    "signo": "favor"
+    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
+    "signo": "contra"
    }
   ]
  }
