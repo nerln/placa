@@ -9,41 +9,106 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 0,
- "nombran_a_alguien": 0,
- "con_signo": 0,
+ "total": 527,
+ "nombran_a_alguien": 275,
+ "con_signo": 81,
  "por_jugadora": {
   "Sol": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 8,
+   "favor": 3,
+   "sin_signo": 36
   },
   "Luana": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 4,
+   "favor": 2,
+   "sin_signo": 11
   },
   "Zilli": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 10,
+   "favor": 1,
+   "sin_signo": 23
   },
   "Charlotte": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 4,
+   "favor": 46,
+   "sin_signo": 102
   },
   "Yipio": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 9,
+   "favor": 25,
+   "sin_signo": 56
   }
  },
  "ejemplos": {
-  "Sol": [],
-  "Luana": [],
-  "Zilli": [],
-  "Charlotte": [],
-  "Yipio": []
+  "Sol": [
+   {
+    "texto": "Definitivamente Pincoya y su soberbia le restan … ahora si creo que siempre le cayó bien Sol . \nSon tal para cual",
+    "signo": "contra"
+   },
+   {
+    "texto": "Sol y zilli afuera",
+    "signo": "contra"
+   },
+   {
+    "texto": "Bueno. Conclusion. Me di cuenta que como virginiana qué soy no me equivoque. Pincoya no es un personaje es así ella y tiene maldad. Al punto de cuestionar porque tuvo que elejir a ",
+    "signo": "contra"
+   }
+  ],
+  "Luana": [
+   {
+    "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
+    "signo": "contra"
+   },
+   {
+    "texto": "GRACIAS A DIOS SALIÓ ESTA MUJER,MIS VIOLENCIA, YIPIO ,CHARLOT A LA FINAL, EL MIERCOLES SE VA MARIELA O LUANA",
+    "signo": "favor"
+   },
+   {
+    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
+    "signo": "favor"
+   }
+  ],
+  "Zilli": [
+   {
+    "texto": "Mas falsa la Zilli,ojala sea la siguiente en irse.",
+    "signo": "contra"
+   },
+   {
+    "texto": "Sol y zilli afuera",
+    "signo": "contra"
+   },
+   {
+    "texto": "Espero que cada una de estas jugadoras que todavía quedan en esta casa puedan recuperar la salud mental después de que termine este programa. El resultado después de seis meses no ",
+    "signo": "contra"
+   }
+  ],
+  "Charlotte": [
+   {
+    "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
+    "signo": "contra"
+   },
+   {
+    "texto": "Gran momento Charlotte llorando nunca lo hizo en cámaras y lo hizo ,tuvo lo que tanto quiso escuchar a su mamá decir te quiero y justo el complemento de su hermano Vamos Charlotte ",
+    "signo": "favor"
+   },
+   {
+    "texto": "Vamos Charlotte❤ a la final ❤🎉",
+    "signo": "favor"
+   }
+  ],
+  "Yipio": [
+   {
+    "texto": "Gran momento Charlotte llorando nunca lo hizo en cámaras y lo hizo ,tuvo lo que tanto quiso escuchar a su mamá decir te quiero y justo el complemento de su hermano Vamos Charlotte ",
+    "signo": "favor"
+   },
+   {
+    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
+    "signo": "favor"
+   },
+   {
+    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "signo": "favor"
+   }
+  ]
  }
 }

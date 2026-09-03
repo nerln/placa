@@ -8,15 +8,15 @@
  "null_no_es_cero": "Quien no tiene ningún término con consigna queda en null. Sin campaña no es lo mismo que con campaña neutra: es no medido.",
  "indice": {
   "Charlotte": {
-   "icd": 0.84,
+   "icd": 0.82,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "CHARLOTTE AL 9009",
      "signo": 1,
-     "mejor": 9,
-     "peso": 0.84
+     "mejor": 10,
+     "peso": 0.82
     }
    ]
   },
@@ -33,17 +33,10 @@
    "terminos": []
   },
   "Yipio": {
-   "icd": 0.74,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "YIPIO AL 9009",
-     "signo": 1,
-     "mejor": 14,
-     "peso": 0.74
-    }
-   ]
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
   },
   "Sol": {
    "icd": 1.0,
@@ -59,6 +52,6 @@
    ]
   }
  },
- "observados": 3,
+ "observados": 2,
  "de": 5
 }
