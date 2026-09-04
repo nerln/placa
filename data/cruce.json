@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-03T21:56-0300",
+ "generado": "2026-09-04T02:46-0300",
  "gala": 33,
  "fecha_gala": "2026-09-07",
  "placa": [
@@ -12,37 +12,37 @@
  "fase": "positivo",
  "que_es": "El cruce entre lo que la gente escribe y lo que se pide afuera, pesado por lo cerca que está la gala: cuanto menos falta, más pesa el sentimiento.",
  "reloj": {
-  "faltan_horas": 96.3,
-  "cercania": 0.427,
+  "faltan_horas": 91.5,
+  "cercania": 0.456,
   "horizonte_horas": 168.0
  },
  "pesos": {
-  "sentimiento": 0.392,
-  "campana": 0.608,
+  "sentimiento": 0.405,
+  "campana": 0.595,
   "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
  },
  "entradas": {
   "sentimiento": {
-   "Zilli": 0.3359,
-   "Luana": 0.245,
+   "Zilli": 0.3216,
+   "Luana": 0.2375,
    "Yipio": 0.095,
-   "Sol": 0.2939,
-   "Charlotte": 0.0301
+   "Sol": 0.3167,
+   "Charlotte": 0.0292
   },
   "campana": {
-   "Zilli": 0.2451,
-   "Luana": 0.2451,
-   "Yipio": 0.2451,
-   "Sol": 0.0858,
-   "Charlotte": 0.1789
+   "Zilli": 0.2439,
+   "Luana": 0.2439,
+   "Yipio": 0.2439,
+   "Sol": 0.0854,
+   "Charlotte": 0.1829
   }
  },
  "p_sale": {
-  "Sol": 0.1674,
-  "Luana": 0.245,
-  "Zilli": 0.2807,
-  "Charlotte": 0.1206,
-  "Yipio": 0.1863
+  "Sol": 0.1791,
+  "Luana": 0.2413,
+  "Zilli": 0.2754,
+  "Charlotte": 0.1207,
+  "Yipio": 0.1836
  },
  "llama_a": "Zilli",
  "coinciden": null,

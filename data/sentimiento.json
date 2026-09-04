@@ -10,13 +10,13 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 272,
- "con_signo": 82,
+ "nombran_a_alguien": 270,
+ "con_signo": 81,
  "por_jugadora": {
   "Sol": {
-   "contra": 8,
-   "favor": 2,
-   "sin_signo": 35
+   "contra": 9,
+   "favor": 1,
+   "sin_signo": 34
   },
   "Luana": {
    "contra": 4,
@@ -24,18 +24,18 @@
    "sin_signo": 10
   },
   "Zilli": {
-   "contra": 11,
+   "contra": 10,
    "favor": 1,
-   "sin_signo": 23
+   "sin_signo": 25
   },
   "Charlotte": {
    "contra": 3,
    "favor": 47,
-   "sin_signo": 99
+   "sin_signo": 97
   },
   "Yipio": {
    "contra": 7,
-   "favor": 24,
+   "favor": 23,
    "sin_signo": 54
   }
  },
