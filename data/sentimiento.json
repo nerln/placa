@@ -10,13 +10,13 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 269,
+ "nombran_a_alguien": 268,
  "con_signo": 82,
  "por_jugadora": {
   "Sol": {
    "contra": 9,
    "favor": 1,
-   "sin_signo": 32
+   "sin_signo": 34
   },
   "Luana": {
    "contra": 4,
@@ -30,12 +30,12 @@
   },
   "Charlotte": {
    "contra": 4,
-   "favor": 47,
-   "sin_signo": 97
+   "favor": 46,
+   "sin_signo": 96
   },
   "Yipio": {
-   "contra": 8,
-   "favor": 23,
+   "contra": 9,
+   "favor": 22,
    "sin_signo": 55
   }
  },
