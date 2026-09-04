@@ -8,15 +8,15 @@
  "null_no_es_cero": "Quien no tiene ningún término con consigna queda en null. Sin campaña no es lo mismo que con campaña neutra: es no medido.",
  "indice": {
   "Charlotte": {
-   "icd": 0.6,
+   "icd": 0.58,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "CHARLOTTE AL 9009",
      "signo": 1,
-     "mejor": 21,
-     "peso": 0.6
+     "mejor": 22,
+     "peso": 0.58
     }
    ]
   },

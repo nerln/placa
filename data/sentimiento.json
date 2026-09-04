@@ -10,8 +10,8 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 269,
- "con_signo": 81,
+ "nombran_a_alguien": 270,
+ "con_signo": 82,
  "por_jugadora": {
   "Sol": {
    "contra": 9,
@@ -26,15 +26,15 @@
   "Zilli": {
    "contra": 10,
    "favor": 1,
-   "sin_signo": 24
+   "sin_signo": 25
   },
   "Charlotte": {
-   "contra": 3,
+   "contra": 4,
    "favor": 47,
    "sin_signo": 97
   },
   "Yipio": {
-   "contra": 7,
+   "contra": 8,
    "favor": 23,
    "sin_signo": 55
   }
