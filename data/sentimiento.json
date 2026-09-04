@@ -9,41 +9,106 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 0,
- "nombran_a_alguien": 0,
- "con_signo": 0,
+ "total": 527,
+ "nombran_a_alguien": 272,
+ "con_signo": 82,
  "por_jugadora": {
   "Sol": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 8,
+   "favor": 2,
+   "sin_signo": 35
   },
   "Luana": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 4,
+   "favor": 2,
+   "sin_signo": 10
   },
   "Zilli": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 11,
+   "favor": 1,
+   "sin_signo": 23
   },
   "Charlotte": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 3,
+   "favor": 47,
+   "sin_signo": 99
   },
   "Yipio": {
-   "contra": 0,
-   "favor": 0,
-   "sin_signo": 0
+   "contra": 7,
+   "favor": 24,
+   "sin_signo": 54
   }
  },
  "ejemplos": {
-  "Sol": [],
-  "Luana": [],
-  "Zilli": [],
-  "Charlotte": [],
-  "Yipio": []
+  "Sol": [
+   {
+    "texto": "Definitivamente Pincoya y su soberbia le restan … ahora si creo que siempre le cayó bien Sol . \nSon tal para cual",
+    "signo": "contra"
+   },
+   {
+    "texto": "Sol y zilli afuera",
+    "signo": "contra"
+   },
+   {
+    "texto": "También le tiro la culpa a Yipio qué fue violenta, y Yipio habla muy fuerte y solo se defiende. Debo decir que se ponía seria al no conocer el juego al principio, pero luego entend",
+    "signo": "contra"
+   }
+  ],
+  "Luana": [
+   {
+    "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
+    "signo": "contra"
+   },
+   {
+    "texto": "GRACIAS A DIOS SALIÓ ESTA MUJER,MIS VIOLENCIA, YIPIO ,CHARLOT A LA FINAL, EL MIERCOLES SE VA MARIELA O LUANA",
+    "signo": "favor"
+   },
+   {
+    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
+    "signo": "favor"
+   }
+  ],
+  "Zilli": [
+   {
+    "texto": "Mas falsa la Zilli,ojala sea la siguiente en irse.",
+    "signo": "contra"
+   },
+   {
+    "texto": "Sol y zilli afuera",
+    "signo": "contra"
+   },
+   {
+    "texto": "HERMOSA YANINA. que porte tiene al caminar. Que energía y ganas de vivir. . Está mucho más linda y joven de cuando entró. ❤❤",
+    "signo": "favor"
+   }
+  ],
+  "Charlotte": [
+   {
+    "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
+    "signo": "contra"
+   },
+   {
+    "texto": "Gran momento Charlotte llorando nunca lo hizo en cámaras y lo hizo ,tuvo lo que tanto quiso escuchar a su mamá decir te quiero y justo el complemento de su hermano Vamos Charlotte ",
+    "signo": "favor"
+   },
+   {
+    "texto": "Vamos Charlotte❤ a la final ❤🎉",
+    "signo": "favor"
+   }
+  ],
+  "Yipio": [
+   {
+    "texto": "Gran momento Charlotte llorando nunca lo hizo en cámaras y lo hizo ,tuvo lo que tanto quiso escuchar a su mamá decir te quiero y justo el complemento de su hermano Vamos Charlotte ",
+    "signo": "favor"
+   },
+   {
+    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
+    "signo": "favor"
+   },
+   {
+    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "signo": "favor"
+   }
+  ]
  }
 }
