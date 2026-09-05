@@ -5452,6 +5452,18 @@ function contar(nodo){
         .join("");
 
       return "<p class='mn-dice'>" + cuentas.map(frase).join(" ") + sinAp + "</p>" +
+        // Cuando casi nadie tiene consigna, «nadie hace campana por ella» deja de
+        // distinguir: el 5 de septiembre era cierto de cuatro de las cinco, y
+        // leido en una sola fila sugeria mas de lo que decia. Se dice cuanta
+        // gente tiene campana antes de que el lector lea las filas.
+        (() => {
+          const con = (T2.consignas || []).length, tot = placa.length;
+          if(!tot || con >= tot - 1 || !con) return "";
+          return "<p class='mn-dice'>Ojo con una: de las " + NUM(tot) + ", " +
+            (con === 1 ? "sólo una tiene campaña" : "sólo " + NUM(con) + " tienen campaña") +
+            " en el top-50 argentino. Para las otras " + NUM(tot - con) + ", esa señal no " +
+            "distingue: no es que estén peor, es que ahí no se mide nada.</p>";
+        })() +
         "<p class='mn-dice'>Abajo, ordenadas por cuántas cuentas la ponen primera para irse" +
           (empatan ? "; a igual recuento, manda la cuenta que va primera" : "") + ". " +
           "Eligiendo al azar entre " + NUM(placa.length) + ", acertás una de cada " +
