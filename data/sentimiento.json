@@ -10,33 +10,33 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 272,
- "con_signo": 80,
+ "nombran_a_alguien": 268,
+ "con_signo": 82,
  "por_jugadora": {
   "Sol": {
-   "contra": 9,
-   "favor": 1,
-   "sin_signo": 35
+   "contra": 8,
+   "favor": 3,
+   "sin_signo": 36
   },
   "Luana": {
    "contra": 3,
-   "favor": 2,
-   "sin_signo": 10
+   "favor": 1,
+   "sin_signo": 12
   },
   "Zilli": {
-   "contra": 11,
+   "contra": 9,
    "favor": 1,
-   "sin_signo": 24
+   "sin_signo": 23
   },
   "Charlotte": {
-   "contra": 4,
-   "favor": 45,
-   "sin_signo": 101
+   "contra": 3,
+   "favor": 48,
+   "sin_signo": 93
   },
   "Yipio": {
-   "contra": 9,
-   "favor": 24,
-   "sin_signo": 54
+   "contra": 10,
+   "favor": 23,
+   "sin_signo": 57
   }
  },
  "ejemplos": {
@@ -64,8 +64,8 @@
     "signo": "favor"
    },
    {
-    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
-    "signo": "favor"
+    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
+    "signo": "contra"
    }
   ],
   "Zilli": [
@@ -78,8 +78,8 @@
     "signo": "contra"
    },
    {
-    "texto": "HERMOSA YANINA. que porte tiene al caminar. Que energía y ganas de vivir. . Está mucho más linda y joven de cuando entró. ❤❤",
-    "signo": "favor"
+    "texto": "NO ME GUSTA ESA MUJER ZILLI DEBERÍA IRSE YA ..ES MUY SOBERBIA. ALTANERA.  EGOCÉNTRICA",
+    "signo": "contra"
    }
   ],
   "Charlotte": [
