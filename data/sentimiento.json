@@ -10,33 +10,33 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 274,
+ "nombran_a_alguien": 272,
  "con_signo": 80,
  "por_jugadora": {
   "Sol": {
-   "contra": 8,
-   "favor": 3,
-   "sin_signo": 34
+   "contra": 9,
+   "favor": 1,
+   "sin_signo": 35
   },
   "Luana": {
    "contra": 3,
    "favor": 2,
-   "sin_signo": 12
+   "sin_signo": 10
   },
   "Zilli": {
-   "contra": 10,
+   "contra": 11,
    "favor": 1,
-   "sin_signo": 25
+   "sin_signo": 24
   },
   "Charlotte": {
-   "contra": 3,
-   "favor": 46,
-   "sin_signo": 100
+   "contra": 4,
+   "favor": 45,
+   "sin_signo": 101
   },
   "Yipio": {
    "contra": 9,
-   "favor": 25,
-   "sin_signo": 56
+   "favor": 24,
+   "sin_signo": 54
   }
  },
  "ejemplos": {
@@ -50,7 +50,7 @@
     "signo": "contra"
    },
    {
-    "texto": "También le tiro la culpa a Yipio qué fue violenta, y Yipio habla muy fuerte y solo se defiende. Debo decir que se ponía seria al no conocer el juego al principio, pero luego entend",
+    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
     "signo": "contra"
    }
   ],
@@ -78,8 +78,8 @@
     "signo": "contra"
    },
    {
-    "texto": "Espero que cada una de estas jugadoras que todavía quedan en esta casa puedan recuperar la salud mental después de que termine este programa. El resultado después de seis meses no ",
-    "signo": "contra"
+    "texto": "HERMOSA YANINA. que porte tiene al caminar. Que energía y ganas de vivir. . Está mucho más linda y joven de cuando entró. ❤❤",
+    "signo": "favor"
    }
   ],
   "Charlotte": [
@@ -102,11 +102,11 @@
     "signo": "favor"
    },
    {
-    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
     "signo": "favor"
    },
    {
-    "texto": "Vamos la yipioneta carajo",
+    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
     "signo": "favor"
    }
   ]
