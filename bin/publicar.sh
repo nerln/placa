@@ -108,6 +108,14 @@ git commit -q -m "corrida $CORRIDA" -m "Publicado por bin/publicar.sh tras pasar
 echo "commit de la corrida $CORRIDA"
 
 if [ "$EMPUJAR" -eq 1 ]; then
+  # Desde que .github/workflows/refrescar.yml commitea cada hora, un empujon a
+  # mano se cruza con el automatico y GitHub lo rechaza. Se trae lo de arriba
+  # antes de empujar: los ficheros generados se rehacen igual, y el registro de
+  # predicciones es append-only, asi que rebasar no pierde nada.
+  git pull --rebase --autostash || {
+    echo "el rebase con lo de origin no salio solo: resolvelo a mano y volve a empujar" >&2
+    exit 1
+  }
   git push
   echo "empujado. el despliegue tarda un par de minutos: gh run list --limit 1"
 else

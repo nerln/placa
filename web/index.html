@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 36,6% · Luana 19,9% · Zilli 17,3%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-09-02T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 36,6% · Luana 19,9% · Zilli 17,3%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-09-02","version":"fd570fe88a0f3779","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=fd570fe88a0f3779"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 36,6% · Luana 19,9% · Zilli 17,3%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-09-02T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 36,6% · Luana 19,9% · Zilli 17,3%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-09-02","version":"1e7610352108a4ef","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=1e7610352108a4ef"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -406,6 +406,8 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
 .rec-marcas i{display:block; width:12px; height:12px; border-radius:50%; box-sizing:border-box;
   border:2px solid var(--rechazo); background:transparent}
 .rec-marcas i.llena{background:var(--rechazo)}
+.rec-fila .rec-por{grid-column:1 / -1; font-size:var(--t-xs); color:var(--tinta2);
+  line-height:1.5; margin:2px 0 0}
 .rec-fila .n{font-size:var(--t-xs); color:var(--tinta2); white-space:nowrap;
   font-variant-numeric:tabular-nums}
 .mn-num{font-size:var(--t-xs); color:var(--tinta2); line-height:1.6; margin:6px 0 0;
@@ -5470,8 +5472,57 @@ function contar(nodo){
         return "<i class='" + (si ? "llena" : "") + "' title='" + c.nombre + ": " +
           (si ? "la pone primera" : "no") + "'></i>";
       }).join("") + "</span>";
-      const fila = (q, n, txt) => "<div class='rec-fila'>" + q + marcas(n) +
-        "<span class='n'>" + txt + "</span></div>";
+      // El POR QUE, en una linea derivada. El recuento dice dos nombres y no
+      // decia de donde salen: para alguien que abre la pagina a las once de la
+      // noche, «Sol, 2 de 3 cuentas» no es una respuesta, es un dato suelto. La
+      // frase elige la senal mas distintiva de cada una y respeta la fase: en
+      // placa positiva una campana fuerte PROTEGE, y no tenerla es el riesgo.
+      const T2 = (D.actualidad || {}).termometro_placa || {};
+      const posi = T2.fase === "positivo";
+      const camp2 = {};
+      (T2.consignas || []).forEach(c => {
+        camp2[String(c.termino).split(" ")[0].toUpperCase()] = c;
+      });
+      const S2 = (D.sentimiento || {}).por_jugadora || {};
+      const porQue = n => {
+        const c = camp2[String(n).toUpperCase()], k = S2[n];
+        const t = k ? k.contra + k.favor : 0;
+        const pc2 = t ? k.contra / t : null;
+        // Cada senal lleva su VERSO: +1 la protege, -1 la acerca a la puerta.
+        // Sin eso la frase decia «nadie hace campana para que se quede, PERO en
+        // los comentarios no la quieren», uniendo con un «pero» dos cosas que
+        // van para el mismo lado.
+        const cand = [];
+        if(c && c.pico <= 5)
+          cand.push([3, posi ? +1 : -1, posi
+            ? "la campaña para que se quede es la número " + c.pico + " del país"
+            : "la consigna para echarla es la número " + c.pico + " del país"]);
+        if(!c && posi && Object.keys(camp2).length)
+          cand.push([2.6, -1, "nadie está haciendo campaña para que se quede"]);
+        if(t >= 8 && pc2 >= .75)
+          cand.push([2.4, -1, "en los comentarios no la quieren: " + k.contra + " de " + t]);
+        if(t >= 8 && pc2 <= .25)
+          cand.push([2.2, +1, "en los comentarios la bancan: " + k.favor + " de " + t]);
+        if(c && c.pico <= 15)
+          cand.push([1.5, posi ? +1 : -1, posi
+            ? "tiene campaña para quedarse, en el puesto " + c.pico
+            : "tiene consigna en contra, en el puesto " + c.pico]);
+        if(!cand.length) return "";
+        cand.sort((a, b) => b[0] - a[0]);
+        const uno = cand[0];
+        // La segunda se dice solo si aporta: otra familia de senal. Y el nexo
+        // lo elige el verso — «pero» cuando se contradicen, «y» cuando no.
+        const fam = x => /comentarios/.test(x[2]) ? "com" : "camp";
+        const dos = cand.find(x => fam(x) !== fam(uno));
+        const may = t2 => t2.charAt(0).toUpperCase() + t2.slice(1);
+        return may(uno[2]) + (dos ? (dos[1] === uno[1] ? ", y " : ", pero ") + dos[2] : "") + ".";
+      };
+      const fila = (q, n, txt) => {
+        const r = n ? porQue(n) : "";
+        return "<div class='rec-fila'>" + q + marcas(n) +
+          "<span class='n'>" + txt + "</span>" +
+          (r ? "<span class='rec-por'>" + r + "</span>" : "") + "</div>";
+      };
       const NUM = k => NUMF[k] || k;
       const filas = conMarca.map(n => fila(quien(n), n,
           cnt(n) + " de " + cuentas.length + (cuentas.length === 1 ? " cuenta" : " cuentas")))
