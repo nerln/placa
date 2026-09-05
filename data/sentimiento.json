@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-05",
- "momento": "2026-09-05T18:08-0300",
+ "momento": "2026-09-05T20:48-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,32 +11,32 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 279,
+ "nombran_a_alguien": 273,
  "con_signo": 83,
  "por_jugadora": {
   "Sol": {
-   "contra": 11,
-   "favor": 2,
-   "sin_signo": 36
+   "contra": 9,
+   "favor": 1,
+   "sin_signo": 33
   },
   "Luana": {
-   "contra": 3,
-   "favor": 1,
-   "sin_signo": 12
+   "contra": 4,
+   "favor": 2,
+   "sin_signo": 11
   },
   "Zilli": {
    "contra": 10,
    "favor": 1,
-   "sin_signo": 26
+   "sin_signo": 23
   },
   "Charlotte": {
    "contra": 4,
-   "favor": 48,
-   "sin_signo": 101
+   "favor": 47,
+   "sin_signo": 99
   },
   "Yipio": {
-   "contra": 12,
-   "favor": 23,
+   "contra": 11,
+   "favor": 24,
    "sin_signo": 57
   }
  },
@@ -51,7 +51,7 @@
     "signo": "contra"
    },
    {
-    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
+    "texto": "También le tiro la culpa a Yipio qué fue violenta, y Yipio habla muy fuerte y solo se defiende. Debo decir que se ponía seria al no conocer el juego al principio, pero luego entend",
     "signo": "contra"
    }
   ],
@@ -65,8 +65,8 @@
     "signo": "favor"
    },
    {
-    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
-    "signo": "contra"
+    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
+    "signo": "favor"
    }
   ],
   "Zilli": [
@@ -103,11 +103,11 @@
     "signo": "favor"
    },
    {
-    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
+    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
     "signo": "favor"
    },
    {
-    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
     "signo": "favor"
    }
   ]
