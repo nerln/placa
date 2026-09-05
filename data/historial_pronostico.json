@@ -683,6 +683,27 @@
    },
    "sigma_prior": 1.0,
    "n_versus": 14
+  },
+  {
+   "gala": 33,
+   "fecha_gala": "2026-09-07",
+   "corrida": "2026-09-02",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Sol": 0.2696,
+    "Yipio": 0.2142,
+    "Luana": 0.178,
+    "Zilli": 0.1754,
+    "Charlotte": 0.1628
+   },
+   "sigma_prior": 1.0,
+   "n_versus": 14
   }
  ],
  "_nota_dos_tiempos": "La variante del mano a mano, congelada antes de cada gala como las otras dos. Cada entrada lleva el prior y cuantos versus habia.",
@@ -1019,6 +1040,32 @@
    "pesos": {
     "sentimiento": 0.499,
     "campana": 0.501,
+    "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
+   },
+   "fase": "positivo"
+  },
+  {
+   "gala": 33,
+   "fecha_gala": "2026-09-07",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Sol": 0.1958,
+    "Luana": 0.2784,
+    "Zilli": 0.299,
+    "Charlotte": 0.0905,
+    "Yipio": 0.1364
+   },
+   "escrita": "2026-09-05T15:54-0300",
+   "llamada": "Zilli",
+   "pesos": {
+    "sentimiento": 0.504,
+    "campana": 0.496,
     "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
    },
    "fase": "positivo"

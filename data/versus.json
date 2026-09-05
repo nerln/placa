@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-31",
+ "generado": "2026-09-02",
  "que_es": "Un segundo parámetro para el segundo tiempo de la placa. El modelo usa el rechazo para las dos preguntas que tiene una gala, y en la del mano a mano va al revés: sobre las siete galas del backtest, su favorito llegó al mano a mano cuatro veces y lo ganó las cuatro.",
  "supuestos": {
   "sigma_prior": 1.0,
@@ -256,16 +256,14 @@
    "Luana",
    "Zilli",
    "Charlotte",
-   "Yipio",
-   "Mariela"
+   "Yipio"
   ],
   "p_sale": {
-   "Sol": 0.2466,
-   "Yipio": 0.1797,
-   "Luana": 0.1486,
-   "Zilli": 0.1479,
-   "Mariela": 0.1419,
-   "Charlotte": 0.1353
+   "Sol": 0.2696,
+   "Yipio": 0.2142,
+   "Luana": 0.178,
+   "Zilli": 0.1754,
+   "Charlotte": 0.1628
   }
  },
  "aviso": "La regularidad tiene una parte que se muerde la cola: sólo se acumulan versus ganándolos. Y el n es minúsculo. Por eso esto se publica al lado del modelo y no en su lugar, y las dos quedan congeladas antes de cada gala."

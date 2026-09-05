@@ -2,6 +2,22 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-09-03",
+   "titulo": "La página empezó a refrescarse sola cada hora",
+   "detalle": "Una tarea de GitHub relee cada hora las consignas del top-50 argentino, los comentarios del canal y vuelve a calcular el cruce, que además cambia por construcción con el reloj: su peso depende de cuánto falta para la gala. Pasa las mismas doce comprobaciones que una persona y, si alguna falla, no publica nada.",
+   "afecta": "Lo que NO hace es cargar el resultado de una gala: eso pide leer dos fuentes y comprobar que el nombre esté en la placa cargada, y un guion que lo adivinara publicaría una falsedad de madrugada sin que nadie mirara. Eso lo sigue cargando una persona.",
+   "impacto": "parcial",
+   "fuente": "https://github.com/nerln/placa/blob/main/.github/workflows/refrescar.yml"
+  },
+  {
+   "fecha": "2026-09-02",
+   "titulo": "Se fue Mariela, y el cruce debutó mejor que el modelo sin acertar",
+   "detalle": "Primera eliminación de la placa positiva final, y sin un solo porcentaje: el resultado se abrió con sobres, cinco dorados y uno negro con el nombre de quien menos votos positivos había juntado. Mariela quedó sexta. Las salvadas se anunciaron en orden aleatorio, así que ese orden no dice quién sacó más.",
+   "afecta": "Ninguna de las tres cuentas le acertó el nombre. El modelo le daba 8,3% y la dejaba quinta de seis; dos tiempos, 14,2%, también quinta. El cruce le daba 20,5% y la ponía tercera: Brier 0,78 contra 0,83 del azar, la única de las tres por debajo del azar en su estreno. Y como no hubo reparto publicado, esta gala no alimenta la estimación del modelo.",
+   "impacto": "alto",
+   "fuente": "https://www.infobae.com/teleshow/2026/09/03/luana-versus-mariela-prieto-en-gran-hermano-generacion-dorada-cual-fue-la-finalista-que-quedo-eliminada/"
+  },
+  {
    "fecha": "2026-09-01",
    "titulo": "Se abrió la placa positiva final: ahora se vota para salvar",
    "detalle": "Del Moro lo anunció al cerrar la gala: «A partir de este momento se abre la placa positiva final… la que menos cantidad de votos positivos tenga se va». No hay más galas de nominación: las seis que quedan están en placa hasta el final, con eliminación los lunes y los miércoles, y la final el 14 de septiembre.",
@@ -80,46 +96,6 @@
    "afecta": "El pronóstico ya está recalculado con las ocho. Y las dos predicciones que esta página había publicado antes de la gala fallaron: las dos dejaban a Majluf tercera de cinco.",
    "impacto": "recalculado",
    "fuente": "https://www.infobae.com/teleshow/2026/08/18/quien-fue-la-ultima-eliminada-de-la-casa-de-gran-hermano/"
-  },
-  {
-   "fecha": "2026-08-16",
-   "titulo": "Bajaron dos de placa: Sol y Yipio se salvaron",
-   "detalle": "Cerró la ventana de voto positivo y del Moro anunció al aire quiénes se salvaron. Lo hizo para afuera: adentro no se los dijeron, así que las cinco que quedan creen que siguen siendo siete. Desde esa misma noche el voto es negativo. Quedan en placa Tamara, Majluf, Charlotte, Luana y Zilli, cada una con su visita.",
-   "afecta": "El pronóstico de abajo ya está recalculado sobre la placa de cinco.",
-   "impacto": "recalculado",
-   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/cruces-en-la-cena-de-nominadas-y-dos-jugadoras-salvadas-de-la-eliminacion-pid2562969"
-  },
-  {
-   "fecha": "2026-08-16",
-   "titulo": "El cruce de Sol y Tamara en la fiesta, y sin sanción",
-   "detalle": "En la fiesta del sábado 15 Sol acusó a Tamara de escupirla y Tamara dijo que la escupida la recibió ella. Del Moro lo pasó al aire el domingo aclarando que «no fue un golpe, fue un intercambio de escupitajos». No hubo sanción. El nombre de Tamara entró al top-50 argentino directamente en el primer puesto a la 1.56 de esa madrugada y lo mantuvo seis horas.",
-   "afecta": "Las dos siguen en juego. Sol ya está fuera de la placa y Tamara sigue adentro, así que esto no cambia quiénes se juegan la eliminación.",
-   "impacto": "sin_efecto",
-   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/escupitajos-no-golpes-tamara-paganini-contra-solange-abraham-y-las-acusaciones-cruzadas-pid2562968"
-  },
-  {
-   "fecha": "2026-08-12",
-   "titulo": "Placa de siete sobre nueve: se salvaron Mariela y Pincoya",
-   "detalle": "Yipio, líder de la semana, fulminó a Sol antes de que empezara la votación. Después las nueve nominaron con dos puntos cada una y sus visitas con uno. Zilli usó la espontánea contra Yipio y la dejó en placa a la líder. Quedaron nominadas Sol, Tamara, Majluf, Charlotte, Luana, Yipio y Zilli.",
-   "afecta": "El pronóstico de abajo ya está recalculado con esta placa.",
-   "impacto": "recalculado",
-   "fuente": "https://www.infobae.com/teleshow/2026/08/13/asi-quedo-la-placa-de-nominados-de-gran-hermano-despues-del-reingreso-de-los-exjugadores/"
-  },
-  {
-   "fecha": "2026-08-11",
-   "titulo": "Volvieron nueve exjugadores a la casa por unos días",
-   "detalle": "Diecisiete esperaban en «la arena». Las nueve en competencia sortearon el orden con el bolillero y cada una eligió a uno. Mariela eligió a Campanita, que se había ido el 3 de agosto con el 53,3% en contra.",
-   "afecta": "Cada visita vota en la nominación junto a la jugadora que la eligió.",
-   "impacto": "parcial",
-   "fuente": "https://www.mitelefe.com/gran-hermano/noticias/los-ex-volvieron-a-gran-hermano-2026-y-las-jugadoras-eligieron-a-sus-duplas-pid2562487"
-  },
-  {
-   "fecha": "2026-08-10",
-   "titulo": "Salió Hanssen y la casa queda con nueve mujeres",
-   "detalle": "Perdió el mano a mano contra Sol. Es la primera vez en la historia del formato, en cualquier país, que una final se juega sin ningún hombre.",
-   "afecta": "El pronóstico de esta página ya está recalculado con el plantel de nueve.",
-   "impacto": "recalculado",
-   "fuente": "https://x.com/GranHermanoAr/status/2087009639426674990"
   }
  ]
 }

@@ -34,6 +34,7 @@ cuanto vale el resto.
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import re
 import subprocess
@@ -41,6 +42,7 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+ART = dt.timezone(dt.timedelta(hours=-3))
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36")
 
@@ -212,7 +214,14 @@ def main():
     res = clasificar(todos, placa, fase)
 
     salida = {
-        "generado": act.get("generado"),
+        # La fecha del CORPUS, no la de actualidad.json. Tomaba
+        # act["generado"], que es cuando se escribio ese otro archivo, y el 3 de
+        # septiembre publico como «11 de agosto» un corpus recogido esa misma
+        # manana. Con la tarea horaria eso se repetia cada hora: una medicion
+        # fresca con fecha de hace tres semanas es peor que no tener fecha,
+        # porque el lector la descuenta por vieja sin saber que no lo es.
+        "generado": dt.datetime.now(ART).strftime("%Y-%m-%d"),
+        "momento": dt.datetime.now(ART).strftime("%Y-%m-%dT%H:%M%z"),
         "fase": fase,
         "fuente": "comentarios de los videos oficiales del programa en YouTube",
         "metodo": ("Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un "

@@ -1,5 +1,6 @@
 {
- "generado": "2026-08-11",
+ "generado": "2026-09-05",
+ "momento": "2026-09-05T15:54-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,17 +11,17 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 273,
- "con_signo": 80,
+ "nombran_a_alguien": 274,
+ "con_signo": 79,
  "por_jugadora": {
   "Sol": {
-   "contra": 9,
+   "contra": 10,
    "favor": 2,
-   "sin_signo": 35
+   "sin_signo": 34
   },
   "Luana": {
    "contra": 3,
-   "favor": 2,
+   "favor": 1,
    "sin_signo": 12
   },
   "Zilli": {
@@ -31,12 +32,12 @@
   "Charlotte": {
    "contra": 4,
    "favor": 45,
-   "sin_signo": 99
+   "sin_signo": 100
   },
   "Yipio": {
    "contra": 10,
-   "favor": 25,
-   "sin_signo": 58
+   "favor": 23,
+   "sin_signo": 59
   }
  },
  "ejemplos": {
@@ -64,8 +65,8 @@
     "signo": "favor"
    },
    {
-    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
-    "signo": "favor"
+    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
+    "signo": "contra"
    }
   ],
   "Zilli": [
@@ -92,7 +93,7 @@
     "signo": "favor"
    },
    {
-    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "texto": "Vamos Charlotte❤ a la final ❤🎉",
     "signo": "favor"
    }
   ],
