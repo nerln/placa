@@ -11,31 +11,31 @@
  ],
  "total": 527,
  "nombran_a_alguien": 274,
- "con_signo": 78,
+ "con_signo": 80,
  "por_jugadora": {
   "Sol": {
    "contra": 8,
    "favor": 3,
-   "sin_signo": 36
+   "sin_signo": 34
   },
   "Luana": {
-   "contra": 4,
-   "favor": 1,
+   "contra": 3,
+   "favor": 2,
    "sin_signo": 12
   },
   "Zilli": {
    "contra": 10,
    "favor": 1,
-   "sin_signo": 26
+   "sin_signo": 25
   },
   "Charlotte": {
-   "contra": 4,
-   "favor": 45,
-   "sin_signo": 102
+   "contra": 3,
+   "favor": 46,
+   "sin_signo": 100
   },
   "Yipio": {
-   "contra": 8,
-   "favor": 23,
+   "contra": 9,
+   "favor": 25,
    "sin_signo": 56
   }
  },
@@ -64,8 +64,8 @@
     "signo": "favor"
    },
    {
-    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
-    "signo": "contra"
+    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
+    "signo": "favor"
    }
   ],
   "Zilli": [
@@ -78,7 +78,7 @@
     "signo": "contra"
    },
    {
-    "texto": "NO ME GUSTA ESA MUJER ZILLI DEBERÍA IRSE YA ..ES MUY SOBERBIA. ALTANERA.  EGOCÉNTRICA",
+    "texto": "Espero que cada una de estas jugadoras que todavía quedan en esta casa puedan recuperar la salud mental después de que termine este programa. El resultado después de seis meses no ",
     "signo": "contra"
    }
   ],
@@ -106,7 +106,7 @@
     "signo": "favor"
    },
    {
-    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
+    "texto": "Vamos la yipioneta carajo",
     "signo": "favor"
    }
   ]
