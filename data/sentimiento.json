@@ -11,32 +11,32 @@
  ],
  "total": 527,
  "nombran_a_alguien": 268,
- "con_signo": 82,
+ "con_signo": 81,
  "por_jugadora": {
   "Sol": {
    "contra": 9,
    "favor": 1,
-   "sin_signo": 34
+   "sin_signo": 31
   },
   "Luana": {
    "contra": 4,
    "favor": 2,
-   "sin_signo": 10
+   "sin_signo": 12
   },
   "Zilli": {
-   "contra": 10,
+   "contra": 9,
    "favor": 1,
-   "sin_signo": 24
+   "sin_signo": 23
   },
   "Charlotte": {
    "contra": 4,
-   "favor": 46,
-   "sin_signo": 96
+   "favor": 44,
+   "sin_signo": 99
   },
   "Yipio": {
    "contra": 9,
-   "favor": 22,
-   "sin_signo": 55
+   "favor": 24,
+   "sin_signo": 54
   }
  },
  "ejemplos": {
@@ -102,11 +102,11 @@
     "signo": "favor"
    },
    {
-    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
+    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
     "signo": "favor"
    },
    {
-    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "texto": "Vamos yipio",
     "signo": "favor"
    }
   ]
