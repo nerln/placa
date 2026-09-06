@@ -32,15 +32,15 @@
    "terminos": []
   },
   "Sol": {
-   "icd": 0.98,
+   "icd": 0.7,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "SOL AL 9009",
      "signo": 1,
-     "mejor": 2,
-     "peso": 0.98
+     "mejor": 16,
+     "peso": 0.7
     }
    ]
   }
