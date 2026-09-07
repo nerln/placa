@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-07T15:28-0300",
+ "generado": "2026-09-07T17:30-0300",
  "gala": 33,
  "fase": "positivo",
  "placa": [
@@ -21,7 +21,6 @@
  "cobertura": {
   "comentarios": [
    "Sol",
-   "Luana",
    "Zilli",
    "Charlotte",
    "Yipio"
@@ -58,10 +57,10 @@
    "a_favor": 2,
    "en_contra": 10,
    "con_signo": 12,
-   "titulos": 12,
+   "titulos": 9,
    "vistas": 0,
-   "comentarios_por_video": 1.0,
-   "campana": 0.32,
+   "comentarios_por_video": 1.33,
+   "campana": 0.38,
    "fuentes": [
     "comentarios",
     "exposicion",
@@ -70,28 +69,27 @@
    "n_fuentes": 3
   },
   "Luana": {
-   "signo": -0.25,
-   "a_favor": 2,
+   "signo": -0.429,
+   "a_favor": 1,
    "en_contra": 4,
-   "con_signo": 6,
-   "titulos": 7,
+   "con_signo": 5,
+   "titulos": 6,
    "vistas": 0,
-   "comentarios_por_video": 0.86,
+   "comentarios_por_video": 0.83,
    "campana": null,
    "fuentes": [
-    "comentarios",
     "exposicion"
    ],
-   "n_fuentes": 2
+   "n_fuentes": 1
   },
   "Zilli": {
    "signo": -0.571,
    "a_favor": 2,
    "en_contra": 10,
    "con_signo": 12,
-   "titulos": 8,
+   "titulos": 7,
    "vistas": 0,
-   "comentarios_por_video": 1.5,
+   "comentarios_por_video": 1.71,
    "campana": 0.54,
    "fuentes": [
     "comentarios",
@@ -105,9 +103,9 @@
    "a_favor": 47,
    "en_contra": 4,
    "con_signo": 51,
-   "titulos": 4,
+   "titulos": 5,
    "vistas": 0,
-   "comentarios_por_video": 12.75,
+   "comentarios_por_video": 10.2,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -116,13 +114,13 @@
    "n_fuentes": 2
   },
   "Yipio": {
-   "signo": 0.385,
-   "a_favor": 26,
+   "signo": 0.368,
+   "a_favor": 25,
    "en_contra": 11,
-   "con_signo": 37,
-   "titulos": 2,
+   "con_signo": 36,
+   "titulos": 3,
    "vistas": 0,
-   "comentarios_por_video": 18.5,
+   "comentarios_por_video": 12.0,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -131,7 +129,7 @@
    "n_fuentes": 2
   }
  },
- "max_titulos": 12,
+ "max_titulos": 9,
  "exposicion_del_canal": true,
  "_nota_exposicion": "Leída del canal entero"
 }

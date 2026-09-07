@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-07",
- "momento": "2026-09-07T13:24-0300",
+ "momento": "2026-09-07T17:30-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -12,7 +12,7 @@
  ],
  "total": 528,
  "nombran_a_alguien": 269,
- "con_signo": 86,
+ "con_signo": 85,
  "por_jugadora": {
   "Sol": {
    "contra": 10,
@@ -21,23 +21,23 @@
   },
   "Luana": {
    "contra": 4,
-   "favor": 2,
+   "favor": 1,
    "sin_signo": 10
   },
   "Zilli": {
    "contra": 10,
    "favor": 2,
-   "sin_signo": 21
+   "sin_signo": 23
   },
   "Charlotte": {
    "contra": 4,
    "favor": 47,
-   "sin_signo": 96
+   "sin_signo": 97
   },
   "Yipio": {
    "contra": 11,
-   "favor": 26,
-   "sin_signo": 53
+   "favor": 25,
+   "sin_signo": 52
   }
  },
  "ejemplos": {
@@ -65,8 +65,8 @@
     "signo": "favor"
    },
    {
-    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
-    "signo": "favor"
+    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
+    "signo": "contra"
    }
   ],
   "Zilli": [
