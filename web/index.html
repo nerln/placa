@@ -1177,6 +1177,11 @@ h3{font-family:"Archivo",sans-serif; font-size:var(--t-md); font-weight:700; mar
 .camp-clave{display:flex; justify-content:space-between; gap:8px; margin:0 0 6px;
   font-family:"Archivo",sans-serif; font-size:var(--t-etq); letter-spacing:.05em;
   text-transform:uppercase; font-weight:700}
+/* Con un solo sentido la clave es un rotulo, no dos extremos: se alinea del
+   lado en el que crecen las barras. */
+.camp-clave.uno{justify-content:flex-end}
+.camp-clave.uno span{color:var(--apoyo-txt)}
+.camp-eje.uno::before{display:none}
 .camp-clave span:first-child{color:var(--rechazo-txt)}
 .camp-clave span:last-child{color:var(--apoyo-txt)}
 .camp-fila{display:grid; grid-template-columns:96px 1fr 62px; gap:12px; align-items:center;
@@ -3542,8 +3547,14 @@ function contar(nodo){
   const hasta = T.hasta || "";
   const comparable = salio && hasta && D.puntaje && hasta <= D.puntaje.fecha;
 
+  // El signo de "AL 9009" depende de la fase (T.fase): en positiva pide que
+  // se quede, en negativa que se vaya. Antes esta funcion siempre escribia
+  // "echar/echaran", sin mirarlo, y con la placa positiva de hoy decia lo
+  // contrario de lo que la propia consigna pide.
+  const positivo = T.fase === "positivo";
+
   if(fuerte && pedida && salio && comparable){
-    const acerto = pedida === salio;
+    const acerto = positivo ? pedida !== salio : pedida === salio;
     $("#tit-trend").textContent = acerto
       ? "Lo que más se pidió en X fue lo que pasó"
       : "Lo que más se pidió en X no fue lo que pasó";
@@ -3551,14 +3562,16 @@ function contar(nodo){
       .sort((a, b) => a.mejor - b.mejor)[0];
     $("#sub-trend").innerHTML =
       "<b>" + fuerte.txt + "</b> fue la consigna más fuerte de la ventana: llegó al puesto <b>" +
-      fuerte.mejor + "</b> y estuvo <b>" + fuerte.horas + " horas</b> en el top-50. Pedía que " +
-      "echaran a " + pedida + ". " +
+      fuerte.mejor + "</b> y estuvo <b>" + fuerte.horas + " horas</b> en el top-50. " +
+      (positivo ? "Pedía que " + pedida + " se quedara. " : "Pedía que echaran a " + pedida + ". ") +
       (acerto
-        ? "Y " + salio + " salió."
-        : "Salió <b>" + salio + "</b>, que tenía " +
-          (segunda ? "una consigna más floja, en el puesto " + segunda.mejor + "" :
-                     "ninguna consigna propia") + ". " +
-          pedida + " se quedó.") +
+        ? (positivo ? "Y " + pedida + " se quedó." : "Y " + salio + " salió.")
+        : (positivo
+            ? "Salió <b>" + pedida + "</b>, a quien la consigna pedía salvar."
+            : "Salió <b>" + salio + "</b>, que tenía " +
+              (segunda ? "una consigna más floja, en el puesto " + segunda.mejor + "" :
+                         "ninguna consigna propia") + ". " +
+              pedida + " se quedó.")) +
       " Abajo, la mejor posición que alcanzó cada término en la ventana de " + T.ventana + ".";
   } else if(fuerte && pedida){
     // Ventana posterior a la ultima gala: esto ya no describe lo que paso sino
@@ -3567,8 +3580,9 @@ function contar(nodo){
     $("#tit-trend").textContent = "Lo que se está pidiendo para la gala que viene";
     $("#sub-trend").innerHTML =
       "<b>" + fuerte.txt + "</b> es la consigna más fuerte de la ventana: llegó al puesto <b>" +
-      fuerte.mejor + "</b> y estuvo <b>" + fuerte.horas + " horas</b> en el top-50. Pide que " +
-      "echen a " + pedida + (G && G.fecha ? " el " + FECHA_LARGA(G.fecha) : "") + ". " +
+      fuerte.mejor + "</b> y estuvo <b>" + fuerte.horas + " horas</b> en el top-50. " +
+      (positivo ? "Pide que " + pedida + " se quede" : "Pide que echen a " + pedida) +
+      (G && G.fecha ? " el " + FECHA_LARGA(G.fecha) : "") + ". " +
       "La semana pasada la más fuerte fue la de " +
       (D.puntaje ? "otra jugadora y no se cumplió: salió " + D.puntaje.eliminado : "otra") + ". " +
       "Abajo, la mejor posición que alcanzó cada término en la ventana de " + T.ventana + ".";
@@ -3873,24 +3887,42 @@ function contar(nodo){
       // tendencias, que es la otra medida de la misma semana.
       const cruda = filas.slice().sort((a, b) => b.contra - a.contra)[0];
       const T = D.actualidad && D.actualidad.termometro_placa;
-      const cons = ((T && T.consignas) || []).slice().sort((a, b) => a.pico - b.pico)[0];
-      const gritada = cons && filas.find(f => cons.termino.toUpperCase().startsWith(f.n.toUpperCase()));
+      // El signo de "AL 9009" depende de la fase (T.fase), y aca antes se
+      // escribia "pide echar a" fijo, sin mirarlo: en placa positiva esa
+      // consigna pide lo contrario. Ademas solo se miraba la consigna mas
+      // fuerte del pais (unica que llegaba a compararse con los comentarios),
+      // y esta semana eso dejaba afuera a Sol, que tiene el mismo patron.
+      // Ahora se recorren todas las consignas y se compara cada una contra
+      // sus propios comentarios.
+      const posi = T && T.fase === "positivo";
+      const consignas = ((T && T.consignas) || []).slice().sort((a, b) => a.pico - b.pico);
+      const desacuerdos = consignas.map(cons => {
+        const f = filas.find(fx => cons.termino.toUpperCase().startsWith(fx.n.toUpperCase()));
+        if(!f) return null;
+        // Desacuerdo real: la consigna pide una cosa y los comentarios piden
+        // la contraria. Si coinciden, o si no hay comentarios con signo claro
+        // de esa persona, no hay nada que señalar.
+        const pideQueSeQuede = posi;
+        const comentEnContra = f.contra > f.favor, comentAFavor = f.favor > f.contra;
+        if(pideQueSeQuede && !comentEnContra) return null;
+        if(!pideQueSeQuede && !comentAFavor) return null;
+        return {f, cons};
+      }).filter(Boolean);
       let txt = "Quien más rechazo junta acá es <b>" + mas.n + "</b>" +
         (cruda.n !== mas.n ? ", aunque en volumen crudo de comentarios en contra la primera es <b>" +
           cruda.n + "</b>" : "") + ". " +
         (menos.favor > menos.contra
           ? "La única con más gente a favor que en contra es <b>" + menos.n + "</b>. "
           : "Ninguna junta más apoyo que rechazo. ");
-      if(gritada){
-        const n = gritada.contra + gritada.favor;
-        txt += "<b>Y acá está el desacuerdo:</b> la consigna número " + cons.pico + " del país " +
-          "es la que pide echar a <b>" + gritada.n + "</b>, pero en los comentarios es de las " +
-          "menos nombradas: " + (gritada.contra + gritada.favor + gritada.sin_signo) +
-          " menciones y " + n + " con signo" +
-          (gritada.favor === 0
-            ? ", las " + n + " en contra. Nadie la defiende, pero tampoco la discute mucha gente: "
-              + "lo que la señala es la campaña, no la conversación."
-            : ". Lo que la señala es la campaña más que la conversación.");
+      if(desacuerdos.length){
+        txt += "<b>Y acá está el desacuerdo:</b> " + desacuerdos.map((d, i) => {
+          const intro = i === 0
+            ? "la consigna número " + d.cons.pico + " del país pide que"
+            : "Pasa lo mismo con la número " + d.cons.pico + ": pide que";
+          return intro + " <b>" + d.f.n + "</b> se " + (posi ? "quede" : "vaya") +
+            ", pero en los comentarios la " + (posi ? "castigan" : "bancan") + ": " +
+            d.f.contra + " en contra y " + d.f.favor + " a favor.";
+        }).join(" ");
       }
       return "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:12px 0 0'>" + txt +
              "</p>";
@@ -4944,32 +4976,90 @@ function contar(nodo){
   });
   const MAX = Math.max(1, ...D.jugadores.map(n => Math.abs(C.indice[n].icd || 0)));
 
+  // Si todas las consignas observadas tiran para el mismo lado —y en una placa
+  // de un solo signo eso es forzoso, no casualidad— el eje divergente promete
+  // una mitad que no se puede llenar. Se detecta del dato, no de la fase: si
+  // manana conviven las dos, el eje vuelve solo.
+  const vals = D.jugadores.map(n => C.indice[n].icd).filter(v => v !== null && v !== 0);
+  const positivoC = vals.length > 0 && vals.every(v => v > 0);
+  const negativoC = vals.length > 0 && vals.every(v => v < 0);
+  const unSentido = positivoC || negativoC;
+
   cont.innerHTML =
-    "<div class='eyebrow' style='margin-bottom:8px'>El termómetro, con signo</div>" +
+    "<div class='eyebrow' style='margin-bottom:8px'>La campaña de X" +
+      (unSentido ? "" : ", con signo") + "</div>" +
     "<p style='font-size:14.2px; color:var(--tinta2); margin:0 0 14px; max-width:var(--medida)'>" +
     "De los " + (C.indice ? Object.keys(C.indice).length : 0) + " nombres que quedan, <b>" +
     C.observados + "</b> tuvieron una consigna en tendencias durante la ventana. " +
-    "El signo dice qué pide la consigna y el número cuánto llegó a pesar: una que pide " +
-    "<b>eliminar</b> y llega al puesto 1 vale −1,00, y al puesto 10, −0,82; una que pide " +
-    "<b>salvar</b> vale lo mismo en positivo. Por eso el puesto 1 puede aparecer como −1,00: " +
-    "el 1 es el puesto y el menos es el pedido. " +
+    // Con un solo sentido en pantalla, explicar el signo negativo es explicar
+    // algo que no se ve: el lector busca el menos, no lo encuentra, y duda del
+    // resto. Se explica lo que hay.
+    (unSentido
+      ? "Todas piden lo mismo — que se " + (positivoC ? "quede" : "vaya") + " — así que acá " +
+        "el número mide sólo <b>cuánto pesó</b>: llegar al puesto 1 vale 1,00 y al puesto 10, " +
+        "0,82. "
+      : "El signo dice qué pide la consigna y el número cuánto llegó a pesar: una que pide " +
+        "<b>eliminar</b> y llega al puesto 1 vale −1,00, y al puesto 10, −0,82; una que pide " +
+        "<b>salvar</b> vale lo mismo en positivo. Por eso el puesto 1 puede aparecer como " +
+        "−1,00: el 1 es el puesto y el menos es el pedido. ") +
     "<b>Esto no entra al modelo</b>: para que entrara habría que medir cuánto pesa contra las " +
     "galas ya jugadas, y con una sola ventana de tendencias no hay con qué.</p>" +
     // La clave de los dos lados, arriba de las barras. Sin ella el lector ve
     // «−1,00» al lado de «#1» y tiene que adivinar cual de los dos numeros
     // manda.
-    "<div class='camp-clave'><span>← piden que se vaya</span>" +
-      "<span>piden que se quede →</span></div>" +
+    // Con una sola direccion posible, el eje divergente miente por omision: la
+    // mitad izquierda no puede llenarse y la clave la anuncia igual. El autor
+    // llego a preguntar si jugaban solo dos personas mirando este grafico.
+    "<div class='camp-clave" + (unSentido ? " uno" : "") + "'>" +
+    (unSentido ? "<span>" + (positivoC ? "cuanto se pide que se quede →"
+                                       : "← cuanto se pide que se vaya") + "</span>"
+               : "<span>← piden que se vaya</span><span>piden que se quede →</span>") +
+    "</div>" +
+    // Esta aclaracion iba DESPUES de las cinco filas: el lector ya habia visto
+    // tres rayas y se habia hecho la idea de "tres en cero" antes de llegar a
+    // la frase que se lo desmiente. Va antes, junto a la clave.
+    "<p style='font-size:12.6px; color:var(--tinta3); margin:0 0 12px; max-width:var(--medida)'>" +
+    "La raya no es un cero. Quien no aparece con consigna es alguien de quien no hay " +
+    "observación, y eso es distinto de alguien de quien se sabe que no hay campaña.</p>" +
+    // El aviso cruzado, derivado. Quien llega hasta aca y ve que la campana
+    // pide salvar a alguien tiene que enterarse AQUI de que los comentarios
+    // dicen lo contrario de esa misma persona: la contradiccion se explicaba
+    // dos secciones mas arriba y aca parecia que la pagina se desmentia sola.
+    (() => {
+      const S = (D.sentimiento || {}).por_jugadora || {};
+      const chocan = D.jugadores.filter(n => {
+        const x = C.indice[n].icd, k = S[n];
+        if(x === null || !k) return false;
+        const t = k.contra + k.favor;
+        return t >= 6 && ((x > 0 && k.contra > k.favor) || (x < 0 && k.favor > k.contra));
+      });
+      if(!chocan.length) return "";
+      return "<p style='font-size:12.6px; color:var(--tinta3); margin:0 0 12px; " +
+        "max-width:var(--medida)'><b>Y ojo con " +
+        (chocan.length === 1 ? chocan[0]
+          : chocan.slice(0, -1).join(", ") + " y " + chocan[chocan.length - 1]) +
+        ":</b> acá la campaña " +
+        (positivoC ? "pide que se " + (chocan.length > 1 ? "queden" : "quede")
+                   : "pide que se " + (chocan.length > 1 ? "vayan" : "vaya")) +
+        ", y en los comentarios pasa lo contrario. Son dos señales distintas y esta semana no " +
+        "coinciden: <a href='#sentimiento'>la comparación está acá</a>.</p>";
+    })() +
     ord.map(n => {
       const v = C.indice[n], x = v.icd;
       const sin = x === null;
-      const ancho = sin ? 0 : 50 * Math.abs(x) / MAX;
+      // Con los dos sentidos en juego la barra sale del centro y usa media
+      // pista. Con uno solo, sale del borde y usa la pista entera: si no, el
+      // valor mas alto de la semana llega apenas a la mitad y se lee como
+      // «poco», cuando es el maximo de lo que hay.
+      const ancho = sin ? 0 : (unSentido ? 100 : 50) * Math.abs(x) / MAX;
       const barra = sin ? "" :
         "<i class='" + (x < 0 ? "neg" : "pos") + "' style='" +
-        (x < 0 ? "right:50%;" : "left:50%;") + "width:" + ancho + "%'></i>";
+        (unSentido ? (negativoC ? "right:0;" : "left:0;")
+                   : (x < 0 ? "right:50%;" : "left:50%;")) +
+        "width:" + ancho + "%'></i>";
       return "<div class='camp-fila" + (sin ? " sin" : "") + "'>" +
         "<span class='q'>" + n + "</span>" +
-        "<span class='camp-eje'>" + barra + "</span>" +
+        "<span class='camp-eje" + (unSentido ? " uno" : "") + "'>" + barra + "</span>" +
         "<span class='v'>" + (sin ? "—" : (x>0?"+":"−") + nf(Math.abs(x),2)) + "</span>" +
         (v.terminos.length
           ? "<span class='t'>" + v.terminos.map(t => t.txt + " · #" + t.mejor).join(" · ") + "</span>"
@@ -4977,8 +5067,6 @@ function contar(nodo){
         "</div>";
     }).join("") +
     "<p style='font-size:12.6px; color:var(--tinta3); margin:14px 0 0; max-width:var(--medida)'>" +
-    "La raya no es un cero. Quien no aparece con consigna es alguien de quien no hay " +
-    "observación, y eso es distinto de alguien de quien se sabe que no hay campaña. " +
     "Ventana: " + (C.ventana || "") + ".</p>";
 })();
 
@@ -5458,13 +5546,20 @@ function contar(nodo){
       // La tension, dicha: quien junta apoyo sin que nadie organice nada por
       // ella, y quien tiene campana con los comentarios en contra. Se busca en
       // los datos y no se escribe a mano, para que no quede vieja la semana
-      // que cambien los nombres.
+      // que cambien los nombres. Antes solo se tomaba el primero de la lista
+      // ([0]), y con Sol y Zilli empatadas en el mismo neto (-8) una de las
+      // dos quedaba afuera de la frase por puro orden de array.
       const conApoyo = filas.filter(f => f.neto > 0 && !f.c).sort((a, b) => b.neto - a.neto)[0];
-      const conCampEnContra = filas.filter(f => f.c && f.neto < 0).sort((a, b) => a.neto - b.neto)[0];
-      const tension = conApoyo && conCampEnContra && conApoyo.n !== conCampEnContra.n
+      const todosCampEnContra = filas.filter(f => f.c && f.neto < 0 &&
+        (!conApoyo || f.n !== conApoyo.n)).sort((a, b) => a.neto - b.neto);
+      const nombrarLista = ns => ns.length === 1 ? ns[0] :
+        ns.slice(0, -1).join(", ") + " y " + ns[ns.length - 1];
+      const tension = conApoyo && todosCampEnContra.length
         ? "<p class='mn-dice'>Dos apoyos distintos, y no dicen lo mismo: <b>" + conApoyo.n +
           "</b> arrasa en los comentarios sin campaña organizada detrás, y <b>" +
-          conCampEnContra.n + "</b> tiene campaña con los comentarios en contra.</p>"
+          nombrarLista(todosCampEnContra.map(f => f.n)) + "</b> " +
+          (todosCampEnContra.length > 1 ? "tienen" : "tiene") +
+          " campaña con los comentarios en contra.</p>"
         : "";
 
       return "<p class='mn-dice'><b>Antes de quién se va: quién tiene apoyo.</b> Comentarios de " +
