@@ -10,6 +10,15 @@ name: refrescar
 # forma mas segura de publicar una medicion de hace tres dias con cara de
 # medicion de hoy.
 #
+# LA CADENCIA NO ES PAREJA, Y ES A PROPOSITO. Una vez por hora alcanza casi
+# siempre, pero no en las horas antes de una gala de eliminacion -ahi el
+# sentimiento y la campana se mueven en minutos, y es cuando mas gente mira
+# la pagina- ni despues de la gala, donde refrescar cada hora no suma nada
+# hasta que una persona carga el resultado. Los dos cron de abajo y
+# model/reloj_gala.py, el primer paso del job, son quienes deciden todo esto.
+# El razonamiento completo -por que dos cron, que hace cada uno, que pasa
+# cuando no hay gala declarada- esta en el propio guion, no repetido aca.
+#
 # LO QUE ESTA TAREA NO HACE, Y ES DELIBERADO: no carga el resultado de una
 # gala. Saber quien salio pide leer dos fuentes, comprobar que el nombre este
 # en la placa cargada y no fechar por deduccion — las tres reglas de
@@ -22,10 +31,32 @@ name: refrescar
 
 on:
   schedule:
-    # Cada hora en punto. El cron de GitHub es UTC y puede atrasarse unos
-    # minutos cuando hay cola; no importa, porque cada corrida es completa y no
-    # depende de la anterior.
+    # LA CADENCIA NORMAL: una vez por hora, todos los dias, sin excepcion.
+    # Es la que alcanza el resto de la semana. El minuto 7, no el 0, porque
+    # GitHub avisa que la carga es mas alta justo al principio de cada hora
+    # y puede atrasar o directamente descartar el disparo.
     - cron: "7 * * * *"
+    # LA CADENCIA ALTA: cada 15 minutos, pero solo en una franja horaria
+    # angosta pensada para cubrir las horas antes de una gala a las 22:15
+    # hora argentina (UTC-3 fijo, sin horario de verano: la Argentina no
+    # cambia de huso en ningun mes). 22:15 ART son las 01:15 UTC del dia
+    # siguiente, asi que la franja 19:00-22:59 ART cae en dos rangos de horas
+    # UTC porque cruza la medianoche: 22 y 23 UTC (=19 y 20 ART), y 0 y 1 UTC
+    # del dia siguiente (=21 y 22 ART). Los minutos 9, 24, 39 y 54 por la
+    # misma razon que el 7 de arriba: nunca justo en punto.
+    #
+    # OJO, ESTO DISPARA TODOS LOS DIAS A ESA HORA, HAYA GALA O NO: el cron de
+    # GitHub es fijo, no sabe que dia es gala ni puede leer
+    # data/actualidad.json antes de arrancar. No se puede programar "una hora
+    # antes de un evento variable". Lo unico que se puede hacer es dejar que
+    # el JOB decida: model/reloj_gala.py, el primer paso, lee la fecha real
+    # de la proxima gala y si esta noche no toca, corta en segundos sin
+    # instalar una libreria ni commitear nada. Ese costo -unos segundos de
+    # Actions, gratis en un repositorio publico- es lo que cuesta no poder
+    # programar el evento exacto, y es barato al lado de la alternativa de
+    # perderse la ventana en que mas rapido se mueven las senales.
+    - cron: "9,24,39,54 22,23 * * *"
+    - cron: "9,24,39,54 0,1 * * *"
   workflow_dispatch:
 
 permissions:
@@ -50,35 +81,55 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Decide si ESTA corrida puntual corresponde. Va primero, antes de
+      # instalar nada, para que un disparo que no toca nada -la cadencia alta
+      # en una noche sin gala, o cualquiera de las dos en pleno posgala- corte
+      # en segundos. github.event.schedule es el cron exacto que disparo esta
+      # corrida (vacio si fue workflow_dispatch); se lo pasa el propio guion
+      # para distinguir la cadencia normal de la alta. La logica de los cuatro
+      # modos esta comentada en model/reloj_gala.py, no repetida aca.
+      - name: decidir si corresponde correr
+        id: reloj
+        env:
+          CRON_DISPARADOR: ${{ github.event.schedule }}
+        run: python3 model/reloj_gala.py
+
       # Pillow es lo unico que hace falta: tendencias, campana, comentarios y
       # cruce son de biblioteca estandar. El modelo pesado no corre aca.
-      - run: pip install --quiet pillow
+      - name: instalar pillow
+        if: steps.reloj.outputs.correr == 'si'
+        run: pip install --quiet pillow
 
       # Las consignas del top-50 argentino. Si trends24 no responde o cambia de
       # forma, el guion sale con error y no escribe: se prefiere la medicion
       # anterior, fechada, a una vacia sin avisar. Por eso continue-on-error:
       # que falle la lectura no tiene que impedir que se refresque el resto.
       - name: consignas en tendencias
+        if: steps.reloj.outputs.correr == 'si'
         continue-on-error: true
         run: python3 model/tendencias.py
 
       - name: indice de campana
+        if: steps.reloj.outputs.correr == 'si'
         continue-on-error: true
         run: python3 model/campana.py
 
       # Los comentarios del canal del programa. Tarda y a veces YouTube corta:
       # tambien puede fallar sin arrastrar al resto.
       - name: sentimiento en los comentarios
+        if: steps.reloj.outputs.correr == 'si'
         continue-on-error: true
         run: python3 model/comentarios.py --paginas 3
 
-      # El cruce SIEMPRE se recalcula, aunque las dos lecturas de arriba hayan
-      # fallado: su peso depende del reloj y a las 21.00 dice algo distinto que
-      # a las 09.00 con los mismos datos.
+      # El cruce SIEMPRE se recalcula si esta corrida corresponde, aunque las
+      # dos lecturas de arriba hayan fallado: su peso depende del reloj y a
+      # las 21.00 dice algo distinto que a las 09.00 con los mismos datos.
       - name: el cruce
+        if: steps.reloj.outputs.correr == 'si'
         run: python3 model/cruce.py
 
       - name: reconstruir la pagina
+        if: steps.reloj.outputs.correr == 'si'
         run: |
           python3 gui/build.py
           python3 gui/tarjeta.py
@@ -86,9 +137,11 @@ jobs:
       # La misma puerta que usa una persona. Si algo no cuadra, no se commitea
       # nada y la pagina en vivo se queda como estaba, que es lo correcto.
       - name: las comprobaciones
+        if: steps.reloj.outputs.correr == 'si'
         run: python3 gui/verificar.py
 
       - name: publicar si cambio algo
+        if: steps.reloj.outputs.correr == 'si'
         run: |
           if git diff --quiet; then
             echo "nada que refrescar: los datos son los mismos"

@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-11",
+ "generado": "2026-09-07",
  "ventana": "24 tarjetas horarias de trends24.in/argentina",
  "fuente": "posiciones del top-50 de X en Argentina archivadas por trends24",
  "formula": "ICD(i) = Σ signo(t) · (51 − mejor_posición(t)) / 50, sobre los términos que nombran a i y llevan consigna. Una sola consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82; al 50, 0,02. Dos consignas suman.",

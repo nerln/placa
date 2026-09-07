@@ -5333,6 +5333,65 @@ function contar(nodo){
     "</p>" +
 
     (() => {
+      // El grafico que faltaba: no "quien se va" sino "quien tiene apoyo",
+      // que es lo que esta gala mide de verdad. Solo tiene sentido en placa
+      // positiva -- en voto negativo juntar comentarios a favor no protege
+      // por si solo de la misma manera, y era mentirle a la fase mostrarlo
+      // igual. Los dos apoyos (comentarios y campana) se leen aparte porque
+      // NO son la misma cosa: Charlotte arrasa en comentarios sin campana
+      // armada, y Sol tiene campana con los comentarios en contra. Mezclarlos
+      // en un solo numero hubiera inventado una ponderacion que nadie declaro.
+      if(!positivo) return "";
+      const S = (D.sentimiento && D.sentimiento.por_jugadora) || {};
+      const T3 = (D.actualidad && D.actualidad.termometro_placa) || {};
+      const campPorNombre = {};
+      (T3.consignas || []).forEach(c => {
+        campPorNombre[String(c.termino).split(" ")[0].toUpperCase()] = c;
+      });
+      // Si a alguien no le mide ni comentarios ni campana no se inventa una
+      // fila vacia: la version anterior de este bloque llegaba a un "0 de 3"
+      // de nadie, y una fila en blanco es peor que no tener la fila.
+      const filas = placa.map(n => {
+        const s = S[n], c = campPorNombre[n.toUpperCase()];
+        if(!s && !c) return null;
+        return {n, s, c, neto: s ? s.favor - s.contra : null};
+      }).filter(Boolean);
+      if(!filas.length) return "";
+      filas.sort((a, b) => (b.neto == null ? -Infinity : b.neto) -
+                            (a.neto == null ? -Infinity : a.neto));
+
+      const frase = f => {
+        const s = f.s;
+        const com = !s || !(s.favor + s.contra) ? "sin comentarios con signo claro"
+          : s.contra === 0 ? "<b class='bien'>la banca</b>: " + s.favor + " a favor, ninguno en contra"
+          : s.favor === 0 ? "<b class='mal'>la castigan</b>: " + s.contra + " en contra, ninguno a favor"
+          : s.favor > s.contra ? "<b class='bien'>más a favor que en contra</b>: " + s.favor +
+            " y " + s.contra
+          : "<b class='mal'>más en contra que a favor</b>: " + s.contra + " y " + s.favor;
+        const camp = f.c ? " · campaña en el puesto " + f.c.pico + " (" + f.c.horas +
+          (f.c.horas === 1 ? " hora)" : " horas)") : " · sin campaña";
+        return "<div class='sen-fila'><span class='n'>" + f.n + "</span><span class='c'>" +
+          com + camp + "</span></div>";
+      };
+
+      // La tension, dicha: quien junta apoyo sin que nadie organice nada por
+      // ella, y quien tiene campana con los comentarios en contra. Se busca en
+      // los datos y no se escribe a mano, para que no quede vieja la semana
+      // que cambien los nombres.
+      const conApoyo = filas.filter(f => f.neto > 0 && !f.c).sort((a, b) => b.neto - a.neto)[0];
+      const conCampEnContra = filas.filter(f => f.c && f.neto < 0).sort((a, b) => a.neto - b.neto)[0];
+      const tension = conApoyo && conCampEnContra && conApoyo.n !== conCampEnContra.n
+        ? "<p class='mn-dice'>Dos apoyos distintos, y no dicen lo mismo: <b>" + conApoyo.n +
+          "</b> arrasa en los comentarios sin campaña organizada detrás, y <b>" +
+          conCampEnContra.n + "</b> tiene campaña con los comentarios en contra.</p>"
+        : "";
+
+      return "<p class='mn-dice'><b>Antes de quién se va: quién tiene apoyo.</b> Comentarios de " +
+        "hoy y campañas vivas en tendencias, para la misma placa.</p>" +
+        filas.map(frase).join("") + tension;
+    })() +
+
+    (() => {
       // Que dice cada cuenta, con su marcador pegado en la misma frase. Es
       // la leyenda del recuento de abajo y reemplaza a la franja de cuatro
       // filas con un porcentaje grande cada una: «Sol 50,2%» encima de «Sol
@@ -5578,8 +5637,14 @@ function contar(nodo){
           "Dijimos: " + dijimos + ". Pasó: " + paso + "." +
           (cong ? "<span class='f'>" + cong + "</span>" : "") + "</li>";
       });
-      return "<div class='dp'><p class='dp-tit'>Lo que dijimos y lo que pasó</p><ul>" +
-        items.join("") + "</ul></div>";
+      // Plegado detras de un resumen, igual que "Ver las cuentas" de arriba:
+      // con la fila de apoyo nueva el bloque entero media mas alto, y esta
+      // lista -- prueba de honestidad, no lectura de todos los dias -- es lo
+      // que se pliega para no alargar la pagina. El titulo pasa al summary
+      // y el div.dp pierde su propio margen y borde, que ahora pone el details.
+      return "<details class='mn-porque'><summary>Lo que dijimos y lo que pasó</summary>" +
+        "<div class='mn-porque-c'><div class='dp' style='margin:0; padding-top:0; border-top:0'>" +
+        "<ul>" + items.join("") + "</ul></div></div></details>";
     })() +
 
     (() => {

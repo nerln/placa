@@ -29,12 +29,14 @@ pronostico es un resultado, no una carencia.
 
 from __future__ import annotations
 
+import datetime as dt
 import json
 import re
 import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+ART = dt.timezone(dt.timedelta(hours=-3))
 
 # Consignas cuyo signo esta en el texto y no cambia nunca.
 NEGATIVO = re.compile(r"AFUERA|\bFUERA\b|QUE SE VAYA|CHAU ", re.I)
@@ -117,8 +119,20 @@ def main():
     idx = indice(T.get("terminos", []), jug, alias, fase)
     obs = [n for n in jug if idx[n]["estado"] == "observado"]
 
+    # La fecha del CORPUS de tendencias, no la de actualidad.json. Este
+    # archivo tomaba act["generado"], que es un campo fijo desde que alguien
+    # escribio actualidad.json a mano el 11 de agosto y que ninguna tarea
+    # automatica toca: con la tarea horaria, data/campana.json publicaba cada
+    # hora un indice recien calculado con fecha de hace un mes. Es el mismo
+    # error de fondo que ya aparecio y se corrigio en model/comentarios.py, y
+    # esta vez tocaba a este archivo. Se usa la fecha en que se leyeron los
+    # terminos (tendencias.medido, que tendencias.py escribe cada vez que
+    # corre), porque es el dato real que entra a este indice; si tendencias.py
+    # todavia no corrio nunca (T vacio), cae a la fecha de hoy.
+    medido = T.get("medido") or dt.datetime.now(ART).strftime("%Y-%m-%dT%H:%M%z")
+
     salida = {
-        "generado": act.get("generado"),
+        "generado": medido[:10],
         "ventana": T.get("ventana"),
         "fuente": "posiciones del top-50 de X en Argentina archivadas por trends24",
         "formula": "ICD(i) = Σ signo(t) · (51 − mejor_posición(t)) / 50, sobre los términos "

@@ -57,10 +57,25 @@ def bajar(url=URL, timeout=45):
 
 
 def leer(html, nombres):
-    """(por_nombre, n_tarjetas). Por nombre: mejor puesto y cuantas tarjetas."""
+    """(por_nombre, n_tarjetas). Por nombre: mejor puesto, cuantas tarjetas y el
+    puesto en la tarjeta MAS RECIENTE, no solo el mejor de las 24 horas.
+
+    trends24 publica sus tarjetas de mas nueva a mas vieja: comprobado a mano
+    el 7 de septiembre de 2026 leyendo el data-timestamp que trae cada
+    tarjeta en el HTML, que baja a medida que se avanza en el documento. Por
+    eso la tarjeta en la posicion 0 de `tarjetas` es la de esta misma hora, y
+    es la unica de la que tiene sentido decir "reciente": una consigna que
+    encabezo el pais a la madrugada y a esta hora ya no aparece en ninguna
+    tarjeta no esta reciente aunque su "mejor" siga siendo el puesto 1.
+
+    Sin este dato, model/apuesta.py no tiene forma de distinguir una campana
+    que sigue arriba de una que ya se apago: lee un campo "reciente" que este
+    guion nunca escribia, y por eso la sensibilidad de "donde esta AHORA la
+    campana" caia siempre al pico de 24 horas sin que nada avisara.
+    """
     tarjetas = re.findall(r'<ol[^>]*trend-card__list[^>]*>(.*?)</ol>', html, re.S)
-    mejor, horas, texto = {}, collections.Counter(), {}
-    for c in tarjetas:
+    mejor, horas, texto, reciente = {}, collections.Counter(), {}, {}
+    for idx_tarjeta, c in enumerate(tarjetas):
         for i, it in enumerate(re.findall(r'<li[^>]*>(.*?)</li>', c, re.S), 1):
             t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", it)).strip()
             if not CONSIGNA.search(t):
@@ -72,8 +87,12 @@ def leer(html, nombres):
                     horas[n] += 1
                     if n not in mejor or i < mejor[n]:
                         mejor[n], texto[n] = i, t
+                    if idx_tarjeta == 0:
+                        reciente[n] = i
                     break
-    return {n: {"mejor": mejor[n], "horas": horas[n], "txt": texto[n]} for n in mejor}, len(tarjetas)
+    return ({n: {"mejor": mejor[n], "horas": horas[n], "txt": texto[n],
+                 "reciente": reciente.get(n)} for n in mejor},
+            len(tarjetas))
 
 
 def main():
@@ -97,9 +116,17 @@ def main():
                          "No se escribe nada.")
 
     ahora = dt.datetime.now(ART).strftime("%Y-%m-%dT%H:%M%z")
+    # "quien" va adentro del propio termino, y no se vuelve a adivinar mas
+    # abajo. Antes se descartaba el nombre aca (el "_" del for) y termometro_
+    # placa lo reconstruia buscando si el nombre de alguien de la placa
+    # aparecia como substring del texto de la consigna: funcionaba de
+    # casualidad, porque ningun nombre de esta edicion es substring de otro,
+    # pero es el mismo tipo de atajo fragil que ya causo un error de signo en
+    # esta pagina. El nombre correcto ya se sabe aca: es la clave de
+    # `hallados`, la misma que hizo el match real contra el texto.
     term = [{"txt": v["txt"], "mejor": v["mejor"], "horas": v["horas"],
-             "tipo": "campaña de voto"}
-            for _, v in sorted(hallados.items(), key=lambda kv: kv[1]["mejor"])]
+             "reciente": v["reciente"], "quien": nombre, "tipo": "campaña de voto"}
+            for nombre, v in sorted(hallados.items(), key=lambda kv: kv[1]["mejor"])]
     sin = [n for n in placa if n not in hallados]
 
     print(f"{n_tarjetas} tarjetas · fase {fase or '(sin declarar)'} · {ahora}")
@@ -129,9 +156,9 @@ def main():
         "ventana": {"desde": None, "hasta": ahora,
                     "_nota": f"{n_tarjetas} tarjetas horarias, que es lo que el sitio publica gratis."},
         "horas_son_piso": True,
-        "consignas": [{"termino": t["txt"], "quien": next(
-                          (n for n in placa if _plano(n) in _plano(t["txt"])), ""),
-                       "pico": t["mejor"], "horas": t["horas"], "fuentes": 1,
+        "consignas": [{"termino": t["txt"], "quien": t["quien"],
+                       "pico": t["mejor"], "reciente": t["reciente"], "horas": t["horas"],
+                       "fuentes": 1,
                        "fuente": f"trends24.in/argentina, {n_tarjetas} tarjetas horarias"}
                       for t in term],
         "sin_consigna": T["sin_consigna"],
