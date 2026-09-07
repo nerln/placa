@@ -14,10 +14,17 @@
    "terminos": []
   },
   "Zilli": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
+   "icd": 0.36,
+   "n_terminos": 1,
+   "estado": "observado",
+   "terminos": [
+    {
+     "txt": "ZILLI AL 9009",
+     "signo": 1,
+     "mejor": 33,
+     "peso": 0.36
+    }
+   ]
   },
   "Luana": {
    "icd": null,
@@ -32,19 +39,19 @@
    "terminos": []
   },
   "Sol": {
-   "icd": 0.7,
+   "icd": 0.62,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "SOL AL 9009",
      "signo": 1,
-     "mejor": 16,
-     "peso": 0.7
+     "mejor": 20,
+     "peso": 0.62
     }
    ]
   }
  },
- "observados": 1,
+ "observados": 2,
  "de": 5
 }

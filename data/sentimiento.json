@@ -1,6 +1,6 @@
 {
- "generado": "2026-09-06",
- "momento": "2026-09-06T20:47-0300",
+ "generado": "2026-09-07",
+ "momento": "2026-09-07T01:26-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,33 +11,33 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 527,
- "nombran_a_alguien": 270,
+ "nombran_a_alguien": 271,
  "con_signo": 78,
  "por_jugadora": {
   "Sol": {
-   "contra": 8,
+   "contra": 10,
    "favor": 2,
-   "sin_signo": 35
+   "sin_signo": 32
   },
   "Luana": {
    "contra": 4,
    "favor": 0,
-   "sin_signo": 12
+   "sin_signo": 11
   },
   "Zilli": {
    "contra": 9,
    "favor": 1,
-   "sin_signo": 25
+   "sin_signo": 24
   },
   "Charlotte": {
-   "contra": 4,
-   "favor": 43,
-   "sin_signo": 98
+   "contra": 3,
+   "favor": 42,
+   "sin_signo": 102
   },
   "Yipio": {
    "contra": 10,
    "favor": 20,
-   "sin_signo": 55
+   "sin_signo": 53
   }
  },
  "ejemplos": {
@@ -79,7 +79,7 @@
     "signo": "contra"
    },
    {
-    "texto": "NO ME GUSTA ESA MUJER ZILLI DEBERÍA IRSE YA ..ES MUY SOBERBIA. ALTANERA.  EGOCÉNTRICA",
+    "texto": "Espero que cada una de estas jugadoras que todavía quedan en esta casa puedan recuperar la salud mental después de que termine este programa. El resultado después de seis meses no ",
     "signo": "contra"
    }
   ],
@@ -107,7 +107,7 @@
     "signo": "favor"
    },
    {
-    "texto": "YIPIO Y CHARLOT A LA FINAL!! GRACIAS G H",
+    "texto": "Vamos la yipioneta carajo",
     "signo": "favor"
    }
   ]
