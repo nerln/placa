@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-07T19:22-0300",
+ "generado": "2026-09-07T20:27-0300",
  "gala": 33,
  "fecha_gala": "2026-09-07",
  "placa": [
@@ -12,39 +12,39 @@
  "fase": "positivo",
  "que_es": "El cruce entre lo que la gente escribe y lo que se pide afuera, pesado por lo cerca que está la gala: cuanto menos falta, más pesa el sentimiento.",
  "reloj": {
-  "faltan_horas": 2.9,
-  "cercania": 0.983,
+  "faltan_horas": 1.8,
+  "cercania": 0.989,
   "horizonte_horas": 168.0
  },
  "pesos": {
-  "sentimiento": 0.642,
-  "campana": 0.358,
+  "sentimiento": 0.645,
+  "campana": 0.355,
   "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
  },
  "entradas": {
   "sentimiento": {
-   "Luana": 0.288,
-   "Zilli": 0.2924,
-   "Sol": 0.2765,
-   "Yipio": 0.1086,
-   "Charlotte": 0.0346
+   "Sol": 0.3076,
+   "Zilli": 0.3036,
+   "Luana": 0.205,
+   "Yipio": 0.1389,
+   "Charlotte": 0.0449
   },
   "campana": {
-   "Luana": 0.2308,
-   "Zilli": 0.1496,
    "Sol": 0.1581,
+   "Zilli": 0.1496,
+   "Luana": 0.2308,
    "Yipio": 0.2308,
    "Charlotte": 0.2308
   }
  },
  "p_sale": {
-  "Sol": 0.2341,
-  "Luana": 0.2675,
-  "Zilli": 0.2413,
-  "Charlotte": 0.1047,
-  "Yipio": 0.1523
+  "Sol": 0.2545,
+  "Luana": 0.2142,
+  "Zilli": 0.249,
+  "Charlotte": 0.1108,
+  "Yipio": 0.1715
  },
- "llama_a": "Luana",
+ "llama_a": "Sol",
  "coinciden": null,
  "aviso": "Declarado antes de la gala 32 y sin ningún acierto todavía. Se puntúa como las otras tres, también cuando falle."
 }
