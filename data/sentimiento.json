@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-07",
- "momento": "2026-09-07T17:30-0300",
+ "momento": "2026-09-07T19:22-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,33 +11,33 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 528,
- "nombran_a_alguien": 269,
- "con_signo": 85,
+ "nombran_a_alguien": 270,
+ "con_signo": 81,
  "por_jugadora": {
   "Sol": {
-   "contra": 10,
+   "contra": 11,
    "favor": 2,
-   "sin_signo": 32
+   "sin_signo": 33
   },
   "Luana": {
    "contra": 4,
-   "favor": 1,
+   "favor": 0,
    "sin_signo": 10
   },
   "Zilli": {
    "contra": 10,
-   "favor": 2,
-   "sin_signo": 23
+   "favor": 1,
+   "sin_signo": 21
   },
   "Charlotte": {
    "contra": 4,
-   "favor": 47,
-   "sin_signo": 97
+   "favor": 44,
+   "sin_signo": 101
   },
   "Yipio": {
-   "contra": 11,
-   "favor": 25,
-   "sin_signo": 52
+   "contra": 10,
+   "favor": 23,
+   "sin_signo": 54
   }
  },
  "ejemplos": {
@@ -61,11 +61,11 @@
     "signo": "contra"
    },
    {
-    "texto": "GRACIAS A DIOS SALIÓ ESTA MUJER,MIS VIOLENCIA, YIPIO ,CHARLOT A LA FINAL, EL MIERCOLES SE VA MARIELA O LUANA",
-    "signo": "favor"
+    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
+    "signo": "contra"
    },
    {
-    "texto": "Mariela, luana y zilli PANQUEQUES AFUERA",
+    "texto": "Que falsa que es Luana !",
     "signo": "contra"
    }
   ],

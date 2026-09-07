@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-07T17:30-0300",
+ "generado": "2026-09-07T19:22-0300",
  "gala": 33,
  "fase": "positivo",
  "placa": [
@@ -12,8 +12,8 @@
  "orden": [
   "Charlotte",
   "Yipio",
-  "Luana",
   "Sol",
+  "Luana",
   "Zilli"
  ],
  "que_es": "El apoyo, juntando lo que se escribe con cuánto habla de cada una el canal. El signo sale de los comentarios; la exposición es el denominador que hace que ese signo se pueda comparar entre personas.",
@@ -53,14 +53,14 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.571,
+   "signo": -0.6,
    "a_favor": 2,
-   "en_contra": 10,
-   "con_signo": 12,
-   "titulos": 9,
+   "en_contra": 11,
+   "con_signo": 13,
+   "titulos": 10,
    "vistas": 0,
-   "comentarios_por_video": 1.33,
-   "campana": 0.38,
+   "comentarios_por_video": 1.3,
+   "campana": 0.52,
    "fuentes": [
     "comentarios",
     "exposicion",
@@ -69,13 +69,13 @@
    "n_fuentes": 3
   },
   "Luana": {
-   "signo": -0.429,
-   "a_favor": 1,
+   "signo": -0.667,
+   "a_favor": 0,
    "en_contra": 4,
-   "con_signo": 5,
-   "titulos": 6,
+   "con_signo": 4,
+   "titulos": 7,
    "vistas": 0,
-   "comentarios_por_video": 0.83,
+   "comentarios_por_video": 0.57,
    "campana": null,
    "fuentes": [
     "exposicion"
@@ -83,13 +83,13 @@
    "n_fuentes": 1
   },
   "Zilli": {
-   "signo": -0.571,
-   "a_favor": 2,
+   "signo": -0.692,
+   "a_favor": 1,
    "en_contra": 10,
-   "con_signo": 12,
-   "titulos": 7,
+   "con_signo": 11,
+   "titulos": 8,
    "vistas": 0,
-   "comentarios_por_video": 1.71,
+   "comentarios_por_video": 1.38,
    "campana": 0.54,
    "fuentes": [
     "comentarios",
@@ -99,13 +99,13 @@
    "n_fuentes": 3
   },
   "Charlotte": {
-   "signo": 0.811,
-   "a_favor": 47,
+   "signo": 0.8,
+   "a_favor": 44,
    "en_contra": 4,
-   "con_signo": 51,
+   "con_signo": 48,
    "titulos": 5,
    "vistas": 0,
-   "comentarios_por_video": 10.2,
+   "comentarios_por_video": 9.6,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -114,13 +114,13 @@
    "n_fuentes": 2
   },
   "Yipio": {
-   "signo": 0.368,
-   "a_favor": 25,
-   "en_contra": 11,
-   "con_signo": 36,
+   "signo": 0.371,
+   "a_favor": 23,
+   "en_contra": 10,
+   "con_signo": 33,
    "titulos": 3,
    "vistas": 0,
-   "comentarios_por_video": 12.0,
+   "comentarios_por_video": 11.0,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -129,7 +129,7 @@
    "n_fuentes": 2
   }
  },
- "max_titulos": 9,
+ "max_titulos": 10,
  "exposicion_del_canal": true,
  "_nota_exposicion": "Leída del canal entero"
 }
