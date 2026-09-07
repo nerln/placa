@@ -14,15 +14,15 @@
    "terminos": []
   },
   "Zilli": {
-   "icd": 0.36,
+   "icd": 0.54,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "ZILLI AL 9009",
      "signo": 1,
-     "mejor": 33,
-     "peso": 0.36
+     "mejor": 24,
+     "peso": 0.54
     }
    ]
   },
@@ -39,15 +39,15 @@
    "terminos": []
   },
   "Sol": {
-   "icd": 0.62,
+   "icd": 0.26,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "SOL AL 9009",
      "signo": 1,
-     "mejor": 20,
-     "peso": 0.62
+     "mejor": 38,
+     "peso": 0.26
     }
    ]
   }
