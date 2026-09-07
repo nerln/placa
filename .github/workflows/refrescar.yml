@@ -124,6 +124,14 @@ jobs:
       # El cruce SIEMPRE se recalcula si esta corrida corresponde, aunque las
       # dos lecturas de arriba hayan fallado: su peso depende del reloj y a
       # las 21.00 dice algo distinto que a las 09.00 con los mismos datos.
+      # El apoyo agregado va DESPUES de los comentarios y de la campana, porque
+      # los usa a los dos, y ANTES del cruce, que no lo usa pero comparte la
+      # misma ventana de datos.
+      - name: apoyo agregado
+        if: steps.reloj.outputs.correr == 'si'
+        continue-on-error: true
+        run: python3 model/apoyo.py
+
       - name: el cruce
         if: steps.reloj.outputs.correr == 'si'
         run: python3 model/cruce.py

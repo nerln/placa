@@ -1,0 +1,137 @@
+{
+ "generado": "2026-09-07T15:28-0300",
+ "gala": 33,
+ "fase": "positivo",
+ "placa": [
+  "Sol",
+  "Luana",
+  "Zilli",
+  "Charlotte",
+  "Yipio"
+ ],
+ "orden": [
+  "Charlotte",
+  "Yipio",
+  "Luana",
+  "Sol",
+  "Zilli"
+ ],
+ "que_es": "El apoyo, juntando lo que se escribe con cuánto habla de cada una el canal. El signo sale de los comentarios; la exposición es el denominador que hace que ese signo se pueda comparar entre personas.",
+ "que_no_es": "La exposición NO es apoyo: que el canal publique veintiún videos sobre alguien puede querer decir que es el centro del conflicto, no que la quieran. Por eso entra como denominador y nunca como puntaje.",
+ "cobertura": {
+  "comentarios": [
+   "Sol",
+   "Luana",
+   "Zilli",
+   "Charlotte",
+   "Yipio"
+  ],
+  "exposicion": [
+   "Sol",
+   "Luana",
+   "Zilli",
+   "Charlotte",
+   "Yipio"
+  ],
+  "campaña": [
+   "Sol",
+   "Zilli"
+  ]
+ },
+ "descartadas": [
+  {
+   "fuente": "Google Trends (endpoint comparativo)",
+   "por_que": "devuelve 429 sin credenciales, y peor desde un runner de CI"
+  },
+  {
+   "fuente": "Google Trends (RSS de tendencias)",
+   "por_que": "publica sólo lo que ya es tendencia: la misma censura por umbral"
+  },
+  {
+   "fuente": "Vistas de Wikipedia",
+   "por_que": "de las cinco de esta semana sólo tres tienen artículo, y las dos que faltan faltan porque son menos conocidas: el hueco está correlacionado con lo que se quiere medir"
+  }
+ ],
+ "filas": {
+  "Sol": {
+   "signo": -0.571,
+   "a_favor": 2,
+   "en_contra": 10,
+   "con_signo": 12,
+   "titulos": 12,
+   "vistas": 0,
+   "comentarios_por_video": 1.0,
+   "campana": 0.32,
+   "fuentes": [
+    "comentarios",
+    "exposicion",
+    "campaña"
+   ],
+   "n_fuentes": 3
+  },
+  "Luana": {
+   "signo": -0.25,
+   "a_favor": 2,
+   "en_contra": 4,
+   "con_signo": 6,
+   "titulos": 7,
+   "vistas": 0,
+   "comentarios_por_video": 0.86,
+   "campana": null,
+   "fuentes": [
+    "comentarios",
+    "exposicion"
+   ],
+   "n_fuentes": 2
+  },
+  "Zilli": {
+   "signo": -0.571,
+   "a_favor": 2,
+   "en_contra": 10,
+   "con_signo": 12,
+   "titulos": 8,
+   "vistas": 0,
+   "comentarios_por_video": 1.5,
+   "campana": 0.54,
+   "fuentes": [
+    "comentarios",
+    "exposicion",
+    "campaña"
+   ],
+   "n_fuentes": 3
+  },
+  "Charlotte": {
+   "signo": 0.811,
+   "a_favor": 47,
+   "en_contra": 4,
+   "con_signo": 51,
+   "titulos": 4,
+   "vistas": 0,
+   "comentarios_por_video": 12.75,
+   "campana": null,
+   "fuentes": [
+    "comentarios",
+    "exposicion"
+   ],
+   "n_fuentes": 2
+  },
+  "Yipio": {
+   "signo": 0.385,
+   "a_favor": 26,
+   "en_contra": 11,
+   "con_signo": 37,
+   "titulos": 2,
+   "vistas": 0,
+   "comentarios_por_video": 18.5,
+   "campana": null,
+   "fuentes": [
+    "comentarios",
+    "exposicion"
+   ],
+   "n_fuentes": 2
+  }
+ },
+ "max_titulos": 12,
+ "exposicion_del_canal": true,
+ "_nota_exposicion": "Leída del canal entero"
+}

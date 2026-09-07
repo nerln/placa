@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 36,6% · Luana 19,9% · Zilli 17,3%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-09-02T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 36,6% · Luana 19,9% · Zilli 17,3%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-09-02","version":"1cde95417a548692","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=1cde95417a548692"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 36,6% · Luana 19,9% · Zilli 17,3%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-09-02T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Charlotte 36,6% · Luana 19,9% · Zilli 17,3%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-09-02","version":"3c9770ed50bf2da5","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=3c9770ed50bf2da5"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -5564,7 +5564,30 @@ function contar(nodo){
 
       return "<p class='mn-dice'><b>Antes de quién se va: quién tiene apoyo.</b> Comentarios de " +
         "hoy y campañas vivas en tendencias, para la misma placa.</p>" +
-        filas.map(frase).join("") + tension;
+        filas.map(frase).join("") + tension +
+        // La correccion por exposicion. Hasta ahora la pagina decia que los
+        // volumenes de comentarios NO se comparan entre personas, y era cierto:
+        // que Charlotte junte 51 y Luana 6 depende en buena parte de cuanto
+        // habla de cada una el canal. Dividiendo por los videos en que aparece,
+        // el numero pasa a ser comparable — y cambia la lectura: Sol es la mas
+        // expuesta y la que menos reaccion genera por video.
+        (() => {
+          const A = D.apoyo;
+          if(!A || !A.filas) return "";
+          const con = (A.placa || []).filter(n => (A.filas[n] || {}).comentarios_por_video != null);
+          if(con.length < 3) return "";
+          const ord2 = con.slice().sort((a, b) =>
+            A.filas[b].comentarios_por_video - A.filas[a].comentarios_por_video);
+          const mas = ord2[0], menos = ord2[ord2.length - 1];
+          const f = n => A.filas[n];
+          return "<p class='mn-dice'><b>Y cuánto de eso es que se hable de ellas.</b> " +
+            "El canal no les da el mismo lugar: " + menos + " sale en <b>" + f(menos).titulos +
+            "</b> de los " + (A.exposicion_del_canal ? "videos recientes del canal" : "videos") +
+            " y junta <b>" + nf(f(menos).comentarios_por_video, 1) + "</b> comentarios con signo " +
+            "por video; " + mas + " sale en <b>" + f(mas).titulos + "</b> y junta <b>" +
+            nf(f(mas).comentarios_por_video, 1) + "</b>. Dividido así, los volúmenes sí se " +
+            "pueden comparar entre ellas, que sueltos no.</p>";
+        })();
     })() +
 
     (() => {

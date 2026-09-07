@@ -5483,7 +5483,30 @@ function contar(nodo){
 
       return "<p class='mn-dice'><b>Antes de quién se va: quién tiene apoyo.</b> Comentarios de " +
         "hoy y campañas vivas en tendencias, para la misma placa.</p>" +
-        filas.map(frase).join("") + tension;
+        filas.map(frase).join("") + tension +
+        // La correccion por exposicion. Hasta ahora la pagina decia que los
+        // volumenes de comentarios NO se comparan entre personas, y era cierto:
+        // que Charlotte junte 51 y Luana 6 depende en buena parte de cuanto
+        // habla de cada una el canal. Dividiendo por los videos en que aparece,
+        // el numero pasa a ser comparable — y cambia la lectura: Sol es la mas
+        // expuesta y la que menos reaccion genera por video.
+        (() => {
+          const A = D.apoyo;
+          if(!A || !A.filas) return "";
+          const con = (A.placa || []).filter(n => (A.filas[n] || {}).comentarios_por_video != null);
+          if(con.length < 3) return "";
+          const ord2 = con.slice().sort((a, b) =>
+            A.filas[b].comentarios_por_video - A.filas[a].comentarios_por_video);
+          const mas = ord2[0], menos = ord2[ord2.length - 1];
+          const f = n => A.filas[n];
+          return "<p class='mn-dice'><b>Y cuánto de eso es que se hable de ellas.</b> " +
+            "El canal no les da el mismo lugar: " + menos + " sale en <b>" + f(menos).titulos +
+            "</b> de los " + (A.exposicion_del_canal ? "videos recientes del canal" : "videos") +
+            " y junta <b>" + nf(f(menos).comentarios_por_video, 1) + "</b> comentarios con signo " +
+            "por video; " + mas + " sale en <b>" + f(mas).titulos + "</b> y junta <b>" +
+            nf(f(mas).comentarios_por_video, 1) + "</b>. Dividido así, los volúmenes sí se " +
+            "pueden comparar entre ellas, que sueltos no.</p>";
+        })();
     })() +
 
     (() => {
