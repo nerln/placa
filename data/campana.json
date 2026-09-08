@@ -14,17 +14,10 @@
    "terminos": []
   },
   "Zilli": {
-   "icd": 0.54,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "ZILLI AL 9009",
-     "signo": 1,
-     "mejor": 24,
-     "peso": 0.54
-    }
-   ]
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
   },
   "Luana": {
    "icd": null,
@@ -52,6 +45,6 @@
    ]
   }
  },
- "observados": 2,
+ "observados": 1,
  "de": 5
 }

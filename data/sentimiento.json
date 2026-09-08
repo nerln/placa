@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-07",
- "momento": "2026-09-07T20:27-0300",
+ "momento": "2026-09-07T21:22-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,34 +10,34 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 468,
- "nombran_a_alguien": 220,
- "con_signo": 67,
+ "total": 528,
+ "nombran_a_alguien": 278,
+ "con_signo": 83,
  "por_jugadora": {
   "Sol": {
-   "contra": 11,
-   "favor": 1,
-   "sin_signo": 32
+   "contra": 10,
+   "favor": 3,
+   "sin_signo": 35
   },
   "Luana": {
    "contra": 3,
    "favor": 2,
-   "sin_signo": 10
+   "sin_signo": 12
   },
   "Zilli": {
-   "contra": 10,
+   "contra": 11,
    "favor": 1,
-   "sin_signo": 22
+   "sin_signo": 25
   },
   "Charlotte": {
    "contra": 4,
-   "favor": 34,
-   "sin_signo": 67
+   "favor": 47,
+   "sin_signo": 100
   },
   "Yipio": {
-   "contra": 11,
-   "favor": 18,
-   "sin_signo": 50
+   "contra": 10,
+   "favor": 24,
+   "sin_signo": 55
   }
  },
  "ejemplos": {
@@ -51,7 +51,7 @@
     "signo": "contra"
    },
    {
-    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
+    "texto": "También le tiro la culpa a Yipio qué fue violenta, y Yipio habla muy fuerte y solo se defiende. Debo decir que se ponía seria al no conocer el juego al principio, pero luego entend",
     "signo": "contra"
    }
   ],
