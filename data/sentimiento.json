@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-08",
- "momento": "2026-09-08T06:34-0300",
+ "momento": "2026-09-08T11:26-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,14 +10,14 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 528,
- "nombran_a_alguien": 253,
- "con_signo": 74,
+ "total": 468,
+ "nombran_a_alguien": 224,
+ "con_signo": 69,
  "por_jugadora": {
   "Sol": {
-   "contra": 11,
-   "favor": 2,
-   "sin_signo": 36
+   "contra": 8,
+   "favor": 1,
+   "sin_signo": 28
   },
   "Luana": {
    "contra": 4,
@@ -26,13 +26,13 @@
   },
   "Charlotte": {
    "contra": 4,
-   "favor": 44,
-   "sin_signo": 105
+   "favor": 42,
+   "sin_signo": 94
   },
   "Yipio": {
-   "contra": 10,
-   "favor": 23,
-   "sin_signo": 54
+   "contra": 9,
+   "favor": 22,
+   "sin_signo": 44
   }
  },
  "ejemplos": {
@@ -46,7 +46,7 @@
     "signo": "contra"
    },
    {
-    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
+    "texto": "Bueno. Conclusion. Me di cuenta que como virginiana qué soy no me equivoque. Pincoya no es un personaje es así ella y tiene maldad. Al punto de cuestionar porque tuvo que elejir a ",
     "signo": "contra"
    }
   ],
@@ -88,8 +88,8 @@
     "signo": "favor"
    },
    {
-    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
-    "signo": "contra"
+    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "signo": "favor"
    }
   ]
  }
