@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-08T15:34-0300",
+ "generado": "2026-09-08T18:47-0300",
  "gala": 34,
  "fase": "positivo",
  "placa": [
@@ -50,13 +50,13 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.538,
+   "signo": -0.571,
    "a_favor": 2,
-   "en_contra": 9,
-   "con_signo": 11,
-   "titulos": 7,
+   "en_contra": 10,
+   "con_signo": 12,
+   "titulos": 8,
    "vistas": 0,
-   "comentarios_por_video": 1.57,
+   "comentarios_por_video": 1.5,
    "campana": 0.94,
    "fuentes": [
     "comentarios",
@@ -70,9 +70,9 @@
    "a_favor": 2,
    "en_contra": 4,
    "con_signo": 6,
-   "titulos": 6,
+   "titulos": 5,
    "vistas": 0,
-   "comentarios_por_video": 1.0,
+   "comentarios_por_video": 1.2,
    "campana": 0.6,
    "fuentes": [
     "comentarios",
@@ -82,13 +82,13 @@
    "n_fuentes": 3
   },
   "Charlotte": {
-   "signo": 0.811,
-   "a_favor": 47,
+   "signo": 0.808,
+   "a_favor": 46,
    "en_contra": 4,
-   "con_signo": 51,
-   "titulos": 4,
+   "con_signo": 50,
+   "titulos": 3,
    "vistas": 0,
-   "comentarios_por_video": 12.75,
+   "comentarios_por_video": 16.67,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -97,13 +97,13 @@
    "n_fuentes": 2
   },
   "Yipio": {
-   "signo": 0.405,
-   "a_favor": 25,
+   "signo": 0.389,
+   "a_favor": 24,
    "en_contra": 10,
-   "con_signo": 35,
-   "titulos": 3,
+   "con_signo": 34,
+   "titulos": 4,
    "vistas": 0,
-   "comentarios_por_video": 11.67,
+   "comentarios_por_video": 8.5,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -112,7 +112,7 @@
    "n_fuentes": 2
   }
  },
- "max_titulos": 7,
+ "max_titulos": 8,
  "exposicion_del_canal": true,
  "_nota_exposicion": "Leída del canal entero"
 }

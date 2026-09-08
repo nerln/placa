@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-08",
- "momento": "2026-09-08T15:34-0300",
+ "momento": "2026-09-08T18:47-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,11 +11,11 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 528,
- "nombran_a_alguien": 247,
- "con_signo": 77,
+ "nombran_a_alguien": 246,
+ "con_signo": 76,
  "por_jugadora": {
   "Sol": {
-   "contra": 9,
+   "contra": 10,
    "favor": 2,
    "sin_signo": 33
   },
@@ -26,13 +26,13 @@
   },
   "Charlotte": {
    "contra": 4,
-   "favor": 47,
-   "sin_signo": 100
+   "favor": 46,
+   "sin_signo": 101
   },
   "Yipio": {
    "contra": 10,
-   "favor": 25,
-   "sin_signo": 52
+   "favor": 24,
+   "sin_signo": 53
   }
  },
  "ejemplos": {
@@ -46,7 +46,7 @@
     "signo": "contra"
    },
    {
-    "texto": "También le tiro la culpa a Yipio qué fue violenta, y Yipio habla muy fuerte y solo se defiende. Debo decir que se ponía seria al no conocer el juego al principio, pero luego entend",
+    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
     "signo": "contra"
    }
   ],
@@ -88,8 +88,8 @@
     "signo": "favor"
    },
    {
-    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
-    "signo": "favor"
+    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
+    "signo": "contra"
    }
   ]
  }
