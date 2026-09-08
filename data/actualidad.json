@@ -167,23 +167,30 @@
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "ventana": "24 tarjetas horarias de trends24.in/argentina",
   "desde": null,
-  "hasta": "2026-09-07T21:22-0300",
-  "medido": "2026-09-07T21:22-0300",
+  "hasta": "2026-09-08T05:41-0300",
+  "medido": "2026-09-08T05:41-0300",
   "fase": "positivo",
   "terminos": [
    {
     "txt": "SOL AL 9009",
-    "mejor": 25,
-    "horas": 24,
-    "reciente": 27,
+    "mejor": 4,
+    "horas": 23,
+    "reciente": 4,
     "quien": "Sol",
+    "tipo": "campaña de voto"
+   },
+   {
+    "txt": "LUANA AL 9009",
+    "mejor": 21,
+    "horas": 1,
+    "reciente": null,
+    "quien": "Luana",
     "tipo": "campaña de voto"
    }
   ],
   "variantes": [],
   "sin_consigna": {
    "quienes": [
-    "Luana",
     "Zilli",
     "Charlotte",
     "Yipio"
@@ -277,14 +284,13 @@
  },
  "proxima_gala": {
   "_nota": "Sigue la placa positiva final: se vota por la favorita y se va la que menos junte. Quedan cinco.",
-  "gala": 33,
+  "gala": 34,
   "tipo": "eliminación",
-  "fecha": "2026-09-07",
+  "fecha": "2026-09-09",
   "fecha_nominacion": null,
   "placa": [
    "Sol",
    "Luana",
-   "Zilli",
    "Charlotte",
    "Yipio"
   ],
@@ -293,10 +299,10 @@
   "fases": [
    {
     "desde": "2026-09-02",
-    "hasta": "2026-09-07",
+    "hasta": "2026-09-09",
     "signo": "positivo",
     "desde_hora": "2026-09-02T23:30-03:00",
-    "hasta_hora": "2026-09-07T22:15-03:00",
+    "hasta_hora": "2026-09-09T22:15-03:00",
     "que": "Se vota por la favorita. Se va la que menos votos positivos junte.",
     "detalle": "La placa positiva final sigue abierta hasta la final del 14 de septiembre."
    }
@@ -314,11 +320,11 @@
  "termometro_placa": {
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "fase": "positivo",
-  "medido": "2026-09-07T21:22-0300",
+  "medido": "2026-09-08T05:41-0300",
   "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». La placa es positiva, así que estas consignas piden que se QUEDE.",
   "ventana": {
    "desde": null,
-   "hasta": "2026-09-07T21:22-0300",
+   "hasta": "2026-09-08T05:41-0300",
    "_nota": "24 tarjetas horarias, que es lo que el sitio publica gratis."
   },
   "horas_son_piso": true,
@@ -326,16 +332,24 @@
    {
     "termino": "SOL AL 9009",
     "quien": "Sol",
-    "pico": 25,
-    "reciente": 27,
-    "horas": 24,
+    "pico": 4,
+    "reciente": 4,
+    "horas": 23,
+    "fuentes": 1,
+    "fuente": "trends24.in/argentina, 24 tarjetas horarias"
+   },
+   {
+    "termino": "LUANA AL 9009",
+    "quien": "Luana",
+    "pico": 21,
+    "reciente": null,
+    "horas": 1,
     "fuentes": 1,
     "fuente": "trends24.in/argentina, 24 tarjetas horarias"
    }
   ],
   "sin_consigna": {
    "quienes": [
-    "Luana",
     "Zilli",
     "Charlotte",
     "Yipio"

@@ -1,11 +1,10 @@
 {
- "generado": "2026-09-07T21:22-0300",
- "gala": 33,
+ "generado": "2026-09-08T05:46-0300",
+ "gala": 34,
  "fase": "positivo",
  "placa": [
   "Sol",
   "Luana",
-  "Zilli",
   "Charlotte",
   "Yipio"
  ],
@@ -13,27 +12,25 @@
   "Charlotte",
   "Yipio",
   "Luana",
-  "Sol",
-  "Zilli"
+  "Sol"
  ],
  "que_es": "El apoyo, juntando lo que se escribe con cuánto habla de cada una el canal. El signo sale de los comentarios; la exposición es el denominador que hace que ese signo se pueda comparar entre personas.",
  "que_no_es": "La exposición NO es apoyo: que el canal publique veintiún videos sobre alguien puede querer decir que es el centro del conflicto, no que la quieran. Por eso entra como denominador y nunca como puntaje.",
  "cobertura": {
   "comentarios": [
    "Sol",
-   "Zilli",
    "Charlotte",
    "Yipio"
   ],
   "exposicion": [
    "Sol",
    "Luana",
-   "Zilli",
    "Charlotte",
    "Yipio"
   ],
   "campaña": [
-   "Sol"
+   "Sol",
+   "Luana"
   ]
  },
  "descartadas": [
@@ -52,14 +49,14 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.467,
-   "a_favor": 3,
+   "signo": -0.571,
+   "a_favor": 2,
    "en_contra": 10,
-   "con_signo": 13,
-   "titulos": 8,
+   "con_signo": 12,
+   "titulos": 7,
    "vistas": 0,
-   "comentarios_por_video": 1.62,
-   "campana": 0.52,
+   "comentarios_por_video": 1.71,
+   "campana": 0.94,
    "fuentes": [
     "comentarios",
     "exposicion",
@@ -72,38 +69,24 @@
    "a_favor": 2,
    "en_contra": 3,
    "con_signo": 5,
-   "titulos": 6,
+   "titulos": 5,
    "vistas": 0,
-   "comentarios_por_video": 0.83,
-   "campana": null,
+   "comentarios_por_video": 1.0,
+   "campana": 0.6,
    "fuentes": [
-    "exposicion"
-   ],
-   "n_fuentes": 1
-  },
-  "Zilli": {
-   "signo": -0.714,
-   "a_favor": 1,
-   "en_contra": 11,
-   "con_signo": 12,
-   "titulos": 7,
-   "vistas": 0,
-   "comentarios_por_video": 1.71,
-   "campana": null,
-   "fuentes": [
-    "comentarios",
-    "exposicion"
+    "exposicion",
+    "campaña"
    ],
    "n_fuentes": 2
   },
   "Charlotte": {
-   "signo": 0.811,
-   "a_favor": 47,
+   "signo": 0.808,
+   "a_favor": 46,
    "en_contra": 4,
-   "con_signo": 51,
+   "con_signo": 50,
    "titulos": 4,
    "vistas": 0,
-   "comentarios_por_video": 12.75,
+   "comentarios_por_video": 12.5,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -116,9 +99,9 @@
    "a_favor": 24,
    "en_contra": 10,
    "con_signo": 34,
-   "titulos": 2,
+   "titulos": 3,
    "vistas": 0,
-   "comentarios_por_video": 17.0,
+   "comentarios_por_video": 11.33,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -127,7 +110,7 @@
    "n_fuentes": 2
   }
  },
- "max_titulos": 8,
+ "max_titulos": 7,
  "exposicion_del_canal": true,
  "_nota_exposicion": "Leída del canal entero"
 }

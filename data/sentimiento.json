@@ -1,6 +1,6 @@
 {
- "generado": "2026-09-07",
- "momento": "2026-09-07T21:22-0300",
+ "generado": "2026-09-08",
+ "momento": "2026-09-08T05:41-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,28 +11,23 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 528,
- "nombran_a_alguien": 278,
- "con_signo": 83,
+ "nombran_a_alguien": 253,
+ "con_signo": 76,
  "por_jugadora": {
   "Sol": {
    "contra": 10,
-   "favor": 3,
-   "sin_signo": 35
+   "favor": 2,
+   "sin_signo": 33
   },
   "Luana": {
    "contra": 3,
    "favor": 2,
-   "sin_signo": 12
-  },
-  "Zilli": {
-   "contra": 11,
-   "favor": 1,
-   "sin_signo": 25
+   "sin_signo": 11
   },
   "Charlotte": {
    "contra": 4,
-   "favor": 47,
-   "sin_signo": 100
+   "favor": 46,
+   "sin_signo": 105
   },
   "Yipio": {
    "contra": 10,
@@ -69,20 +64,6 @@
     "signo": "favor"
    }
   ],
-  "Zilli": [
-   {
-    "texto": "Mas falsa la Zilli,ojala sea la siguiente en irse.",
-    "signo": "contra"
-   },
-   {
-    "texto": "Sol y zilli afuera",
-    "signo": "contra"
-   },
-   {
-    "texto": "Espero que cada una de estas jugadoras que todavía quedan en esta casa puedan recuperar la salud mental después de que termine este programa. El resultado después de seis meses no ",
-    "signo": "contra"
-   }
-  ],
   "Charlotte": [
    {
     "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
@@ -103,11 +84,11 @@
     "signo": "favor"
    },
    {
-    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
+    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
     "signo": "favor"
    },
    {
-    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
     "signo": "favor"
    }
   ]

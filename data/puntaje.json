@@ -1,75 +1,71 @@
 {
- "gala": 32,
- "fecha": "2026-09-02",
- "eliminado": "Mariela",
+ "gala": 33,
+ "fecha": "2026-09-07",
+ "eliminado": "Zilli",
  "placa": [
   "Sol",
   "Luana",
   "Zilli",
   "Charlotte",
-  "Yipio",
-  "Mariela"
+  "Yipio"
  ],
  "regla": "EVALUACION.md, escrita antes de que terminara la temporada",
  "modelo": {
-  "p_del_eliminado": 0.083,
-  "puesto": 5,
-  "de": 6,
+  "p_del_eliminado": 0.0948,
+  "puesto": 4,
+  "de": 5,
   "acerto": false,
-  "brier": 1.1391,
-  "brier_uniforme": 0.8333,
-  "log_verosimilitud": -2.4892,
-  "log_verosimilitud_uniforme": -1.7918,
+  "brier": 1.1569,
+  "brier_uniforme": 0.8,
+  "log_verosimilitud": -2.3563,
+  "log_verosimilitud_uniforme": -1.6094,
   "orden": [
    "Sol",
    "Yipio",
    "Luana",
    "Zilli",
-   "Mariela",
    "Charlotte"
   ]
  },
  "dos_tiempos": {
-  "p_del_eliminado": 0.1419,
-  "puesto": 5,
-  "de": 6,
+  "p_del_eliminado": 0.1754,
+  "puesto": 4,
+  "de": 5,
   "acerto": false,
-  "brier": 0.8917,
-  "brier_uniforme": 0.8333,
-  "log_verosimilitud": -1.9526,
-  "log_verosimilitud_uniforme": -1.7918,
+  "brier": 0.8567,
+  "brier_uniforme": 0.8,
+  "log_verosimilitud": -1.7407,
+  "log_verosimilitud_uniforme": -1.6094,
   "orden": [
    "Sol",
    "Yipio",
    "Luana",
    "Zilli",
-   "Mariela",
    "Charlotte"
   ]
  },
  "apuesta": null,
  "cruce": {
-  "p_del_eliminado": 0.2046,
-  "puesto": 3,
-  "de": 6,
+  "p_del_eliminado": 0.2413,
+  "puesto": 2,
+  "de": 5,
   "acerto": false,
-  "brier": 0.7841,
-  "brier_uniforme": 0.8333,
-  "log_verosimilitud": -1.5867,
-  "log_verosimilitud_uniforme": -1.7918,
+  "brier": 0.7361,
+  "brier_uniforme": 0.8,
+  "log_verosimilitud": -1.4217,
+  "log_verosimilitud_uniforme": -1.6094,
   "orden": [
-   "Zilli",
    "Luana",
-   "Mariela",
+   "Zilli",
    "Sol",
    "Yipio",
    "Charlotte"
   ]
  },
  "congeladas": {
-  "modelo": "2026-08-31",
-  "dos_tiempos": "2026-08-31",
+  "modelo": "2026-09-02",
+  "dos_tiempos": "2026-09-02",
   "apuesta": null,
-  "cruce": "2026-09-02T06:08-0300"
+  "cruce": "2026-09-07T19:22-0300"
  }
 }

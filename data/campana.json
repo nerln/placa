@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-07",
+ "generado": "2026-09-08",
  "ventana": "24 tarjetas horarias de trends24.in/argentina",
  "fuente": "posiciones del top-50 de X en Argentina archivadas por trends24",
  "formula": "ICD(i) = Σ signo(t) · (51 − mejor_posición(t)) / 50, sobre los términos que nombran a i y llevan consigna. Una sola consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82; al 50, 0,02. Dos consignas suman.",
@@ -13,17 +13,18 @@
    "estado": "sin_observacion",
    "terminos": []
   },
-  "Zilli": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
-  },
   "Luana": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
+   "icd": 0.6,
+   "n_terminos": 1,
+   "estado": "observado",
+   "terminos": [
+    {
+     "txt": "LUANA AL 9009",
+     "signo": 1,
+     "mejor": 21,
+     "peso": 0.6
+    }
+   ]
   },
   "Yipio": {
    "icd": null,
@@ -32,19 +33,19 @@
    "terminos": []
   },
   "Sol": {
-   "icd": 0.52,
+   "icd": 0.94,
    "n_terminos": 1,
    "estado": "observado",
    "terminos": [
     {
      "txt": "SOL AL 9009",
      "signo": 1,
-     "mejor": 25,
-     "peso": 0.52
+     "mejor": 4,
+     "peso": 0.94
     }
    ]
   }
  },
- "observados": 1,
- "de": 5
+ "observados": 2,
+ "de": 4
 }

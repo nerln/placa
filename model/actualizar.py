@@ -136,6 +136,48 @@ def _proxima_gala(galas, a):
     return (max(jugadas) if jugadas else 0) + 1
 
 
+def sincronizar_proxima_gala(galas):
+    """Copia la placa vigente a data/actualidad.json → proxima_gala.
+
+    LA PAGINA LEE `actualidad.proxima_gala`, no `galas.placa_vigente`. Este
+    guion actualizaba solo el segundo, asi que cada semana habia que reescribir
+    el primero a mano — y el 8 de septiembre de 2026 no se hizo: la placa quedo
+    bien, de cuatro, y el titulo anunciaba «la gala del 7 de septiembre», que ya
+    se habia jugado la noche anterior.
+
+    Dos archivos con el mismo hecho y uno solo que se actualiza es una deriva
+    esperando pasar. Se copia lo que se sabe —numero, fecha, integrantes— y se
+    CONSERVA lo que este guion no sabe: las fases, la regla, las fuentes, que
+    los escribe una persona leyendo lo que dijo el programa.
+    """
+    pv = galas.get("placa_vigente") or {}
+    if not pv.get("gala"):
+        return
+    act_p = D / "actualidad.json"
+    if not act_p.exists():
+        return
+    act = json.loads(act_p.read_text())
+    G = dict(act.get("proxima_gala") or {})
+    antes = (G.get("gala"), G.get("fecha"))
+    G["gala"] = pv["gala"]
+    G["fecha"] = pv.get("fecha") or G.get("fecha")
+    G["placa"] = list(pv.get("integrantes") or [])
+    G["libres"] = list(pv.get("libres") or [])
+    # Las fases traen fechas de la gala anterior: se corren, sin tocar el signo,
+    # que lo decide el programa y no este guion.
+    fases = G.get("fases") or []
+    if fases and G.get("fecha"):
+        f = dict(fases[-1])
+        f["hasta"] = G["fecha"]
+        f["hasta_hora"] = G["fecha"] + "T22:15-03:00"
+        G["fases"] = [f]
+    act["proxima_gala"] = G
+    act_p.write_text(json.dumps(act, ensure_ascii=False, indent=1))
+    if antes != (G["gala"], G["fecha"]):
+        print(f"  actualidad.proxima_gala sincronizada: gala {G['gala']} del {G['fecha']} "
+              f"(estaba en {antes[0]} del {antes[1]})")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Incorpora una gala y recalcula el pronostico")
     ap.add_argument("--gala", type=int)
@@ -290,6 +332,7 @@ def main():
         return
 
     escribir("galas.json", galas)
+    sincronizar_proxima_gala(galas)
     escribir("encuestas.json", encuestas)
     escribir("plantel.json", plantel)
     escribir("voto_positivo.json", positivo)

@@ -363,16 +363,31 @@
    "versus": {},
    "completa": false,
    "eliminado": "Mariela"
+  },
+  {
+   "gala": 33,
+   "fecha": "2026-09-07",
+   "tipo": "negativo",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Zilli",
+    "Charlotte",
+    "Yipio"
+   ],
+   "salvados_cuota": {},
+   "versus": {},
+   "completa": false,
+   "eliminado": "Zilli"
   }
  ],
  "placa_vigente": {
-  "gala": 33,
-  "fecha": "2026-09-07",
-  "fecha_nominacion": "2026-09-02",
+  "gala": 34,
+  "fecha": "2026-09-09",
+  "fecha_nominacion": "2026-09-07",
   "integrantes": [
    "Sol",
    "Luana",
-   "Zilli",
    "Charlotte",
    "Yipio"
   ],
