@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-09T01:35-0300",
+ "generado": "2026-09-09T06:37-0300",
  "gala": 34,
  "fase": "positivo",
  "placa": [
@@ -11,15 +11,14 @@
  "orden": [
   "Charlotte",
   "Yipio",
-  "Luana",
-  "Sol"
+  "Sol",
+  "Luana"
  ],
  "que_es": "El apoyo, juntando lo que se escribe con cuánto habla de cada una el canal. El signo sale de los comentarios; la exposición es el denominador que hace que ese signo se pueda comparar entre personas.",
  "que_no_es": "La exposición NO es apoyo: que el canal publique veintiún videos sobre alguien puede querer decir que es el centro del conflicto, no que la quieran. Por eso entra como denominador y nunca como puntaje.",
  "cobertura": {
   "comentarios": [
    "Sol",
-   "Luana",
    "Charlotte",
    "Yipio"
   ],
@@ -56,7 +55,7 @@
    "titulos": 6,
    "vistas": 0,
    "comentarios_por_video": 2.17,
-   "campana": 0.92,
+   "campana": 0.72,
    "fuentes": [
     "comentarios",
     "exposicion",
@@ -65,28 +64,27 @@
    "n_fuentes": 3
   },
   "Luana": {
-   "signo": -0.25,
-   "a_favor": 2,
+   "signo": -0.667,
+   "a_favor": 0,
    "en_contra": 4,
-   "con_signo": 6,
+   "con_signo": 4,
    "titulos": 4,
    "vistas": 0,
-   "comentarios_por_video": 1.5,
+   "comentarios_por_video": 1.0,
    "campana": null,
    "fuentes": [
-    "comentarios",
     "exposicion"
    ],
-   "n_fuentes": 2
+   "n_fuentes": 1
   },
   "Charlotte": {
-   "signo": 0.808,
-   "a_favor": 46,
+   "signo": 0.804,
+   "a_favor": 45,
    "en_contra": 4,
-   "con_signo": 50,
+   "con_signo": 49,
    "titulos": 3,
    "vistas": 0,
-   "comentarios_por_video": 16.67,
+   "comentarios_por_video": 16.33,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -95,13 +93,13 @@
    "n_fuentes": 2
   },
   "Yipio": {
-   "signo": 0.368,
-   "a_favor": 25,
+   "signo": 0.333,
+   "a_favor": 23,
    "en_contra": 11,
-   "con_signo": 36,
+   "con_signo": 34,
    "titulos": 4,
    "vistas": 0,
-   "comentarios_por_video": 9.0,
+   "comentarios_por_video": 8.5,
    "campana": null,
    "fuentes": [
     "comentarios",
