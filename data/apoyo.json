@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-09T06:37-0300",
+ "generado": "2026-09-09T11:28-0300",
  "gala": 34,
  "fase": "positivo",
  "placa": [
@@ -11,14 +11,15 @@
  "orden": [
   "Charlotte",
   "Yipio",
-  "Sol",
-  "Luana"
+  "Luana",
+  "Sol"
  ],
  "que_es": "El apoyo, juntando lo que se escribe con cuánto habla de cada una el canal. El signo sale de los comentarios; la exposición es el denominador que hace que ese signo se pueda comparar entre personas.",
  "que_no_es": "La exposición NO es apoyo: que el canal publique veintiún videos sobre alguien puede querer decir que es el centro del conflicto, no que la quieran. Por eso entra como denominador y nunca como puntaje.",
  "cobertura": {
   "comentarios": [
    "Sol",
+   "Luana",
    "Charlotte",
    "Yipio"
   ],
@@ -48,9 +49,9 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.467,
-   "a_favor": 3,
-   "en_contra": 10,
+   "signo": -0.6,
+   "a_favor": 2,
+   "en_contra": 11,
    "con_signo": 13,
    "titulos": 6,
    "vistas": 0,
@@ -64,27 +65,28 @@
    "n_fuentes": 3
   },
   "Luana": {
-   "signo": -0.667,
-   "a_favor": 0,
+   "signo": -0.25,
+   "a_favor": 2,
    "en_contra": 4,
-   "con_signo": 4,
-   "titulos": 4,
-   "vistas": 0,
-   "comentarios_por_video": 1.0,
+   "con_signo": 6,
+   "titulos": 5,
+   "vistas": 144,
+   "comentarios_por_video": 1.2,
    "campana": null,
    "fuentes": [
+    "comentarios",
     "exposicion"
    ],
-   "n_fuentes": 1
+   "n_fuentes": 2
   },
   "Charlotte": {
    "signo": 0.804,
    "a_favor": 45,
    "en_contra": 4,
    "con_signo": 49,
-   "titulos": 3,
-   "vistas": 0,
-   "comentarios_por_video": 16.33,
+   "titulos": 4,
+   "vistas": 144,
+   "comentarios_por_video": 12.25,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -93,13 +95,13 @@
    "n_fuentes": 2
   },
   "Yipio": {
-   "signo": 0.333,
-   "a_favor": 23,
-   "en_contra": 11,
+   "signo": 0.389,
+   "a_favor": 24,
+   "en_contra": 10,
    "con_signo": 34,
-   "titulos": 4,
-   "vistas": 0,
-   "comentarios_por_video": 8.5,
+   "titulos": 6,
+   "vistas": 275,
+   "comentarios_por_video": 5.67,
    "campana": null,
    "fuentes": [
     "comentarios",
