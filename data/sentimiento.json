@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-08",
- "momento": "2026-09-08T18:47-0300",
+ "momento": "2026-09-08T21:06-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,13 +11,13 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 528,
- "nombran_a_alguien": 246,
- "con_signo": 76,
+ "nombran_a_alguien": 251,
+ "con_signo": 77,
  "por_jugadora": {
   "Sol": {
    "contra": 10,
-   "favor": 2,
-   "sin_signo": 33
+   "favor": 3,
+   "sin_signo": 35
   },
   "Luana": {
    "contra": 4,
@@ -27,12 +27,12 @@
   "Charlotte": {
    "contra": 4,
    "favor": 46,
-   "sin_signo": 101
+   "sin_signo": 103
   },
   "Yipio": {
-   "contra": 10,
+   "contra": 11,
    "favor": 24,
-   "sin_signo": 53
+   "sin_signo": 54
   }
  },
  "ejemplos": {
@@ -88,8 +88,8 @@
     "signo": "favor"
    },
    {
-    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
-    "signo": "contra"
+    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "signo": "favor"
    }
   ]
  }

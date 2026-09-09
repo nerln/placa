@@ -14,17 +14,10 @@
    "terminos": []
   },
   "Luana": {
-   "icd": 0.6,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "LUANA AL 9009",
-     "signo": 1,
-     "mejor": 21,
-     "peso": 0.6
-    }
-   ]
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
   },
   "Yipio": {
    "icd": null,
@@ -46,6 +39,6 @@
    ]
   }
  },
- "observados": 2,
+ "observados": 1,
  "de": 4
 }
