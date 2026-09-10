@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-09T21:07-0300",
+ "generado": "2026-09-09T21:12-0300",
  "gala": 34,
  "fecha_gala": "2026-09-09",
  "placa": [
@@ -11,8 +11,8 @@
  "fase": "positivo",
  "que_es": "El cruce entre lo que la gente escribe y lo que se pide afuera, pesado por lo cerca que está la gala: cuanto menos falta, más pesa el sentimiento.",
  "reloj": {
-  "faltan_horas": 1.1,
-  "cercania": 0.993,
+  "faltan_horas": 1.0,
+  "cercania": 0.994,
   "horizonte_horas": 168.0
  },
  "pesos": {
@@ -22,10 +22,10 @@
  },
  "entradas": {
   "sentimiento": {
-   "Luana": 0.3648,
-   "Sol": 0.4169,
-   "Yipio": 0.1621,
-   "Charlotte": 0.0561
+   "Luana": 0.3551,
+   "Sol": 0.4167,
+   "Yipio": 0.1736,
+   "Charlotte": 0.0546
   },
   "campana": {
    "Luana": 0.2869,
@@ -35,10 +35,10 @@
   }
  },
  "p_sale": {
-  "Sol": 0.319,
-  "Luana": 0.3373,
-  "Charlotte": 0.1376,
-  "Yipio": 0.2062
+  "Sol": 0.3189,
+  "Luana": 0.331,
+  "Charlotte": 0.1366,
+  "Yipio": 0.2136
  },
  "llama_a": "Luana",
  "coinciden": null,

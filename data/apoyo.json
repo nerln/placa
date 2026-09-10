@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-09T21:07-0300",
+ "generado": "2026-09-09T21:12-0300",
  "gala": 34,
  "fase": "positivo",
  "placa": [
@@ -49,13 +49,13 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.429,
+   "signo": -0.467,
    "a_favor": 3,
-   "en_contra": 9,
-   "con_signo": 12,
+   "en_contra": 10,
+   "con_signo": 13,
    "titulos": 9,
    "vistas": 0,
-   "comentarios_por_video": 1.33,
+   "comentarios_por_video": 1.44,
    "campana": 0.72,
    "fuentes": [
     "comentarios",
@@ -95,9 +95,9 @@
    "n_fuentes": 2
   },
   "Yipio": {
-   "signo": 0.444,
-   "a_favor": 25,
-   "en_contra": 9,
+   "signo": 0.389,
+   "a_favor": 24,
+   "en_contra": 10,
    "con_signo": 34,
    "titulos": 6,
    "vistas": 0,

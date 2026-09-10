@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-09",
- "momento": "2026-09-09T21:07-0300",
+ "momento": "2026-09-09T21:12-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,28 +11,28 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 528,
- "nombran_a_alguien": 247,
+ "nombran_a_alguien": 245,
  "con_signo": 76,
  "por_jugadora": {
   "Sol": {
-   "contra": 9,
+   "contra": 10,
    "favor": 3,
-   "sin_signo": 35
+   "sin_signo": 33
   },
   "Luana": {
    "contra": 4,
    "favor": 2,
-   "sin_signo": 11
+   "sin_signo": 10
   },
   "Charlotte": {
    "contra": 4,
    "favor": 46,
-   "sin_signo": 98
+   "sin_signo": 101
   },
   "Yipio": {
-   "contra": 9,
-   "favor": 25,
-   "sin_signo": 54
+   "contra": 10,
+   "favor": 24,
+   "sin_signo": 52
   }
  },
  "ejemplos": {
@@ -46,7 +46,7 @@
     "signo": "contra"
    },
    {
-    "texto": "También le tiro la culpa a Yipio qué fue violenta, y Yipio habla muy fuerte y solo se defiende. Debo decir que se ponía seria al no conocer el juego al principio, pero luego entend",
+    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
     "signo": "contra"
    }
   ],
