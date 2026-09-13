@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-13",
- "momento": "2026-09-13T17:23-0300",
+ "momento": "2026-09-13T19:22-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,23 +11,23 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 1056,
- "nombran_a_alguien": 684,
- "con_signo": 202,
+ "nombran_a_alguien": 675,
+ "con_signo": 196,
  "por_jugadora": {
   "Sol": {
-   "contra": 23,
-   "favor": 15,
-   "sin_signo": 137
+   "contra": 24,
+   "favor": 14,
+   "sin_signo": 133
   },
   "Charlotte": {
-   "contra": 6,
-   "favor": 92,
-   "sin_signo": 211
+   "contra": 5,
+   "favor": 84,
+   "sin_signo": 212
   },
   "Yipio": {
-   "contra": 16,
-   "favor": 131,
-   "sin_signo": 316
+   "contra": 15,
+   "favor": 128,
+   "sin_signo": 317
   }
  },
  "ejemplos": {
@@ -41,7 +41,7 @@
     "signo": "contra"
    },
    {
-    "texto": "SOL AFUERA ES INSOPORTABLE",
+    "texto": "Nadie te cree una palabra te describió muy bien Yipio !!!Fuera está noche Sol es lo más nefasta!!!",
     "signo": "contra"
    }
   ],
@@ -61,16 +61,16 @@
   ],
   "Yipio": [
    {
-    "texto": "Vamos  Yipio, siempre domando a la  serpiente!",
-    "signo": "favor"
-   },
-   {
     "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
     "signo": "contra"
    },
    {
-    "texto": "👏🏽👏🏽 yipio 💪🏽 vamos yipio 🎉",
+    "texto": "Vamos  Yipio, siempre domando a la  serpiente!",
     "signo": "favor"
+   },
+   {
+    "texto": "Nadie te cree una palabra te describió muy bien Yipio !!!Fuera está noche Sol es lo más nefasta!!!",
+    "signo": "contra"
    }
   ]
  }
