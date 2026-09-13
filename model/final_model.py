@@ -147,10 +147,31 @@ def _topk(logw, k, rng):
 N_SIMS_BASE = 120_000
 
 
+def semanas_hasta_final():
+    """Cuantas semanas de deriva le quedan a psi antes de la noche de la ganadora.
+
+    Hasta el 13 de septiembre de 2026 eran cuatro semanas fijas, escritas en la
+    firma de simular(): a mitad de temporada daba igual, pero con la final
+    fechada seguia inflando la incertidumbre de psi como si faltara un mes
+    cuando faltaban dias. Se cuenta desde la fecha de la corrida (el ultimo
+    hecho observado, no hoy: dos corridas sobre los mismos datos siguen dando
+    lo mismo) hasta data/galas.json → final.ganadora. Sin esa fecha, cuatro
+    semanas como siempre. Nunca menos de un dia."""
+    d = json.loads((ROOT / "data" / "galas.json").read_text())
+    fin = (d.get("final") or {}).get("ganadora")
+    if not fin:
+        return 4.0
+    import datetime as _dt
+    dias = (_dt.date.fromisoformat(fin) - _dt.date.fromisoformat(_fecha_corrida())).days
+    return max(dias, 1) / 7.0
+
+
 def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
             n_sims=N_SIMS_BASE, kappa=0.0, sigma_psi_sem=0.20, beta_mu=0.85,
-            beta_sd=0.30, p3=0.70, semanas_a_final=4.0, seed=20260808,
+            beta_sd=0.30, p3=0.70, semanas_a_final=None, seed=20260808,
             usar_estado28=True):
+    if semanas_a_final is None:
+        semanas_a_final = semanas_hasta_final()
     rng = np.random.default_rng(seed)
     K = len(VIG); ix = {n: i for i, n in enumerate(VIG)}
     MU = np.array([mu[n] for n in VIG]); SE = np.array([se_mu[n] for n in VIG])
@@ -205,7 +226,14 @@ def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
                         podio[i] += 1
                 sc = score[f]
                 pv = np.exp(bet * (sc - sc.max())); pv /= pv.sum()
-                f.pop(_elegir(1 / np.maximum(pv, 1e-12), rng.random()))
+                fuera = f.pop(_elegir(1 / np.maximum(pv, 1e-12), rng.random()))
+                # Si la temporada arranco ya en la final (quedan tres y no hubo
+                # placa por rechazo), la proxima en irse es la que queda tercera,
+                # y eso lo decide el apoyo, no el rechazo. Sin esta linea
+                # p_sale28 daba cero para todas la semana de la final.
+                if paso == 0:
+                    sale28[fuera] += 1
+                    paso += 1
             gana[f[0]] += 1; wl[f[0]] += 1
         lotes.append(wl / por)
 

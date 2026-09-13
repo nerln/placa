@@ -43,7 +43,7 @@ N_SIMS = 400_000            # cinco veces la corrida base: la rama mas fina de l
 
 def simular_conjunta(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
                      n_sims=N_SIMS, kappa=0.0, sigma_psi_sem=0.20, beta_mu=0.85,
-                     beta_sd=0.30, p3=0.70, semanas_a_final=4.0, seed=20260810,
+                     beta_sd=0.30, p3=0.70, semanas_a_final=None, seed=20260810,
                      usar_estado28=True):
     """Igual que final_model.simular, pero devolviendo la conjunta (sale, gana).
 
@@ -52,6 +52,8 @@ def simular_conjunta(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
     demas. Las ramas siguen teniendo sentido: son "si la proxima en irse es
     esta, como queda la carrera", solo que ahora quien se va puede ser
     cualquiera y no solo una de las seis nominadas."""
+    if semanas_a_final is None:
+        semanas_a_final = fm.semanas_hasta_final()
     rng = np.random.default_rng(seed)
     VIG = fm.VIG
     K = len(VIG)
@@ -99,10 +101,21 @@ def simular_conjunta(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
                 sale[fuera] += 1
             paso += 1
 
+        score = ps - kappa * m
+        if primero < 0:
+            # No hubo eliminacion por rechazo: la temporada arranca en la final
+            # (tres en juego) o el sorteo pidio cuatro finalistas con cuatro en
+            # juego. La primera en irse es entonces el tercer puesto, que lo
+            # decide el apoyo. Antes esto seguia con primero = -1, que en NumPy
+            # es la ULTIMA fila: la rama se le cargaba a quien cerraba la lista.
+            sc = score[vivos]
+            pv = np.exp(bet * (sc - sc.max())); pv /= pv.sum()
+            primero = vivos.pop(fm._elegir(1 / np.maximum(pv, 1e-12), rng.random()))
+            sale[primero] += 1
+
         for i in vivos:
             conj_final[primero, i] += 1
 
-        score = ps - kappa * m
         f = list(vivos)
         while len(f) > 1:
             sc = score[f]

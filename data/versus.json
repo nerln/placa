@@ -1,16 +1,16 @@
 {
- "generado": "2026-09-02",
+ "generado": "2026-09-09",
  "que_es": "Un segundo parámetro para el segundo tiempo de la placa. El modelo usa el rechazo para las dos preguntas que tiene una gala, y en la del mano a mano va al revés: sobre las siete galas del backtest, su favorito llegó al mano a mano cuatro veces y lo ganó las cuatro.",
  "supuestos": {
   "sigma_prior": 1.0,
   "n_sims": 200000,
   "semilla": 20260818
  },
- "n_versus": 14,
+ "n_versus": 13,
  "theta": {
   "Sol": 1.144,
   "Luana": 0.826,
-  "Yipio": 0.521,
+  "Yipio": 0.337,
   "Zunino": 0.337,
   "Campanita": 0.116,
   "Titi": 0.116,
@@ -21,10 +21,10 @@
   "Manu": -0.254,
   "Nigro": -0.254,
   "Brian": -0.337,
+  "Pincoya": -0.337,
   "Nenu": -0.379,
   "Tatiluna": -0.379,
-  "Cola": -0.388,
-  "Pincoya": -0.521
+  "Cola": -0.388
  },
  "registro": {
   "Sol": [
@@ -36,7 +36,7 @@
    0
   ],
   "Yipio": [
-   2,
+   1,
    0
   ],
   "Zunino": [
@@ -79,6 +79,10 @@
    0,
    1
   ],
+  "Pincoya": [
+   0,
+   1
+  ],
   "Nenu": [
    0,
    1
@@ -90,10 +94,6 @@
   "Cola": [
    0,
    1
-  ],
-  "Pincoya": [
-   0,
-   2
   ]
  },
  "backtest": {
@@ -253,17 +253,13 @@
  "vigente": {
   "placa": [
    "Sol",
-   "Luana",
-   "Zilli",
    "Charlotte",
    "Yipio"
   ],
   "p_sale": {
-   "Sol": 0.2696,
-   "Yipio": 0.2142,
-   "Luana": 0.178,
-   "Zilli": 0.1754,
-   "Charlotte": 0.1628
+   "Yipio": 0.4567,
+   "Charlotte": 0.3557,
+   "Sol": 0.1876
   }
  },
  "aviso": "La regularidad tiene una parte que se muerde la cola: sólo se acumulan versus ganándolos. Y el n es minúsculo. Por eso esto se publica al lado del modelo y no en su lugar, y las dos quedan congeladas antes de cada gala."

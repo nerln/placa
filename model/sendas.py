@@ -51,9 +51,11 @@ MIN_N = 400                 # una senda con menos corridas no se publica
 
 def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
             n_sims=N_SIMS, kappa=0.0, sigma_psi_sem=0.20, beta_mu=0.85,
-            beta_sd=0.30, p3=0.70, semanas_a_final=4.0, seed=SEMILLA,
+            beta_sd=0.30, p3=0.70, semanas_a_final=None, seed=SEMILLA,
             usar_estado28=True):
     """El Monte Carlo del pronostico, guardando las dos primeras salidas."""
+    if semanas_a_final is None:
+        semanas_a_final = fm.semanas_hasta_final()
     rng = np.random.default_rng(seed)
     VIG = fm.VIG
     K = len(VIG)
@@ -66,6 +68,12 @@ def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
     # [primero, segundo, ganador] y [primero, segundo] para el denominador
     conj = np.zeros((K, K, K), dtype=np.int32)
     pares = np.zeros((K, K), dtype=np.int32)
+    # Temporadas con UNA sola salida antes de la ganadora: la semana de la
+    # final, con tres en juego, el lunes deja tercera a una y el miercoles ya
+    # es el mano a mano. No hay senda que elegir, pero la rama existe y el
+    # cuadro tiene que seguir sumando a la base.
+    conj1 = np.zeros((K, K), dtype=np.int32)     # (primera salida, ganadora)
+    solo1 = np.zeros(K, dtype=np.int32)
 
     for _ in range(n_sims):
         m = MU + SE * rng.standard_normal(K)
@@ -104,6 +112,12 @@ def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
 
         score = ps - kappa * m
         f = list(vivos)
+        if primero < 0:
+            # No hubo eliminacion por rechazo: la temporada arranca en la final.
+            # La primera en irse es el tercer puesto, y lo decide el apoyo.
+            sc = score[f]
+            pv = np.exp(bet * (sc - sc.max())); pv /= pv.sum()
+            primero = f.pop(fm._elegir(1 / np.maximum(pv, 1e-12), rng.random()))
         while len(f) > 1:
             sc = score[f]
             pv = np.exp(bet * (sc - sc.max())); pv /= pv.sum()
@@ -113,12 +127,14 @@ def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
             conj[primero, segundo, f[0]] += 1
             pares[primero, segundo] += 1
         else:
-            # Una temporada tan corta que no hubo segunda eliminacion. No puede
-            # pasar con nueve en juego y una final de tres o cuatro, pero si el
-            # plantel se achica esto deja de ser imposible y no debe romperse.
-            pass
+            # Una temporada con una sola salida antes de la ganadora: la semana
+            # de la final. Antes esto era un `pass`, y con tres en juego la
+            # corrida entera terminaba en cero temporadas y una division por
+            # cero.
+            conj1[primero, f[0]] += 1
+            solo1[primero] += 1
 
-    return conj, pares
+    return conj, pares, conj1, solo1
 
 
 def _fecha_corrida():
@@ -145,25 +161,26 @@ def main():
     print(f"placa: {', '.join(placa28) if hay_placa else 'sin definir todavia'}")
     print(f"simulando {N_SIMS:,} temporadas y guardando las dos primeras salidas…",
           flush=True)
-    conj, pares = simular(mu, se, omega, psi, se_psi, placa28, m28, s28, prop,
-                          usar_estado28=hay_placa)
+    conj, pares, conj1, solo1 = simular(mu, se, omega, psi, se_psi, placa28, m28, s28, prop,
+                                        usar_estado28=hay_placa)
 
     VIG = fm.VIG
     K = len(VIG)
-    total = int(pares.sum())
-    base = conj.sum((0, 1)) / total
-    sale1 = pares.sum(1) / total
+    total = int(pares.sum() + solo1.sum())
+    base = (conj.sum((0, 1)) + conj1.sum(0)) / total
+    n_rama = pares.sum(1) + solo1
+    sale1 = n_rama / total
 
     sendas = {}
     finas = []
     for a in range(K):
-        if pares[a].sum() < MIN_N:
+        if n_rama[a] < MIN_N:
             continue
         rama = {
             "p": float(sale1[a]),
-            "n": int(pares[a].sum()),
+            "n": int(n_rama[a]),
             # el cuadro despues de esa salida, antes de saber la siguiente
-            "p_gana": {VIG[i]: float(conj[a].sum(0)[i] / pares[a].sum()) for i in range(K)},
+            "p_gana": {VIG[i]: float((conj[a].sum(0)[i] + conj1[a, i]) / n_rama[a]) for i in range(K)},
             # y quien es el siguiente candidato a irse, en ese mundo
             "sale2": {VIG[b]: float(pares[a, b] / pares[a].sum())
                       for b in range(K) if pares[a, b] > 0},

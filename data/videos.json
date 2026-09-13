@@ -1,61 +1,115 @@
 {
  "_nota": "Videos oficiales del programa de los que se recogen comentarios. Se eligen los de esta semana y de esta placa: los de semanas anteriores hablan de otra gente. Ampliar la lista amplía el corpus, y conviene decirlo cuando se amplía.",
- "recogido": "2026-09-02",
+ "recogido": "2026-09-13",
  "videos": [
   {
-   "id": "4akGUnE2JY8",
-   "titulo": "PROGRAMA 161 [01-09-26]",
-   "que": "PROGRAMA 161 [01-09-26]",
-   "fecha": "2026-09-01"
+   "id": "DuzpaBLKlI0",
+   "titulo": "Elogios y palitos en “El CV de GH”: así opinaron las finalistas sobre sus compañeras",
+   "que": "Elogios y palitos en “El CV de GH”: así opinaron las finalistas sobre sus compañeras",
+   "fecha": "2026-09-10"
   },
   {
-   "id": "xspp3wS2Qiw",
-   "titulo": "El debate con Pincoya",
-   "que": "El debate con Pincoya",
-   "fecha": "2026-09-02"
+   "id": "u-Cgie2NaWQ",
+   "titulo": "QUEDAN TRES FINALISTAS - PROGRAMA 169 [09-09-26] Gran Hermano Generación Dorada",
+   "que": "QUEDAN TRES FINALISTAS - PROGRAMA 169 [09-09-26] Gran Hermano Generación Dorada",
+   "fecha": "2026-09-10"
   },
   {
-   "id": "UKSBJP-s2_Q",
-   "titulo": "Zilli se reencontró con su amiga Gladys",
-   "que": "Zilli se reencontró con su amiga Gladys",
-   "fecha": "2026-09-02"
+   "id": "TNSW-8qskjA",
+   "titulo": "Una hora de las 3 finalistas durmiendo en la casa",
+   "que": "Una hora de las 3 finalistas durmiendo en la casa",
+   "fecha": "2026-09-10"
   },
   {
-   "id": "wnJb-Wa21a4",
-   "titulo": "Mariana Nannis y Alex Caniggia en el «derecho a réplica»",
-   "que": "Mariana Nannis y Alex Caniggia en el «derecho a réplica»",
-   "fecha": "2026-09-02"
+   "id": "hVzZ455A66M",
+   "titulo": "Primer día de las 3 finalistas en la casa",
+   "que": "Primer día de las 3 finalistas en la casa",
+   "fecha": "2026-09-10"
   },
   {
-   "id": "KV8GQ8OaiD4",
-   "titulo": "Sol llora y le dice «te amo» a Pincoya",
-   "que": "Sol llora y le dice «te amo» a Pincoya",
-   "fecha": "2026-09-01"
+   "id": "oaoAvXjZTMo",
+   "titulo": "Poca charla y cada una en la suya: la mañana de Charlotte, Sol y Yipio",
+   "que": "Poca charla y cada una en la suya: la mañana de Charlotte, Sol y Yipio",
+   "fecha": "2026-09-10"
   },
   {
-   "id": "nCoxpyC8cLM",
-   "titulo": "El primer almuerzo sin Pincoya",
-   "que": "El primer almuerzo sin Pincoya",
-   "fecha": "2026-09-01"
+   "id": "s2wdQ5HKJmY",
+   "titulo": "Charlotte y Yipio a pura risas y charla: ¿No hablan con Sol?",
+   "que": "Charlotte y Yipio a pura risas y charla: ¿No hablan con Sol?",
+   "fecha": "2026-09-10"
   },
   {
-   "id": "nurKDneP7Kk",
-   "titulo": "Charlotte y Cola no se separan",
-   "que": "Charlotte y Cola no se separan",
-   "fecha": "2026-09-01"
+   "id": "XyP3tV9ZKuw",
+   "titulo": "Sol se confiesa y defiende su juego polémico: \"yo solo jugué\" ",
+   "que": "Sol se confiesa y defiende su juego polémico: \"yo solo jugué\" ",
+   "fecha": "2026-09-10"
   },
   {
-   "id": "BaYdutHHvbk",
-   "titulo": "«Creo que nunca te nominé»: Sol y Zilli",
-   "que": "«Creo que nunca te nominé»: Sol y Zilli",
-   "fecha": "2026-09-01"
+   "id": "ioyXf54GKOw",
+   "titulo": "¡Algo inesperado! Yipio y Sol juntas limpiando cada rincón de la cocina",
+   "que": "¡Algo inesperado! Yipio y Sol juntas limpiando cada rincón de la cocina",
+   "fecha": "2026-09-10"
   },
   {
-   "id": "03izaComqqk",
-   "titulo": "Cola agradeció el apoyo de los «charlotistas»",
-   "que": "Cola agradeció el apoyo de los «charlotistas»",
-   "fecha": "2026-09-01"
+   "id": "ScRDapJQ_tM",
+   "titulo": "Yipio y Charlotte a pura diversión: no paran de soprender con sus ocurrencias",
+   "que": "Yipio y Charlotte a pura diversión: no paran de soprender con sus ocurrencias",
+   "fecha": "2026-09-10"
+  },
+  {
+   "id": "mquXcPTEmKA",
+   "titulo": "Yipio, Sol y Charlotte compartieron el almuerzo y charlaron de todo",
+   "que": "Yipio, Sol y Charlotte compartieron el almuerzo y charlaron de todo",
+   "fecha": "2026-09-10"
+  },
+  {
+   "id": "vYmmftX9z-w",
+   "titulo": "Yipio, Charlotte y Solange vieron sus castings y se hicieron elogios obligados",
+   "que": "Yipio, Charlotte y Solange vieron sus castings y se hicieron elogios obligados",
+   "fecha": "2026-09-11"
+  },
+  {
+   "id": "OrMYLW37ewg",
+   "titulo": "Últimos días en la casa: así se despiertan las jugadoras",
+   "que": "Últimos días en la casa: así se despiertan las jugadoras",
+   "fecha": "2026-09-11"
+  },
+  {
+   "id": "ZRXHvF1AqGM",
+   "titulo": "La casa más dividida que nunca entre las últimas tres participantes",
+   "que": "La casa más dividida que nunca entre las últimas tres participantes",
+   "fecha": "2026-09-11"
+  },
+  {
+   "id": "HtR-vxnuA8I",
+   "titulo": "La reflexión de Yipio sobre las PERSONALIDADES de la casa",
+   "que": "La reflexión de Yipio sobre las PERSONALIDADES de la casa",
+   "fecha": "2026-09-11"
+  },
+  {
+   "id": "PtH99bkK8mw",
+   "titulo": "Sol hace un repaso de todo lo que vivió en la casa",
+   "que": "Sol hace un repaso de todo lo que vivió en la casa",
+   "fecha": "2026-09-11"
+  },
+  {
+   "id": "KMGboojnxCE",
+   "titulo": "ÚLTIMA NOCHE DE LOS EX - PROGRAMA 171 - (11/09/2026) Gran Hermano Generación Dorada",
+   "que": "ÚLTIMA NOCHE DE LOS EX - PROGRAMA 171 - (11/09/2026) Gran Hermano Generación Dorada",
+   "fecha": "2026-09-12"
+  },
+  {
+   "id": "WDcxzFd8gY8",
+   "titulo": "Las finalistas de Gran Hermano Generación Dorada probaron hacer un programa de radio",
+   "que": "Las finalistas de Gran Hermano Generación Dorada probaron hacer un programa de radio",
+   "fecha": "2026-09-12"
+  },
+  {
+   "id": "gwvnBh0drVg",
+   "titulo": "Yipio no deja atrás sus problemas con Sol y Charlotte intermedia",
+   "que": "Yipio no deja atrás sus problemas con Sol y Charlotte intermedia",
+   "fecha": "2026-09-12"
   }
  ],
- "_nota_corrida": "Corpus de la placa positiva final: los videos de los dos días desde que se abrió. El signo de «al 9009» va al revés que la semana pasada."
+ "_nota_corrida": "Lista refrescada el 13 de septiembre de 2026 para la final: los 18 videos del canal entre el 10 y el 13 de septiembre que hablan de las tres finalistas. La lista anterior era del 1 y 2 de septiembre, y la tarea horaria estuvo once días releyendo comentarios sobre una placa que ya no existía: el sentimiento que alimentaba el cruce era de antes de que se fueran Pincoya, Mariela, Zilli y Luana. Las fechas salen del «hace N días» de YouTube, así que tienen un día de margen."
 }

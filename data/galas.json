@@ -330,24 +330,6 @@
    "eliminado": "Pincoya"
   },
   {
-   "gala": 31,
-   "fecha": "2026-08-31",
-   "tipo": "negativo",
-   "placa": [
-    "Charlotte",
-    "Yipio",
-    "Pincoya",
-    "Mariela"
-   ],
-   "salvados_cuota": {},
-   "versus": {
-    "Pincoya": 58.1,
-    "Yipio": 41.9
-   },
-   "completa": false,
-   "eliminado": "Pincoya"
-  },
-  {
    "gala": 32,
    "fecha": "2026-09-02",
    "tipo": "negativo",
@@ -379,19 +361,38 @@
    "versus": {},
    "completa": false,
    "eliminado": "Zilli"
+  },
+  {
+   "gala": 34,
+   "fecha": "2026-09-09",
+   "tipo": "negativo",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Charlotte",
+    "Yipio"
+   ],
+   "salvados_cuota": {},
+   "versus": {},
+   "completa": false,
+   "eliminado": "Luana"
   }
  ],
  "placa_vigente": {
-  "gala": 34,
-  "fecha": "2026-09-09",
-  "fecha_nominacion": "2026-09-07",
+  "gala": 35,
+  "fecha": "2026-09-14",
+  "fecha_nominacion": "2026-09-09",
   "integrantes": [
    "Sol",
-   "Luana",
    "Charlotte",
    "Yipio"
   ],
   "inmune_lider": "",
   "libres": []
+ },
+ "final": {
+  "_nota": "Fechas de la final, para que el modelo mida cuánto le queda de deriva a ψ: hasta acá se simulaba con cuatro semanas fijas.",
+  "tercer_puesto": "2026-09-14",
+  "ganadora": "2026-09-16"
  }
 }

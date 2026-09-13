@@ -236,6 +236,42 @@ def textos_al_dia():
     return 0
 
 
+def corpus_de_esta_placa():
+    """Los comentarios tienen que ser de videos de esta semana.
+
+    data/videos.json es una lista escrita a mano, y la tarea horaria la relee
+    sin preguntarse de cuando es. El 13 de septiembre de 2026 se descubrio que
+    llevaba once dias leyendo comentarios de videos del 1 y 2 de septiembre: el
+    sentimiento que alimentaba el cruce era el de una placa en la que ya no
+    quedaba nadie. Ningun dato estaba mal; el corpus era de otra semana.
+
+    La regla: el video mas nuevo de la lista tiene que ser de menos de siete
+    dias antes de la gala que viene. No mira la fecha de hoy, para que dos
+    corridas sobre los mismos datos digan lo mismo.
+    """
+    import datetime as dt
+    vp = ROOT / "data" / "videos.json"
+    if not vp.exists():
+        print("  (sin data/videos.json: no hay corpus que fechar)")
+        return 0
+    vids = json.loads(vp.read_text()).get("videos") or []
+    fechas = sorted(v.get("fecha") for v in vids if v.get("fecha"))
+    act = json.loads((ROOT / "data" / "actualidad.json").read_text())
+    gala = (act.get("proxima_gala") or {}).get("fecha")
+    if not fechas or not gala:
+        print("  (sin fechas de videos o sin gala fechada: no se comprueba el corpus)")
+        return 0
+    dias = (dt.date.fromisoformat(gala) - dt.date.fromisoformat(fechas[-1])).days
+    if dias >= 7:
+        return fallo(f"el corpus de comentarios es viejo: el video mas nuevo de data/videos.json "
+                     f"es del {fechas[-1]} y la gala es el {gala}, {dias} dias despues. "
+                     "Rehacer la lista con los videos del canal que hablen de esta placa "
+                     "(docs/canovaccio.md, «La final») y volver a correr model/comentarios.py.")
+    print(f"  ok · corpus de comentarios de esta placa (video mas nuevo: {fechas[-1]}, "
+          f"{dias} dias antes de la gala)")
+    return 0
+
+
 def javascript_valido():
     """El guion de la pagina tiene que parsear.
 
@@ -377,7 +413,7 @@ def main():
     err = (reconstruible() + probabilidades() + ramas_cierran() +
            identidad_telefe() + tarjeta_al_dia() + firma_coherente() +
            riesgo_coherente() + datos_sin_cache() + apuesta_de_esta_placa() +
-           textos_al_dia() +
+           textos_al_dia() + corpus_de_esta_placa() +
            javascript_valido() + css_sin_javascript())
     if err:
         print(f"\n{err} comprobacion(es) fallaron: no se publica")

@@ -1,6 +1,6 @@
 {
  "_nota": "Plantel vigente y atributos que consume el modelo. Este archivo es el que edita model/actualizar.py despues de cada gala: saca a quien fue eliminado, recalcula las propensiones de nominacion y deja el resto intacto. Nada de esto vive ya dentro del codigo.",
- "actualizado": "2026-09-07",
+ "actualizado": "2026-09-09",
  "edicion": "Gran Hermano Argentina: Generación Dorada",
  "temporada": 13,
  "estreno": "2026-02-23",
@@ -16,7 +16,7 @@
    "ingreso": "2026-05-20",
    "previa": "GH VIP España 4 (2016) · 9.ª",
    "papel": "La mediática. Fandom propio heredado, socialmente aislada dentro de la casa.",
-   "placas_recientes": 6,
+   "placas_recientes": 7,
    "votos_recientes": 1,
    "bono_fulminante": 0.45,
    "genero": "f",
@@ -25,27 +25,6 @@
     "x": "CHCaniggia",
     "conf": "media",
     "nota": "su Instagram está desactivado mientras está en la casa"
-   }
-  },
-  {
-   "apodo": "Luana",
-   "nombre": "Luana Fernández",
-   "edad": 28,
-   "ciudad": "José C. Paz",
-   "provincia": "Buenos Aires",
-   "pais": "AR",
-   "ingreso": "2026-02-24",
-   "previa": "Combate (Argentina)",
-   "papel": "Conflictiva y protagonista. La más votada del voto positivo del 16/07.",
-   "placas_recientes": 6,
-   "votos_recientes": 5,
-   "bono_fulminante": 0.0,
-   "genero": "f",
-   "redes": {
-    "ig": "luanafernandezok_",
-    "x": "lulafernandezok",
-    "conf": "alta",
-    "verificado": "2026-08-11"
    }
   },
   {
@@ -58,7 +37,7 @@
    "ingreso": "2026-05-20",
    "previa": "Sin ediciones previas · volvió por repechaje con 35,6%",
    "papel": "Comediante uruguaya. Líder e inmune de la semana 24.",
-   "placas_recientes": 9,
+   "placas_recientes": 10,
    "votos_recientes": 11,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -79,7 +58,7 @@
    "ingreso": "2026-05-31",
    "previa": "GH Argentina 6 (2010-11) · volvió por Golden Ticket",
    "papel": "La villana. Ganó tres versus seguidos con 48,2%, 44,7% y 46,7%.",
-   "placas_recientes": 10,
+   "placas_recientes": 11,
    "votos_recientes": 17,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -92,6 +71,33 @@
   }
  ],
  "eliminados_recientes": [
+  {
+   "apodo": "Luana",
+   "fecha": "2026-09-09",
+   "modo": "eliminado",
+   "detalle": "cuarto puesto: 6,6% de los votos positivos (Medios Rioja, El Ancasti); la definición de las tres finalistas confirmada por Infobae y La Nación",
+   "ficha": {
+    "apodo": "Luana",
+    "nombre": "Luana Fernández",
+    "edad": 28,
+    "ciudad": "José C. Paz",
+    "provincia": "Buenos Aires",
+    "pais": "AR",
+    "ingreso": "2026-02-24",
+    "previa": "Combate (Argentina)",
+    "papel": "Conflictiva y protagonista. La más votada del voto positivo del 16/07.",
+    "placas_recientes": 6,
+    "votos_recientes": 5,
+    "bono_fulminante": 0.0,
+    "genero": "f",
+    "redes": {
+     "ig": "luanafernandezok_",
+     "x": "lulafernandezok",
+     "conf": "alta",
+     "verificado": "2026-08-11"
+    }
+   }
+  },
   {
    "apodo": "Zilli",
    "fecha": "2026-09-07",
@@ -247,12 +253,6 @@
    "fecha": "2026-08-03",
    "modo": "eliminada",
    "detalle": "perdió el versus contra Sol con 53,3% y se negó a salir de la casa"
-  },
-  {
-   "apodo": "Juanicar",
-   "fecha": "2026-08-06",
-   "modo": "abandono",
-   "detalle": "se fue estando en placa por un problema de salud de su madre"
   }
  ],
  "_nota_genero": "genero: 'f'/'m'. Al 10/08/2026 no queda ningun varon en juego, confirmado por Mi Telefe en la nota de la eliminacion de Hanssen.",

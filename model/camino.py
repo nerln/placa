@@ -45,7 +45,7 @@ SEMILLA = 20260808      # la del pronostico, para que sea la misma corrida
 
 def correr(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop, quien,
            n_sims=N_SIMS, kappa=0.0, sigma_psi_sem=0.20, beta_mu=0.85,
-           beta_sd=0.30, p3=0.70, semanas_a_final=4.0, seed=SEMILLA,
+           beta_sd=0.30, p3=0.70, semanas_a_final=None, seed=SEMILLA,
            usar_estado28=True):
     """El Monte Carlo del pronostico, guardando el detalle de cada temporada.
 
@@ -56,6 +56,8 @@ def correr(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop, quien,
     semilla tienen que dar la misma probabilidad de ganar, y el script lo
     comprueba al final.
     """
+    if semanas_a_final is None:
+        semanas_a_final = fm.semanas_hasta_final()
     rng = np.random.default_rng(seed)
     VIG = fm.VIG
     K = len(VIG); ix = {n: i for i, n in enumerate(VIG)}

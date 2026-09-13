@@ -94,6 +94,23 @@
     "Charlotte",
     "Yipio"
    ]
+  },
+  {
+   "gala": 35,
+   "fecha_gala": "2026-09-14",
+   "congelado": "2026-09-13T17:31-0300",
+   "archivo": "galas/35.html",
+   "historial": "https://github.com/nerln/placa/commits/main/web/galas/35.html",
+   "llamadas": {
+    "modelo": "Yipio 45,4%",
+    "dos tiempos": "Yipio 45,7%",
+    "cruce": "Sol 58,1%"
+   },
+   "placa": [
+    "Sol",
+    "Charlotte",
+    "Yipio"
+   ]
   }
  ]
 }

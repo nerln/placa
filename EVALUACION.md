@@ -416,3 +416,42 @@ mismo nombre rompería la serie.
 Queda anotado que la serie A se interrumpe con **1 acierto de 3**, que es el único
 acierto de toda la página, y que la interrupción es por cambio de reglas del
 programa y no por su resultado.
+
+---
+
+# Apéndice del 13 de septiembre de 2026: la final, en dos noches
+
+Nada de lo que está arriba se toca. Esto agrega, y se escribe la víspera.
+
+Telefe confirmó la final en dos noches (Infobae y Santa Fe Actual, 10 de
+septiembre): el **lunes 14** el voto positivo entre las tres finalistas deja
+tercera a la que menos junte; el **miércoles 16** las otras dos se definen con el
+mismo voto, y gana la más votada.
+
+**Cómo se puntúa el lunes 14.** Como una gala más de la pregunta 1, con la
+regla de arriba tal cual: la placa son las tres finalistas, «quién se va» es
+quién queda tercera, y cada serie congelada antes de las 22.15 se puntúa con
+Brier multiclase contra el azar de 1/3. Es la misma lectura que se les dio a las
+galas 32, 33 y 34, que también se votaron a favor. Ninguna serie cambia de
+definición por ser la final. El modelo, que hasta acá sacaba «quién se va» del
+rechazo μ, para esta noche lo saca del apoyo ψ, porque no hay placa por rechazo:
+es la misma corrida de siempre, en la que la salida siguiente es el tercer puesto
+de la final. Se declara acá porque es un cambio de mecanismo, no de parámetros,
+y porque estaba escrito desde el 8 de agosto que la final se decide con ψ.
+
+**Cómo se puntúa el miércoles 16.** Es la pregunta 2, la de siempre: la
+probabilidad de ganar de la última corrida publicada antes de la gala, con log
+score y Brier contra las dos baselines. La corrida que vale es la última con
+fecha anterior a las 22.15 del 16 de septiembre, y queda archivada.
+
+**Lo que no se puntúa.** Las encuestas que circulan sobre la final preguntan
+quién gana, no quién queda tercera, y la única encuestadora con historial está
+calibrada contra galas de voto en contra. No entran al modelo ni a ninguna
+serie, y se muestran en la página con su número y su fuente.
+
+**Corrección declarada, no de resultado.** Hasta hoy los cuatro simuladores
+(`final_model`, `ramas`, `camino`, `sendas`) llevaban una deriva de ψ de cuatro
+semanas fijas, escrita en la firma de la función; con la final fechada se lee de
+los datos (`galas.json → final.ganadora`) y hoy vale una semana. Achica la
+incertidumbre de ψ en la cuenta de la ganadora; se anota para que nadie tenga
+que descubrirlo comparando dos corridas.

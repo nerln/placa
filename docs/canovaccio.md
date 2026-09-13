@@ -386,3 +386,42 @@ La lista completa, junta, porque es la lista de lo que va a fallar:
   nada. `archivar.py` lo impide.
 - **No se arregla la comprobación en vez del dato.** Si `verificar.py` falla, lo
   que está mal es lo que se iba a publicar.
+
+---
+
+## La final: el mismo ciclo, dos veces, y otra pregunta
+
+Escrito el 13 de septiembre de 2026, la víspera. La final va en dos noches
+(lunes 14: tercer puesto; miércoles 16: ganadora) y las dos se votan a favor.
+El ciclo de arriba se recorre entero para cada una, con estas diferencias:
+
+- **La pregunta del lunes no es «quién se va».** Nadie se va de la casa: una
+  queda tercera. Todo lo que la página decía con «se va», «eliminación»,
+  «riesgo» tiene que leerse desde `LA_FINAL()` en la plantilla, que existe
+  cuando `data/actualidad.json → proxima_gala.final` trae las dos fechas. Sin
+  ese campo la página vuelve a hablar de eliminaciones, que es lo correcto
+  cualquier otra semana.
+- **El modelo cambia de escala, no de código.** Con tres en juego no hay placa
+  por rechazo: la corrida de siempre empieza en la final y la primera salida
+  —el tercer puesto— la decide ψ. `p_sale28` es esa probabilidad. Los cuatro
+  simuladores lo hacen igual (`final_model`, `ramas`, `camino`, `sendas`).
+- **La deriva de ψ se lee de las fechas.** `galas.json → final.ganadora` menos
+  la fecha de la corrida. Eran cuatro semanas fijas.
+- **Cargar el lunes** es `actualizar.py --gala 35 --fecha 2026-09-14 --placa
+  Sol,Charlotte,Yipio --eliminado <tercera> --nueva-placa <las dos>
+  --fecha-proxima 2026-09-16`, con dos fuentes como siempre, y después rehacer
+  `proxima_gala` a mano: `tipo`, `fases`, `regla` y `final` describen entonces
+  la noche de la ganadora. `final.tercer_puesto` no se toca, que ya pasó.
+- **Cargar el miércoles** no tiene guion. La ganadora no «sale»: hay que
+  escribir el resultado de la pregunta 2 con la última corrida archivada antes
+  de las 22.15, según el apéndice del 13 de septiembre de `EVALUACION.md`, y la
+  página tiene que dejar de anunciar una gala. Es el único paso del ciclo que
+  no se ensayó nunca, y se hace con calma el jueves si hace falta.
+- **Las encuestas de la final no entran.** Preguntan quién gana; la única con
+  historial está calibrada contra voto en contra. Viven en
+  `actualidad.encuestas_final` y se muestran, no se promedian.
+- **`data/videos.json` hay que refrescarlo a mano.** El 13 de septiembre se
+  descubrió que la tarea horaria llevaba once días releyendo comentarios de
+  videos del 1 y 2 de septiembre: el sentimiento del cruce era de una placa que
+  ya no existía. La lista de videos no se actualiza sola; cada semana se rehace
+  con los del canal que hablen de la placa vigente.

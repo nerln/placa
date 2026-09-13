@@ -167,23 +167,14 @@
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "ventana": "24 tarjetas horarias de trends24.in/argentina",
   "desde": null,
-  "hasta": "2026-09-09T21:12-0300",
-  "medido": "2026-09-09T21:12-0300",
+  "hasta": "2026-09-13T17:20-0300",
+  "medido": "2026-09-13T17:20-0300",
   "fase": "positivo",
-  "terminos": [
-   {
-    "txt": "SOL AL 9009",
-    "mejor": 15,
-    "horas": 16,
-    "reciente": 17,
-    "quien": "Sol",
-    "tipo": "campaña de voto"
-   }
-  ],
+  "terminos": [],
   "variantes": [],
   "sin_consigna": {
    "quienes": [
-    "Luana",
+    "Sol",
     "Charlotte",
     "Yipio"
    ],
@@ -275,14 +266,13 @@
   "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
  },
  "proxima_gala": {
-  "_nota": "Sigue la placa positiva final: se vota por la favorita y se va la que menos junte. Quedan cinco.",
-  "gala": 34,
-  "tipo": "eliminación",
-  "fecha": "2026-09-09",
+  "_nota": "La final va en dos noches. Lunes 14: voto positivo entre las tres, la que menos junte queda tercera. Miércoles 16: las dos que siguen, y la más votada gana. Quedan tres.",
+  "gala": 35,
+  "tipo": "final: tercer puesto",
+  "fecha": "2026-09-14",
   "fecha_nominacion": null,
   "placa": [
    "Sol",
-   "Luana",
    "Charlotte",
    "Yipio"
   ],
@@ -290,50 +280,51 @@
   "todas_finalistas": true,
   "fases": [
    {
-    "desde": "2026-09-02",
-    "hasta": "2026-09-09",
+    "desde": "2026-09-09",
+    "hasta": "2026-09-14",
     "signo": "positivo",
-    "desde_hora": "2026-09-02T23:30-03:00",
-    "hasta_hora": "2026-09-09T22:15-03:00",
-    "que": "Se vota por la favorita. Se va la que menos votos positivos junte.",
-    "detalle": "La placa positiva final sigue abierta hasta la final del 14 de septiembre."
+    "desde_hora": "2026-09-09T23:30-03:00",
+    "hasta_hora": "2026-09-14T22:15-03:00",
+    "que": "Se vota por la favorita. La que menos votos junte queda tercera; las otras dos van a la definición del miércoles 16.",
+    "detalle": "Primera noche de la final. La ganadora se conoce el miércoles 16 de septiembre entre las dos que sigan."
    }
   ],
-  "regla": "Eliminación los lunes y los miércoles hasta la final del 14 de septiembre.",
+  "regla": "Final en dos noches: el lunes 14 el voto positivo define el tercer puesto; el miércoles 16, la ganadora entre las dos que quedan.",
   "pesos_nominacion": {
    "jugadora": 0,
    "visita": 0,
-   "extra": "No hay nominación: la placa es fija hasta la final."
+   "extra": "No hay nominación: son las tres finalistas."
   },
   "fuentes": [
-   "https://www.infobae.com/teleshow/2026/09/03/luana-versus-mariela-prieto-en-gran-hermano-generacion-dorada-cual-fue-la-finalista-que-quedo-eliminada/"
-  ]
+   "https://www.infobae.com/teleshow/2026/09/10/cuando-sera-la-gran-final-de-gran-hermano-generacion-dorada-todos-los-detalles/",
+   "https://www.santafeactual.com/2026/09/asi-sera-la-ultima-semana-de-gran.html",
+   "https://www.infobae.com/teleshow/2026/09/10/gran-hermano-generacion-dorada-definio-a-sus-tres-finalistas-quien-fue-la-ultima-eliminada/",
+   "https://www.lanacion.com.ar/espectaculos/quien-se-fue-de-gran-hermano-este-miercoles-9-de-septiembre-nid10092026/"
+  ],
+  "final": {
+   "tercer_puesto": "2026-09-14",
+   "ganadora": "2026-09-16",
+   "debate": "2026-09-15",
+   "noche_de_campeonas": "2026-09-17",
+   "signo": "positivo",
+   "premio": "70 millones de pesos más los intereses de una inversión, una vivienda, una moto y cerveza por un año"
+  }
  },
  "termometro_placa": {
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "fase": "positivo",
-  "medido": "2026-09-09T21:12-0300",
+  "medido": "2026-09-13T17:20-0300",
   "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». La placa es positiva, así que estas consignas piden que se QUEDE.",
   "ventana": {
    "desde": null,
-   "hasta": "2026-09-09T21:12-0300",
+   "hasta": "2026-09-13T17:20-0300",
    "_nota": "24 tarjetas horarias, que es lo que el sitio publica gratis."
   },
   "horas_son_piso": true,
-  "consignas": [
-   {
-    "termino": "SOL AL 9009",
-    "quien": "Sol",
-    "pico": 15,
-    "reciente": 17,
-    "horas": 16,
-    "fuentes": 1,
-    "fuente": "trends24.in/argentina, 24 tarjetas horarias"
-   }
-  ],
+  "consignas": [],
   "sin_consigna": {
    "quienes": [
-    "Luana",
+    "Sol",
     "Charlotte",
     "Yipio"
    ],
@@ -391,5 +382,58 @@
    }
   ]
  },
- "videos_recogido": "2026-08-31"
+ "videos_recogido": "2026-08-31",
+ "encuestas_final": {
+  "_nota": "Encuestas que circulan sobre la FINAL, recogidas de prensa el 13 de septiembre. Preguntan «quién gana», no «a quién echar», y por eso NO entran al modelo: la única encuestadora con historial calibrado (Fefe Bongiorno) está medida contra galas de voto en contra, y su sesgo ahí no dice nada sobre una pregunta al revés. Se muestran para compararlas, no para promediarlas.",
+  "gala": 35,
+  "fecha": "2026-09-13",
+  "pregunta": "quién gana",
+  "fuente": "https://exitoina.perfil.com/noticias/television/quien-sera-ganadora-gran-hermano-generacion-dorada-lunes-14-septiembre-segun-encuestas.phtml",
+  "items": [
+   {
+    "quien": "Fefe Bongiorno",
+    "canal": "X",
+    "n": 27500,
+    "cuota": {
+     "Sol": 57.0,
+     "Yipio": 29.4,
+     "Charlotte": 10.6
+    },
+    "con_historial": true
+   },
+   {
+    "quien": "Fefe Bongiorno",
+    "canal": "Instagram",
+    "n": null,
+    "cuota": {
+     "Yipio": 40.0,
+     "Charlotte": 31.0,
+     "Sol": 27.0
+    },
+    "con_historial": true,
+    "nota": "parcial: la nota la cita como «lideró por un momento»"
+   },
+   {
+    "quien": "@gh_trivia",
+    "canal": "Instagram",
+    "n": null,
+    "cuota": {
+     "Yipio": 67.0,
+     "Charlotte": 20.0,
+     "Sol": 14.0
+    },
+    "con_historial": false
+   },
+   {
+    "quien": "tuvotacion.com",
+    "canal": "web",
+    "n": null,
+    "cuota": {
+     "Yipio": 73.2
+    },
+    "con_historial": false,
+    "nota": "la nota sólo da el primer puesto"
+   }
+  ]
+ }
 }

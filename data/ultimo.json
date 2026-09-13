@@ -2,6 +2,30 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-09-13",
+   "titulo": "La final va en dos noches: el lunes 14 el tercer puesto, el miércoles 16 la ganadora",
+   "detalle": "Quedan tres: Sol, Charlotte y Yipio. El lunes 14 se vota a la favorita y la que menos junte queda tercera; el miércoles 16 las otras dos se definen con el mismo voto positivo. Entre medio, el martes, la gala debate con la tercera. El premio: 70 millones de pesos más los intereses de una inversión, una vivienda, una moto y cerveza por un año.",
+   "afecta": "La página cambia de pregunta. «Quién se va» deja de existir: el lunes nadie se va de la casa, una queda tercera, y eso lo decide el apoyo (ψ), no el rechazo (μ) que el modelo venía usando para las eliminaciones. La cuenta de la ganadora, la de los 70 millones, es la que esta página calcula desde marzo y hoy da Charlotte 45 %, Sol 34 %, Yipio 21 %. Para el tercer puesto el modelo da Yipio 45 %, Sol 30 %, Charlotte 24 %, y el cruce —que acaba de acertar su primera gala— se recalcula cada hora hasta el lunes.",
+   "impacto": "alto",
+   "fuente": "https://www.infobae.com/teleshow/2026/09/10/cuando-sera-la-gran-final-de-gran-hermano-generacion-dorada-todos-los-detalles/"
+  },
+  {
+   "fecha": "2026-09-09",
+   "titulo": "Se fue Luana con el 6,6 %, y el cruce acertó por primera vez",
+   "detalle": "Cuarto puesto. Luana era la única del elenco original que nunca había salido de la casa. Los salvados se cantaron en orden aleatorio, así que la gala no revela más ranking que el último puesto.",
+   "afecta": "El cruce la había puesto primera para irse (33 %) contra Sol (32 %), y es su primer acierto en tres galas puntuadas. El modelo le daba el 10,7 %, tercera de cuatro, y va cero de seis. La apuesta y dos tiempos no tenían predicción congelada para esta gala.",
+   "impacto": "alto",
+   "fuente": "https://www.infobae.com/teleshow/2026/09/10/gran-hermano-generacion-dorada-definio-a-sus-tres-finalistas-quien-fue-la-ultima-eliminada/"
+  },
+  {
+   "fecha": "2026-09-07",
+   "titulo": "Se fue Zilli con el 2,1 % de los votos positivos",
+   "detalle": "Quinto puesto. La placa positiva siguió con cuatro: Sol, Luana, Charlotte y Yipio, para el miércoles 9.",
+   "afecta": "Ninguna de las cuentas la puso primera para irse. Con la placa positiva, la apuesta sigue sin jugar: está declarada para el voto en contra.",
+   "impacto": "parcial",
+   "fuente": "https://www.infobae.com/teleshow/2026/09/10/gran-hermano-generacion-dorada-definio-a-sus-tres-finalistas-quien-fue-la-ultima-eliminada/"
+  },
+  {
    "fecha": "2026-09-03",
    "titulo": "La página empezó a refrescarse sola cada hora",
    "detalle": "Una tarea de GitHub relee cada hora las consignas del top-50 argentino, los comentarios del canal y vuelve a calcular el cruce, que además cambia por construcción con el reloj: su peso depende de cuánto falta para la gala. Pasa las mismas doce comprobaciones que una persona y, si alguna falla, no publica nada.",

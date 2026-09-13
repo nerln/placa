@@ -1,6 +1,6 @@
 {
- "generado": "2026-09-09",
- "momento": "2026-09-09T21:12-0300",
+ "generado": "2026-09-13",
+ "momento": "2026-09-13T17:23-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,85 +10,66 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 528,
- "nombran_a_alguien": 245,
- "con_signo": 76,
+ "total": 1056,
+ "nombran_a_alguien": 684,
+ "con_signo": 202,
  "por_jugadora": {
   "Sol": {
-   "contra": 10,
-   "favor": 3,
-   "sin_signo": 33
-  },
-  "Luana": {
-   "contra": 4,
-   "favor": 2,
-   "sin_signo": 10
+   "contra": 23,
+   "favor": 15,
+   "sin_signo": 137
   },
   "Charlotte": {
-   "contra": 4,
-   "favor": 46,
-   "sin_signo": 101
+   "contra": 6,
+   "favor": 92,
+   "sin_signo": 211
   },
   "Yipio": {
-   "contra": 10,
-   "favor": 24,
-   "sin_signo": 52
+   "contra": 16,
+   "favor": 131,
+   "sin_signo": 316
   }
  },
  "ejemplos": {
   "Sol": [
    {
-    "texto": "Definitivamente Pincoya y su soberbia le restan … ahora si creo que siempre le cayó bien Sol . \nSon tal para cual",
-    "signo": "contra"
-   },
-   {
-    "texto": "Sol y zilli afuera",
-    "signo": "contra"
-   },
-   {
-    "texto": "Pincoya no es por cariño salvó a sol lo hizo por soberbia creyó que ella le ganaba a yipio que tenía menos hate y le salió el tiro por la culata eso se llamo karma",
-    "signo": "contra"
-   }
-  ],
-  "Luana": [
-   {
-    "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
-    "signo": "contra"
-   },
-   {
-    "texto": "GRACIAS A DIOS SALIÓ ESTA MUJER,MIS VIOLENCIA, YIPIO ,CHARLOT A LA FINAL, EL MIERCOLES SE VA MARIELA O LUANA",
+    "texto": "Sol se cree la mejor persona pero tiene un corazon podrido de ambicion or ganar esa mujer por ganar es capazde todo ensucia à la gente y no le importa",
     "signo": "favor"
    },
    {
-    "texto": "Q te haces la buena sol,se te están viendo los hilos Reina,lloras xq no se fue yipio no por pintora,sabes cuando perdiste ?cuando luana se quedó y vos pedías por ella jajajja",
-    "signo": "favor"
+    "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
+    "signo": "contra"
+   },
+   {
+    "texto": "SOL AFUERA ES INSOPORTABLE",
+    "signo": "contra"
    }
   ],
   "Charlotte": [
    {
-    "texto": "Charlotte no debería ni hablar con la falsa, hipócrita de Luana.",
+    "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
     "signo": "contra"
    },
    {
-    "texto": "Gran momento Charlotte llorando nunca lo hizo en cámaras y lo hizo ,tuvo lo que tanto quiso escuchar a su mamá decir te quiero y justo el complemento de su hermano Vamos Charlotte ",
+    "texto": "Que inteligente Yipio !!que memoria !! Que lucidez; ella merece llegar a la final junto a Charlotte",
     "signo": "favor"
    },
    {
-    "texto": "Vamos Charlotte❤ a la final ❤🎉",
+    "texto": "Vamos Charlotte , felicidades 🩷",
     "signo": "favor"
    }
   ],
   "Yipio": [
    {
-    "texto": "Gran momento Charlotte llorando nunca lo hizo en cámaras y lo hizo ,tuvo lo que tanto quiso escuchar a su mamá decir te quiero y justo el complemento de su hermano Vamos Charlotte ",
+    "texto": "Vamos  Yipio, siempre domando a la  serpiente!",
     "signo": "favor"
    },
    {
-    "texto": "La amo a charlott ! Ojala llegue a la final con yipio ❤",
-    "signo": "favor"
+    "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
+    "signo": "contra"
    },
    {
-    "texto": "La alegria de Charlotte ❤ nos emociona 😊 a todos Vamos Yipio y Charlotte a la final.",
+    "texto": "👏🏽👏🏽 yipio 💪🏽 vamos yipio 🎉",
     "signo": "favor"
    }
   ]

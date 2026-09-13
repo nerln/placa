@@ -118,6 +118,16 @@
     "Yipio": 0.1837,
     "Sol": 0.1854
    }
+  },
+  {
+   "fecha": "2026-09-09",
+   "galas_hasta": 34,
+   "en_juego": 3,
+   "p_gana": {
+    "Charlotte": 0.4488,
+    "Yipio": 0.2068,
+    "Sol": 0.3445
+   }
   }
  ],
  "predicciones_gala": [
@@ -264,6 +274,22 @@
     "Luana": 0.106777,
     "Charlotte": 0.069355,
     "Yipio": 0.112085
+   },
+   "n_sims": 400000
+  },
+  {
+   "gala": 35,
+   "fecha_gala": "2026-09-14",
+   "corrida": "2026-09-09",
+   "placa": [
+    "Sol",
+    "Charlotte",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Sol": 0.304208,
+    "Charlotte": 0.241822,
+    "Yipio": 0.45397
    },
    "n_sims": 400000
   }
@@ -716,6 +742,58 @@
     "apuesta": null,
     "cruce": "2026-09-07T19:22-0300"
    }
+  },
+  {
+   "gala": 34,
+   "fecha": "2026-09-09",
+   "eliminado": "Luana",
+   "placa": [
+    "Sol",
+    "Luana",
+    "Charlotte",
+    "Yipio"
+   ],
+   "regla": "EVALUACION.md, escrita antes de que terminara la temporada",
+   "modelo": {
+    "p_del_eliminado": 0.1068,
+    "puesto": 3,
+    "de": 4,
+    "acerto": false,
+    "brier": 0.9851,
+    "brier_uniforme": 0.75,
+    "log_verosimilitud": -2.237,
+    "log_verosimilitud_uniforme": -1.3863,
+    "orden": [
+     "Sol",
+     "Yipio",
+     "Luana",
+     "Charlotte"
+    ]
+   },
+   "dos_tiempos": null,
+   "apuesta": null,
+   "cruce": {
+    "p_del_eliminado": 0.3289,
+    "puesto": 1,
+    "de": 4,
+    "acerto": true,
+    "brier": 0.6168,
+    "brier_uniforme": 0.75,
+    "log_verosimilitud": -1.112,
+    "log_verosimilitud_uniforme": -1.3863,
+    "orden": [
+     "Luana",
+     "Sol",
+     "Yipio",
+     "Charlotte"
+    ]
+   },
+   "congeladas": {
+    "modelo": "2026-09-07",
+    "dos_tiempos": null,
+    "apuesta": null,
+    "cruce": "2026-09-09T15:31-0300"
+   }
   }
  ],
  "predicciones_dos_tiempos": [
@@ -804,6 +882,23 @@
    },
    "sigma_prior": 1.0,
    "n_versus": 14
+  },
+  {
+   "gala": 35,
+   "fecha_gala": "2026-09-14",
+   "corrida": "2026-09-09",
+   "placa": [
+    "Sol",
+    "Charlotte",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Yipio": 0.4567,
+    "Charlotte": 0.3557,
+    "Sol": 0.1876
+   },
+   "sigma_prior": 1.0,
+   "n_versus": 13
   }
  ],
  "_nota_dos_tiempos": "La variante del mano a mano, congelada antes de cada gala como las otras dos. Cada entrada lleva el prior y cuantos versus habia.",
@@ -1772,6 +1867,50 @@
    "pesos": {
     "sentimiento": 0.632,
     "campana": 0.368,
+    "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
+   },
+   "fase": "positivo"
+  },
+  {
+   "gala": 35,
+   "fecha_gala": "2026-09-14",
+   "placa": [
+    "Sol",
+    "Charlotte",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Sol": 0.5118,
+    "Charlotte": 0.187,
+    "Yipio": 0.3012
+   },
+   "escrita": "2026-09-13T17:20-0300",
+   "llamada": "Sol",
+   "pesos": {
+    "sentimiento": 0.573,
+    "campana": 0.427,
+    "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
+   },
+   "fase": "positivo"
+  },
+  {
+   "gala": 35,
+   "fecha_gala": "2026-09-14",
+   "placa": [
+    "Sol",
+    "Charlotte",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Sol": 0.5807,
+    "Charlotte": 0.1936,
+    "Yipio": 0.2258
+   },
+   "escrita": "2026-09-13T17:23-0300",
+   "llamada": "Sol",
+   "pesos": {
+    "sentimiento": 0.573,
+    "campana": 0.427,
     "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
    },
    "fase": "positivo"
