@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-14T10:55-0300",
+ "generado": "2026-09-14T16:17-0300",
  "gala": 35,
  "fase": "positivo",
  "placa": [
@@ -43,13 +43,13 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.297,
-   "a_favor": 12,
-   "en_contra": 23,
-   "con_signo": 35,
+   "signo": -0.2,
+   "a_favor": 13,
+   "en_contra": 20,
+   "con_signo": 33,
    "titulos": 9,
-   "vistas": 0,
-   "comentarios_por_video": 3.89,
+   "vistas": 252,
+   "comentarios_por_video": 3.67,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -58,13 +58,13 @@
    "n_fuentes": 2
   },
   "Charlotte": {
-   "signo": 0.865,
-   "a_favor": 82,
+   "signo": 0.876,
+   "a_favor": 90,
    "en_contra": 5,
-   "con_signo": 87,
-   "titulos": 6,
-   "vistas": 0,
-   "comentarios_por_video": 14.5,
+   "con_signo": 95,
+   "titulos": 7,
+   "vistas": 252,
+   "comentarios_por_video": 13.57,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -73,13 +73,13 @@
    "n_fuentes": 2
   },
   "Yipio": {
-   "signo": 0.724,
-   "a_favor": 99,
+   "signo": 0.782,
+   "a_favor": 130,
    "en_contra": 15,
-   "con_signo": 114,
-   "titulos": 8,
-   "vistas": 0,
-   "comentarios_por_video": 14.25,
+   "con_signo": 145,
+   "titulos": 10,
+   "vistas": 252,
+   "comentarios_por_video": 14.5,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -88,7 +88,7 @@
    "n_fuentes": 2
   }
  },
- "max_titulos": 9,
+ "max_titulos": 10,
  "exposicion_del_canal": true,
  "_nota_exposicion": "Leída del canal entero"
 }
