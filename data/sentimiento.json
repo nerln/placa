@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-13",
- "momento": "2026-09-13T19:22-0300",
+ "momento": "2026-09-13T21:59-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,23 +11,23 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 1056,
- "nombran_a_alguien": 675,
- "con_signo": 196,
+ "nombran_a_alguien": 659,
+ "con_signo": 179,
  "por_jugadora": {
   "Sol": {
-   "contra": 24,
-   "favor": 14,
-   "sin_signo": 133
+   "contra": 25,
+   "favor": 10,
+   "sin_signo": 137
   },
   "Charlotte": {
    "contra": 5,
-   "favor": 84,
-   "sin_signo": 212
+   "favor": 83,
+   "sin_signo": 214
   },
   "Yipio": {
-   "contra": 15,
-   "favor": 128,
-   "sin_signo": 317
+   "contra": 14,
+   "favor": 111,
+   "sin_signo": 311
   }
  },
  "ejemplos": {
