@@ -78,11 +78,21 @@ def main():
     dd, mm = ultima.split("-")[2], ultima.split("-")[1]
     MES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
            "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
-    d.text((64, 94), f"Pronóstico tras la gala del {int(dd)} de {MES[int(mm)-1]}",
-           font=fuente(30, 400), fill=TINTA3)
+    # Temporada cerrada (model/cerrar.py): la tarjeta dice el resultado, y la
+    # lista de abajo queda como lo que decia la ultima corrida.
+    cie_p = ROOT / "data" / "cierre.json"
+    cierre = json.loads(cie_p.read_text()) if cie_p.exists() else None
+    if cierre:
+        d.text((64, 94), f"Final del {int(cierre['fecha'][8:10])} de {MES[int(cierre['fecha'][5:7])-1]} · "
+               "lo que dijo el modelo, y lo que pasó", font=fuente(30, 400), fill=TINTA3)
+        pct = f" con el {str(cierre['pct']).replace('.', ',')}%" if cierre.get("pct") is not None else ""
+        d.text((64, 138), f"Ganó {cierre['ganadora']}{pct}", font=fuente(58, 700), fill=TINTA)
+    else:
+        d.text((64, 94), f"Pronóstico tras la gala del {int(dd)} de {MES[int(mm)-1]}",
+               font=fuente(30, 400), fill=TINTA3)
 
-    d.text((64, 138), "¿Quién gana los 70 millones?", font=fuente(58, 700),
-           fill=TINTA)
+        d.text((64, 138), "¿Quién gana los 70 millones?", font=fuente(58, 700),
+               fill=TINTA)
 
     # las cinco primeras, con su barra. La escala es relativa a la primera y no
     # al 100%: con nueve en juego nadie pasa del 25% y una barra sobre 100 seria

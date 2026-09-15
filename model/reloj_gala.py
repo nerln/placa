@@ -144,7 +144,12 @@ def main():
 
     evento = os.environ.get("GITHUB_EVENT_NAME", "")
     cron = os.environ.get("CRON_DISPARADOR", "")
-    modo, correr, motivo = decidir(evento, cron, faltan)
+    if act.get("cerrada"):
+        # Temporada terminada (model/cerrar.py): no hay nada que refrescar, y
+        # una corrida horaria sobre una placa vacia solo puede romper algo.
+        modo, correr, motivo = "cerrado", False, "la temporada esta cerrada: no se refresca mas"
+    else:
+        modo, correr, motivo = decidir(evento, cron, faltan)
 
     print(f"modo: {modo} · corre: {'si' if correr else 'no'}")
     print(f"  {motivo}")

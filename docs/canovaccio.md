@@ -412,11 +412,19 @@ El ciclo de arriba se recorre entero para cada una, con estas diferencias:
   --fecha-proxima 2026-09-16`, con dos fuentes como siempre, y después rehacer
   `proxima_gala` a mano: `tipo`, `fases`, `regla` y `final` describen entonces
   la noche de la ganadora. `final.tercer_puesto` no se toca, que ya pasó.
-- **Cargar el miércoles** no tiene guion. La ganadora no «sale»: hay que
-  escribir el resultado de la pregunta 2 con la última corrida archivada antes
-  de las 22.15, según el apéndice del 13 de septiembre de `EVALUACION.md`, y la
-  página tiene que dejar de anunciar una gala. Es el único paso del ciclo que
-  no se ensayó nunca, y se hace con calma el jueves si hace falta.
+- **Cargar el miércoles** es `python3 model/cerrar.py --ganadora <quien>
+  --pct <porcentaje publicado> --fecha 2026-09-16 --fuente URL --fuente URL`,
+  y después `bin/publicar.sh --solo-web`. El guion escribe `data/cierre.json`
+  (la pregunta 2: log-loss de cada corrida publicada contra el azar de ese
+  día), puntúa la final como gala de la pregunta 1 (la que «sale» es la
+  segunda), vacía la placa, marca `actualidad.cerrada` para que la tarea
+  horaria no corra más (`reloj_gala.py` → modo `cerrado`), y la página pasa a
+  modo cerrado: `#cierre` arriba con el resultado, la tabla de la temporada
+  gala por gala con lo que dijo cada cuenta, la placa con los porcentajes
+  publicados, sin bloque de mañana ni ramas ni camino, y el título dice quién
+  ganó. Se ensayó el 15 de septiembre con un resultado hipotético y las dos
+  puertas pasaron; los datos del ensayo se revirtieron. **No se recalcula el
+  modelo después de la final**: lo que se puntúa es lo último publicado antes.
 - **Las encuestas de la final no entran.** Preguntan quién gana; la única con
   historial está calibrada contra voto en contra. Viven en
   `actualidad.encuestas_final` y se muestran, no se promedian.

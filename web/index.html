@@ -497,6 +497,21 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
    arriba: cuándo es, quién está en riesgo, qué dice cada cuenta y dónde se
    contradicen. Todo se lee de los mismos datos que alimentan las secciones de
    abajo, así que no puede quedarse viejo por su cuenta. */
+#cierre{margin:26px auto 0; border:1px solid var(--oro-txt); border-left:6px solid var(--oro-txt);
+  border-radius:var(--r-md); background:var(--sup); padding:20px 18px;
+  max-width:calc(var(--medida) + 36px)}
+#cierre .eyebrow{color:var(--oro-txt)}
+#cierre .mn-tit{font-size:var(--t-xl)}
+#cierre .fa-cifras{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; margin:14px 0 4px}
+#cierre .fa-cifras > div{border:1px solid var(--linea); border-radius:var(--r-sm); padding:10px 12px}
+#cierre .fa-cifras .k{font-size:var(--t-xs); color:var(--tinta3); text-transform:uppercase; letter-spacing:.04em}
+#cierre .fa-cifras .v{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-lg); color:var(--tinta)}
+#cierre .fa-cifras .d{font-size:var(--t-xs); color:var(--tinta2); margin-top:2px}
+#cierre table{width:100%; border-collapse:collapse; font-size:var(--t-sm); margin-top:10px}
+#cierre th, #cierre td{text-align:left; padding:6px 8px; border-top:1px solid var(--linea); vertical-align:top}
+#cierre th{font-size:var(--t-xs); color:var(--tinta3); text-transform:uppercase; letter-spacing:.04em; border-top:0}
+#cierre td.si{color:var(--apoyo-txt); font-weight:700}
+#cierre td.no{color:var(--tinta3)}
 #fallo{margin:26px auto 0; border:1px solid var(--rechazo); border-left:6px solid var(--rechazo);
   border-radius:var(--r-md); background:var(--sup); padding:20px 18px;
   max-width:calc(var(--medida) + 36px)}
@@ -1797,6 +1812,7 @@ footer p{max-width:var(--medida)}
   <p class="bajada">Todo sale de dos cosas que publica Telefe: el reparto de votos que canta en cada gala de eliminación, y el ranking completo de los 16 de la casa que salió de la placa positiva del 16 de julio. Nada de encuestas de intención ni de cuotas de apuestas: para esta edición no existe ningún mercado real.</p>
 </header>
 
+<section id="cierre"></section>
 <section id="fallo"></section>
 <section id="manana"></section>
 
@@ -2415,6 +2431,10 @@ function LA_FINAL(){
 // pagina entera. Las cuentas siguen dando «quien sale», y con dos en juego
 // eso es exactamente uno menos «quien gana»: se invierte al mostrar, no al
 // calcular, y el registro sigue puntuando lo mismo de siempre.
+// Temporada cerrada: data/cierre.json existe (model/cerrar.py). La pagina deja
+// de anunciar galas y pasa a ser el registro de lo que dijo y lo que paso.
+function CERRADA(){ return (D.cierre && D.cierre.ganadora) ? D.cierre : null; }
+
 function NOCHE_GANADORA(){
   const F = LA_FINAL();
   return !!(F && F.noche === "ganadora");
@@ -2591,13 +2611,23 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
 (function(){
   const placa = [...D.placa28].sort((a,b) => base.p_sale28[b]-base.p_sale28[a]);
   const conPlaca = placa.length > 0;
-  const FIN = LA_FINAL(), GANA = NOCHE_GANADORA();
+  const FIN = LA_FINAL(), GANA = NOCHE_GANADORA(), CER = CERRADA();
+  // Cerrada la temporada, la placa es la final tal como termino: los dos
+  // nombres con el porcentaje publicado, y lo que les daba la ultima corrida
+  // en la ayuda. placa_vigente queda vacia a proposito (cerrar.py), asi que
+  // se reconstruye desde el cierre.
+  if(CER && !placa.length && CER.segunda){ placa.push(CER.ganadora, CER.segunda); }
+  const conPlacaCer = CER && placa.length === 2;
+  const publicado = conPlacaCer && CER.pct != null
+    ? {[CER.ganadora]: CER.pct / 100, [CER.segunda]: 1 - CER.pct / 100} : null;
   // En la ultima noche la tarjeta muestra la probabilidad de GANAR, que es la
   // que el lector busca; con dos en juego es uno menos la de salir.
-  const P_MOSTRAR = GANA ? base.p_gana : base.p_sale28;
-  if(GANA) placa.sort((a, b) => P_MOSTRAR[b] - P_MOSTRAR[a]);
-  const parejo = conPlaca && Math.abs(P_MOSTRAR[placa[0]] - P_MOSTRAR[placa[1]]) < 0.06;
-  $("#tit-placa").textContent = !conPlaca
+  const P_MOSTRAR = publicado || (GANA || CER ? base.p_gana : base.p_sale28);
+  if(GANA || CER) placa.sort((a, b) => P_MOSTRAR[b] - P_MOSTRAR[a]);
+  const parejo = placa.length > 1 && Math.abs(P_MOSTRAR[placa[0]] - P_MOSTRAR[placa[1]]) < 0.06;
+  $("#tit-placa").textContent = CER
+    ? "Cómo terminó la final del " + FECHA_LARGA(CER.fecha)
+    : !conPlaca
     ? "Todavía no hay placa"
     : GANA
       ? (parejo ? "La final del " + FECHA_LARGA(D.placa_vigente.fecha) + " es una moneda al aire"
@@ -2613,7 +2643,13 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
   const generos = new Set(D.jugadores.map(n => (D.perfil[n]||{}).genero).filter(Boolean));
   const soloMujeres = generos.size === 1 && generos.has("f");
   const ultimo = (D.eliminados || [])[0];
-  $("#sub-placa").innerHTML = !conPlaca
+  $("#sub-placa").innerHTML = CER
+    ? "Ganó <b>" + CER.ganadora + "</b>" + (CER.pct != null ? " con el " + nf(CER.pct, 1) + "% del voto positivo" : "") +
+      "; " + CER.segunda + " quedó segunda. " + (CER.ultima_corrida
+        ? "La última corrida antes de esa noche, la del " + FECHA_LARGA(CER.ultima_corrida.fecha) + ", le daba a " +
+          CER.ganadora + " el " + Math.round(100 * CER.ultima_corrida.p_ganadora) + "% de ganar."
+        : "")
+    : !conPlaca
     ? (ultimo ? (CUANDO_FUE(D.generado)[0].toUpperCase() + CUANDO_FUE(D.generado).slice(1)) +
         " salió <b>" + ultimo.apodo + "</b>" +
         (soloMujeres ? ", el último varón: la casa queda con " + D.jugadores.length +
@@ -2640,18 +2676,20 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
     : "No hay encuesta publicada para esta gala: el riesgo sale solo de la preferencia revelada en las votaciones oficiales anteriores.";
 
   const cont = $("#nominados");
-  const lista = conPlaca ? placa
+  const lista = (conPlaca || conPlacaCer) ? placa
     : [...D.jugadores].sort((a,b) => base.p_sale28[b]-base.p_sale28[a]);
   const max = Math.max(...D.jugadores.map(n => P_MOSTRAR[n] || 0), 1e-9);
-  $(".placa-cab").innerHTML = conPlaca
-    ? (GANA ? "Las dos finalistas, con la <b>probabilidad de ganar</b> que le da el modelo"
+  $(".placa-cab").innerHTML = (conPlaca || conPlacaCer)
+    ? (CER ? (publicado ? "Las dos finalistas, con el <b>porcentaje publicado</b> de la final"
+                        : "Las dos finalistas, con la <b>probabilidad de ganar</b> de la última corrida")
+       : GANA ? "Las dos finalistas, con la <b>probabilidad de ganar</b> que le da el modelo"
        : FIN ? "Las tres finalistas, con la <b>probabilidad de quedar tercera</b> que le da el modelo"
            : "Placa de nominados, con el <b>riesgo de eliminación</b> que le da el modelo")
     : "Sin nominadas todavía: <b>riesgo de ser la próxima en salir</b>, sorteando la placa por propensión";
   const botonera = $("#btn-revelar").parentElement;
   // La revelacion «se salvan de menor a mayor riesgo» no describe una final
   // de dos: la unica que se canta es la ganadora.
-  if(!conPlaca || GANA) botonera.style.display = "none";
+  if(!conPlaca || GANA || CER) botonera.style.display = "none";
   lista.forEach((n, i) => {
     const p = P_MOSTRAR[n], alto = p > 0.2;
     const c = el("div", "nom-card" + (alto ? " alto" : ""));
@@ -2665,7 +2703,8 @@ $("#d-corr").textContent = (D.meta.corr_mu_psi>=0?"+":"")+nf(D.meta.corr_mu_psi,
     // del rasgo de largo plazo y no hay estado semanal que enseñar.
     const st = D.estado28[n];
     bindTT(c, "<b>"+D.perfil[n].nombre+"</b>" +
-      (GANA ? "Probabilidad de ganar: <b>" : FIN ? "Probabilidad de quedar tercera: <b>" : conPlaca ? "Riesgo de eliminación: <b>" : "Riesgo de ser la próxima en salir: <b>") + pc(p)+"</b><br>"+
+      (CER && publicado ? "Porcentaje publicado: <b>" : (GANA || CER) ? "Probabilidad de ganar: <b>" : FIN ? "Probabilidad de quedar tercera: <b>" : conPlaca ? "Riesgo de eliminación: <b>" : "Riesgo de ser la próxima en salir: <b>") + pc(p)+"</b><br>"+
+      (CER && publicado && CER.ultima_corrida ? "La última corrida le daba: <b>" + pc(n === CER.ganadora ? CER.ultima_corrida.p_ganadora : 1 - CER.ultima_corrida.p_ganadora) + "</b><br>" : "") +
       (st ? "Estado estimado para esta gala: <span class='mono'>"+(st[0]>0?"+":"")+nf(st[0])+
             "</span> ± "+nf(st[1])+" logits<br>" : "") +
       "Rechazo de largo plazo μ: <span class='mono'>"+(D.mu[n]>0?"+":"")+nf(D.mu[n])+"</span> · galas con dato: "+D.n_galas[n]);
@@ -3718,7 +3757,8 @@ function contar(nodo){
   sec.innerHTML =
     "<div class='eyebrow'>El resultado, contra lo que se había dicho</div>" +
     "<div class='pun-quien'>" +
-      ((LA_FINAL() && LA_FINAL().tercer_puesto === P.fecha) ? "Quedó tercera " : "Se fue ") + P.eliminado + "</div>" +
+      ((CERRADA() && CERRADA().segunda === P.eliminado) ? "Quedó segunda "
+        : (LA_FINAL() && LA_FINAL().tercer_puesto === P.fecha) ? "Quedó tercera " : "Se fue ") + P.eliminado + "</div>" +
     "<p style='font-size:var(--t-sm); color:var(--tinta2); margin:0'>" +
       "La placa era de " + P.placa.length + ": " + P.placa.join(", ") + ". Las " +
       // Cuantas cajas hay lo dice el registro, no esta frase: decia «dos» con
@@ -4105,6 +4145,7 @@ function contar(nodo){
    seria cambiar la regla en la mitad del partido. */
 (function(){
   const M = D.actualidad && D.actualidad.medidas_sociales, caja = $("#cotejo");
+  if(caja && CERRADA()){ caja.remove(); return; }
   if(!caja) return;
   // El riesgo sale de donde lo saca la placa de arriba, que es el caso base.
   // Las ramas lo estiman con su propia corrida y difieren en unas décimas: dos
@@ -4327,7 +4368,7 @@ function contar(nodo){
 (function(){
   const P = D.actualidad && D.actualidad.proxima_gala, caja = $("#prox");
   if(!caja) return;
-  if(!P || !P.fases){ caja.remove(); return; }
+  if(!P || !P.fases || !P.fases.length || CERRADA()){ caja.remove(); return; }
   // Para saber en qué fase estamos vale el día de quien lee, no el de la corrida.
   // Las fechas de las dos fases las anunció el programa y no salen del modelo,
   // así que marcar la de hoy no contamina el pronóstico con nada posterior.
@@ -5040,8 +5081,12 @@ function contar(nodo){
   const nSims = (D.sendas && D.sendas.n_sims) || D.meta.n_sims;
 
   const r = $("#respuesta-corta");
+  const CER = CERRADA();
   if(r) r.innerHTML =
-    "<p>Al " + FECHA + ", el modelo da a <b>" + largo(ord[0]) + "</b> como favorita para ganar " +
+    (CER ? "<p>Ganó <b>" + largo(CER.ganadora) + "</b>" + (CER.pct != null ? " con el " + nf(CER.pct, 1) + "% del voto" : "") +
+           " el " + FECHA_LARGA(CER.fecha) + ". Lo que sigue es la última corrida publicada antes de esa noche, " +
+           "tal como quedó.</p>" : "") +
+    "<p>Al " + FECHA + ", el modelo " + (CER ? "daba" : "da") + " a <b>" + largo(ord[0]) + "</b> como favorita para ganar " +
     "Gran Hermano Argentina «Generación Dorada» con <b>" + pc(base[ord[0]],1) + "</b> de " +
     // Con dos en juego no hay tercera que nombrar: decia «y undefined (NaN%)».
     "probabilidad, " + (ord.length > 2 ? "seguida por " : "contra ") + largo(ord[1]) + " (" + pc(base[ord[1]],1) + ")" +
@@ -5465,6 +5510,78 @@ function contar(nodo){
       "comentarios, declarada en <code>data/fandom.json</code>. " + (F.limites || "") + "</p>";
 })();
 
+/* ---------- el cierre ----------
+   Cuando la temporada termino, esto va primero y es lo unico que hace falta
+   leer: quien gano, con cuanto, que le daba la ultima corrida y cuanto vale
+   eso contra el azar (pregunta 2 de EVALUACION.md), y la tabla de la
+   temporada gala por gala con lo que dijo cada cuenta. Todo sale de
+   data/cierre.json y del registro; nada se escribe a mano. */
+(function(){
+  const sec = $("#cierre"), C = CERRADA();
+  if(!sec) return;
+  if(!C){ sec.remove(); return; }
+  document.title = "Ganó " + C.ganadora + " Gran Hermano: Generación Dorada · lo que dijo el modelo y lo que pasó";
+  const h1 = document.querySelector("h1.tit");
+  if(h1){
+    const ojo = h1.querySelector(".ojo-h1");
+    h1.innerHTML = "Ganó <em>" + C.ganadora + "</em> <span class='h1-prog'>Gran Hermano: Generación Dorada</span>";
+    if(ojo) h1.appendChild(ojo);
+    const sub = document.querySelector(".h1-sub");
+    if(sub) sub.innerHTML = "<em>Lo que esta página dijo, y lo que pasó.</em>";
+  }
+  const U = C.ultima_corrida;
+  const M = MARCADOR();
+  const NOM = {modelo: "el modelo", dos_tiempos: "dos tiempos", apuesta: "la apuesta", cruce: "el cruce"};
+  const galas = r => r.de + (r.de === 1 ? " gala" : " galas");
+  const marc = Object.keys(NOM).filter(k => M[k])
+    .map(k => NOM[k] + " " + M[k].acertadas + " de " + galas(M[k])).join(", ");
+  const cifra = (k, v, d) => "<div><div class='k'>" + k + "</div><div class='v'>" + v + "</div><div class='d'>" + d + "</div></div>";
+  // la tabla de la temporada: una fila por gala congelada, con quien salio y
+  // a quien llamo cada cuenta. Sale de D.congeladas, que ya trae las dos cosas.
+  const filas = (D.congeladas || []).slice().sort((a, b) => a.gala - b.gala).map(f => {
+    const ser = f.series || {};
+    const celda = k => {
+      const v = ser[k];
+      if(!v || !v.llama_a) return "<td class='no'>—</td>";
+      const fin = C.gala === f.gala;
+      // en la final «llama_a» es quien se va, o sea la segunda: se muestra
+      // dada vuelta, como en la noche misma
+      const dijo = fin ? (f.placa || []).find(n => n !== v.llama_a) || v.llama_a : v.llama_a;
+      const real = fin ? C.ganadora : f.eliminado;
+      const ok = real && dijo === real;
+      return "<td class='" + (ok ? "si" : "no") + "'>" + dijo + (ok ? " ✓" : "") + "</td>";
+    };
+    const que = C.gala === f.gala ? "ganó <b>" + C.ganadora + "</b>"
+      : f.eliminado ? "se fue <b>" + f.eliminado + "</b>" : "—";
+    return "<tr><td>" + f.gala + (f.fecha_gala ? "<br><small>" + (+f.fecha_gala.slice(8, 10)) + "/" + (+f.fecha_gala.slice(5, 7)) + "</small>" : "") +
+      "</td><td>" + que + "</td>" + ["modelo", "dos_tiempos", "apuesta", "cruce"].map(celda).join("") + "</tr>";
+  }).join("");
+  const primero = $("#ultimo") || $("#respuesta-corta");
+  const destino = primero && primero.closest("section, .veredicto") || primero;
+  if(destino && destino.parentElement) destino.parentElement.insertBefore(sec, destino);
+  sec.innerHTML =
+    "<div class='eyebrow'>Temporada terminada · " + FECHA_LARGA(C.fecha) + "</div>" +
+    "<div class='mn-tit'>Ganó " + C.ganadora + (C.pct != null ? " con el " + nf(C.pct, 1) + "%" : "") +
+      ". " + (U ? (U.puesto === 1 ? "El modelo la tenía primera." : "El modelo no la tenía primera.") : "") + "</div>" +
+    "<div class='fa-cifras'>" +
+      (U ? cifra("Le daba de ganar", Math.round(100 * U.p_ganadora) + "%",
+                 "puesto " + U.puesto + " de " + U.en_juego + " en la última corrida, del " + FECHA_LARGA(U.fecha)) : "") +
+      (U ? cifra("Log-loss", nf(U.log_loss, 2), "contra " + nf(U.log_loss_uniforme, 2) + " del azar entre " + U.en_juego +
+                 (U.log_loss < U.log_loss_uniforme ? ": aportó" : ": no aportó")) : "") +
+      cifra("Mejor que el azar en", C.mejor_que_azar_en + " de " + C.de_corridas,
+            "corridas publicadas desde agosto, para la pregunta de la ganadora") +
+    "</div>" +
+    "<p class='mn-dice'>La pregunta de la temporada era ésta, y se puntúa con la regla escrita antes " +
+      "de empezar: menos log-loss que repartir parejo entre quienes seguían en juego. " +
+      (C.segunda ? C.segunda + " quedó segunda. " : "") +
+      "La otra pregunta, quién se va cada gala, terminó así, con el nombre acertado: " + marc + ".</p>" +
+    (filas ? "<div class='scroll-x'><table><tr><th>gala</th><th>pasó</th><th>modelo</th><th>dos tiempos</th><th>apuesta</th><th>cruce</th></tr>" +
+      filas + "</table></div>" : "") +
+    "<p class='tw-nota' style='margin:12px 0 0'>Esta página no se actualiza más. Cada corrida que se publicó " +
+      "está en el registro y en las copias congeladas de cada gala, abajo. Fuentes del resultado: " +
+      (C.fuentes || []).map((u, i) => "<a href='" + u + "' target='_blank' rel='noopener nofollow'>nota " + (i + 1) + "</a>").join(", ") + ".</p>";
+})();
+
 /* ---------- el fallo, dicho primero ----------
    Cuando la que acaba de irse era la favorita del modelo para ganar el
    titulo, la pagina lo dice arriba de todo, antes de cualquier otra cuenta.
@@ -5509,11 +5626,12 @@ function contar(nodo){
   sec.innerHTML =
     "<div class='eyebrow'>Lo que pasó el " + FECHA_LARGA(P.fecha) + "</div>" +
     "<div class='mn-tit'>El modelo daba a " + P.eliminado + " favorita para ganar. " +
-      (tercera ? "Quedó tercera." : "Se fue.") + "</div>" +
+      (CERRADA() && CERRADA().segunda === P.eliminado ? "Quedó segunda." : tercera ? "Quedó tercera." : "Se fue.") + "</div>" +
     "<div class='fa-cifras'>" +
       cifra("Le daba de ganar", Math.round(100 * pg[P.eliminado]) + "%",
             "primera de " + ord.length + " en la corrida del " + FECHA_LARGA(antes.fecha)) +
-      cifra(tercera ? "Le daba de quedar tercera" : "Le daba de irse", Math.round(100 * P.modelo.p_del_eliminado) + "%",
+      cifra(CERRADA() && CERRADA().segunda === P.eliminado ? "Le daba de perder la final"
+            : tercera ? "Le daba de quedar tercera" : "Le daba de irse", Math.round(100 * P.modelo.p_del_eliminado) + "%",
             (P.modelo.puesto === P.modelo.de ? "la más baja" : "puesto " + P.modelo.puesto) + " de " + P.modelo.de) +
       (pctReal != null ? cifra("Sacó", nf(pctReal, 1) + "%", "de los votos positivos, la menos votada") : "") +
     "</div>" +
@@ -5538,7 +5656,7 @@ function contar(nodo){
         ". Son encuestas de redes, sin historial contra el que calibrarlas, y por eso no entran " +
         "a ninguna cuenta. Esta vez estuvieron más cerca que todas las cuentas juntas.</p>";
     })() +
-    (hoy.length >= 2
+    (hoy.length >= 2 && !CERRADA()
       ? "<p class='mn-dice'>Para " + CUANDO_GALA().esta_noche + " la misma cuenta dice <b>" + hoy[0] + " " +
         Math.round(100 * pgHoy[hoy[0]]) + "%</b>, " + hoy.slice(1).map(n => n + " " + Math.round(100 * pgHoy[n]) + "%").join(", ") +
         ". Se publica porque la regla es publicar todo, y se lee sabiendo lo de arriba.</p>"
@@ -5577,7 +5695,7 @@ function contar(nodo){
   if(!sec) return;
   const G = D.actualidad && D.actualidad.proxima_gala;
   const placa = (D.placa_vigente && D.placa_vigente.integrantes) || [];
-  if(!G || !placa.length){ sec.remove(); return; }
+  if(!G || !placa.length || CERRADA()){ sec.remove(); return; }
 
   const T = D.actualidad.termometro_placa;
   // La fase manda sobre cada frase de este bloque. Si ninguna medicion la
@@ -6537,6 +6655,7 @@ function contar(nodo){
   // a mano del miercoles— y la cuenta de «una vez cada N temporadas» ya no
   // tiene sentido, porque son dos monedas y nada mas.
   const FIN = LA_FINAL();
+  if(CERRADA()){ const sec = $("#camino"); if(sec) sec.remove(); return; }
   if(NOCHE_GANADORA()){
     // Con dos, la escalera es un peldano: ganar el mano a mano. El cuadro de
     // seis pasos ya no describe nada, y decirlo con seis renglones seria
@@ -7036,7 +7155,7 @@ function contar(nodo){
   };
 
   const FIN = LA_FINAL();
-  if(NOCHE_GANADORA()){ sec.remove(); return; }
+  if(NOCHE_GANADORA() || CERRADA()){ sec.remove(); return; }
   $("#tit-ramas").textContent = FIN
     ? "Elegí quién queda tercera y mirá cómo queda la definición"
     : "Elegí quién se va y mirá cómo queda la carrera";
