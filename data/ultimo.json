@@ -2,6 +2,14 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-09-14",
+   "titulo": "Charlotte quedó tercera con el 10,7 %: la final es Sol contra Yipio",
+   "detalle": "Primera noche de la final. Se votó a la favorita y Charlotte fue la que menos juntó. La ganadora se define el miércoles 16 con el mismo voto positivo entre Sol y Yipio. Después de la salida, Sol le reprochó a Charlotte que no la saludara, y las dos finalistas arrancaron sus últimas 48 horas peleadas.",
+   "afecta": "Ninguna de las cuatro cuentas la puso primera para el tercer puesto: el modelo la tenía última con el 24 % (decía Yipio), el cruce última con el 17 % (decía Sol), y dos tiempos segunda con el 36 %. Peor todavía: el modelo la daba favorita para ganar el título con el 45 %. Es la gala en que el modelo falló más lejos, y se publica igual. Para el miércoles la cuenta de la ganadora, que es la de esta página, da hoy Sol 60 % y Yipio 40 %; las encuestas que circulan, todas de tres o cuatro nombres, dan a Yipio.",
+   "impacto": "alto",
+   "fuente": "https://www.infobae.com/teleshow/2026/09/15/gran-hermano-tiene-a-sus-dos-finalistas-quien-fue-eliminada-el-lunes-y-quedo-tercera-en-medio-de-un-escandalo/"
+  },
+  {
    "fecha": "2026-09-13",
    "titulo": "La final va en dos noches: el lunes 14 el tercer puesto, el miércoles 16 la ganadora",
    "detalle": "Quedan tres: Sol, Charlotte y Yipio. El lunes 14 se vota a la favorita y la que menos junte queda tercera; el miércoles 16 las otras dos se definen con el mismo voto positivo. Entre medio, el martes, la gala debate con la tercera. El premio: 70 millones de pesos más los intereses de una inversión, una vivienda, una moto y cerveza por un año.",

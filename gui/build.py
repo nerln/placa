@@ -324,6 +324,8 @@ def main():
     corridas = _hp.get("corridas") or []
     apo_p = ROOT / "data" / "apoyo.json"
     apoyo = json.loads(apo_p.read_text()) if apo_p.exists() else None
+    fan_p = ROOT / "data" / "fandom.json"
+    fandom = json.loads(fan_p.read_text()) if fan_p.exists() else None
     cru_p = ROOT / "data" / "cruce.json"
     cruce = json.loads(cru_p.read_text()) if cru_p.exists() else None
     arch_p = ROOT / "data" / "archivo.json"
@@ -364,6 +366,7 @@ def main():
         "congeladas": congeladas,
         "declaraciones": _hp.get("declaraciones") or [],
         "cruce": cruce,
+        "fandom": fandom,
         "apoyo": apoyo,
         "archivo": archivo,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},

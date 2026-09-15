@@ -167,15 +167,22 @@
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "ventana": "24 tarjetas horarias de trends24.in/argentina",
   "desde": null,
-  "hasta": "2026-09-14T21:36-0300",
-  "medido": "2026-09-14T21:36-0300",
+  "hasta": "2026-09-15T05:08-0300",
+  "medido": "2026-09-15T05:08-0300",
   "fase": "positivo",
-  "terminos": [],
+  "terminos": [
+   {
+    "txt": "SOL AL 9009",
+    "mejor": 1,
+    "horas": 5,
+    "reciente": 1,
+    "quien": "Sol",
+    "tipo": "campaña de voto"
+   }
+  ],
   "variantes": [],
   "sin_consigna": {
    "quienes": [
-    "Sol",
-    "Charlotte",
     "Yipio"
    ],
    "_nota": "No aparecen con consigna en las tarjetas de la ventana. En placa positiva eso quiere decir que nadie está pidiendo que se queden; en negativa, que nadie pide que se vayan."
@@ -266,40 +273,38 @@
   "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
  },
  "proxima_gala": {
-  "_nota": "La final va en dos noches. Lunes 14: voto positivo entre las tres, la que menos junte queda tercera. Miércoles 16: las dos que siguen, y la más votada gana. Quedan tres.",
-  "gala": 35,
-  "tipo": "final: tercer puesto",
-  "fecha": "2026-09-14",
+  "_nota": "Segunda noche de la final: quedan dos, se vota a la favorita y la más votada gana. Charlotte quedó tercera el lunes 14 con el 10,7%.",
+  "gala": 36,
+  "tipo": "final: ganadora",
+  "fecha": "2026-09-16",
   "fecha_nominacion": null,
   "placa": [
    "Sol",
-   "Charlotte",
    "Yipio"
   ],
   "libres": [],
   "todas_finalistas": true,
   "fases": [
    {
-    "desde": "2026-09-09",
-    "hasta": "2026-09-14",
+    "desde": "2026-09-14",
+    "hasta": "2026-09-16",
     "signo": "positivo",
-    "desde_hora": "2026-09-09T23:30-03:00",
-    "hasta_hora": "2026-09-14T22:15-03:00",
-    "que": "Se vota por la favorita. La que menos votos junte queda tercera; las otras dos van a la definición del miércoles 16.",
-    "detalle": "Primera noche de la final. La ganadora se conoce el miércoles 16 de septiembre entre las dos que sigan."
+    "desde_hora": "2026-09-14T23:30-03:00",
+    "hasta_hora": "2026-09-16T22:15-03:00",
+    "que": "Se vota por la favorita entre Sol y Yipio. La más votada gana Gran Hermano.",
+    "detalle": "Última noche. No queda nada después: quien pierde este mano a mano es segunda."
    }
   ],
-  "regla": "Final en dos noches: el lunes 14 el voto positivo define el tercer puesto; el miércoles 16, la ganadora entre las dos que quedan.",
+  "regla": "Segunda y última noche de la final: el voto positivo entre las dos decide la ganadora.",
   "pesos_nominacion": {
    "jugadora": 0,
    "visita": 0,
-   "extra": "No hay nominación: son las tres finalistas."
+   "extra": "No hay nominación: son las dos finalistas."
   },
   "fuentes": [
-   "https://www.infobae.com/teleshow/2026/09/10/cuando-sera-la-gran-final-de-gran-hermano-generacion-dorada-todos-los-detalles/",
-   "https://www.santafeactual.com/2026/09/asi-sera-la-ultima-semana-de-gran.html",
-   "https://www.infobae.com/teleshow/2026/09/10/gran-hermano-generacion-dorada-definio-a-sus-tres-finalistas-quien-fue-la-ultima-eliminada/",
-   "https://www.lanacion.com.ar/espectaculos/quien-se-fue-de-gran-hermano-este-miercoles-9-de-septiembre-nid10092026/"
+   "https://www.infobae.com/teleshow/2026/09/15/gran-hermano-tiene-a-sus-dos-finalistas-quien-fue-eliminada-el-lunes-y-quedo-tercera-en-medio-de-un-escandalo/",
+   "https://www.ciudad.com.ar/espectaculos/2026/09/15/quien-se-fue-de-gran-hermano-hoy-todo-sobre-la-gala-de-eliminacion-clone/",
+   "https://www.infobae.com/teleshow/2026/09/10/cuando-sera-la-gran-final-de-gran-hermano-generacion-dorada-todos-los-detalles/"
   ],
   "final": {
    "tercer_puesto": "2026-09-14",
@@ -307,25 +312,39 @@
    "debate": "2026-09-15",
    "noche_de_campeonas": "2026-09-17",
    "signo": "positivo",
+   "noche": "ganadora",
+   "tercera": {
+    "quien": "Charlotte",
+    "pct": 10.7,
+    "fecha": "2026-09-14"
+   },
    "premio": "70 millones de pesos más los intereses de una inversión, una vivienda, una moto y cerveza por un año"
   }
  },
  "termometro_placa": {
   "_nota": "Consignas de la PLACA POSITIVA final. El signo se dio vuelta el 31 de agosto: «X AL 9009» ahora pide que X se quede, y quien no tiene consigna es quien nadie está pidiendo salvar.",
   "fase": "positivo",
-  "medido": "2026-09-14T21:36-0300",
+  "medido": "2026-09-15T05:08-0300",
   "significado": "«AL 9009» quiere decir «mandá mensajes por esta persona al 9009». La placa es positiva, así que estas consignas piden que se QUEDE.",
   "ventana": {
    "desde": null,
-   "hasta": "2026-09-14T21:36-0300",
+   "hasta": "2026-09-15T05:08-0300",
    "_nota": "24 tarjetas horarias, que es lo que el sitio publica gratis."
   },
   "horas_son_piso": true,
-  "consignas": [],
+  "consignas": [
+   {
+    "termino": "SOL AL 9009",
+    "quien": "Sol",
+    "pico": 1,
+    "reciente": 1,
+    "horas": 5,
+    "fuentes": 1,
+    "fuente": "trends24.in/argentina, 24 tarjetas horarias"
+   }
+  ],
   "sin_consigna": {
    "quienes": [
-    "Sol",
-    "Charlotte",
     "Yipio"
    ],
    "_nota": "No aparecen con consigna en las tarjetas de la ventana. En placa positiva eso quiere decir que nadie está pidiendo que se queden; en negativa, que nadie pide que se vayan."
@@ -384,12 +403,40 @@
  },
  "videos_recogido": "2026-08-31",
  "encuestas_final": {
-  "_nota": "Encuestas que circulan sobre la FINAL, recogidas de prensa el 13 de septiembre. Preguntan «quién gana», no «a quién echar», y por eso NO entran al modelo: la única encuestadora con historial calibrado (Fefe Bongiorno) está medida contra galas de voto en contra, y su sesgo ahí no dice nada sobre una pregunta al revés. Se muestran para compararlas, no para promediarlas.",
-  "gala": 35,
-  "fecha": "2026-09-13",
+  "_nota": "Encuestas que circulan sobre la FINAL, recogidas de prensa el 13 de septiembre. Preguntan «quién gana», no «a quién echar», y por eso NO entran al modelo: la única encuestadora con historial calibrado (Fefe Bongiorno) está medida contra galas de voto en contra, y su sesgo ahí no dice nada sobre una pregunta al revés. Se muestran para compararlas, no para promediarlas. Actualizado el 15 de septiembre con las de la víspera del lunes; todas preguntan por tres o cuatro nombres, ninguna es un mano a mano Sol–Yipio.",
+  "gala": 36,
+  "fecha": "2026-09-15",
   "pregunta": "quién gana",
-  "fuente": "https://exitoina.perfil.com/noticias/television/quien-sera-ganadora-gran-hermano-generacion-dorada-lunes-14-septiembre-segun-encuestas.phtml",
+  "fuente": "https://www.lmneuquen.com/espectaculos/resultados-contundentes-la-encuesta-gran-hermano-2026-hoy-es-la-gran-final-y-hay-una-clara-ventaja-n1253546",
   "items": [
+   {
+    "quien": "GH Trivia",
+    "canal": "X",
+    "n": null,
+    "cuota": {
+     "Yipio": 73.2,
+     "Charlotte": 18.3,
+     "Sol": 8.5
+    },
+    "con_historial": false,
+    "fecha": "2026-09-14",
+    "fuente": "https://www.lmneuquen.com/espectaculos/resultados-contundentes-la-encuesta-gran-hermano-2026-hoy-es-la-gran-final-y-hay-una-clara-ventaja-n1253546"
+   },
+   {
+    "quien": "GH Encuestas",
+    "canal": "X",
+    "n": null,
+    "cuota": {
+     "Yipio": 56.3,
+     "Sol": 26.4,
+     "Charlotte": 11.6,
+     "Luana": 5.7
+    },
+    "con_historial": false,
+    "fecha": "2026-09-08",
+    "nota": "de antes de que saliera Luana",
+    "fuente": "https://elintransigente.com/2026/09/gra-encuestas-yipio-favorita/"
+   },
    {
     "quien": "Fefe Bongiorno",
     "canal": "X",
@@ -399,7 +446,9 @@
      "Yipio": 29.4,
      "Charlotte": 10.6
     },
-    "con_historial": true
+    "con_historial": true,
+    "fecha": "2026-09-13",
+    "fuente": "https://exitoina.perfil.com/noticias/television/quien-sera-ganadora-gran-hermano-generacion-dorada-lunes-14-septiembre-segun-encuestas.phtml"
    },
    {
     "quien": "Fefe Bongiorno",
@@ -411,7 +460,9 @@
      "Sol": 27.0
     },
     "con_historial": true,
-    "nota": "parcial: la nota la cita como «lideró por un momento»"
+    "nota": "parcial: la nota la cita como «lideró por un momento»",
+    "fecha": "2026-09-13",
+    "fuente": "https://exitoina.perfil.com/noticias/television/quien-sera-ganadora-gran-hermano-generacion-dorada-lunes-14-septiembre-segun-encuestas.phtml"
    },
    {
     "quien": "@gh_trivia",
@@ -422,7 +473,9 @@
      "Charlotte": 20.0,
      "Sol": 14.0
     },
-    "con_historial": false
+    "con_historial": false,
+    "fecha": "2026-09-13",
+    "fuente": "https://exitoina.perfil.com/noticias/television/quien-sera-ganadora-gran-hermano-generacion-dorada-lunes-14-septiembre-segun-encuestas.phtml"
    },
    {
     "quien": "tuvotacion.com",
@@ -432,7 +485,9 @@
      "Yipio": 73.2
     },
     "con_historial": false,
-    "nota": "la nota sólo da el primer puesto"
+    "nota": "la nota sólo da el primer puesto",
+    "fecha": "2026-09-13",
+    "fuente": "https://exitoina.perfil.com/noticias/television/quien-sera-ganadora-gran-hermano-generacion-dorada-lunes-14-septiembre-segun-encuestas.phtml"
    }
   ]
  }

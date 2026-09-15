@@ -1,0 +1,78 @@
+{
+ "generado": "2026-09-15",
+ "fuente": "comentarios de los videos oficiales del programa en YouTube, 13–15 de septiembre",
+ "total": 1111,
+ "resumen": "Yipio arrasa en los comentarios: 120 piden su 9009 y 79 la nombran ganadora, contra apenas 8 que discuten si es o no argentina. Sol reparte más parejo: 23 comentarios la mandan al 9009, pero 9 la llaman víbora o serpiente con su nombre al lado —y «la serpiente» a secas aparece en 32— y 14 acusan que la producción la tiene acomodada. Y todavía se arrastra lo del lunes: 6 comentarios le reprochan a Sol no haber saludado bien a Charlotte en la despedida.",
+ "por_finalista": {
+  "Sol": {
+   "temas": [
+    {
+     "tema": "consigna de voto: Sol al 9009",
+     "n": 23,
+     "regex": "\\bsol\\b\\s*(al|a la)?\\s*9009",
+     "signo": "a favor"
+    },
+    {
+     "tema": "la llaman víbora o serpiente, con su nombre al lado",
+     "n": 9,
+     "regex": "(\\bsol\\b|solange).{0,60}(veneno|v[ií]bora|serpiente|soberbia)|(veneno|v[ií]bora|serpiente|soberbia).{0,60}(\\bsol\\b|solange)",
+     "signo": "en contra",
+     "nota": "«la serpiente» a secas, sin nombrarla, aparece en 32 comentarios: es su apodo en el fandom, pero sin el nombre no se cuenta"
+    },
+    {
+     "tema": "acusan favoritismo de la producción",
+     "n": 14,
+     "regex": "(sol|solange|gomez|gómez).{0,60}(acomodad|arregl|estafa|truch)|(acomodad|arregl|estafa|truch).{0,60}(sol|solange|gomez|gómez)",
+     "signo": "en contra"
+    },
+    {
+     "tema": "reacciones a su resumen final, el tape",
+     "n": 7,
+     "regex": "(\\bsol\\b|solange).{0,40}tape|tape.{0,40}(\\bsol\\b|solange)",
+     "signo": "mixto"
+    }
+   ],
+   "citas": [
+    "SOL AL 9009 LA MEJOR JUGADORA",
+    "AFUERA SOL, ACOMODADA POR LA PRODUCCION, ESTAFA"
+   ]
+  },
+  "Yipio": {
+   "temas": [
+    {
+     "tema": "consigna de voto: Yipio al 9009",
+     "n": 120,
+     "regex": "\\byipio\\b\\s*(al|a la)?\\s*9009",
+     "signo": "a favor"
+    },
+    {
+     "tema": "la nombran ganadora, merece ganar",
+     "n": 79,
+     "regex": "yipio.{0,20}(ganadora|merece ganar)|(ganadora|merece ganar).{0,20}yipio",
+     "signo": "a favor"
+    },
+    {
+     "tema": "declaraciones de cariño: te amamos",
+     "n": 12,
+     "regex": "\\b(amamos|amo|te amo)\\b.{0,15}yipio|yipio.{0,15}\\b(te amamos|te amo|amo|amamos)\\b",
+     "signo": "a favor"
+    },
+    {
+     "tema": "debaten si es o no argentina",
+     "n": 8,
+     "regex": "yipio.{0,20}argentin|argentin.{0,20}yipio",
+     "signo": "mixto"
+    }
+   ],
+   "citas": [
+    "Vamos yipio a ganar gh te lo mereces genia",
+    "Yipio comparte con nosotros todo lo que siente con honestidad…"
+   ]
+  }
+ },
+ "el_cruce_entre_ellas": "Después de la salida de Charlotte el lunes, 6 comentarios le reprochan puntualmente a Sol no haberla saludado o haberla tratado mal en la despedida ('la trató re mal a Charlotte', 'ni la despidió a Charlotte'); la pelea Sol-Yipio de esas mismas 48 horas aparece nombrada en los títulos de los videos pero no arma un conteo aparte en el texto de los comentarios.",
+ "regex_cruce": "despidi.{0,15}charlotte|charlotte.{0,15}despidi|trat[oó].{0,15}mal.{0,15}charlotte|salud.{0,15}charlotte|charlotte.{0,15}salud",
+ "n_cruce": 6,
+ "limites": "Esto es el público que ya mira el canal en YouTube, no una muestra representativa de nada; son comentarios en español y se cuenta por menciones, no por personas.",
+ "_nota": "Escrito por un agente que leyó SOLO data/comentarios_crudos.json y data/sentimiento.json; los conteos se verificaron aparte contra el corpus antes de publicar, y dos regex se ajustaron para exigir el nombre al lado (víbora, tape)."
+}

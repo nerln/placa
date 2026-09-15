@@ -220,6 +220,12 @@ def simular(mu, se_mu, omega, psi, se_psi, placa28, m28, s28, prop,
                 fin[i] += 1
             score = ps - kappa * m
             f = list(vivos)
+            # Con dos en juego nadie pasa por «len(f) == 3» y el podio quedaba
+            # en cero para las dos finalistas, que estan en el podio por
+            # definicion.
+            if len(f) < 3:
+                for i in f:
+                    podio[i] += 1
             while len(f) > 1:
                 if len(f) == 3:
                     for i in f:

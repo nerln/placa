@@ -4,9 +4,9 @@
  "bloques": [
   {
    "id": "sub-placa-dos-evidencias",
-   "gala": 35,
+   "gala": 36,
    "donde": "#sub-placa · gui/plantilla.html ~2528",
-   "recorte": "Rama de la final delante: «Ya no hay placa por rechazo: la noche se decide por voto positivo entre las tres…»",
+   "recorte": "Rama de la última noche delante: «Última noche. Se vota a la favorita entre las dos y gana la más votada…»",
    "estado": "a mano",
    "campo": "data/actualidad.json → medidas_sociales.lectura y fuentes[].historial | data/encuestas.json → proxima",
    "por_que": "Es la prosa más visible de la página después del titular. Afirma tres cosas de esta semana —que las dos evidencias se cancelan, que a quien la encuesta da eliminado se venía salvando con porcentajes ínfimos, y que un agregador con nombre y apellido es el único de la temporada que acierta— y ninguna tiene detrás un campo que la compruebe. Las tres dejan de ser verdad con la placa siguiente. Es el mismo patrón del texto de la gala 29 que decía «la placa de esta noche es de 6».",
@@ -64,9 +64,9 @@
   },
   {
    "id": "pie-medicion-encuestas-que-circulan",
-   "gala": 35,
+   "gala": 36,
    "donde": "#pie-medicion · gui/plantilla.html ~6005",
-   "recorte": "Rama de la final delante: «Fuente: Exitoína (Perfil)…»; el texto de las cuatro que circulan queda para semanas con encuesta",
+   "recorte": "Rama de la final delante: «Fuentes: nota 1, nota 2…»; el texto de las cuatro que circulan queda para semanas con encuesta",
    "estado": "a mano",
    "campo": "data/actualidad.json → medidas_sociales.fuentes (longitud) | data/encuestas.json → proxima.otras",
    "por_que": "El «cuatro» es el recuento de una semana concreta. La lista de fuentes se dibuja desde los datos unos renglones más abajo, en la misma tarjeta, así que la prosa y la tabla pueden decir números distintos uno al lado del otro sin que nada chille.",
@@ -74,9 +74,9 @@
   },
   {
    "id": "intro-medicion-encuestadora",
-   "gala": 35,
+   "gala": 36,
    "donde": "#intro-medicion, rama sin placa · gui/plantilla.html ~5995",
-   "recorte": "Rama de la final: «Preguntan quién gana, y no dicen lo mismo» + las cuatro mediciones + por qué ninguna entra",
+   "recorte": "Rama de la final: «Preguntan quién gana, y no dicen lo mismo… ninguna es un mano a mano entre las dos que quedan»",
    "estado": "a mano",
    "campo": "data/puntaje.json → eliminado | data/encuestas.json → historial | data/galas.json → placa_vigente.fecha_nominacion",
    "por_que": "Afirma que la encuestadora acertó la última gala. Es exactamente la afirmación que el termómetro de X ya sabe calcular —compara «pedida» contra «salio» antes de titular—; acá quedó a mano y sobrevive intacta a la gala siguiente diciendo lo contrario de lo que pasó. Encima el «miércoles» contradice a galas.json, que fecha la nominación el martes 18.",
@@ -84,7 +84,7 @@
   },
   {
    "id": "paso4-fases-positivas",
-   "gala": 35,
+   "gala": 36,
    "donde": "paso 4 del método · gui/plantilla.html ~2087",
    "recorte": "Hay doce de esas instancias… Es la escala que decide las dos noches de la final… Las eliminaciones por voto positivo de septiembre no se suman como instancias",
    "estado": "a mano",
@@ -94,9 +94,9 @@
   },
   {
    "id": "bootstrap-remuestreos",
-   "gala": 35,
+   "gala": 36,
    "donde": "subtítulo del bloque del bootstrap · gui/plantilla.html ~2101",
-   "recorte": "…sesenta veces… Con tres en juego y la final encima, «primera» es primera de tres",
+   "recorte": "…sesenta veces… Con la final encima, «primera» es primera de las que quedan… el mano a mano del miércoles 16",
    "estado": "a mano",
    "campo": "data/bootstrap.json → B (hoy 60)",
    "por_que": "El título de esa misma sección sí lo deriva: «El pronóstico, remuestreado B veces». El subtítulo dice «sesenta» dos veces a mano, así que en cuanto B cambie el título y el subtítulo se contradicen dentro del mismo bloque, con los dos números a la vista.",
@@ -124,7 +124,7 @@
   },
   {
    "id": "reingresos-rotulo-puntos",
-   "gala": 35,
+   "gala": 36,
    "donde": "#v-puertas, rótulo del gráfico y su aria-label · gui/plantilla.html ~4428 y ~4434",
    "recorte": "los 21 reingresos caen acá, entre el … % y el … % / Los veintiún puntos caen entre…",
    "estado": "a mano",
@@ -134,7 +134,7 @@
   },
   {
    "id": "reingresos-tres-puertas",
-   "gala": 35,
+   "gala": 36,
    "donde": "#v-puertas, encabezado · gui/plantilla.html ~4404",
    "recorte": "Las tres puertas, todas cerradas (en la final) / y cuál sigue abierta",
    "estado": "a mano",
@@ -144,7 +144,7 @@
   },
   {
    "id": "reingresos-estado-mecanismos",
-   "gala": 35,
+   "gala": 36,
    "donde": "#v-puertas, estado de cada mecanismo · gui/plantilla.html ~4390",
    "recorte": "<span class='e cerrada'>cerrada</span>",
    "estado": "a mano",
@@ -165,7 +165,7 @@
   },
   {
    "id": "puerta-visitas-fechas",
-   "gala": 35,
+   "gala": 36,
    "donde": "#v-puertas, puerta de visitas · gui/plantilla.html ~4399",
    "recorte": "cerrada por calendario: quedan tres y la final ya tiene fecha… Fue la puerta por la que entraron las nueve del martes…",
    "estado": "a mano",

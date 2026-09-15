@@ -1,52 +1,63 @@
 {
- "gala": 34,
- "fecha": "2026-09-09",
- "eliminado": "Luana",
+ "gala": 35,
+ "fecha": "2026-09-14",
+ "eliminado": "Charlotte",
  "placa": [
   "Sol",
-  "Luana",
   "Charlotte",
   "Yipio"
  ],
  "regla": "EVALUACION.md, escrita antes de que terminara la temporada",
  "modelo": {
-  "p_del_eliminado": 0.1068,
+  "p_del_eliminado": 0.2418,
   "puesto": 3,
-  "de": 4,
+  "de": 3,
   "acerto": false,
-  "brier": 0.9851,
-  "brier_uniforme": 0.75,
-  "log_verosimilitud": -2.237,
-  "log_verosimilitud_uniforme": -1.3863,
+  "brier": 0.8735,
+  "brier_uniforme": 0.6667,
+  "log_verosimilitud": -1.4196,
+  "log_verosimilitud_uniforme": -1.0986,
   "orden": [
-   "Sol",
    "Yipio",
-   "Luana",
+   "Sol",
    "Charlotte"
   ]
  },
- "dos_tiempos": null,
+ "dos_tiempos": {
+  "p_del_eliminado": 0.3557,
+  "puesto": 2,
+  "de": 3,
+  "acerto": false,
+  "brier": 0.6589,
+  "brier_uniforme": 0.6667,
+  "log_verosimilitud": -1.0337,
+  "log_verosimilitud_uniforme": -1.0986,
+  "orden": [
+   "Yipio",
+   "Charlotte",
+   "Sol"
+  ]
+ },
  "apuesta": null,
  "cruce": {
-  "p_del_eliminado": 0.3289,
-  "puesto": 1,
-  "de": 4,
-  "acerto": true,
-  "brier": 0.6168,
-  "brier_uniforme": 0.75,
-  "log_verosimilitud": -1.112,
-  "log_verosimilitud_uniforme": -1.3863,
+  "p_del_eliminado": 0.167,
+  "puesto": 3,
+  "de": 3,
+  "acerto": false,
+  "brier": 1.1244,
+  "brier_uniforme": 0.6667,
+  "log_verosimilitud": -1.7898,
+  "log_verosimilitud_uniforme": -1.0986,
   "orden": [
-   "Luana",
    "Sol",
    "Yipio",
    "Charlotte"
   ]
  },
  "congeladas": {
-  "modelo": "2026-09-07",
-  "dos_tiempos": null,
+  "modelo": "2026-09-09",
+  "dos_tiempos": "2026-09-09",
   "apuesta": null,
-  "cruce": "2026-09-09T15:31-0300"
+  "cruce": "2026-09-14T21:37-0300"
  }
 }

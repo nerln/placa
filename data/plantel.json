@@ -1,32 +1,11 @@
 {
  "_nota": "Plantel vigente y atributos que consume el modelo. Este archivo es el que edita model/actualizar.py despues de cada gala: saca a quien fue eliminado, recalcula las propensiones de nominacion y deja el resto intacto. Nada de esto vive ya dentro del codigo.",
- "actualizado": "2026-09-09",
+ "actualizado": "2026-09-14",
  "edicion": "Gran Hermano Argentina: Generación Dorada",
  "temporada": 13,
  "estreno": "2026-02-23",
  "premio": "AR$ 70.000.000 en Mercado Pago + vivienda + moto Motomel + un año de cerveza Amstel",
  "jugadores": [
-  {
-   "apodo": "Charlotte",
-   "nombre": "Charlotte Caniggia",
-   "edad": 33,
-   "ciudad": "CABA",
-   "provincia": "Ciudad de Buenos Aires",
-   "pais": "AR",
-   "ingreso": "2026-05-20",
-   "previa": "GH VIP España 4 (2016) · 9.ª",
-   "papel": "La mediática. Fandom propio heredado, socialmente aislada dentro de la casa.",
-   "placas_recientes": 7,
-   "votos_recientes": 1,
-   "bono_fulminante": 0.45,
-   "genero": "f",
-   "redes": {
-    "ig": "chcaniggia",
-    "x": "CHCaniggia",
-    "conf": "media",
-    "nota": "su Instagram está desactivado mientras está en la casa"
-   }
-  },
   {
    "apodo": "Yipio",
    "nombre": "Yisela «Yipio» Pintos",
@@ -37,7 +16,7 @@
    "ingreso": "2026-05-20",
    "previa": "Sin ediciones previas · volvió por repechaje con 35,6%",
    "papel": "Comediante uruguaya. Líder e inmune de la semana 24.",
-   "placas_recientes": 10,
+   "placas_recientes": 11,
    "votos_recientes": 11,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -58,7 +37,7 @@
    "ingreso": "2026-05-31",
    "previa": "GH Argentina 6 (2010-11) · volvió por Golden Ticket",
    "papel": "La villana. Ganó tres versus seguidos con 48,2%, 44,7% y 46,7%.",
-   "placas_recientes": 11,
+   "placas_recientes": 12,
    "votos_recientes": 17,
    "bono_fulminante": 0.0,
    "genero": "f",
@@ -71,6 +50,33 @@
   }
  ],
  "eliminados_recientes": [
+  {
+   "apodo": "Charlotte",
+   "fecha": "2026-09-14",
+   "modo": "eliminado",
+   "detalle": "tercer puesto de la final: 10,7% de los votos positivos (Infobae, Ciudad Magazine)",
+   "ficha": {
+    "apodo": "Charlotte",
+    "nombre": "Charlotte Caniggia",
+    "edad": 33,
+    "ciudad": "CABA",
+    "provincia": "Ciudad de Buenos Aires",
+    "pais": "AR",
+    "ingreso": "2026-05-20",
+    "previa": "GH VIP España 4 (2016) · 9.ª",
+    "papel": "La mediática. Fandom propio heredado, socialmente aislada dentro de la casa.",
+    "placas_recientes": 7,
+    "votos_recientes": 1,
+    "bono_fulminante": 0.45,
+    "genero": "f",
+    "redes": {
+     "ig": "chcaniggia",
+     "x": "CHCaniggia",
+     "conf": "media",
+     "nota": "su Instagram está desactivado mientras está en la casa"
+    }
+   }
+  },
   {
    "apodo": "Luana",
    "fecha": "2026-09-09",
@@ -247,12 +253,6 @@
     "bono_fulminante": 0.0
    },
    "_fuente_ficha": "recuperada de la version del artefacto del 08/08/2026; sacar_jugador la descartaba antes de arreglarlo"
-  },
-  {
-   "apodo": "Campanita",
-   "fecha": "2026-08-03",
-   "modo": "eliminada",
-   "detalle": "perdió el versus contra Sol con 53,3% y se negó a salir de la casa"
   }
  ],
  "_nota_genero": "genero: 'f'/'m'. Al 10/08/2026 no queda ningun varon en juego, confirmado por Mi Telefe en la nota de la eliminacion de Hanssen.",

@@ -1,14 +1,12 @@
 {
- "generado": "2026-09-14T21:37-0300",
- "gala": 35,
+ "generado": "2026-09-15T05:09-0300",
+ "gala": 36,
  "fase": "positivo",
  "placa": [
   "Sol",
-  "Charlotte",
   "Yipio"
  ],
  "orden": [
-  "Charlotte",
   "Yipio",
   "Sol"
  ],
@@ -17,15 +15,15 @@
  "cobertura": {
   "comentarios": [
    "Sol",
-   "Charlotte",
    "Yipio"
   ],
   "exposicion": [
    "Sol",
-   "Charlotte",
    "Yipio"
   ],
-  "campaña": []
+  "campaña": [
+   "Sol"
+  ]
  },
  "descartadas": [
   {
@@ -43,43 +41,29 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.227,
-   "a_favor": 16,
-   "en_contra": 26,
-   "con_signo": 42,
+   "signo": -0.041,
+   "a_favor": 34,
+   "en_contra": 37,
+   "con_signo": 71,
    "titulos": 8,
    "vistas": 0,
-   "comentarios_por_video": 5.25,
-   "campana": null,
+   "comentarios_por_video": 8.88,
+   "campana": 1.0,
    "fuentes": [
     "comentarios",
-    "exposicion"
+    "exposicion",
+    "campaña"
    ],
-   "n_fuentes": 2
-  },
-  "Charlotte": {
-   "signo": 0.879,
-   "a_favor": 92,
-   "en_contra": 5,
-   "con_signo": 97,
-   "titulos": 6,
-   "vistas": 0,
-   "comentarios_por_video": 16.17,
-   "campana": null,
-   "fuentes": [
-    "comentarios",
-    "exposicion"
-   ],
-   "n_fuentes": 2
+   "n_fuentes": 3
   },
   "Yipio": {
-   "signo": 0.769,
-   "a_favor": 129,
-   "en_contra": 16,
-   "con_signo": 145,
+   "signo": 0.895,
+   "a_favor": 162,
+   "en_contra": 8,
+   "con_signo": 170,
    "titulos": 9,
    "vistas": 0,
-   "comentarios_por_video": 16.11,
+   "comentarios_por_video": 18.89,
    "campana": null,
    "fuentes": [
     "comentarios",

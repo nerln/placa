@@ -1,30 +1,26 @@
 {
- "generado": "2026-09-09",
+ "generado": "2026-09-14",
  "quien": "Yipio",
- "p_gana": 0.20731333333333332,
- "n": 62194,
+ "p_gana": 0.40308666666666665,
+ "n": 120926,
  "n_sims": 300000,
- "una_de_cada": 5,
+ "una_de_cada": 2,
  "rasgos": {
-  "mu_base": -0.459,
+  "mu_base": -0.549,
   "mu_sd": 0.269,
-  "mu_gana": -0.459,
+  "mu_gana": -0.549,
   "mu_sigmas": -0.0,
-  "psi_base": 0.261,
-  "psi_sd": 0.882,
-  "psi_gana": 0.759,
-  "psi_sigmas": 0.56
+  "psi_base": 0.26,
+  "psi_sd": 0.866,
+  "psi_gana": 0.551,
+  "psi_sigmas": 0.34
  },
  "eliminaciones_que_sobrevive": 0.0,
  "finalistas": {
-  "3": 0.7006946007653472,
-  "4": 0.2993053992346529
+  "3": 0.7006185601111423,
+  "4": 0.2993814398888576
  },
  "rivales_final": [
-  {
-   "quien": "Charlotte",
-   "p": 1.0
-  },
   {
    "quien": "Sol",
    "p": 1.0
@@ -32,12 +28,8 @@
  ],
  "duelo_final": [
   {
-   "quien": "Charlotte",
-   "p": 0.5216419590314179
-  },
-  {
    "quien": "Sol",
-   "p": 0.4783580409685822
+   "p": 1.0
   }
  ],
  "primeras_salidas": [

@@ -1,6 +1,6 @@
 {
- "generado": "2026-09-14",
- "momento": "2026-09-14T21:37-0300",
+ "generado": "2026-09-15",
+ "momento": "2026-09-15T05:09-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,67 +10,48 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 1056,
- "nombran_a_alguien": 681,
- "con_signo": 199,
+ "total": 1111,
+ "nombran_a_alguien": 716,
+ "con_signo": 228,
  "por_jugadora": {
   "Sol": {
-   "contra": 26,
-   "favor": 16,
-   "sin_signo": 135
-  },
-  "Charlotte": {
-   "contra": 5,
-   "favor": 92,
-   "sin_signo": 209
+   "contra": 37,
+   "favor": 34,
+   "sin_signo": 168
   },
   "Yipio": {
-   "contra": 16,
-   "favor": 129,
-   "sin_signo": 325
+   "contra": 8,
+   "favor": 162,
+   "sin_signo": 371
   }
  },
  "ejemplos": {
   "Sol": [
    {
-    "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
-    "signo": "contra"
-   },
-   {
-    "texto": "Sol se cree la mejor persona pero tiene un corazon podrido de ambicion or ganar esa mujer por ganar es capazde todo ensucia à la gente y no le importa",
+    "texto": "Vamos petera sol del sicólogo productores y de del moro 😂😂😂😂",
     "signo": "favor"
    },
    {
-    "texto": "Nadie te cree una palabra te describió muy bien Yipio !!!Fuera está noche Sol es lo más nefasta!!!",
-    "signo": "contra"
-   }
-  ],
-  "Charlotte": [
-   {
-    "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
-    "signo": "contra"
-   },
-   {
-    "texto": "Que inteligente Yipio !!que memoria !! Que lucidez; ella merece llegar a la final junto a Charlotte",
+    "texto": "😭😭😭 VAMOS SOL TE VANCAMOS",
     "signo": "favor"
    },
    {
-    "texto": "YIPIO Y CHARLOTTE A LA FINAL!!!❤❤",
+    "texto": "De cierta forma, Charlotte es el salvavidas entre la rivalidad de Yipio vs Sol. Por otro lado, no se cuanto trabajo después pueda tener Sol considerando que realmente NO es la favo",
     "signo": "favor"
    }
   ],
   "Yipio": [
    {
-    "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
-    "signo": "contra"
-   },
-   {
-    "texto": "Vamos  Yipio, siempre domando a la  serpiente!",
+    "texto": "Qué lindo ! Vamos Yipio y Charlotte.",
     "signo": "favor"
    },
    {
-    "texto": "Nadie te cree una palabra te describió muy bien Yipio !!!Fuera está noche Sol es lo más nefasta!!!",
-    "signo": "contra"
+    "texto": "Vamos yipioooo te amamos❤",
+    "signo": "favor"
+   },
+   {
+    "texto": "Vamos yipio o Charlotte ganadoras 🏆🏆🏆👏",
+    "signo": "favor"
    }
   ]
  }

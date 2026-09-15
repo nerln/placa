@@ -111,6 +111,22 @@
     "Charlotte",
     "Yipio"
    ]
+  },
+  {
+   "gala": 36,
+   "fecha_gala": "2026-09-16",
+   "congelado": "2026-09-15T05:20-0300",
+   "archivo": "galas/36.html",
+   "historial": "https://github.com/nerln/placa/commits/main/web/galas/36.html",
+   "llamadas": {
+    "modelo": "Yipio 59,7%",
+    "dos tiempos": "Yipio 69,2%",
+    "cruce": "Sol 61,0%"
+   },
+   "placa": [
+    "Sol",
+    "Yipio"
+   ]
   }
  ]
 }

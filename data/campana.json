@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-14",
+ "generado": "2026-09-15",
  "ventana": "24 tarjetas horarias de trends24.in/argentina",
  "fuente": "posiciones del top-50 de X en Argentina archivadas por trends24",
  "formula": "ICD(i) = Σ signo(t) · (51 − mejor_posición(t)) / 50, sobre los términos que nombran a i y llevan consigna. Una sola consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82; al 50, 0,02. Dos consignas suman.",
@@ -7,12 +7,6 @@
  "por_que_no": "Para que entrara habría que estimar cuánto pesa contra las galas ya jugadas, y con una sola ventana de tendencias no hay con qué. Se publica como descripción.",
  "null_no_es_cero": "Quien no tiene ningún término con consigna queda en null. Sin campaña no es lo mismo que con campaña neutra: es no medido.",
  "indice": {
-  "Charlotte": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
-  },
   "Yipio": {
    "icd": null,
    "n_terminos": 0,
@@ -20,12 +14,19 @@
    "terminos": []
   },
   "Sol": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
+   "icd": 1.0,
+   "n_terminos": 1,
+   "estado": "observado",
+   "terminos": [
+    {
+     "txt": "SOL AL 9009",
+     "signo": 1,
+     "mejor": 1,
+     "peso": 1.0
+    }
+   ]
   }
  },
- "observados": 0,
- "de": 3
+ "observados": 1,
+ "de": 2
 }

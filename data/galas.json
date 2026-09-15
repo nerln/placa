@@ -376,15 +376,28 @@
    "versus": {},
    "completa": false,
    "eliminado": "Luana"
+  },
+  {
+   "gala": 35,
+   "fecha": "2026-09-14",
+   "tipo": "negativo",
+   "placa": [
+    "Sol",
+    "Charlotte",
+    "Yipio"
+   ],
+   "salvados_cuota": {},
+   "versus": {},
+   "completa": false,
+   "eliminado": "Charlotte"
   }
  ],
  "placa_vigente": {
-  "gala": 35,
-  "fecha": "2026-09-14",
-  "fecha_nominacion": "2026-09-09",
+  "gala": 36,
+  "fecha": "2026-09-16",
+  "fecha_nominacion": "2026-09-14",
   "integrantes": [
    "Sol",
-   "Charlotte",
    "Yipio"
   ],
   "inmune_lider": "",
