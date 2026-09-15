@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-15T15:08-0300",
+ "generado": "2026-09-15T19:09-0300",
  "gala": 36,
  "fase": "positivo",
  "placa": [
@@ -42,13 +42,13 @@
  ],
  "filas": {
   "Sol": {
-   "signo": 0.054,
-   "a_favor": 38,
-   "en_contra": 34,
-   "con_signo": 72,
-   "titulos": 12,
+   "signo": 0.051,
+   "a_favor": 40,
+   "en_contra": 36,
+   "con_signo": 76,
+   "titulos": 13,
    "vistas": 0,
-   "comentarios_por_video": 6.0,
+   "comentarios_por_video": 5.85,
    "campana": 1.0,
    "fuentes": [
     "comentarios",
@@ -58,13 +58,13 @@
    "n_fuentes": 3
   },
   "Yipio": {
-   "signo": 0.898,
-   "a_favor": 166,
-   "en_contra": 8,
-   "con_signo": 174,
-   "titulos": 13,
+   "signo": 0.89,
+   "a_favor": 171,
+   "en_contra": 9,
+   "con_signo": 180,
+   "titulos": 14,
    "vistas": 0,
-   "comentarios_por_video": 13.38,
+   "comentarios_por_video": 12.86,
    "campana": 0.56,
    "fuentes": [
     "comentarios",
@@ -74,7 +74,7 @@
    "n_fuentes": 3
   }
  },
- "max_titulos": 13,
+ "max_titulos": 14,
  "exposicion_del_canal": true,
  "_nota_exposicion": "Leída del canal entero"
 }
