@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-14",
- "momento": "2026-09-14T20:05-0300",
+ "momento": "2026-09-14T21:37-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,37 +11,37 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 1056,
- "nombran_a_alguien": 674,
- "con_signo": 184,
+ "nombran_a_alguien": 681,
+ "con_signo": 199,
  "por_jugadora": {
   "Sol": {
-   "contra": 23,
-   "favor": 15,
-   "sin_signo": 139
+   "contra": 26,
+   "favor": 16,
+   "sin_signo": 135
   },
   "Charlotte": {
    "contra": 5,
-   "favor": 84,
-   "sin_signo": 211
+   "favor": 92,
+   "sin_signo": 209
   },
   "Yipio": {
    "contra": 16,
-   "favor": 116,
-   "sin_signo": 328
+   "favor": 129,
+   "sin_signo": 325
   }
  },
  "ejemplos": {
   "Sol": [
    {
-    "texto": "Sol se cree la mejor persona pero tiene un corazon podrido de ambicion or ganar esa mujer por ganar es capazde todo ensucia à la gente y no le importa",
-    "signo": "favor"
-   },
-   {
     "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
     "signo": "contra"
    },
    {
-    "texto": "SOL AFUERA ES INSOPORTABLE",
+    "texto": "Sol se cree la mejor persona pero tiene un corazon podrido de ambicion or ganar esa mujer por ganar es capazde todo ensucia à la gente y no le importa",
+    "signo": "favor"
+   },
+   {
+    "texto": "Nadie te cree una palabra te describió muy bien Yipio !!!Fuera está noche Sol es lo más nefasta!!!",
     "signo": "contra"
    }
   ],
@@ -55,22 +55,22 @@
     "signo": "favor"
    },
    {
-    "texto": "Vamos Charlotte , felicidades 🩷",
+    "texto": "YIPIO Y CHARLOTTE A LA FINAL!!!❤❤",
     "signo": "favor"
    }
   ],
   "Yipio": [
    {
-    "texto": "Vamos  Yipio, siempre domando a la  serpiente!",
-    "signo": "favor"
-   },
-   {
     "texto": "Bla....bla...bla...manotazo de ahogada sol....te cansaste tenes la puerta tida para vos solita... chau sol.\nYipio,Charlotte y luana salen por la grande!!!",
     "signo": "contra"
    },
    {
-    "texto": "Yipio  genia ❤",
+    "texto": "Vamos  Yipio, siempre domando a la  serpiente!",
     "signo": "favor"
+   },
+   {
+    "texto": "Nadie te cree una palabra te describió muy bien Yipio !!!Fuera está noche Sol es lo más nefasta!!!",
+    "signo": "contra"
    }
   ]
  }

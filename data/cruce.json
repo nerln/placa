@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-14T20:05-0300",
+ "generado": "2026-09-14T21:37-0300",
  "gala": 35,
  "fecha_gala": "2026-09-14",
  "placa": [
@@ -10,20 +10,20 @@
  "fase": "positivo",
  "que_es": "El cruce entre lo que la gente escribe y lo que se pide afuera, pesado por lo cerca que está la gala: cuanto menos falta, más pesa el sentimiento.",
  "reloj": {
-  "faltan_horas": 2.2,
-  "cercania": 0.987,
+  "faltan_horas": 0.6,
+  "cercania": 0.996,
   "horizonte_horas": 168.0
  },
  "pesos": {
-  "sentimiento": 0.644,
-  "campana": 0.356,
+  "sentimiento": 0.648,
+  "campana": 0.352,
   "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
  },
  "entradas": {
   "sentimiento": {
-   "Sol": 0.7568,
-   "Yipio": 0.16,
-   "Charlotte": 0.0832
+   "Sol": 0.7769,
+   "Yipio": 0.1464,
+   "Charlotte": 0.0767
   },
   "campana": {
    "Sol": 0.3333,
@@ -32,9 +32,9 @@
   }
  },
  "p_sale": {
-  "Sol": 0.6062,
-  "Charlotte": 0.1722,
-  "Yipio": 0.2217
+  "Sol": 0.6209,
+  "Charlotte": 0.167,
+  "Yipio": 0.2121
  },
  "llama_a": "Sol",
  "coinciden": null,

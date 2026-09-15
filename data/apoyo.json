@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-14T20:05-0300",
+ "generado": "2026-09-14T21:37-0300",
  "gala": 35,
  "fase": "positivo",
  "placa": [
@@ -43,13 +43,13 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.2,
-   "a_favor": 15,
-   "en_contra": 23,
-   "con_signo": 38,
+   "signo": -0.227,
+   "a_favor": 16,
+   "en_contra": 26,
+   "con_signo": 42,
    "titulos": 8,
    "vistas": 0,
-   "comentarios_por_video": 4.75,
+   "comentarios_por_video": 5.25,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -58,13 +58,13 @@
    "n_fuentes": 2
   },
   "Charlotte": {
-   "signo": 0.868,
-   "a_favor": 84,
+   "signo": 0.879,
+   "a_favor": 92,
    "en_contra": 5,
-   "con_signo": 89,
+   "con_signo": 97,
    "titulos": 6,
    "vistas": 0,
-   "comentarios_por_video": 14.83,
+   "comentarios_por_video": 16.17,
    "campana": null,
    "fuentes": [
     "comentarios",
@@ -73,13 +73,13 @@
    "n_fuentes": 2
   },
   "Yipio": {
-   "signo": 0.746,
-   "a_favor": 116,
+   "signo": 0.769,
+   "a_favor": 129,
    "en_contra": 16,
-   "con_signo": 132,
+   "con_signo": 145,
    "titulos": 9,
    "vistas": 0,
-   "comentarios_por_video": 14.67,
+   "comentarios_por_video": 16.11,
    "campana": null,
    "fuentes": [
     "comentarios",
