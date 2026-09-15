@@ -8,10 +8,17 @@
  "null_no_es_cero": "Quien no tiene ningún término con consigna queda en null. Sin campaña no es lo mismo que con campaña neutra: es no medido.",
  "indice": {
   "Yipio": {
-   "icd": null,
-   "n_terminos": 0,
-   "estado": "sin_observacion",
-   "terminos": []
+   "icd": 0.56,
+   "n_terminos": 1,
+   "estado": "observado",
+   "terminos": [
+    {
+     "txt": "YIPIO AL 9009",
+     "signo": 1,
+     "mejor": 23,
+     "peso": 0.56
+    }
+   ]
   },
   "Sol": {
    "icd": 1.0,
@@ -27,6 +34,6 @@
    ]
   }
  },
- "observados": 1,
+ "observados": 2,
  "de": 2
 }

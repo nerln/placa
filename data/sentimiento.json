@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-15",
- "momento": "2026-09-15T05:09-0300",
+ "momento": "2026-09-15T10:28-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,19 +10,19 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 1111,
- "nombran_a_alguien": 716,
- "con_signo": 228,
+ "total": 1125,
+ "nombran_a_alguien": 728,
+ "con_signo": 224,
  "por_jugadora": {
   "Sol": {
-   "contra": 37,
-   "favor": 34,
-   "sin_signo": 168
+   "contra": 36,
+   "favor": 30,
+   "sin_signo": 175
   },
   "Yipio": {
    "contra": 8,
-   "favor": 162,
-   "sin_signo": 371
+   "favor": 165,
+   "sin_signo": 384
   }
  },
  "ejemplos": {
@@ -46,11 +46,11 @@
     "signo": "favor"
    },
    {
-    "texto": "Vamos yipioooo te amamos❤",
+    "texto": "Vamos yipio o Charlotte ganadoras 🏆🏆🏆👏",
     "signo": "favor"
    },
    {
-    "texto": "Vamos yipio o Charlotte ganadoras 🏆🏆🏆👏",
+    "texto": "Vamos yipioooo te amamos❤",
     "signo": "favor"
    }
   ]

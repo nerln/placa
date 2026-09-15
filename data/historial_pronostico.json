@@ -2167,6 +2167,26 @@
     "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
    },
    "fase": "positivo"
+  },
+  {
+   "gala": 36,
+   "fecha_gala": "2026-09-16",
+   "placa": [
+    "Sol",
+    "Yipio"
+   ],
+   "p_sale": {
+    "Sol": 0.6432,
+    "Yipio": 0.3568
+   },
+   "escrita": "2026-09-15T10:28-0300",
+   "llamada": "Sol",
+   "pesos": {
+    "sentimiento": 0.554,
+    "campana": 0.446,
+    "_nota": "A una semana el sentimiento pesa 20% y en la noche de la gala 65%. La campaña baja de 80% a 35%: baja, pero no se apaga."
+   },
+   "fase": "positivo"
   }
  ],
  "_nota_cruces": "El cruce entre sentimiento y campaña, congelado antes de cada gala como las otras tres. Cada entrada lleva los pesos que tenía el reloj en ese momento."

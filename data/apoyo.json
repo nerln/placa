@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-15T05:09-0300",
+ "generado": "2026-09-15T10:28-0300",
  "gala": 36,
  "fase": "positivo",
  "placa": [
@@ -22,7 +22,8 @@
    "Yipio"
   ],
   "campaña": [
-   "Sol"
+   "Sol",
+   "Yipio"
   ]
  },
  "descartadas": [
@@ -41,13 +42,13 @@
  ],
  "filas": {
   "Sol": {
-   "signo": -0.041,
-   "a_favor": 34,
-   "en_contra": 37,
-   "con_signo": 71,
+   "signo": -0.088,
+   "a_favor": 30,
+   "en_contra": 36,
+   "con_signo": 66,
    "titulos": 8,
-   "vistas": 0,
-   "comentarios_por_video": 8.88,
+   "vistas": 464,
+   "comentarios_por_video": 8.25,
    "campana": 1.0,
    "fuentes": [
     "comentarios",
@@ -57,22 +58,23 @@
    "n_fuentes": 3
   },
   "Yipio": {
-   "signo": 0.895,
-   "a_favor": 162,
+   "signo": 0.897,
+   "a_favor": 165,
    "en_contra": 8,
-   "con_signo": 170,
-   "titulos": 9,
-   "vistas": 0,
-   "comentarios_por_video": 18.89,
-   "campana": null,
+   "con_signo": 173,
+   "titulos": 10,
+   "vistas": 464,
+   "comentarios_por_video": 17.3,
+   "campana": 0.56,
    "fuentes": [
     "comentarios",
-    "exposicion"
+    "exposicion",
+    "campaña"
    ],
-   "n_fuentes": 2
+   "n_fuentes": 3
   }
  },
- "max_titulos": 9,
+ "max_titulos": 10,
  "exposicion_del_canal": true,
  "_nota_exposicion": "Leída del canal entero"
 }
