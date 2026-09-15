@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-15",
- "momento": "2026-09-15T10:28-0300",
+ "momento": "2026-09-15T15:08-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,19 +10,19 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 1125,
- "nombran_a_alguien": 728,
- "con_signo": 224,
+ "total": 1129,
+ "nombran_a_alguien": 737,
+ "con_signo": 232,
  "por_jugadora": {
   "Sol": {
-   "contra": 36,
-   "favor": 30,
-   "sin_signo": 175
+   "contra": 34,
+   "favor": 38,
+   "sin_signo": 182
   },
   "Yipio": {
    "contra": 8,
-   "favor": 165,
-   "sin_signo": 384
+   "favor": 166,
+   "sin_signo": 379
   }
  },
  "ejemplos": {
