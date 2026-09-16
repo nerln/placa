@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-15",
+ "generado": "2026-09-16",
  "ventana": "24 tarjetas horarias de trends24.in/argentina",
  "fuente": "posiciones del top-50 de X en Argentina archivadas por trends24",
  "formula": "ICD(i) = Σ signo(t) · (51 − mejor_posición(t)) / 50, sobre los términos que nombran a i y llevan consigna. Una sola consigna que llega al puesto 1 vale 1,00; al puesto 10, 0,82; al 50, 0,02. Dos consignas suman.",
@@ -8,17 +8,10 @@
  "null_no_es_cero": "Quien no tiene ningún término con consigna queda en null. Sin campaña no es lo mismo que con campaña neutra: es no medido.",
  "indice": {
   "Yipio": {
-   "icd": 0.56,
-   "n_terminos": 1,
-   "estado": "observado",
-   "terminos": [
-    {
-     "txt": "YIPIO AL 9009",
-     "signo": 1,
-     "mejor": 23,
-     "peso": 0.56
-    }
-   ]
+   "icd": null,
+   "n_terminos": 0,
+   "estado": "sin_observacion",
+   "terminos": []
   },
   "Sol": {
    "icd": 1.0,
@@ -34,6 +27,6 @@
    ]
   }
  },
- "observados": 2,
+ "observados": 1,
  "de": 2
 }
