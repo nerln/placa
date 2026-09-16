@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-16T10:27-0300",
+ "generado": "2026-09-16T15:09-0300",
  "gala": 36,
  "fase": "positivo",
  "placa": [
@@ -41,14 +41,14 @@
  ],
  "filas": {
   "Sol": {
-   "signo": 0.042,
+   "signo": 0.057,
    "a_favor": 36,
-   "en_contra": 33,
-   "con_signo": 69,
-   "titulos": 15,
+   "en_contra": 32,
+   "con_signo": 68,
+   "titulos": 14,
    "vistas": 0,
-   "comentarios_por_video": 4.6,
-   "campana": 0.98,
+   "comentarios_por_video": 4.86,
+   "campana": 0.94,
    "fuentes": [
     "comentarios",
     "exposicion",
@@ -57,13 +57,13 @@
    "n_fuentes": 3
   },
   "Yipio": {
-   "signo": 0.892,
-   "a_favor": 174,
+   "signo": 0.891,
+   "a_favor": 173,
    "en_contra": 9,
-   "con_signo": 183,
+   "con_signo": 182,
    "titulos": 17,
-   "vistas": 271,
-   "comentarios_por_video": 10.76,
+   "vistas": 105,
+   "comentarios_por_video": 10.71,
    "campana": null,
    "fuentes": [
     "comentarios",
