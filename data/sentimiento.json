@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-15",
- "momento": "2026-09-15T19:09-0300",
+ "momento": "2026-09-15T22:21-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,19 +10,19 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 1131,
- "nombran_a_alguien": 738,
- "con_signo": 240,
+ "total": 1134,
+ "nombran_a_alguien": 739,
+ "con_signo": 236,
  "por_jugadora": {
   "Sol": {
-   "contra": 36,
-   "favor": 40,
-   "sin_signo": 183
+   "contra": 37,
+   "favor": 39,
+   "sin_signo": 179
   },
   "Yipio": {
-   "contra": 9,
-   "favor": 171,
-   "sin_signo": 368
+   "contra": 10,
+   "favor": 167,
+   "sin_signo": 378
   }
  },
  "ejemplos": {
@@ -32,7 +32,7 @@
     "signo": "favor"
    },
    {
-    "texto": "Hola gente linda  a sol no le creo  nada  bajo porque  se lo dijo la producción 🎉😂fuera  sol pero  seguro  la hacen  ganar a  la víbora😮",
+    "texto": "NADIE TE CREE URUGUAYA , ERES MAS FALLUTA  , FALSA QUE UN BILLETE DE CIRCO.\nESTAS JUGANDO A GANARLE A SOL Y NO A GANAR GH.\nEN CAMBIO SOL JUEGA A GANAR GRAN HERMANO",
     "signo": "contra"
    },
    {
@@ -50,7 +50,7 @@
     "signo": "favor"
    },
    {
-    "texto": "Vamos Yipio !!!",
+    "texto": "Vamos yipio o Charlotte ganadoras 🏆🏆🏆👏",
     "signo": "favor"
    }
   ]
