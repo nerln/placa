@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-16",
- "momento": "2026-09-16T04:37-0300",
+ "momento": "2026-09-16T10:27-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -10,19 +10,19 @@
   "los comentarios de Instagram, que el marco de incrustación no trae",
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
- "total": 935,
- "nombran_a_alguien": 610,
- "con_signo": 194,
+ "total": 1135,
+ "nombran_a_alguien": 732,
+ "con_signo": 237,
  "por_jugadora": {
   "Sol": {
-   "contra": 32,
-   "favor": 18,
-   "sin_signo": 131
+   "contra": 33,
+   "favor": 36,
+   "sin_signo": 176
   },
   "Yipio": {
-   "contra": 8,
-   "favor": 147,
-   "sin_signo": 334
+   "contra": 9,
+   "favor": 174,
+   "sin_signo": 373
   }
  },
  "ejemplos": {
@@ -36,8 +36,8 @@
     "signo": "favor"
    },
    {
-    "texto": "De cierta forma, Charlotte es el salvavidas entre la rivalidad de Yipio vs Sol. Por otro lado, no se cuanto trabajo después pueda tener Sol considerando que realmente NO es la favo",
-    "signo": "favor"
+    "texto": "NADIE TE CREE URUGUAYA , ERES MAS FALLUTA  , FALSA QUE UN BILLETE DE CIRCO.\nESTAS JUGANDO A GANARLE A SOL Y NO A GANAR GH.\nEN CAMBIO SOL JUEGA A GANAR GRAN HERMANO",
+    "signo": "contra"
    }
   ],
   "Yipio": [
