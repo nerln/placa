@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-16T21:26-0300",
+ "generado": "2026-09-16T21:28-0300",
  "gala": 36,
  "fecha_gala": "2026-09-16",
  "placa": [
@@ -20,8 +20,8 @@
  },
  "entradas": {
   "sentimiento": {
-   "Sol": 0.8991,
-   "Yipio": 0.1009
+   "Sol": 0.8981,
+   "Yipio": 0.1019
   },
   "campana": {
    "Sol": 0.2632,
@@ -29,8 +29,8 @@
   }
  },
  "p_sale": {
-  "Sol": 0.6751,
-  "Yipio": 0.3249
+  "Sol": 0.6745,
+  "Yipio": 0.3255
  },
  "llama_a": "Sol",
  "coinciden": null,

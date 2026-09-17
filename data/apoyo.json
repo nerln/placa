@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-16T21:26-0300",
+ "generado": "2026-09-16T21:28-0300",
  "gala": 36,
  "fase": "positivo",
  "placa": [
@@ -57,13 +57,13 @@
    "n_fuentes": 3
   },
   "Yipio": {
-   "signo": 0.883,
-   "a_favor": 176,
+   "signo": 0.882,
+   "a_favor": 174,
    "en_contra": 10,
-   "con_signo": 186,
+   "con_signo": 184,
    "titulos": 17,
    "vistas": 0,
-   "comentarios_por_video": 10.94,
+   "comentarios_por_video": 10.82,
    "campana": null,
    "fuentes": [
     "comentarios",
