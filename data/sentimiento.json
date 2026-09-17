@@ -1,6 +1,6 @@
 {
  "generado": "2026-09-16",
- "momento": "2026-09-16T19:05-0300",
+ "momento": "2026-09-16T21:26-0300",
  "fase": "positivo",
  "fuente": "comentarios de los videos oficiales del programa en YouTube",
  "metodo": "Léxico escrito en model/comentarios.py, sin modelo de lenguaje detrás: un comentario cuenta para quien nombra, y cuenta con signo sólo si además trae una marca del léxico. «Al 9009» y «positiva» cambian de signo con la fase de la placa.",
@@ -11,17 +11,17 @@
   "Reddit, que responde 403 a cualquier petición anónima"
  ],
  "total": 1137,
- "nombran_a_alguien": 735,
- "con_signo": 241,
+ "nombran_a_alguien": 736,
+ "con_signo": 239,
  "por_jugadora": {
   "Sol": {
-   "contra": 33,
-   "favor": 36,
-   "sin_signo": 173
+   "contra": 36,
+   "favor": 33,
+   "sin_signo": 172
   },
   "Yipio": {
-   "contra": 9,
-   "favor": 179,
+   "contra": 10,
+   "favor": 176,
    "sin_signo": 377
   }
  },
@@ -36,8 +36,8 @@
     "signo": "favor"
    },
    {
-    "texto": "De cierta forma, Charlotte es el salvavidas entre la rivalidad de Yipio vs Sol. Por otro lado, no se cuanto trabajo después pueda tener Sol considerando que realmente NO es la favo",
-    "signo": "favor"
+    "texto": "NADIE TE CREE URUGUAYA , ERES MAS FALLUTA  , FALSA QUE UN BILLETE DE CIRCO.\nESTAS JUGANDO A GANARLE A SOL Y NO A GANAR GH.\nEN CAMBIO SOL JUEGA A GANAR GRAN HERMANO",
+    "signo": "contra"
    }
   ],
   "Yipio": [
