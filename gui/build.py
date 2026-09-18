@@ -232,6 +232,44 @@ def _dataset(datos, desc):
     }
 
 
+def historia_ganadora(cierre, galas, hp):
+    """El camino de la campeona, leido de los datos y no escrito a mano.
+
+    Tres cosas que la pagina cuenta cuando la temporada termino: cuantas veces
+    estuvo en placa y como le fue en cada mano a mano (en voto negativo se va
+    quien junta MAS, asi que sobrevivir el versus es salvarse), que puesto
+    saco en cada fase de voto positivo con orden revelado, y que probabilidad
+    de ganar le dio cada corrida publicada. Si alguien quiere discutir el
+    relato, cada numero tiene su gala."""
+    if not cierre:
+        return None
+    q = cierre["ganadora"]
+    manos = []
+    for g in galas["galas"]:
+        v = g.get("versus") or {}
+        if q not in v or len(v) != 2 or g["fecha"] >= cierre["fecha"]:
+            continue
+        rival = [k for k in v if k != q][0]
+        manos.append({"gala": g.get("gala"), "fecha": g["fecha"], "rival": rival,
+                      "propio": v[q], "del_rival": v[rival],
+                      "se_salvo": g.get("eliminado") != q,
+                      "placa": len(g.get("placa") or [])})
+    placas = [g.get("gala") for g in galas["galas"] if q in (g.get("placa") or [])]
+    pos_p = ROOT / "data" / "voto_positivo.json"
+    fases = []
+    if pos_p.exists():
+        for f in json.loads(pos_p.read_text()).get("fases") or []:
+            orden = f.get("orden") or []
+            if q in orden:
+                fases.append({"id": f["id"], "fecha": f["fecha"], "puesto": orden.index(q) + 1,
+                              "revelados": len(orden), "candidatos": len(f.get("candidatos") or [])})
+    serie = [{"fecha": c["fecha"], "p": float((c.get("p_gana") or {}).get(q, 0.0)),
+              "en_juego": (c.get("en_juego") if isinstance(c.get("en_juego"), int)
+                           else len(c.get("en_juego") or c.get("p_gana") or []))}
+             for c in hp.get("corridas") or [] if c.get("fecha")]
+    return {"quien": q, "placas": placas, "manos": manos, "fases_positivas": fases, "serie": serie}
+
+
 def _congeladas(hp, archivo):
     """Una fila por gala con prediccion escrita ANTES, y su puntaje si ya se jugo.
 
@@ -370,6 +408,7 @@ def main():
         "cruce": cruce,
         "fandom": fandom,
         "cierre": cierre,
+        "historia_ganadora": historia_ganadora(cierre, galas, _hp),
         "apoyo": apoyo,
         "archivo": archivo,
         "edicion": {k: plantel[k] for k in ("edicion", "temporada", "estreno", "premio")},

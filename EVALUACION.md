@@ -455,3 +455,26 @@ semanas fijas, escrita en la firma de la función; con la final fechada se lee d
 los datos (`galas.json → final.ganadora`) y hoy vale una semana. Achica la
 incertidumbre de ψ en la cuenta de la ganadora; se anota para que nadie tenga
 que descubrirlo comparando dos corridas.
+
+---
+
+# Resultado, 18 de septiembre de 2026
+
+Ganó **Sol** el 16 de septiembre con el 51,8 % contra el 48,2 % de Yipio
+(Infobae, La Nación; más de 30 millones de votos). Cargado con
+`model/cerrar.py`, dos días después porque la tarea programada no corrió.
+
+**Pregunta 2.** La última corrida antes de la final (14 de septiembre) le daba
+a Sol el 59,8 %: log-loss 0,51 contra 0,69 del azar entre dos. Sobre las diez
+corridas publicadas desde el 8 de agosto, el modelo fue mejor que repartir
+parejo en 2 (las dos últimas): Sol arrancó en 0 % con diez en juego y subió
+1 → 5 → 6 → 10 → 19 → 34 → 60. Dos noches antes de la final la misma cuenta
+tenía a Charlotte favorita con el 45 % y quedó tercera. Los números completos,
+corrida por corrida, están en `data/cierre.json`.
+
+**Pregunta 1.** Con la final puntuada como una gala más (se va la segunda), el
+nombre acertado quedó en: modelo 1 de 8, dos tiempos 1 de 6, apuesta 1 de 3,
+cruce 1 de 5. El único acierto del modelo y de dos tiempos es la final.
+
+**Segunda baseline.** No apareció ningún mercado de apuestas con volumen real
+en toda la temporada: se declara que no hubo, como estaba escrito.

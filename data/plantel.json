@@ -25,7 +25,8 @@
     "x": "yiselapintos",
     "conf": "alta",
     "verificado": "2026-08-11"
-   }
+   },
+   "puesto_final": 2
   },
   {
    "apodo": "Sol",
@@ -46,7 +47,8 @@
     "x": "SolcitoAbraham",
     "conf": "alta",
     "verificado": "2026-08-11"
-   }
+   },
+   "puesto_final": 1
   }
  ],
  "eliminados_recientes": [
@@ -256,5 +258,6 @@
   }
  ],
  "_nota_genero": "genero: 'f'/'m'. Al 10/08/2026 no queda ningun varon en juego, confirmado por Mi Telefe en la nota de la eliminacion de Hanssen.",
- "_redes_nota": "Instagram comprobado el 11/08/2026 con un control negativo: un usuario inventado no devuelve og:description y los publicados si. X no se puede comprobar automaticamente -bloquea a los rastreadores-, asi que sus enlaces se apoyan en el cruce documentado de cada caso. NO se publican seguidores: a Charlotte le falta el dato por estar en juego, y los de las demas miden exposicion reciente, no apoyo."
+ "_redes_nota": "Instagram comprobado el 11/08/2026 con un control negativo: un usuario inventado no devuelve og:description y los publicados si. X no se puede comprobar automaticamente -bloquea a los rastreadores-, asi que sus enlaces se apoyan en el cruce documentado de cada caso. NO se publican seguidores: a Charlotte le falta el dato por estar en juego, y los de las demas miden exposicion reciente, no apoyo.",
+ "cerrado": "2026-09-16"
 }

@@ -31,8 +31,8 @@
 <link rel="icon" href="ojo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Sol 59,8% · Yipio 40,2%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-09-14T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Sol 59,8% · Yipio 40,2%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-09-14","version":"a982f3a77bf3f2b4","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
-<script src="datos.js?v=a982f3a77bf3f2b4"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nerln.github.io/placa/#nerln","name":"nerln","url":"https://github.com/nerln","sameAs":["https://github.com/nerln","https://x.com/nerellone","https://nerln.pages.dev"]},{"@type":"Article","@id":"https://nerln.github.io/placa/#articulo","headline":"¿Quién gana Gran Hermano: Generación Dorada? Pronóstico y probabilidades","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Sol 59,8% · Yipio 40,2%. Método, datos y código, abiertos.","inLanguage":"es-AR","datePublished":"2026-08-08","dateModified":"2026-09-14T23:00:00-03:00","author":{"@id":"https://nerln.github.io/placa/#nerln"},"publisher":{"@id":"https://nerln.github.io/placa/#nerln"},"isBasedOn":{"@id":"https://nerln.github.io/placa/#datos"},"license":"https://creativecommons.org/licenses/by/4.0/","mainEntityOfPage":"https://nerln.github.io/placa/","image":"https://nerln.github.io/placa/og.png","about":[{"@type":"TVSeries","name":"Gran Hermano Argentina"},{"@type":"TVSeason","name":"Generación Dorada","seasonNumber":13}],"citation":"Resultados de votación publicados por Telefe en cada gala de eliminación de la 13.ª edición"},{"@type":"Dataset","@id":"https://nerln.github.io/placa/#datos","name":"Pronóstico de Gran Hermano Argentina — Generación Dorada (2026)","description":"Pronóstico con 400.000 simulaciones sobre 11 galas con el reparto de votos publicado. Hoy: Sol 59,8% · Yipio 40,2%. Método, datos y código, abiertos.","url":"https://nerln.github.io/placa/","sameAs":"https://github.com/nerln/placa","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"dateModified":"2026-09-14","version":"6620c34bf36f7ae1","inLanguage":"es-AR","creator":{"@id":"https://nerln.github.io/placa/#nerln"},"citation":"nerln, «placa: pronóstico de Gran Hermano Argentina» (2026), https://github.com/nerln/placa","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://nerln.github.io/placa/datos.json"}]}]}</script>
+<script src="datos.js?v=6620c34bf36f7ae1"></script>
 <script src="vendor/gsap.min.js" defer></script>
 
 <style>
@@ -498,8 +498,37 @@ details.plegable > .pl-cuerpo{padding:0 0 8px}
    contradicen. Todo se lee de los mismos datos que alimentan las secciones de
    abajo, así que no puede quedarse viejo por su cuenta. */
 #cierre{margin:26px auto 0; border:1px solid var(--oro-txt); border-left:6px solid var(--oro-txt);
-  border-radius:var(--r-md); background:var(--sup); padding:20px 18px;
+  border-radius:var(--r-md); background:var(--sup); padding:22px 18px 18px;
   max-width:calc(var(--medida) + 36px)}
+#cierre .ci-nombre{font-family:"Archivo",sans-serif; font-weight:900; line-height:.95; letter-spacing:-.02em;
+  font-size:clamp(46px, 13vw, 96px); color:var(--oro-txt); margin:6px 0 4px}
+#cierre .ci-nombre small{display:block; font-size:clamp(16px, 4vw, 22px); font-weight:600; letter-spacing:0;
+  color:var(--tinta2); margin-top:6px}
+#cierre .ci-marcador{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin:10px 0 2px}
+#cierre .ci-marcador .p{font-family:"Archivo",sans-serif; font-weight:800; font-size:var(--t-xl)}
+#cierre .ci-marcador .p.gana{color:var(--oro-txt)}
+#cierre .ci-marcador .p.pierde{color:var(--tinta3)}
+#cierre .ci-marcador .vs{font-size:var(--t-xs); color:var(--tinta3); text-transform:uppercase; letter-spacing:.06em}
+#cierre .ci-barra{height:14px; border-radius:7px; overflow:hidden; display:flex; margin:6px 0 4px; background:var(--sup2)}
+#cierre .ci-barra i{display:block; height:100%; background:var(--oro-txt)}
+#cierre .ci-barra b{display:block; height:100%; background:var(--tinta3); opacity:.45}
+#cierre h3{margin:18px 0 6px; font-family:"Archivo",sans-serif; font-size:var(--t-md)}
+#cierre .ci-serie{display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:4px; align-items:end; height:120px; margin:8px 0 2px}
+#cierre .ci-serie div{position:relative; background:var(--oro-txt); border-radius:4px 4px 0 0; min-height:2px}
+#cierre .ci-serie div span{position:absolute; left:0; right:0; top:-18px; text-align:center; font-size:var(--t-xs); font-family:"Archivo",sans-serif; font-weight:700}
+#cierre .ci-fechas{display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:4px; font-size:10px; color:var(--tinta3); text-align:center}
+#cierre .ci-manos{display:grid; grid-template-columns:1fr; gap:6px; margin-top:6px}
+#cierre .ci-mano{display:grid; grid-template-columns:3.4rem 1fr auto; gap:10px; align-items:center; font-size:var(--t-sm); border-top:1px solid var(--linea); padding-top:6px}
+#cierre .ci-mano .g{font-size:var(--t-xs); color:var(--tinta3)}
+#cierre .ci-mano .r{font-family:"Archivo",sans-serif; font-weight:700}
+#cierre .ci-mano .r small{font-weight:400; color:var(--tinta2)}
+#cierre .ci-mano .e{font-size:var(--t-xs); font-weight:700; color:var(--apoyo-txt)}
+#cierre .ci-mano .e.no{color:var(--rechazo)}
+#cierre .ci-dos{display:grid; grid-template-columns:1fr; gap:10px; margin-top:8px}
+@media (min-width:700px){#cierre .ci-dos{grid-template-columns:1fr 1fr}}
+#cierre .ci-dos > div{border:1px solid var(--linea); border-radius:var(--r-sm); padding:10px 12px; font-size:var(--t-sm); color:var(--tinta2)}
+#cierre .ci-dos b{color:var(--tinta)}
+#cierre .ci-dos .k{font-size:var(--t-xs); color:var(--tinta3); text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px}
 #cierre .eyebrow{color:var(--oro-txt)}
 #cierre .mn-tit{font-size:var(--t-xl)}
 #cierre .fa-cifras{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; margin:14px 0 4px}
@@ -5510,16 +5539,20 @@ function contar(nodo){
       "comentarios, declarada en <code>data/fandom.json</code>. " + (F.limites || "") + "</p>";
 })();
 
-/* ---------- el cierre ----------
-   Cuando la temporada termino, esto va primero y es lo unico que hace falta
-   leer: quien gano, con cuanto, que le daba la ultima corrida y cuanto vale
-   eso contra el azar (pregunta 2 de EVALUACION.md), y la tabla de la
-   temporada gala por gala con lo que dijo cada cuenta. Todo sale de
-   data/cierre.json y del registro; nada se escribe a mano. */
+/* ---------- el cierre: la portada de la campeona ----------
+   Cuando la temporada termino, la pagina es de quien gano. Arriba: el nombre,
+   el marcador de la final, y tres cosas que solo esta pagina puede contar de
+   ella porque las midio toda la temporada: como la vio el modelo corrida a
+   corrida (de cero a campeona), como le fue en cada mano a mano y en cada
+   voto positivo, y que decia la gente cuando el modelo la puso primera. Abajo,
+   el puntaje de la pregunta de la temporada con su regla, y la tabla gala por
+   gala con lo que dijo cada cuenta, aciertos y errores por igual. Todo sale de
+   data/cierre.json, del registro y de D.historia_ganadora; nada a mano. */
 (function(){
   const sec = $("#cierre"), C = CERRADA();
   if(!sec) return;
   if(!C){ sec.remove(); return; }
+  const X = C.contexto || {};
   document.title = "Ganó " + C.ganadora + " Gran Hermano: Generación Dorada · lo que dijo el modelo y lo que pasó";
   const h1 = document.querySelector("h1.tit");
   if(h1){
@@ -5529,57 +5562,158 @@ function contar(nodo){
     const sub = document.querySelector(".h1-sub");
     if(sub) sub.innerHTML = "<em>Lo que esta página dijo, y lo que pasó.</em>";
   }
-  const U = C.ultima_corrida;
+  const U = C.ultima_corrida, HG = D.historia_ganadora || {};
   const M = MARCADOR();
   const NOM = {modelo: "el modelo", dos_tiempos: "dos tiempos", apuesta: "la apuesta", cruce: "el cruce"};
   const galas = r => r.de + (r.de === 1 ? " gala" : " galas");
   const marc = Object.keys(NOM).filter(k => M[k])
     .map(k => NOM[k] + " " + M[k].acertadas + " de " + galas(M[k])).join(", ");
+  const largo = n => (D.perfil[n] && D.perfil[n].nombre) ? D.perfil[n].nombre : n;
+  const pctSeg = C.pct != null ? 100 - C.pct : null;
+  const DM = f => f ? (+f.slice(8, 10)) + "/" + (+f.slice(5, 7)) : "";
+
+  // 1. el marcador de la final
+  const marcador = C.pct != null
+    ? "<div class='ci-marcador'><span class='p gana'>" + nf(C.pct, 1) + "%</span><span class='vs'>" + C.ganadora +
+      " · " + C.segunda + "</span><span class='p pierde'>" + nf(pctSeg, 1) + "%</span></div>" +
+      "<div class='ci-barra'><i style='width:" + C.pct + "%'></i><b style='width:" + pctSeg + "%'></b></div>" +
+      "<p class='mn-dice' style='margin-top:4px'>" + (X.votos ? cap(X.votos) + " de votos" : "Final de dos") +
+      ", el " + FECHA_LARGA(C.fecha) + ". " + (X.premio_ganadora ? "Se lleva " + X.premio_ganadora + "; " +
+      C.segunda + ", " + (X.premio_segunda || "el segundo premio") + ". " : "") + (X.dato || "") + "</p>"
+    : "";
+
+  // 2. como la vio el modelo, corrida a corrida
+  const serie = (HG.serie || []).filter(x => x.fecha && x.fecha <= C.fecha);
+  const topS = Math.max(...serie.map(x => x.p), 0.01);
+  const barras = serie.length >= 3
+    ? "<h3>Cómo la vio el modelo, corrida por corrida</h3>" +
+      "<div class='ci-serie'>" + serie.map(x => "<div style='height:" + Math.max(2, 100 * x.p / topS) + "%'" +
+        " title='" + FECHA_LARGA(x.fecha) + ": " + pc(x.p, 1) + " de ganar, entre " + x.en_juego + "'><span>" +
+        Math.round(100 * x.p) + "%</span></div>").join("") + "</div>" +
+      "<div class='ci-fechas'>" + serie.map(x => "<span>" + DM(x.fecha) + "</span>").join("") + "</div>" +
+      "<p class='mn-dice'>Probabilidad de ganar que cada corrida publicada le dio a " + C.ganadora + ". " +
+      "Empezó en " + pc(serie[0].p, 0) + " el " + FECHA_LARGA(serie[0].fecha) + ", entre " + serie[0].en_juego +
+      ", y llegó a " + pc(serie[serie.length - 1].p, 0) + " en la última, del " + FECHA_LARGA(serie[serie.length - 1].fecha) +
+      ". Mejor que repartir parejo en " + C.mejor_que_azar_en + " de " + C.de_corridas + " corridas.</p>"
+    : "";
+
+  // 3. los manos a mano, que es donde se hizo campeona
+  const manos = HG.manos || [];
+  const salvos = manos.filter(m => m.se_salvo).length;
+  const masAjustado = manos.slice().sort((a, b) => Math.abs(a.propio - a.del_rival) - Math.abs(b.propio - b.del_rival))[0];
+  const listaManos = manos.length
+    ? "<h3>" + (HG.placas || []).length + " placas, " + manos.length + " manos a mano, " + salvos + " salvadas</h3>" +
+      "<div class='ci-manos'>" + manos.map(m =>
+        "<div class='ci-mano'><span class='g'>gala " + m.gala + "<br>" + DM(m.fecha) + "</span>" +
+        "<span class='r'>" + nf(m.propio, 1) + "% <small>contra " + m.rival + " " + nf(m.del_rival, 1) + "%</small></span>" +
+        "<span class='e" + (m.se_salvo ? "" : " no") + "'>" + (m.se_salvo ? "se salvó" : "se fue") + "</span></div>").join("") +
+      "<div class='ci-mano'><span class='g'>final<br>" + DM(C.fecha) + "</span><span class='r'>" + nf(C.pct, 1) +
+        "% <small>contra " + C.segunda + " " + nf(pctSeg, 1) + "%</small></span><span class='e'>campeona</span></div>" +
+      "</div>" +
+      "<p class='mn-dice'>En voto negativo se va quien junta <b>más</b>: llegar al último cara a cara y salir con " +
+      "menos que la otra es salvarse. " + C.ganadora + " lo hizo " + salvos + " de " + manos.length + " veces" +
+      (masAjustado ? ", la más ajustada por " + nf(Math.abs(masAjustado.propio - masAjustado.del_rival), 1) +
+        " puntos contra " + masAjustado.rival + " (gala " + masAjustado.gala + ")" : "") +
+      ". La final se vota al revés, a favor, y la ganó por " + nf(C.pct - pctSeg, 1) + " puntos." +
+      ((HG.fases_positivas || []).length
+        ? " En las fases de voto positivo con orden revelado quedó " + HG.fases_positivas.map(f =>
+            (f.puesto === 1 ? "primera" : f.puesto === 2 ? "segunda" : f.puesto + ".ª") + " de " + f.candidatos +
+            " el " + DM(f.fecha)).join(", ") + "."
+        : "") + "</p>"
+    : "";
+
+  // 4. lo que decia la gente cuando el modelo la puso primera
+  const S = (D.sentimiento || {}).por_jugadora || {}, sg = S[C.ganadora], ss = S[C.segunda];
+  const T = (D.actualidad || {}).termometro_placa || {};
+  const camp = (T.consignas || []).find(c => String(c.termino).toUpperCase().indexOf(C.ganadora.toUpperCase()) === 0);
+  const EF = (D.actualidad || {}).encuestas_final;
+  const encu = ((EF && EF.items) || []).filter(o => o.cuota && o.cuota[C.ganadora] != null && o.cuota[C.segunda] != null);
+  const encuGan = encu.filter(o => o.cuota[C.ganadora] > o.cuota[C.segunda]).length;
+  const cru = D.cruce && D.cruce.gala === C.gala && D.cruce.p_sale;
+  const gente =
+    "<h3>La gente decía otra cosa</h3><div class='ci-dos'>" +
+    "<div><div class='k'>Los comentarios</div>" + (sg && ss
+      ? "<b>" + C.ganadora + "</b>: " + sg.favor + " a favor, " + sg.contra + " en contra. <b>" + C.segunda + "</b>: " +
+        ss.favor + " a favor, " + ss.contra + " en contra. " + (D.sentimiento.total ? D.sentimiento.total.toLocaleString("es-AR") +
+        " comentarios de los videos del programa, hasta el " + FECHA_LARGA(D.sentimiento.generado) + "." : "")
+      : "Sin medición para la final.") + "</div>" +
+    "<div><div class='k'>La campaña y las encuestas</div>" +
+      (camp ? "«" + camp.termino + "» fue la consigna número " + camp.pico + " del país" +
+        (camp.horas ? " durante " + camp.horas + (camp.horas === 1 ? " hora" : " horas") : "") + ". " : "") +
+      (encu.length ? "De " + encu.length + " encuestas de redes que circularon, " + (encuGan === 1 ? "una la daba" : encuGan + " la daban") +
+        " ganadora" + (encuGan === 0 ? "; todas decían " + C.segunda : "") + ". " : "") +
+      (cru ? "El cruce, que pesa comentarios y campaña, decía " + (cru[C.ganadora] > cru[C.segunda] ? C.segunda : C.ganadora) +
+        " con " + pc(Math.max(cru[C.ganadora], cru[C.segunda]), 0) + "." : "") +
+    "</div></div>" +
+    "<p class='mn-dice'>El modelo no lee nada de esto: lee las votaciones reales. " +
+      (U ? "La última corrida le daba a " + C.ganadora + " el " + Math.round(100 * U.p_ganadora) + "%" +
+        (U.puesto === 1 ? ", primera." : ", no primera.") : "") +
+      // Si en una gala anterior salio la favorita del modelo para el titulo,
+      // se dice aca tambien, con el nombre leido del registro: la portada de
+      // la campeona no borra el error de dos noches antes.
+      (() => {
+        const H = D.historial_pronostico || [];
+        const previas = (D.congeladas || []).filter(f => f.eliminado && f.fecha_gala && f.fecha_gala < C.fecha)
+          .sort((a, b) => b.gala - a.gala);
+        for(const f of previas){
+          const antes = H.filter(c => c.fecha && c.fecha < f.fecha_gala).slice(-1)[0];
+          const pg = antes && antes.p_gana;
+          if(!pg) continue;
+          const top = Object.keys(pg).sort((a, b) => pg[b] - pg[a])[0];
+          if(top !== f.eliminado) continue;
+          return " El " + FECHA_LARGA(f.fecha_gala) + ", la misma cuenta tenía a <b>" + f.eliminado +
+            "</b> favorita para el título con el " + Math.round(100 * pg[top]) + "%, y esa noche se fue: " +
+            "esta página lo dijo entonces y lo deja escrito abajo, en la tabla.";
+        }
+        return "";
+      })() + "</p>";
+
+  // 5. el puntaje de la temporada
   const cifra = (k, v, d) => "<div><div class='k'>" + k + "</div><div class='v'>" + v + "</div><div class='d'>" + d + "</div></div>";
-  // la tabla de la temporada: una fila por gala congelada, con quien salio y
-  // a quien llamo cada cuenta. Sale de D.congeladas, que ya trae las dos cosas.
-  const filas = (D.congeladas || []).slice().sort((a, b) => a.gala - b.gala).map(f => {
-    const ser = f.series || {};
-    const celda = k => {
-      const v = ser[k];
-      if(!v || !v.llama_a) return "<td class='no'>—</td>";
-      const fin = C.gala === f.gala;
-      // en la final «llama_a» es quien se va, o sea la segunda: se muestra
-      // dada vuelta, como en la noche misma
-      const dijo = fin ? (f.placa || []).find(n => n !== v.llama_a) || v.llama_a : v.llama_a;
-      const real = fin ? C.ganadora : f.eliminado;
-      const ok = real && dijo === real;
-      return "<td class='" + (ok ? "si" : "no") + "'>" + dijo + (ok ? " ✓" : "") + "</td>";
-    };
-    const que = C.gala === f.gala ? "ganó <b>" + C.ganadora + "</b>"
-      : f.eliminado ? "se fue <b>" + f.eliminado + "</b>" : "—";
-    return "<tr><td>" + f.gala + (f.fecha_gala ? "<br><small>" + (+f.fecha_gala.slice(8, 10)) + "/" + (+f.fecha_gala.slice(5, 7)) + "</small>" : "") +
-      "</td><td>" + que + "</td>" + ["modelo", "dos_tiempos", "apuesta", "cruce"].map(celda).join("") + "</tr>";
-  }).join("");
-  const primero = $("#ultimo") || $("#respuesta-corta");
-  const destino = primero && primero.closest("section, .veredicto") || primero;
-  if(destino && destino.parentElement) destino.parentElement.insertBefore(sec, destino);
-  sec.innerHTML =
-    "<div class='eyebrow'>Temporada terminada · " + FECHA_LARGA(C.fecha) + "</div>" +
-    "<div class='mn-tit'>Ganó " + C.ganadora + (C.pct != null ? " con el " + nf(C.pct, 1) + "%" : "") +
-      ". " + (U ? (U.puesto === 1 ? "El modelo la tenía primera." : "El modelo no la tenía primera.") : "") + "</div>" +
+  const puntaje =
+    "<h3>El puntaje, con la regla escrita antes de empezar</h3>" +
     "<div class='fa-cifras'>" +
       (U ? cifra("Le daba de ganar", Math.round(100 * U.p_ganadora) + "%",
                  "puesto " + U.puesto + " de " + U.en_juego + " en la última corrida, del " + FECHA_LARGA(U.fecha)) : "") +
       (U ? cifra("Log-loss", nf(U.log_loss, 2), "contra " + nf(U.log_loss_uniforme, 2) + " del azar entre " + U.en_juego +
                  (U.log_loss < U.log_loss_uniforme ? ": aportó" : ": no aportó")) : "") +
-      cifra("Mejor que el azar en", C.mejor_que_azar_en + " de " + C.de_corridas,
-            "corridas publicadas desde agosto, para la pregunta de la ganadora") +
+      cifra("Mejor que el azar en", C.mejor_que_azar_en + " de " + C.de_corridas, "corridas publicadas, pregunta de la ganadora") +
     "</div>" +
-    "<p class='mn-dice'>La pregunta de la temporada era ésta, y se puntúa con la regla escrita antes " +
-      "de empezar: menos log-loss que repartir parejo entre quienes seguían en juego. " +
-      (C.segunda ? C.segunda + " quedó segunda. " : "") +
-      "La otra pregunta, quién se va cada gala, terminó así, con el nombre acertado: " + marc + ".</p>" +
+    "<p class='mn-dice'>La otra pregunta, quién se va cada gala, terminó con el nombre acertado en: " + marc + ". " +
+      "Cada fila de abajo estaba congelada con fecha antes de esa noche.</p>";
+
+  // 6. la tabla de la temporada
+  const filas = (D.congeladas || []).slice().sort((a, b) => a.gala - b.gala).map(f => {
+    const ser = f.series || {};
+    const fin = C.gala === f.gala;
+    const celda = k => {
+      const v = ser[k];
+      if(!v || !v.llama_a) return "<td class='no'>—</td>";
+      const dijo = fin ? (f.placa || []).find(n => n !== v.llama_a) || v.llama_a : v.llama_a;
+      const real = fin ? C.ganadora : f.eliminado;
+      const ok = real && dijo === real;
+      return "<td class='" + (ok ? "si" : "no") + "'>" + dijo + (ok ? " ✓" : "") + "</td>";
+    };
+    const que = fin ? "ganó <b>" + C.ganadora + "</b>" : f.eliminado ? "se fue <b>" + f.eliminado + "</b>" : "—";
+    return "<tr><td>" + f.gala + (f.fecha_gala ? "<br><small>" + DM(f.fecha_gala) + "</small>" : "") +
+      "</td><td>" + que + "</td>" + ["modelo", "dos_tiempos", "apuesta", "cruce"].map(celda).join("") + "</tr>";
+  }).join("");
+
+  const primero = $("#ultimo") || $("#respuesta-corta");
+  const destino = primero && primero.closest("section, .veredicto") || primero;
+  if(destino && destino.parentElement) destino.parentElement.insertBefore(sec, destino);
+  sec.innerHTML =
+    "<div class='eyebrow'>Temporada terminada · " + FECHA_LARGA(C.fecha) + "</div>" +
+    "<div class='ci-nombre'>" + C.ganadora + "<small>" + largo(C.ganadora) + " · campeona de Gran Hermano: Generación Dorada" +
+      (X.dias && X.participantes ? " · " + X.participantes + " entraron, " + X.dias + " días" : "") + "</small></div>" +
+    marcador + barras + listaManos + gente + puntaje +
     (filas ? "<div class='scroll-x'><table><tr><th>gala</th><th>pasó</th><th>modelo</th><th>dos tiempos</th><th>apuesta</th><th>cruce</th></tr>" +
       filas + "</table></div>" : "") +
     "<p class='tw-nota' style='margin:12px 0 0'>Esta página no se actualiza más. Cada corrida que se publicó " +
       "está en el registro y en las copias congeladas de cada gala, abajo. Fuentes del resultado: " +
-      (C.fuentes || []).map((u, i) => "<a href='" + u + "' target='_blank' rel='noopener nofollow'>nota " + (i + 1) + "</a>").join(", ") + ".</p>";
+      (C.fuentes || []).map((u, i) => "<a href='" + u + "' target='_blank' rel='noopener nofollow'>nota " + (i + 1) + "</a>").join(", ") +
+      (X._fuente ? "; el contexto, de " + X._fuente : "") + ".</p>";
+  function cap(t){ return t.charAt(0).toUpperCase() + t.slice(1); }
 })();
 
 /* ---------- el fallo, dicho primero ----------

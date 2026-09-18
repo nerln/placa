@@ -1,0 +1,136 @@
+{
+ "_nota": "Resultado de la temporada y puntaje de la pregunta 2 de EVALUACION.md: log-loss de la probabilidad de ganar publicada en cada corrida, contra el azar de ese dia (uniforme sobre quienes seguian en juego). Escrito por model/cerrar.py, una sola vez, con dos fuentes.",
+ "ganadora": "Sol",
+ "segunda": "Yipio",
+ "pct": 51.8,
+ "fecha": "2026-09-16",
+ "gala": 36,
+ "fuentes": [
+  "https://www.infobae.com/teleshow/2026/09/16/gran-hermano-generacion-elige-a-su-nueva-campeona-sol-abraham-y-yipio-en-una-final-a-todo-o-nada/",
+  "https://www.lanacion.com.ar/espectaculos/final-de-gran-hermano-en-vivo-hoy-se-conoce-al-ganador-de-la-generacion-dorada-como-votar-nid16092026/"
+ ],
+ "cerrado": "2026-09-18T16:48-0300",
+ "ultima_corrida": {
+  "fecha": "2026-09-14",
+  "en_juego": 2,
+  "p_ganadora": 0.5978,
+  "puesto": 1,
+  "log_loss": 0.5145,
+  "log_loss_uniforme": 0.6931,
+  "brier": 0.3235,
+  "brier_uniforme": 0.5
+ },
+ "corridas": [
+  {
+   "fecha": "2026-08-08",
+   "en_juego": 10,
+   "p_ganadora": 0.003,
+   "puesto": 10,
+   "log_loss": 5.8091,
+   "log_loss_uniforme": 2.3026,
+   "brier": 1.1477,
+   "brier_uniforme": 0.9
+  },
+  {
+   "fecha": "2026-08-10",
+   "en_juego": 10,
+   "p_ganadora": 0.004,
+   "puesto": 9,
+   "log_loss": 5.5215,
+   "log_loss_uniforme": 2.3026,
+   "brier": 1.1554,
+   "brier_uniforme": 0.89
+  },
+  {
+   "fecha": "2026-08-16",
+   "en_juego": 9,
+   "p_ganadora": 0.0142,
+   "puesto": 9,
+   "log_loss": 4.2545,
+   "log_loss_uniforme": 2.1972,
+   "brier": 1.1256,
+   "brier_uniforme": 0.8889
+  },
+  {
+   "fecha": "2026-08-18",
+   "en_juego": 8,
+   "p_ganadora": 0.0057,
+   "puesto": 8,
+   "log_loss": 5.1673,
+   "log_loss_uniforme": 2.0794,
+   "brier": 1.1837,
+   "brier_uniforme": 0.875
+  },
+  {
+   "fecha": "2026-08-24",
+   "en_juego": 7,
+   "p_ganadora": 0.0482,
+   "puesto": 6,
+   "log_loss": 3.0324,
+   "log_loss_uniforme": 1.9459,
+   "brier": 1.0903,
+   "brier_uniforme": 0.8571
+  },
+  {
+   "fecha": "2026-08-31",
+   "en_juego": 6,
+   "p_ganadora": 0.0557,
+   "puesto": 6,
+   "log_loss": 2.8878,
+   "log_loss_uniforme": 1.7918,
+   "brier": 1.119,
+   "brier_uniforme": 0.8333
+  },
+  {
+   "fecha": "2026-09-02",
+   "en_juego": 5,
+   "p_ganadora": 0.0983,
+   "puesto": 5,
+   "log_loss": 2.3197,
+   "log_loss_uniforme": 1.6094,
+   "brier": 1.0433,
+   "brier_uniforme": 0.8
+  },
+  {
+   "fecha": "2026-09-07",
+   "en_juego": 4,
+   "p_ganadora": 0.1854,
+   "puesto": 3,
+   "log_loss": 1.6852,
+   "log_loss_uniforme": 1.3863,
+   "brier": 0.9105,
+   "brier_uniforme": 0.75
+  },
+  {
+   "fecha": "2026-09-09",
+   "en_juego": 3,
+   "p_ganadora": 0.3445,
+   "puesto": 2,
+   "log_loss": 1.0657,
+   "log_loss_uniforme": 1.0986,
+   "brier": 0.6739,
+   "brier_uniforme": 0.6667
+  },
+  {
+   "fecha": "2026-09-14",
+   "en_juego": 2,
+   "p_ganadora": 0.5978,
+   "puesto": 1,
+   "log_loss": 0.5145,
+   "log_loss_uniforme": 0.6931,
+   "brier": 0.3235,
+   "brier_uniforme": 0.5
+  }
+ ],
+ "mejor_que_azar_en": 2,
+ "de_corridas": 10,
+ "contexto": {
+  "votos": "más de 30 millones",
+  "dias": 174,
+  "participantes": 43,
+  "premio_ganadora": "70 millones de pesos y una vivienda prefabricada",
+  "premio_segunda": "20 millones de pesos y otra casa",
+  "dato": "Primera campeona mujer desde Marianela Mirra en 2007, diecinueve años después.",
+  "_fuente": "Infobae y La Nación, 16 de septiembre de 2026 (las mismas dos fuentes del resultado)"
+ }
+}

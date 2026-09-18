@@ -2,6 +2,14 @@
  "_nota": "Lo que pasó desde la última corrida del modelo. Va arriba de todo porque quien entra a esta página quiere saber primero si cambió algo. Cada entrada lleva fecha, qué pasó, si afecta al pronóstico y la fuente. Append-only por arriba: lo nuevo va primero.",
  "entradas": [
   {
+   "fecha": "2026-09-16",
+   "titulo": "Ganó Sol con el 51,8 %: la primera campeona mujer en 19 años",
+   "detalle": "Final de dos, más de 30 millones de votos, y la diferencia más chica de la temporada: Sol 51,8 %, Yipio 48,2 %. Sol se lleva 70 millones de pesos y una vivienda; Yipio, 20 millones y otra casa. Desde Marianela Mirra en 2007 no ganaba una mujer.",
+   "afecta": "La pregunta de la temporada, la de los 70 millones, cerró con la última corrida del 14 de septiembre dándole a Sol el 60 %: la única cuenta que la tenía primera. El cruce y los comentarios decían Yipio. El puntaje completo de la temporada, con las dos preguntas y las dos baselines, queda escrito arriba de la página y en data/cierre.json.",
+   "impacto": "alto",
+   "fuente": "https://www.infobae.com/teleshow/2026/09/16/gran-hermano-generacion-elige-a-su-nueva-campeona-sol-abraham-y-yipio-en-una-final-a-todo-o-nada/"
+  },
+  {
    "fecha": "2026-09-14",
    "titulo": "Charlotte quedó tercera con el 10,7 %: la final es Sol contra Yipio",
    "detalle": "Primera noche de la final. Se votó a la favorita y Charlotte fue la que menos juntó. La ganadora se define el miércoles 16 con el mismo voto positivo entre Sol y Yipio. Después de la salida, Sol le reprochó a Charlotte que no la saludara, y las dos finalistas arrancaron sus últimas 48 horas peleadas.",

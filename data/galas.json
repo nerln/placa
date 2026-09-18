@@ -390,22 +390,41 @@
    "versus": {},
    "completa": false,
    "eliminado": "Charlotte"
+  },
+  {
+   "gala": 36,
+   "fecha": "2026-09-16",
+   "tipo": "final",
+   "placa": [
+    "Sol",
+    "Yipio"
+   ],
+   "salvados_cuota": {},
+   "versus": {
+    "Sol": 51.8,
+    "Yipio": 48.2
+   },
+   "completa": false,
+   "eliminado": "Yipio",
+   "_nota": "Noche de la ganadora: la que «sale» es la segunda. Los porcentajes son los publicados."
   }
  ],
  "placa_vigente": {
-  "gala": 36,
-  "fecha": "2026-09-16",
-  "fecha_nominacion": "2026-09-14",
-  "integrantes": [
-   "Sol",
-   "Yipio"
-  ],
+  "gala": null,
+  "fecha": "",
+  "fecha_nominacion": null,
+  "integrantes": [],
   "inmune_lider": "",
   "libres": []
  },
  "final": {
   "_nota": "Fechas de la final, para que el modelo mida cuánto le queda de deriva a ψ: hasta acá se simulaba con cuatro semanas fijas.",
   "tercer_puesto": "2026-09-14",
-  "ganadora": "2026-09-16"
+  "ganadora": "2026-09-16",
+  "resultado": {
+   "ganadora": "Sol",
+   "segunda": "Yipio",
+   "pct": 51.8
+  }
  }
 }

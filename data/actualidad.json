@@ -273,7 +273,7 @@
   "_instagram": "De Instagram no entra ninguna medición. La encuesta que circula cada semana sale por un canal de difusión, que vive dentro de los mensajes y no genera enlace que citar, y las cuentas que publican resultados no tienen historial contra el que calibrarlas."
  },
  "proxima_gala": {
-  "_nota": "Segunda noche de la final: quedan dos, se vota a la favorita y la más votada gana. Charlotte quedó tercera el lunes 14 con el 10,7%.",
+  "_nota": "Temporada terminada. Queda como registro de la ultima noche.",
   "gala": 36,
   "tipo": "final: ganadora",
   "fecha": "2026-09-16",
@@ -284,17 +284,7 @@
   ],
   "libres": [],
   "todas_finalistas": true,
-  "fases": [
-   {
-    "desde": "2026-09-14",
-    "hasta": "2026-09-16",
-    "signo": "positivo",
-    "desde_hora": "2026-09-14T23:30-03:00",
-    "hasta_hora": "2026-09-16T22:15-03:00",
-    "que": "Se vota por la favorita entre Sol y Yipio. La más votada gana Gran Hermano.",
-    "detalle": "Última noche. No queda nada después: quien pierde este mano a mano es segunda."
-   }
-  ],
+  "fases": [],
   "regla": "Segunda y última noche de la final: el voto positivo entre las dos decide la ganadora.",
   "pesos_nominacion": {
    "jugadora": 0,
@@ -318,7 +308,13 @@
     "pct": 10.7,
     "fecha": "2026-09-14"
    },
-   "premio": "70 millones de pesos más los intereses de una inversión, una vivienda, una moto y cerveza por un año"
+   "premio": "70 millones de pesos más los intereses de una inversión, una vivienda, una moto y cerveza por un año",
+   "cerrada": {
+    "ganadora": "Sol",
+    "segunda": "Yipio",
+    "pct": 51.8,
+    "fecha": "2026-09-16"
+   }
   }
  },
  "termometro_placa": {
@@ -490,5 +486,6 @@
     "fuente": "https://exitoina.perfil.com/noticias/television/quien-sera-ganadora-gran-hermano-generacion-dorada-lunes-14-septiembre-segun-encuestas.phtml"
    }
   ]
- }
+ },
+ "cerrada": true
 }

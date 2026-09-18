@@ -6,48 +6,48 @@
   "n_sims": 200000,
   "semilla": 20260818
  },
- "n_versus": 13,
+ "n_versus": 14,
  "theta": {
-  "Sol": 1.144,
+  "Sol": 0.855,
   "Luana": 0.826,
-  "Yipio": 0.337,
+  "Yipio": 0.78,
   "Zunino": 0.337,
-  "Campanita": 0.116,
-  "Titi": 0.116,
+  "Titi": 0.073,
+  "Campanita": 0.073,
   "Majluf": 0.069,
-  "Emanuel": -0.206,
-  "Hanssen": -0.206,
-  "Tamara": -0.206,
+  "Emanuel": -0.249,
+  "Hanssen": -0.249,
+  "Tamara": -0.249,
   "Manu": -0.254,
   "Nigro": -0.254,
+  "Pincoya": -0.261,
   "Brian": -0.337,
-  "Pincoya": -0.337,
-  "Nenu": -0.379,
-  "Tatiluna": -0.379,
+  "Nenu": -0.387,
+  "Tatiluna": -0.387,
   "Cola": -0.388
  },
  "registro": {
   "Sol": [
    5,
-   0
+   1
   ],
   "Luana": [
    3,
    0
   ],
   "Yipio": [
-   1,
+   2,
    0
   ],
   "Zunino": [
    1,
    0
   ],
-  "Campanita": [
+  "Titi": [
    1,
    1
   ],
-  "Titi": [
+  "Campanita": [
    1,
    1
   ],
@@ -75,11 +75,11 @@
    0,
    1
   ],
-  "Brian": [
+  "Pincoya": [
    0,
    1
   ],
-  "Pincoya": [
+  "Brian": [
    0,
    1
   ],
@@ -250,15 +250,6 @@
    "azar_logver": -1.765
   }
  },
- "vigente": {
-  "placa": [
-   "Sol",
-   "Yipio"
-  ],
-  "p_sale": {
-   "Yipio": 0.6922,
-   "Sol": 0.3078
-  }
- },
+ "vigente": null,
  "aviso": "La regularidad tiene una parte que se muerde la cola: sólo se acumulan versus ganándolos. Y el n es minúsculo. Por eso esto se publica al lado del modelo y no en su lugar, y las dos quedan congeladas antes de cada gala."
 }
